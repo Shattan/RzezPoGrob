@@ -16,5 +16,10 @@ namespace RPG
         {
             InitializeComponent();
         }
+
+        private void PrzyciskWyjdz_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -2,3 +2,9 @@ E:\Naukowe\PCZ\Semestr VII\Projekt zespołowy\Gra RPG\RPG\RPG\bin\Debug\RPG.exe.
 D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\RPG.exe.config
 D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.exe
 D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.pdb
+D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\RPG.exe
+D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\RPG.pdb
+D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
+D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.GlownyEkran.resources
+D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.Properties.Resources.resources
+D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.csproj.GenerateResource.Cache
