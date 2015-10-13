@@ -14,8 +14,6 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-#USUN TO RAZ DWA TEST
-
 # Windows Installer files
 *.cab
 *.msi
@@ -36,9 +34,6 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 
-
-#USUN TO RAZ DWA TEST
-
 # Thumbnails
 ._*
 
@@ -55,5 +50,3 @@ Temporary Items
 RPG/bin/Debug/RPG.vshost.exe
 RPG.v12.suo
 RPG/obj/Debug/RPG.csproj.FileListAbsolute.txt
-
-#USUN TO RAZ DWA TEST
