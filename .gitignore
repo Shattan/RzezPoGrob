@@ -5,6 +5,9 @@ ehthumbs.db
 #debug files
 RPG/bin/Debug/
 
+#release files
+RPG/bin/Release/
+
 # Folder config file
 Desktop.ini
 
