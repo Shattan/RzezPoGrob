@@ -29,7 +29,10 @@ $RECYCLE.BIN/
 # Operating System Files
 # =========================
 
+<<<<<<< HEAD
 # OSCX
+=======
+>>>>>>> origin/master
 # =========================
 
 .DS_Store
