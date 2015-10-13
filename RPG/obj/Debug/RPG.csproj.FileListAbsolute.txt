@@ -1,10 +1,1 @@
 E:\Naukowe\PCZ\Semestr VII\Projekt zespołowy\Gra RPG\RPG\RPG\bin\Debug\RPG.exe.config
-C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\bin\Debug\RPG.exe.config
-C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\bin\Debug\RPG.exe
-C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\bin\Debug\RPG.pdb
-C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
-C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.GlownyEkran.resources
-C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.Properties.Resources.resources
-C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.csproj.GenerateResource.Cache
-C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.exe
-C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.pdb
