@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.Wyswietlacz = new System.Windows.Forms.PictureBox();
-            this.PrzyciskWyjdz = new System.Windows.Forms.Button();
+            this.ButtonWyjdz = new System.Windows.Forms.Button();
+            this.ButtonRozpocznij = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Wyswietlacz)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,15 +44,26 @@
             this.Wyswietlacz.TabIndex = 0;
             this.Wyswietlacz.TabStop = false;
             // 
-            // PrzyciskWyjdz
+            // ButtonWyjdz
             // 
-            this.PrzyciskWyjdz.Location = new System.Drawing.Point(12, 12);
-            this.PrzyciskWyjdz.Name = "PrzyciskWyjdz";
-            this.PrzyciskWyjdz.Size = new System.Drawing.Size(75, 23);
-            this.PrzyciskWyjdz.TabIndex = 1;
-            this.PrzyciskWyjdz.Text = "Wyjdź";
-            this.PrzyciskWyjdz.UseVisualStyleBackColor = true;
-            this.PrzyciskWyjdz.Click += new System.EventHandler(this.PrzyciskWyjdz_Click);
+            this.ButtonWyjdz.ForeColor = System.Drawing.Color.Yellow;
+            this.ButtonWyjdz.Location = new System.Drawing.Point(12, 12);
+            this.ButtonWyjdz.Name = "ButtonWyjdz";
+            this.ButtonWyjdz.Size = new System.Drawing.Size(75, 23);
+            this.ButtonWyjdz.TabIndex = 1;
+            this.ButtonWyjdz.Text = "Wyjdź";
+            this.ButtonWyjdz.UseVisualStyleBackColor = true;
+            this.ButtonWyjdz.Click += new System.EventHandler(this.PrzyciskWyjdz_Click);
+            // 
+            // ButtonRozpocznij
+            // 
+            this.ButtonRozpocznij.ForeColor = System.Drawing.Color.Yellow;
+            this.ButtonRozpocznij.Location = new System.Drawing.Point(94, 12);
+            this.ButtonRozpocznij.Name = "ButtonRozpocznij";
+            this.ButtonRozpocznij.Size = new System.Drawing.Size(75, 23);
+            this.ButtonRozpocznij.TabIndex = 2;
+            this.ButtonRozpocznij.Text = "Rozpocznij";
+            this.ButtonRozpocznij.UseVisualStyleBackColor = true;
             // 
             // GlownyEkran
             // 
@@ -59,7 +71,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(292, 273);
-            this.Controls.Add(this.PrzyciskWyjdz);
+            this.Controls.Add(this.ButtonRozpocznij);
+            this.Controls.Add(this.ButtonWyjdz);
             this.Controls.Add(this.Wyswietlacz);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -75,7 +88,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox Wyswietlacz;
-        private System.Windows.Forms.Button PrzyciskWyjdz;
+        private System.Windows.Forms.Button ButtonWyjdz;
+        private System.Windows.Forms.Button ButtonRozpocznij;
     }
 }
 
