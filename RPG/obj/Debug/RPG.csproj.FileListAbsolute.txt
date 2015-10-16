@@ -8,3 +8,6 @@ D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
 D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.Properties.Resources.resources
 D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.csproj.GenerateResource.Cache
 D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.GlownyEkran.resources
+D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Grafiki menu\Szyld z cieniem.png
+D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Grafiki menu\Szyld.png
+D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Grafiki menu\Tło menu.png

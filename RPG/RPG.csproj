@@ -63,6 +63,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -79,10 +80,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Grafiki ekwipunku\" />
-    <Folder Include="Grafiki menu\" />
     <Folder Include="Grafiki postaci\" />
     <Folder Include="Grafiki przeszkód\" />
     <Folder Include="Grafiki umiejętności\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Grafiki menu\Tło menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Grafiki menu\Szyld z cieniem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Grafiki menu\Szyld.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\drewno_20110423_1880286751.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

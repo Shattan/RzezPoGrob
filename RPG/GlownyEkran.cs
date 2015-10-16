@@ -58,6 +58,14 @@ namespace RPG
         #endregion
 
         #region Funkcje
+        void UstawPoczatkoweWartosci()
+        {
+            Image obrazekTla = new Bitmap("Grafiki menu/Tło menu.png");
+            Graphics tlo = Graphics.FromImage(obrazekTla);
+            Wyswietlacz.BackgroundImage = PictureBoxWyjdz.BackgroundImage = new Bitmap("Grafiki menu/Tło menu.png");
+            PictureBoxWyjdz.Image = new Bitmap("Grafiki menu/Szyld z cieniem.png");
+        }
+
         void UtworzPostacie()
         {
             postac.Add(new Postac("Lord Krwawy Mati"));                     //index 0
@@ -87,14 +95,10 @@ namespace RPG
         public GlownyEkran()
         {
             InitializeComponent();
-
+            UstawPoczatkoweWartosci();
         }
 
         #region Obsługa przycisków
-        private void PrzyciskWyjdz_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
         #endregion
 
         private void PictureBoxWyjdz_Click(object sender, EventArgs e)

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Wyswietlacz = new System.Windows.Forms.PictureBox();
-            this.ButtonWyjdz = new System.Windows.Forms.Button();
             this.ButtonRozpocznij = new System.Windows.Forms.Button();
             this.PictureBoxWyjdz = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Wyswietlacz)).BeginInit();
@@ -46,21 +45,11 @@
             this.Wyswietlacz.TabIndex = 0;
             this.Wyswietlacz.TabStop = false;
             // 
-            // ButtonWyjdz
-            // 
-            this.ButtonWyjdz.ForeColor = System.Drawing.Color.Yellow;
-            this.ButtonWyjdz.Location = new System.Drawing.Point(12, 12);
-            this.ButtonWyjdz.Name = "ButtonWyjdz";
-            this.ButtonWyjdz.Size = new System.Drawing.Size(75, 23);
-            this.ButtonWyjdz.TabIndex = 1;
-            this.ButtonWyjdz.Text = "Wyjdź";
-            this.ButtonWyjdz.UseVisualStyleBackColor = true;
-            this.ButtonWyjdz.Click += new System.EventHandler(this.PrzyciskWyjdz_Click);
-            // 
             // ButtonRozpocznij
             // 
             this.ButtonRozpocznij.ForeColor = System.Drawing.Color.Yellow;
-            this.ButtonRozpocznij.Location = new System.Drawing.Point(94, 12);
+            this.ButtonRozpocznij.Image = global::RPG.Properties.Resources.drewno_20110423_1880286751;
+            this.ButtonRozpocznij.Location = new System.Drawing.Point(12, 160);
             this.ButtonRozpocznij.Name = "ButtonRozpocznij";
             this.ButtonRozpocznij.Size = new System.Drawing.Size(75, 23);
             this.ButtonRozpocznij.TabIndex = 2;
@@ -69,9 +58,12 @@
             // 
             // PictureBoxWyjdz
             // 
-            this.PictureBoxWyjdz.Location = new System.Drawing.Point(13, 54);
+            this.PictureBoxWyjdz.BackColor = System.Drawing.Color.Silver;
+            this.PictureBoxWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureBoxWyjdz.Location = new System.Drawing.Point(0, 0);
             this.PictureBoxWyjdz.Name = "PictureBoxWyjdz";
-            this.PictureBoxWyjdz.Size = new System.Drawing.Size(100, 50);
+            this.PictureBoxWyjdz.Size = new System.Drawing.Size(240, 131);
+            this.PictureBoxWyjdz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBoxWyjdz.TabIndex = 3;
             this.PictureBoxWyjdz.TabStop = false;
             this.PictureBoxWyjdz.Click += new System.EventHandler(this.PictureBoxWyjdz_Click);
@@ -84,7 +76,6 @@
             this.ClientSize = new System.Drawing.Size(292, 273);
             this.Controls.Add(this.PictureBoxWyjdz);
             this.Controls.Add(this.ButtonRozpocznij);
-            this.Controls.Add(this.ButtonWyjdz);
             this.Controls.Add(this.Wyswietlacz);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -101,7 +92,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox Wyswietlacz;
-        private System.Windows.Forms.Button ButtonWyjdz;
         private System.Windows.Forms.Button ButtonRozpocznij;
         private System.Windows.Forms.PictureBox PictureBoxWyjdz;
     }
