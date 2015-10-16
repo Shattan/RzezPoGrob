@@ -31,7 +31,9 @@
             this.Wyswietlacz = new System.Windows.Forms.PictureBox();
             this.ButtonWyjdz = new System.Windows.Forms.Button();
             this.ButtonRozpocznij = new System.Windows.Forms.Button();
+            this.PictureBoxWyjdz = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Wyswietlacz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).BeginInit();
             this.SuspendLayout();
             // 
             // Wyswietlacz
@@ -65,12 +67,22 @@
             this.ButtonRozpocznij.Text = "Rozpocznij";
             this.ButtonRozpocznij.UseVisualStyleBackColor = true;
             // 
+            // PictureBoxWyjdz
+            // 
+            this.PictureBoxWyjdz.Location = new System.Drawing.Point(13, 54);
+            this.PictureBoxWyjdz.Name = "PictureBoxWyjdz";
+            this.PictureBoxWyjdz.Size = new System.Drawing.Size(100, 50);
+            this.PictureBoxWyjdz.TabIndex = 3;
+            this.PictureBoxWyjdz.TabStop = false;
+            this.PictureBoxWyjdz.Click += new System.EventHandler(this.PictureBoxWyjdz_Click);
+            // 
             // GlownyEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.PictureBoxWyjdz);
             this.Controls.Add(this.ButtonRozpocznij);
             this.Controls.Add(this.ButtonWyjdz);
             this.Controls.Add(this.Wyswietlacz);
@@ -81,6 +93,7 @@
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.Wyswietlacz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -90,6 +103,7 @@
         private System.Windows.Forms.PictureBox Wyswietlacz;
         private System.Windows.Forms.Button ButtonWyjdz;
         private System.Windows.Forms.Button ButtonRozpocznij;
+        private System.Windows.Forms.PictureBox PictureBoxWyjdz;
     }
 }
 
