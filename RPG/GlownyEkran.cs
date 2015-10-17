@@ -124,6 +124,7 @@ namespace RPG
 
         #region Zmienne i obiekty globalne
         int obecnaGrafikaWMenu = 0;
+        MouseButtons poprzedniStanMyszy = MouseButtons.None;
         int szerokoscEkranu = Screen.PrimaryScreen.Bounds.Width;
         int wysokoscEkranu = Screen.PrimaryScreen.Bounds.Height;
         List<Postac> postac = new List<Postac>();
@@ -143,7 +144,6 @@ namespace RPG
 
         private void Zegar_Tick(object sender, EventArgs e)
         {
-            
             Rectangle przyciskWyjdzObszar = new Rectangle(10, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
             Rectangle przyciskOpcjeObszar = new Rectangle(10 + szerokoscEkranu / 10, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
             Rectangle przyciskRuszajObszar = new Rectangle(10 + szerokoscEkranu / 10 * 2, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
@@ -169,27 +169,18 @@ namespace RPG
             }
 
 
-            if (obecnaGrafikaWMenu == 1)
+            if (obecnaGrafikaWMenu == 1 && MouseButtons == MouseButtons.None && poprzedniStanMyszy == MouseButtons.Left)
             {
-                if (MouseButtons == MouseButtons.Left)
-                {
-                    Close();
-                }
+                Close();
             }
-            else if (obecnaGrafikaWMenu == 2)
+            else if (obecnaGrafikaWMenu == 2 && MouseButtons == MouseButtons.None && poprzedniStanMyszy == MouseButtons.Left)
             {
-                if (MouseButtons == MouseButtons.Left)
-                {
-                }
             }
-            else if (obecnaGrafikaWMenu == 3)
+            else if (obecnaGrafikaWMenu == 3 && MouseButtons == MouseButtons.None && poprzedniStanMyszy == MouseButtons.Left)
             {
-                if (MouseButtons == MouseButtons.Left)
-                {
-                }
             }
 
-
+            poprzedniStanMyszy = MouseButtons;
 
             LabelInformacyjny.Text = "Pozycja myszki: " + MousePosition.ToString() + "\n";
             LabelInformacyjny.Text += MouseButtons.ToString() + "\n";
