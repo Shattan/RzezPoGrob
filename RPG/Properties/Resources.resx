@@ -121,4 +121,7 @@
   <data name="drewno_20110423_1880286751" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drewno_20110423_1880286751.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="kot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kot.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

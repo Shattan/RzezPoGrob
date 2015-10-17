@@ -85,15 +85,19 @@
     <Folder Include="Grafiki umiejętności\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Grafiki menu\Opcje.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Grafiki menu\Ruszaj.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Grafiki menu\Tło menu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Grafiki menu\Szyld z cieniem.png">
+    <Content Include="Grafiki menu\Wyjście.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Grafiki menu\Szyld.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Resources\kot.jpg" />
     <None Include="Resources\drewno_20110423_1880286751.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

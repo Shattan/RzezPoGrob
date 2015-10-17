@@ -28,20 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Wyswietlacz = new System.Windows.Forms.PictureBox();
             this.ButtonRozpocznij = new System.Windows.Forms.Button();
-            this.PictureBoxWyjdz = new System.Windows.Forms.PictureBox();
+            this.PanelInformacyjny = new System.Windows.Forms.Panel();
+            this.LabelInformacyjny = new System.Windows.Forms.Label();
+            this.Zegar = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Wyswietlacz)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).BeginInit();
+            this.PanelInformacyjny.SuspendLayout();
             this.SuspendLayout();
             // 
             // Wyswietlacz
             // 
             this.Wyswietlacz.BackColor = System.Drawing.Color.Black;
+            this.Wyswietlacz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Wyswietlacz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Wyswietlacz.Location = new System.Drawing.Point(0, 0);
             this.Wyswietlacz.Name = "Wyswietlacz";
-            this.Wyswietlacz.Size = new System.Drawing.Size(292, 273);
+            this.Wyswietlacz.Size = new System.Drawing.Size(620, 326);
             this.Wyswietlacz.TabIndex = 0;
             this.Wyswietlacz.TabStop = false;
             // 
@@ -56,25 +60,33 @@
             this.ButtonRozpocznij.Text = "Rozpocznij";
             this.ButtonRozpocznij.UseVisualStyleBackColor = true;
             // 
-            // PictureBoxWyjdz
+            // PanelInformacyjny
             // 
-            this.PictureBoxWyjdz.BackColor = System.Drawing.Color.Silver;
-            this.PictureBoxWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureBoxWyjdz.Location = new System.Drawing.Point(0, 0);
-            this.PictureBoxWyjdz.Name = "PictureBoxWyjdz";
-            this.PictureBoxWyjdz.Size = new System.Drawing.Size(240, 131);
-            this.PictureBoxWyjdz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxWyjdz.TabIndex = 3;
-            this.PictureBoxWyjdz.TabStop = false;
-            this.PictureBoxWyjdz.Click += new System.EventHandler(this.PictureBoxWyjdz_Click);
+            this.PanelInformacyjny.Controls.Add(this.LabelInformacyjny);
+            this.PanelInformacyjny.Location = new System.Drawing.Point(12, 214);
+            this.PanelInformacyjny.Name = "PanelInformacyjny";
+            this.PanelInformacyjny.Size = new System.Drawing.Size(200, 100);
+            this.PanelInformacyjny.TabIndex = 4;
+            // 
+            // LabelInformacyjny
+            // 
+            this.LabelInformacyjny.Location = new System.Drawing.Point(4, 4);
+            this.LabelInformacyjny.Name = "LabelInformacyjny";
+            this.LabelInformacyjny.Size = new System.Drawing.Size(193, 96);
+            this.LabelInformacyjny.TabIndex = 0;
+            this.LabelInformacyjny.Text = "LabelInformacyjny";
+            // 
+            // Zegar
+            // 
+            this.Zegar.Tick += new System.EventHandler(this.Zegar_Tick);
             // 
             // GlownyEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(292, 273);
-            this.Controls.Add(this.PictureBoxWyjdz);
+            this.ClientSize = new System.Drawing.Size(620, 326);
+            this.Controls.Add(this.PanelInformacyjny);
             this.Controls.Add(this.ButtonRozpocznij);
             this.Controls.Add(this.Wyswietlacz);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -84,7 +96,7 @@
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.Wyswietlacz)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).EndInit();
+            this.PanelInformacyjny.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -93,7 +105,9 @@
 
         private System.Windows.Forms.PictureBox Wyswietlacz;
         private System.Windows.Forms.Button ButtonRozpocznij;
-        private System.Windows.Forms.PictureBox PictureBoxWyjdz;
+        private System.Windows.Forms.Panel PanelInformacyjny;
+        private System.Windows.Forms.Label LabelInformacyjny;
+        private System.Windows.Forms.Timer Zegar;
     }
 }
 
