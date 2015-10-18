@@ -8,7 +8,7 @@ D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
 D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.Properties.Resources.resources
 D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.csproj.GenerateResource.Cache
 D:\Repozytoria\RzezPoGrob\RPG\obj\Debug\RPG.GlownyEkran.resources
-D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Grafiki menu\Tło menu.png
-D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Grafiki menu\Opcje.png
-D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Grafiki menu\Ruszaj.png
-D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Grafiki menu\Wyjście.png
+D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Opcje.png
+D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Ruszaj.png
+D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Tło menu.png
+D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Wyjście.png

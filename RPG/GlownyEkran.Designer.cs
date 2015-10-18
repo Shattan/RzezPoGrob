@@ -52,7 +52,6 @@
             // ButtonRozpocznij
             // 
             this.ButtonRozpocznij.ForeColor = System.Drawing.Color.Yellow;
-            this.ButtonRozpocznij.Image = global::RPG.Properties.Resources.drewno_20110423_1880286751;
             this.ButtonRozpocznij.Location = new System.Drawing.Point(12, 160);
             this.ButtonRozpocznij.Name = "ButtonRozpocznij";
             this.ButtonRozpocznij.Size = new System.Drawing.Size(75, 23);
@@ -62,17 +61,21 @@
             // 
             // PanelInformacyjny
             // 
+            this.PanelInformacyjny.BackColor = System.Drawing.Color.Black;
             this.PanelInformacyjny.Controls.Add(this.LabelInformacyjny);
+            this.PanelInformacyjny.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelInformacyjny.ForeColor = System.Drawing.Color.Yellow;
             this.PanelInformacyjny.Location = new System.Drawing.Point(12, 214);
             this.PanelInformacyjny.Name = "PanelInformacyjny";
-            this.PanelInformacyjny.Size = new System.Drawing.Size(200, 100);
+            this.PanelInformacyjny.Size = new System.Drawing.Size(425, 100);
             this.PanelInformacyjny.TabIndex = 4;
             // 
             // LabelInformacyjny
             // 
-            this.LabelInformacyjny.Location = new System.Drawing.Point(4, 4);
+            this.LabelInformacyjny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelInformacyjny.Location = new System.Drawing.Point(0, 0);
             this.LabelInformacyjny.Name = "LabelInformacyjny";
-            this.LabelInformacyjny.Size = new System.Drawing.Size(193, 96);
+            this.LabelInformacyjny.Size = new System.Drawing.Size(425, 100);
             this.LabelInformacyjny.TabIndex = 0;
             this.LabelInformacyjny.Text = "LabelInformacyjny";
             // 

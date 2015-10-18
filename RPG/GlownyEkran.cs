@@ -18,54 +18,32 @@ namespace RPG
 {
     public partial class GlownyEkran : Form
     {
-        #region Klasy
-        class Postac
-        {
-            public string nazwa;
+        #region Zmienne i obiekty globalne
+        List<Postac> postac = new List<Postac>();
+        List<Umiejetnosc> umiejetnosc = new List<Umiejetnosc>();
+        List<Ekwipunek> ekwipunek = new List<Ekwipunek>();
+        List<Przeszkoda> przeszkoda = new List<Przeszkoda>();
 
-            public Postac(String _nazwa) 
-            {
-                nazwa = _nazwa;
-            }
-        }
-        class Umiejetnosc
-        {
-            public string nazwa;
-
-            public Umiejetnosc(String _nazwa)
-            {
-                nazwa = _nazwa;
-            }
-        }
-        class Ekwipunek
-        {
-            public string nazwa;
-
-            public Ekwipunek(String _nazwa)
-            {
-                nazwa = _nazwa;
-            }
-        }
-        class Przeszkoda
-        {
-            public string nazwa;
-
-            public Przeszkoda(String _nazwa)
-            {
-                nazwa = _nazwa;
-            }
-        }
+        int obecnaGrafikaWMenu = 0;
+        MouseButtons poprzedniStanMyszy = MouseButtons.None;
+        int szerokoscEkranu = Screen.PrimaryScreen.Bounds.Width;
+        int wysokoscEkranu = Screen.PrimaryScreen.Bounds.Height;
         #endregion
 
         #region Funkcje
+        void RozmiescElementy()
+        {
+            PanelInformacyjny.Size = new Size(szerokoscEkranu * 2 / 3,wysokoscEkranu/8);
+            PanelInformacyjny.Location = new Point(0, wysokoscEkranu-PanelInformacyjny.Size.Height);
+        }
         void OdswiezMenu(int numerPrzycisku)
         {
-            Image obrazekTla = new Bitmap("Grafiki menu/Tło menu.png");
+            Image obrazekTla = new Bitmap("Resources/Grafiki menu/Tło menu.png");
             Bitmap tlo = new Bitmap(obrazekTla, szerokoscEkranu, wysokoscEkranu);
 
-            Image przyciskWyjscieObrazek = new Bitmap("Grafiki menu/Wyjście.png");
-            Image przyciskOpcjeObrazek = new Bitmap("Grafiki menu/Opcje.png");
-            Image przyciskRuszajObrazek = new Bitmap("Grafiki menu/Ruszaj.png");
+            Image przyciskWyjscieObrazek = new Bitmap("Resources/Grafiki menu/Wyjście.png");
+            Image przyciskOpcjeObrazek = new Bitmap("Resources/Grafiki menu/Opcje.png");
+            Image przyciskRuszajObrazek = new Bitmap("Resources/Grafiki menu/Ruszaj.png");
             Graphics GrafikaMenu = Graphics.FromImage(tlo);
             
             switch (numerPrzycisku)
@@ -108,34 +86,31 @@ namespace RPG
             postac.Add(new Postac("Lord Krwawy Mati"));                     //index 0
             postac.Add(new Postac("Lord Seba"));                            //index 1
         }
+
         void UtworzUmiejetnosci()
         {
             umiejetnosc.Add(new Umiejetnosc("Wymachiwanie"));               //index 0
         }
+
         void UtworzPrzedmiotyEkwipunku()
         {
             ekwipunek.Add(new Ekwipunek("Cywilne ubranie"));                //index 0
         }
+
         void UtworzPrzeszkody()
         {
             przeszkoda.Add(new Przeszkoda("Drzewo"));                       //index 0
         }
         #endregion
 
-        #region Zmienne i obiekty globalne
-        int obecnaGrafikaWMenu = 0;
-        MouseButtons poprzedniStanMyszy = MouseButtons.None;
-        int szerokoscEkranu = Screen.PrimaryScreen.Bounds.Width;
-        int wysokoscEkranu = Screen.PrimaryScreen.Bounds.Height;
-        List<Postac> postac = new List<Postac>();
-        List<Umiejetnosc> umiejetnosc = new List<Umiejetnosc>();
-        List<Ekwipunek> ekwipunek = new List<Ekwipunek>();
-        List<Przeszkoda> przeszkoda = new List<Przeszkoda>();
-        #endregion
-
         public GlownyEkran()
         {
             InitializeComponent();
+            RozmiescElementy();
+            UtworzUmiejetnosci();
+            UtworzPrzedmiotyEkwipunku();
+            UtworzPostacie();
+            UtworzPrzeszkody();
             OdswiezMenu(0);
             Zegar.Start();
         }
@@ -182,8 +157,8 @@ namespace RPG
 
             poprzedniStanMyszy = MouseButtons;
 
-            LabelInformacyjny.Text = "Pozycja myszki: " + MousePosition.ToString() + "\n";
-            LabelInformacyjny.Text += MouseButtons.ToString() + "\n";
+            //LabelInformacyjny.Text = "Pozycja myszki: " + MousePosition.ToString() + "\n";
+            //LabelInformacyjny.Text += MouseButtons.ToString() + "\n";
         }
 
         #endregion
