@@ -4,8 +4,6 @@ ehthumbs.db
 
 #debug files
 
-Debug/
-Release/
 [Bb]in/
 [Dd]ebug*/
 [Rr]elease*/
