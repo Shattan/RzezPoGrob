@@ -92,10 +92,10 @@
     <Folder Include="Resources\Grafiki umiejętności\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\smierc.wav">
+    <Content Include="Resources\Dźwięki\smierc.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Dźwieki\VC-HOfaH.wav">
+    <Content Include="Resources\Dźwięki\VC-HOfaH.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Opcje.png">

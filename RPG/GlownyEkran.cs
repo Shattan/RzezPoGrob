@@ -53,7 +53,7 @@ namespace RPG
         void OdtworzDzwiekMenu()
         {
             MediaPlayer odtwarzaczMuzykiWMenu = new MediaPlayer();
-            String sciezka = @"Resources/Dźwieki/smierc.wav";
+            String sciezka = "Resources/Dźwięki/smierc.wav";
             odtwarzaczMuzykiWMenu.Open(new Uri(sciezka, UriKind.Relative));
             odtwarzaczMuzykiWMenu.Play();
         }
@@ -114,7 +114,7 @@ namespace RPG
                 case 3:
                     //Thread thr = new Thread(OdtworzDzwiekMenu);
                     //thr.Start();
-                    OdtworzDzwiek(odtwarzaczDzwiekowTymczasowych, "Resources/smierc.wav");
+                    OdtworzDzwiek(odtwarzaczDzwiekowTymczasowych, "Resources/Dźwięki/smierc.wav");
                     odtwarzaczMuzykiWTle.Volume = 0.2;
                     GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
                     GrafikaMenu.DrawImage(przyciskWyjscieObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
@@ -163,7 +163,7 @@ namespace RPG
             //MP.Open(new Uri("Resources/smierc.wav", UriKind.Relative));
             //MP.Play();
 
-            OdtworzDzwiekWPetli(odtwarzaczMuzykiWTle, "Resources/Dźwieki/VC-HOfaH.wav");
+            OdtworzDzwiekWPetli(odtwarzaczMuzykiWTle, "Resources/Dźwięki/VC-HOfaH.wav");
             odtwarzaczMuzykiWTle.Volume = 1.0;
             Zegar.Start();
         }
