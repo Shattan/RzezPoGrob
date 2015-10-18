@@ -25,8 +25,12 @@ namespace RPG
     {
         #region Zmienne i obiekty globalne
         //zmienna umozliwiajaca odtwarzanie muzyki
-        MediaPlayer odtwarzaczMuzykiWTle = new MediaPlayer();
-        MediaPlayer odtwarzaczDzwiekowTymczasowych = new MediaPlayer();
+        MediaPlayer odtwarzacz1 = new MediaPlayer();
+        MediaPlayer odtwarzacz2 = new MediaPlayer();
+        MediaPlayer odtwarzacz3 = new MediaPlayer();
+        MediaPlayer odtwarzacz4 = new MediaPlayer();
+        MediaPlayer odtwarzacz5 = new MediaPlayer();
+        MediaPlayer odtwarzacz6 = new MediaPlayer();
 
         //zmienne z wartością
         static int szerokoscEkranu = Screen.PrimaryScreen.Bounds.Width;
@@ -52,10 +56,10 @@ namespace RPG
         #region Funkcje
         void OdtworzDzwiekMenu()
         {
-            MediaPlayer odtwarzaczMuzykiWMenu = new MediaPlayer();
+            MediaPlayer odtwarzacz = new MediaPlayer();
             String sciezka = "Resources/Dźwięki/smierc.wav";
-            odtwarzaczMuzykiWMenu.Open(new Uri(sciezka, UriKind.Relative));
-            odtwarzaczMuzykiWMenu.Play();
+            odtwarzacz.Open(new Uri(sciezka, UriKind.Relative));
+            odtwarzacz.Play();
         }
         void OdtworzDzwiek(MediaPlayer odtwarzacz, String sciezka)
         {
@@ -95,9 +99,10 @@ namespace RPG
                     GrafikaMenu.DrawImage(przyciskWyjscieObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
                     GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X, przyciskOpcjeObszar.Y, przyciskOpcjeObszar.Width, przyciskOpcjeObszar.Height);
                     GrafikaMenu.DrawImage(przyciskRuszajObrazek, przyciskRuszajObszar.X, przyciskRuszajObszar.Y, przyciskRuszajObszar.Width, przyciskRuszajObszar.Height);
-                    LabelInformacje.Text = "Witaj w grze Rzeź Ponad Grabież!";
+                    LabelInformacje.Text = "Witaj w grze Rzeź Po Grób!";
                     break;
                 case 1:
+                    OdtworzDzwiek(odtwarzacz2, "Resources/Dźwięki/szyld.wav");
                     GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
                     GrafikaMenu.DrawImage(przyciskWyjscieObrazek, przyciskWyjdzObszar.X - powiekszenieSzerokosc / 2, przyciskWyjdzObszar.Y - powiekszenieWysokosc / 2, przyciskWyjdzObszar.Width + powiekszenieSzerokosc, przyciskWyjdzObszar.Height + powiekszenieWysokosc);
                     GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X, przyciskOpcjeObszar.Y, przyciskOpcjeObszar.Width, przyciskOpcjeObszar.Height);
@@ -105,6 +110,7 @@ namespace RPG
                     LabelInformacje.Text = "Na pewno chcesz już wyjść?";
                     break;
                 case 2:
+                    OdtworzDzwiek(odtwarzacz3, "Resources/Dźwięki/szyld.wav");
                     GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
                     GrafikaMenu.DrawImage(przyciskWyjscieObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
                     GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X - powiekszenieSzerokosc / 2, przyciskOpcjeObszar.Y - powiekszenieWysokosc / 2, przyciskOpcjeObszar.Width + powiekszenieSzerokosc, przyciskOpcjeObszar.Height + powiekszenieWysokosc);
@@ -114,8 +120,8 @@ namespace RPG
                 case 3:
                     //Thread thr = new Thread(OdtworzDzwiekMenu);
                     //thr.Start();
-                    OdtworzDzwiek(odtwarzaczDzwiekowTymczasowych, "Resources/Dźwięki/smierc.wav");
-                    odtwarzaczMuzykiWTle.Volume = 0.2;
+                    OdtworzDzwiek(odtwarzacz4, "Resources/Dźwięki/szyld.wav");
+                    //odtwarzaczMuzykiWTle.Volume = 0.2;
                     GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
                     GrafikaMenu.DrawImage(przyciskWyjscieObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
                     GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X, przyciskOpcjeObszar.Y, przyciskOpcjeObszar.Width, przyciskOpcjeObszar.Height);
@@ -163,8 +169,8 @@ namespace RPG
             //MP.Open(new Uri("Resources/smierc.wav", UriKind.Relative));
             //MP.Play();
 
-            OdtworzDzwiekWPetli(odtwarzaczMuzykiWTle, "Resources/Dźwięki/VC-HOfaH.wav");
-            odtwarzaczMuzykiWTle.Volume = 1.0;
+            OdtworzDzwiekWPetli(odtwarzacz1, "Resources/Dźwięki/VC-HOfaH.wav");
+            //odtwarzaczMuzykiWTle.Volume = 1.0;
             Zegar.Start();
         }
 

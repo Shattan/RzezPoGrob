@@ -121,6 +121,9 @@
     <Content Include="Resources\Dźwięki\smierc.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Dźwięki\szyld.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Dźwięki\VC-HOfaH.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
