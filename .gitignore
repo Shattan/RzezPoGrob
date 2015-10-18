@@ -3,18 +3,15 @@ Thumbs.db
 ehthumbs.db
 
 #debug files
-<<<<<<< HEAD
-RPG/bin/Debug/*
-=======
-RPG/bin/Debug/
-[Bb]in
+
+Debug/
+Release/
+[Bb]in/
 [Dd]ebug*/
 [Rr]elease*/
 _ReSharper*/
->>>>>>> origin/master
 
 #release files
-RPG/bin/Release/*
 
 # Folder config file
 Desktop.ini
@@ -59,6 +56,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-RPG/bin/Debug/RPG.vshost.exe
+RPG.vshost.exe
 RPG.v12.suo
-RPG/obj/Debug/RPG.csproj.FileListAbsolute.txt
+RPG.csproj.FileListAbsolute.txt
