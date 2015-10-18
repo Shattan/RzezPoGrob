@@ -2,14 +2,11 @@
 Thumbs.db
 ehthumbs.db
 
-#debug files
-
+#debug/release files
 [Bb]in/
 [Dd]ebug*/
 [Rr]elease*/
 _ReSharper*/
-
-#release files
 
 # Folder config file
 Desktop.ini
