@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Wyswietlacz = new System.Windows.Forms.PictureBox();
-            this.ButtonRozpocznij = new System.Windows.Forms.Button();
             this.PanelInformacyjny = new System.Windows.Forms.Panel();
             this.LabelInformacyjny = new System.Windows.Forms.Label();
             this.Zegar = new System.Windows.Forms.Timer(this.components);
@@ -49,16 +48,6 @@
             this.Wyswietlacz.TabIndex = 0;
             this.Wyswietlacz.TabStop = false;
             // 
-            // ButtonRozpocznij
-            // 
-            this.ButtonRozpocznij.ForeColor = System.Drawing.Color.Yellow;
-            this.ButtonRozpocznij.Location = new System.Drawing.Point(12, 160);
-            this.ButtonRozpocznij.Name = "ButtonRozpocznij";
-            this.ButtonRozpocznij.Size = new System.Drawing.Size(75, 23);
-            this.ButtonRozpocznij.TabIndex = 2;
-            this.ButtonRozpocznij.Text = "Rozpocznij";
-            this.ButtonRozpocznij.UseVisualStyleBackColor = true;
-            // 
             // PanelInformacyjny
             // 
             this.PanelInformacyjny.BackColor = System.Drawing.Color.Black;
@@ -73,11 +62,13 @@
             // LabelInformacyjny
             // 
             this.LabelInformacyjny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelInformacyjny.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelInformacyjny.Location = new System.Drawing.Point(0, 0);
             this.LabelInformacyjny.Name = "LabelInformacyjny";
             this.LabelInformacyjny.Size = new System.Drawing.Size(425, 100);
             this.LabelInformacyjny.TabIndex = 0;
             this.LabelInformacyjny.Text = "LabelInformacyjny";
+            this.LabelInformacyjny.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Zegar
             // 
@@ -90,7 +81,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(620, 326);
             this.Controls.Add(this.PanelInformacyjny);
-            this.Controls.Add(this.ButtonRozpocznij);
             this.Controls.Add(this.Wyswietlacz);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -107,7 +97,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox Wyswietlacz;
-        private System.Windows.Forms.Button ButtonRozpocznij;
         private System.Windows.Forms.Panel PanelInformacyjny;
         private System.Windows.Forms.Label LabelInformacyjny;
         private System.Windows.Forms.Timer Zegar;
