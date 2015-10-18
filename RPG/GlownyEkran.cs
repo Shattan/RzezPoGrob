@@ -8,6 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+//dodane przeze mnie
+using System.Media;
+using System.Threading;
+using System.Windows.Media;
 #endregion
 
 #region Pozostałe biblioteki
@@ -19,6 +24,10 @@ namespace RPG
     public partial class GlownyEkran : Form
     {
         #region Zmienne i obiekty globalne
+        //zmienna umozliwiajaca odtwarzanie muzyki
+        MediaPlayer odtwarzaczMuzykiWTle = new MediaPlayer();
+        MediaPlayer odtwarzaczDzwiekowTymczasowych = new MediaPlayer();
+
         //zmienne z wartością
         static int szerokoscEkranu = Screen.PrimaryScreen.Bounds.Width;
         static int wysokoscEkranu = Screen.PrimaryScreen.Bounds.Height;
@@ -41,6 +50,24 @@ namespace RPG
         #endregion
 
         #region Funkcje
+        void OdtworzDzwiekMenu()
+        {
+            MediaPlayer odtwarzaczMuzykiWMenu = new MediaPlayer();
+            String sciezka = @"Resources/Dźwieki/smierc.wav";
+            odtwarzaczMuzykiWMenu.Open(new Uri(sciezka, UriKind.Relative));
+            odtwarzaczMuzykiWMenu.Play();
+        }
+        void OdtworzDzwiek(MediaPlayer odtwarzacz, String sciezka)
+        {
+            odtwarzacz.Open(new Uri(sciezka, UriKind.Relative));
+            odtwarzacz.Play();
+        }
+        void OdtworzDzwiekWPetli(MediaPlayer odtwarzacz, String sciezka)
+        {
+            odtwarzacz.Open(new Uri(sciezka, UriKind.Relative));
+            odtwarzacz.Play();
+        }
+        
         void RozmiescElementy()
         {
             PanelInformacje.Size = new Size(szerokoscEkranu, wysokoscEkranu / 8);
@@ -85,6 +112,10 @@ namespace RPG
                     LabelInformacje.Text = "O tak, dobre przygotowanie to dobry początek wyprawy!";
                     break;
                 case 3:
+                    //Thread thr = new Thread(OdtworzDzwiekMenu);
+                    //thr.Start();
+                    OdtworzDzwiek(odtwarzaczDzwiekowTymczasowych, "Resources/smierc.wav");
+                    odtwarzaczMuzykiWTle.Volume = 0.2;
                     GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
                     GrafikaMenu.DrawImage(przyciskWyjscieObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
                     GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X, przyciskOpcjeObszar.Y, przyciskOpcjeObszar.Width, przyciskOpcjeObszar.Height);
@@ -127,6 +158,13 @@ namespace RPG
             UtworzPostacie();
             UtworzPrzeszkody();
             OdswiezMenu(0);
+
+            //MediaPlayer MP = new MediaPlayer();
+            //MP.Open(new Uri("Resources/smierc.wav", UriKind.Relative));
+            //MP.Play();
+
+            OdtworzDzwiekWPetli(odtwarzaczMuzykiWTle, "Resources/Dźwieki/VC-HOfaH.wav");
+            odtwarzaczMuzykiWTle.Volume = 1.0;
             Zegar.Start();
         }
 
