@@ -4,6 +4,10 @@ ehthumbs.db
 
 #debug files
 RPG/bin/Debug/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+_ReSharper*/
 
 #release files
 RPG/bin/Release/
