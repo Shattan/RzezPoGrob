@@ -75,6 +75,7 @@
             // 
             // Zegar
             // 
+            this.Zegar.Interval = 1;
             this.Zegar.Tick += new System.EventHandler(this.Zegar_Tick);
             // 
             // PanelOpcje
