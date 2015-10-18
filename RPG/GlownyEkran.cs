@@ -33,7 +33,7 @@ namespace RPG
         #region Funkcje
         void RozmiescElementy()
         {
-            PanelInformacyjny.Size = new Size(szerokoscEkranu * 2 / 3,wysokoscEkranu/8);
+            PanelInformacyjny.Size = new Size(szerokoscEkranu,wysokoscEkranu/8);
             PanelInformacyjny.Location = new Point(0, wysokoscEkranu-PanelInformacyjny.Size.Height);
         }
         void OdswiezMenu(int numerPrzycisku)
