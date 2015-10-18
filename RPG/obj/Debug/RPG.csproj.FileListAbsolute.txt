@@ -12,3 +12,4 @@ D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Opcje.png
 D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Ruszaj.png
 D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Tło menu.png
 D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Wyjście.png
+D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Tło opcji.png

@@ -19,25 +19,40 @@ namespace RPG
     public partial class GlownyEkran : Form
     {
         #region Zmienne i obiekty globalne
+        //zmienne z wartością
+        static int szerokoscEkranu = Screen.PrimaryScreen.Bounds.Width;
+        static int wysokoscEkranu = Screen.PrimaryScreen.Bounds.Height;
+
+        //listy
         List<Postac> postac = new List<Postac>();
         List<Umiejetnosc> umiejetnosc = new List<Umiejetnosc>();
         List<Ekwipunek> ekwipunek = new List<Ekwipunek>();
         List<Przeszkoda> przeszkoda = new List<Przeszkoda>();
 
+        //zmienne sterujące
         int obecnaGrafikaWMenu = 0;
         MouseButtons poprzedniStanMyszy = MouseButtons.None;
-        int szerokoscEkranu = Screen.PrimaryScreen.Bounds.Width;
-        int wysokoscEkranu = Screen.PrimaryScreen.Bounds.Height;
+        bool pokazOpcje = false;
+
+        //przyciski
+        Rectangle przyciskWyjdzObszar = new Rectangle(10, -30, szerokoscEkranu * 8 / 100, wysokoscEkranu * 15 / 100);
+        Rectangle przyciskOpcjeObszar = new Rectangle(10 + szerokoscEkranu * 8 / 100, -30, szerokoscEkranu * 8 / 100, wysokoscEkranu * 15 / 100);
+        Rectangle przyciskRuszajObszar = new Rectangle(10 + szerokoscEkranu * 8 / 100 * 2, -30, szerokoscEkranu * 8 / 100, wysokoscEkranu * 15 / 100);
         #endregion
 
         #region Funkcje
         void RozmiescElementy()
         {
-            PanelInformacyjny.Size = new Size(szerokoscEkranu,wysokoscEkranu/8);
-            PanelInformacyjny.Location = new Point(0, wysokoscEkranu-PanelInformacyjny.Size.Height);
+            PanelInformacje.Size = new Size(szerokoscEkranu, wysokoscEkranu / 8);
+            PanelInformacje.Location = new Point(0, wysokoscEkranu - PanelInformacje.Size.Height);
+            PanelOpcje.Location = new Point(0, przyciskWyjdzObszar.Height + 50);
+            PanelOpcje.BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
         }
         void OdswiezMenu(int numerPrzycisku)
         {
+            int powiekszenieSzerokosc = przyciskWyjdzObszar.Width * 10 / 100;
+            int powiekszenieWysokosc = przyciskWyjdzObszar.Height * 10 / 100;
+
             Image obrazekTla = new Bitmap("Resources/Grafiki menu/Tło menu.png");
             Bitmap tlo = new Bitmap(obrazekTla, szerokoscEkranu, wysokoscEkranu);
 
@@ -50,31 +65,31 @@ namespace RPG
             {
                 case 0:
                     GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
-                    GrafikaMenu.DrawImage(przyciskWyjscieObrazek, 10, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-                    GrafikaMenu.DrawImage(przyciskOpcjeObrazek, 10 + szerokoscEkranu / 10, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-                    GrafikaMenu.DrawImage(przyciskRuszajObrazek, 10 + szerokoscEkranu / 10 * 2, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-                    LabelInformacyjny.Text = "Witaj w grze Rzeź Ponad Grabież!";
+                    GrafikaMenu.DrawImage(przyciskWyjscieObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
+                    GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X, przyciskOpcjeObszar.Y, przyciskOpcjeObszar.Width, przyciskOpcjeObszar.Height);
+                    GrafikaMenu.DrawImage(przyciskRuszajObrazek, przyciskRuszajObszar.X, przyciskRuszajObszar.Y, przyciskRuszajObszar.Width, przyciskRuszajObszar.Height);
+                    LabelInformacje.Text = "Witaj w grze Rzeź Ponad Grabież!";
                     break;
                 case 1:
                     GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
-                    GrafikaMenu.DrawImage(przyciskWyjscieObrazek, 10, -20, szerokoscEkranu / 10, wysokoscEkranu / 6);
-                    GrafikaMenu.DrawImage(przyciskOpcjeObrazek, 10 + szerokoscEkranu / 10, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-                    GrafikaMenu.DrawImage(przyciskRuszajObrazek, 10 + szerokoscEkranu / 10 * 2, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-                    LabelInformacyjny.Text = "Na pewno chcesz już wyjść?";
+                    GrafikaMenu.DrawImage(przyciskWyjscieObrazek, przyciskWyjdzObszar.X - powiekszenieSzerokosc / 2, przyciskWyjdzObszar.Y - powiekszenieWysokosc / 2, przyciskWyjdzObszar.Width + powiekszenieSzerokosc, przyciskWyjdzObszar.Height + powiekszenieWysokosc);
+                    GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X, przyciskOpcjeObszar.Y, przyciskOpcjeObszar.Width, przyciskOpcjeObszar.Height);
+                    GrafikaMenu.DrawImage(przyciskRuszajObrazek, przyciskRuszajObszar.X, przyciskRuszajObszar.Y, przyciskRuszajObszar.Width, przyciskRuszajObszar.Height);
+                    LabelInformacje.Text = "Na pewno chcesz już wyjść?";
                     break;
                 case 2:
                     GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
-                    GrafikaMenu.DrawImage(przyciskWyjscieObrazek, 10, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-                    GrafikaMenu.DrawImage(przyciskOpcjeObrazek, 10 + szerokoscEkranu / 10, -20, szerokoscEkranu / 10, wysokoscEkranu / 6);
-                    GrafikaMenu.DrawImage(przyciskRuszajObrazek, 10 + szerokoscEkranu / 10 * 2, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-                    LabelInformacyjny.Text = "O tak, dobre przygotowanie to dobry początek wyprawy!";
+                    GrafikaMenu.DrawImage(przyciskWyjscieObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
+                    GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X - powiekszenieSzerokosc / 2, przyciskOpcjeObszar.Y - powiekszenieWysokosc / 2, przyciskOpcjeObszar.Width + powiekszenieSzerokosc, przyciskOpcjeObszar.Height + powiekszenieWysokosc);
+                    GrafikaMenu.DrawImage(przyciskRuszajObrazek, przyciskRuszajObszar.X, przyciskRuszajObszar.Y, przyciskRuszajObszar.Width, przyciskRuszajObszar.Height);
+                    LabelInformacje.Text = "O tak, dobre przygotowanie to dobry początek wyprawy!";
                     break;
                 case 3:
                     GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
-                    GrafikaMenu.DrawImage(przyciskWyjscieObrazek, 10, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-                    GrafikaMenu.DrawImage(przyciskOpcjeObrazek, 10 + szerokoscEkranu / 10, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-                    GrafikaMenu.DrawImage(przyciskRuszajObrazek, 10 + szerokoscEkranu / 10 * 2, -20, szerokoscEkranu / 10, wysokoscEkranu / 6);
-                    LabelInformacyjny.Text = "Ruszajmy do boju!";
+                    GrafikaMenu.DrawImage(przyciskWyjscieObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
+                    GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X, przyciskOpcjeObszar.Y, przyciskOpcjeObszar.Width, przyciskOpcjeObszar.Height);
+                    GrafikaMenu.DrawImage(przyciskRuszajObrazek, przyciskRuszajObszar.X - powiekszenieSzerokosc / 2, przyciskRuszajObszar.Y - powiekszenieWysokosc / 2, przyciskRuszajObszar.Width + powiekszenieSzerokosc, przyciskRuszajObszar.Height + powiekszenieWysokosc);
+                    LabelInformacje.Text = "Ruszajmy do boju!";
                     break;
             }
             Wyswietlacz.Image = tlo;
@@ -119,9 +134,11 @@ namespace RPG
 
         private void Zegar_Tick(object sender, EventArgs e)
         {
-            Rectangle przyciskWyjdzObszar = new Rectangle(10, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-            Rectangle przyciskOpcjeObszar = new Rectangle(10 + szerokoscEkranu / 10, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
-            Rectangle przyciskRuszajObszar = new Rectangle(10 + szerokoscEkranu / 10 * 2, -20, szerokoscEkranu / 10, wysokoscEkranu / 7);
+            if (pokazOpcje == true)
+                PanelOpcje.Visible = true;
+            else
+                PanelOpcje.Visible = false;
+            
             if (przyciskWyjdzObszar.Contains(MousePosition) && obecnaGrafikaWMenu != 1)
             {
                 OdswiezMenu(1);
@@ -150,9 +167,18 @@ namespace RPG
             }
             else if (obecnaGrafikaWMenu == 2 && MouseButtons == MouseButtons.None && poprzedniStanMyszy == MouseButtons.Left)
             {
+                if (pokazOpcje == false)
+                {
+                    pokazOpcje = true;
+                }
+                else
+                {
+                    pokazOpcje = false;
+                }
             }
             else if (obecnaGrafikaWMenu == 3 && MouseButtons == MouseButtons.None && poprzedniStanMyszy == MouseButtons.Left)
             {
+
             }
 
             poprzedniStanMyszy = MouseButtons;
