@@ -12,3 +12,16 @@ D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Opcje.png
 D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Ruszaj.png
 D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Tło menu.png
 D:\Repozytoria\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Wyjście.png
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\bin\Debug\RPG.exe.config
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.exe
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.pdb
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Opcje.png
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Ruszaj.png
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Tło menu.png
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\bin\Debug\Resources\Grafiki menu\Wyjście.png
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\bin\Debug\RPG.exe
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\bin\Debug\RPG.pdb
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.csprojResolveAssemblyReference.cache
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.GlownyEkran.resources
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.Properties.Resources.resources
+C:\Users\Bartosz\OneDrive\GitHub\RzezPoGrob\RPG\obj\Debug\RPG.csproj.GenerateResource.Cache

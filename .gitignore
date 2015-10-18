@@ -54,3 +54,8 @@ Temporary Items
 RPG/bin/Debug/RPG.vshost.exe
 RPG.v12.suo
 RPG/obj/Debug/RPG.csproj.FileListAbsolute.txt
+*.exe
+RPG/bin/Debug/RPG.exe
+RPG/obj/Debug/RPG.csproj.GenerateResource.Cache
+RPG/obj/Debug/RPG.pdb
+RPG/obj/Debug/RPG.csproj.FileListAbsolute.txt

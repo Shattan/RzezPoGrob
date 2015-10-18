@@ -61,6 +61,7 @@
             // 
             // LabelInformacyjny
             // 
+            this.LabelInformacyjny.BackColor = System.Drawing.Color.Transparent;
             this.LabelInformacyjny.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelInformacyjny.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelInformacyjny.Location = new System.Drawing.Point(0, 0);
