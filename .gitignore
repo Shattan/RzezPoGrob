@@ -3,7 +3,15 @@ Thumbs.db
 ehthumbs.db
 
 #debug files
+<<<<<<< HEAD
 RPG/bin/Debug/*
+=======
+RPG/bin/Debug/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+_ReSharper*/
+>>>>>>> origin/master
 
 #release files
 RPG/bin/Release/*
