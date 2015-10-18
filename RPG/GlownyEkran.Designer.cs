@@ -34,10 +34,8 @@
             this.LabelInformacje = new System.Windows.Forms.Label();
             this.Zegar = new System.Windows.Forms.Timer(this.components);
             this.PanelOpcje = new System.Windows.Forms.Panel();
-            this.LabelOpcje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Wyswietlacz)).BeginInit();
             this.PanelInformacje.SuspendLayout();
-            this.PanelOpcje.SuspendLayout();
             this.SuspendLayout();
             // 
             // Wyswietlacz
@@ -82,25 +80,13 @@
             // 
             this.PanelOpcje.BackColor = System.Drawing.Color.Black;
             this.PanelOpcje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelOpcje.Controls.Add(this.LabelOpcje);
             this.PanelOpcje.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.PanelOpcje.ForeColor = System.Drawing.Color.Yellow;
-            this.PanelOpcje.Location = new System.Drawing.Point(12, 12);
+            this.PanelOpcje.Location = new System.Drawing.Point(87, 150);
             this.PanelOpcje.Name = "PanelOpcje";
-            this.PanelOpcje.Size = new System.Drawing.Size(440, 247);
+            this.PanelOpcje.Size = new System.Drawing.Size(802, 394);
             this.PanelOpcje.TabIndex = 5;
             this.PanelOpcje.Visible = false;
-            // 
-            // LabelOpcje
-            // 
-            this.LabelOpcje.AutoSize = true;
-            this.LabelOpcje.BackColor = System.Drawing.Color.Transparent;
-            this.LabelOpcje.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelOpcje.Location = new System.Drawing.Point(140, 27);
-            this.LabelOpcje.Name = "LabelOpcje";
-            this.LabelOpcje.Size = new System.Drawing.Size(144, 31);
-            this.LabelOpcje.TabIndex = 0;
-            this.LabelOpcje.Text = "Ustawienia";
             // 
             // GlownyEkran
             // 
@@ -119,8 +105,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.Wyswietlacz)).EndInit();
             this.PanelInformacje.ResumeLayout(false);
-            this.PanelOpcje.ResumeLayout(false);
-            this.PanelOpcje.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -132,7 +116,6 @@
         private System.Windows.Forms.Label LabelInformacje;
         private System.Windows.Forms.Timer Zegar;
         private System.Windows.Forms.Panel PanelOpcje;
-        private System.Windows.Forms.Label LabelOpcje;
     }
 }
 
