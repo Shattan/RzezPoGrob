@@ -90,7 +90,8 @@ namespace RPG
                 RadioButtonGlosnoscMuzyki10.Enabled = false;
                 obecnyPoziomGlosnosciMuzyki = 0.0;
             }
-            else
+
+            if (CheckBoxWylaczMuzyke.Checked == false)
             {
                 RadioButtonGlosnoscMuzyki1.Enabled = true;
                 RadioButtonGlosnoscMuzyki2.Enabled = true;
