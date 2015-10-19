@@ -53,8 +53,8 @@ namespace RPG
         bool pokazOpcje = false;
         bool pelnyEkran = true;
         bool zawszeNaWierzchu = true;
-        int obecnaSzerokoscEkranu = 0;
-        int obecnaWysokoscEkranu = 0;
+        int obecnaSzerokoscEkranu = Screen.PrimaryScreen.Bounds.Width;
+        int obecnaWysokoscEkranu = Screen.PrimaryScreen.Bounds.Height;
 
         //przyciski
         Rectangle przyciskWyjdzObszar;
@@ -289,20 +289,36 @@ namespace RPG
                 OdswiezMenu(0);
                 RozmiescElementy();
                 pelnyEkran = true;
+
+                //obecnaSzerokoscEkranu = Width;
+                //obecnaWysokoscEkranu = Height;
             }
             else
             {
-                if (CheckBoxPelnyEkran.Checked == false && (obecnaSzerokoscEkranu != szerokoscEkranu || obecnaWysokoscEkranu != wysokoscEkranu))
+                if (CheckBoxPelnyEkran.Checked == false)
                 {
                     if (WindowState != FormWindowState.Normal)
                         WindowState = FormWindowState.Normal;
                     if (FormBorderStyle != FormBorderStyle.Sizable)
                         FormBorderStyle = FormBorderStyle.Sizable;
+                    if (obecnaSzerokoscEkranu != szerokoscEkranu || obecnaWysokoscEkranu != wysokoscEkranu)
+                    {
+                        //Width = Screen.PrimaryScreen.Bounds.Width * 5 / 6;
+                        //Height = Screen.PrimaryScreen.Bounds.Height * 5 / 6;
+                        //Location = new Point((Screen.PrimaryScreen.Bounds.Width - Width * 5 / 6) / 2, (Screen.PrimaryScreen.Bounds.Height - Height * 5 / 6) / 2);
 
-                    UstawPozycjeIWielkoscPrzyciskow(pozycjaEkranuX, pozycjaEkranuY, szerokoscEkranu, wysokoscEkranu);
-                    OdswiezMenu(0);
-                    RozmiescElementy();
-                    pelnyEkran = false;
+                        //pozycjaEkranuX = Location.X;
+                        //pozycjaEkranuY = Location.Y;
+                        //szerokoscEkranu = Width;
+                        //wysokoscEkranu = Height;
+                        //obecnaSzerokoscEkranu = Width;
+                        //obecnaWysokoscEkranu = Height;
+
+                        UstawPozycjeIWielkoscPrzyciskow(pozycjaEkranuX, pozycjaEkranuY, szerokoscEkranu, wysokoscEkranu);
+                        OdswiezMenu(0);
+                        RozmiescElementy();
+                        pelnyEkran = false;
+                    }
                 }
             }
         }
@@ -426,13 +442,14 @@ namespace RPG
         private void Zegar_Tick(object sender, EventArgs e)
         {
             UstawGlosnosc();
-            if (obecnaSzerokoscEkranu != Width || obecnaWysokoscEkranu != Height)
+            if (obecnaSzerokoscEkranu != Width - Location.X || obecnaWysokoscEkranu != Height - Location.Y || !pelnyEkran.Equals(CheckBoxPelnyEkran.Checked))
             {
+                OdswiezMenu(0);
                 UstawEkran();
-                obecnaSzerokoscEkranu = Width;
-                obecnaWysokoscEkranu = Height;
+                obecnaSzerokoscEkranu = Width - Location.X;
+                obecnaWysokoscEkranu = Height - Location.Y;
             }
-            
+
             if (pokazOpcje == true && PanelOpcje.Visible == false)
             {
                 PanelOpcje.Visible = true;
@@ -490,22 +507,18 @@ namespace RPG
             if (pozycjaEkranuX != Location.X)
             {
                 pozycjaEkranuX = Location.X;
-                UstawEkran();
             } 
             if (pozycjaEkranuY != Location.Y)
             {
                 pozycjaEkranuY = Location.Y;
-                UstawEkran();
             } 
             if (szerokoscEkranu != Width)
             {
                 szerokoscEkranu = Width;
-                UstawEkran();
             } 
             if (wysokoscEkranu != Height)
             {
                 wysokoscEkranu = Height;
-                UstawEkran();
             }
             /*
             LabelInformacje.Text = pozycjaEkranuX + "  \t";
