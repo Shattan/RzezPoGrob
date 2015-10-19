@@ -57,9 +57,9 @@ namespace RPG
         int obecnaWysokoscEkranu = 0;
 
         //przyciski
-        Rectangle przyciskWyjdzObszar = new Rectangle(pozycjaEkranuX + 10, pozycjaEkranuY - 30, szerokoscEkranu * 8 / 100, wysokoscEkranu * 15 / 100);
-        Rectangle przyciskOpcjeObszar = new Rectangle(pozycjaEkranuX + 10 + szerokoscEkranu * 8 / 100, pozycjaEkranuY - 30, szerokoscEkranu * 8 / 100, wysokoscEkranu * 15 / 100);
-        Rectangle przyciskRuszajObszar = new Rectangle(pozycjaEkranuX + 10 + szerokoscEkranu * 8 / 100 * 2, pozycjaEkranuY - 30, szerokoscEkranu * 8 / 100, wysokoscEkranu * 15 / 100);
+        Rectangle przyciskWyjdzObszar;
+        Rectangle przyciskOpcjeObszar;
+        Rectangle przyciskRuszajObszar;
         #endregion
 
         #region Funkcje
@@ -78,31 +78,37 @@ namespace RPG
             if (CheckBoxWylaczMuzyke.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.0)
             {
                 odtwarzacz1.Volume = 0.0;
-                RadioButtonGlosnoscMuzyki1.Enabled = false;
-                RadioButtonGlosnoscMuzyki2.Enabled = false;
-                RadioButtonGlosnoscMuzyki3.Enabled = false;
-                RadioButtonGlosnoscMuzyki4.Enabled = false;
-                RadioButtonGlosnoscMuzyki5.Enabled = false;
-                RadioButtonGlosnoscMuzyki6.Enabled = false;
-                RadioButtonGlosnoscMuzyki7.Enabled = false;
-                RadioButtonGlosnoscMuzyki8.Enabled = false;
-                RadioButtonGlosnoscMuzyki9.Enabled = false;
-                RadioButtonGlosnoscMuzyki10.Enabled = false;
+                if (RadioButtonGlosnoscMuzyki1.Enabled == true)
+                {
+                    RadioButtonGlosnoscMuzyki1.Enabled = false;
+                    RadioButtonGlosnoscMuzyki2.Enabled = false;
+                    RadioButtonGlosnoscMuzyki3.Enabled = false;
+                    RadioButtonGlosnoscMuzyki4.Enabled = false;
+                    RadioButtonGlosnoscMuzyki5.Enabled = false;
+                    RadioButtonGlosnoscMuzyki6.Enabled = false;
+                    RadioButtonGlosnoscMuzyki7.Enabled = false;
+                    RadioButtonGlosnoscMuzyki8.Enabled = false;
+                    RadioButtonGlosnoscMuzyki9.Enabled = false;
+                    RadioButtonGlosnoscMuzyki10.Enabled = false;
+                }
                 obecnyPoziomGlosnosciMuzyki = 0.0;
             }
 
             if (CheckBoxWylaczMuzyke.Checked == false)
             {
-                RadioButtonGlosnoscMuzyki1.Enabled = true;
-                RadioButtonGlosnoscMuzyki2.Enabled = true;
-                RadioButtonGlosnoscMuzyki3.Enabled = true;
-                RadioButtonGlosnoscMuzyki4.Enabled = true;
-                RadioButtonGlosnoscMuzyki5.Enabled = true;
-                RadioButtonGlosnoscMuzyki6.Enabled = true;
-                RadioButtonGlosnoscMuzyki7.Enabled = true;
-                RadioButtonGlosnoscMuzyki8.Enabled = true;
-                RadioButtonGlosnoscMuzyki9.Enabled = true;
-                RadioButtonGlosnoscMuzyki10.Enabled = true;
+                if (RadioButtonGlosnoscMuzyki1.Enabled == false)
+                {
+                    RadioButtonGlosnoscMuzyki1.Enabled = true;
+                    RadioButtonGlosnoscMuzyki2.Enabled = true;
+                    RadioButtonGlosnoscMuzyki3.Enabled = true;
+                    RadioButtonGlosnoscMuzyki4.Enabled = true;
+                    RadioButtonGlosnoscMuzyki5.Enabled = true;
+                    RadioButtonGlosnoscMuzyki6.Enabled = true;
+                    RadioButtonGlosnoscMuzyki7.Enabled = true;
+                    RadioButtonGlosnoscMuzyki8.Enabled = true;
+                    RadioButtonGlosnoscMuzyki9.Enabled = true;
+                    RadioButtonGlosnoscMuzyki10.Enabled = true;
+                }
 
                 if (RadioButtonGlosnoscMuzyki1.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.1)
                 {
@@ -164,29 +170,35 @@ namespace RPG
                 ZmienGlosnoscOdtwarzaczyEfektow(0.0);
                 obecnyPoziomGlosnosciEfektow = 0.0;
 
-                RadioButtonGlosnoscEfektowDzwiekowych1.Enabled = false;
-                RadioButtonGlosnoscEfektowDzwiekowych2.Enabled = false;
-                RadioButtonGlosnoscEfektowDzwiekowych3.Enabled = false;
-                RadioButtonGlosnoscEfektowDzwiekowych4.Enabled = false;
-                RadioButtonGlosnoscEfektowDzwiekowych5.Enabled = false;
-                RadioButtonGlosnoscEfektowDzwiekowych6.Enabled = false;
-                RadioButtonGlosnoscEfektowDzwiekowych7.Enabled = false;
-                RadioButtonGlosnoscEfektowDzwiekowych8.Enabled = false;
-                RadioButtonGlosnoscEfektowDzwiekowych9.Enabled = false;
-                RadioButtonGlosnoscEfektowDzwiekowych10.Enabled = false;
+                if (RadioButtonGlosnoscEfektowDzwiekowych1.Enabled == true)
+                {
+                    RadioButtonGlosnoscEfektowDzwiekowych1.Enabled = false;
+                    RadioButtonGlosnoscEfektowDzwiekowych2.Enabled = false;
+                    RadioButtonGlosnoscEfektowDzwiekowych3.Enabled = false;
+                    RadioButtonGlosnoscEfektowDzwiekowych4.Enabled = false;
+                    RadioButtonGlosnoscEfektowDzwiekowych5.Enabled = false;
+                    RadioButtonGlosnoscEfektowDzwiekowych6.Enabled = false;
+                    RadioButtonGlosnoscEfektowDzwiekowych7.Enabled = false;
+                    RadioButtonGlosnoscEfektowDzwiekowych8.Enabled = false;
+                    RadioButtonGlosnoscEfektowDzwiekowych9.Enabled = false;
+                    RadioButtonGlosnoscEfektowDzwiekowych10.Enabled = false;
+                }
             }
-            else
+            if (CheckBoxWylaczEfektyDzwiekowe.Checked == false)
             {
-                RadioButtonGlosnoscEfektowDzwiekowych1.Enabled = true;
-                RadioButtonGlosnoscEfektowDzwiekowych2.Enabled = true;
-                RadioButtonGlosnoscEfektowDzwiekowych3.Enabled = true;
-                RadioButtonGlosnoscEfektowDzwiekowych4.Enabled = true;
-                RadioButtonGlosnoscEfektowDzwiekowych5.Enabled = true;
-                RadioButtonGlosnoscEfektowDzwiekowych6.Enabled = true;
-                RadioButtonGlosnoscEfektowDzwiekowych7.Enabled = true;
-                RadioButtonGlosnoscEfektowDzwiekowych8.Enabled = true;
-                RadioButtonGlosnoscEfektowDzwiekowych9.Enabled = true;
-                RadioButtonGlosnoscEfektowDzwiekowych10.Enabled = true;
+                if (RadioButtonGlosnoscEfektowDzwiekowych1.Enabled == false)
+                {
+                    RadioButtonGlosnoscEfektowDzwiekowych1.Enabled = true;
+                    RadioButtonGlosnoscEfektowDzwiekowych2.Enabled = true;
+                    RadioButtonGlosnoscEfektowDzwiekowych3.Enabled = true;
+                    RadioButtonGlosnoscEfektowDzwiekowych4.Enabled = true;
+                    RadioButtonGlosnoscEfektowDzwiekowych5.Enabled = true;
+                    RadioButtonGlosnoscEfektowDzwiekowych6.Enabled = true;
+                    RadioButtonGlosnoscEfektowDzwiekowych7.Enabled = true;
+                    RadioButtonGlosnoscEfektowDzwiekowych8.Enabled = true;
+                    RadioButtonGlosnoscEfektowDzwiekowych9.Enabled = true;
+                    RadioButtonGlosnoscEfektowDzwiekowych10.Enabled = true;
+                }
 
                 if (RadioButtonGlosnoscEfektowDzwiekowych1.Checked == true && obecnyPoziomGlosnosciEfektow != 0.1)
                 {
@@ -264,8 +276,10 @@ namespace RPG
 
             if (CheckBoxPelnyEkran.Checked == true && pelnyEkran != true)
             {
-                FormBorderStyle = FormBorderStyle.None;
-                WindowState = FormWindowState.Maximized;
+                if (FormBorderStyle != FormBorderStyle.None)
+                    FormBorderStyle = FormBorderStyle.None;
+                if (WindowState != FormWindowState.Maximized)
+                    WindowState = FormWindowState.Maximized;
                 pozycjaEkranuX = Screen.PrimaryScreen.Bounds.X;
                 pozycjaEkranuY = Screen.PrimaryScreen.Bounds.Y;
                 szerokoscEkranu = Screen.PrimaryScreen.Bounds.Width;
@@ -276,30 +290,28 @@ namespace RPG
                 RozmiescElementy();
                 pelnyEkran = true;
             }
-            else if (CheckBoxPelnyEkran.Checked == false && (obecnaSzerokoscEkranu != szerokoscEkranu || obecnaWysokoscEkranu != wysokoscEkranu))
+            else
             {
-                WindowState = FormWindowState.Normal;
-                FormBorderStyle = FormBorderStyle.Sizable;
-                Width = Screen.PrimaryScreen.Bounds.Width * 5 / 6;
-                Height = Screen.PrimaryScreen.Bounds.Height * 5 / 6;
-                Location = new Point((Screen.PrimaryScreen.Bounds.Width - Width * 5 / 6) / 2, (Screen.PrimaryScreen.Bounds.Height - Height * 5 / 6) / 2);
+                if (CheckBoxPelnyEkran.Checked == false && (obecnaSzerokoscEkranu != szerokoscEkranu || obecnaWysokoscEkranu != wysokoscEkranu))
+                {
+                    if (WindowState != FormWindowState.Normal)
+                        WindowState = FormWindowState.Normal;
+                    if (FormBorderStyle != FormBorderStyle.Sizable)
+                        FormBorderStyle = FormBorderStyle.Sizable;
 
-                pozycjaEkranuX = Location.X;
-                pozycjaEkranuY = Location.Y;
-                obecnaSzerokoscEkranu = szerokoscEkranu = Width;
-                obecnaWysokoscEkranu = wysokoscEkranu = Height;
-
-                UstawPozycjeIWielkoscPrzyciskow(pozycjaEkranuX, pozycjaEkranuY, szerokoscEkranu, wysokoscEkranu);
-                OdswiezMenu(0);
-                RozmiescElementy();
-                pelnyEkran = false;
+                    UstawPozycjeIWielkoscPrzyciskow(pozycjaEkranuX, pozycjaEkranuY, szerokoscEkranu, wysokoscEkranu);
+                    OdswiezMenu(0);
+                    RozmiescElementy();
+                    pelnyEkran = false;
+                }
             }
         }
         void UstawPozycjeIWielkoscPrzyciskow(int pozycjaEkranuX, int pozycjaEkranuY, int szerokoscEkranu, int wysokoscEkranu)
         {
-            przyciskWyjdzObszar = new Rectangle(0, - 30, szerokoscEkranu * 8 / 100, wysokoscEkranu * 15 / 100);
-            przyciskOpcjeObszar = new Rectangle(0 + szerokoscEkranu * 8 / 100,  - 30, szerokoscEkranu * 8 / 100, wysokoscEkranu * 15 / 100);
-            przyciskRuszajObszar = new Rectangle(0 + szerokoscEkranu * 8 / 100 * 2, - 30, szerokoscEkranu * 8 / 100, wysokoscEkranu * 15 / 100);
+            //przyciski
+            przyciskWyjdzObszar = new Rectangle(pozycjaEkranuX + szerokoscEkranu * 2 / 100, pozycjaEkranuY - wysokoscEkranu * 5 / 100, szerokoscEkranu * 6 / 100, wysokoscEkranu * 15 / 100);
+            przyciskOpcjeObszar = new Rectangle(pozycjaEkranuX + szerokoscEkranu * 2 / 100 + szerokoscEkranu * 6 / 100, pozycjaEkranuY - wysokoscEkranu * 5 / 100, szerokoscEkranu * 6 / 100, wysokoscEkranu * 15 / 100);
+            przyciskRuszajObszar = new Rectangle(pozycjaEkranuX + szerokoscEkranu * 2 / 100 + szerokoscEkranu * 6 / 100 * 2, pozycjaEkranuY - wysokoscEkranu * 5 / 100, szerokoscEkranu * 6 / 100, wysokoscEkranu * 15 / 100);
         }
         void RozmiescElementy()
         {
@@ -322,44 +334,45 @@ namespace RPG
             Image przyciskRuszajObrazek = new Bitmap("Resources/Grafiki menu/Ruszaj.png");
             Graphics GrafikaMenu = Graphics.FromImage(tlo);
 
-            if (pelnyEkran == true)
-            {
-            }
-            else
-            {
-                GrafikaMenu.TranslateTransform(0, 0);
-            }
                 switch (numerPrzycisku)
                 {
                     case 0:
                         GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
+                        GrafikaMenu.TranslateTransform(-pozycjaEkranuX, -pozycjaEkranuY);
                         GrafikaMenu.DrawImage(przyciskWyjdzObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
                         GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X, przyciskOpcjeObszar.Y, przyciskOpcjeObszar.Width, przyciskOpcjeObszar.Height);
                         GrafikaMenu.DrawImage(przyciskRuszajObrazek, przyciskRuszajObszar.X, przyciskRuszajObszar.Y, przyciskRuszajObszar.Width, przyciskRuszajObszar.Height);
+                        GrafikaMenu.TranslateTransform(pozycjaEkranuX, pozycjaEkranuY);
                         LabelInformacje.Text = "Witaj w grze Rzeź Po Grób!";
                         break;
                     case 1:
                         OdtworzDzwiek(odtwarzacz2, "Resources/Dźwięki/szyld.wav");
                         GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
+                        GrafikaMenu.TranslateTransform(-pozycjaEkranuX, -pozycjaEkranuY);
                         GrafikaMenu.DrawImage(przyciskWyjdzObrazek, przyciskWyjdzObszar.X - powiekszenieSzerokosc / 2, przyciskWyjdzObszar.Y - powiekszenieWysokosc / 2, przyciskWyjdzObszar.Width + powiekszenieSzerokosc, przyciskWyjdzObszar.Height + powiekszenieWysokosc);
                         GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X, przyciskOpcjeObszar.Y, przyciskOpcjeObszar.Width, przyciskOpcjeObszar.Height);
                         GrafikaMenu.DrawImage(przyciskRuszajObrazek, przyciskRuszajObszar.X, przyciskRuszajObszar.Y, przyciskRuszajObszar.Width, przyciskRuszajObszar.Height);
+                        GrafikaMenu.TranslateTransform(pozycjaEkranuX, pozycjaEkranuY);
                         LabelInformacje.Text = "Na pewno chcesz już wyjść?";
                         break;
                     case 2:
                         OdtworzDzwiek(odtwarzacz3, "Resources/Dźwięki/szyld.wav");
                         GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
+                        GrafikaMenu.TranslateTransform(-pozycjaEkranuX, -pozycjaEkranuY);
                         GrafikaMenu.DrawImage(przyciskWyjdzObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
                         GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X - powiekszenieSzerokosc / 2, przyciskOpcjeObszar.Y - powiekszenieWysokosc / 2, przyciskOpcjeObszar.Width + powiekszenieSzerokosc, przyciskOpcjeObszar.Height + powiekszenieWysokosc);
                         GrafikaMenu.DrawImage(przyciskRuszajObrazek, przyciskRuszajObszar.X, przyciskRuszajObszar.Y, przyciskRuszajObszar.Width, przyciskRuszajObszar.Height);
+                        GrafikaMenu.TranslateTransform(pozycjaEkranuX, pozycjaEkranuY);
                         LabelInformacje.Text = "O tak, dobre przygotowanie to dobry początek wyprawy!";
                         break;
                     case 3:
                         OdtworzDzwiek(odtwarzacz4, "Resources/Dźwięki/szyld.wav");
                         GrafikaMenu.DrawImage(tlo, 0, 0, szerokoscEkranu, wysokoscEkranu);
+                        GrafikaMenu.TranslateTransform(-pozycjaEkranuX, -pozycjaEkranuY);
                         GrafikaMenu.DrawImage(przyciskWyjdzObrazek, przyciskWyjdzObszar.X, przyciskWyjdzObszar.Y, przyciskWyjdzObszar.Width, przyciskWyjdzObszar.Height);
                         GrafikaMenu.DrawImage(przyciskOpcjeObrazek, przyciskOpcjeObszar.X, przyciskOpcjeObszar.Y, przyciskOpcjeObszar.Width, przyciskOpcjeObszar.Height);
                         GrafikaMenu.DrawImage(przyciskRuszajObrazek, przyciskRuszajObszar.X - powiekszenieSzerokosc / 2, przyciskRuszajObszar.Y - powiekszenieWysokosc / 2, przyciskRuszajObszar.Width + powiekszenieSzerokosc, przyciskRuszajObszar.Height + powiekszenieWysokosc);
+                        GrafikaMenu.TranslateTransform(pozycjaEkranuX, pozycjaEkranuY);
                         LabelInformacje.Text = "Ruszajmy do boju!";
                         break;
                 }
@@ -398,6 +411,7 @@ namespace RPG
             UtworzPrzedmiotyEkwipunku();
             UtworzPostacie();
             UtworzPrzeszkody();
+            UstawPozycjeIWielkoscPrzyciskow(pozycjaEkranuX, pozycjaEkranuY, szerokoscEkranu, wysokoscEkranu);
             OdswiezMenu(0);
 
             odtwarzacz1.Volume = 0.5;
@@ -411,18 +425,23 @@ namespace RPG
 
         private void Zegar_Tick(object sender, EventArgs e)
         {
-            UstawEkran();
             UstawGlosnosc();
             if (obecnaSzerokoscEkranu != Width || obecnaWysokoscEkranu != Height)
             {
                 UstawEkran();
+                obecnaSzerokoscEkranu = Width;
+                obecnaWysokoscEkranu = Height;
+            }
+            
+            if (pokazOpcje == true && PanelOpcje.Visible == false)
+            {
+                PanelOpcje.Visible = true;
+            }
+            if (pokazOpcje == false && PanelOpcje.Visible == true)
+            {
+                PanelOpcje.Visible = false;
             }
 
-            if (pokazOpcje == true)
-                PanelOpcje.Visible = true;
-            else
-                PanelOpcje.Visible = false;
-            
             if (przyciskWyjdzObszar.Contains(MousePosition) && obecnaGrafikaWMenu != 1)
             {
                 OdswiezMenu(1);
@@ -467,6 +486,32 @@ namespace RPG
 
             poprzedniStanMyszy = MouseButtons;
 
+
+            if (pozycjaEkranuX != Location.X)
+            {
+                pozycjaEkranuX = Location.X;
+                UstawEkran();
+            } 
+            if (pozycjaEkranuY != Location.Y)
+            {
+                pozycjaEkranuY = Location.Y;
+                UstawEkran();
+            } 
+            if (szerokoscEkranu != Width)
+            {
+                szerokoscEkranu = Width;
+                UstawEkran();
+            } 
+            if (wysokoscEkranu != Height)
+            {
+                wysokoscEkranu = Height;
+                UstawEkran();
+            }
+            /*
+            LabelInformacje.Text = pozycjaEkranuX + "  \t";
+            LabelInformacje.Text += pozycjaEkranuY + "  \n";
+            LabelInformacje.Text += szerokoscEkranu + "  \t";
+            LabelInformacje.Text += wysokoscEkranu + "  \n";*/
             //LabelInformacyjny.Text = "Pozycja myszki: " + MousePosition.ToString() + "\n";
             //LabelInformacyjny.Text += MouseButtons.ToString() + "\n";
         }
