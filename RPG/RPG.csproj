@@ -127,6 +127,9 @@
     <Content Include="Resources\Dźwięki\VC-HOfaH.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\Ikona.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki menu\Opcje.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
