@@ -77,8 +77,20 @@
     <Compile Include="GlownyEkran.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GlownyEkran.Czas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GlownyEkran.Designer.cs">
       <DependentUpon>GlownyEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlownyEkran.Dzwiek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlownyEkran.Gra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlownyEkran.Obraz.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Postac.cs" />
     <Compile Include="Program.cs" />
