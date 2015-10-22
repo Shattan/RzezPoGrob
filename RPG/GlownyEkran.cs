@@ -37,6 +37,7 @@ namespace RPG
             UtworzPrzedmiotyEkwipunku();
             UtworzPostacie();
             UtworzPrzeszkody();
+            UtworzZestawyPrzeciwnikow();
 
             //Dzwiek
             odtwarzacz1.Volume = 0.5;

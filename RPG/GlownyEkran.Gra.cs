@@ -13,10 +13,14 @@ namespace RPG
         //zmienne z wartością
 
         //listy
-        List<Postac> postac = new List<Postac>();
         List<Umiejetnosc> umiejetnosc = new List<Umiejetnosc>();
         List<Ekwipunek> ekwipunek = new List<Ekwipunek>();
         List<Przeszkoda> przeszkoda = new List<Przeszkoda>();
+        List<List<Postac>> zestawPrzeciwnikow = new List<List<Postac>>();
+        List<Postac> postacFabularna = new List<Postac>();
+        List<Postac> postacZMiasta = new List<Postac>();
+        List<Postac> postacZCmentarza = new List<Postac>();
+        List<Postac> postacZDziczy = new List<Postac>();
 
         //zmienne sterujące
 
@@ -25,23 +29,53 @@ namespace RPG
         #region Funkcje
         void UtworzPostacie()
         {
-            postac.Add(new Postac("Lord Krwawy Mati"));                     //index 0
-            postac.Add(new Postac("Lord Seba"));                            //index 1
+            //**************************************************************************************************************
+            //index 0
+            postacFabularna.Add(new Postac("Lord Krwawy Mati"));
+            //index 1
+            postacFabularna.Add(new Postac("Lord Seba"));
+
+            //**************************************************************************************************************
+            //index 0
+            postacZMiasta.Add(new Postac("Szczur"));
+
+            //**************************************************************************************************************
+            //index 0
+            postacZCmentarza.Add(new Postac("Ghoul"));
+
+            //**************************************************************************************************************
+            //index 0
+            postacZDziczy.Add(new Postac("Wilk"));
+
         }
 
         void UtworzUmiejetnosci()
         {
-            umiejetnosc.Add(new Umiejetnosc("Wymachiwanie"));               //index 0
+            //index 0
+            umiejetnosc.Add(new Umiejetnosc("Wymachiwanie"));               
         }
 
         void UtworzPrzedmiotyEkwipunku()
         {
-            ekwipunek.Add(new Ekwipunek("Cywilne ubranie"));                //index 0
+            //index 0
+            ekwipunek.Add(new Ekwipunek("Cywilne ubranie"));
         }
 
         void UtworzPrzeszkody()
         {
-            przeszkoda.Add(new Przeszkoda("Drzewo"));                       //index 0
+            //index 0
+            przeszkoda.Add(new Przeszkoda("Drzewo"));
+        }
+        void UtworzZestawyPrzeciwnikow()
+        {
+            //index 0
+            zestawPrzeciwnikow.Add(postacFabularna);
+            //index 1
+            zestawPrzeciwnikow.Add(postacZMiasta);
+            //index 2
+            zestawPrzeciwnikow.Add(postacZCmentarza);
+            //index 3
+            zestawPrzeciwnikow.Add(postacZDziczy);                       
         }
         #endregion
 
