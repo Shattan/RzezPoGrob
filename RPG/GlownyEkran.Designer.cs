@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Wyswietlacz = new System.Windows.Forms.PictureBox();
+            this.PictureBoxWyjdz = new System.Windows.Forms.PictureBox();
             this.PanelInformacje = new System.Windows.Forms.Panel();
             this.LabelInformacje = new System.Windows.Forms.Label();
             this.Zegar = new System.Windows.Forms.Timer(this.components);
@@ -62,25 +62,34 @@
             this.CheckBoxZawszeNaWierzchu = new System.Windows.Forms.CheckBox();
             this.CheckBoxPelnyEkran = new System.Windows.Forms.CheckBox();
             this.PanelOpcje = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.Wyswietlacz)).BeginInit();
+            this.PanelWyswietlacza = new System.Windows.Forms.Panel();
+            this.PictureBoxMglaZPrawej = new System.Windows.Forms.PictureBox();
+            this.PictureBoxRuszaj = new System.Windows.Forms.PictureBox();
+            this.PictureBoxOpcje = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).BeginInit();
             this.PanelInformacje.SuspendLayout();
             this.GroupBoxDzwiek.SuspendLayout();
             this.GroupBoxGlosnoscMuzyki.SuspendLayout();
             this.GroupBoxGlosnoscEfektowDzwiekowych.SuspendLayout();
             this.GroupBoxEkran.SuspendLayout();
             this.PanelOpcje.SuspendLayout();
+            this.PanelWyswietlacza.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMglaZPrawej)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).BeginInit();
             this.SuspendLayout();
             // 
-            // Wyswietlacz
+            // PictureBoxWyjdz
             // 
-            this.Wyswietlacz.BackColor = System.Drawing.Color.Black;
-            this.Wyswietlacz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Wyswietlacz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Wyswietlacz.Location = new System.Drawing.Point(0, 0);
-            this.Wyswietlacz.Name = "Wyswietlacz";
-            this.Wyswietlacz.Size = new System.Drawing.Size(620, 326);
-            this.Wyswietlacz.TabIndex = 0;
-            this.Wyswietlacz.TabStop = false;
+            this.PictureBoxWyjdz.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureBoxWyjdz.Location = new System.Drawing.Point(12, 0);
+            this.PictureBoxWyjdz.Name = "PictureBoxWyjdz";
+            this.PictureBoxWyjdz.Size = new System.Drawing.Size(88, 77);
+            this.PictureBoxWyjdz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxWyjdz.TabIndex = 0;
+            this.PictureBoxWyjdz.TabStop = false;
+            this.PictureBoxWyjdz.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBoxWyjdz_MouseMove);
             // 
             // PanelInformacje
             // 
@@ -88,7 +97,7 @@
             this.PanelInformacje.Controls.Add(this.LabelInformacje);
             this.PanelInformacje.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelInformacje.ForeColor = System.Drawing.Color.Yellow;
-            this.PanelInformacje.Location = new System.Drawing.Point(546, 12);
+            this.PanelInformacje.Location = new System.Drawing.Point(38, 128);
             this.PanelInformacje.Name = "PanelInformacje";
             this.PanelInformacje.Size = new System.Drawing.Size(62, 100);
             this.PanelInformacje.TabIndex = 4;
@@ -517,21 +526,68 @@
             this.PanelOpcje.Controls.Add(this.GroupBoxDzwiek);
             this.PanelOpcje.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelOpcje.ForeColor = System.Drawing.Color.Black;
-            this.PanelOpcje.Location = new System.Drawing.Point(12, 12);
+            this.PanelOpcje.Location = new System.Drawing.Point(38, 234);
             this.PanelOpcje.Name = "PanelOpcje";
             this.PanelOpcje.Size = new System.Drawing.Size(802, 394);
             this.PanelOpcje.TabIndex = 5;
             this.PanelOpcje.Visible = false;
             // 
+            // PanelWyswietlacza
+            // 
+            this.PanelWyswietlacza.BackColor = System.Drawing.Color.Black;
+            this.PanelWyswietlacza.BackgroundImage = global::RPG.Properties.Resources.Tło_menu;
+            this.PanelWyswietlacza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelWyswietlacza.Controls.Add(this.PictureBoxMglaZPrawej);
+            this.PanelWyswietlacza.Controls.Add(this.PictureBoxRuszaj);
+            this.PanelWyswietlacza.Controls.Add(this.PictureBoxOpcje);
+            this.PanelWyswietlacza.Controls.Add(this.PictureBoxWyjdz);
+            this.PanelWyswietlacza.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelWyswietlacza.Location = new System.Drawing.Point(0, 0);
+            this.PanelWyswietlacza.Name = "PanelWyswietlacza";
+            this.PanelWyswietlacza.Size = new System.Drawing.Size(893, 780);
+            this.PanelWyswietlacza.TabIndex = 6;
+            // 
+            // PictureBoxMglaZPrawej
+            // 
+            this.PictureBoxMglaZPrawej.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxMglaZPrawej.Location = new System.Drawing.Point(309, 55);
+            this.PictureBoxMglaZPrawej.Name = "PictureBoxMglaZPrawej";
+            this.PictureBoxMglaZPrawej.Size = new System.Drawing.Size(257, 126);
+            this.PictureBoxMglaZPrawej.TabIndex = 3;
+            this.PictureBoxMglaZPrawej.TabStop = false;
+            // 
+            // PictureBoxRuszaj
+            // 
+            this.PictureBoxRuszaj.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxRuszaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureBoxRuszaj.Location = new System.Drawing.Point(201, 0);
+            this.PictureBoxRuszaj.Name = "PictureBoxRuszaj";
+            this.PictureBoxRuszaj.Size = new System.Drawing.Size(88, 76);
+            this.PictureBoxRuszaj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxRuszaj.TabIndex = 2;
+            this.PictureBoxRuszaj.TabStop = false;
+            // 
+            // PictureBoxOpcje
+            // 
+            this.PictureBoxOpcje.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxOpcje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureBoxOpcje.Location = new System.Drawing.Point(106, 0);
+            this.PictureBoxOpcje.Name = "PictureBoxOpcje";
+            this.PictureBoxOpcje.Size = new System.Drawing.Size(88, 76);
+            this.PictureBoxOpcje.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxOpcje.TabIndex = 1;
+            this.PictureBoxOpcje.TabStop = false;
+            this.PictureBoxOpcje.Click += new System.EventHandler(this.PictureBoxOpcje_Click);
+            // 
             // GlownyEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(620, 326);
-            this.Controls.Add(this.PanelOpcje);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(893, 780);
             this.Controls.Add(this.PanelInformacje);
-            this.Controls.Add(this.Wyswietlacz);
+            this.Controls.Add(this.PanelOpcje);
+            this.Controls.Add(this.PanelWyswietlacza);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.Yellow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -540,7 +596,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rzeź Po Grób";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.Wyswietlacz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).EndInit();
             this.PanelInformacje.ResumeLayout(false);
             this.GroupBoxDzwiek.ResumeLayout(false);
             this.GroupBoxGlosnoscMuzyki.ResumeLayout(false);
@@ -550,13 +606,17 @@
             this.GroupBoxEkran.ResumeLayout(false);
             this.GroupBoxEkran.PerformLayout();
             this.PanelOpcje.ResumeLayout(false);
+            this.PanelWyswietlacza.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMglaZPrawej)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox Wyswietlacz;
+        private System.Windows.Forms.PictureBox PictureBoxWyjdz;
         private System.Windows.Forms.Panel PanelInformacje;
         private System.Windows.Forms.Label LabelInformacje;
         private System.Windows.Forms.Timer Zegar;
@@ -589,6 +649,10 @@
         private System.Windows.Forms.CheckBox CheckBoxZawszeNaWierzchu;
         private System.Windows.Forms.CheckBox CheckBoxPelnyEkran;
         private System.Windows.Forms.Panel PanelOpcje;
+        private System.Windows.Forms.Panel PanelWyswietlacza;
+        private System.Windows.Forms.PictureBox PictureBoxRuszaj;
+        private System.Windows.Forms.PictureBox PictureBoxOpcje;
+        private System.Windows.Forms.PictureBox PictureBoxMglaZPrawej;
     }
 }
 

@@ -25,12 +25,12 @@ namespace RPG
     {
         public GlownyEkran()
         {
-            InitializeComponent();
+            //Dzwiek
+            odtwarzacz1.Volume = 0.5;
+            ZmienGlosnoscOdtwarzaczyEfektow(0.5);
+            OdtworzDzwiek(odtwarzacz1, "Resources/Dźwięki/VC-HOfaH.wav");
 
-            //Obraz
-            RozmiescElementy();
-            UstawPozycjeIWielkoscPrzyciskow(pozycjaEkranuX, pozycjaEkranuY, szerokoscEkranu, wysokoscEkranu);
-            OdswiezMenu(0);
+            InitializeComponent();
 
             //Gra
             UtworzUmiejetnosci();
@@ -39,13 +39,32 @@ namespace RPG
             UtworzPrzeszkody();
             UtworzZestawyPrzeciwnikow();
 
-            //Dzwiek
-            odtwarzacz1.Volume = 0.5;
-            ZmienGlosnoscOdtwarzaczyEfektow(0.5);
-            OdtworzDzwiek(odtwarzacz1, "Resources/Dźwięki/VC-HOfaH.wav");
+            //Obraz
+            RozmiescElementy();
+
 
             //Czas
             Zegar.Start();
+        }
+
+        private void PictureBoxOpcje_Click(object sender, EventArgs e)
+        {
+
+            if (PanelOpcje.Visible == false)
+            {
+                PanelOpcje.Visible = true;
+            }
+            if (PanelOpcje.Visible == true)
+            {
+                PanelOpcje.Visible = false;
+            }
+        }
+
+        private void PictureBoxWyjdz_MouseMove(object sender, MouseEventArgs e)
+        {
+            PictureBoxWyjdz.Location = new Point(0,0);
+
+            PictureBoxWyjdz.Size = new Size(100,100);
         }
     }
 }
