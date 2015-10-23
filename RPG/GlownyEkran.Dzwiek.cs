@@ -23,12 +23,10 @@ namespace RPG
     {
         #region Zmienne i obiekty globalne
         //zmienna umozliwiajaca odtwarzanie muzyki
-        MediaPlayer odtwarzacz1 = new MediaPlayer();
-        MediaPlayer odtwarzacz2 = new MediaPlayer();
-        MediaPlayer odtwarzacz3 = new MediaPlayer();
-        MediaPlayer odtwarzacz4 = new MediaPlayer();
-        MediaPlayer odtwarzacz5 = new MediaPlayer();
-        MediaPlayer odtwarzacz6 = new MediaPlayer();
+        MediaPlayer odtwarzaczMuzyki = new MediaPlayer();
+        MediaPlayer odtwarzaczOtoczenia = new MediaPlayer();
+        MediaPlayer odtwarzaczDialogow = new MediaPlayer();
+        MediaPlayer odtwarzaczEfektowSpecjalnych = new MediaPlayer();
        
         //zmienne sterujące
         double obecnyPoziomGlosnosciMuzyki = 0.5;
@@ -52,7 +50,7 @@ namespace RPG
             #region Ustawienia Muzyki (odtwarzacz 1)
             if (CheckBoxWylaczMuzyke.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.0)
             {
-                odtwarzacz1.Volume = 0.0;
+                odtwarzaczMuzyki.Volume = 0.0;
                 if (RadioButtonGlosnoscMuzyki1.Enabled == true)
                 {
                     RadioButtonGlosnoscMuzyki1.Enabled = false;
@@ -87,52 +85,52 @@ namespace RPG
 
                 if (RadioButtonGlosnoscMuzyki1.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.1)
                 {
-                    odtwarzacz1.Volume = 0.1;
+                    odtwarzaczMuzyki.Volume = 0.1;
                     obecnyPoziomGlosnosciMuzyki = 0.1;
                 }
                 if (RadioButtonGlosnoscMuzyki2.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.2)
                 {
-                    odtwarzacz1.Volume = 0.2;
+                    odtwarzaczMuzyki.Volume = 0.2;
                     obecnyPoziomGlosnosciMuzyki = 0.2;
                 }
                 if (RadioButtonGlosnoscMuzyki3.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.3)
                 {
-                    odtwarzacz1.Volume = 0.3;
+                    odtwarzaczMuzyki.Volume = 0.3;
                     obecnyPoziomGlosnosciMuzyki = 0.3;
                 }
                 if (RadioButtonGlosnoscMuzyki4.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.4)
                 {
-                    odtwarzacz1.Volume = 0.4;
+                    odtwarzaczMuzyki.Volume = 0.4;
                     obecnyPoziomGlosnosciMuzyki = 0.4;
                 }
                 if (RadioButtonGlosnoscMuzyki5.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.5)
                 {
-                    odtwarzacz1.Volume = 0.5;
+                    odtwarzaczMuzyki.Volume = 0.5;
                     obecnyPoziomGlosnosciMuzyki = 0.5;
                 }
                 if (RadioButtonGlosnoscMuzyki6.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.6)
                 {
-                    odtwarzacz1.Volume = 0.6;
+                    odtwarzaczMuzyki.Volume = 0.6;
                     obecnyPoziomGlosnosciMuzyki = 0.6;
                 }
                 if (RadioButtonGlosnoscMuzyki7.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.7)
                 {
-                    odtwarzacz1.Volume = 0.7;
+                    odtwarzaczMuzyki.Volume = 0.7;
                     obecnyPoziomGlosnosciMuzyki = 0.7;
                 }
                 if (RadioButtonGlosnoscMuzyki8.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.8)
                 {
-                    odtwarzacz1.Volume = 0.8;
+                    odtwarzaczMuzyki.Volume = 0.8;
                     obecnyPoziomGlosnosciMuzyki = 0.8;
                 }
                 if (RadioButtonGlosnoscMuzyki9.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.9)
                 {
-                    odtwarzacz1.Volume = 0.9;
+                    odtwarzaczMuzyki.Volume = 0.9;
                     obecnyPoziomGlosnosciMuzyki = 0.9;
                 }
                 if (RadioButtonGlosnoscMuzyki10.Checked == true && obecnyPoziomGlosnosciMuzyki != 1.0)
                 {
-                    odtwarzacz1.Volume = 1.0;
+                    odtwarzaczMuzyki.Volume = 1.0;
                     obecnyPoziomGlosnosciMuzyki = 1.0;
                 }
             }
@@ -141,7 +139,7 @@ namespace RPG
             #region Ustawienia Efektów Dźwiękowych (odtwarzacze 2-6)
             if (CheckBoxWylaczEfektyDzwiekowe.Checked == true && obecnyPoziomGlosnosciEfektow != 0.0)
             {
-                odtwarzacz2.Volume = 0.0;
+                odtwarzaczOtoczenia.Volume = 0.0;
                 ZmienGlosnoscOdtwarzaczyEfektow(0.0);
                 obecnyPoziomGlosnosciEfektow = 0.0;
 
@@ -231,11 +229,9 @@ namespace RPG
 
         void ZmienGlosnoscOdtwarzaczyEfektow(double glosnosc)
         {
-            odtwarzacz2.Volume = glosnosc;
-            odtwarzacz3.Volume = glosnosc;
-            odtwarzacz4.Volume = glosnosc;
-            odtwarzacz5.Volume = glosnosc;
-            odtwarzacz6.Volume = glosnosc;
+            odtwarzaczOtoczenia.Volume = glosnosc;
+            odtwarzaczDialogow.Volume = glosnosc;
+            odtwarzaczEfektowSpecjalnych.Volume = glosnosc;
         }
         #endregion
     }

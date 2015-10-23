@@ -63,6 +63,7 @@
             this.PanelOpcje = new System.Windows.Forms.Panel();
             this.PanelWyswietlacza = new System.Windows.Forms.Panel();
             this.PanelZPictureBoxWyjdz = new System.Windows.Forms.Panel();
+            this.PictureBoxWyjscie = new System.Windows.Forms.PictureBox();
             this.PictureBoxRuszaj = new System.Windows.Forms.PictureBox();
             this.PictureBoxOpcje = new System.Windows.Forms.PictureBox();
             this.PanelInformacje.SuspendLayout();
@@ -72,6 +73,8 @@
             this.GroupBoxEkran.SuspendLayout();
             this.PanelOpcje.SuspendLayout();
             this.PanelWyswietlacza.SuspendLayout();
+            this.PanelZPictureBoxWyjdz.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).BeginInit();
             this.SuspendLayout();
@@ -535,22 +538,35 @@
             // PanelZPictureBoxWyjdz
             // 
             this.PanelZPictureBoxWyjdz.BackColor = System.Drawing.Color.Transparent;
-            this.PanelZPictureBoxWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PanelZPictureBoxWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PanelZPictureBoxWyjdz.Controls.Add(this.PictureBoxWyjscie);
             this.PanelZPictureBoxWyjdz.Location = new System.Drawing.Point(12, 3);
             this.PanelZPictureBoxWyjdz.Name = "PanelZPictureBoxWyjdz";
-            this.PanelZPictureBoxWyjdz.Size = new System.Drawing.Size(79, 73);
+            this.PanelZPictureBoxWyjdz.Size = new System.Drawing.Size(133, 101);
             this.PanelZPictureBoxWyjdz.TabIndex = 3;
             this.PanelZPictureBoxWyjdz.MouseEnter += new System.EventHandler(this.PanelZPictureBoxWyjdz_MouseEnter);
             this.PanelZPictureBoxWyjdz.MouseLeave += new System.EventHandler(this.PanelZPictureBoxWyjdz_MouseLeave);
+            // 
+            // PictureBoxWyjscie
+            // 
+            this.PictureBoxWyjscie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PictureBoxWyjscie.Location = new System.Drawing.Point(0, 0);
+            this.PictureBoxWyjscie.Name = "PictureBoxWyjscie";
+            this.PictureBoxWyjscie.Size = new System.Drawing.Size(133, 101);
+            this.PictureBoxWyjscie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxWyjscie.TabIndex = 0;
+            this.PictureBoxWyjscie.TabStop = false;
+            this.PictureBoxWyjscie.MouseEnter += new System.EventHandler(this.PictureBoxWyjscie_MouseEnter);
+            this.PictureBoxWyjscie.MouseLeave += new System.EventHandler(this.PictureBoxWyjscie_MouseLeave);
             // 
             // PictureBoxRuszaj
             // 
             this.PictureBoxRuszaj.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxRuszaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureBoxRuszaj.Location = new System.Drawing.Point(201, 0);
+            this.PictureBoxRuszaj.Location = new System.Drawing.Point(290, 3);
             this.PictureBoxRuszaj.Name = "PictureBoxRuszaj";
-            this.PictureBoxRuszaj.Size = new System.Drawing.Size(88, 76);
-            this.PictureBoxRuszaj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxRuszaj.Size = new System.Drawing.Size(133, 101);
+            this.PictureBoxRuszaj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxRuszaj.TabIndex = 2;
             this.PictureBoxRuszaj.TabStop = false;
             // 
@@ -558,9 +574,9 @@
             // 
             this.PictureBoxOpcje.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxOpcje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureBoxOpcje.Location = new System.Drawing.Point(106, 0);
+            this.PictureBoxOpcje.Location = new System.Drawing.Point(151, 3);
             this.PictureBoxOpcje.Name = "PictureBoxOpcje";
-            this.PictureBoxOpcje.Size = new System.Drawing.Size(88, 76);
+            this.PictureBoxOpcje.Size = new System.Drawing.Size(133, 101);
             this.PictureBoxOpcje.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBoxOpcje.TabIndex = 1;
             this.PictureBoxOpcje.TabStop = false;
@@ -593,6 +609,8 @@
             this.GroupBoxEkran.PerformLayout();
             this.PanelOpcje.ResumeLayout(false);
             this.PanelWyswietlacza.ResumeLayout(false);
+            this.PanelZPictureBoxWyjdz.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).EndInit();
             this.ResumeLayout(false);
@@ -637,6 +655,7 @@
         private System.Windows.Forms.PictureBox PictureBoxRuszaj;
         private System.Windows.Forms.PictureBox PictureBoxOpcje;
         private System.Windows.Forms.Panel PanelZPictureBoxWyjdz;
+        private System.Windows.Forms.PictureBox PictureBoxWyjscie;
     }
 }
 
