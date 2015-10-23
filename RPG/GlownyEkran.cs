@@ -127,6 +127,5 @@ namespace RPG
             PanelZPictureBoxWyjdz.Location = new Point(PanelZPictureBoxWyjdz.Location.X - powiekszenieX / 2, PanelZPictureBoxWyjdz.Location.Y - powiekszenieY / 2);
             
         }
-        
     }
 }

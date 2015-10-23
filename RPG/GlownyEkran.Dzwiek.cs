@@ -27,7 +27,7 @@ namespace RPG
         MediaPlayer odtwarzaczOtoczenia = new MediaPlayer();
         MediaPlayer odtwarzaczDialogow = new MediaPlayer();
         MediaPlayer odtwarzaczEfektowSpecjalnych = new MediaPlayer();
-       
+
         //zmienne sterujące
         double obecnyPoziomGlosnosciMuzyki = 0.5;
         double obecnyPoziomGlosnosciEfektow = 0.5;
@@ -45,98 +45,50 @@ namespace RPG
             odtwarzacz.Stop();
         }
 
-        void UstawGlosnosc()
+        void ZmienGlosnoscOdtwarzaczyEfektow(double glosnosc)
         {
-            #region Ustawienia Muzyki (odtwarzacz 1)
-            if (CheckBoxWylaczMuzyke.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.0)
+            odtwarzaczOtoczenia.Volume = glosnosc;
+            odtwarzaczDialogow.Volume = glosnosc;
+            odtwarzaczEfektowSpecjalnych.Volume = glosnosc;
+        }
+
+        private void CheckBoxWylaczMuzyke_CheckedChanged(object sender, EventArgs e)
+        {
+            //Wylaczamy muzyke
+            if (CheckBoxWylaczMuzyke.Checked && obecnyPoziomGlosnosciMuzyki != 0.0)
             {
                 odtwarzaczMuzyki.Volume = 0.0;
-                if (RadioButtonGlosnoscMuzyki1.Enabled == true)
-                {
-                    RadioButtonGlosnoscMuzyki1.Enabled = false;
-                    RadioButtonGlosnoscMuzyki2.Enabled = false;
-                    RadioButtonGlosnoscMuzyki3.Enabled = false;
-                    RadioButtonGlosnoscMuzyki4.Enabled = false;
-                    RadioButtonGlosnoscMuzyki5.Enabled = false;
-                    RadioButtonGlosnoscMuzyki6.Enabled = false;
-                    RadioButtonGlosnoscMuzyki7.Enabled = false;
-                    RadioButtonGlosnoscMuzyki8.Enabled = false;
-                    RadioButtonGlosnoscMuzyki9.Enabled = false;
-                    RadioButtonGlosnoscMuzyki10.Enabled = false;
-                }
                 obecnyPoziomGlosnosciMuzyki = 0.0;
+
+                if (RadioButtonGlosnoscMuzyki1.Enabled)
+                {
+                    foreach (var rB in GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>())
+                    {
+                        rB.Enabled = false;
+                    }
+                }
             }
 
-            if (CheckBoxWylaczMuzyke.Checked == false)
+            //Wlaczamy muzyke
+            if (!CheckBoxWylaczMuzyke.Checked)
             {
-                if (RadioButtonGlosnoscMuzyki1.Enabled == false)
+                if (!RadioButtonGlosnoscMuzyki1.Enabled)
                 {
-                    RadioButtonGlosnoscMuzyki1.Enabled = true;
-                    RadioButtonGlosnoscMuzyki2.Enabled = true;
-                    RadioButtonGlosnoscMuzyki3.Enabled = true;
-                    RadioButtonGlosnoscMuzyki4.Enabled = true;
-                    RadioButtonGlosnoscMuzyki5.Enabled = true;
-                    RadioButtonGlosnoscMuzyki6.Enabled = true;
-                    RadioButtonGlosnoscMuzyki7.Enabled = true;
-                    RadioButtonGlosnoscMuzyki8.Enabled = true;
-                    RadioButtonGlosnoscMuzyki9.Enabled = true;
-                    RadioButtonGlosnoscMuzyki10.Enabled = true;
+                    foreach (var rB in GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>())
+                    {
+                        rB.Enabled = true;
+                    }
                 }
 
-                if (RadioButtonGlosnoscMuzyki1.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.1)
-                {
-                    odtwarzaczMuzyki.Volume = 0.1;
-                    obecnyPoziomGlosnosciMuzyki = 0.1;
-                }
-                if (RadioButtonGlosnoscMuzyki2.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.2)
-                {
-                    odtwarzaczMuzyki.Volume = 0.2;
-                    obecnyPoziomGlosnosciMuzyki = 0.2;
-                }
-                if (RadioButtonGlosnoscMuzyki3.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.3)
-                {
-                    odtwarzaczMuzyki.Volume = 0.3;
-                    obecnyPoziomGlosnosciMuzyki = 0.3;
-                }
-                if (RadioButtonGlosnoscMuzyki4.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.4)
-                {
-                    odtwarzaczMuzyki.Volume = 0.4;
-                    obecnyPoziomGlosnosciMuzyki = 0.4;
-                }
-                if (RadioButtonGlosnoscMuzyki5.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.5)
-                {
-                    odtwarzaczMuzyki.Volume = 0.5;
-                    obecnyPoziomGlosnosciMuzyki = 0.5;
-                }
-                if (RadioButtonGlosnoscMuzyki6.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.6)
-                {
-                    odtwarzaczMuzyki.Volume = 0.6;
-                    obecnyPoziomGlosnosciMuzyki = 0.6;
-                }
-                if (RadioButtonGlosnoscMuzyki7.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.7)
-                {
-                    odtwarzaczMuzyki.Volume = 0.7;
-                    obecnyPoziomGlosnosciMuzyki = 0.7;
-                }
-                if (RadioButtonGlosnoscMuzyki8.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.8)
-                {
-                    odtwarzaczMuzyki.Volume = 0.8;
-                    obecnyPoziomGlosnosciMuzyki = 0.8;
-                }
-                if (RadioButtonGlosnoscMuzyki9.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.9)
-                {
-                    odtwarzaczMuzyki.Volume = 0.9;
-                    obecnyPoziomGlosnosciMuzyki = 0.9;
-                }
-                if (RadioButtonGlosnoscMuzyki10.Checked == true && obecnyPoziomGlosnosciMuzyki != 1.0)
-                {
-                    odtwarzaczMuzyki.Volume = 1.0;
-                    obecnyPoziomGlosnosciMuzyki = 1.0;
-                }
+                UstawGlosnoscMuzyki();
             }
-            #endregion
+        }
 
+
+        private void CheckBoxWylaczEfektyDzwiekowe_CheckedChanged(object sender, EventArgs e)
+        {
             #region Ustawienia Efektów Dźwiękowych (odtwarzacze 2-6)
+            //Wylaczamy dziweki
             if (CheckBoxWylaczEfektyDzwiekowe.Checked == true && obecnyPoziomGlosnosciEfektow != 0.0)
             {
                 odtwarzaczOtoczenia.Volume = 0.0;
@@ -145,94 +97,158 @@ namespace RPG
 
                 if (RadioButtonGlosnoscEfektowDzwiekowych1.Enabled == true)
                 {
-                    RadioButtonGlosnoscEfektowDzwiekowych1.Enabled = false;
-                    RadioButtonGlosnoscEfektowDzwiekowych2.Enabled = false;
-                    RadioButtonGlosnoscEfektowDzwiekowych3.Enabled = false;
-                    RadioButtonGlosnoscEfektowDzwiekowych4.Enabled = false;
-                    RadioButtonGlosnoscEfektowDzwiekowych5.Enabled = false;
-                    RadioButtonGlosnoscEfektowDzwiekowych6.Enabled = false;
-                    RadioButtonGlosnoscEfektowDzwiekowych7.Enabled = false;
-                    RadioButtonGlosnoscEfektowDzwiekowych8.Enabled = false;
-                    RadioButtonGlosnoscEfektowDzwiekowych9.Enabled = false;
-                    RadioButtonGlosnoscEfektowDzwiekowych10.Enabled = false;
+                    foreach (var rB in GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>())
+                    {
+                        rB.Enabled = false;
+                    }
                 }
             }
+
+            //Wlaczamy dzwieki
             if (CheckBoxWylaczEfektyDzwiekowe.Checked == false)
             {
                 if (RadioButtonGlosnoscEfektowDzwiekowych1.Enabled == false)
                 {
-                    RadioButtonGlosnoscEfektowDzwiekowych1.Enabled = true;
-                    RadioButtonGlosnoscEfektowDzwiekowych2.Enabled = true;
-                    RadioButtonGlosnoscEfektowDzwiekowych3.Enabled = true;
-                    RadioButtonGlosnoscEfektowDzwiekowych4.Enabled = true;
-                    RadioButtonGlosnoscEfektowDzwiekowych5.Enabled = true;
-                    RadioButtonGlosnoscEfektowDzwiekowych6.Enabled = true;
-                    RadioButtonGlosnoscEfektowDzwiekowych7.Enabled = true;
-                    RadioButtonGlosnoscEfektowDzwiekowych8.Enabled = true;
-                    RadioButtonGlosnoscEfektowDzwiekowych9.Enabled = true;
-                    RadioButtonGlosnoscEfektowDzwiekowych10.Enabled = true;
+                    foreach (var rB in GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>())
+                    {
+                        rB.Enabled = true;
+                    }
                 }
 
-                if (RadioButtonGlosnoscEfektowDzwiekowych1.Checked == true && obecnyPoziomGlosnosciEfektow != 0.1)
-                {
-                    ZmienGlosnoscOdtwarzaczyEfektow(0.1);
-                    obecnyPoziomGlosnosciEfektow = 0.1;
-                }
-                if (RadioButtonGlosnoscEfektowDzwiekowych2.Checked == true && obecnyPoziomGlosnosciEfektow != 0.2)
-                {
-                    ZmienGlosnoscOdtwarzaczyEfektow(0.2);
-                    obecnyPoziomGlosnosciEfektow = 0.2;
-                }
-                if (RadioButtonGlosnoscEfektowDzwiekowych3.Checked == true && obecnyPoziomGlosnosciEfektow != 0.3)
-                {
-                    ZmienGlosnoscOdtwarzaczyEfektow(0.3);
-                    obecnyPoziomGlosnosciEfektow = 0.3;
-                }
-                if (RadioButtonGlosnoscEfektowDzwiekowych4.Checked == true && obecnyPoziomGlosnosciEfektow != 0.4)
-                {
-                    ZmienGlosnoscOdtwarzaczyEfektow(0.4);
-                    obecnyPoziomGlosnosciEfektow = 0.4;
-                }
-                if (RadioButtonGlosnoscEfektowDzwiekowych5.Checked == true && obecnyPoziomGlosnosciEfektow != 0.5)
-                {
-                    ZmienGlosnoscOdtwarzaczyEfektow(0.5);
-                    obecnyPoziomGlosnosciEfektow = 0.5;
-                }
-                if (RadioButtonGlosnoscEfektowDzwiekowych6.Checked == true && obecnyPoziomGlosnosciEfektow != 0.6)
-                {
-                    ZmienGlosnoscOdtwarzaczyEfektow(0.6);
-                    obecnyPoziomGlosnosciEfektow = 0.6;
-                }
-                if (RadioButtonGlosnoscEfektowDzwiekowych7.Checked == true && obecnyPoziomGlosnosciEfektow != 0.7)
-                {
-                    ZmienGlosnoscOdtwarzaczyEfektow(0.7);
-                    obecnyPoziomGlosnosciEfektow = 0.7;
-                }
-                if (RadioButtonGlosnoscEfektowDzwiekowych8.Checked == true && obecnyPoziomGlosnosciEfektow != 0.8)
-                {
-                    ZmienGlosnoscOdtwarzaczyEfektow(0.8);
-                    obecnyPoziomGlosnosciEfektow = 0.8;
-                }
-                if (RadioButtonGlosnoscEfektowDzwiekowych9.Checked == true && obecnyPoziomGlosnosciEfektow != 0.9)
-                {
-                    ZmienGlosnoscOdtwarzaczyEfektow(0.9);
-                    obecnyPoziomGlosnosciEfektow = 0.9;
-                }
-                if (RadioButtonGlosnoscEfektowDzwiekowych10.Checked == true && obecnyPoziomGlosnosciEfektow != 1.0)
-                {
-                    ZmienGlosnoscOdtwarzaczyEfektow(1.0);
-                    obecnyPoziomGlosnosciEfektow = 1.0;
-                }
+                UstawGlosnoscEfektyDzwiekowe();
             }
+
             #endregion
         }
 
-        void ZmienGlosnoscOdtwarzaczyEfektow(double glosnosc)
+        private void RadioButtonGlosnoscMuzyki_CheckedChanged(object sender, EventArgs e)
         {
-            odtwarzaczOtoczenia.Volume = glosnosc;
-            odtwarzaczDialogow.Volume = glosnosc;
-            odtwarzaczEfektowSpecjalnych.Volume = glosnosc;
+            UstawGlosnoscMuzyki();
         }
+
+        private void RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged(object sender, EventArgs e)
+        {
+            UstawGlosnoscEfektyDzwiekowe();
+        }
+
+        private void UstawGlosnoscMuzyki()
+        {
+            if (RadioButtonGlosnoscMuzyki1.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.1)
+            {
+                odtwarzaczMuzyki.Volume = 0.1;
+                obecnyPoziomGlosnosciMuzyki = 0.1;
+            }
+            if (RadioButtonGlosnoscMuzyki2.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.2)
+            {
+                odtwarzaczMuzyki.Volume = 0.2;
+                obecnyPoziomGlosnosciMuzyki = 0.2;
+            }
+            if (RadioButtonGlosnoscMuzyki3.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.3)
+            {
+                odtwarzaczMuzyki.Volume = 0.3;
+                obecnyPoziomGlosnosciMuzyki = 0.3;
+            }
+            if (RadioButtonGlosnoscMuzyki4.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.4)
+            {
+                odtwarzaczMuzyki.Volume = 0.4;
+                obecnyPoziomGlosnosciMuzyki = 0.4;
+            }
+            if (RadioButtonGlosnoscMuzyki5.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.5)
+            {
+                odtwarzaczMuzyki.Volume = 0.5;
+                obecnyPoziomGlosnosciMuzyki = 0.5;
+            }
+            if (RadioButtonGlosnoscMuzyki6.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.6)
+            {
+                odtwarzaczMuzyki.Volume = 0.6;
+                obecnyPoziomGlosnosciMuzyki = 0.6;
+            }
+            if (RadioButtonGlosnoscMuzyki7.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.7)
+            {
+                odtwarzaczMuzyki.Volume = 0.7;
+                obecnyPoziomGlosnosciMuzyki = 0.7;
+            }
+            if (RadioButtonGlosnoscMuzyki8.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.8)
+            {
+                odtwarzaczMuzyki.Volume = 0.8;
+                obecnyPoziomGlosnosciMuzyki = 0.8;
+            }
+            if (RadioButtonGlosnoscMuzyki9.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.9)
+            {
+                odtwarzaczMuzyki.Volume = 0.9;
+                obecnyPoziomGlosnosciMuzyki = 0.9;
+            }
+            if (RadioButtonGlosnoscMuzyki10.Checked == true && obecnyPoziomGlosnosciMuzyki != 1.0)
+            {
+                odtwarzaczMuzyki.Volume = 1.0;
+                obecnyPoziomGlosnosciMuzyki = 1.0;
+            }
+        }
+
+
+        private void UstawGlosnoscEfektyDzwiekowe()
+        {
+
+            if (RadioButtonGlosnoscEfektowDzwiekowych1.Checked == true && obecnyPoziomGlosnosciEfektow != 0.1)
+            {
+                ZmienGlosnoscOdtwarzaczyEfektow(0.1);
+                obecnyPoziomGlosnosciEfektow = 0.1;
+            }
+            if (RadioButtonGlosnoscEfektowDzwiekowych2.Checked == true && obecnyPoziomGlosnosciEfektow != 0.2)
+            {
+                ZmienGlosnoscOdtwarzaczyEfektow(0.2);
+                obecnyPoziomGlosnosciEfektow = 0.2;
+            }
+            if (RadioButtonGlosnoscEfektowDzwiekowych3.Checked == true && obecnyPoziomGlosnosciEfektow != 0.3)
+            {
+                ZmienGlosnoscOdtwarzaczyEfektow(0.3);
+                obecnyPoziomGlosnosciEfektow = 0.3;
+            }
+            if (RadioButtonGlosnoscEfektowDzwiekowych4.Checked == true && obecnyPoziomGlosnosciEfektow != 0.4)
+            {
+                ZmienGlosnoscOdtwarzaczyEfektow(0.4);
+                obecnyPoziomGlosnosciEfektow = 0.4;
+            }
+            if (RadioButtonGlosnoscEfektowDzwiekowych5.Checked == true && obecnyPoziomGlosnosciEfektow != 0.5)
+            {
+                ZmienGlosnoscOdtwarzaczyEfektow(0.5);
+                obecnyPoziomGlosnosciEfektow = 0.5;
+            }
+            if (RadioButtonGlosnoscEfektowDzwiekowych6.Checked == true && obecnyPoziomGlosnosciEfektow != 0.6)
+            {
+                ZmienGlosnoscOdtwarzaczyEfektow(0.6);
+                obecnyPoziomGlosnosciEfektow = 0.6;
+            }
+            if (RadioButtonGlosnoscEfektowDzwiekowych7.Checked == true && obecnyPoziomGlosnosciEfektow != 0.7)
+            {
+                ZmienGlosnoscOdtwarzaczyEfektow(0.7);
+                obecnyPoziomGlosnosciEfektow = 0.7;
+            }
+            if (RadioButtonGlosnoscEfektowDzwiekowych8.Checked == true && obecnyPoziomGlosnosciEfektow != 0.8)
+            {
+                ZmienGlosnoscOdtwarzaczyEfektow(0.8);
+                obecnyPoziomGlosnosciEfektow = 0.8;
+            }
+            if (RadioButtonGlosnoscEfektowDzwiekowych9.Checked == true && obecnyPoziomGlosnosciEfektow != 0.9)
+            {
+                ZmienGlosnoscOdtwarzaczyEfektow(0.9);
+                obecnyPoziomGlosnosciEfektow = 0.9;
+            }
+            if (RadioButtonGlosnoscEfektowDzwiekowych10.Checked == true && obecnyPoziomGlosnosciEfektow != 1.0)
+            {
+                ZmienGlosnoscOdtwarzaczyEfektow(1.0);
+                obecnyPoziomGlosnosciEfektow = 1.0;
+            }
+        }
+
         #endregion
     }
 }
+
+//Notatki
+
+/* Szukanie zaznaczonego radiobuttona:
+var checkedRadio = new[] { GroupBoxGlosnoscMuzyki }
+.SelectMany(g => g.Controls.OfType<RadioButton>()
+                        .Where(r => r.Checked))
+*/

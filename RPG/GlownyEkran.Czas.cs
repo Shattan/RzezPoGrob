@@ -21,7 +21,7 @@ namespace RPG
 
         private void Zegar_Tick(object sender, EventArgs e)
         {
-            UstawGlosnosc();
+
         }
 
         #endregion

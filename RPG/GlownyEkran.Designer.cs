@@ -152,6 +152,7 @@
             this.RadioButtonGlosnoscMuzyki10.TabIndex = 11;
             this.RadioButtonGlosnoscMuzyki10.Text = "10";
             this.RadioButtonGlosnoscMuzyki10.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscMuzyki10.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
             // 
             // RadioButtonGlosnoscMuzyki1
             // 
@@ -168,6 +169,7 @@
             this.RadioButtonGlosnoscMuzyki1.TabIndex = 2;
             this.RadioButtonGlosnoscMuzyki1.Text = "1";
             this.RadioButtonGlosnoscMuzyki1.UseVisualStyleBackColor = false;
+            this.RadioButtonGlosnoscMuzyki1.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
             // 
             // CheckBoxWylaczMuzyke
             // 
@@ -179,6 +181,7 @@
             this.CheckBoxWylaczMuzyke.TabIndex = 0;
             this.CheckBoxWylaczMuzyke.Text = "Wyłącz Muzykę";
             this.CheckBoxWylaczMuzyke.UseVisualStyleBackColor = true;
+            this.CheckBoxWylaczMuzyke.CheckedChanged += new System.EventHandler(this.CheckBoxWylaczMuzyke_CheckedChanged);
             // 
             // RadioButtonGlosnoscMuzyki2
             // 
@@ -193,6 +196,7 @@
             this.RadioButtonGlosnoscMuzyki2.TabIndex = 3;
             this.RadioButtonGlosnoscMuzyki2.Text = "2";
             this.RadioButtonGlosnoscMuzyki2.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscMuzyki2.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
             // 
             // RadioButtonGlosnoscMuzyki3
             // 
@@ -207,6 +211,7 @@
             this.RadioButtonGlosnoscMuzyki3.TabIndex = 4;
             this.RadioButtonGlosnoscMuzyki3.Text = "3";
             this.RadioButtonGlosnoscMuzyki3.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscMuzyki3.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
             // 
             // RadioButtonGlosnoscMuzyki4
             // 
@@ -221,6 +226,7 @@
             this.RadioButtonGlosnoscMuzyki4.TabIndex = 5;
             this.RadioButtonGlosnoscMuzyki4.Text = "4";
             this.RadioButtonGlosnoscMuzyki4.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscMuzyki4.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
             // 
             // RadioButtonGlosnoscMuzyki5
             // 
@@ -237,6 +243,7 @@
             this.RadioButtonGlosnoscMuzyki5.TabStop = true;
             this.RadioButtonGlosnoscMuzyki5.Text = "5";
             this.RadioButtonGlosnoscMuzyki5.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscMuzyki5.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
             // 
             // RadioButtonGlosnoscMuzyki6
             // 
@@ -251,6 +258,7 @@
             this.RadioButtonGlosnoscMuzyki6.TabIndex = 7;
             this.RadioButtonGlosnoscMuzyki6.Text = "6";
             this.RadioButtonGlosnoscMuzyki6.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscMuzyki6.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
             // 
             // RadioButtonGlosnoscMuzyki7
             // 
@@ -265,6 +273,7 @@
             this.RadioButtonGlosnoscMuzyki7.TabIndex = 8;
             this.RadioButtonGlosnoscMuzyki7.Text = "7";
             this.RadioButtonGlosnoscMuzyki7.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscMuzyki7.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
             // 
             // RadioButtonGlosnoscMuzyki8
             // 
@@ -279,6 +288,7 @@
             this.RadioButtonGlosnoscMuzyki8.TabIndex = 9;
             this.RadioButtonGlosnoscMuzyki8.Text = "8";
             this.RadioButtonGlosnoscMuzyki8.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscMuzyki8.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
             // 
             // RadioButtonGlosnoscMuzyki9
             // 
@@ -293,6 +303,7 @@
             this.RadioButtonGlosnoscMuzyki9.TabIndex = 10;
             this.RadioButtonGlosnoscMuzyki9.Text = "9";
             this.RadioButtonGlosnoscMuzyki9.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscMuzyki9.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
             // 
             // GroupBoxGlosnoscEfektowDzwiekowych
             // 
@@ -328,6 +339,7 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych1.TabIndex = 13;
             this.RadioButtonGlosnoscEfektowDzwiekowych1.Text = "1";
             this.RadioButtonGlosnoscEfektowDzwiekowych1.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscEfektowDzwiekowych1.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
             // CheckBoxWylaczEfektyDzwiekowe
             // 
@@ -339,6 +351,7 @@
             this.CheckBoxWylaczEfektyDzwiekowe.TabIndex = 24;
             this.CheckBoxWylaczEfektyDzwiekowe.Text = "Wyłącz Efekty Dźwiękowe";
             this.CheckBoxWylaczEfektyDzwiekowe.UseVisualStyleBackColor = true;
+            this.CheckBoxWylaczEfektyDzwiekowe.CheckedChanged += new System.EventHandler(this.CheckBoxWylaczEfektyDzwiekowe_CheckedChanged);
             // 
             // RadioButtonGlosnoscEfektowDzwiekowych9
             // 
@@ -353,6 +366,7 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych9.TabIndex = 21;
             this.RadioButtonGlosnoscEfektowDzwiekowych9.Text = "9";
             this.RadioButtonGlosnoscEfektowDzwiekowych9.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscEfektowDzwiekowych9.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
             // RadioButtonGlosnoscEfektowDzwiekowych2
             // 
@@ -367,6 +381,7 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych2.TabIndex = 14;
             this.RadioButtonGlosnoscEfektowDzwiekowych2.Text = "2";
             this.RadioButtonGlosnoscEfektowDzwiekowych2.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscEfektowDzwiekowych2.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
             // RadioButtonGlosnoscEfektowDzwiekowych10
             // 
@@ -381,6 +396,7 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych10.TabIndex = 22;
             this.RadioButtonGlosnoscEfektowDzwiekowych10.Text = "10";
             this.RadioButtonGlosnoscEfektowDzwiekowych10.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscEfektowDzwiekowych10.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
             // RadioButtonGlosnoscEfektowDzwiekowych3
             // 
@@ -395,6 +411,7 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych3.TabIndex = 15;
             this.RadioButtonGlosnoscEfektowDzwiekowych3.Text = "3";
             this.RadioButtonGlosnoscEfektowDzwiekowych3.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscEfektowDzwiekowych3.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
             // RadioButtonGlosnoscEfektowDzwiekowych8
             // 
@@ -409,6 +426,7 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych8.TabIndex = 20;
             this.RadioButtonGlosnoscEfektowDzwiekowych8.Text = "8";
             this.RadioButtonGlosnoscEfektowDzwiekowych8.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscEfektowDzwiekowych8.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
             // RadioButtonGlosnoscEfektowDzwiekowych4
             // 
@@ -423,6 +441,7 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych4.TabIndex = 16;
             this.RadioButtonGlosnoscEfektowDzwiekowych4.Text = "4";
             this.RadioButtonGlosnoscEfektowDzwiekowych4.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscEfektowDzwiekowych4.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
             // RadioButtonGlosnoscEfektowDzwiekowych7
             // 
@@ -437,6 +456,7 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych7.TabIndex = 19;
             this.RadioButtonGlosnoscEfektowDzwiekowych7.Text = "7";
             this.RadioButtonGlosnoscEfektowDzwiekowych7.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscEfektowDzwiekowych7.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
             // RadioButtonGlosnoscEfektowDzwiekowych5
             // 
@@ -453,6 +473,7 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych5.TabStop = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych5.Text = "5";
             this.RadioButtonGlosnoscEfektowDzwiekowych5.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscEfektowDzwiekowych5.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
             // RadioButtonGlosnoscEfektowDzwiekowych6
             // 
@@ -467,6 +488,7 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych6.TabIndex = 18;
             this.RadioButtonGlosnoscEfektowDzwiekowych6.Text = "6";
             this.RadioButtonGlosnoscEfektowDzwiekowych6.UseVisualStyleBackColor = true;
+            this.RadioButtonGlosnoscEfektowDzwiekowych6.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
             // GroupBoxEkran
             // 
