@@ -247,8 +247,25 @@ namespace RPG
 
 //Notatki
 
-/* Szukanie zaznaczonego radiobuttona:
-var checkedRadio = new[] { GroupBoxGlosnoscMuzyki }
-.SelectMany(g => g.Controls.OfType<RadioButton>()
-                        .Where(r => r.Checked))
+/* Tutaj masz inna wersje tych funkcji wyzej, mniej miejsca zajmuje, ale wymaga konwersji ze stringa. Jak wolisz ta pierwsza wersje to tą wywal, a jak nie to zamien
+
+        private void UstawGlosnoscMuzyki()
+        {
+            var checkedButton = GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>()
+                          .FirstOrDefault(r => r.Checked);
+
+            odtwarzaczMuzyki.Volume = Convert.ToDouble("0," + checkedButton.Text);
+            obecnyPoziomGlosnosciMuzyki = Convert.ToDouble("0," + checkedButton.Text);
+        }
+
+
+        private void UstawGlosnoscEfektyDzwiekowe()
+        {
+            var checkedButton = GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>()
+                                      .FirstOrDefault(r => r.Checked);
+
+            ZmienGlosnoscOdtwarzaczyEfektow(Convert.ToDouble("0," + checkedButton.Text));
+            obecnyPoziomGlosnosciEfektow = Convert.ToDouble("0," + checkedButton.Text);
+        }
+ * 
 */
