@@ -23,63 +23,40 @@ namespace RPG
     partial class GlownyEkran
     {
         #region Zmienne i obiekty globalne
-        int pozycjaMgly = 0;
+        //Zmienne dla menu głównego
 
         #endregion
 
         #region Funkcje
-        void UstawEkran()
-        {
-            if (CheckBoxZawszeNaWierzchu.Checked == true && TopMost != true)
-            {
-                TopMost = true;
-            }
-            else if (CheckBoxZawszeNaWierzchu.Checked == false && TopMost != false)
-            {
-                TopMost = false;
-            }
 
-            if (CheckBoxPelnyEkran.Checked == true && WindowState != FormWindowState.Maximized)
-            {
-                if (FormBorderStyle != FormBorderStyle.None)
-                    FormBorderStyle = FormBorderStyle.None;
-                WindowState = FormWindowState.Maximized;
 
-                RozmiescElementy();
-            }
-            else
-            {
-                if (CheckBoxPelnyEkran.Checked == false && WindowState != FormWindowState.Normal)
-                {
-                        WindowState = FormWindowState.Normal;
-                    if (FormBorderStyle != FormBorderStyle.Sizable)
-                        FormBorderStyle = FormBorderStyle.Sizable;
-                }
-            }
-        }
-        void RozmiescElementy()
+        void UstawElementyNaEkranie()
         {
+            //Ustawienia okienka gry
+            Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y);
+            Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+
+            //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
+
+            //Ustawienie tła rysowanego w menu
+            PanelWyswietlacza.BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło menu.png");
+
+            //Ustawienia dolnego panelu z informacjami
             PanelInformacje.Size = new Size(Width, Height / 8);
             PanelInformacje.Location = new Point(0, Width - PanelInformacje.Size.Height);
+            
+            //Ustawienia panelu opcji
             PanelOpcje.Location = new Point(0, Height * 5 / 100);
             PanelOpcje.BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
-            PictureBoxMglaZPrawej.Location = new Point(0, 0);
-            PictureBoxMglaZPrawej.Size = new Size(Width * 2, Height);
-            PictureBoxMglaZPrawej.Image = new Bitmap("Resources/Grafiki menu/Mgła.png");
-        }
-        void PrzesunMgle(int predkosc)
-        {
-            PictureBoxMglaZPrawej.Location = new Point(- pozycjaMgly, 0);
-            pozycjaMgly += 1;
 
-            if (pozycjaMgly <= Width-PictureBoxMglaZPrawej.Width)
-                pozycjaMgly = 0;
+            //Ustawienie przycisków
+            PanelZPictureBoxWyjdz.Location = new Point(10, 0);
+            PanelZPictureBoxWyjdz.BackgroundImage = new Bitmap("Resources/Grafiki menu/Wyjście.png");
+            PictureBoxOpcje.Image = new Bitmap("Resources/Grafiki menu/Opcje.png");
+            PictureBoxRuszaj.Image = new Bitmap("Resources/Grafiki menu/Ruszaj.png");
         }
-        void OdswiezMenu()
-        {
-            PrzesunMgle(-1);
-        }
+
         #endregion
     }
 }

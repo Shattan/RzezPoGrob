@@ -40,7 +40,7 @@ namespace RPG
             UtworzZestawyPrzeciwnikow();
 
             //Obraz
-            RozmiescElementy();
+            UstawElementyNaEkranie();
 
 
             //Czas
@@ -60,11 +60,54 @@ namespace RPG
             }
         }
 
-        private void PictureBoxWyjdz_MouseMove(object sender, MouseEventArgs e)
+        private void CheckBoxZawszeNaWierzchu_CheckedChanged(object sender, EventArgs e)
         {
-            PictureBoxWyjdz.Location = new Point(0,0);
-
-            PictureBoxWyjdz.Size = new Size(100,100);
+            if (CheckBoxZawszeNaWierzchu.Checked == true && TopMost != true)
+            {
+                TopMost = true;
+            }
+            else if (CheckBoxZawszeNaWierzchu.Checked == false && TopMost != false)
+            {
+                TopMost = false;
+            }
         }
+
+        private void CheckBoxPelnyEkran_CheckedChanged(object sender, EventArgs e)
+        {
+            if (WindowState != FormWindowState.Maximized)
+            {
+                if (FormBorderStyle != FormBorderStyle.None)
+                    FormBorderStyle = FormBorderStyle.None;
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                if (WindowState != FormWindowState.Normal)
+                {
+                    WindowState = FormWindowState.Normal;
+                    if (FormBorderStyle != FormBorderStyle.Sizable)
+                        FormBorderStyle = FormBorderStyle.Sizable;
+                }
+            }
+        }
+
+
+        private void PanelZPictureBoxWyjdz_MouseEnter(object sender, EventArgs e)
+        {
+
+            int powiekszenieX = Width * 1 / 100;
+            int powiekszenieY = Height * 1 / 100;
+
+            PanelZPictureBoxWyjdz.Bounds = new Rectangle(PanelZPictureBoxWyjdz.Location.X - powiekszenieX / 2, PanelZPictureBoxWyjdz.Location.Y - powiekszenieY / 2, PanelZPictureBoxWyjdz.Width + powiekszenieX, PanelZPictureBoxWyjdz.Height + powiekszenieY);
+        }
+
+        private void PanelZPictureBoxWyjdz_MouseLeave(object sender, EventArgs e)
+        {
+
+            int powiekszenieX = -Width * 1 / 100;
+            int powiekszenieY = -Height * 1 / 100;
+            PanelZPictureBoxWyjdz.Bounds = new Rectangle(PanelZPictureBoxWyjdz.Location.X - powiekszenieX / 2, PanelZPictureBoxWyjdz.Location.Y - powiekszenieY / 2, PanelZPictureBoxWyjdz.Width + powiekszenieX, PanelZPictureBoxWyjdz.Height + powiekszenieY);
+        }
+        
     }
 }

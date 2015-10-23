@@ -22,14 +22,6 @@ namespace RPG
         private void Zegar_Tick(object sender, EventArgs e)
         {
             UstawGlosnosc();
-            OdswiezMenu();
-            /*
-            LabelInformacje.Text = pozycjaEkranuX + "  \t";
-            LabelInformacje.Text += pozycjaEkranuY + "  \n";
-            LabelInformacje.Text += szerokoscEkranu + "  \t";
-            LabelInformacje.Text += wysokoscEkranu + "  \n";*/
-            //LabelInformacyjny.Text = "Pozycja myszki: " + MousePosition.ToString() + "\n";
-            //LabelInformacyjny.Text += MouseButtons.ToString() + "\n";
         }
 
         #endregion

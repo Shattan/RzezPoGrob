@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.PictureBoxWyjdz = new System.Windows.Forms.PictureBox();
             this.PanelInformacje = new System.Windows.Forms.Panel();
             this.LabelInformacje = new System.Windows.Forms.Label();
             this.Zegar = new System.Windows.Forms.Timer(this.components);
@@ -63,10 +62,9 @@
             this.CheckBoxPelnyEkran = new System.Windows.Forms.CheckBox();
             this.PanelOpcje = new System.Windows.Forms.Panel();
             this.PanelWyswietlacza = new System.Windows.Forms.Panel();
-            this.PictureBoxMglaZPrawej = new System.Windows.Forms.PictureBox();
+            this.PanelZPictureBoxWyjdz = new System.Windows.Forms.Panel();
             this.PictureBoxRuszaj = new System.Windows.Forms.PictureBox();
             this.PictureBoxOpcje = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).BeginInit();
             this.PanelInformacje.SuspendLayout();
             this.GroupBoxDzwiek.SuspendLayout();
             this.GroupBoxGlosnoscMuzyki.SuspendLayout();
@@ -74,22 +72,9 @@
             this.GroupBoxEkran.SuspendLayout();
             this.PanelOpcje.SuspendLayout();
             this.PanelWyswietlacza.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMglaZPrawej)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PictureBoxWyjdz
-            // 
-            this.PictureBoxWyjdz.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureBoxWyjdz.Location = new System.Drawing.Point(12, 0);
-            this.PictureBoxWyjdz.Name = "PictureBoxWyjdz";
-            this.PictureBoxWyjdz.Size = new System.Drawing.Size(88, 77);
-            this.PictureBoxWyjdz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxWyjdz.TabIndex = 0;
-            this.PictureBoxWyjdz.TabStop = false;
-            this.PictureBoxWyjdz.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBoxWyjdz_MouseMove);
             // 
             // PanelInformacje
             // 
@@ -504,6 +489,7 @@
             this.CheckBoxZawszeNaWierzchu.TabIndex = 1;
             this.CheckBoxZawszeNaWierzchu.Text = "Zawsze Na Wierzchu";
             this.CheckBoxZawszeNaWierzchu.UseVisualStyleBackColor = true;
+            this.CheckBoxZawszeNaWierzchu.CheckedChanged += new System.EventHandler(this.CheckBoxZawszeNaWierzchu_CheckedChanged);
             // 
             // CheckBoxPelnyEkran
             // 
@@ -517,6 +503,7 @@
             this.CheckBoxPelnyEkran.TabIndex = 0;
             this.CheckBoxPelnyEkran.Text = "Pełny Ekran";
             this.CheckBoxPelnyEkran.UseVisualStyleBackColor = true;
+            this.CheckBoxPelnyEkran.CheckedChanged += new System.EventHandler(this.CheckBoxPelnyEkran_CheckedChanged);
             // 
             // PanelOpcje
             // 
@@ -535,26 +522,26 @@
             // PanelWyswietlacza
             // 
             this.PanelWyswietlacza.BackColor = System.Drawing.Color.Black;
-            this.PanelWyswietlacza.BackgroundImage = global::RPG.Properties.Resources.Tło_menu;
             this.PanelWyswietlacza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelWyswietlacza.Controls.Add(this.PictureBoxMglaZPrawej);
+            this.PanelWyswietlacza.Controls.Add(this.PanelZPictureBoxWyjdz);
             this.PanelWyswietlacza.Controls.Add(this.PictureBoxRuszaj);
             this.PanelWyswietlacza.Controls.Add(this.PictureBoxOpcje);
-            this.PanelWyswietlacza.Controls.Add(this.PictureBoxWyjdz);
             this.PanelWyswietlacza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelWyswietlacza.Location = new System.Drawing.Point(0, 0);
             this.PanelWyswietlacza.Name = "PanelWyswietlacza";
             this.PanelWyswietlacza.Size = new System.Drawing.Size(893, 780);
             this.PanelWyswietlacza.TabIndex = 6;
             // 
-            // PictureBoxMglaZPrawej
+            // PanelZPictureBoxWyjdz
             // 
-            this.PictureBoxMglaZPrawej.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxMglaZPrawej.Location = new System.Drawing.Point(309, 55);
-            this.PictureBoxMglaZPrawej.Name = "PictureBoxMglaZPrawej";
-            this.PictureBoxMglaZPrawej.Size = new System.Drawing.Size(257, 126);
-            this.PictureBoxMglaZPrawej.TabIndex = 3;
-            this.PictureBoxMglaZPrawej.TabStop = false;
+            this.PanelZPictureBoxWyjdz.BackColor = System.Drawing.Color.Transparent;
+            this.PanelZPictureBoxWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PanelZPictureBoxWyjdz.Location = new System.Drawing.Point(12, 3);
+            this.PanelZPictureBoxWyjdz.Name = "PanelZPictureBoxWyjdz";
+            this.PanelZPictureBoxWyjdz.Size = new System.Drawing.Size(79, 73);
+            this.PanelZPictureBoxWyjdz.TabIndex = 3;
+            this.PanelZPictureBoxWyjdz.MouseEnter += new System.EventHandler(this.PanelZPictureBoxWyjdz_MouseEnter);
+            this.PanelZPictureBoxWyjdz.MouseLeave += new System.EventHandler(this.PanelZPictureBoxWyjdz_MouseLeave);
             // 
             // PictureBoxRuszaj
             // 
@@ -596,7 +583,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rzeź Po Grób";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).EndInit();
             this.PanelInformacje.ResumeLayout(false);
             this.GroupBoxDzwiek.ResumeLayout(false);
             this.GroupBoxGlosnoscMuzyki.ResumeLayout(false);
@@ -607,7 +593,6 @@
             this.GroupBoxEkran.PerformLayout();
             this.PanelOpcje.ResumeLayout(false);
             this.PanelWyswietlacza.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMglaZPrawej)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).EndInit();
             this.ResumeLayout(false);
@@ -616,7 +601,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PictureBoxWyjdz;
         private System.Windows.Forms.Panel PanelInformacje;
         private System.Windows.Forms.Label LabelInformacje;
         private System.Windows.Forms.Timer Zegar;
@@ -652,7 +636,7 @@
         private System.Windows.Forms.Panel PanelWyswietlacza;
         private System.Windows.Forms.PictureBox PictureBoxRuszaj;
         private System.Windows.Forms.PictureBox PictureBoxOpcje;
-        private System.Windows.Forms.PictureBox PictureBoxMglaZPrawej;
+        private System.Windows.Forms.Panel PanelZPictureBoxWyjdz;
     }
 }
 
