@@ -61,8 +61,8 @@
             this.CheckBoxZawszeNaWierzchu = new System.Windows.Forms.CheckBox();
             this.CheckBoxPelnyEkran = new System.Windows.Forms.CheckBox();
             this.PanelOpcje = new System.Windows.Forms.Panel();
+            this.PictureBoxUstawienia = new System.Windows.Forms.PictureBox();
             this.PanelWyswietlacza = new System.Windows.Forms.Panel();
-            this.PanelZPictureBoxWyjdz = new System.Windows.Forms.Panel();
             this.PictureBoxWyjscie = new System.Windows.Forms.PictureBox();
             this.PictureBoxRuszaj = new System.Windows.Forms.PictureBox();
             this.PictureBoxOpcje = new System.Windows.Forms.PictureBox();
@@ -72,8 +72,8 @@
             this.GroupBoxGlosnoscEfektowDzwiekowych.SuspendLayout();
             this.GroupBoxEkran.SuspendLayout();
             this.PanelOpcje.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUstawienia)).BeginInit();
             this.PanelWyswietlacza.SuspendLayout();
-            this.PanelZPictureBoxWyjdz.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).BeginInit();
@@ -85,25 +85,26 @@
             this.PanelInformacje.Controls.Add(this.LabelInformacje);
             this.PanelInformacje.Font = new System.Drawing.Font("Lucida Calligraphy", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelInformacje.ForeColor = System.Drawing.Color.Yellow;
-            this.PanelInformacje.Location = new System.Drawing.Point(38, 128);
+            this.PanelInformacje.Location = new System.Drawing.Point(486, 3);
             this.PanelInformacje.Name = "PanelInformacje";
-            this.PanelInformacje.Size = new System.Drawing.Size(62, 100);
+            this.PanelInformacje.Size = new System.Drawing.Size(62, 101);
             this.PanelInformacje.TabIndex = 4;
             // 
             // LabelInformacje
             // 
+            this.LabelInformacje.BackColor = System.Drawing.Color.OrangeRed;
             this.LabelInformacje.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LabelInformacje.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelInformacje.Location = new System.Drawing.Point(0, 0);
             this.LabelInformacje.Name = "LabelInformacje";
-            this.LabelInformacje.Size = new System.Drawing.Size(62, 100);
+            this.LabelInformacje.Size = new System.Drawing.Size(62, 101);
             this.LabelInformacje.TabIndex = 0;
             this.LabelInformacje.Text = "LabelInformacje";
             this.LabelInformacje.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Zegar
             // 
-            this.Zegar.Interval = 1;
+            this.Zegar.Interval = 300;
             this.Zegar.Tick += new System.EventHandler(this.Zegar_Tick);
             // 
             // GroupBoxDzwiek
@@ -532,51 +533,54 @@
             // 
             // PanelOpcje
             // 
-            this.PanelOpcje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PanelOpcje.BackColor = System.Drawing.Color.DimGray;
             this.PanelOpcje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PanelOpcje.Controls.Add(this.GroupBoxEkran);
             this.PanelOpcje.Controls.Add(this.GroupBoxDzwiek);
+            this.PanelOpcje.Controls.Add(this.PictureBoxUstawienia);
             this.PanelOpcje.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelOpcje.ForeColor = System.Drawing.Color.Black;
-            this.PanelOpcje.Location = new System.Drawing.Point(38, 234);
+            this.PanelOpcje.Location = new System.Drawing.Point(12, 110);
             this.PanelOpcje.Name = "PanelOpcje";
             this.PanelOpcje.Size = new System.Drawing.Size(802, 394);
             this.PanelOpcje.TabIndex = 5;
             this.PanelOpcje.Visible = false;
             // 
+            // PictureBoxUstawienia
+            // 
+            this.PictureBoxUstawienia.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxUstawienia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PictureBoxUstawienia.Location = new System.Drawing.Point(0, 0);
+            this.PictureBoxUstawienia.Name = "PictureBoxUstawienia";
+            this.PictureBoxUstawienia.Size = new System.Drawing.Size(802, 394);
+            this.PictureBoxUstawienia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxUstawienia.TabIndex = 25;
+            this.PictureBoxUstawienia.TabStop = false;
+            // 
             // PanelWyswietlacza
             // 
-            this.PanelWyswietlacza.BackColor = System.Drawing.Color.Black;
+            this.PanelWyswietlacza.BackColor = System.Drawing.Color.Red;
             this.PanelWyswietlacza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelWyswietlacza.Controls.Add(this.PanelZPictureBoxWyjdz);
             this.PanelWyswietlacza.Controls.Add(this.PictureBoxRuszaj);
             this.PanelWyswietlacza.Controls.Add(this.PictureBoxOpcje);
+            this.PanelWyswietlacza.Controls.Add(this.PictureBoxWyjscie);
+            this.PanelWyswietlacza.Controls.Add(this.PanelOpcje);
+            this.PanelWyswietlacza.Controls.Add(this.PanelInformacje);
             this.PanelWyswietlacza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelWyswietlacza.Location = new System.Drawing.Point(0, 0);
             this.PanelWyswietlacza.Name = "PanelWyswietlacza";
             this.PanelWyswietlacza.Size = new System.Drawing.Size(893, 780);
             this.PanelWyswietlacza.TabIndex = 6;
             // 
-            // PanelZPictureBoxWyjdz
-            // 
-            this.PanelZPictureBoxWyjdz.BackColor = System.Drawing.Color.Transparent;
-            this.PanelZPictureBoxWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PanelZPictureBoxWyjdz.Controls.Add(this.PictureBoxWyjscie);
-            this.PanelZPictureBoxWyjdz.Location = new System.Drawing.Point(12, 3);
-            this.PanelZPictureBoxWyjdz.Name = "PanelZPictureBoxWyjdz";
-            this.PanelZPictureBoxWyjdz.Size = new System.Drawing.Size(133, 101);
-            this.PanelZPictureBoxWyjdz.TabIndex = 3;
-            this.PanelZPictureBoxWyjdz.MouseEnter += new System.EventHandler(this.PanelZPictureBoxWyjdz_MouseEnter);
-            this.PanelZPictureBoxWyjdz.MouseLeave += new System.EventHandler(this.PanelZPictureBoxWyjdz_MouseLeave);
-            // 
             // PictureBoxWyjscie
             // 
-            this.PictureBoxWyjscie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PictureBoxWyjscie.Location = new System.Drawing.Point(0, 0);
+            this.PictureBoxWyjscie.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxWyjscie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PictureBoxWyjscie.Location = new System.Drawing.Point(12, 3);
             this.PictureBoxWyjscie.Name = "PictureBoxWyjscie";
-            this.PictureBoxWyjscie.Size = new System.Drawing.Size(133, 101);
+            this.PictureBoxWyjscie.Size = new System.Drawing.Size(133, 132);
             this.PictureBoxWyjscie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxWyjscie.TabIndex = 0;
+            this.PictureBoxWyjscie.TabIndex = 6;
             this.PictureBoxWyjscie.TabStop = false;
             this.PictureBoxWyjscie.MouseEnter += new System.EventHandler(this.PictureBoxWyjscie_MouseEnter);
             this.PictureBoxWyjscie.MouseLeave += new System.EventHandler(this.PictureBoxWyjscie_MouseLeave);
@@ -610,8 +614,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(893, 780);
-            this.Controls.Add(this.PanelInformacje);
-            this.Controls.Add(this.PanelOpcje);
             this.Controls.Add(this.PanelWyswietlacza);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.Yellow;
@@ -630,8 +632,8 @@
             this.GroupBoxEkran.ResumeLayout(false);
             this.GroupBoxEkran.PerformLayout();
             this.PanelOpcje.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUstawienia)).EndInit();
             this.PanelWyswietlacza.ResumeLayout(false);
-            this.PanelZPictureBoxWyjdz.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).EndInit();
@@ -676,8 +678,8 @@
         private System.Windows.Forms.Panel PanelWyswietlacza;
         private System.Windows.Forms.PictureBox PictureBoxRuszaj;
         private System.Windows.Forms.PictureBox PictureBoxOpcje;
-        private System.Windows.Forms.Panel PanelZPictureBoxWyjdz;
         private System.Windows.Forms.PictureBox PictureBoxWyjscie;
+        private System.Windows.Forms.PictureBox PictureBoxUstawienia;
     }
 }
 

@@ -49,15 +49,16 @@ namespace RPG
             //Ustawienia panelu opcji
             PanelOpcje.Location = new Point(0, Height * 5 / 100);
             PanelOpcje.BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
+            PictureBoxUstawienia.Image = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
 
             //Ustawienie przycisków
-            PanelZPictureBoxWyjdz.Location = new Point(10, -10);
-            PictureBoxOpcje.Location = new Point(20 + PanelZPictureBoxWyjdz.Width, -10);
-            PictureBoxRuszaj.Location = new Point(30 + PanelZPictureBoxWyjdz.Width + PictureBoxOpcje.Width, -10);
+            PictureBoxWyjscie.Location = new Point(10, -30);
+            PictureBoxOpcje.Location = new Point(20 + PictureBoxWyjscie.Width, -10);
+            PictureBoxRuszaj.Location = new Point(30 + PictureBoxWyjscie.Width + PictureBoxOpcje.Width, -10);
             Image obrazekWyjdz = new Bitmap("Resources/Grafiki menu/Szyld.png");
-            PictureBoxWyjscie.Image = new Bitmap(obrazekWyjdz, PanelZPictureBoxWyjdz.Width - PanelZPictureBoxWyjdz.Width / 10, PanelZPictureBoxWyjdz.Height - PanelZPictureBoxWyjdz.Height / 10);
-            PictureBoxOpcje.Image = new Bitmap("Resources/Grafiki menu/Szyld.png");
-            PictureBoxRuszaj.Image = new Bitmap("Resources/Grafiki menu/Szyld.png");
+            PictureBoxWyjscie.BackgroundImage = new Bitmap(obrazekWyjdz, PictureBoxWyjscie.Width * 2 / 3, PictureBoxWyjscie.Height * 2 / 3);
+            PictureBoxOpcje.Image = new Bitmap(obrazekWyjdz, PictureBoxOpcje.Width, PictureBoxOpcje.Height);
+            PictureBoxRuszaj.Image = new Bitmap(obrazekWyjdz, PictureBoxRuszaj.Width, PictureBoxRuszaj.Height);
         }
 
         #endregion
