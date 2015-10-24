@@ -29,7 +29,7 @@ namespace RPG
         
         public Opcje opcje;
         public Gra gra;
-
+        int przesunięcie = 0;
         public GlownyEkran()
         {
             InitializeComponent();
@@ -42,14 +42,7 @@ namespace RPG
 
             //Gra
 
-            //Czas
-            Zegar.Start();
-        }
-
-        //Moim zdaniem zegar do wywalenia z Menu, damy go w grze
-        private void Zegar_Tick(object sender, EventArgs e)
-        {
-
+            timer1.Start();
         }
 
 
@@ -63,11 +56,13 @@ namespace RPG
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
             //Ustawienie tła rysowanego w menu
-            PanelWyswietlacza.BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło menu.png");
+            BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło menu.png");
 
+            Width = Screen.PrimaryScreen.Bounds.Width;
+            Height = Screen.PrimaryScreen.Bounds.Height;
             //Ustawienia dolnego panelu z informacjami
-            PanelInformacje.Size = new Size(Width, Height / 8);
-            PanelInformacje.Location = new Point(0, Width - PanelInformacje.Size.Height);
+            LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
+            LabelInformacje.Size = new Size(Width, Height / 8);
 
 
             //Ustawienie przycisków
@@ -78,6 +73,8 @@ namespace RPG
             PictureBoxWyjscie.BackgroundImage = new Bitmap(obrazekWyjdz, PictureBoxWyjscie.Width * 2 / 3, PictureBoxWyjscie.Height * 2 / 3);
             PictureBoxOpcje.Image = new Bitmap(obrazekWyjdz, PictureBoxOpcje.Width, PictureBoxOpcje.Height);
             PictureBoxRuszaj.Image = new Bitmap(obrazekWyjdz, PictureBoxRuszaj.Width, PictureBoxRuszaj.Height);
+
+            PictureBoxMgla.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
         }
 
         //Metoda obslugujaca zdarzenie klikniecia na przycisk "Opcje"
@@ -138,6 +135,12 @@ namespace RPG
         private void PictureBoxWyjscie_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            panel1.Location = new Point(panel1.Location.X,przesunięcie);
+            przesunięcie+=5;
         }
     }
 }
