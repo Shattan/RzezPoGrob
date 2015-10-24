@@ -73,33 +73,72 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ekwipunek.cs" />
-    <Compile Include="GlownyEkran.cs">
+    <Compile Include="Bohater.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlownyEkran.Czas.cs">
+    <Compile Include="Bohater.Designer.cs">
+      <DependentUpon>Bohater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DziennikZadan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DziennikZadan.Designer.cs">
+      <DependentUpon>DziennikZadan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ekwipunek.cs" />
+    <Compile Include="GlownyEkran.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GlownyEkran.Designer.cs">
       <DependentUpon>GlownyEkran.cs</DependentUpon>
     </Compile>
-    <Compile Include="GlownyEkran.Dzwiek.cs">
+    <Compile Include="Gra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlownyEkran.Gra.cs">
+    <Compile Include="Gra.Designer.cs">
+      <DependentUpon>Gra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NowaGra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlownyEkran.Obraz.cs">
-      <SubType>Form</SubType>
+    <Compile Include="NowaGra.Designer.cs">
+      <DependentUpon>NowaGra.cs</DependentUpon>
     </Compile>
     <Compile Include="Obszar.cs" />
+    <Compile Include="Opcje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opcje.Designer.cs">
+      <DependentUpon>Opcje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Postac.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Przeszkoda.cs" />
     <Compile Include="Umiejetnosc.cs" />
+    <Compile Include="Walka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Walka.Designer.cs">
+      <DependentUpon>Walka.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Bohater.resx">
+      <DependentUpon>Bohater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DziennikZadan.resx">
+      <DependentUpon>DziennikZadan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GlownyEkran.resx">
       <DependentUpon>GlownyEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gra.resx">
+      <DependentUpon>Gra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NowaGra.resx">
+      <DependentUpon>NowaGra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opcje.resx">
+      <DependentUpon>Opcje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

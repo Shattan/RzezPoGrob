@@ -17,40 +17,62 @@ using System.Windows.Media;
 
 #region Pozostałe biblioteki
 #endregion
+
 namespace RPG
 {
-    partial class GlownyEkran
+    public partial class Opcje : Form
     {
         #region Zmienne i obiekty globalne
         //zmienna umozliwiajaca odtwarzanie muzyki
-        MediaPlayer odtwarzaczMuzyki = new MediaPlayer();
-        MediaPlayer odtwarzaczOtoczenia = new MediaPlayer();
-        MediaPlayer odtwarzaczDialogow = new MediaPlayer();
-        MediaPlayer odtwarzaczEfektowSpecjalnych = new MediaPlayer();
+        public MediaPlayer odtwarzaczMuzyki = new MediaPlayer();
+        public MediaPlayer odtwarzaczOtoczenia = new MediaPlayer();
+        public MediaPlayer odtwarzaczDialogow = new MediaPlayer();
+        public MediaPlayer odtwarzaczEfektowSpecjalnych = new MediaPlayer();
 
         //zmienne sterujące
-        double obecnyPoziomGlosnosciMuzyki = 0.5;
-        double obecnyPoziomGlosnosciEfektow = 0.5;
+        public double obecnyPoziomGlosnosciMuzyki = 0.5;
+        public double obecnyPoziomGlosnosciEfektow = 0.5;
         #endregion
 
+
+        GlownyEkran glownyEkran;
+
+        public Opcje(GlownyEkran Eg)
+        {
+            InitializeComponent();
+            glownyEkran = Eg;
+
+            //Ustawienia panelu opcji
+            Location = new Point(0, Height * 5 / 100);
+            BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
+            //PictureBoxUstawienia.Image = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
+
+            //Ustawienia dzwieku
+            odtwarzaczMuzyki.Volume = obecnyPoziomGlosnosciMuzyki;
+            ZmienGlosnoscOdtwarzaczyEfektow(0.5);
+        }
+
+      
+
         #region Funkcje
-        void OdtworzDzwiek(MediaPlayer odtwarzacz, String sciezka)
+       public void OdtworzDzwiek(MediaPlayer odtwarzacz, String sciezka)
         {
             odtwarzacz.Open(new Uri(sciezka, UriKind.Relative));
             odtwarzacz.Play();
         }
 
-        void ZatrzymajDzwiek(MediaPlayer odtwarzacz)
+        public void ZatrzymajDzwiek(MediaPlayer odtwarzacz)
         {
             odtwarzacz.Stop();
         }
 
-        void ZmienGlosnoscOdtwarzaczyEfektow(double glosnosc)
+        public void ZmienGlosnoscOdtwarzaczyEfektow(double glosnosc)
         {
             odtwarzaczOtoczenia.Volume = glosnosc;
             odtwarzaczDialogow.Volume = glosnosc;
             odtwarzaczEfektowSpecjalnych.Volume = glosnosc;
         }
+
 
         private void CheckBoxWylaczMuzyke_CheckedChanged(object sender, EventArgs e)
         {
@@ -241,6 +263,65 @@ namespace RPG
             }
         }
 
+        #endregion
+
+        private void CheckBoxZawszeNaWierzchu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBoxZawszeNaWierzchu.Checked == true && glownyEkran.TopMost != true)
+            {
+                glownyEkran.TopMost = true;
+            }
+            else if (glownyEkran.TopMost != false)
+            {
+                glownyEkran.TopMost = false;
+            }
+        }
+
+        private void CheckBoxPelnyEkran_CheckedChanged(object sender, EventArgs e)
+        {
+            if (glownyEkran.WindowState != FormWindowState.Maximized)
+            {
+                if (glownyEkran.FormBorderStyle != FormBorderStyle.None)
+                    glownyEkran.FormBorderStyle = FormBorderStyle.None;
+                glownyEkran.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                if (glownyEkran.WindowState != FormWindowState.Normal)
+                {
+                    glownyEkran.WindowState = FormWindowState.Normal;
+                    if (glownyEkran.FormBorderStyle != FormBorderStyle.Sizable)
+                        glownyEkran.FormBorderStyle = FormBorderStyle.Sizable;
+                }
+            }
+        }
+
+
+        #region sprawiamy, ze okno jest niewidoczne w alt+tab
+
+        //Obsluga wychodzenia - zakaz alt+f4
+        private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        //Nie pojawia sie w alt+tab
+        private void Opcje_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ShowInTaskbar = false;
+        }
+
+        //Usuwamy ramke (nie pojawia sie w alt+tab)
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x80;
+                return cp;
+            }
+        }
         #endregion
     }
 }
