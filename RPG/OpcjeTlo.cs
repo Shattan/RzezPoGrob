@@ -12,12 +12,27 @@ namespace RPG
 {
     public partial class OpcjeTlo : Form
     {
-        public OpcjeTlo()
+        public OpcjePrzezroczystosc opcjePrzezroczystosc;
+        GlownyEkran glownyEkran;
+        public OpcjeTlo(GlownyEkran Eg)
         {
             InitializeComponent();
 
+            opcjePrzezroczystosc = new OpcjePrzezroczystosc(Eg);
+
+            glownyEkran = Eg;
             BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
             //PictureBoxUstawienia.Image = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
+
+        }
+
+        private void OpcjeTlo_Shown(object sender, EventArgs e)
+        {
+            DialogResult dr = opcjePrzezroczystosc.ShowDialog(glownyEkran);
+            if (dr == DialogResult.Cancel)
+            {
+                Close();
+            }
         }
     }
 }

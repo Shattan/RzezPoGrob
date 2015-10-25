@@ -42,6 +42,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OpcjeTlo";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Shown += new System.EventHandler(this.OpcjeTlo_Shown);
             this.ResumeLayout(false);
 
         }

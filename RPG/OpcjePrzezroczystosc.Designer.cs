@@ -57,16 +57,20 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych5 = new System.Windows.Forms.RadioButton();
             this.RadioButtonGlosnoscEfektowDzwiekowych6 = new System.Windows.Forms.RadioButton();
             this.PictureBoxGracz = new System.Windows.Forms.PictureBox();
+            this.PictureBoxZapisz = new System.Windows.Forms.PictureBox();
+            this.PictureBoxOdrzuc = new System.Windows.Forms.PictureBox();
             this.GroupBoxEkran.SuspendLayout();
             this.GroupBoxDzwiek.SuspendLayout();
             this.GroupBoxGlosnoscMuzyki.SuspendLayout();
             this.GroupBoxGlosnoscEfektowDzwiekowych.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZapisz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOdrzuc)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBoxEkran
             // 
-            this.GroupBoxEkran.BackColor = System.Drawing.Color.Transparent;
+            this.GroupBoxEkran.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.GroupBoxEkran.Controls.Add(this.CheckBoxZawszeNaWierzchu);
             this.GroupBoxEkran.Controls.Add(this.CheckBoxPelnyEkran);
             this.GroupBoxEkran.Location = new System.Drawing.Point(376, 90);
@@ -105,7 +109,7 @@
             // 
             // GroupBoxDzwiek
             // 
-            this.GroupBoxDzwiek.BackColor = System.Drawing.Color.Transparent;
+            this.GroupBoxDzwiek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.GroupBoxDzwiek.Controls.Add(this.GroupBoxGlosnoscMuzyki);
             this.GroupBoxDzwiek.Controls.Add(this.GroupBoxGlosnoscEfektowDzwiekowych);
             this.GroupBoxDzwiek.Location = new System.Drawing.Point(118, 90);
@@ -117,7 +121,7 @@
             // 
             // GroupBoxGlosnoscMuzyki
             // 
-            this.GroupBoxGlosnoscMuzyki.BackColor = System.Drawing.Color.Transparent;
+            this.GroupBoxGlosnoscMuzyki.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.RadioButtonGlosnoscMuzyki10);
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.RadioButtonGlosnoscMuzyki1);
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.CheckBoxWylaczMuzyke);
@@ -305,7 +309,7 @@
             // 
             // GroupBoxGlosnoscEfektowDzwiekowych
             // 
-            this.GroupBoxGlosnoscEfektowDzwiekowych.BackColor = System.Drawing.Color.Transparent;
+            this.GroupBoxGlosnoscEfektowDzwiekowych.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.RadioButtonGlosnoscEfektowDzwiekowych1);
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.CheckBoxWylaczEfektyDzwiekowe);
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.RadioButtonGlosnoscEfektowDzwiekowych9);
@@ -499,6 +503,27 @@
             this.PictureBoxGracz.TabIndex = 27;
             this.PictureBoxGracz.TabStop = false;
             // 
+            // PictureBoxZapisz
+            // 
+            this.PictureBoxZapisz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PictureBoxZapisz.Location = new System.Drawing.Point(504, 208);
+            this.PictureBoxZapisz.Name = "PictureBoxZapisz";
+            this.PictureBoxZapisz.Size = new System.Drawing.Size(100, 50);
+            this.PictureBoxZapisz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxZapisz.TabIndex = 28;
+            this.PictureBoxZapisz.TabStop = false;
+            // 
+            // PictureBoxOdrzuc
+            // 
+            this.PictureBoxOdrzuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PictureBoxOdrzuc.Location = new System.Drawing.Point(376, 208);
+            this.PictureBoxOdrzuc.Name = "PictureBoxOdrzuc";
+            this.PictureBoxOdrzuc.Size = new System.Drawing.Size(100, 50);
+            this.PictureBoxOdrzuc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxOdrzuc.TabIndex = 29;
+            this.PictureBoxOdrzuc.TabStop = false;
+            this.PictureBoxOdrzuc.Click += new System.EventHandler(this.PictureBoxOdrzuc_Click);
+            // 
             // OpcjePrzezroczystosc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,6 +531,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(803, 395);
+            this.Controls.Add(this.PictureBoxOdrzuc);
+            this.Controls.Add(this.PictureBoxZapisz);
             this.Controls.Add(this.PictureBoxGracz);
             this.Controls.Add(this.GroupBoxDzwiek);
             this.Controls.Add(this.GroupBoxEkran);
@@ -525,6 +552,8 @@
             this.GroupBoxGlosnoscEfektowDzwiekowych.ResumeLayout(false);
             this.GroupBoxGlosnoscEfektowDzwiekowych.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZapisz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOdrzuc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -560,5 +589,7 @@
         private System.Windows.Forms.RadioButton RadioButtonGlosnoscEfektowDzwiekowych5;
         private System.Windows.Forms.RadioButton RadioButtonGlosnoscEfektowDzwiekowych6;
         private System.Windows.Forms.PictureBox PictureBoxGracz;
+        private System.Windows.Forms.PictureBox PictureBoxZapisz;
+        private System.Windows.Forms.PictureBox PictureBoxOdrzuc;
     }
 }

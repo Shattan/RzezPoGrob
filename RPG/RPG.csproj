@@ -203,6 +203,9 @@
     <Content Include="Resources\Grafiki menu\Ikona.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\Odrzuć opcje.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki menu\Opcje.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -213,6 +216,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Wyjście.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki menu\Zapisz opcje.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Plansza.png">

@@ -49,9 +49,8 @@ namespace RPG
             PictureBoxGracz.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
             PictureBoxGracz.Size = new Size(PictureBoxGracz.Image.Width, PictureBoxGracz.Image.Height);
 
-
-
-
+            PictureBoxOdrzuc.Image = new Bitmap("Resources/Grafiki menu/Odrzuć opcje.png");
+            PictureBoxZapisz.Image = new Bitmap("Resources/Grafiki menu/Zapisz opcje.png");
 
 
             //Ustawienia dzwieku
@@ -309,7 +308,9 @@ namespace RPG
         //Obsluga wychodzenia - zakaz alt+f4
         private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            //Do dialogu nie może być tego zabezpieczenia. Dialog w razie alt+F4 zwraca po prostu Abort, albo jakoś tak.
+            //e.Cancel = true;
+            //Tu (w FormClosing) należy robić .Dispose() , żeby zwolnić zasoby dla innych formów
         }
 
         //Nie pojawia sie w alt+tab
@@ -330,6 +331,12 @@ namespace RPG
             }
         }
         #endregion
+
+        private void PictureBoxOdrzuc_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
     }
 }
 

@@ -27,7 +27,6 @@ namespace RPG
         //Opcje sa zawsze uruchomione w tle, odpowiadaja m.in. za dziwiek
         //Do opcji w inncyh formach dostajemy sie poprzez EkranGlowny, dlatego jest publiczny;
 
-        public OpcjePrzezroczystosc opcjePrzezroczystosc;
         public OpcjeTlo opcjeTlo;
         public Gra gra;
         int przesuniecie = 0;
@@ -36,8 +35,7 @@ namespace RPG
         {
             InitializeComponent();
 
-            opcjePrzezroczystosc = new OpcjePrzezroczystosc(this);
-            opcjeTlo = new OpcjeTlo();
+            opcjeTlo = new OpcjeTlo(this);
             //opcje.OdtworzDzwiek(opcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
 
             //Obraz
@@ -87,17 +85,13 @@ namespace RPG
         //Metoda obslugujaca zdarzenie klikniecia na przycisk "Opcje"
         private void PictureBoxOpcje_Click(object sender, EventArgs e)
         {
-            if (opcjePrzezroczystosc.Visible == false)
+            if (opcjeTlo.Visible == false)
             {
-                opcjeTlo.Visible = true;
-                opcjeTlo.BringToFront();
-                opcjePrzezroczystosc.Visible = true;
-                opcjePrzezroczystosc.BringToFront();
+                opcjeTlo.ShowDialog();
             }
             else
             {
                 opcjeTlo.Visible = false;
-                opcjePrzezroczystosc.Visible = false;
             }
         }
 
@@ -107,8 +101,6 @@ namespace RPG
             NowaGra nowaGra = new NowaGra(this);
             nowaGra.Visible = true;
             this.Visible = false;
-            opcjePrzezroczystosc.Visible = false;
-            
         }
 
         //NIE MA JESZCZE TEGO BUTTONU: WCZYTAJ
