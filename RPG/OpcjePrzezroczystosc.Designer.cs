@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class Opcje
+    partial class OpcjePrzezroczystosc
     {
         /// <summary>
         /// Required designer variable.
@@ -499,7 +499,7 @@
             this.PictureBoxGracz.TabIndex = 27;
             this.PictureBoxGracz.TabStop = false;
             // 
-            // Opcje
+            // OpcjePrzezroczystosc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -511,9 +511,9 @@
             this.Controls.Add(this.GroupBoxEkran);
             this.ForeColor = System.Drawing.Color.Goldenrod;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Opcje";
+            this.Name = "OpcjePrzezroczystosc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Opcje";
-            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Opcje_FormClosing);
             this.Load += new System.EventHandler(this.Opcje_Load);

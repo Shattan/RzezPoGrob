@@ -20,7 +20,7 @@ using System.Windows.Media;
 
 namespace RPG
 {
-    public partial class Opcje : Form
+    public partial class OpcjePrzezroczystosc : Form
     {
         #region Zmienne i obiekty globalne
         //zmienna umozliwiajaca odtwarzanie muzyki
@@ -37,14 +37,12 @@ namespace RPG
 
         GlownyEkran glownyEkran;
 
-        public Opcje(GlownyEkran Eg)
+        public OpcjePrzezroczystosc(GlownyEkran Eg)
         {
             InitializeComponent();
             glownyEkran = Eg;
 
             //Ustawienia panelu opcji
-            Location = new Point(0, Height * 5 / 100);
-            BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
             //PictureBoxUstawienia.Image = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
 
 

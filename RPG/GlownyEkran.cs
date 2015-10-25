@@ -26,8 +26,9 @@ namespace RPG
         //GlownyEkran jest nasza podstawa, poki gra dziala, dziala i on
         //Opcje sa zawsze uruchomione w tle, odpowiadaja m.in. za dziwiek
         //Do opcji w inncyh formach dostajemy sie poprzez EkranGlowny, dlatego jest publiczny;
-        
-        public Opcje opcje;
+
+        public OpcjePrzezroczystosc opcjePrzezroczystosc;
+        public OpcjeTlo opcjeTlo;
         public Gra gra;
         int przesuniecie = 0;
         Bitmap plansza= new Bitmap("Resources/Plansza.png");
@@ -35,7 +36,8 @@ namespace RPG
         {
             InitializeComponent();
 
-            opcje = new Opcje(this);
+            opcjePrzezroczystosc = new OpcjePrzezroczystosc(this);
+            opcjeTlo = new OpcjeTlo();
             //opcje.OdtworzDzwiek(opcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
 
             //Obraz
@@ -85,14 +87,17 @@ namespace RPG
         //Metoda obslugujaca zdarzenie klikniecia na przycisk "Opcje"
         private void PictureBoxOpcje_Click(object sender, EventArgs e)
         {
-            if (opcje.Visible == false)
+            if (opcjePrzezroczystosc.Visible == false)
             {
-                opcje.Visible = true;
-                opcje.BringToFront();
+                opcjeTlo.Visible = true;
+                opcjeTlo.BringToFront();
+                opcjePrzezroczystosc.Visible = true;
+                opcjePrzezroczystosc.BringToFront();
             }
             else
             {
-                opcje.Visible = false;
+                opcjeTlo.Visible = false;
+                opcjePrzezroczystosc.Visible = false;
             }
         }
 
@@ -102,7 +107,7 @@ namespace RPG
             NowaGra nowaGra = new NowaGra(this);
             nowaGra.Visible = true;
             this.Visible = false;
-            opcje.Visible = false;
+            opcjePrzezroczystosc.Visible = false;
             
         }
 
@@ -131,7 +136,6 @@ namespace RPG
             panel1.Location = new Point(panel1.Location.X,przesunięcie);
             */
             przesuniecie+=5;
-
         }
 
         private void PictureBoxWyjscie_MouseEnter(object sender, EventArgs e)
