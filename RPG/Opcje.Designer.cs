@@ -56,10 +56,12 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych7 = new System.Windows.Forms.RadioButton();
             this.RadioButtonGlosnoscEfektowDzwiekowych5 = new System.Windows.Forms.RadioButton();
             this.RadioButtonGlosnoscEfektowDzwiekowych6 = new System.Windows.Forms.RadioButton();
+            this.PictureBoxGracz = new System.Windows.Forms.PictureBox();
             this.GroupBoxEkran.SuspendLayout();
             this.GroupBoxDzwiek.SuspendLayout();
             this.GroupBoxGlosnoscMuzyki.SuspendLayout();
             this.GroupBoxGlosnoscEfektowDzwiekowych.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBoxEkran
@@ -77,7 +79,6 @@
             // CheckBoxZawszeNaWierzchu
             // 
             this.CheckBoxZawszeNaWierzchu.AutoSize = true;
-            this.CheckBoxZawszeNaWierzchu.Enabled = false;
             this.CheckBoxZawszeNaWierzchu.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CheckBoxZawszeNaWierzchu.Location = new System.Drawing.Point(6, 52);
             this.CheckBoxZawszeNaWierzchu.Name = "CheckBoxZawszeNaWierzchu";
@@ -92,6 +93,7 @@
             this.CheckBoxPelnyEkran.AutoSize = true;
             this.CheckBoxPelnyEkran.Checked = true;
             this.CheckBoxPelnyEkran.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CheckBoxPelnyEkran.Enabled = false;
             this.CheckBoxPelnyEkran.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CheckBoxPelnyEkran.Location = new System.Drawing.Point(6, 24);
             this.CheckBoxPelnyEkran.Name = "CheckBoxPelnyEkran";
@@ -115,6 +117,7 @@
             // 
             // GroupBoxGlosnoscMuzyki
             // 
+            this.GroupBoxGlosnoscMuzyki.BackColor = System.Drawing.Color.Transparent;
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.RadioButtonGlosnoscMuzyki10);
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.RadioButtonGlosnoscMuzyki1);
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.CheckBoxWylaczMuzyke);
@@ -302,6 +305,7 @@
             // 
             // GroupBoxGlosnoscEfektowDzwiekowych
             // 
+            this.GroupBoxGlosnoscEfektowDzwiekowych.BackColor = System.Drawing.Color.Transparent;
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.RadioButtonGlosnoscEfektowDzwiekowych1);
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.CheckBoxWylaczEfektyDzwiekowe);
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.RadioButtonGlosnoscEfektowDzwiekowych9);
@@ -485,18 +489,32 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych6.UseVisualStyleBackColor = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych6.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
+            // PictureBoxGracz
+            // 
+            this.PictureBoxGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.PictureBoxGracz.Location = new System.Drawing.Point(659, 64);
+            this.PictureBoxGracz.Name = "PictureBoxGracz";
+            this.PictureBoxGracz.Size = new System.Drawing.Size(100, 100);
+            this.PictureBoxGracz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PictureBoxGracz.TabIndex = 27;
+            this.PictureBoxGracz.TabStop = false;
+            // 
             // Opcje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(803, 395);
+            this.Controls.Add(this.PictureBoxGracz);
             this.Controls.Add(this.GroupBoxDzwiek);
             this.Controls.Add(this.GroupBoxEkran);
+            this.ForeColor = System.Drawing.Color.Goldenrod;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Opcje";
             this.Text = "Opcje";
+            this.TopMost = true;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Opcje_FormClosing);
             this.Load += new System.EventHandler(this.Opcje_Load);
             this.GroupBoxEkran.ResumeLayout(false);
@@ -506,6 +524,7 @@
             this.GroupBoxGlosnoscMuzyki.PerformLayout();
             this.GroupBoxGlosnoscEfektowDzwiekowych.ResumeLayout(false);
             this.GroupBoxGlosnoscEfektowDzwiekowych.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -540,5 +559,6 @@
         private System.Windows.Forms.RadioButton RadioButtonGlosnoscEfektowDzwiekowych7;
         private System.Windows.Forms.RadioButton RadioButtonGlosnoscEfektowDzwiekowych5;
         private System.Windows.Forms.RadioButton RadioButtonGlosnoscEfektowDzwiekowych6;
+        private System.Windows.Forms.PictureBox PictureBoxGracz;
     }
 }

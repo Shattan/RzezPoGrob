@@ -206,7 +206,7 @@
     <Content Include="Resources\Grafiki menu\Wyjście.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki menu\Szyld.png">
+    <Content Include="Resources\Plansza.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Grafiki menu\Tło menu.png">

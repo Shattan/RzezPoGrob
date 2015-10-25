@@ -47,6 +47,15 @@ namespace RPG
             BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
             //PictureBoxUstawienia.Image = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
 
+
+            PictureBoxGracz.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
+            PictureBoxGracz.Size = new Size(PictureBoxGracz.Image.Width, PictureBoxGracz.Image.Height);
+
+
+
+
+
+
             //Ustawienia dzwieku
             odtwarzaczMuzyki.Volume = obecnyPoziomGlosnosciMuzyki;
             ZmienGlosnoscOdtwarzaczyEfektow(0.5);
