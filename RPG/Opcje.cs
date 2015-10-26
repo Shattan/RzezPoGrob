@@ -20,7 +20,7 @@ using System.Windows.Media;
 
 namespace RPG
 {
-    public partial class OpcjePrzezroczystosc : Form
+    public partial class Opcje : Form
     {
         #region Zmienne i obiekty globalne
         //zmienna umozliwiajaca odtwarzanie muzyki
@@ -37,7 +37,7 @@ namespace RPG
 
         GlownyEkran glownyEkran;
 
-        public OpcjePrzezroczystosc(GlownyEkran Eg)
+        public Opcje(GlownyEkran Eg)
         {
             InitializeComponent();
             glownyEkran = Eg;

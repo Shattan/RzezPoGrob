@@ -12,13 +12,13 @@ namespace RPG
 {
     public partial class OpcjeTlo : Form
     {
-        public OpcjePrzezroczystosc opcjePrzezroczystosc;
+        public Opcje opcjePrzezroczystosc;
         GlownyEkran glownyEkran;
         public OpcjeTlo(GlownyEkran Eg)
         {
             InitializeComponent();
 
-            opcjePrzezroczystosc = new OpcjePrzezroczystosc(Eg);
+            opcjePrzezroczystosc = new Opcje(Eg);
 
             glownyEkran = Eg;
             BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");

@@ -105,11 +105,11 @@
       <DependentUpon>NowaGra.cs</DependentUpon>
     </Compile>
     <Compile Include="Obszar.cs" />
-    <Compile Include="OpcjePrzezroczystosc.cs">
+    <Compile Include="Opcje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OpcjePrzezroczystosc.Designer.cs">
-      <DependentUpon>OpcjePrzezroczystosc.cs</DependentUpon>
+    <Compile Include="Opcje.Designer.cs">
+      <DependentUpon>Opcje.cs</DependentUpon>
     </Compile>
     <Compile Include="OpcjeTlo.cs">
       <SubType>Form</SubType>
@@ -143,8 +143,8 @@
     <EmbeddedResource Include="NowaGra.resx">
       <DependentUpon>NowaGra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpcjePrzezroczystosc.resx">
-      <DependentUpon>OpcjePrzezroczystosc.cs</DependentUpon>
+    <EmbeddedResource Include="Opcje.resx">
+      <DependentUpon>Opcje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpcjeTlo.resx">
       <DependentUpon>OpcjeTlo.cs</DependentUpon>
@@ -1569,6 +1569,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki postaci na mapie\9\prawo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki postaci walczących\Szczur.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki tła walki\0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\Trawa.png">

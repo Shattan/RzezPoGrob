@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class OpcjePrzezroczystosc
+    partial class Opcje
     {
         /// <summary>
         /// Required designer variable.
