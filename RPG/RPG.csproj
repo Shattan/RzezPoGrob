@@ -1337,10 +1337,13 @@
     <Content Include="Resources\Grafiki postaci na mapie\51\dół.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki postaci na mapie\51\góra.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki postaci na mapie\51\góra.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki postaci na mapie\51\image [www.imagesplitter.net]-0-0.png">
+    <Content Include="Resources\Grafiki postaci na mapie\51\lewo.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki postaci na mapie\51\lewo.png">
@@ -1358,10 +1361,13 @@
     <Content Include="Resources\Grafiki postaci na mapie\52\dół.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki postaci na mapie\52\góra.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki postaci na mapie\52\góra.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki postaci na mapie\52\image [www.imagesplitter.net]-0-0.png">
+    <Content Include="Resources\Grafiki postaci na mapie\52\lewo.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki postaci na mapie\52\lewo.png">
@@ -1379,10 +1385,13 @@
     <Content Include="Resources\Grafiki postaci na mapie\53\dół.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki postaci na mapie\53\góra.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki postaci na mapie\53\góra.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki postaci na mapie\53\image [www.imagesplitter.net]-0-0.png">
+    <Content Include="Resources\Grafiki postaci na mapie\53\lewo.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki postaci na mapie\53\lewo.png">

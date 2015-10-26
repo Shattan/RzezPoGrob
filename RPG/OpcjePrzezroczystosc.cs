@@ -46,7 +46,7 @@ namespace RPG
             //PictureBoxUstawienia.Image = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
 
 
-            PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/30/dół.gif");
+            PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/42/dół.gif");
             PictureBoxGracz.Size = new Size(PictureBoxGracz.Image.Width, PictureBoxGracz.Image.Height);
 
             PictureBoxOdrzuc.Image = new Bitmap("Resources/Grafiki menu/Odrzuć opcje.png");
