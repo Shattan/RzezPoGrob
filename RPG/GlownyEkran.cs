@@ -22,7 +22,7 @@ namespace RPG
         public Gra gra;
 
         //int przesuniecie = 0;
-        //Bitmap plansza= new Bitmap("Resources/Plansza.png");
+        //Bitmap plansza= new Bitmap("Resources/Trawa.png");
 
         public GlownyEkran()
         {
