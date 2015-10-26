@@ -317,7 +317,7 @@ namespace RPG
         private void Opcje_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
-            this.ShowInTaskbar = false;
+            //this.ShowInTaskbar = false;
         }
 
         //Usuwamy ramke (nie pojawia sie w alt+tab)
