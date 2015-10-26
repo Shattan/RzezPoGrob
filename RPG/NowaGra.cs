@@ -12,26 +12,19 @@ namespace RPG
 {
     public partial class NowaGra : Form
     {
-        GlownyEkran glownyEkran;
+        Gra gra;
 
-        public NowaGra(GlownyEkran gE)
+        public NowaGra(Gra g)
         {
             InitializeComponent();
 
-            //dajemy dostep do metod publicznych z gry, bedziemy je uzueplniac tworzac nowa postac
-            glownyEkran = gE;
-            this.BringToFront();
+            gra = g;
             UstawElementyNaEkranie();
-
-            //i tutaj blablabla wypelniamy i na koniec uruchamiamy przycisk "Potwierdz" z danymi dla naszej nowej gry
-
         }
 
 
         private void PictureBoxPotwierdz_Click(object sender, EventArgs e)
         {
-            glownyEkran.gra = new Gra(glownyEkran, textBox1.Text);
-            glownyEkran.gra.Visible = true;
             this.Close();
         }
 
@@ -45,8 +38,10 @@ namespace RPG
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
         }
-        #region sprawiamy, ze okno jest niewidoczne w alt+tab
 
+       
+        #region sprawiamy, ze okno jest niewidoczne w alt+tab
+        /*
         //Obsluga wychodzenia - zakaz alt+f4
         private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -70,6 +65,8 @@ namespace RPG
                 return cp;
             }
         }
+        */
         #endregion
+
     }
 }

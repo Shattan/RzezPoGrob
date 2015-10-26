@@ -41,47 +41,25 @@ namespace RPG
 
         #endregion
 
-        //Konstruktor do Wczytywanie Save
-        public Gra(GlownyEkran Eg)
-        {      
-            InitializeComponent();
-
-            //Referencja do GlownegoEkranu, do opcji itd
-            glownyEkran = Eg;
-            dziennikZadan = new DziennikZadan();
-
-            
-
-            //Tworzenie infrastruktury
-            UtworzUmiejetnosci();
-            UtworzPrzedmiotyEkwipunku();
-            UtworzPostacie();
-            UtworzPrzeszkody();
-            UtworzZestawyPrzeciwnikow();
-            UstawElementyNaEkranie();
-            //glownyEkran.opcje.OdtworzDzwiek(blablabla);
-
-        }
-
-        //Konstruktor do Tworzenie nowej gry
-        //PRZYKLADOWA ROZWIAZANIE
-        public Gra(GlownyEkran Eg, string imie)
+        public Gra(GlownyEkran Eg, Boolean czyWczytujemy)   //false nowa gra, true - wczytuejmy
         {
+            glownyEkran = Eg;
+            //glownyEkran.opcje.OdtworzDzwiek(blablabla);
             InitializeComponent();
 
-            //Referencja do GlownegoEkranu, do opcji itd
-            glownyEkran = Eg;
-            dziennikZadan = new DziennikZadan();
+            UtworzDaneGry();
 
-            label1.Text = imie;
-            //Tworzenie infrastruktury
-            UtworzUmiejetnosci();
-            UtworzPrzedmiotyEkwipunku();
-            UtworzPostacie();
-            UtworzPrzeszkody();
-            UtworzZestawyPrzeciwnikow();
+            if (!czyWczytujemy)
+            {
+                NowaGra nowaGra = new NowaGra(this);  //Uruchamiamy kreatore nowej gry
+                nowaGra.ShowDialog();
+            }
+            else
+            {
+                //Deserializacja z XML          //Wczytujemy stan gry
+            }
+
             UstawElementyNaEkranie();
-
         }
 
         void UstawElementyNaEkranie()
@@ -92,7 +70,20 @@ namespace RPG
 
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
+        }
 
+        void UtworzDaneGry()
+        {
+
+            //Tworzenie infrastruktury
+            UtworzUmiejetnosci();
+            UtworzPrzedmiotyEkwipunku();
+            UtworzPostacie();
+            UtworzPrzeszkody();
+            UtworzZestawyPrzeciwnikow();
+            
+            //Tworzenie Form
+            dziennikZadan = new DziennikZadan();
         }
 
         #region Funkcje
@@ -166,7 +157,7 @@ namespace RPG
         //Obsluga wychodzenia - zakaz alt+f4
         private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            //e.Cancel = true;
         }
 
         //Nie pojawia sie w alt+tab

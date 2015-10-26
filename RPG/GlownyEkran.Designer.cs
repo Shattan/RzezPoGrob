@@ -35,19 +35,21 @@
             this.PictureBoxWyjscie = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PictureBoxMgla = new System.Windows.Forms.PictureBox();
+            this.PictureBoxWczytaj = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMgla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelInformacje
             // 
             this.LabelInformacje.BackColor = System.Drawing.Color.Black;
             this.LabelInformacje.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelInformacje.Location = new System.Drawing.Point(64, 207);
+            this.LabelInformacje.Location = new System.Drawing.Point(54, 727);
             this.LabelInformacje.Name = "LabelInformacje";
-            this.LabelInformacje.Size = new System.Drawing.Size(62, 101);
+            this.LabelInformacje.Size = new System.Drawing.Size(784, 44);
             this.LabelInformacje.TabIndex = 0;
             this.LabelInformacje.Text = "LabelInformacje";
             this.LabelInformacje.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -56,7 +58,7 @@
             // 
             this.PictureBoxRuszaj.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxRuszaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PictureBoxRuszaj.Location = new System.Drawing.Point(290, 12);
+            this.PictureBoxRuszaj.Location = new System.Drawing.Point(429, 12);
             this.PictureBoxRuszaj.Name = "PictureBoxRuszaj";
             this.PictureBoxRuszaj.Size = new System.Drawing.Size(133, 101);
             this.PictureBoxRuszaj.TabIndex = 2;
@@ -100,12 +102,25 @@
             // 
             this.PictureBoxMgla.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxMgla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureBoxMgla.Location = new System.Drawing.Point(585, 156);
+            this.PictureBoxMgla.Location = new System.Drawing.Point(681, 279);
             this.PictureBoxMgla.Name = "PictureBoxMgla";
             this.PictureBoxMgla.Size = new System.Drawing.Size(172, 129);
             this.PictureBoxMgla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PictureBoxMgla.TabIndex = 7;
             this.PictureBoxMgla.TabStop = false;
+            // 
+            // PictureBoxWczytaj
+            // 
+            this.PictureBoxWczytaj.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxWczytaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PictureBoxWczytaj.Location = new System.Drawing.Point(290, 12);
+            this.PictureBoxWczytaj.Name = "PictureBoxWczytaj";
+            this.PictureBoxWczytaj.Size = new System.Drawing.Size(133, 101);
+            this.PictureBoxWczytaj.TabIndex = 8;
+            this.PictureBoxWczytaj.TabStop = false;
+            this.PictureBoxWczytaj.Click += new System.EventHandler(this.PictureBoxWczytaj_Click);
+            this.PictureBoxWczytaj.MouseEnter += new System.EventHandler(this.PictureBoxWczytaj_MouseEnter);
+            this.PictureBoxWczytaj.MouseLeave += new System.EventHandler(this.PictureBoxWczytaj_MouseLeave);
             // 
             // GlownyEkran
             // 
@@ -114,6 +129,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(888, 780);
+            this.Controls.Add(this.PictureBoxWczytaj);
             this.Controls.Add(this.LabelInformacje);
             this.Controls.Add(this.PictureBoxRuszaj);
             this.Controls.Add(this.PictureBoxOpcje);
@@ -131,6 +147,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMgla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -143,6 +160,7 @@
         private System.Windows.Forms.PictureBox PictureBoxWyjscie;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox PictureBoxMgla;
+        private System.Windows.Forms.PictureBox PictureBoxWczytaj;
     }
 }
 

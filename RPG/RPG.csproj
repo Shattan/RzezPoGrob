@@ -215,6 +215,9 @@
     <Content Include="Resources\Grafiki menu\Tło opcji.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\Wczytaj.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki menu\Wyjście.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
