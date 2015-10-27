@@ -55,24 +55,26 @@ namespace RPG
             PictureBoxGracz.Size = new Size(PictureBoxGracz.Image.Width, PictureBoxGracz.Image.Height);
 
             //Wczytanie Right Menu Panel
-            panelPraweMenu.Location = new Point(Screen.PrimaryScreen.Bounds.Width-200, Screen.PrimaryScreen.Bounds.Y+10);
-            panelPraweMenu.Size = new Size(200, 1000);
+            const int wielkoscPrzyciskow = 100;
+            panelPraweMenu.Location = new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y + 30);
+            panelPraweMenu.Size = new Size(wielkoscPrzyciskow, wielkoscPrzyciskow*5);
 
-            List<string> ListaObrazkow = new List<string>();
-            ListaObrazkow.Add("Resources/Grafiki menu/A.png");
-            ListaObrazkow.Add("Resources/Grafiki menu/B.png");
-            ListaObrazkow.Add("Resources/Grafiki menu/C.png");
-            ListaObrazkow.Add("Resources/Grafiki menu/D.png");
-            ListaObrazkow.Add("Resources/Grafiki menu/E.png");
+            List<Image> ListaObrazkow = new List<Image>();
+            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/A.png"));
+            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/B.png"));
+            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/C.png"));
+            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/D.png"));
+            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/E.png"));
+
 
             PictureBox[] praweMenu = new PictureBox[5];
             for (int index = 0; index < praweMenu.Length; index++)
             {
                 praweMenu[index] = new PictureBox();
                 panelPraweMenu.Controls.Add(praweMenu[index]);
-                praweMenu[index].Location = new Point(0, index * 200 + 20);
-                praweMenu[index].Size = new Size(200, 200);
-                praweMenu[index].Image = new Bitmap(ListaObrazkow[index]);
+                praweMenu[index].Location = new Point(0, index * wielkoscPrzyciskow + 20);
+                praweMenu[index].Size = new Size(wielkoscPrzyciskow, wielkoscPrzyciskow);
+                praweMenu[index].Image = new Bitmap(ListaObrazkow[index], wielkoscPrzyciskow, wielkoscPrzyciskow);
                 //praweMenu[index].MouseEnter += new System.EventHandler(this.PictureBoxPraweMenu_MouseEnter);
                 //praweMenu[index].MouseLeave += new System.EventHandler(this.PictureBoxPraweMenu_MouseLeave);
             }

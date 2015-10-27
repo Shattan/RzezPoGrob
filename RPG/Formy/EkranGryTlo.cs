@@ -46,9 +46,9 @@ namespace RPG
             Width = Screen.PrimaryScreen.Bounds.Width;
             Height = Screen.PrimaryScreen.Bounds.Height;
 
-             PictureBoxMgla.Size = new Size(plansza.Width,plansza.Height);
-             PictureBoxMgla.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
-             PictureBoxMgla.Image = plansza;
+             PictureBoxTrawa.Size = new Size(plansza.Width,plansza.Height);
+             PictureBoxTrawa.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
+             PictureBoxTrawa.Image = plansza;
 
             //PictureBoxMgla.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
         }
@@ -67,7 +67,7 @@ namespace RPG
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            PictureBoxMgla.Location = new Point(przesuniecie - plansza.Width / 2, 0 - plansza.Height / 3);
+            PictureBoxTrawa.Location = new Point(przesuniecie - plansza.Width / 2, 0 - plansza.Height / 3);
             przesuniecie += 5;
         }
     }

@@ -58,7 +58,7 @@
             // PictureBoxGracz
             // 
             this.PictureBoxGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.PictureBoxGracz.Location = new System.Drawing.Point(536, 85);
+            this.PictureBoxGracz.Location = new System.Drawing.Point(394, 244);
             this.PictureBoxGracz.Name = "PictureBoxGracz";
             this.PictureBoxGracz.Size = new System.Drawing.Size(100, 100);
             this.PictureBoxGracz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -67,6 +67,7 @@
             // 
             // panelPraweMenu
             // 
+            this.panelPraweMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelPraweMenu.Location = new System.Drawing.Point(785, 2);
             this.panelPraweMenu.Name = "panelPraweMenu";
             this.panelPraweMenu.Size = new System.Drawing.Size(88, 255);

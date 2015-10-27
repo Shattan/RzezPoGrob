@@ -29,24 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.PictureBoxMgla = new System.Windows.Forms.PictureBox();
+            this.PictureBoxTrawa = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMgla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrawa)).BeginInit();
             this.SuspendLayout();
             // 
-            // PictureBoxMgla
+            // PictureBoxTrawa
             // 
-            this.PictureBoxMgla.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxMgla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureBoxMgla.Location = new System.Drawing.Point(56, 66);
-            this.PictureBoxMgla.Name = "PictureBoxMgla";
-            this.PictureBoxMgla.Size = new System.Drawing.Size(172, 129);
-            this.PictureBoxMgla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PictureBoxMgla.TabIndex = 8;
-            this.PictureBoxMgla.TabStop = false;
+            this.PictureBoxTrawa.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxTrawa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureBoxTrawa.Location = new System.Drawing.Point(345, 84);
+            this.PictureBoxTrawa.Name = "PictureBoxTrawa";
+            this.PictureBoxTrawa.Size = new System.Drawing.Size(172, 129);
+            this.PictureBoxTrawa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PictureBoxTrawa.TabIndex = 8;
+            this.PictureBoxTrawa.TabStop = false;
             // 
             // timer1
             // 
+            this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // EkranGryTlo
@@ -56,21 +57,21 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(880, 601);
-            this.Controls.Add(this.PictureBoxMgla);
+            this.Controls.Add(this.PictureBoxTrawa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranGryTlo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EkranGryTlo";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Shown += new System.EventHandler(this.EkranGryTlo_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMgla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrawa)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PictureBoxMgla;
+        private System.Windows.Forms.PictureBox PictureBoxTrawa;
         private System.Windows.Forms.Timer timer1;
     }
 }
