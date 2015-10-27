@@ -29,6 +29,9 @@ namespace RPG
         {
             //Zapisz Elementy do glownyEkran.ekranGry.gra
             glownyEkran.ekranGry.ZapiszNazwe(textBox1.Text);
+            glownyEkran.ekranGryTlo.ShowDialog();
+            
+            //DialogResult = DialogResult.OK;
             this.Close();
         }
 

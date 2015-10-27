@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.PictureBoxGracz = new System.Windows.Forms.PictureBox();
+            this.panelPraweMenu = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).BeginInit();
             this.SuspendLayout();
@@ -57,12 +58,19 @@
             // PictureBoxGracz
             // 
             this.PictureBoxGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.PictureBoxGracz.Location = new System.Drawing.Point(724, 25);
+            this.PictureBoxGracz.Location = new System.Drawing.Point(536, 85);
             this.PictureBoxGracz.Name = "PictureBoxGracz";
             this.PictureBoxGracz.Size = new System.Drawing.Size(100, 100);
             this.PictureBoxGracz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PictureBoxGracz.TabIndex = 28;
             this.PictureBoxGracz.TabStop = false;
+            // 
+            // panelPraweMenu
+            // 
+            this.panelPraweMenu.Location = new System.Drawing.Point(785, 2);
+            this.panelPraweMenu.Name = "panelPraweMenu";
+            this.panelPraweMenu.Size = new System.Drawing.Size(88, 255);
+            this.panelPraweMenu.TabIndex = 29;
             // 
             // EkranGry
             // 
@@ -70,6 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(875, 605);
+            this.Controls.Add(this.panelPraweMenu);
             this.Controls.Add(this.PictureBoxGracz);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.label1);
@@ -89,5 +98,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.PictureBox PictureBoxGracz;
+        private System.Windows.Forms.Panel panelPraweMenu;
     }
 }

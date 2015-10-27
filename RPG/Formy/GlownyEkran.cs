@@ -19,11 +19,13 @@ namespace RPG
     public partial class GlownyEkran : Form
     {
         #region Zmienne
-        private OpcjeTlo opcjeTlo;
-        private EkranGryTlo ekranGryTlo;
-
         public Opcje opcje;
-        public EkranGry ekranGry;       
+        public OpcjeTlo opcjeTlo;
+
+        public EkranGry ekranGry;  
+        public EkranGryTlo ekranGryTlo;
+
+        readonly Bitmap tlo = new Bitmap("Resources/Grafiki menu/Tło menu.png");
         #endregion
 
         public GlownyEkran()
@@ -51,7 +53,7 @@ namespace RPG
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
             //Ustawienie tła rysowanego w menu
-            BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło menu.png");
+            BackgroundImage = tlo;
 
             Width = Screen.PrimaryScreen.Bounds.Width;
             Height = Screen.PrimaryScreen.Bounds.Height;
@@ -89,9 +91,23 @@ namespace RPG
 
         private void PictureBoxRuszaj_Click(object sender, EventArgs e)
         {
+
             NowaGra nowaGra = new NowaGra(this);
-            nowaGra.ShowDialog();
-            ekranGryTlo.ShowDialog();
+            nowaGra.ShowDialog(); 
+   
+            //DialogResult TworzenieGryResult;
+            //using (var f = new NowaGra(this))
+            //{
+            //    TworzenieGryResult = f.ShowDialog();
+            //}
+            //if (TworzenieGryResult == DialogResult.OK)
+            //{
+            //    using (var f2 = new EkranGryTlo(this))
+            //    {
+            //        f2.ShowDialog();
+            //    }
+            //}     
+       
         }
 
        
