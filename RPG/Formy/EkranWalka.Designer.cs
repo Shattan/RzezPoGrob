@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class Walka
+    partial class EkranWalka
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class Bohater
+    partial class EkranEkwipunek
     {
         /// <summary>
         /// Required designer variable.

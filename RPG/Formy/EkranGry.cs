@@ -25,6 +25,7 @@ namespace RPG
         Gra gra;
 
         DziennikZadan dziennikZadan;
+        EkranEkwipunek ekranEkwipunek;
         #endregion
 
         public EkranGry(GlownyEkran glownyEkran) 
@@ -34,6 +35,7 @@ namespace RPG
 
             gra = new Gra();
             dziennikZadan = new DziennikZadan();
+            ekranEkwipunek = new EkranEkwipunek();
 
             InitializeComponent();
             UstawElementyNaEkranie();
@@ -101,13 +103,12 @@ namespace RPG
 
         private void PictureBoxPraweMenuEkwipunek_MouseClick(object sender, EventArgs e)
         {
-
-
+            ekranEkwipunek.ShowDialog();
         }
 
         private void PictureBoxPraweMenuDziennikZadan_MouseClick(object sender, EventArgs e)
         {
-
+            dziennikZadan.ShowDialog();
         }
         
 

@@ -10,14 +10,15 @@ using System.Windows.Forms;
 
 namespace RPG
 {
-    public partial class Bohater : Form
+    public partial class EkranWalka : Form
     {
-        public Bohater()
+        public EkranWalka()
         {
             InitializeComponent();
         }
 
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
+
         //Obsluga wychodzenia - zakaz alt+f4
         private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
         {
