@@ -63,6 +63,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EkranGryTlo";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.EkranGryTlo_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrawa)).EndInit();
             this.ResumeLayout(false);

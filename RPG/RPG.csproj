@@ -73,17 +73,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formy\EkranEkwipunek.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formy\Bohater.Designer.cs">
-      <DependentUpon>EkranEkwipunek.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formy\DziennikZadan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formy\DziennikZadan.Designer.cs">
       <DependentUpon>DziennikZadan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formy\EkranEkwipunek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formy\EkranEkwipunek.Designer.cs">
+      <DependentUpon>EkranEkwipunek.cs</DependentUpon>
     </Compile>
     <Compile Include="Formy\EkranGryTlo.cs">
       <SubType>Form</SubType>
@@ -136,14 +136,17 @@
     <Compile Include="Formy\EkranWalka.Designer.cs">
       <DependentUpon>EkranWalka.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Formy\Bohater.resx">
-      <DependentUpon>EkranEkwipunek.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formy\DziennikZadan.resx">
       <DependentUpon>DziennikZadan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formy\EkranEkwipunek.resx">
+      <DependentUpon>EkranEkwipunek.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranGryTlo.resx">
       <DependentUpon>EkranGryTlo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formy\EkranWalka.resx">
+      <DependentUpon>EkranWalka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\GlownyEkran.resx">
       <DependentUpon>GlownyEkran.cs</DependentUpon>
@@ -170,8 +173,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
