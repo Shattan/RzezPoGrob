@@ -12,13 +12,13 @@ namespace RPG
 {
     public partial class NowaGra : Form
     {
-        Gra gra;
+        EkranGry ekranGry;
 
-        public NowaGra(Gra g)
+        public NowaGra(EkranGry eG)
         {
             InitializeComponent();
 
-            gra = g;
+            ekranGry = eG;
             UstawElementyNaEkranie();
         }
 

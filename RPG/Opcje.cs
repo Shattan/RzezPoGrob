@@ -9,20 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//dodane przeze mnie
 using System.Media;
 using System.Threading;
 using System.Windows.Media;
-#endregion
-
-#region Pozostałe biblioteki
 #endregion
 
 namespace RPG
 {
     public partial class Opcje : Form
     {
-        #region Zmienne i obiekty globalne
+        #region Zmienne
         //zmienna umozliwiajaca odtwarzanie muzyki
         public MediaPlayer odtwarzaczMuzyki = new MediaPlayer();
         public MediaPlayer odtwarzaczOtoczenia = new MediaPlayer();
@@ -32,36 +28,25 @@ namespace RPG
         //zmienne sterujące
         public double obecnyPoziomGlosnosciMuzyki = 0.5;
         public double obecnyPoziomGlosnosciEfektow = 0.5;
-        #endregion
-
 
         GlownyEkran glownyEkran;
+        #endregion  
 
-        public Opcje(GlownyEkran Eg)
+        public Opcje(GlownyEkran glownyEkran)
         {
             InitializeComponent();
-            glownyEkran = Eg;
-
-            //Ustawienia panelu opcji
-            //PictureBoxUstawienia.Image = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
-
-
-            PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/42/dół.gif");
-            PictureBoxGracz.Size = new Size(PictureBoxGracz.Image.Width, PictureBoxGracz.Image.Height);
+            this.glownyEkran = glownyEkran;
 
             PictureBoxOdrzuc.Image = new Bitmap("Resources/Grafiki menu/Odrzuć opcje.png");
             PictureBoxZapisz.Image = new Bitmap("Resources/Grafiki menu/Zapisz opcje.png");
-
 
             //Ustawienia dzwieku
             odtwarzaczMuzyki.Volume = obecnyPoziomGlosnosciMuzyki;
             ZmienGlosnoscOdtwarzaczyEfektow(0.5);
         }
 
-      
-
-        #region Funkcje
-       public void OdtworzDzwiek(MediaPlayer odtwarzacz, String sciezka)
+        #region Metody Dostepowe
+        public void OdtworzDzwiek(MediaPlayer odtwarzacz, String sciezka)
         {
             odtwarzacz.Open(new Uri(sciezka, UriKind.Relative));
             odtwarzacz.Play();
@@ -78,7 +63,14 @@ namespace RPG
             odtwarzaczDialogow.Volume = glosnosc;
             odtwarzaczEfektowSpecjalnych.Volume = glosnosc;
         }
+        #endregion
 
+        #region Obsluga zdarzeń
+        private void PictureBoxOdrzuc_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
 
         private void CheckBoxWylaczMuzyke_CheckedChanged(object sender, EventArgs e)
         {
@@ -115,7 +107,6 @@ namespace RPG
 
         private void CheckBoxWylaczEfektyDzwiekowe_CheckedChanged(object sender, EventArgs e)
         {
-            #region Ustawienia Efektów Dźwiękowych (odtwarzacze 2-6)
             //Wylaczamy dziweki
             if (CheckBoxWylaczEfektyDzwiekowe.Checked == true && obecnyPoziomGlosnosciEfektow != 0.0)
             {
@@ -145,8 +136,6 @@ namespace RPG
 
                 UstawGlosnoscEfektyDzwiekowe();
             }
-
-            #endregion
         }
 
         private void RadioButtonGlosnoscMuzyki_CheckedChanged(object sender, EventArgs e)
@@ -213,7 +202,6 @@ namespace RPG
             }
         }
 
-
         private void UstawGlosnoscEfektyDzwiekowe()
         {
 
@@ -269,8 +257,6 @@ namespace RPG
             }
         }
 
-        #endregion
-
         private void CheckBoxZawszeNaWierzchu_CheckedChanged(object sender, EventArgs e)
         {
             if (CheckBoxZawszeNaWierzchu.Checked == true && glownyEkran.TopMost != true)
@@ -301,9 +287,9 @@ namespace RPG
                 }
             }
         }
+       #endregion
 
-
-        #region sprawiamy, ze okno jest niewidoczne w alt+tab
+        #region Obsluga widocznosci okna
 
         //Obsluga wychodzenia - zakaz alt+f4
         private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
@@ -331,12 +317,6 @@ namespace RPG
             }
         }
         #endregion
-
-        private void PictureBoxOdrzuc_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
     }
 }
 

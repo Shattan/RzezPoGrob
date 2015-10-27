@@ -85,6 +85,12 @@
     <Compile Include="DziennikZadan.Designer.cs">
       <DependentUpon>DziennikZadan.cs</DependentUpon>
     </Compile>
+    <Compile Include="EkranGryTlo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EkranGryTlo.Designer.cs">
+      <DependentUpon>EkranGryTlo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ekwipunek.cs" />
     <Compile Include="GlownyEkran.cs">
       <SubType>Form</SubType>
@@ -92,12 +98,14 @@
     <Compile Include="GlownyEkran.Designer.cs">
       <DependentUpon>GlownyEkran.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gra.cs">
+    <Compile Include="EkranGry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gra.Designer.cs">
-      <DependentUpon>Gra.cs</DependentUpon>
+    <Compile Include="EkranGry.Designer.cs">
+      <DependentUpon>EkranGry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gra.cs" />
+    <Compile Include="Mapa.cs" />
     <Compile Include="NowaGra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,8 +145,8 @@
     <EmbeddedResource Include="GlownyEkran.resx">
       <DependentUpon>GlownyEkran.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gra.resx">
-      <DependentUpon>Gra.cs</DependentUpon>
+    <EmbeddedResource Include="EkranGry.resx">
+      <DependentUpon>EkranGry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NowaGra.resx">
       <DependentUpon>NowaGra.cs</DependentUpon>
@@ -159,6 +167,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

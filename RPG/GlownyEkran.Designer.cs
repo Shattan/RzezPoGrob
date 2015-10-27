@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.LabelInformacje = new System.Windows.Forms.Label();
             this.PictureBoxRuszaj = new System.Windows.Forms.PictureBox();
             this.PictureBoxOpcje = new System.Windows.Forms.PictureBox();
             this.PictureBoxWyjscie = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PictureBoxMgla = new System.Windows.Forms.PictureBox();
             this.PictureBoxWczytaj = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
@@ -92,11 +90,6 @@
             this.PictureBoxWyjscie.Click += new System.EventHandler(this.PictureBoxWyjscie_Click);
             this.PictureBoxWyjscie.MouseEnter += new System.EventHandler(this.PictureBoxWyjscie_MouseEnter);
             this.PictureBoxWyjscie.MouseLeave += new System.EventHandler(this.PictureBoxWyjscie_MouseLeave);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // PictureBoxMgla
             // 
@@ -158,7 +151,6 @@
         private System.Windows.Forms.PictureBox PictureBoxRuszaj;
         private System.Windows.Forms.PictureBox PictureBoxOpcje;
         private System.Windows.Forms.PictureBox PictureBoxWyjscie;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox PictureBoxMgla;
         private System.Windows.Forms.PictureBox PictureBoxWczytaj;
     }

@@ -56,14 +56,12 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych7 = new System.Windows.Forms.RadioButton();
             this.RadioButtonGlosnoscEfektowDzwiekowych5 = new System.Windows.Forms.RadioButton();
             this.RadioButtonGlosnoscEfektowDzwiekowych6 = new System.Windows.Forms.RadioButton();
-            this.PictureBoxGracz = new System.Windows.Forms.PictureBox();
             this.PictureBoxZapisz = new System.Windows.Forms.PictureBox();
             this.PictureBoxOdrzuc = new System.Windows.Forms.PictureBox();
             this.GroupBoxEkran.SuspendLayout();
             this.GroupBoxDzwiek.SuspendLayout();
             this.GroupBoxGlosnoscMuzyki.SuspendLayout();
             this.GroupBoxGlosnoscEfektowDzwiekowych.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZapisz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOdrzuc)).BeginInit();
             this.SuspendLayout();
@@ -493,16 +491,6 @@
             this.RadioButtonGlosnoscEfektowDzwiekowych6.UseVisualStyleBackColor = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych6.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
             // 
-            // PictureBoxGracz
-            // 
-            this.PictureBoxGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.PictureBoxGracz.Location = new System.Drawing.Point(659, 64);
-            this.PictureBoxGracz.Name = "PictureBoxGracz";
-            this.PictureBoxGracz.Size = new System.Drawing.Size(100, 100);
-            this.PictureBoxGracz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PictureBoxGracz.TabIndex = 27;
-            this.PictureBoxGracz.TabStop = false;
-            // 
             // PictureBoxZapisz
             // 
             this.PictureBoxZapisz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -524,7 +512,7 @@
             this.PictureBoxOdrzuc.TabStop = false;
             this.PictureBoxOdrzuc.Click += new System.EventHandler(this.PictureBoxOdrzuc_Click);
             // 
-            // OpcjePrzezroczystosc
+            // Opcje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -533,12 +521,11 @@
             this.ClientSize = new System.Drawing.Size(803, 395);
             this.Controls.Add(this.PictureBoxOdrzuc);
             this.Controls.Add(this.PictureBoxZapisz);
-            this.Controls.Add(this.PictureBoxGracz);
             this.Controls.Add(this.GroupBoxDzwiek);
             this.Controls.Add(this.GroupBoxEkran);
             this.ForeColor = System.Drawing.Color.Goldenrod;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "OpcjePrzezroczystosc";
+            this.Name = "Opcje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Opcje";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -551,7 +538,6 @@
             this.GroupBoxGlosnoscMuzyki.PerformLayout();
             this.GroupBoxGlosnoscEfektowDzwiekowych.ResumeLayout(false);
             this.GroupBoxGlosnoscEfektowDzwiekowych.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZapisz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOdrzuc)).EndInit();
             this.ResumeLayout(false);
@@ -588,7 +574,6 @@
         private System.Windows.Forms.RadioButton RadioButtonGlosnoscEfektowDzwiekowych7;
         private System.Windows.Forms.RadioButton RadioButtonGlosnoscEfektowDzwiekowych5;
         private System.Windows.Forms.RadioButton RadioButtonGlosnoscEfektowDzwiekowych6;
-        private System.Windows.Forms.PictureBox PictureBoxGracz;
         private System.Windows.Forms.PictureBox PictureBoxZapisz;
         private System.Windows.Forms.PictureBox PictureBoxOdrzuc;
     }

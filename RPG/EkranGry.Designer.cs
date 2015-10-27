@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class Gra
+    partial class EkranGry
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.PictureBox = new System.Windows.Forms.PictureBox();
+            this.PictureBoxGracz = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -52,18 +54,30 @@
             this.PictureBox.TabStop = false;
             this.PictureBox.Click += new System.EventHandler(this.PictureBox_Click);
             // 
-            // Gra
+            // PictureBoxGracz
+            // 
+            this.PictureBoxGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.PictureBoxGracz.Location = new System.Drawing.Point(724, 25);
+            this.PictureBoxGracz.Name = "PictureBoxGracz";
+            this.PictureBoxGracz.Size = new System.Drawing.Size(100, 100);
+            this.PictureBoxGracz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PictureBoxGracz.TabIndex = 28;
+            this.PictureBoxGracz.TabStop = false;
+            // 
+            // EkranGry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 605);
+            this.Controls.Add(this.PictureBoxGracz);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Gra";
+            this.Name = "EkranGry";
             this.Text = "Gra";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Opcje_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,5 +86,6 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox PictureBox;
+        private System.Windows.Forms.PictureBox PictureBoxGracz;
     }
 }

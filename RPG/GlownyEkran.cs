@@ -18,28 +18,25 @@ namespace RPG
 {
     public partial class GlownyEkran : Form
     {
-        public OpcjeTlo opcjeTlo;
-        public Gra gra;
+        #region Zmienne
+        private OpcjeTlo opcjeTlo;
+        private EkranGryTlo ekranGryTlo;
 
-        //int przesuniecie = 0;
-        //Bitmap plansza= new Bitmap("Resources/Trawa.png");
+        public Opcje opcje;
+        public EkranGry ekranGry;       
+        #endregion
 
         public GlownyEkran()
         {
             InitializeComponent();
+            opcje = new Opcje(this);
+            opcjeTlo = new OpcjeTlo(this, opcje);
 
-            opcjeTlo = new OpcjeTlo(this);
             //opcje.OdtworzDzwiek(opcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
-            LabelInformacje.Text = "";
-            //Obraz
             UstawElementyNaEkranie();
-
-            //Gra
-
-            timer1.Start();
         }
 
-
+        #region Metody
         void UstawElementyNaEkranie()
         {
             //Ustawienia okienka gry
@@ -57,6 +54,7 @@ namespace RPG
             //Ustawienia dolnego panelu z informacjami
             LabelInformacje.Size = new Size(Width, Height / 8);
             LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
+            LabelInformacje.Text = "";
 
            /* PictureBoxMgla.Size = new Size(plansza.Width,plansza.Height);
             PictureBoxMgla.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
@@ -76,9 +74,9 @@ namespace RPG
 
             //PictureBoxMgla.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
         }
+        #endregion
 
-
-        //Metoda obslugujaca zdarzenie klikniecia na przycisk "Opcje"
+        #region Obsluga zdarzen przyciskow
         private void PictureBoxOpcje_Click(object sender, EventArgs e)
         {
             if (opcjeTlo.Visible == false)
@@ -91,41 +89,26 @@ namespace RPG
             }
         }
 
-
         private void PictureBoxRuszaj_Click(object sender, EventArgs e)
         {
-            gra = new Gra(this, false);         //Uruchamiamy gre; false - nowa gra
-            gra.Visible = true;                 //pokazujemy plansze gry
-            this.Visible = false;               //Ukrywamy to okno menu
+            ekranGry = new EkranGry(this, true);
+            ekranGry.Visible = true;
+            this.Visible = false;        
         }
 
        
         private void PictureBoxWczytaj_Click(object sender, EventArgs e)
         {
-            gra = new Gra(this, true);          //Uruchamiamy gre; true - wycztauj dane 
-            gra.Visible = true;                 //pokazujemy plansze gry
-            this.Visible = false;               //Ukrywamy to okno menu
+            ekranGry = new EkranGry(this, true);
+            ekranGry.Visible = true;
+            this.Visible = false; 
         }
 
         private void PictureBoxWyjscie_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-          /*  using (Graphics grafikaGracza = Graphics.FromImage(PictureBoxMgla.Image))
-            {
-                grafikaGracza.DrawImage(new Bitmap("Resources/Grafiki gracza/W dół.gif"), PictureBoxMgla.Width / 2, PictureBoxMgla.Height / 2);
-                PictureBoxMgla.Image = PictureBoxMgla.Image;
-            }
-            PictureBoxMgla.Location = new Point(przesuniecie - plansza.Width / 2, 0 - plansza.Height / 3);*/
-            /*
-            panel1.Location = new Point(panel1.Location.X,przesunięcie);
-            */
-            //przesuniecie+=5;
-        }
-
+        #endregion
 
         #region Powiekszanie przyciskow
         //Moim zdaniem, lepiej zasotoswac funkcje Hover - obsluguje zarowno MouseEnter jak i MouseLeave - 
@@ -204,6 +187,7 @@ namespace RPG
             }
         }
         #endregion
+        
     }
 }
 
