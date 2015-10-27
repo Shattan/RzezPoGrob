@@ -32,12 +32,10 @@
             this.PictureBoxRuszaj = new System.Windows.Forms.PictureBox();
             this.PictureBoxOpcje = new System.Windows.Forms.PictureBox();
             this.PictureBoxWyjscie = new System.Windows.Forms.PictureBox();
-            this.PictureBoxMgla = new System.Windows.Forms.PictureBox();
             this.PictureBoxWczytaj = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMgla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,17 +89,6 @@
             this.PictureBoxWyjscie.MouseEnter += new System.EventHandler(this.PictureBoxWyjscie_MouseEnter);
             this.PictureBoxWyjscie.MouseLeave += new System.EventHandler(this.PictureBoxWyjscie_MouseLeave);
             // 
-            // PictureBoxMgla
-            // 
-            this.PictureBoxMgla.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxMgla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureBoxMgla.Location = new System.Drawing.Point(681, 279);
-            this.PictureBoxMgla.Name = "PictureBoxMgla";
-            this.PictureBoxMgla.Size = new System.Drawing.Size(172, 129);
-            this.PictureBoxMgla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PictureBoxMgla.TabIndex = 7;
-            this.PictureBoxMgla.TabStop = false;
-            // 
             // PictureBoxWczytaj
             // 
             this.PictureBoxWczytaj.BackColor = System.Drawing.Color.Transparent;
@@ -127,7 +114,6 @@
             this.Controls.Add(this.PictureBoxRuszaj);
             this.Controls.Add(this.PictureBoxOpcje);
             this.Controls.Add(this.PictureBoxWyjscie);
-            this.Controls.Add(this.PictureBoxMgla);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.Yellow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -139,7 +125,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMgla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).EndInit();
             this.ResumeLayout(false);
 
@@ -151,7 +136,6 @@
         private System.Windows.Forms.PictureBox PictureBoxRuszaj;
         private System.Windows.Forms.PictureBox PictureBoxOpcje;
         private System.Windows.Forms.PictureBox PictureBoxWyjscie;
-        private System.Windows.Forms.PictureBox PictureBoxMgla;
         private System.Windows.Forms.PictureBox PictureBoxWczytaj;
     }
 }

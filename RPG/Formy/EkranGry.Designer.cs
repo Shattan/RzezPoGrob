@@ -68,6 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(875, 605);
             this.Controls.Add(this.PictureBoxGracz);
             this.Controls.Add(this.PictureBox);
@@ -75,6 +76,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranGry";
             this.Text = "Gra";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Opcje_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).EndInit();

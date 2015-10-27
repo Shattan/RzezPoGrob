@@ -20,33 +20,22 @@ namespace RPG
     public partial class EkranGry : Form
     {
         #region Zmienne
+        GlownyEkran glownyEkran;
+
         Gra gra;
 
-        GlownyEkran glownyEkran;
         DziennikZadan dziennikZadan;
         #endregion
 
-        public EkranGry(GlownyEkran Eg, Boolean czyWczytujemy)   //false nowa gra, true - wczytuejmy
+        public EkranGry(GlownyEkran glownyEkran) 
         {
-            glownyEkran = Eg;
+            this.glownyEkran = glownyEkran;
             //glownyEkran.opcje.OdtworzDzwiek(odtwarzacz, sciezka);
 
             gra = new Gra();
             dziennikZadan = new DziennikZadan();
 
             InitializeComponent();
-
-            if (!czyWczytujemy)
-            {
-
-            }
-            else
-            {
-                //Deserializacja z XML          //Wczytujemy stan gry
-            }
-
-            ////gra.WczytajDane(...);
-
             UstawElementyNaEkranie();
         }
 
@@ -60,8 +49,18 @@ namespace RPG
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
             //Chodzacy ludek
-            PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/42/dół.gif");
+            PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.gif");
             PictureBoxGracz.Size = new Size(PictureBoxGracz.Image.Width, PictureBoxGracz.Image.Height);
+
+            //using (Graphics grafikaGracza = Graphics.FromImage(PictureBoxMgla.Image))
+            //{
+            //    //grafikaGracza.DrawImage(new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.gif"), PictureBoxMgla.Width / 2, PictureBoxMgla.Height / 2);
+            //}
+        }
+
+        public void ZapiszNazwe(string nazwa)
+        {
+            label1.Text = nazwa;
         }
 
         //Tutaj dzieki zdarzeniom bedziemy tylko wywolywac metody z klasy Gra

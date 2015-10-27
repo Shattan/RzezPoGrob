@@ -29,8 +29,12 @@ namespace RPG
         public GlownyEkran()
         {
             InitializeComponent();
+
             opcje = new Opcje(this);
-            opcjeTlo = new OpcjeTlo(this, opcje);
+            opcjeTlo = new OpcjeTlo(this);
+
+            ekranGry = new EkranGry(this);
+            ekranGryTlo = new EkranGryTlo(this);
 
             //opcje.OdtworzDzwiek(opcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
             UstawElementyNaEkranie();
@@ -51,6 +55,7 @@ namespace RPG
 
             Width = Screen.PrimaryScreen.Bounds.Width;
             Height = Screen.PrimaryScreen.Bounds.Height;
+
             //Ustawienia dolnego panelu z informacjami
             LabelInformacje.Size = new Size(Width, Height / 8);
             LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
@@ -79,29 +84,21 @@ namespace RPG
         #region Obsluga zdarzen przyciskow
         private void PictureBoxOpcje_Click(object sender, EventArgs e)
         {
-            if (opcjeTlo.Visible == false)
-            {
-                opcjeTlo.ShowDialog();
-            }
-            else
-            {
-                opcjeTlo.Visible = false;
-            }
+            opcjeTlo.ShowDialog();
         }
 
         private void PictureBoxRuszaj_Click(object sender, EventArgs e)
         {
-            ekranGry = new EkranGry(this, true);
-            ekranGry.Visible = true;
-            this.Visible = false;        
+            NowaGra nowaGra = new NowaGra(this);
+            nowaGra.ShowDialog();
+            ekranGryTlo.ShowDialog();
         }
 
        
         private void PictureBoxWczytaj_Click(object sender, EventArgs e)
         {
-            ekranGry = new EkranGry(this, true);
-            ekranGry.Visible = true;
-            this.Visible = false; 
+            //Deserializuj z XML i wpisz do je ekranGry
+            ekranGryTlo.ShowDialog();
         }
 
         private void PictureBoxWyjscie_Click(object sender, EventArgs e)

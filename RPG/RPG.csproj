@@ -73,88 +73,91 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bohater.cs">
+    <Compile Include="Formy\Bohater.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bohater.Designer.cs">
+    <Compile Include="Formy\Bohater.Designer.cs">
       <DependentUpon>Bohater.cs</DependentUpon>
     </Compile>
-    <Compile Include="DziennikZadan.cs">
+    <Compile Include="Formy\DziennikZadan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DziennikZadan.Designer.cs">
+    <Compile Include="Formy\DziennikZadan.Designer.cs">
       <DependentUpon>DziennikZadan.cs</DependentUpon>
     </Compile>
-    <Compile Include="EkranGryTlo.cs">
+    <Compile Include="Formy\EkranGryTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EkranGryTlo.Designer.cs">
+    <Compile Include="Formy\EkranGryTlo.Designer.cs">
       <DependentUpon>EkranGryTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ekwipunek.cs" />
-    <Compile Include="GlownyEkran.cs">
+    <Compile Include="Klasy\Ekwipunek.cs" />
+    <Compile Include="Formy\GlownyEkran.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GlownyEkran.Designer.cs">
+    <Compile Include="Formy\GlownyEkran.Designer.cs">
       <DependentUpon>GlownyEkran.cs</DependentUpon>
     </Compile>
-    <Compile Include="EkranGry.cs">
+    <Compile Include="Formy\EkranGry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EkranGry.Designer.cs">
+    <Compile Include="Formy\EkranGry.Designer.cs">
       <DependentUpon>EkranGry.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gra.cs" />
-    <Compile Include="Mapa.cs" />
-    <Compile Include="NowaGra.cs">
+    <Compile Include="Klasy\Gra.cs" />
+    <Compile Include="Klasy\Mapa.cs" />
+    <Compile Include="Formy\NowaGra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NowaGra.Designer.cs">
+    <Compile Include="Formy\NowaGra.Designer.cs">
       <DependentUpon>NowaGra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Obszar.cs" />
-    <Compile Include="Opcje.cs">
+    <Compile Include="Klasy\Obszar.cs" />
+    <Compile Include="Formy\Opcje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Opcje.Designer.cs">
+    <Compile Include="Formy\Opcje.Designer.cs">
       <DependentUpon>Opcje.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpcjeTlo.cs">
+    <Compile Include="Formy\OpcjeTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OpcjeTlo.Designer.cs">
+    <Compile Include="Formy\OpcjeTlo.Designer.cs">
       <DependentUpon>OpcjeTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Postac.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Klasy\Postac.cs" />
+    <Compile Include="Klasy\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Przeszkoda.cs" />
-    <Compile Include="Umiejetnosc.cs" />
-    <Compile Include="Walka.cs">
+    <Compile Include="Klasy\Przeszkoda.cs" />
+    <Compile Include="Klasy\Umiejetnosc.cs" />
+    <Compile Include="Formy\Walka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Walka.Designer.cs">
+    <Compile Include="Formy\Walka.Designer.cs">
       <DependentUpon>Walka.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Bohater.resx">
+    <EmbeddedResource Include="Formy\Bohater.resx">
       <DependentUpon>Bohater.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DziennikZadan.resx">
+    <EmbeddedResource Include="Formy\DziennikZadan.resx">
       <DependentUpon>DziennikZadan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GlownyEkran.resx">
+    <EmbeddedResource Include="Formy\EkranGryTlo.resx">
+      <DependentUpon>EkranGryTlo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formy\GlownyEkran.resx">
       <DependentUpon>GlownyEkran.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EkranGry.resx">
+    <EmbeddedResource Include="Formy\EkranGry.resx">
       <DependentUpon>EkranGry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NowaGra.resx">
+    <EmbeddedResource Include="Formy\NowaGra.resx">
       <DependentUpon>NowaGra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Opcje.resx">
+    <EmbeddedResource Include="Formy\Opcje.resx">
       <DependentUpon>Opcje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpcjeTlo.resx">
+    <EmbeddedResource Include="Formy\OpcjeTlo.resx">
       <DependentUpon>OpcjeTlo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -168,6 +171,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -2221,6 +2225,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Ikona.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki menu\Nowa Gra.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Odrzuć opcje.png">

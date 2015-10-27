@@ -15,15 +15,13 @@ namespace RPG
     public partial class OpcjeTlo : Form
     {
         #region Zmienne
-        Opcje opcje;
         GlownyEkran glownyEkran;
         #endregion
 
-        public OpcjeTlo(GlownyEkran glownyEkran, Opcje opcje)
+        public OpcjeTlo(GlownyEkran glownyEkran)
         {
             InitializeComponent();
             this.glownyEkran = glownyEkran;
-            this.opcje = opcje;
            
             BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
         }
@@ -31,7 +29,7 @@ namespace RPG
         #region Obsluga zdarzeń
         private void OpcjeTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult dr = opcje.ShowDialog(glownyEkran);
+            DialogResult dr = glownyEkran.opcje.ShowDialog(glownyEkran);
             if (dr == DialogResult.Cancel)
             {
                 Close();
