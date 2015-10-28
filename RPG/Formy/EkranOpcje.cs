@@ -16,7 +16,7 @@ using System.Windows.Media;
 
 namespace RPG
 {
-    public partial class Opcje : Form
+    public partial class EkranOpcje : Form
     {
         #region Zmienne
         //zmienna umozliwiajaca odtwarzanie muzyki
@@ -29,13 +29,13 @@ namespace RPG
         public double obecnyPoziomGlosnosciMuzyki = 0.5;
         public double obecnyPoziomGlosnosciEfektow = 0.5;
 
-        GlownyEkran glownyEkran;
+        EkranGlowny EkranGlowny;
         #endregion  
 
-        public Opcje(GlownyEkran glownyEkran)
+        public EkranOpcje(EkranGlowny EkranGlowny)
         {
             InitializeComponent();
-            this.glownyEkran = glownyEkran;
+            this.EkranGlowny = EkranGlowny;
 
             PictureBoxOdrzuc.Image = new Bitmap("Resources/Grafiki menu/Odrzuć opcje.png");
             PictureBoxZapisz.Image = new Bitmap("Resources/Grafiki menu/Zapisz opcje.png");
@@ -259,31 +259,31 @@ namespace RPG
 
         private void CheckBoxZawszeNaWierzchu_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckBoxZawszeNaWierzchu.Checked == true && glownyEkran.TopMost != true)
+            if (CheckBoxZawszeNaWierzchu.Checked == true && EkranGlowny.TopMost != true)
             {
-                glownyEkran.TopMost = true;
+                EkranGlowny.TopMost = true;
             }
-            else if (glownyEkran.TopMost != false)
+            else if (EkranGlowny.TopMost != false)
             {
-                glownyEkran.TopMost = false;
+                EkranGlowny.TopMost = false;
             }
         }
 
         private void CheckBoxPelnyEkran_CheckedChanged(object sender, EventArgs e)
         {
-            if (glownyEkran.WindowState != FormWindowState.Maximized)
+            if (EkranGlowny.WindowState != FormWindowState.Maximized)
             {
-                if (glownyEkran.FormBorderStyle != FormBorderStyle.None)
-                    glownyEkran.FormBorderStyle = FormBorderStyle.None;
-                glownyEkran.WindowState = FormWindowState.Maximized;
+                if (EkranGlowny.FormBorderStyle != FormBorderStyle.None)
+                    EkranGlowny.FormBorderStyle = FormBorderStyle.None;
+                EkranGlowny.WindowState = FormWindowState.Maximized;
             }
             else
             {
-                if (glownyEkran.WindowState != FormWindowState.Normal)
+                if (EkranGlowny.WindowState != FormWindowState.Normal)
                 {
-                    glownyEkran.WindowState = FormWindowState.Normal;
-                    if (glownyEkran.FormBorderStyle != FormBorderStyle.Sizable)
-                        glownyEkran.FormBorderStyle = FormBorderStyle.Sizable;
+                    EkranGlowny.WindowState = FormWindowState.Normal;
+                    if (EkranGlowny.FormBorderStyle != FormBorderStyle.Sizable)
+                        EkranGlowny.FormBorderStyle = FormBorderStyle.Sizable;
                 }
             }
         }
@@ -292,7 +292,7 @@ namespace RPG
         #region Obsluga widocznosci okna
 
         //Obsluga wychodzenia - zakaz alt+f4
-        private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
+        private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Do dialogu nie może być tego zabezpieczenia. Dialog w razie alt+F4 zwraca po prostu Abort, albo jakoś tak.
             //e.Cancel = true;
@@ -300,7 +300,7 @@ namespace RPG
         }
 
         //Nie pojawia sie w alt+tab
-        private void Opcje_Load(object sender, EventArgs e)
+        private void EkranOpcje_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             //this.ShowInTaskbar = false;

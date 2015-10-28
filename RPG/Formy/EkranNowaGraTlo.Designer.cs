@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class DziennikZadan
+    partial class EkranEkranNowaGraTlo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // DziennikZadan
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "DziennikZadan";
-            this.Text = "DziennikZadan";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Opcje_FormClosing);
-            this.ResumeLayout(false);
-
+            this.Text = "EkranEkranNowaGraTlo";
         }
 
         #endregion

@@ -12,21 +12,24 @@ namespace RPG
 {
     public partial class EkranWalka : Form
     {
-        public EkranWalka()
+        EkranGlowny EkranGlowny;
+
+        public EkranWalka(EkranGlowny EkranGlowny)
         {
+            this.EkranGlowny = EkranGlowny;
             InitializeComponent();
         }
 
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
 
         //Obsluga wychodzenia - zakaz alt+f4
-        private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
+        private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
         }
 
         //Nie pojawia sie w alt+tab
-        private void Opcje_Load(object sender, EventArgs e)
+        private void EkranOpcje_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.ShowInTaskbar = false;

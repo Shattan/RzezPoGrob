@@ -11,6 +11,21 @@
     <AssemblyName>RPG</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,11 +88,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formy\DziennikZadan.cs">
+    <Compile Include="Formy\EkranDziennikZadan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\DziennikZadan.Designer.cs">
-      <DependentUpon>DziennikZadan.cs</DependentUpon>
+    <Compile Include="Formy\EkranDziennikZadan.Designer.cs">
+      <DependentUpon>EkranDziennikZadan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formy\EkranDziennikZadanTlo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formy\EkranDziennikZadanTlo.Designer.cs">
+      <DependentUpon>EkranDziennikZadanTlo.cs</DependentUpon>
     </Compile>
     <Compile Include="Formy\EkranEkwipunek.cs">
       <SubType>Form</SubType>
@@ -85,18 +106,42 @@
     <Compile Include="Formy\EkranEkwipunek.Designer.cs">
       <DependentUpon>EkranEkwipunek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formy\EkranEkwipunekTlo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formy\EkranEkwipunekTlo.Designer.cs">
+      <DependentUpon>EkranEkwipunekTlo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formy\EkranGryTlo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formy\EkranGryTlo.Designer.cs">
       <DependentUpon>EkranGryTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klasy\Ekwipunek.cs" />
-    <Compile Include="Formy\GlownyEkran.cs">
+    <Compile Include="Formy\EkranWalkaTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\GlownyEkran.Designer.cs">
-      <DependentUpon>GlownyEkran.cs</DependentUpon>
+    <Compile Include="Formy\EkranWalkaTlo.Designer.cs">
+      <DependentUpon>EkranWalkaTlo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formy\EkranGlownyTlo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formy\EkranGlownyTlo.Designer.cs">
+      <DependentUpon>EkranGlownyTlo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formy\EkranNowaGraTlo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formy\EkranNowaGraTlo.Designer.cs">
+      <DependentUpon>EkranNowaGraTlo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klasy\Ekwipunek.cs" />
+    <Compile Include="Formy\EkranGlowny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formy\EkranGlowny.Designer.cs">
+      <DependentUpon>EkranGlowny.cs</DependentUpon>
     </Compile>
     <Compile Include="Formy\EkranGry.cs">
       <SubType>Form</SubType>
@@ -106,24 +151,24 @@
     </Compile>
     <Compile Include="Klasy\Gra.cs" />
     <Compile Include="Klasy\Mapa.cs" />
-    <Compile Include="Formy\NowaGra.cs">
+    <Compile Include="Formy\EkranNowaGra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\NowaGra.Designer.cs">
-      <DependentUpon>NowaGra.cs</DependentUpon>
+    <Compile Include="Formy\EkranNowaGra.Designer.cs">
+      <DependentUpon>EkranNowaGra.cs</DependentUpon>
     </Compile>
     <Compile Include="Klasy\Obszar.cs" />
-    <Compile Include="Formy\Opcje.cs">
+    <Compile Include="Formy\EkranOpcje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\Opcje.Designer.cs">
-      <DependentUpon>Opcje.cs</DependentUpon>
+    <Compile Include="Formy\EkranOpcje.Designer.cs">
+      <DependentUpon>EkranOpcje.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formy\OpcjeTlo.cs">
+    <Compile Include="Formy\EkranOpcjeTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\OpcjeTlo.Designer.cs">
-      <DependentUpon>OpcjeTlo.cs</DependentUpon>
+    <Compile Include="Formy\EkranOpcjeTlo.Designer.cs">
+      <DependentUpon>EkranOpcjeTlo.cs</DependentUpon>
     </Compile>
     <Compile Include="Klasy\Postac.cs" />
     <Compile Include="Klasy\Program.cs" />
@@ -136,8 +181,8 @@
     <Compile Include="Formy\EkranWalka.Designer.cs">
       <DependentUpon>EkranWalka.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Formy\DziennikZadan.resx">
-      <DependentUpon>DziennikZadan.cs</DependentUpon>
+    <EmbeddedResource Include="Formy\EkranDziennikZadan.resx">
+      <DependentUpon>EkranDziennikZadan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranEkwipunek.resx">
       <DependentUpon>EkranEkwipunek.cs</DependentUpon>
@@ -148,20 +193,23 @@
     <EmbeddedResource Include="Formy\EkranWalka.resx">
       <DependentUpon>EkranWalka.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formy\GlownyEkran.resx">
-      <DependentUpon>GlownyEkran.cs</DependentUpon>
+    <EmbeddedResource Include="Formy\EkranGlowny.resx">
+      <DependentUpon>EkranGlowny.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranGry.resx">
       <DependentUpon>EkranGry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formy\NowaGra.resx">
-      <DependentUpon>NowaGra.cs</DependentUpon>
+    <EmbeddedResource Include="Formy\EkranGlownyTlo.resx">
+      <DependentUpon>EkranGlownyTlo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formy\Opcje.resx">
-      <DependentUpon>Opcje.cs</DependentUpon>
+    <EmbeddedResource Include="Formy\EkranNowaGra.resx">
+      <DependentUpon>EkranNowaGra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formy\OpcjeTlo.resx">
-      <DependentUpon>OpcjeTlo.cs</DependentUpon>
+    <EmbeddedResource Include="Formy\EkranOpcje.resx">
+      <DependentUpon>EkranOpcje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formy\EkranOpcjeTlo.resx">
+      <DependentUpon>EkranOpcjeTlo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,7 +234,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Dźwięki\smierc.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

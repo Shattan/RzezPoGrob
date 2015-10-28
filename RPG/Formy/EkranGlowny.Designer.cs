@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class GlownyEkran
+    partial class EkranGlowny
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,11 @@
         {
             this.LabelInformacje = new System.Windows.Forms.Label();
             this.PictureBoxRuszaj = new System.Windows.Forms.PictureBox();
-            this.PictureBoxOpcje = new System.Windows.Forms.PictureBox();
+            this.PictureBoxEkranOpcje = new System.Windows.Forms.PictureBox();
             this.PictureBoxWyjscie = new System.Windows.Forms.PictureBox();
             this.PictureBoxWczytaj = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkranOpcje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).BeginInit();
             this.SuspendLayout();
@@ -63,18 +63,18 @@
             this.PictureBoxRuszaj.MouseEnter += new System.EventHandler(this.PictureBoxRuszaj_MouseEnter);
             this.PictureBoxRuszaj.MouseLeave += new System.EventHandler(this.PictureBoxRuszaj_MouseLeave);
             // 
-            // PictureBoxOpcje
+            // PictureBoxEkranOpcje
             // 
-            this.PictureBoxOpcje.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxOpcje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PictureBoxOpcje.Location = new System.Drawing.Point(151, 12);
-            this.PictureBoxOpcje.Name = "PictureBoxOpcje";
-            this.PictureBoxOpcje.Size = new System.Drawing.Size(133, 101);
-            this.PictureBoxOpcje.TabIndex = 1;
-            this.PictureBoxOpcje.TabStop = false;
-            this.PictureBoxOpcje.Click += new System.EventHandler(this.PictureBoxOpcje_Click);
-            this.PictureBoxOpcje.MouseEnter += new System.EventHandler(this.PictureBoxOpcje_MouseEnter);
-            this.PictureBoxOpcje.MouseLeave += new System.EventHandler(this.PictureBoxOpcje_MouseLeave);
+            this.PictureBoxEkranOpcje.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxEkranOpcje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PictureBoxEkranOpcje.Location = new System.Drawing.Point(151, 12);
+            this.PictureBoxEkranOpcje.Name = "PictureBoxEkranOpcje";
+            this.PictureBoxEkranOpcje.Size = new System.Drawing.Size(133, 101);
+            this.PictureBoxEkranOpcje.TabIndex = 1;
+            this.PictureBoxEkranOpcje.TabStop = false;
+            this.PictureBoxEkranOpcje.Click += new System.EventHandler(this.PictureBoxEkranOpcje_Click);
+            this.PictureBoxEkranOpcje.MouseEnter += new System.EventHandler(this.PictureBoxEkranOpcje_MouseEnter);
+            this.PictureBoxEkranOpcje.MouseLeave += new System.EventHandler(this.PictureBoxEkranOpcje_MouseLeave);
             // 
             // PictureBoxWyjscie
             // 
@@ -102,28 +102,29 @@
             this.PictureBoxWczytaj.MouseEnter += new System.EventHandler(this.PictureBoxWczytaj_MouseEnter);
             this.PictureBoxWczytaj.MouseLeave += new System.EventHandler(this.PictureBoxWczytaj_MouseLeave);
             // 
-            // GlownyEkran
+            // EkranGlowny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(888, 780);
             this.Controls.Add(this.PictureBoxWczytaj);
             this.Controls.Add(this.LabelInformacje);
             this.Controls.Add(this.PictureBoxRuszaj);
-            this.Controls.Add(this.PictureBoxOpcje);
+            this.Controls.Add(this.PictureBoxEkranOpcje);
             this.Controls.Add(this.PictureBoxWyjscie);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.Yellow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(400, 300);
-            this.Name = "GlownyEkran";
+            this.Name = "EkranGlowny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rzeź Po Grób";
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkranOpcje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).EndInit();
             this.ResumeLayout(false);
@@ -134,7 +135,7 @@
 
         private System.Windows.Forms.Label LabelInformacje;
         private System.Windows.Forms.PictureBox PictureBoxRuszaj;
-        private System.Windows.Forms.PictureBox PictureBoxOpcje;
+        private System.Windows.Forms.PictureBox PictureBoxEkranOpcje;
         private System.Windows.Forms.PictureBox PictureBoxWyjscie;
         private System.Windows.Forms.PictureBox PictureBoxWczytaj;
     }

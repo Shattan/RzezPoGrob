@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class Opcje
+    partial class EkranOpcje
     {
         /// <summary>
         /// Required designer variable.
@@ -512,7 +512,7 @@
             this.PictureBoxOdrzuc.TabStop = false;
             this.PictureBoxOdrzuc.Click += new System.EventHandler(this.PictureBoxOdrzuc_Click);
             // 
-            // Opcje
+            // EkranOpcje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -525,12 +525,12 @@
             this.Controls.Add(this.GroupBoxEkran);
             this.ForeColor = System.Drawing.Color.Goldenrod;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Opcje";
+            this.Name = "EkranOpcje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Opcje";
+            this.Text = "EkranOpcje";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Opcje_FormClosing);
-            this.Load += new System.EventHandler(this.Opcje_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranOpcje_FormClosing);
+            this.Load += new System.EventHandler(this.EkranOpcje_Load);
             this.GroupBoxEkran.ResumeLayout(false);
             this.GroupBoxEkran.PerformLayout();
             this.GroupBoxDzwiek.ResumeLayout(false);

@@ -10,16 +10,20 @@ using System.Windows.Forms;
 
 namespace RPG
 {
-    public partial class NowaGra : Form
+    public partial class EkranNowaGra : Form
     {
-        GlownyEkran glownyEkran;
+        EkranGlowny ekranGlowny;
+        EkranGry ekranGry;
+        EkranGryTlo ekranGryTlo;
        //readonly Bitmap tlo = new Bitmap("Resources/Grafiki menu/Nowa Gra.png");
 
-        public NowaGra(GlownyEkran glownyEkran)
+        public EkranNowaGra(EkranGlowny ekranGlowny, EkranGry ekranGry, EkranGryTlo ekranGryTlo)
         {
             InitializeComponent();
 
-            this.glownyEkran = glownyEkran;
+            this.ekranGlowny = ekranGlowny;
+            this.ekranGry = ekranGry;
+            this.ekranGryTlo = ekranGryTlo;
 
             UstawElementyNaEkranie();      
         }
@@ -27,9 +31,9 @@ namespace RPG
 
         private void PictureBoxPotwierdz_Click(object sender, EventArgs e)
         {
-            //Zapisz Elementy do glownyEkran.ekranGry.gra
-            glownyEkran.ekranGry.ZapiszNazwe(textBox1.Text);
-            glownyEkran.ekranGryTlo.ShowDialog();
+            //Zapisz Elementy do EkranGlowny.ekranGry.gra
+            ekranGry.ZapiszNazwe(textBox1.Text);
+            ekranGryTlo.ShowDialog();
             
             //DialogResult = DialogResult.OK;
             this.Close();
@@ -102,13 +106,13 @@ namespace RPG
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
         /*
         //Obsluga wychodzenia - zakaz alt+f4
-        private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
+        private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
             //e.Cancel = true;
         }
 
         //Nie pojawia sie w alt+tab
-        private void Opcje_Load(object sender, EventArgs e)
+        private void EkranOpcje_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.ShowInTaskbar = false;

@@ -16,7 +16,7 @@ namespace RPG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GlownyEkran());
+            Application.Run(new EkranGlownyTlo());
         }
     }
 }

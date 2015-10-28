@@ -17,13 +17,13 @@ namespace RPG
         Bitmap plansza= new Bitmap("Resources/Mapy/Trawa.png");
 
         #region Zmienne
-        GlownyEkran glownyEkran;
+        EkranGry ekranGry;
         #endregion
 
-        public EkranGryTlo(GlownyEkran glownyEkran)
+        public EkranGryTlo(EkranGry ekranGry)
         {
             InitializeComponent();
-            this.glownyEkran = glownyEkran;
+            this.ekranGry = ekranGry;
 
             BackgroundImage = plansza;
             UstawElementyNaEkranie();
@@ -57,7 +57,7 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranGryTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult dr = glownyEkran.ekranGry.ShowDialog(glownyEkran);
+            DialogResult dr = ekranGry.ShowDialog();
             if (dr == DialogResult.Cancel)
             {
                 Close();

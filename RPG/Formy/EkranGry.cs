@@ -20,22 +20,37 @@ namespace RPG
     public partial class EkranGry : Form
     {
         #region Zmienne
-        GlownyEkran glownyEkran;
+        private EkranGlowny EkranGlowny;  
+
+        public EkranDziennikZadan EkranDziennikZadan;
+        public EkranEkranDziennikZadanTlo EkranEkranDziennikZadanTlo;
+
+        public EkranEkwipunek ekranEkwipunek;
+        public EkranEkwipunekTlo ekranEkwipunekTlo;
+
+        public EkranWalka ekranWalka;
+        public EkranWalkaTlo ekranWalkaTlo;
+
+        public EkranOpcje ekranOpcje;
 
         Gra gra;
-
-        DziennikZadan dziennikZadan;
-        EkranEkwipunek ekranEkwipunek;
         #endregion
 
-        public EkranGry(GlownyEkran glownyEkran) 
+        public EkranGry(EkranGlowny EkranGlowny, EkranOpcje ekranOpcje) 
         {
-            this.glownyEkran = glownyEkran;
-            //glownyEkran.opcje.OdtworzDzwiek(odtwarzacz, sciezka);
+            this.EkranGlowny = EkranGlowny;
+            this.ekranOpcje = ekranOpcje;
+            //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
 
             gra = new Gra();
-            dziennikZadan = new DziennikZadan();
-            ekranEkwipunek = new EkranEkwipunek();
+            EkranDziennikZadan = new EkranDziennikZadan(EkranGlowny);
+            ekranEkwipunek = new EkranEkwipunek(EkranGlowny);
+            ekranWalka = new EkranWalka(EkranGlowny);
+
+            EkranEkranDziennikZadanTlo = new EkranEkranDziennikZadanTlo(EkranDziennikZadan);
+            ekranEkwipunekTlo = new EkranEkwipunekTlo(ekranEkwipunek);
+            ekranWalkaTlo = new EkranWalkaTlo(ekranWalka);
+            
 
             InitializeComponent();
             UstawElementyNaEkranie();
@@ -80,7 +95,7 @@ namespace RPG
             }
 
             praweMenu[0].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
-            praweMenu[1].Click += new System.EventHandler(this.PictureBoxPraweMenuDziennikZadan_MouseClick);
+            praweMenu[1].Click += new System.EventHandler(this.PictureBoxPraweMenuEkranDziennikZadan_MouseClick);
             praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             praweMenu[3].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             praweMenu[4].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
@@ -108,9 +123,9 @@ namespace RPG
             ekranEkwipunek.ShowDialog();
         }
 
-        private void PictureBoxPraweMenuDziennikZadan_MouseClick(object sender, EventArgs e)
+        private void PictureBoxPraweMenuEkranDziennikZadan_MouseClick(object sender, EventArgs e)
         {
-            dziennikZadan.ShowDialog();
+            EkranDziennikZadan.ShowDialog();
         }
         
 
@@ -137,14 +152,14 @@ namespace RPG
 
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            if (dziennikZadan.Visible == false)
+            if (EkranDziennikZadan.Visible == false)
             {
-                dziennikZadan.Visible = true;
-                dziennikZadan.BringToFront();
+                EkranDziennikZadan.Visible = true;
+                EkranDziennikZadan.BringToFront();
             }
             else
             {
-                dziennikZadan.Visible = false;
+                EkranDziennikZadan.Visible = false;
             }
         }
         #endregion
@@ -152,13 +167,13 @@ namespace RPG
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
 
         //Obsluga wychodzenia - zakaz alt+f4
-        private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
+        private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
             //e.Cancel = true;
         }
 
         //Nie pojawia sie w alt+tab
-        private void Opcje_Load(object sender, EventArgs e)
+        private void EkranOpcje_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.ShowInTaskbar = false;

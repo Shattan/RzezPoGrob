@@ -12,24 +12,25 @@ using System.Windows.Forms;
 
 namespace RPG
 {
-    public partial class OpcjeTlo : Form
+    public partial class EkranEkranDziennikZadanTlo : Form
     {
         #region Zmienne
-        GlownyEkran glownyEkran;
+        EkranDziennikZadan ekranDziennikZadan;
+
         #endregion
 
-        public OpcjeTlo(GlownyEkran glownyEkran)
+        public EkranEkranDziennikZadanTlo(EkranDziennikZadan ekranDziennikZadan)
         {
             InitializeComponent();
-            this.glownyEkran = glownyEkran;
-           
+            this.ekranDziennikZadan = ekranDziennikZadan;
+
             BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
         }
 
         #region Obsluga zdarzeń
-        private void OpcjeTlo_Shown(object sender, EventArgs e)
+        private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult dr = glownyEkran.opcje.ShowDialog(glownyEkran);
+            DialogResult dr = ekranDziennikZadan.ShowDialog();
             if (dr == DialogResult.Cancel)
             {
                 Close();

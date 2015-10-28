@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class NowaGra
+    partial class EkranNowaGra
     {
         /// <summary>
         /// Required designer variable.
@@ -82,7 +82,7 @@
             this.PictureBoxWyjscie.MouseEnter += new System.EventHandler(this.PictureBoxWyjscie_MouseEnter);
             this.PictureBoxWyjscie.MouseLeave += new System.EventHandler(this.PictureBoxWyjscie_MouseLeave);
             // 
-            // NowaGra
+            // EkranNowaGra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,8 +93,8 @@
             this.Controls.Add(this.PictureBoxPotwierdz);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NowaGra";
-            this.Text = "NowaGra";
+            this.Name = "EkranNowaGra";
+            this.Text = "EkranNowaGra";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPotwierdz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).EndInit();

@@ -16,29 +16,24 @@ using System.Windows.Media;
 
 namespace RPG
 {
-    public partial class GlownyEkran : Form
+    public partial class EkranGlowny : Form
     {
         #region Zmienne
-        public Opcje opcje;
-        public OpcjeTlo opcjeTlo;
+        private EkranGlownyTlo ekranGlownyTlo;
+        private EkranEkranOpcjeTlo ekranEkranOpcjeTlo;
 
-        public EkranGry ekranGry;  
-        public EkranGryTlo ekranGryTlo;
-
-        readonly Bitmap tlo = new Bitmap("Resources/Grafiki menu/Tło menu.png");
+        public EkranOpcje ekranOpcje;    
         #endregion
 
-        public GlownyEkran()
+        public EkranGlowny(EkranGlownyTlo ekranGlownyTlo)
         {
             InitializeComponent();
+            this.ekranGlownyTlo = ekranGlownyTlo;
 
-            opcje = new Opcje(this);
-            opcjeTlo = new OpcjeTlo(this);
+            ekranOpcje = new EkranOpcje(this);
+            ekranEkranOpcjeTlo = new EkranEkranOpcjeTlo(ekranOpcje);
 
-            ekranGry = new EkranGry(this);
-            ekranGryTlo = new EkranGryTlo(this);
-
-            //opcje.OdtworzDzwiek(opcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
+            //EkranOpcje.OdtworzDzwiek(EkranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
             UstawElementyNaEkranie();
         }
 
@@ -53,7 +48,6 @@ namespace RPG
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
             //Ustawienie tła rysowanego w menu
-            BackgroundImage = tlo;
 
             Width = Screen.PrimaryScreen.Bounds.Width;
             Height = Screen.PrimaryScreen.Bounds.Height;
@@ -70,12 +64,12 @@ namespace RPG
             
             //Ustawienie przycisków
             PictureBoxWyjscie.Location = new Point(10, -30);
-            PictureBoxOpcje.Location = new Point(20 + PictureBoxWyjscie.Width, -30);
-            PictureBoxRuszaj.Location = new Point(30 + PictureBoxWyjscie.Width + PictureBoxOpcje.Width, -30);
-            PictureBoxWczytaj.Location = new Point(40 + PictureBoxWyjscie.Width + PictureBoxOpcje.Width + PictureBoxRuszaj.Width, -30);
+            PictureBoxEkranOpcje.Location = new Point(20 + PictureBoxWyjscie.Width, -30);
+            PictureBoxRuszaj.Location = new Point(30 + PictureBoxWyjscie.Width + PictureBoxEkranOpcje.Width, -30);
+            PictureBoxWczytaj.Location = new Point(40 + PictureBoxWyjscie.Width + PictureBoxEkranOpcje.Width + PictureBoxRuszaj.Width, -30);
 
             PictureBoxWyjscie.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Wyjście.png"), PictureBoxWyjscie.Width * 5 / 8, PictureBoxWyjscie.Height * 7 / 8);
-            PictureBoxOpcje.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Opcje.png"), PictureBoxOpcje.Width * 5 / 8, PictureBoxOpcje.Height * 7 / 8);
+            PictureBoxEkranOpcje.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Opcje.png"), PictureBoxEkranOpcje.Width * 5 / 8, PictureBoxEkranOpcje.Height * 7 / 8);
             PictureBoxRuszaj.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Ruszaj.png"), PictureBoxRuszaj.Width * 5 / 8, PictureBoxRuszaj.Height * 7 / 8);
             PictureBoxWczytaj.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Wczytaj.png"), PictureBoxWczytaj.Width * 5 / 8, PictureBoxWczytaj.Height * 7 / 8);
 
@@ -84,19 +78,21 @@ namespace RPG
         #endregion
 
         #region Obsluga zdarzen przyciskow
-        private void PictureBoxOpcje_Click(object sender, EventArgs e)
+        private void PictureBoxEkranOpcje_Click(object sender, EventArgs e)
         {
-            opcjeTlo.ShowDialog();
+            ekranEkranOpcjeTlo.ShowDialog();
         }
 
         private void PictureBoxRuszaj_Click(object sender, EventArgs e)
         {
+            EkranGry ekranGry = new EkranGry(this, ekranOpcje);
+            EkranGryTlo ekranGryTlo = new EkranGryTlo(ekranGry);
 
-            NowaGra nowaGra = new NowaGra(this);
-            nowaGra.ShowDialog(); 
+            EkranNowaGra ekranNowaGra = new EkranNowaGra(this, ekranGry, ekranGryTlo);
+            ekranNowaGra.ShowDialog();
    
             //DialogResult TworzenieGryResult;
-            //using (var f = new NowaGra(this))
+            //using (var f = new EkranNowaGra(this))
             //{
             //    TworzenieGryResult = f.ShowDialog();
             //}
@@ -109,17 +105,19 @@ namespace RPG
             //}     
        
         }
-
        
         private void PictureBoxWczytaj_Click(object sender, EventArgs e)
         {
+            EkranGry ekranGry = new EkranGry(this, ekranOpcje);
+            EkranGryTlo ekranGryTlo = new EkranGryTlo(ekranGry);
+
             //Deserializuj z XML i wpisz do je ekranGry
             ekranGryTlo.ShowDialog();
         }
 
         private void PictureBoxWyjscie_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult = DialogResult.Abort;
         }
         #endregion
 
@@ -164,21 +162,21 @@ namespace RPG
             }
         }
 
-        private void PictureBoxOpcje_MouseEnter(object sender, EventArgs e)
+        private void PictureBoxEkranOpcje_MouseEnter(object sender, EventArgs e)
         {
             int powiekszenieX = Width * 1 / 100;
             int powiekszenieY = Height * 1 / 100;
             using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Opcje.png"))
             {
-                PictureBoxOpcje.BackgroundImage = new Bitmap(obrazek, PictureBoxOpcje.Width * 5 / 8 + powiekszenieX, PictureBoxOpcje.Height * 7 / 8 + powiekszenieY);
+                PictureBoxEkranOpcje.BackgroundImage = new Bitmap(obrazek, PictureBoxEkranOpcje.Width * 5 / 8 + powiekszenieX, PictureBoxEkranOpcje.Height * 7 / 8 + powiekszenieY);
             }
         }
 
-        private void PictureBoxOpcje_MouseLeave(object sender, EventArgs e)
+        private void PictureBoxEkranOpcje_MouseLeave(object sender, EventArgs e)
         {
             using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Opcje.png"))
             {
-                PictureBoxOpcje.BackgroundImage = new Bitmap(obrazek, PictureBoxOpcje.Width * 5 / 8, PictureBoxOpcje.Height * 7 / 8);
+                PictureBoxEkranOpcje.BackgroundImage = new Bitmap(obrazek, PictureBoxEkranOpcje.Width * 5 / 8, PictureBoxEkranOpcje.Height * 7 / 8);
             }
         }
 

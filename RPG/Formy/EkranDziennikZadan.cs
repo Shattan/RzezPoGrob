@@ -10,29 +10,28 @@ using System.Windows.Forms;
 
 namespace RPG
 {
-    public partial class DziennikZadan : Form
+    public partial class EkranDziennikZadan : Form
     {
-        public DziennikZadan()
+        EkranGlowny EkranGlowny;
+        public EkranDziennikZadan(EkranGlowny EkranGlowny)
         {
+            this.EkranGlowny = EkranGlowny;
 
             InitializeComponent();
             Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Height / 2);
             Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height / 2);
         }
 
-
-
-
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
 
         //Obsluga wychodzenia - zakaz alt+f4
-        private void Opcje_FormClosing(object sender, FormClosingEventArgs e)
+        private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
         }
 
         //Nie pojawia sie w alt+tab
-        private void Opcje_Load(object sender, EventArgs e)
+        private void EkranOpcje_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.ShowInTaskbar = false;
