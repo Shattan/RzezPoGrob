@@ -43,7 +43,8 @@
             // 
             this.LabelInformacje.BackColor = System.Drawing.Color.Black;
             this.LabelInformacje.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelInformacje.Location = new System.Drawing.Point(54, 727);
+            this.LabelInformacje.ForeColor = System.Drawing.Color.Red;
+            this.LabelInformacje.Location = new System.Drawing.Point(7, 163);
             this.LabelInformacje.Name = "LabelInformacje";
             this.LabelInformacje.Size = new System.Drawing.Size(784, 44);
             this.LabelInformacje.TabIndex = 0;
@@ -52,9 +53,9 @@
             // 
             // PictureBoxRuszaj
             // 
-            this.PictureBoxRuszaj.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxRuszaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PictureBoxRuszaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PictureBoxRuszaj.Location = new System.Drawing.Point(429, 12);
+            this.PictureBoxRuszaj.Location = new System.Drawing.Point(290, 12);
             this.PictureBoxRuszaj.Name = "PictureBoxRuszaj";
             this.PictureBoxRuszaj.Size = new System.Drawing.Size(133, 101);
             this.PictureBoxRuszaj.TabIndex = 2;
@@ -65,7 +66,7 @@
             // 
             // PictureBoxEkranOpcje
             // 
-            this.PictureBoxEkranOpcje.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxEkranOpcje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PictureBoxEkranOpcje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.PictureBoxEkranOpcje.Location = new System.Drawing.Point(151, 12);
             this.PictureBoxEkranOpcje.Name = "PictureBoxEkranOpcje";
@@ -78,7 +79,7 @@
             // 
             // PictureBoxWyjscie
             // 
-            this.PictureBoxWyjscie.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxWyjscie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PictureBoxWyjscie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.PictureBoxWyjscie.Location = new System.Drawing.Point(12, 12);
             this.PictureBoxWyjscie.Name = "PictureBoxWyjscie";
@@ -91,9 +92,9 @@
             // 
             // PictureBoxWczytaj
             // 
-            this.PictureBoxWczytaj.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxWczytaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.PictureBoxWczytaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PictureBoxWczytaj.Location = new System.Drawing.Point(290, 12);
+            this.PictureBoxWczytaj.Location = new System.Drawing.Point(429, 12);
             this.PictureBoxWczytaj.Name = "PictureBoxWczytaj";
             this.PictureBoxWczytaj.Size = new System.Drawing.Size(133, 101);
             this.PictureBoxWczytaj.TabIndex = 8;
@@ -106,9 +107,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(888, 780);
+            this.ClientSize = new System.Drawing.Size(869, 409);
             this.Controls.Add(this.PictureBoxWczytaj);
             this.Controls.Add(this.LabelInformacje);
             this.Controls.Add(this.PictureBoxRuszaj);
@@ -121,7 +122,7 @@
             this.Name = "EkranGlowny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rzeź Po Grób";
-            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkranOpcje)).EndInit();

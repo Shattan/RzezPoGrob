@@ -63,14 +63,14 @@ namespace RPG
 
             
             //Ustawienie przycisków
-            PictureBoxWyjscie.Location = new Point(10, -30);
-            PictureBoxEkranOpcje.Location = new Point(20 + PictureBoxWyjscie.Width, -30);
-            PictureBoxRuszaj.Location = new Point(30 + PictureBoxWyjscie.Width + PictureBoxEkranOpcje.Width, -30);
-            PictureBoxWczytaj.Location = new Point(40 + PictureBoxWyjscie.Width + PictureBoxEkranOpcje.Width + PictureBoxRuszaj.Width, -30);
+            PictureBoxWyjscie.Location = new Point(10, -10);
+            PictureBoxEkranOpcje.Location = new Point(20 + PictureBoxWyjscie.Width, -10);
+            PictureBoxWczytaj.Location = new Point(30 + PictureBoxWyjscie.Width + PictureBoxEkranOpcje.Width, -10);
+            PictureBoxRuszaj.Location = new Point(40 + PictureBoxWyjscie.Width + PictureBoxEkranOpcje.Width + PictureBoxRuszaj.Width, -10);
 
-            PictureBoxWyjscie.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Wyjście.png"), PictureBoxWyjscie.Width * 5 / 8, PictureBoxWyjscie.Height * 7 / 8);
+            PictureBoxWyjscie.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Wiej.png"), PictureBoxWyjscie.Width * 5 / 8, PictureBoxWyjscie.Height * 7 / 8);
             PictureBoxEkranOpcje.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Opcje.png"), PictureBoxEkranOpcje.Width * 5 / 8, PictureBoxEkranOpcje.Height * 7 / 8);
-            PictureBoxRuszaj.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Ruszaj.png"), PictureBoxRuszaj.Width * 5 / 8, PictureBoxRuszaj.Height * 7 / 8);
+            PictureBoxRuszaj.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Do boju.png"), PictureBoxRuszaj.Width * 5 / 8, PictureBoxRuszaj.Height * 7 / 8);
             PictureBoxWczytaj.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Wczytaj.png"), PictureBoxWczytaj.Width * 5 / 8, PictureBoxWczytaj.Height * 7 / 8);
 
             //PictureBoxMgla.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
@@ -115,8 +115,8 @@ namespace RPG
         {
             int powiekszenieX = Width * 1 / 100;
             int powiekszenieY = Height * 1 / 100;
-            LabelInformacje.Text = "Wyjscie z Gry";
-            using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Wyjście.png"))
+            LabelInformacje.Text = "Wyjdź z gry.";
+            using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Wiej.png"))
             {
                 PictureBoxWyjscie.BackgroundImage = new Bitmap(obrazek, PictureBoxWyjscie.Width * 5 / 8 + powiekszenieX, PictureBoxWyjscie.Height * 7 / 8 + powiekszenieY);
             }
@@ -124,7 +124,8 @@ namespace RPG
 
         private void PictureBoxWyjscie_MouseLeave(object sender, EventArgs e)
         {
-            using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Wyjście.png"))
+            LabelInformacje.Text = "Witaj! Rozgość się.";
+            using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Wiej.png"))
             {
                 PictureBoxWyjscie.BackgroundImage = new Bitmap(obrazek, PictureBoxWyjscie.Width * 5 / 8, PictureBoxWyjscie.Height * 7 / 8);
             }
@@ -135,6 +136,7 @@ namespace RPG
         {
             int powiekszenieX = Width * 1 / 100;
             int powiekszenieY = Height * 1 / 100;
+            LabelInformacje.Text = "Wczytaj poprzednio zaczętą przygodę.";
             using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Wczytaj.png"))
             {
                 PictureBoxWczytaj.BackgroundImage = new Bitmap(obrazek, PictureBoxWczytaj.Width * 5 / 8 + powiekszenieX, PictureBoxWczytaj.Height * 7 / 8 + powiekszenieY);
@@ -153,6 +155,7 @@ namespace RPG
         {
             int powiekszenieX = Width * 1 / 100;
             int powiekszenieY = Height * 1 / 100;
+            LabelInformacje.Text = "Dostosuj grę do swoich potrzeb.";
             using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Opcje.png"))
             {
                 PictureBoxEkranOpcje.BackgroundImage = new Bitmap(obrazek, PictureBoxEkranOpcje.Width * 5 / 8 + powiekszenieX, PictureBoxEkranOpcje.Height * 7 / 8 + powiekszenieY);
@@ -171,7 +174,8 @@ namespace RPG
         {
             int powiekszenieX = Width * 1 / 100;
             int powiekszenieY = Height * 1 / 100;
-            using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Ruszaj.png"))
+            LabelInformacje.Text = "Rozpocznij nową przygodę!";
+            using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Do boju.png"))
             {
                 PictureBoxRuszaj.BackgroundImage = new Bitmap(obrazek, PictureBoxRuszaj.Width * 5 / 8 + powiekszenieX, PictureBoxRuszaj.Height * 7 / 8 + powiekszenieY);
             }
@@ -179,7 +183,7 @@ namespace RPG
 
         private void PictureBoxRuszaj_MouseLeave(object sender, EventArgs e)
         {
-            using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Ruszaj.png"))
+            using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Do boju.png"))
             {
                 PictureBoxRuszaj.BackgroundImage = new Bitmap(obrazek, PictureBoxRuszaj.Width * 5 / 8, PictureBoxRuszaj.Height * 7 / 8);
             }
