@@ -16,6 +16,9 @@ namespace RPG
     {
         #region Zmienne
         EkranNowaGra ekranNowaGra;
+
+        static readonly Image obrazTla = new Bitmap("Resources/Grafiki menu/Nowa Gra.png");
+        readonly Bitmap tlo = new Bitmap(obrazTla, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
         #endregion
 
         public EkranEkranNowaGraTlo(EkranNowaGra ekranNowaGra)
@@ -23,7 +26,7 @@ namespace RPG
             InitializeComponent();
             this.ekranNowaGra = ekranNowaGra;
 
-            BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
+            BackgroundImage = tlo;
         }
 
         #region Obsluga zdarzeń

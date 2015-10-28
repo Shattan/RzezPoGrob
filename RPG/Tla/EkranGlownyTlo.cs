@@ -18,16 +18,22 @@ namespace RPG
         #region Zmienne
         EkranGlowny ekranGlowny;
 
-        readonly Bitmap tlo = new Bitmap("Resources/Grafiki menu/Tło menu.png");
+        static readonly Image obrazTla = new Bitmap("Resources/Grafiki menu/Tło menu.png");
+        readonly Bitmap tlo = new Bitmap(obrazTla, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
         #endregion
 
         public EkranGlownyTlo()
         {
+
             InitializeComponent();
+
+            Width = Screen.PrimaryScreen.Bounds.Width;
+            Height = Screen.PrimaryScreen.Bounds.Height;
+
             ekranGlowny = new EkranGlowny(this);
             BackColor = System.Drawing.Color.Black;
 
-            BackgroundImage = tlo;
+            BackgroundImage = tlo;            
         }
 
         #region Obsluga zdarzeń
@@ -42,3 +48,34 @@ namespace RPG
         #endregion
     }
 }
+
+
+
+/*   #region sprawiamy, ze okno jest niewidoczne w alt+tab
+
+   //Obsluga wychodzenia - zakaz alt+f4
+   private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
+   {
+       e.Cancel = true;
+   }
+
+   //Nie pojawia sie w alt+tab
+   private void EkranOpcje_Load(object sender, EventArgs e)
+   {
+       this.FormBorderStyle = FormBorderStyle.None;
+       this.ShowInTaskbar = false;
+   }
+
+   //Usuwamy ramke (nie pojawia sie w alt+tab)
+   protected override CreateParams CreateParams
+   {
+       get
+       {
+           CreateParams cp = base.CreateParams;
+           cp.ExStyle |= 0x80;
+           return cp;
+       }
+   }
+   #endregion
+}
+ */

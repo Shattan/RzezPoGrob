@@ -12,19 +12,19 @@ namespace RPG
 {
     public partial class EkranEkwipunek : Form
     {
-        EkranGlowny EkranGlowny;
+        EkranGry ekranGry;
 
-        public EkranEkwipunek(EkranGlowny EkranGlowny)
+        public EkranEkwipunek(EkranGry ekranGry)
         {
-            this.EkranGlowny = EkranGlowny;
+            this.ekranGry = ekranGry;
             InitializeComponent();
         }
-
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
+
         //Obsluga wychodzenia - zakaz alt+f4
         private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            //e.Cancel = true;
         }
 
         //Nie pojawia sie w alt+tab

@@ -20,34 +20,32 @@ namespace RPG
     public partial class EkranGry : Form
     {
         #region Zmienne
-        private EkranGlowny EkranGlowny;  
+        private EkranGlowny ekranGlowny;  
 
-        public EkranDziennikZadan EkranDziennikZadan;
-        public EkranEkranDziennikZadanTlo EkranEkranDziennikZadanTlo;
-
-        public EkranEkwipunek ekranEkwipunek;
+        public EkranEkranDziennikZadanTlo ekranEkranDziennikZadanTlo;
         public EkranEkwipunekTlo ekranEkwipunekTlo;
-
-        public EkranWalka ekranWalka;
         public EkranWalkaTlo ekranWalkaTlo;
 
+        public EkranDziennikZadan ekranDziennikZadan;
+        public EkranEkwipunek ekranEkwipunek;
+        public EkranWalka ekranWalka;
         public EkranOpcje ekranOpcje;
 
         Gra gra;
         #endregion
 
-        public EkranGry(EkranGlowny EkranGlowny, EkranOpcje ekranOpcje) 
+        public EkranGry(EkranGlowny ekranGlowny, EkranOpcje ekranOpcje) 
         {
-            this.EkranGlowny = EkranGlowny;
+            this.ekranGlowny = ekranGlowny;
             this.ekranOpcje = ekranOpcje;
             //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
 
             gra = new Gra();
-            EkranDziennikZadan = new EkranDziennikZadan(EkranGlowny);
-            ekranEkwipunek = new EkranEkwipunek(EkranGlowny);
-            ekranWalka = new EkranWalka(EkranGlowny);
+            ekranDziennikZadan = new EkranDziennikZadan(this);
+            ekranEkwipunek = new EkranEkwipunek(this);
+            ekranWalka = new EkranWalka(this);
 
-            EkranEkranDziennikZadanTlo = new EkranEkranDziennikZadanTlo(EkranDziennikZadan);
+            ekranEkranDziennikZadanTlo = new EkranEkranDziennikZadanTlo(ekranDziennikZadan);
             ekranEkwipunekTlo = new EkranEkwipunekTlo(ekranEkwipunek);
             ekranWalkaTlo = new EkranWalkaTlo(ekranWalka);
             
@@ -120,12 +118,12 @@ namespace RPG
 
         private void PictureBoxPraweMenuEkwipunek_MouseClick(object sender, EventArgs e)
         {
-            ekranEkwipunek.ShowDialog();
+            ekranEkwipunekTlo.ShowDialog();
         }
 
         private void PictureBoxPraweMenuEkranDziennikZadan_MouseClick(object sender, EventArgs e)
         {
-            EkranDziennikZadan.ShowDialog();
+            ekranEkranDziennikZadanTlo.ShowDialog();
         }
         
 
@@ -152,14 +150,14 @@ namespace RPG
 
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            if (EkranDziennikZadan.Visible == false)
+            if (ekranDziennikZadan.Visible == false)
             {
-                EkranDziennikZadan.Visible = true;
-                EkranDziennikZadan.BringToFront();
+                ekranDziennikZadan.Visible = true;
+                ekranDziennikZadan.BringToFront();
             }
             else
             {
-                EkranDziennikZadan.Visible = false;
+                ekranDziennikZadan.Visible = false;
             }
         }
         #endregion

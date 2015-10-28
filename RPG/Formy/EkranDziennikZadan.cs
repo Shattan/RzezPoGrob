@@ -12,10 +12,10 @@ namespace RPG
 {
     public partial class EkranDziennikZadan : Form
     {
-        EkranGlowny EkranGlowny;
-        public EkranDziennikZadan(EkranGlowny EkranGlowny)
+        EkranGry ekranGry;
+        public EkranDziennikZadan(EkranGry ekranGry)
         {
-            this.EkranGlowny = EkranGlowny;
+            this.ekranGry = ekranGry;
 
             InitializeComponent();
             Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Height / 2);
@@ -27,7 +27,7 @@ namespace RPG
         //Obsluga wychodzenia - zakaz alt+f4
         private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            //e.Cancel = true;
         }
 
         //Nie pojawia sie w alt+tab

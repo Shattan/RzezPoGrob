@@ -12,11 +12,11 @@ namespace RPG
 {
     public partial class EkranWalka : Form
     {
-        EkranGlowny EkranGlowny;
+        EkranGry ekranGry;
 
-        public EkranWalka(EkranGlowny EkranGlowny)
+        public EkranWalka(EkranGry ekranGry)
         {
-            this.EkranGlowny = EkranGlowny;
+            this.ekranGry = ekranGry;
             InitializeComponent();
         }
 
@@ -25,7 +25,7 @@ namespace RPG
         //Obsluga wychodzenia - zakaz alt+f4
         private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            //e.Cancel = true;
         }
 
         //Nie pojawia sie w alt+tab

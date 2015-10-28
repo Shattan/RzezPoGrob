@@ -29,13 +29,13 @@ namespace RPG
         public double obecnyPoziomGlosnosciMuzyki = 0.5;
         public double obecnyPoziomGlosnosciEfektow = 0.5;
 
-        EkranGlowny EkranGlowny;
+        EkranGlowny ekranGlowny;
         #endregion  
 
-        public EkranOpcje(EkranGlowny EkranGlowny)
+        public EkranOpcje(EkranGlowny ekranGlowny)
         {
             InitializeComponent();
-            this.EkranGlowny = EkranGlowny;
+            this.ekranGlowny = ekranGlowny;
 
             PictureBoxOdrzuc.Image = new Bitmap("Resources/Grafiki menu/Odrzuć opcje.png");
             PictureBoxZapisz.Image = new Bitmap("Resources/Grafiki menu/Zapisz opcje.png");
@@ -259,31 +259,31 @@ namespace RPG
 
         private void CheckBoxZawszeNaWierzchu_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckBoxZawszeNaWierzchu.Checked == true && EkranGlowny.TopMost != true)
+            if (CheckBoxZawszeNaWierzchu.Checked == true && ekranGlowny.TopMost != true)
             {
-                EkranGlowny.TopMost = true;
+                ekranGlowny.TopMost = true;
             }
-            else if (EkranGlowny.TopMost != false)
+            else if (ekranGlowny.TopMost != false)
             {
-                EkranGlowny.TopMost = false;
+                ekranGlowny.TopMost = false;
             }
         }
 
         private void CheckBoxPelnyEkran_CheckedChanged(object sender, EventArgs e)
         {
-            if (EkranGlowny.WindowState != FormWindowState.Maximized)
+            if (ekranGlowny.WindowState != FormWindowState.Maximized)
             {
-                if (EkranGlowny.FormBorderStyle != FormBorderStyle.None)
-                    EkranGlowny.FormBorderStyle = FormBorderStyle.None;
-                EkranGlowny.WindowState = FormWindowState.Maximized;
+                if (ekranGlowny.FormBorderStyle != FormBorderStyle.None)
+                    ekranGlowny.FormBorderStyle = FormBorderStyle.None;
+                ekranGlowny.WindowState = FormWindowState.Maximized;
             }
             else
             {
-                if (EkranGlowny.WindowState != FormWindowState.Normal)
+                if (ekranGlowny.WindowState != FormWindowState.Normal)
                 {
-                    EkranGlowny.WindowState = FormWindowState.Normal;
-                    if (EkranGlowny.FormBorderStyle != FormBorderStyle.Sizable)
-                        EkranGlowny.FormBorderStyle = FormBorderStyle.Sizable;
+                    ekranGlowny.WindowState = FormWindowState.Normal;
+                    if (ekranGlowny.FormBorderStyle != FormBorderStyle.Sizable)
+                        ekranGlowny.FormBorderStyle = FormBorderStyle.Sizable;
                 }
             }
         }

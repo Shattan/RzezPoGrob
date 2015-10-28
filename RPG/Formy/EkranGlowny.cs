@@ -33,7 +33,7 @@ namespace RPG
             ekranOpcje = new EkranOpcje(this);
             ekranEkranOpcjeTlo = new EkranEkranOpcjeTlo(ekranOpcje);
 
-            //EkranOpcje.OdtworzDzwiek(EkranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
+            //ekranOpcje.OdtworzDzwiek(ekranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
             UstawElementyNaEkranie();
         }
 
@@ -89,21 +89,8 @@ namespace RPG
             EkranGryTlo ekranGryTlo = new EkranGryTlo(ekranGry);
 
             EkranNowaGra ekranNowaGra = new EkranNowaGra(this, ekranGry, ekranGryTlo);
-            ekranNowaGra.ShowDialog();
-   
-            //DialogResult TworzenieGryResult;
-            //using (var f = new EkranNowaGra(this))
-            //{
-            //    TworzenieGryResult = f.ShowDialog();
-            //}
-            //if (TworzenieGryResult == DialogResult.OK)
-            //{
-            //    using (var f2 = new EkranGryTlo(this))
-            //    {
-            //        f2.ShowDialog();
-            //    }
-            //}     
-       
+            EkranEkranNowaGraTlo ekranNowaGraTlo = new EkranEkranNowaGraTlo(ekranNowaGra);
+            ekranNowaGraTlo.ShowDialog();
         }
        
         private void PictureBoxWczytaj_Click(object sender, EventArgs e)

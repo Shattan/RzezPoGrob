@@ -16,7 +16,7 @@ namespace RPG
     {
         #region Zmienne
         EkranDziennikZadan ekranDziennikZadan;
-
+        readonly Bitmap tlo = new Bitmap("Resources/Grafiki menu/Nowa Gra.png");
         #endregion
 
         public EkranEkranDziennikZadanTlo(EkranDziennikZadan ekranDziennikZadan)
@@ -24,7 +24,7 @@ namespace RPG
             InitializeComponent();
             this.ekranDziennikZadan = ekranDziennikZadan;
 
-            BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
+            BackgroundImage = tlo;
         }
 
         #region Obsluga zdarzeń

@@ -15,7 +15,6 @@ namespace RPG
         EkranGlowny ekranGlowny;
         EkranGry ekranGry;
         EkranGryTlo ekranGryTlo;
-       //readonly Bitmap tlo = new Bitmap("Resources/Grafiki menu/Nowa Gra.png");
 
         public EkranNowaGra(EkranGlowny ekranGlowny, EkranGry ekranGry, EkranGryTlo ekranGryTlo)
         {
@@ -76,6 +75,7 @@ namespace RPG
 
         private void PictureBoxWyjscie_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
 
