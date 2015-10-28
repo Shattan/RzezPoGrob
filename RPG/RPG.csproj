@@ -94,10 +94,10 @@
     <Compile Include="Formy\EkranDziennikZadan.Designer.cs">
       <DependentUpon>EkranDziennikZadan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formy\EkranDziennikZadanTlo.cs">
+    <Compile Include="Tla\EkranDziennikZadanTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\EkranDziennikZadanTlo.Designer.cs">
+    <Compile Include="Tla\EkranDziennikZadanTlo.Designer.cs">
       <DependentUpon>EkranDziennikZadanTlo.cs</DependentUpon>
     </Compile>
     <Compile Include="Formy\EkranEkwipunek.cs">
@@ -106,34 +106,34 @@
     <Compile Include="Formy\EkranEkwipunek.Designer.cs">
       <DependentUpon>EkranEkwipunek.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formy\EkranEkwipunekTlo.cs">
+    <Compile Include="Tla\EkranEkwipunekTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\EkranEkwipunekTlo.Designer.cs">
+    <Compile Include="Tla\EkranEkwipunekTlo.Designer.cs">
       <DependentUpon>EkranEkwipunekTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formy\EkranGryTlo.cs">
+    <Compile Include="Tla\EkranGryTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\EkranGryTlo.Designer.cs">
+    <Compile Include="Tla\EkranGryTlo.Designer.cs">
       <DependentUpon>EkranGryTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formy\EkranWalkaTlo.cs">
+    <Compile Include="Tla\EkranWalkaTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\EkranWalkaTlo.Designer.cs">
+    <Compile Include="Tla\EkranWalkaTlo.Designer.cs">
       <DependentUpon>EkranWalkaTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formy\EkranGlownyTlo.cs">
+    <Compile Include="Tla\EkranGlownyTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\EkranGlownyTlo.Designer.cs">
+    <Compile Include="Tla\EkranGlownyTlo.Designer.cs">
       <DependentUpon>EkranGlownyTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formy\EkranNowaGraTlo.cs">
+    <Compile Include="Tla\EkranNowaGraTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\EkranNowaGraTlo.Designer.cs">
+    <Compile Include="Tla\EkranNowaGraTlo.Designer.cs">
       <DependentUpon>EkranNowaGraTlo.cs</DependentUpon>
     </Compile>
     <Compile Include="Klasy\Ekwipunek.cs" />
@@ -164,10 +164,10 @@
     <Compile Include="Formy\EkranOpcje.Designer.cs">
       <DependentUpon>EkranOpcje.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formy\EkranOpcjeTlo.cs">
+    <Compile Include="Tla\EkranOpcjeTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formy\EkranOpcjeTlo.Designer.cs">
+    <Compile Include="Tla\EkranOpcjeTlo.Designer.cs">
       <DependentUpon>EkranOpcjeTlo.cs</DependentUpon>
     </Compile>
     <Compile Include="Klasy\Postac.cs" />
@@ -187,7 +187,7 @@
     <EmbeddedResource Include="Formy\EkranEkwipunek.resx">
       <DependentUpon>EkranEkwipunek.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formy\EkranGryTlo.resx">
+    <EmbeddedResource Include="Tla\EkranGryTlo.resx">
       <DependentUpon>EkranGryTlo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranWalka.resx">
@@ -199,7 +199,7 @@
     <EmbeddedResource Include="Formy\EkranGry.resx">
       <DependentUpon>EkranGry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formy\EkranGlownyTlo.resx">
+    <EmbeddedResource Include="Tla\EkranGlownyTlo.resx">
       <DependentUpon>EkranGlownyTlo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranNowaGra.resx">
@@ -208,7 +208,7 @@
     <EmbeddedResource Include="Formy\EkranOpcje.resx">
       <DependentUpon>EkranOpcje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formy\EkranOpcjeTlo.resx">
+    <EmbeddedResource Include="Tla\EkranOpcjeTlo.resx">
       <DependentUpon>EkranOpcjeTlo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
