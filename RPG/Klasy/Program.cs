@@ -4,6 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Dodane
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+
 namespace RPG
 {
     static class Program
@@ -12,6 +18,132 @@ namespace RPG
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBox Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.BackgroundImage = new Bitmap(obrazek,Kontrolka.Width,Kontrolka.Height);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(PictureBox Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.Width = obrazek.Width;
+                Kontrolka.Height = obrazek.Height;
+                Kontrolka.BackgroundImage = new Bitmap(obrazek);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Panel Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Panel Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.Width = obrazek.Width;
+                Kontrolka.Height = obrazek.Height;
+                Kontrolka.BackgroundImage = new Bitmap(obrazek);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Button Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Button Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.Width = obrazek.Width;
+                Kontrolka.Height = obrazek.Height;
+                Kontrolka.BackgroundImage = new Bitmap(obrazek);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(TextBox Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(TextBox Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.Width = obrazek.Width;
+                Kontrolka.Height = obrazek.Height;
+                Kontrolka.BackgroundImage = new Bitmap(obrazek);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Label Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Label Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.Width = obrazek.Width;
+                Kontrolka.Height = obrazek.Height;
+                Kontrolka.BackgroundImage = new Bitmap(obrazek);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Form Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
+            }
+        }
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Form Kontrolka, String sciezkaDoObrazu)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                Kontrolka.Width = obrazek.Width;
+                Kontrolka.Height = obrazek.Height;
+                Kontrolka.BackgroundImage = new Bitmap(obrazek);
+            }
+        }
+        public static void UstawObrazOsobyMowiacej(PictureBox Kontrolka, String sciezkaDoObrazu, bool przerzucWPoziomie)
+        {
+            using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+            {
+                if (przerzucWPoziomie == true)
+                    obrazek.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
+            }
+        }
+        public static void UstawObrazPolaBitwy(Form Kontrolka, String sciezkaDoObrazuTla, String sciezkaDoObrazuPrzeciwnika)
+        {
+            using (Image obrazekTlaWalki = new Bitmap(sciezkaDoObrazuTla))
+            {
+                Bitmap obrazekDoWstawienia = new Bitmap(obrazekTlaWalki, Kontrolka.Width, Kontrolka.Height);
+                using (Graphics grafikaWalki = Graphics.FromImage(obrazekDoWstawienia))
+                {
+                    using (Image obrazekPrzeciwnika = new Bitmap(sciezkaDoObrazuPrzeciwnika))
+                    {
+                        int szerokoscPrzeciwnika = Kontrolka.Width * 30 / 100;
+                        int wysokoscPrzeciwnika = Kontrolka.Height * 50 / 100;
+                        int pozycjaPrzeciwnikaX = Kontrolka.Width / 2 - szerokoscPrzeciwnika / 2;
+                        int pozycjaPrzeciwnikaY = Kontrolka.Height/3;
+                        grafikaWalki.DrawImage(obrazekPrzeciwnika, pozycjaPrzeciwnikaX, pozycjaPrzeciwnikaY, szerokoscPrzeciwnika, wysokoscPrzeciwnika);
+                        Kontrolka.BackgroundImage = obrazekDoWstawienia;
+                    }
+
+                }
+            }
+        }
+
         static void Main()
         {
             Application.EnableVisualStyles();

@@ -17,23 +17,19 @@ namespace RPG
     {
         #region Zmienne
         EkranGlowny ekranGlowny;
-
-        static readonly Image obrazTla = new Bitmap("Resources/Grafiki menu/Tło menu.png");
-        readonly Bitmap tlo = new Bitmap(obrazTla, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
         #endregion
 
         public EkranGlownyTlo()
         {
-
             InitializeComponent();
-
             Width = Screen.PrimaryScreen.Bounds.Width;
             Height = Screen.PrimaryScreen.Bounds.Height;
 
             ekranGlowny = new EkranGlowny(this);
             BackColor = System.Drawing.Color.Black;
 
-            BackgroundImage = tlo;            
+            //Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło menu.png");
+            Program.UstawObrazPolaBitwy(this, "Resources/Grafiki tła walki/0.png", "Resources/Grafiki postaci walczących/goblin.png");
         }
 
         #region Obsluga zdarzeń
