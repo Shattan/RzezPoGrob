@@ -37,14 +37,14 @@ namespace RPG
             //ekranOpcje.OdtworzDzwiek(ekranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
             UstawElementyNaEkranie();
 
-            #if DEBUG
-            //Przyspieszenie dostania sie na ekran z walka, 
-            EkranGry ekranGry = new EkranGry(this, ekranOpcje);
-            ekranGryTlo = new EkranGryTlo(ekranGry);
+            //#if DEBUG
+            ////Przyspieszenie dostania sie na ekran z walka, 
+            //EkranGry ekranGry = new EkranGry(this, ekranOpcje);
+            //ekranGryTlo = new EkranGryTlo(ekranGry);
 
-            //Deserializuj z XML i wpisz do je ekranGry
-            ekranGryTlo.ShowDialog();
-            #endif
+            ////Deserializuj z XML i wpisz do je ekranGry
+            //ekranGryTlo.ShowDialog();
+            //#endif
         }
 
         #region Metody
