@@ -20,8 +20,9 @@ namespace RPG
     public partial class EkranGry : Form
     {
         #region Zmienne
-        private EkranGlowny ekranGlowny;  
+        private EkranGlowny ekranGlowny;
 
+        EkranGryTlo ekranGryTlo;
         public EkranEkranDziennikZadanTlo ekranEkranDziennikZadanTlo;
         public EkranEkwipunekTlo ekranEkwipunekTlo;
         public EkranWalkaTlo ekranWalkaTlo;
@@ -31,16 +32,34 @@ namespace RPG
         public EkranWalka ekranWalka;
         public EkranOpcje ekranOpcje;
 
+        PictureBox gracz;
+
         Gra gra;
+        Mapa mapa;
+
+        //Poruszanie sie bohaterem
+        int index = 0;
+        bool prawo=false, lewo=false, gora=false, dol=false;
+
+        public enum Ruch
+        {
+            Lewo = 0,
+            Prawo = 1,
+            Gora = 2,
+            Dol = 3,
+        }
         #endregion
 
         public EkranGry(EkranGlowny ekranGlowny, EkranOpcje ekranOpcje) 
         {
             this.ekranGlowny = ekranGlowny;
+
             this.ekranOpcje = ekranOpcje;
+            this.gracz = PictureBoxGracz;
             //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
 
             gra = new Gra();
+            mapa = new Mapa();
             ekranDziennikZadan = new EkranDziennikZadan(this);
             ekranEkwipunek = new EkranEkwipunek(this);
             ekranWalka = new EkranWalka(this);
@@ -49,9 +68,10 @@ namespace RPG
             ekranEkwipunekTlo = new EkranEkwipunekTlo(ekranEkwipunek);
             ekranWalkaTlo = new EkranWalkaTlo(ekranWalka);
             
-
             InitializeComponent();
             UstawElementyNaEkranie();
+            timerPrzeplywCzasu.Start();
+            
         }
 
         void UstawElementyNaEkranie()
@@ -150,15 +170,7 @@ namespace RPG
 
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            if (ekranDziennikZadan.Visible == false)
-            {
-                ekranDziennikZadan.Visible = true;
-                ekranDziennikZadan.BringToFront();
-            }
-            else
-            {
-                ekranDziennikZadan.Visible = false;
-            }
+            ekranEkranDziennikZadanTlo.ShowDialog();
         }
         #endregion
 
@@ -168,6 +180,7 @@ namespace RPG
         private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
             //e.Cancel = true;
+            Application.Exit();
         }
 
         //Nie pojawia sie w alt+tab
@@ -188,5 +201,187 @@ namespace RPG
             }
         }
         #endregion
+
+        #region Poruszanie sie bohatera
+        private void przechwytywanieKlawiszy_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+            {
+                prawo = true;                
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                lewo = true;            
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                gora = true;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                dol = true;
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); //Zamienic na Pokaz Menu         
+            }
+
+        }
+
+        private void przechwytywanieKlawiszy_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+            {
+                prawo = false;
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/prawo.png");
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                lewo = false;
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.png");
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                gora = false;
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/góra.png");
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                dol = false;
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.png");
+            }
+        }
+        #endregion
+
+        private void timerPrzeplywCzasu_Tick(object sender, EventArgs e)
+        {
+            index++;
+            const int czasOdnawiania = 5;
+
+            //Gif replay
+            if (prawo == true && index % czasOdnawiania == 0)
+            {
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/prawo.gif");
+            }
+            if (lewo == true && index % czasOdnawiania == 0)
+            {
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.gif");
+            }
+            if (dol == true && index % czasOdnawiania == 0)
+            {
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.gif");
+            }
+            if (gora == true && index % czasOdnawiania == 0)
+            {
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/góra.gif");
+            }
+
+            if (prawo == true)
+            {
+                PictureBoxGracz.Left += 5;
+                panelMapa.Left -= 5;
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy(0, 5);
+                
+            }
+
+            if (lewo == true)
+            {
+                PictureBoxGracz.Left -= 5;
+                panelMapa.Left += 5;
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy(1, 5);
+
+            }
+
+            if (gora == true)
+            {
+                PictureBoxGracz.Top -= 5;
+                panelMapa.Top += 5;
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy(2, 5);
+            }
+
+            if (dol == true)
+            {
+                PictureBoxGracz.Top += 5;
+                panelMapa.Top -= 5;
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy(3, 5);
+            }
+
+            /*
+            // Side Collision
+            if (player.Right > block.Left && player.Left < block.Right - player.Width && player.Bottom < block.Bottom && player.Bottom > block.Top)
+            {
+                right = false;
+            }
+
+            if (player.Left < block.Right && player.Right > block.Left + player.Width && player.Bottom < block.Bottom && player.Bottom > block.Top)
+            {
+                left = false;
+            }
+
+            //
+
+            if (right == true)
+            {
+                player.Left += 3;
+
+
+            }
+
+            if (left == true)
+            {
+                player.Left -= 3;
+            }
+
+
+
+            if (jump == true)
+            {
+                //Falling (if the player has jumped before)
+                player.Top -= Force;
+                Force -= 1;
+            }
+
+            if (player.Top + player.Height >= screen.Height)
+            {
+                player.Top = screen.Height - player.Height; //Stop falling at bottom
+                if (jump == true)
+                {
+                    player.Image = Image.FromFile("stand.png");
+                }
+                jump = false;
+
+            }
+            else
+            {
+                player.Top += 5; //Falling
+
+
+            }
+
+
+            // Top Collision
+            if (player.Left + player.Width > block.Left && player.Left + player.Width < block.Left + block.Width + player.Width && player.Top + player.Height >= block.Top && player.Top < block.Top)
+            {
+                jump = false;
+                Force = 0;
+                player.Top = block.Location.Y - player.Height;
+            }
+            //
+
+            //Simple fall
+            if (!(player.Left + player.Width > block.Left && player.Left + player.Width < block.Left + block.Width + player.Width) && player.Top + player.Height >= block.Top && player.Top < block.Top)
+            {
+                jump = true;
+            }
+
+            //Head Collision
+            if (player.Left + player.Width > block.Left && player.Left + player.Width < block.Left + block.Width + player.Width && player.Top - block.Bottom <= 10 && player.Top - block.Top > -10)
+            {
+                Force = -1;
+            }
+             */
+        }
+
+
     }
 }

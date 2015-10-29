@@ -17,6 +17,7 @@ namespace RPG
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
         [STAThread]
         public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBox Kontrolka, String sciezkaDoObrazu)
         {
