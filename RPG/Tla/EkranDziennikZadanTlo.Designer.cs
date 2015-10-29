@@ -39,6 +39,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranEkranDziennikZadanTlo";
             this.Text = "EkranEkranDziennikZadanTlo";
+            this.Shown += new System.EventHandler(this.EkranNowaGraTlo_Shown);
             this.ResumeLayout(false);
 
         }

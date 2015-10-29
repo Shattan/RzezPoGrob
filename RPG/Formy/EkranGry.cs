@@ -87,7 +87,7 @@ namespace RPG
             pBWalka.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/31/dół.png");
 
             //Chodzacy ludek
-            PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.gif");
+            PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.png");
             PictureBoxGracz.Size = new Size(PictureBoxGracz.Image.Width, PictureBoxGracz.Image.Height);
 
             //Wczytanie Right Menu Panel
@@ -117,9 +117,9 @@ namespace RPG
 
             praweMenu[0].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             praweMenu[1].Click += new System.EventHandler(this.PictureBoxPraweMenuEkranDziennikZadan_MouseClick);
-            praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
-            praweMenu[3].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
-            praweMenu[4].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
+            //praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
+            //praweMenu[3].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
+            //praweMenu[4].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
 
 
 
@@ -272,58 +272,29 @@ namespace RPG
             {
                 lewo = false;
             }
-            //if (PictureBoxGracz.Top > pBKolizja.Bottom && PictureBoxGracz.Bottom < pBKolizja.Top - PictureBoxGracz.Height && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
-            //{
-            //    gora = false;
-            //}
 
-            //if (PictureBoxGracz.Bottom < pBKolizja.Top && PictureBoxGracz.Top > pBKolizja.Bottom + PictureBoxGracz.Height && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
-            //{
-            //    dol = false;
-            //}
-
-            /*
-            // Top Collision
             if (PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width && PictureBoxGracz.Top + PictureBoxGracz.Height >= pBKolizja.Top && PictureBoxGracz.Top < pBKolizja.Top)
             {
-                jump = false;
-                Force = 0;
-                PictureBoxGracz.Top = pBKolizja.Location.Y - PictureBoxGracz.Height;
-            }
-            //
-
-            //Simple fall
-            if (!(PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width) && PictureBoxGracz.Top + PictureBoxGracz.Height >= pBKolizja.Top && PictureBoxGracz.Top < pBKolizja.Top)
-            {
-                jump = true;
+                //zle napisana
+                //gora = false;
             }
 
-            //Head Collision
             if (PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width && PictureBoxGracz.Top - pBKolizja.Bottom <= 10 && PictureBoxGracz.Top - pBKolizja.Top > -10)
             {
-                Force = -1;
+                //niedokladna
+                //dol = false;
             }
-             */
-
+ 
             //Wydarzenie
             if (panelMapa.Controls.Contains(pBWalka))
             {
-                if (PictureBoxGracz.Right > pBWalka.Left && PictureBoxGracz.Left < pBWalka.Right - PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBWalka.Bottom && PictureBoxGracz.Bottom > pBWalka.Top)
+                if ((PictureBoxGracz.Right > pBWalka.Left && PictureBoxGracz.Left < pBWalka.Right - PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBWalka.Bottom && PictureBoxGracz.Bottom > pBWalka.Top) ||
+                    (PictureBoxGracz.Left < pBWalka.Right && PictureBoxGracz.Right > pBWalka.Left + PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBWalka.Bottom && PictureBoxGracz.Bottom > pBWalka.Top))
                 {
-                    prawo = false;
-                    timerPrzeplywCzasu.Stop();
-                    Walka(ekranWalkaTlo.ShowDialog(), pBWalka);
-
-                }
-
-                if (PictureBoxGracz.Left < pBWalka.Right && PictureBoxGracz.Right > pBWalka.Left + PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBWalka.Bottom && PictureBoxGracz.Bottom > pBWalka.Top)
-                {
-                    lewo = false;
                     timerPrzeplywCzasu.Stop();
                     Walka(ekranWalkaTlo.ShowDialog(), pBWalka);
                 }
             }
-
 
             //Animacje Gifa
             if (prawo == true && index % czasOdnawiania == 0)
@@ -349,7 +320,7 @@ namespace RPG
                 PictureBoxGracz.Left += 5;
                 panelMapa.Left -= 5;
                 ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Prawo, 5);
-
+                
             }
 
             if (lewo == true)
@@ -365,6 +336,7 @@ namespace RPG
                 PictureBoxGracz.Top -= 5;
                 panelMapa.Top += 5;
                 ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Gora, 5);
+
             }
 
             if (dol == true)
@@ -372,6 +344,7 @@ namespace RPG
                 PictureBoxGracz.Top += 5;
                 panelMapa.Top -= 5;
                 ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Dol, 5);
+
             }
 
         }
@@ -381,6 +354,7 @@ namespace RPG
             if (dR == DialogResult.OK)
             {
                 panelMapa.Controls.Remove(pB);
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.png");
                 timerPrzeplywCzasu.Start();
             }
             else if (dR == DialogResult.Abort)
@@ -391,7 +365,10 @@ namespace RPG
             {
                 //Ktos zamknal na sile forme, zamykamy wiec gre, chociaz powinniosmy po prostu ukarac gracza
                 this.Close();
-            }            
+            }
+
+            lewo = prawo = dol = gora = false;
+
         }
     }
 }

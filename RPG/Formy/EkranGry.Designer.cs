@@ -33,15 +33,15 @@
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.panelPraweMenu = new System.Windows.Forms.Panel();
             this.panelMapa = new System.Windows.Forms.Panel();
+            this.PictureBoxGracz = new System.Windows.Forms.PictureBox();
             this.pBWalka = new System.Windows.Forms.PictureBox();
             this.pBKolizja = new System.Windows.Forms.PictureBox();
-            this.PictureBoxGracz = new System.Windows.Forms.PictureBox();
             this.timerPrzeplywCzasu = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.panelMapa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBWalka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBKolizja)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,6 +81,16 @@
             this.panelMapa.Size = new System.Drawing.Size(1369, 492);
             this.panelMapa.TabIndex = 30;
             // 
+            // PictureBoxGracz
+            // 
+            this.PictureBoxGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.PictureBoxGracz.Location = new System.Drawing.Point(610, 199);
+            this.PictureBoxGracz.Name = "PictureBoxGracz";
+            this.PictureBoxGracz.Size = new System.Drawing.Size(100, 100);
+            this.PictureBoxGracz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PictureBoxGracz.TabIndex = 29;
+            this.PictureBoxGracz.TabStop = false;
+            // 
             // pBWalka
             // 
             this.pBWalka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -97,19 +107,9 @@
             this.pBKolizja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pBKolizja.Location = new System.Drawing.Point(928, 146);
             this.pBKolizja.Name = "pBKolizja";
-            this.pBKolizja.Size = new System.Drawing.Size(36, 32);
+            this.pBKolizja.Size = new System.Drawing.Size(37, 32);
             this.pBKolizja.TabIndex = 30;
             this.pBKolizja.TabStop = false;
-            // 
-            // PictureBoxGracz
-            // 
-            this.PictureBoxGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.PictureBoxGracz.Location = new System.Drawing.Point(610, 199);
-            this.PictureBoxGracz.Name = "PictureBoxGracz";
-            this.PictureBoxGracz.Size = new System.Drawing.Size(100, 100);
-            this.PictureBoxGracz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PictureBoxGracz.TabIndex = 29;
-            this.PictureBoxGracz.TabStop = false;
             // 
             // timerPrzeplywCzasu
             // 
@@ -136,9 +136,9 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.przechwytywanieKlawiszy_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.panelMapa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBWalka)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBKolizja)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

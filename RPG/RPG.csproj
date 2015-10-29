@@ -190,6 +190,9 @@
     <EmbeddedResource Include="Tla\EkranDziennikZadanTlo.resx">
       <DependentUpon>EkranDziennikZadanTlo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tla\EkranEkwipunekTlo.resx">
+      <DependentUpon>EkranEkwipunekTlo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tla\EkranGryTlo.resx">
       <DependentUpon>EkranGryTlo.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +259,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\attackdummy1.png" />
     <Content Include="Resources\Dźwięki\smierc.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

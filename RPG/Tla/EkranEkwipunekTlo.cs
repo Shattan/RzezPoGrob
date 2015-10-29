@@ -23,17 +23,13 @@ namespace RPG
             InitializeComponent();
             this.ekranEkwipunek = ekranEkwipunek;
 
-            BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
+            //BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
         }
 
         #region Obsluga zdarzeń
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult dr = ekranEkwipunek.ShowDialog();
-            if (dr == DialogResult.Cancel)
-            {
-                Close();
-            }
+            DialogResult = ekranEkwipunek.ShowDialog();
         }
         #endregion
     }
