@@ -18,15 +18,45 @@ namespace RPG
         {
             this.ekranGry = ekranGry;
             InitializeComponent();
+            UstawElementyNaEkranie();
         }
 
-        #region sprawiamy, ze okno jest niewidoczne w alt+tab
+        #region Metody
+        void UstawElementyNaEkranie()
+        {
+            //Ustawienia okienka gry
+            Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y);
+            Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
 
-        //Obsluga wychodzenia - zakaz alt+f4
+            //Ustawienie ikony w trybie okienkowym
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
+
+            //Ustawienie tła rysowanego w menu
+
+            Width = Screen.PrimaryScreen.Bounds.Width;
+            Height = Screen.PrimaryScreen.Bounds.Height;
+
+        }
+        #endregion
+
+        private void buttonWygralem_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        private void buttonPrzegralem_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Abort;
+        }
+
         private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //e.Cancel = true;
+            DialogResult = DialogResult.Cancel;
         }
+        /*
+        #region sprawiamy, ze okno jest niewidoczne w alt+tab
+        //Obsluga wychodzenia - zakaz alt+f4
+
 
         //Nie pojawia sie w alt+tab
         private void EkranOpcje_Load(object sender, EventArgs e)
@@ -46,5 +76,6 @@ namespace RPG
             }
         }
         #endregion
+        */
     }
 }

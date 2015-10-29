@@ -22,7 +22,7 @@ namespace RPG
         #region Zmienne
         private EkranGlowny ekranGlowny;
 
-        EkranGryTlo ekranGryTlo;
+        //EkranGryTlo ekranGryTlo;
         public EkranEkranDziennikZadanTlo ekranEkranDziennikZadanTlo;
         public EkranEkwipunekTlo ekranEkwipunekTlo;
         public EkranWalkaTlo ekranWalkaTlo;
@@ -256,13 +256,13 @@ namespace RPG
         private void timerPrzeplywCzasu_Tick(object sender, EventArgs e)
         {
             index++;
-            const int czasOdnawiania = 5;
+            const int czasOdnawiania = 5; //Gifa
 
 
             // Kolizje
             if (PictureBoxGracz.Right > pBKolizja.Left && PictureBoxGracz.Left < pBKolizja.Right - PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
             {
-                prawo = false;
+                prawo = false;        
             }
 
             if (PictureBoxGracz.Left < pBKolizja.Right && PictureBoxGracz.Right > pBKolizja.Left + PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
@@ -301,6 +301,25 @@ namespace RPG
                 Force = -1;
             }
              */
+
+            //Wydarzenie
+            if (panelMapa.Controls.Contains(pBWalka))
+            {
+                if (PictureBoxGracz.Right > pBWalka.Left && PictureBoxGracz.Left < pBWalka.Right - PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBWalka.Bottom && PictureBoxGracz.Bottom > pBWalka.Top)
+                {
+                    prawo = false;
+                    timerPrzeplywCzasu.Stop();
+                    Walka(ekranWalkaTlo.ShowDialog(), pBWalka);
+
+                }
+
+                if (PictureBoxGracz.Left < pBWalka.Right && PictureBoxGracz.Right > pBWalka.Left + PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBWalka.Bottom && PictureBoxGracz.Bottom > pBWalka.Top)
+                {
+                    lewo = false;
+                    timerPrzeplywCzasu.Stop();
+                    Walka(ekranWalkaTlo.ShowDialog(), pBWalka);
+                }
+            }
 
 
             //Animacje Gifa
@@ -354,6 +373,22 @@ namespace RPG
 
         }
 
-
+        private void Walka(DialogResult dR, PictureBox pB)
+        {
+            if (dR == DialogResult.OK)
+            {
+                panelMapa.Controls.Remove(pB);
+                timerPrzeplywCzasu.Start();
+            }
+            else if (dR == DialogResult.Abort)
+            {
+                //Co robimy jak gracz przegral?
+                PictureBoxGracz.Visible = false;            }
+            else
+            {
+                //Ktos zamknal na sile forme, zamykamy wiec gre, chociaz powinniosmy po prostu ukarac gracza
+                this.Close();
+            }            
+        }
     }
 }
