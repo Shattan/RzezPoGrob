@@ -73,9 +73,9 @@
             // 
             // panelMapa
             // 
+            this.panelMapa.Controls.Add(this.PictureBoxGracz);
             this.panelMapa.Controls.Add(this.pBWalka);
             this.panelMapa.Controls.Add(this.pBKolizja);
-            this.panelMapa.Controls.Add(this.PictureBoxGracz);
             this.panelMapa.Location = new System.Drawing.Point(81, 203);
             this.panelMapa.Name = "panelMapa";
             this.panelMapa.Size = new System.Drawing.Size(1369, 492);
@@ -83,19 +83,21 @@
             // 
             // pBWalka
             // 
-            this.pBWalka.BackColor = System.Drawing.Color.Yellow;
-            this.pBWalka.Location = new System.Drawing.Point(928, 350);
+            this.pBWalka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pBWalka.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBWalka.Location = new System.Drawing.Point(928, 358);
             this.pBWalka.Name = "pBWalka";
-            this.pBWalka.Size = new System.Drawing.Size(60, 50);
+            this.pBWalka.Size = new System.Drawing.Size(27, 42);
             this.pBWalka.TabIndex = 31;
             this.pBWalka.TabStop = false;
             // 
             // pBKolizja
             // 
-            this.pBKolizja.BackColor = System.Drawing.Color.Red;
-            this.pBKolizja.Location = new System.Drawing.Point(928, 122);
+            this.pBKolizja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pBKolizja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pBKolizja.Location = new System.Drawing.Point(928, 146);
             this.pBKolizja.Name = "pBKolizja";
-            this.pBKolizja.Size = new System.Drawing.Size(60, 50);
+            this.pBKolizja.Size = new System.Drawing.Size(36, 32);
             this.pBKolizja.TabIndex = 30;
             this.pBKolizja.TabStop = false;
             // 

@@ -83,6 +83,9 @@ namespace RPG
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
+            pBKolizja.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l3_wall_deco79.png");
+            pBWalka.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/31/dół.png");
+
             //Chodzacy ludek
             PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.gif");
             PictureBoxGracz.Size = new Size(PictureBoxGracz.Image.Width, PictureBoxGracz.Image.Height);
