@@ -258,6 +258,51 @@ namespace RPG
             index++;
             const int czasOdnawiania = 5;
 
+
+            // Kolizje
+            if (PictureBoxGracz.Right > pBKolizja.Left && PictureBoxGracz.Left < pBKolizja.Right - PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
+            {
+                prawo = false;
+            }
+
+            if (PictureBoxGracz.Left < pBKolizja.Right && PictureBoxGracz.Right > pBKolizja.Left + PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
+            {
+                lewo = false;
+            }
+            //if (PictureBoxGracz.Top > pBKolizja.Bottom && PictureBoxGracz.Bottom < pBKolizja.Top - PictureBoxGracz.Height && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
+            //{
+            //    gora = false;
+            //}
+
+            //if (PictureBoxGracz.Bottom < pBKolizja.Top && PictureBoxGracz.Top > pBKolizja.Bottom + PictureBoxGracz.Height && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
+            //{
+            //    dol = false;
+            //}
+
+            /*
+            // Top Collision
+            if (PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width && PictureBoxGracz.Top + PictureBoxGracz.Height >= pBKolizja.Top && PictureBoxGracz.Top < pBKolizja.Top)
+            {
+                jump = false;
+                Force = 0;
+                PictureBoxGracz.Top = pBKolizja.Location.Y - PictureBoxGracz.Height;
+            }
+            //
+
+            //Simple fall
+            if (!(PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width) && PictureBoxGracz.Top + PictureBoxGracz.Height >= pBKolizja.Top && PictureBoxGracz.Top < pBKolizja.Top)
+            {
+                jump = true;
+            }
+
+            //Head Collision
+            if (PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width && PictureBoxGracz.Top - pBKolizja.Bottom <= 10 && PictureBoxGracz.Top - pBKolizja.Top > -10)
+            {
+                Force = -1;
+            }
+             */
+
+
             //Animacje Gifa
             if (prawo == true && index % czasOdnawiania == 0)
             {
@@ -282,7 +327,7 @@ namespace RPG
                 PictureBoxGracz.Left += 5;
                 panelMapa.Left -= 5;
                 ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Prawo, 5);
-                
+
             }
 
             if (lewo == true)
@@ -307,57 +352,6 @@ namespace RPG
                 ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Dol, 5);
             }
 
-
-            // Kolizje
-            if (PictureBoxGracz.Right > pBKolizja.Left && PictureBoxGracz.Left < pBKolizja.Right - PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
-            {
-                prawo = false;
-            }
-            else
-            {
-
-            }
-
-            if (PictureBoxGracz.Left < pBKolizja.Right && PictureBoxGracz.Right > pBKolizja.Left + PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
-            {
-                lewo = false;
-            }
-            else
-            { 
-
-             }
-
-            if (prawo == true)
-            {
-                PictureBoxGracz.Left += 3;
-            }
-            if (lewo == true)
-            {
-                PictureBoxGracz.Left -= 3;
-            }
-
-            /*
-            // Top Collision
-            if (PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width && PictureBoxGracz.Top + PictureBoxGracz.Height >= pBKolizja.Top && PictureBoxGracz.Top < pBKolizja.Top)
-            {
-                jump = false;
-                Force = 0;
-                PictureBoxGracz.Top = pBKolizja.Location.Y - PictureBoxGracz.Height;
-            }
-            //
-
-            //Simple fall
-            if (!(PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width) && PictureBoxGracz.Top + PictureBoxGracz.Height >= pBKolizja.Top && PictureBoxGracz.Top < pBKolizja.Top)
-            {
-                jump = true;
-            }
-
-            //Head Collision
-            if (PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width && PictureBoxGracz.Top - pBKolizja.Bottom <= 10 && PictureBoxGracz.Top - pBKolizja.Top > -10)
-            {
-                Force = -1;
-            }
-             */
         }
 
 
