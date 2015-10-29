@@ -258,7 +258,7 @@ namespace RPG
             index++;
             const int czasOdnawiania = 5;
 
-            //Gif replay
+            //Animacje Gifa
             if (prawo == true && index % czasOdnawiania == 0)
             {
                 PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/prawo.gif");
@@ -276,11 +276,12 @@ namespace RPG
                 PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/góra.gif");
             }
 
+            //Ruch Bohatera i planszy
             if (prawo == true)
             {
                 PictureBoxGracz.Left += 5;
                 panelMapa.Left -= 5;
-                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy(0, 5);
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Prawo, 5);
                 
             }
 
@@ -288,7 +289,7 @@ namespace RPG
             {
                 PictureBoxGracz.Left -= 5;
                 panelMapa.Left += 5;
-                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy(1, 5);
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Lewo, 5);
 
             }
 
@@ -296,86 +297,63 @@ namespace RPG
             {
                 PictureBoxGracz.Top -= 5;
                 panelMapa.Top += 5;
-                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy(2, 5);
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Gora, 5);
             }
 
             if (dol == true)
             {
                 PictureBoxGracz.Top += 5;
                 panelMapa.Top -= 5;
-                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy(3, 5);
-            }
-
-            /*
-            // Side Collision
-            if (player.Right > block.Left && player.Left < block.Right - player.Width && player.Bottom < block.Bottom && player.Bottom > block.Top)
-            {
-                right = false;
-            }
-
-            if (player.Left < block.Right && player.Right > block.Left + player.Width && player.Bottom < block.Bottom && player.Bottom > block.Top)
-            {
-                left = false;
-            }
-
-            //
-
-            if (right == true)
-            {
-                player.Left += 3;
-
-
-            }
-
-            if (left == true)
-            {
-                player.Left -= 3;
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Dol, 5);
             }
 
 
-
-            if (jump == true)
+            // Kolizje
+            if (PictureBoxGracz.Right > pBKolizja.Left && PictureBoxGracz.Left < pBKolizja.Right - PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
             {
-                //Falling (if the player has jumped before)
-                player.Top -= Force;
-                Force -= 1;
-            }
-
-            if (player.Top + player.Height >= screen.Height)
-            {
-                player.Top = screen.Height - player.Height; //Stop falling at bottom
-                if (jump == true)
-                {
-                    player.Image = Image.FromFile("stand.png");
-                }
-                jump = false;
-
+                prawo = false;
             }
             else
             {
-                player.Top += 5; //Falling
-
 
             }
 
+            if (PictureBoxGracz.Left < pBKolizja.Right && PictureBoxGracz.Right > pBKolizja.Left + PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
+            {
+                lewo = false;
+            }
+            else
+            { 
 
+             }
+
+            if (prawo == true)
+            {
+                PictureBoxGracz.Left += 3;
+            }
+            if (lewo == true)
+            {
+                PictureBoxGracz.Left -= 3;
+            }
+
+            /*
             // Top Collision
-            if (player.Left + player.Width > block.Left && player.Left + player.Width < block.Left + block.Width + player.Width && player.Top + player.Height >= block.Top && player.Top < block.Top)
+            if (PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width && PictureBoxGracz.Top + PictureBoxGracz.Height >= pBKolizja.Top && PictureBoxGracz.Top < pBKolizja.Top)
             {
                 jump = false;
                 Force = 0;
-                player.Top = block.Location.Y - player.Height;
+                PictureBoxGracz.Top = pBKolizja.Location.Y - PictureBoxGracz.Height;
             }
             //
 
             //Simple fall
-            if (!(player.Left + player.Width > block.Left && player.Left + player.Width < block.Left + block.Width + player.Width) && player.Top + player.Height >= block.Top && player.Top < block.Top)
+            if (!(PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width) && PictureBoxGracz.Top + PictureBoxGracz.Height >= pBKolizja.Top && PictureBoxGracz.Top < pBKolizja.Top)
             {
                 jump = true;
             }
 
             //Head Collision
-            if (player.Left + player.Width > block.Left && player.Left + player.Width < block.Left + block.Width + player.Width && player.Top - block.Bottom <= 10 && player.Top - block.Top > -10)
+            if (PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width && PictureBoxGracz.Top - pBKolizja.Bottom <= 10 && PictureBoxGracz.Top - pBKolizja.Top > -10)
             {
                 Force = -1;
             }

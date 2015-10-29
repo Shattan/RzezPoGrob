@@ -33,15 +33,15 @@
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.panelPraweMenu = new System.Windows.Forms.Panel();
             this.panelMapa = new System.Windows.Forms.Panel();
+            this.pBWalka = new System.Windows.Forms.PictureBox();
+            this.pBKolizja = new System.Windows.Forms.PictureBox();
             this.PictureBoxGracz = new System.Windows.Forms.PictureBox();
             this.timerPrzeplywCzasu = new System.Windows.Forms.Timer(this.components);
-            this.pBKolizja = new System.Windows.Forms.PictureBox();
-            this.pBWalka = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.panelMapa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBKolizja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBWalka)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBKolizja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,6 +81,24 @@
             this.panelMapa.Size = new System.Drawing.Size(1369, 492);
             this.panelMapa.TabIndex = 30;
             // 
+            // pBWalka
+            // 
+            this.pBWalka.BackColor = System.Drawing.Color.Yellow;
+            this.pBWalka.Location = new System.Drawing.Point(928, 350);
+            this.pBWalka.Name = "pBWalka";
+            this.pBWalka.Size = new System.Drawing.Size(60, 50);
+            this.pBWalka.TabIndex = 31;
+            this.pBWalka.TabStop = false;
+            // 
+            // pBKolizja
+            // 
+            this.pBKolizja.BackColor = System.Drawing.Color.Red;
+            this.pBKolizja.Location = new System.Drawing.Point(928, 122);
+            this.pBKolizja.Name = "pBKolizja";
+            this.pBKolizja.Size = new System.Drawing.Size(60, 50);
+            this.pBKolizja.TabIndex = 30;
+            this.pBKolizja.TabStop = false;
+            // 
             // PictureBoxGracz
             // 
             this.PictureBoxGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -93,26 +111,8 @@
             // 
             // timerPrzeplywCzasu
             // 
-            this.timerPrzeplywCzasu.Interval = 15;
+            this.timerPrzeplywCzasu.Interval = 5;
             this.timerPrzeplywCzasu.Tick += new System.EventHandler(this.timerPrzeplywCzasu_Tick);
-            // 
-            // pBKolizja
-            // 
-            this.pBKolizja.BackColor = System.Drawing.Color.Red;
-            this.pBKolizja.Location = new System.Drawing.Point(928, 122);
-            this.pBKolizja.Name = "pBKolizja";
-            this.pBKolizja.Size = new System.Drawing.Size(60, 50);
-            this.pBKolizja.TabIndex = 30;
-            this.pBKolizja.TabStop = false;
-            // 
-            // pBWalka
-            // 
-            this.pBWalka.BackColor = System.Drawing.Color.Yellow;
-            this.pBWalka.Location = new System.Drawing.Point(928, 350);
-            this.pBWalka.Name = "pBWalka";
-            this.pBWalka.Size = new System.Drawing.Size(60, 50);
-            this.pBWalka.TabIndex = 31;
-            this.pBWalka.TabStop = false;
             // 
             // EkranGry
             // 
@@ -134,9 +134,9 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.przechwytywanieKlawiszy_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.panelMapa.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBKolizja)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBWalka)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBKolizja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

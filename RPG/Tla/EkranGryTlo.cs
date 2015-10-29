@@ -13,7 +13,7 @@ namespace RPG
 
     public partial class EkranGryTlo : Form
     {
-        int przesuniecie = 0;
+        //int przesuniecie = 0;
         Bitmap plansza= new Bitmap("Resources/Mapy/Trawa.png");
 
 
@@ -61,10 +61,10 @@ namespace RPG
             switch (pozycja)
             {
                 case 0:
-                    PictureBoxTrawa.Left -= dystans;
+                    PictureBoxTrawa.Left += dystans;
                     break;
                 case 1:
-                    PictureBoxTrawa.Left += dystans;
+                    PictureBoxTrawa.Left -= dystans;
                     break;
                 case 2:
                     PictureBoxTrawa.Top += dystans;
