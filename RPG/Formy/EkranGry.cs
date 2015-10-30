@@ -35,6 +35,8 @@ namespace RPG
         Gra gra;
         Mapa mapa;
 
+        PictureBox[] praweMenu;
+
         //Poruszanie sie bohaterem
         int index = 0;
         bool prawo=false, lewo=false, gora=false, dol=false;
@@ -106,7 +108,7 @@ namespace RPG
             ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/E.png"));
 
 
-            PictureBox[] praweMenu = new PictureBox[5];
+            praweMenu = new PictureBox[5];
             for (int index = 0; index < praweMenu.Length; index++)
             {
                 praweMenu[index] = new PictureBox();
@@ -148,7 +150,7 @@ namespace RPG
         }
         private void PictureBoxPraweMenuEkwipunek_MouseEnter(object sender, EventArgs e)
         {
-            //prawemenu[0].Image = new Bitmap("Resources/Grafiki menu/Alight.png");
+            praweMenu[0].Image = new Bitmap("Resources/Grafiki menu/Alight.png");
         }
 
         private void PictureBoxPraweMenuEkranDziennikZadan_MouseClick(object sender, EventArgs e)
