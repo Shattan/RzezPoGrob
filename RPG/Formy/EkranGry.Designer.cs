@@ -33,27 +33,27 @@
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.panelPraweMenu = new System.Windows.Forms.Panel();
             this.panelMapa = new System.Windows.Forms.Panel();
+            this.AkcjaStrazniczkaGor = new System.Windows.Forms.PictureBox();
             this.AkcjaStrazniczkaLasu = new System.Windows.Forms.PictureBox();
             this.Blok2 = new System.Windows.Forms.PictureBox();
             this.pBGracz = new System.Windows.Forms.PictureBox();
             this.AkcjaWielkiMag = new System.Windows.Forms.PictureBox();
             this.Blok1 = new System.Windows.Forms.PictureBox();
             this.timerPrzeplywCzasu = new System.Windows.Forms.Timer(this.components);
-            this.AkcjaStrazniczkaGor = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.panelMapa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaGor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaLasu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Blok2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AkcjaWielkiMag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Blok1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaGor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 62);
+            this.label1.Location = new System.Drawing.Point(800, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
@@ -79,7 +79,6 @@
             // 
             // panelMapa
             // 
-
             this.panelMapa.Controls.Add(this.AkcjaStrazniczkaGor);
             this.panelMapa.Controls.Add(this.AkcjaStrazniczkaLasu);
             this.panelMapa.Controls.Add(this.Blok2);
@@ -90,6 +89,16 @@
             this.panelMapa.Name = "panelMapa";
             this.panelMapa.Size = new System.Drawing.Size(1369, 492);
             this.panelMapa.TabIndex = 30;
+            // 
+            // AkcjaStrazniczkaGor
+            // 
+            this.AkcjaStrazniczkaGor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.AkcjaStrazniczkaGor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AkcjaStrazniczkaGor.Location = new System.Drawing.Point(775, 295);
+            this.AkcjaStrazniczkaGor.Name = "AkcjaStrazniczkaGor";
+            this.AkcjaStrazniczkaGor.Size = new System.Drawing.Size(27, 42);
+            this.AkcjaStrazniczkaGor.TabIndex = 34;
+            this.AkcjaStrazniczkaGor.TabStop = false;
             // 
             // AkcjaStrazniczkaLasu
             // 
@@ -105,7 +114,7 @@
             // 
             this.Blok2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Blok2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Blok2.Location = new System.Drawing.Point(816, 39);
+            this.Blok2.Location = new System.Drawing.Point(823, 57);
             this.Blok2.Name = "Blok2";
             this.Blok2.Size = new System.Drawing.Size(37, 32);
             this.Blok2.TabIndex = 32;
@@ -146,16 +155,6 @@
             this.timerPrzeplywCzasu.Interval = 5;
             this.timerPrzeplywCzasu.Tick += new System.EventHandler(this.timerPrzeplywCzasu_Tick);
             // 
-            // AkcjaStrazniczkaGor
-            // 
-            this.AkcjaStrazniczkaGor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.AkcjaStrazniczkaGor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.AkcjaStrazniczkaGor.Location = new System.Drawing.Point(775, 295);
-            this.AkcjaStrazniczkaGor.Name = "AkcjaStrazniczkaGor";
-            this.AkcjaStrazniczkaGor.Size = new System.Drawing.Size(27, 42);
-            this.AkcjaStrazniczkaGor.TabIndex = 34;
-            this.AkcjaStrazniczkaGor.TabStop = false;
-            // 
             // EkranGry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,12 +175,12 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.przechwytywanieKlawiszy_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.panelMapa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaGor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaLasu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Blok2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AkcjaWielkiMag)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Blok1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaGor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

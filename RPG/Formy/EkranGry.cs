@@ -129,6 +129,78 @@ namespace RPG
             //praweMenu[4].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
 
 
+            //Automatyczne Tworzenie obrzeża Krainy
+            List<PictureBox> ObzezaKariny = new List<PictureBox>();
+            int SzerokoscBokuPrzeszkody = 54;
+            int WysokoscBokuPrzeszkody = 54;
+            for (int i = 0; i < panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
+            {
+                PictureBox przeszkoda = new PictureBox();
+                przeszkoda.Name = "BlokPrzeszkodaDol" + i;
+                
+                przeszkoda.Location = new Point((i-1) * SzerokoscBokuPrzeszkody, panelMapa.Height - WysokoscBokuPrzeszkody);
+                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
+                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
+                //ObzezaKariny.Add(przeszkoda);
+                //panelMapa.Controls.Add(ObzezaKariny[i]);
+                panelMapa.Controls.Add(przeszkoda);
+            }
+            for (int i = 0; i < panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
+            {
+                PictureBox przeszkoda = new PictureBox();
+                przeszkoda.Name = "BlokPrzeszkodGora" + i;
+
+                przeszkoda.Location = new Point((i - 1) * SzerokoscBokuPrzeszkody, 0);
+                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
+                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
+                //ObzezaKariny.Add(przeszkoda);
+                //panelMapa.Controls.Add(ObzezaKariny[i]);
+                panelMapa.Controls.Add(przeszkoda);
+            }
+            for (int i = 0; i < panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
+            {
+                PictureBox przeszkoda = new PictureBox();
+                przeszkoda.Name = "BlokPrzeszkodaLewa" + i;
+
+                przeszkoda.Location = new Point(0, i * WysokoscBokuPrzeszkody);
+                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
+                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
+                //ObzezaKariny.Add(przeszkoda);
+                //panelMapa.Controls.Add(ObzezaKariny[i]);
+                panelMapa.Controls.Add(przeszkoda);
+
+            }
+            for (int i = 0; i < panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
+            {
+                PictureBox przeszkoda = new PictureBox();
+                przeszkoda.Name = "BlokPrzeszkodaPrawa" + i;
+
+                przeszkoda.Location = new Point(panelMapa.Width - SzerokoscBokuPrzeszkody, i * WysokoscBokuPrzeszkody);
+                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
+                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
+                //ObzezaKariny.Add(przeszkoda);
+                //panelMapa.Controls.Add(ObzezaKariny[i]);
+                panelMapa.Controls.Add(przeszkoda);
+
+            }
+
+            //Kazdy blok o nazwie BlokKraniec przybiera odpowiedniImage
+            //foreach (PictureBox obiekt in panelMapa.Controls.OfType<PictureBox>().Cast<Control>().ToList())
+            //{
+            //    if (obiekt.Name.StartsWith("BlokKraniec"))
+            //    {
+            //        obiekt.Image = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
+            //    }
+            //}
+
 
             //using (Graphics grafikaGracza = Graphics.FromImage(PictureBoxMgla.Image))
             //{
