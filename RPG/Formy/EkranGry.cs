@@ -99,9 +99,9 @@ namespace RPG
             panelPraweMenu.Size = new Size(wielkoscPrzyciskow, wielkoscPrzyciskow*5);
 
             List<Image> ListaObrazkow = new List<Image>();
-            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/A.png"));
-            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/B.png"));
-            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/C.png"));
+            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/Adark.png"));
+            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/Bdark.png"));
+            ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/Cdark.png"));
             ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/D.png"));
             ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/E.png"));
 
@@ -119,6 +119,7 @@ namespace RPG
             }
 
             praweMenu[0].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
+            praweMenu[0].MouseEnter += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseEnter);
             praweMenu[1].Click += new System.EventHandler(this.PictureBoxPraweMenuEkranDziennikZadan_MouseClick);
             //praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             //praweMenu[3].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
@@ -144,6 +145,10 @@ namespace RPG
         private void PictureBoxPraweMenuEkwipunek_MouseClick(object sender, EventArgs e)
         {
             ekranEkwipunekTlo.ShowDialog();
+        }
+        private void PictureBoxPraweMenuEkwipunek_MouseEnter(object sender, EventArgs e)
+        {
+            //prawemenu[0].Image = new Bitmap("Resources/Grafiki menu/Alight.png");
         }
 
         private void PictureBoxPraweMenuEkranDziennikZadan_MouseClick(object sender, EventArgs e)
