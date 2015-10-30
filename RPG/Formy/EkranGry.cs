@@ -359,8 +359,13 @@ namespace RPG
             }
             else if (dR == DialogResult.Abort)
             {
-                //Co robimy jak gracz przegral?
-                PictureBoxGracz.Visible = false;            }
+                //Co robimy jak gracz przegral? 
+                //Wylaczamy sterowanie gracza, 
+                //na dole pojawia się napis "Porażka", 
+                //włącza się muzyczka "Resources/Dźwięki/smierc.wav"
+                //Zmieniamy tło gracza na plamę krwi
+                PictureBoxGracz.Visible = false;    
+            }
             else
             {
                 //Ktos zamknal na sile forme, zamykamy wiec gre, chociaz powinniosmy po prostu ukarac gracza

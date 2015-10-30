@@ -58,22 +58,11 @@ namespace RPG
             LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
             LabelInformacje.Text = "";
 
-            /* PictureBoxMgla.Size = new Size(plansza.Width,plansza.Height);
-             PictureBoxMgla.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
-             PictureBoxMgla.Image = plansza;*/
-
-
             //Ustawienie przycisków
             PictureBoxWyjscie.Location = new Point(10, -30);
 
-<<<<<<< HEAD
             PictureBoxWyjscie.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Wyjdź.png"), PictureBoxWyjscie.Width * 5 / 8, PictureBoxWyjscie.Height * 7 / 8);
-=======
-            //PictureBoxWyjscie.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Wyjście.png"), PictureBoxWyjscie.Width * 5 / 8, PictureBoxWyjscie.Height * 7 / 8);
->>>>>>> origin/master
-
-
-            //PictureBoxMgla.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
+            
         }
         #endregion
 

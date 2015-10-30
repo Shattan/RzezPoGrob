@@ -76,7 +76,7 @@
             this.panelMapa.Controls.Add(this.PictureBoxGracz);
             this.panelMapa.Controls.Add(this.pBWalka);
             this.panelMapa.Controls.Add(this.pBKolizja);
-            this.panelMapa.Location = new System.Drawing.Point(81, 203);
+            this.panelMapa.Location = new System.Drawing.Point(79, 160);
             this.panelMapa.Name = "panelMapa";
             this.panelMapa.Size = new System.Drawing.Size(1369, 492);
             this.panelMapa.TabIndex = 30;
@@ -121,7 +121,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1543, 854);
+            this.ClientSize = new System.Drawing.Size(1378, 780);
             this.Controls.Add(this.panelMapa);
             this.Controls.Add(this.panelPraweMenu);
             this.Controls.Add(this.PictureBox);
