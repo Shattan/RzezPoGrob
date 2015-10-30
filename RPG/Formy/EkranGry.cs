@@ -34,9 +34,8 @@ namespace RPG
 
         Gra gra;
         Mapa mapa;
-
+        
         PictureBox[] praweMenu;
-
         //Poruszanie sie bohaterem
         int index = 0;
         bool prawo=false, lewo=false, gora=false, dol=false;
@@ -97,10 +96,6 @@ namespace RPG
             pBGracz.Size = new Size(pBGracz.Image.Width, pBGracz.Image.Height);
 
             //Wczytanie Right Menu Panel
-            const int wielkoscPrzyciskow = 100;
-            panelPraweMenu.Location = new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y + 30);
-            panelPraweMenu.Size = new Size(wielkoscPrzyciskow, wielkoscPrzyciskow*5);
-
             List<Image> ListaObrazkow = new List<Image>();
             ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/Adark.png"));
             ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/Bdark.png"));
@@ -108,21 +103,29 @@ namespace RPG
             ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/D.png"));
             ListaObrazkow.Add(new Bitmap("Resources/Grafiki menu/E.png"));
 
+            const int wielkoscPrzyciskow = 80;
+            const int odlegloscMiedzyPrzyciskami = 20;
+            int iloscPrzyciskow = ListaObrazkow.Count();
 
-            praweMenu = new PictureBox[5];
+            panelPraweMenu.Location = new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y);
+            panelPraweMenu.Size = new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow);
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(panelPraweMenu, "Resources/Grafiki menu/Panel pod przyciski.png");
+            praweMenu = new PictureBox[iloscPrzyciskow];
             for (int index = 0; index < praweMenu.Length; index++)
             {
                 praweMenu[index] = new PictureBox();
                 panelPraweMenu.Controls.Add(praweMenu[index]);
-                praweMenu[index].Location = new Point(0, index * wielkoscPrzyciskow + 20);
+                praweMenu[index].Location = new Point(0, index * wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami);
                 praweMenu[index].Size = new Size(wielkoscPrzyciskow, wielkoscPrzyciskow);
-                praweMenu[index].Image = new Bitmap(ListaObrazkow[index], wielkoscPrzyciskow, wielkoscPrzyciskow);
+                praweMenu[index].BackgroundImage = new Bitmap(ListaObrazkow[index], wielkoscPrzyciskow, wielkoscPrzyciskow);
                 //praweMenu[index].MouseEnter += new System.EventHandler(this.PictureBoxPraweMenu_MouseEnter);
                 //praweMenu[index].MouseLeave += new System.EventHandler(this.PictureBoxPraweMenu_MouseLeave);
             }
 
             praweMenu[0].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             praweMenu[0].MouseEnter += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseEnter);
+            praweMenu[0].MouseLeave += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseLeave);
             praweMenu[1].Click += new System.EventHandler(this.PictureBoxPraweMenuEkranDziennikZadan_MouseClick);
             //praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             //praweMenu[3].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
@@ -223,9 +226,12 @@ namespace RPG
         }
         private void PictureBoxPraweMenuEkwipunek_MouseEnter(object sender, EventArgs e)
         {
-            praweMenu[0].Image = new Bitmap("Resources/Grafiki menu/Alight.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(praweMenu[0], "Resources/Grafiki menu/Alight.png");
         }
-
+        private void PictureBoxPraweMenuEkwipunek_MouseLeave(object sender, EventArgs e)
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(praweMenu[0], "Resources/Grafiki menu/Adark.png");
+        }
         private void PictureBoxPraweMenuEkranDziennikZadan_MouseClick(object sender, EventArgs e)
         {
             ekranEkranDziennikZadanTlo.ShowDialog();
