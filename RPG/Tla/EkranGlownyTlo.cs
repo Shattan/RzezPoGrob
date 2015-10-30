@@ -29,7 +29,7 @@ namespace RPG
             BackColor = System.Drawing.Color.Black;
 
             //Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło menu.png");
-            Program.UstawObrazPolaBitwy(this, "Resources/Grafiki tła walki/0.png", "Resources/Grafiki postaci walczących/goblin.png");
+            Program.UstawObrazPolaBitwy(this, "Resources/Grafiki tła walki/0.png", "Resources/Grafiki postaci walczących/waz.png");
         }
 
         #region Obsluga zdarzeń

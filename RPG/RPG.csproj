@@ -3724,9 +3724,6 @@
     <Content Include="Resources\Grafiki postaci walczących\waz.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki postaci walczących\wdowa czarna.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Grafiki postaci walczących\wilk.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

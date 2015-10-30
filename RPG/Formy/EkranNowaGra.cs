@@ -66,7 +66,7 @@ namespace RPG
             //Ustawienie przycisków
             PictureBoxWyjscie.Location = new Point(10, -30);
 
-            PictureBoxWyjscie.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Wyjście.png"), PictureBoxWyjscie.Width * 5 / 8, PictureBoxWyjscie.Height * 7 / 8);
+            PictureBoxWyjscie.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Wyjdź.png"), PictureBoxWyjscie.Width * 5 / 8, PictureBoxWyjscie.Height * 7 / 8);
 
 
             //PictureBoxMgla.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
