@@ -17,7 +17,8 @@ namespace RPG
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        [STAThread]
+        /// 
+        
         public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBox Kontrolka, String sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
@@ -25,6 +26,8 @@ namespace RPG
                 Kontrolka.BackgroundImage = new Bitmap(obrazek,Kontrolka.Width,Kontrolka.Height);
             }
         }
+
+        
         public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(PictureBox Kontrolka, String sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
@@ -144,6 +147,8 @@ namespace RPG
             }
         }
 
+        //[STAThreadAttribute]
+        [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();

@@ -20,8 +20,9 @@ namespace RPG
     public partial class EkranGry : Form
     {
         #region Zmienne
-        private EkranGlowny ekranGlowny;  
+        private EkranGlowny ekranGlowny;
 
+        //EkranGryTlo ekranGryTlo;
         public EkranEkranDziennikZadanTlo ekranEkranDziennikZadanTlo;
         public EkranEkwipunekTlo ekranEkwipunekTlo;
         public EkranWalkaTlo ekranWalkaTlo;
@@ -31,16 +32,34 @@ namespace RPG
         public EkranWalka ekranWalka;
         public EkranOpcje ekranOpcje;
 
+        PictureBox gracz;
+
         Gra gra;
+        Mapa mapa;
+
+        //Poruszanie sie bohaterem
+        int index = 0;
+        bool prawo=false, lewo=false, gora=false, dol=false;
+
+        public enum Ruch
+        {
+            Lewo = 0,
+            Prawo = 1,
+            Gora = 2,
+            Dol = 3,
+        }
         #endregion
 
         public EkranGry(EkranGlowny ekranGlowny, EkranOpcje ekranOpcje) 
         {
             this.ekranGlowny = ekranGlowny;
+
             this.ekranOpcje = ekranOpcje;
+            this.gracz = PictureBoxGracz;
             //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
 
             gra = new Gra();
+            mapa = new Mapa();
             ekranDziennikZadan = new EkranDziennikZadan(this);
             ekranEkwipunek = new EkranEkwipunek(this);
             ekranWalka = new EkranWalka(this);
@@ -49,9 +68,10 @@ namespace RPG
             ekranEkwipunekTlo = new EkranEkwipunekTlo(ekranEkwipunek);
             ekranWalkaTlo = new EkranWalkaTlo(ekranWalka);
             
-
             InitializeComponent();
             UstawElementyNaEkranie();
+            timerPrzeplywCzasu.Start();
+            
         }
 
         void UstawElementyNaEkranie()
@@ -63,8 +83,11 @@ namespace RPG
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
+            pBKolizja.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l3_wall_deco79.png");
+            pBWalka.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/31/dół.png");
+
             //Chodzacy ludek
-            PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.gif");
+            PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.png");
             PictureBoxGracz.Size = new Size(PictureBoxGracz.Image.Width, PictureBoxGracz.Image.Height);
 
             //Wczytanie Right Menu Panel
@@ -94,9 +117,9 @@ namespace RPG
 
             praweMenu[0].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             praweMenu[1].Click += new System.EventHandler(this.PictureBoxPraweMenuEkranDziennikZadan_MouseClick);
-            praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
-            praweMenu[3].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
-            praweMenu[4].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
+            //praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
+            //praweMenu[3].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
+            //praweMenu[4].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
 
 
 
@@ -150,15 +173,7 @@ namespace RPG
 
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            if (ekranDziennikZadan.Visible == false)
-            {
-                ekranDziennikZadan.Visible = true;
-                ekranDziennikZadan.BringToFront();
-            }
-            else
-            {
-                ekranDziennikZadan.Visible = false;
-            }
+            ekranEkranDziennikZadanTlo.ShowDialog();
         }
         #endregion
 
@@ -168,6 +183,7 @@ namespace RPG
         private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
             //e.Cancel = true;
+            Application.Exit();
         }
 
         //Nie pojawia sie w alt+tab
@@ -188,5 +204,171 @@ namespace RPG
             }
         }
         #endregion
+
+        #region Poruszanie sie bohatera
+        private void przechwytywanieKlawiszy_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+            {
+                prawo = true;                
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                lewo = true;            
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                gora = true;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                dol = true;
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); //Zamienic na Pokaz Menu         
+            }
+
+        }
+
+        private void przechwytywanieKlawiszy_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+            {
+                prawo = false;
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/prawo.png");
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                lewo = false;
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.png");
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                gora = false;
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/góra.png");
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                dol = false;
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.png");
+            }
+        }
+        #endregion
+
+        private void timerPrzeplywCzasu_Tick(object sender, EventArgs e)
+        {
+            index++;
+            const int czasOdnawiania = 5; //Gifa
+
+
+            // Kolizje
+            if (PictureBoxGracz.Right > pBKolizja.Left && PictureBoxGracz.Left < pBKolizja.Right - PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
+            {
+                prawo = false;        
+            }
+
+            if (PictureBoxGracz.Left < pBKolizja.Right && PictureBoxGracz.Right > pBKolizja.Left + PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBKolizja.Bottom && PictureBoxGracz.Bottom > pBKolizja.Top)
+            {
+                lewo = false;
+            }
+
+            if (PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width && PictureBoxGracz.Top + PictureBoxGracz.Height >= pBKolizja.Top && PictureBoxGracz.Top < pBKolizja.Top)
+            {
+                //zle napisana
+                //gora = false;
+            }
+
+            if (PictureBoxGracz.Left + PictureBoxGracz.Width > pBKolizja.Left && PictureBoxGracz.Left + PictureBoxGracz.Width < pBKolizja.Left + pBKolizja.Width + PictureBoxGracz.Width && PictureBoxGracz.Top - pBKolizja.Bottom <= 10 && PictureBoxGracz.Top - pBKolizja.Top > -10)
+            {
+                //niedokladna
+                //dol = false;
+            }
+ 
+            //Wydarzenie
+            if (panelMapa.Controls.Contains(pBWalka))
+            {
+                if ((PictureBoxGracz.Right > pBWalka.Left && PictureBoxGracz.Left < pBWalka.Right - PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBWalka.Bottom && PictureBoxGracz.Bottom > pBWalka.Top) ||
+                    (PictureBoxGracz.Left < pBWalka.Right && PictureBoxGracz.Right > pBWalka.Left + PictureBoxGracz.Width && PictureBoxGracz.Bottom < pBWalka.Bottom && PictureBoxGracz.Bottom > pBWalka.Top))
+                {
+                    timerPrzeplywCzasu.Stop();
+                    Walka(ekranWalkaTlo.ShowDialog(), pBWalka);
+                }
+            }
+
+            //Animacje Gifa
+            if (prawo == true && index % czasOdnawiania == 0)
+            {
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/prawo.gif");
+            }
+            if (lewo == true && index % czasOdnawiania == 0)
+            {
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.gif");
+            }
+            if (dol == true && index % czasOdnawiania == 0)
+            {
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.gif");
+            }
+            if (gora == true && index % czasOdnawiania == 0)
+            {
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/góra.gif");
+            }
+
+            //Ruch Bohatera i planszy
+            if (prawo == true)
+            {
+                PictureBoxGracz.Left += 5;
+                panelMapa.Left -= 5;
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Prawo, 5);
+                
+            }
+
+            if (lewo == true)
+            {
+                PictureBoxGracz.Left -= 5;
+                panelMapa.Left += 5;
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Lewo, 5);
+
+            }
+
+            if (gora == true)
+            {
+                PictureBoxGracz.Top -= 5;
+                panelMapa.Top += 5;
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Gora, 5);
+
+            }
+
+            if (dol == true)
+            {
+                PictureBoxGracz.Top += 5;
+                panelMapa.Top -= 5;
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Dol, 5);
+
+            }
+
+        }
+
+        private void Walka(DialogResult dR, PictureBox pB)
+        {
+            if (dR == DialogResult.OK)
+            {
+                panelMapa.Controls.Remove(pB);
+                PictureBoxGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.png");
+                timerPrzeplywCzasu.Start();
+            }
+            else if (dR == DialogResult.Abort)
+            {
+                //Co robimy jak gracz przegral?
+                PictureBoxGracz.Visible = false;            }
+            else
+            {
+                //Ktos zamknal na sile forme, zamykamy wiec gre, chociaz powinniosmy po prostu ukarac gracza
+                this.Close();
+            }
+
+            lewo = prawo = dol = gora = false;
+
+        }
     }
 }

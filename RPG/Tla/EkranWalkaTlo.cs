@@ -23,17 +23,13 @@ namespace RPG
             InitializeComponent();
             this.ekranWalka = ekranWalka;
 
-            BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
+            Program.UstawObrazPolaBitwy(this, "Resources/Grafiki tła walki/0.png", "Resources/Grafiki postaci walczących/goblin.png");
         }
 
         #region Obsluga zdarzeń
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult dr = ekranWalka.ShowDialog();
-            if (dr == DialogResult.Cancel)
-            {
-                Close();
-            }
+            DialogResult = ekranWalka.ShowDialog();
         }
         #endregion
     }

@@ -78,9 +78,6 @@
             this.PictureBoxWyjscie.Size = new System.Drawing.Size(133, 101);
             this.PictureBoxWyjscie.TabIndex = 7;
             this.PictureBoxWyjscie.TabStop = false;
-            this.PictureBoxWyjscie.Click += new System.EventHandler(this.PictureBoxWyjscie_Click);
-            this.PictureBoxWyjscie.MouseEnter += new System.EventHandler(this.PictureBoxWyjscie_MouseEnter);
-            this.PictureBoxWyjscie.MouseLeave += new System.EventHandler(this.PictureBoxWyjscie_MouseLeave);
             // 
             // EkranNowaGra
             // 

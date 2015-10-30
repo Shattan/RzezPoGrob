@@ -21,8 +21,9 @@ namespace RPG
         #region Zmienne
         private EkranGlownyTlo ekranGlownyTlo;
         private EkranEkranOpcjeTlo ekranEkranOpcjeTlo;
+        public EkranGryTlo ekranGryTlo;
 
-        public EkranOpcje ekranOpcje;    
+        public EkranOpcje ekranOpcje;
         #endregion
 
         public EkranGlowny(EkranGlownyTlo ekranGlownyTlo)
@@ -35,6 +36,15 @@ namespace RPG
 
             //ekranOpcje.OdtworzDzwiek(ekranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
             UstawElementyNaEkranie();
+
+            //#if DEBUG
+            ////Przyspieszenie dostania sie na ekran z walka, 
+            //EkranGry ekranGry = new EkranGry(this, ekranOpcje);
+            //ekranGryTlo = new EkranGryTlo(ekranGry);
+
+            ////Deserializuj z XML i wpisz do je ekranGry
+            //ekranGryTlo.ShowDialog();
+            //#endif
         }
 
         #region Metody
@@ -77,6 +87,8 @@ namespace RPG
         }
         #endregion
 
+
+
         #region Obsluga zdarzen przyciskow
         private void PictureBoxEkranOpcje_Click(object sender, EventArgs e)
         {
@@ -86,7 +98,7 @@ namespace RPG
         private void PictureBoxRuszaj_Click(object sender, EventArgs e)
         {
             EkranGry ekranGry = new EkranGry(this, ekranOpcje);
-            EkranGryTlo ekranGryTlo = new EkranGryTlo(ekranGry);
+            ekranGryTlo = new EkranGryTlo(ekranGry);
 
             EkranNowaGra ekranNowaGra = new EkranNowaGra(this, ekranGry, ekranGryTlo);
             EkranEkranNowaGraTlo ekranNowaGraTlo = new EkranEkranNowaGraTlo(ekranNowaGra);
@@ -96,7 +108,7 @@ namespace RPG
         private void PictureBoxWczytaj_Click(object sender, EventArgs e)
         {
             EkranGry ekranGry = new EkranGry(this, ekranOpcje);
-            EkranGryTlo ekranGryTlo = new EkranGryTlo(ekranGry);
+            ekranGryTlo = new EkranGryTlo(ekranGry);
 
             //Deserializuj z XML i wpisz do je ekranGry
             ekranGryTlo.ShowDialog();
