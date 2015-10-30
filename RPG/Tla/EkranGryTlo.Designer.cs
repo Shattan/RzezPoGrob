@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.PictureBoxTrawa = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelPraweMenu = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrawa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +51,13 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panelPraweMenu
+            // 
+            this.panelPraweMenu.Location = new System.Drawing.Point(787, 0);
+            this.panelPraweMenu.Name = "panelPraweMenu";
+            this.panelPraweMenu.Size = new System.Drawing.Size(91, 213);
+            this.panelPraweMenu.TabIndex = 9;
+            // 
             // EkranGryTlo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -57,6 +65,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(880, 601);
+            this.Controls.Add(this.panelPraweMenu);
             this.Controls.Add(this.PictureBoxTrawa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranGryTlo";
@@ -74,5 +83,6 @@
 
         private System.Windows.Forms.PictureBox PictureBoxTrawa;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panelPraweMenu;
     }
 }
