@@ -42,6 +42,7 @@ namespace RPG
         bool prawo=false, lewo=false, gora=false, dol=false;
         bool blokadaPrawo = false, blokadaLewo = false, blokadaGora = false, blokadaDol = false;
         bool zablokujPostac = false;
+        string ostatniZablokwanyObiekt = "";
 
         public enum Ruch
         {
@@ -229,7 +230,7 @@ namespace RPG
                     {
                         if (obiekt.Name.StartsWith("Blok"))
                         {
-                            if (zablokujPostac)
+                            if (zablokujPostac == true)
                             {
                                 if (blokadaPrawo == true) prawo = false;
                                 if (blokadaLewo == true) lewo = false;
@@ -249,9 +250,10 @@ namespace RPG
                                 if (blokadaDol == true) dol = false;
 
                                 zablokujPostac = true;
+                                ostatniZablokwanyObiekt = obiekt.Name;
                             }
                         }
-                        else if (obiekt.Name.StartsWith("Akcja"))
+                        else if(obiekt.Name.StartsWith("Akcja"))
                         {
                             timerPrzeplywCzasu.Stop();
                             Walka(ekranWalkaTlo.ShowDialog(), obiekt);
@@ -259,8 +261,11 @@ namespace RPG
                         else if (obiekt.Name.StartsWith("NPC"))
                         {
 
-                        } 
-                        else
+                        }
+                    }
+                    else
+                    {
+                        if(obiekt.Name == ostatniZablokwanyObiekt)
                         {
                             zablokujPostac = false;
                         }
