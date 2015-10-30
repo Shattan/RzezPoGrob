@@ -79,6 +79,7 @@
             // 
             // panelMapa
             // 
+
             this.panelMapa.Controls.Add(this.AkcjaStrazniczkaGor);
             this.panelMapa.Controls.Add(this.AkcjaStrazniczkaLasu);
             this.panelMapa.Controls.Add(this.Blok2);
@@ -160,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1543, 854);
+            this.ClientSize = new System.Drawing.Size(1378, 780);
             this.Controls.Add(this.panelMapa);
             this.Controls.Add(this.panelPraweMenu);
             this.Controls.Add(this.PictureBox);

@@ -53,7 +53,7 @@
             // 
             // PictureBoxRuszaj
             // 
-            this.PictureBoxRuszaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PictureBoxRuszaj.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxRuszaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.PictureBoxRuszaj.Location = new System.Drawing.Point(290, 12);
             this.PictureBoxRuszaj.Name = "PictureBoxRuszaj";
@@ -66,7 +66,7 @@
             // 
             // PictureBoxEkranOpcje
             // 
-            this.PictureBoxEkranOpcje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PictureBoxEkranOpcje.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxEkranOpcje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.PictureBoxEkranOpcje.Location = new System.Drawing.Point(151, 12);
             this.PictureBoxEkranOpcje.Name = "PictureBoxEkranOpcje";
@@ -79,7 +79,7 @@
             // 
             // PictureBoxWyjscie
             // 
-            this.PictureBoxWyjscie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PictureBoxWyjscie.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxWyjscie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.PictureBoxWyjscie.Location = new System.Drawing.Point(12, 12);
             this.PictureBoxWyjscie.Name = "PictureBoxWyjscie";
@@ -92,7 +92,7 @@
             // 
             // PictureBoxWczytaj
             // 
-            this.PictureBoxWczytaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PictureBoxWczytaj.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxWczytaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.PictureBoxWczytaj.Location = new System.Drawing.Point(429, 12);
             this.PictureBoxWczytaj.Name = "PictureBoxWczytaj";
