@@ -33,15 +33,21 @@
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.panelPraweMenu = new System.Windows.Forms.Panel();
             this.panelMapa = new System.Windows.Forms.Panel();
-            this.PictureBoxGracz = new System.Windows.Forms.PictureBox();
-            this.pBWalka = new System.Windows.Forms.PictureBox();
-            this.pBKolizja = new System.Windows.Forms.PictureBox();
+            this.AkcjaStrazniczkaLasu = new System.Windows.Forms.PictureBox();
+            this.Blok2 = new System.Windows.Forms.PictureBox();
+            this.pBGracz = new System.Windows.Forms.PictureBox();
+            this.AkcjaWielkiMag = new System.Windows.Forms.PictureBox();
+            this.Blok1 = new System.Windows.Forms.PictureBox();
             this.timerPrzeplywCzasu = new System.Windows.Forms.Timer(this.components);
+            this.AkcjaStrazniczkaGor = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.panelMapa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBWalka)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBKolizja)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaLasu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Blok2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBGracz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AkcjaWielkiMag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Blok1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaGor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,48 +79,81 @@
             // 
             // panelMapa
             // 
-            this.panelMapa.Controls.Add(this.PictureBoxGracz);
-            this.panelMapa.Controls.Add(this.pBWalka);
-            this.panelMapa.Controls.Add(this.pBKolizja);
+            this.panelMapa.Controls.Add(this.AkcjaStrazniczkaGor);
+            this.panelMapa.Controls.Add(this.AkcjaStrazniczkaLasu);
+            this.panelMapa.Controls.Add(this.Blok2);
+            this.panelMapa.Controls.Add(this.pBGracz);
+            this.panelMapa.Controls.Add(this.AkcjaWielkiMag);
+            this.panelMapa.Controls.Add(this.Blok1);
             this.panelMapa.Location = new System.Drawing.Point(81, 203);
             this.panelMapa.Name = "panelMapa";
             this.panelMapa.Size = new System.Drawing.Size(1369, 492);
             this.panelMapa.TabIndex = 30;
             // 
-            // PictureBoxGracz
+            // AkcjaStrazniczkaLasu
             // 
-            this.PictureBoxGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.PictureBoxGracz.Location = new System.Drawing.Point(610, 199);
-            this.PictureBoxGracz.Name = "PictureBoxGracz";
-            this.PictureBoxGracz.Size = new System.Drawing.Size(100, 100);
-            this.PictureBoxGracz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PictureBoxGracz.TabIndex = 29;
-            this.PictureBoxGracz.TabStop = false;
+            this.AkcjaStrazniczkaLasu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.AkcjaStrazniczkaLasu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AkcjaStrazniczkaLasu.Location = new System.Drawing.Point(1016, 282);
+            this.AkcjaStrazniczkaLasu.Name = "AkcjaStrazniczkaLasu";
+            this.AkcjaStrazniczkaLasu.Size = new System.Drawing.Size(27, 42);
+            this.AkcjaStrazniczkaLasu.TabIndex = 33;
+            this.AkcjaStrazniczkaLasu.TabStop = false;
             // 
-            // pBWalka
+            // Blok2
             // 
-            this.pBWalka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.pBWalka.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBWalka.Location = new System.Drawing.Point(928, 358);
-            this.pBWalka.Name = "pBWalka";
-            this.pBWalka.Size = new System.Drawing.Size(27, 42);
-            this.pBWalka.TabIndex = 31;
-            this.pBWalka.TabStop = false;
+            this.Blok2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Blok2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Blok2.Location = new System.Drawing.Point(816, 39);
+            this.Blok2.Name = "Blok2";
+            this.Blok2.Size = new System.Drawing.Size(37, 32);
+            this.Blok2.TabIndex = 32;
+            this.Blok2.TabStop = false;
             // 
-            // pBKolizja
+            // pBGracz
             // 
-            this.pBKolizja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.pBKolizja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pBKolizja.Location = new System.Drawing.Point(928, 146);
-            this.pBKolizja.Name = "pBKolizja";
-            this.pBKolizja.Size = new System.Drawing.Size(37, 32);
-            this.pBKolizja.TabIndex = 30;
-            this.pBKolizja.TabStop = false;
+            this.pBGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pBGracz.Location = new System.Drawing.Point(610, 199);
+            this.pBGracz.Name = "pBGracz";
+            this.pBGracz.Size = new System.Drawing.Size(100, 100);
+            this.pBGracz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pBGracz.TabIndex = 29;
+            this.pBGracz.TabStop = false;
+            // 
+            // AkcjaWielkiMag
+            // 
+            this.AkcjaWielkiMag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.AkcjaWielkiMag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AkcjaWielkiMag.Location = new System.Drawing.Point(928, 358);
+            this.AkcjaWielkiMag.Name = "AkcjaWielkiMag";
+            this.AkcjaWielkiMag.Size = new System.Drawing.Size(27, 42);
+            this.AkcjaWielkiMag.TabIndex = 31;
+            this.AkcjaWielkiMag.TabStop = false;
+            // 
+            // Blok1
+            // 
+            this.Blok1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Blok1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Blok1.Location = new System.Drawing.Point(928, 146);
+            this.Blok1.Name = "Blok1";
+            this.Blok1.Size = new System.Drawing.Size(37, 32);
+            this.Blok1.TabIndex = 30;
+            this.Blok1.TabStop = false;
             // 
             // timerPrzeplywCzasu
             // 
             this.timerPrzeplywCzasu.Interval = 5;
             this.timerPrzeplywCzasu.Tick += new System.EventHandler(this.timerPrzeplywCzasu_Tick);
+            // 
+            // AkcjaStrazniczkaGor
+            // 
+            this.AkcjaStrazniczkaGor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.AkcjaStrazniczkaGor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AkcjaStrazniczkaGor.Location = new System.Drawing.Point(775, 295);
+            this.AkcjaStrazniczkaGor.Name = "AkcjaStrazniczkaGor";
+            this.AkcjaStrazniczkaGor.Size = new System.Drawing.Size(27, 42);
+            this.AkcjaStrazniczkaGor.TabIndex = 34;
+            this.AkcjaStrazniczkaGor.TabStop = false;
             // 
             // EkranGry
             // 
@@ -136,9 +175,12 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.przechwytywanieKlawiszy_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.panelMapa.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGracz)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBWalka)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBKolizja)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaLasu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Blok2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBGracz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AkcjaWielkiMag)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Blok1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaGor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,9 +191,12 @@
         private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.Panel panelPraweMenu;
         private System.Windows.Forms.Panel panelMapa;
-        private System.Windows.Forms.PictureBox PictureBoxGracz;
+        private System.Windows.Forms.PictureBox pBGracz;
         private System.Windows.Forms.Timer timerPrzeplywCzasu;
-        private System.Windows.Forms.PictureBox pBWalka;
-        private System.Windows.Forms.PictureBox pBKolizja;
+        private System.Windows.Forms.PictureBox AkcjaWielkiMag;
+        private System.Windows.Forms.PictureBox Blok1;
+        private System.Windows.Forms.PictureBox AkcjaStrazniczkaLasu;
+        private System.Windows.Forms.PictureBox Blok2;
+        private System.Windows.Forms.PictureBox AkcjaStrazniczkaGor;
     }
 }
