@@ -2315,6 +2315,9 @@
     <Content Include="Resources\Grafiki menu\Do boju.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\Dziennik zadań.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki menu\E.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

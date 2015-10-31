@@ -30,12 +30,12 @@
         {
             this.LabelInformacje = new System.Windows.Forms.Label();
             this.PictureBoxRuszaj = new System.Windows.Forms.PictureBox();
-            this.PictureBoxEkranOpcje = new System.Windows.Forms.PictureBox();
-            this.PictureBoxWyjscie = new System.Windows.Forms.PictureBox();
+            this.PictureBoxOpcje = new System.Windows.Forms.PictureBox();
+            this.PictureBoxWyjdz = new System.Windows.Forms.PictureBox();
             this.PictureBoxWczytaj = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkranOpcje)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,31 +64,31 @@
             this.PictureBoxRuszaj.MouseEnter += new System.EventHandler(this.PictureBoxRuszaj_MouseEnter);
             this.PictureBoxRuszaj.MouseLeave += new System.EventHandler(this.PictureBoxRuszaj_MouseLeave);
             // 
-            // PictureBoxEkranOpcje
+            // PictureBoxOpcje
             // 
-            this.PictureBoxEkranOpcje.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxEkranOpcje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PictureBoxEkranOpcje.Location = new System.Drawing.Point(151, 12);
-            this.PictureBoxEkranOpcje.Name = "PictureBoxEkranOpcje";
-            this.PictureBoxEkranOpcje.Size = new System.Drawing.Size(133, 101);
-            this.PictureBoxEkranOpcje.TabIndex = 1;
-            this.PictureBoxEkranOpcje.TabStop = false;
-            this.PictureBoxEkranOpcje.Click += new System.EventHandler(this.PictureBoxEkranOpcje_Click);
-            this.PictureBoxEkranOpcje.MouseEnter += new System.EventHandler(this.PictureBoxEkranOpcje_MouseEnter);
-            this.PictureBoxEkranOpcje.MouseLeave += new System.EventHandler(this.PictureBoxEkranOpcje_MouseLeave);
+            this.PictureBoxOpcje.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxOpcje.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PictureBoxOpcje.Location = new System.Drawing.Point(151, 12);
+            this.PictureBoxOpcje.Name = "PictureBoxOpcje";
+            this.PictureBoxOpcje.Size = new System.Drawing.Size(133, 101);
+            this.PictureBoxOpcje.TabIndex = 1;
+            this.PictureBoxOpcje.TabStop = false;
+            this.PictureBoxOpcje.Click += new System.EventHandler(this.PictureBoxEkranOpcje_Click);
+            this.PictureBoxOpcje.MouseEnter += new System.EventHandler(this.PictureBoxEkranOpcje_MouseEnter);
+            this.PictureBoxOpcje.MouseLeave += new System.EventHandler(this.PictureBoxEkranOpcje_MouseLeave);
             // 
-            // PictureBoxWyjscie
+            // PictureBoxWyjdz
             // 
-            this.PictureBoxWyjscie.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxWyjscie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PictureBoxWyjscie.Location = new System.Drawing.Point(12, 12);
-            this.PictureBoxWyjscie.Name = "PictureBoxWyjscie";
-            this.PictureBoxWyjscie.Size = new System.Drawing.Size(133, 101);
-            this.PictureBoxWyjscie.TabIndex = 6;
-            this.PictureBoxWyjscie.TabStop = false;
-            this.PictureBoxWyjscie.Click += new System.EventHandler(this.PictureBoxWyjscie_Click);
-            this.PictureBoxWyjscie.MouseEnter += new System.EventHandler(this.PictureBoxWyjscie_MouseEnter);
-            this.PictureBoxWyjscie.MouseLeave += new System.EventHandler(this.PictureBoxWyjscie_MouseLeave);
+            this.PictureBoxWyjdz.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxWyjdz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PictureBoxWyjdz.Location = new System.Drawing.Point(12, 12);
+            this.PictureBoxWyjdz.Name = "PictureBoxWyjdz";
+            this.PictureBoxWyjdz.Size = new System.Drawing.Size(133, 101);
+            this.PictureBoxWyjdz.TabIndex = 6;
+            this.PictureBoxWyjdz.TabStop = false;
+            this.PictureBoxWyjdz.Click += new System.EventHandler(this.PictureBoxWyjscie_Click);
+            this.PictureBoxWyjdz.MouseEnter += new System.EventHandler(this.PictureBoxWyjscie_MouseEnter);
+            this.PictureBoxWyjdz.MouseLeave += new System.EventHandler(this.PictureBoxWyjscie_MouseLeave);
             // 
             // PictureBoxWczytaj
             // 
@@ -113,8 +113,8 @@
             this.Controls.Add(this.PictureBoxWczytaj);
             this.Controls.Add(this.LabelInformacje);
             this.Controls.Add(this.PictureBoxRuszaj);
-            this.Controls.Add(this.PictureBoxEkranOpcje);
-            this.Controls.Add(this.PictureBoxWyjscie);
+            this.Controls.Add(this.PictureBoxOpcje);
+            this.Controls.Add(this.PictureBoxWyjdz);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.Yellow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -125,8 +125,8 @@
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkranOpcje)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).EndInit();
             this.ResumeLayout(false);
 
@@ -136,8 +136,8 @@
 
         private System.Windows.Forms.Label LabelInformacje;
         private System.Windows.Forms.PictureBox PictureBoxRuszaj;
-        private System.Windows.Forms.PictureBox PictureBoxEkranOpcje;
-        private System.Windows.Forms.PictureBox PictureBoxWyjscie;
+        private System.Windows.Forms.PictureBox PictureBoxOpcje;
+        private System.Windows.Forms.PictureBox PictureBoxWyjdz;
         private System.Windows.Forms.PictureBox PictureBoxWczytaj;
     }
 }

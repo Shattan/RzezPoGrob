@@ -16,15 +16,20 @@ namespace RPG
     {
         #region Zmienne
         EkranDziennikZadan ekranDziennikZadan;
-        readonly Bitmap tlo = new Bitmap("Resources/Grafiki menu/Nowa Gra.png");
         #endregion
+
+        void UstawGrafike()
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Dziennik zadań.png");
+        }
 
         public EkranEkranDziennikZadanTlo(EkranDziennikZadan ekranDziennikZadan)
         {
             InitializeComponent();
             this.ekranDziennikZadan = ekranDziennikZadan;
 
-            BackgroundImage = tlo;
+            Program.DopasujRozmiarFormyDoEkranu(this);
+            UstawGrafike();
         }
 
         #region Obsluga zdarzeń

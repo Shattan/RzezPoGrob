@@ -18,7 +18,15 @@ namespace RPG
         /// The main entry point for the application.
         /// </summary>
         /// 
-        
+        public static void DopasujRozmiarFormyDoEkranu(Form formularz)
+        {
+            formularz.StartPosition = FormStartPosition.CenterParent;
+            formularz.WindowState = FormWindowState.Maximized;
+            formularz.Location = new Point(0, 0);
+            formularz.Size = new Size (Screen.PrimaryScreen.Bounds.Width,Screen.PrimaryScreen.Bounds.Height);
+        }
+
+
         public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBox Kontrolka, String sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))

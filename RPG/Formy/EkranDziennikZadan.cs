@@ -18,6 +18,7 @@ namespace RPG
             this.ekranGry = ekranGry;
 
             InitializeComponent();
+            Program.DopasujRozmiarFormyDoEkranu(this);
             Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Height / 2);
             Size = new Size(Screen.PrimaryScreen.Bounds.Width/2, Screen.PrimaryScreen.Bounds.Height / 2);
         }
