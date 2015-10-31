@@ -27,7 +27,6 @@ namespace RPG
         {
             InitializeComponent();
             this.ekranDziennikZadan = ekranDziennikZadan;
-
             Program.DopasujRozmiarFormyDoEkranu(this);
             UstawGrafike();
         }

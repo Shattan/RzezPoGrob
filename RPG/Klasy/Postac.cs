@@ -10,7 +10,7 @@ namespace RPG
     {
         public string nazwa;
 
-        public Postac(String _nazwa)
+        public Postac(string _nazwa)
         {
             nazwa = _nazwa;
         }

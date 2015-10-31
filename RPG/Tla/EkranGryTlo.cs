@@ -25,6 +25,7 @@ namespace RPG
         public EkranGryTlo(EkranGry ekranGry)
         {
             InitializeComponent();
+            Program.DopasujRozmiarFormyDoEkranu(this);
             this.ekranGry = ekranGry;
            
         
@@ -36,22 +37,15 @@ namespace RPG
         #region Metody
         void UstawElementyNaEkranie()
         {
-            //Ustawienia okienka gry
-            Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y);
-            Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
             //Ustawienie tła rysowanego w menu
             BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło menu.png");
 
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
-
-             PictureBoxTrawa.Size = new Size(plansza.Width,plansza.Height);
-             PictureBoxTrawa.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
-             PictureBoxTrawa.Image = plansza;
+            PictureBoxTrawa.Size = new Size(plansza.Width,plansza.Height);
+            PictureBoxTrawa.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
+            PictureBoxTrawa.Image = plansza;
 
             //PictureBoxMgla.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
         }

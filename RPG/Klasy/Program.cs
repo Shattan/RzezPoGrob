@@ -27,7 +27,7 @@ namespace RPG
         }
 
 
-        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBox Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBox Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
@@ -36,7 +36,7 @@ namespace RPG
         }
 
         
-        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(PictureBox Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(PictureBox Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
@@ -45,14 +45,14 @@ namespace RPG
                 Kontrolka.BackgroundImage = new Bitmap(obrazek);
             }
         }
-        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Panel Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Panel Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
                 Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
             }
         }
-        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Panel Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Panel Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
@@ -61,14 +61,14 @@ namespace RPG
                 Kontrolka.BackgroundImage = new Bitmap(obrazek);
             }
         }
-        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Button Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Button Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
                 Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
             }
         }
-        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Button Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Button Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
@@ -77,14 +77,14 @@ namespace RPG
                 Kontrolka.BackgroundImage = new Bitmap(obrazek);
             }
         }
-        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(TextBox Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(TextBox Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
                 Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
             }
         }
-        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(TextBox Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(TextBox Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
@@ -93,14 +93,14 @@ namespace RPG
                 Kontrolka.BackgroundImage = new Bitmap(obrazek);
             }
         }
-        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Label Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Label Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
                 Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
             }
         }
-        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Label Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Label Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
@@ -109,14 +109,14 @@ namespace RPG
                 Kontrolka.BackgroundImage = new Bitmap(obrazek);
             }
         }
-        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Form Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Form Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
                 Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
             }
         }
-        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Form Kontrolka, String sciezkaDoObrazu)
+        public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(Form Kontrolka, string sciezkaDoObrazu)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
@@ -125,7 +125,7 @@ namespace RPG
                 Kontrolka.BackgroundImage = new Bitmap(obrazek);
             }
         }
-        public static void UstawObrazOsobyMowiacej(PictureBox Kontrolka, String sciezkaDoObrazu, bool przerzucWPoziomie)
+        public static void UstawObrazOsobyMowiacej(PictureBox Kontrolka, string sciezkaDoObrazu, bool przerzucWPoziomie)
         {
             using (Image obrazek = new Bitmap(sciezkaDoObrazu))
             {
@@ -134,7 +134,7 @@ namespace RPG
                 Kontrolka.BackgroundImage = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
             }
         }
-        public static void UstawObrazPolaBitwy(Form Kontrolka, String sciezkaDoObrazuTla, String sciezkaDoObrazuPrzeciwnika)
+        public static void UstawObrazPolaBitwy(Form Kontrolka, string sciezkaDoObrazuTla, string sciezkaDoObrazuPrzeciwnika)
         {
             using (Image obrazekTlaWalki = new Bitmap(sciezkaDoObrazuTla))
             {

@@ -10,7 +10,7 @@ namespace RPG
     {
         public string nazwa;
 
-        public Umiejetnosc(String _nazwa)
+        public Umiejetnosc(string _nazwa)
         {
             nazwa = _nazwa;
         }

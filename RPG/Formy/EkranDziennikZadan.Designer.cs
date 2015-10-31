@@ -28,68 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ListBoxZadania = new System.Windows.Forms.ListBox();
+            this.LabelZadania = new System.Windows.Forms.Label();
+            this.LabelOpis = new System.Windows.Forms.Label();
+            this.LabelOpisZadania = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // ListBoxZadania
             // 
-            this.listBox1.BackColor = System.Drawing.Color.Magenta;
-            this.listBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(107, 76);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(226, 277);
-            this.listBox1.TabIndex = 0;
+            this.ListBoxZadania.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(171)))), ((int)(((byte)(108)))));
+            this.ListBoxZadania.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ListBoxZadania.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.ListBoxZadania.FormattingEnabled = true;
+            this.ListBoxZadania.ItemHeight = 23;
+            this.ListBoxZadania.Items.AddRange(new object[] {
+            "Głodne wilki dwa"});
+            this.ListBoxZadania.Location = new System.Drawing.Point(107, 76);
+            this.ListBoxZadania.Name = "ListBoxZadania";
+            this.ListBoxZadania.Size = new System.Drawing.Size(226, 257);
+            this.ListBoxZadania.TabIndex = 0;
+            this.ListBoxZadania.SelectedIndexChanged += new System.EventHandler(this.ListBoxZadania_SelectedIndexChanged);
             // 
-            // label1
+            // LabelZadania
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(117, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.LabelZadania.AutoSize = true;
+            this.LabelZadania.Font = new System.Drawing.Font("Segoe Print", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelZadania.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.LabelZadania.Location = new System.Drawing.Point(95, 9);
+            this.LabelZadania.Name = "LabelZadania";
+            this.LabelZadania.Size = new System.Drawing.Size(205, 71);
+            this.LabelZadania.TabIndex = 1;
+            this.LabelZadania.Text = "Zadania:";
             // 
-            // label2
+            // LabelOpis
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(502, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.LabelOpis.AutoSize = true;
+            this.LabelOpis.Font = new System.Drawing.Font("Segoe Print", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelOpis.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.LabelOpis.Location = new System.Drawing.Point(493, 9);
+            this.LabelOpis.Name = "LabelOpis";
+            this.LabelOpis.Size = new System.Drawing.Size(193, 71);
+            this.LabelOpis.TabIndex = 2;
+            this.LabelOpis.Text = "Notatki:";
             // 
-            // label3
+            // LabelOpisZadania
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(502, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
+            this.LabelOpisZadania.Font = new System.Drawing.Font("Segoe Print", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelOpisZadania.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.LabelOpisZadania.Location = new System.Drawing.Point(502, 76);
+            this.LabelOpisZadania.Name = "LabelOpisZadania";
+            this.LabelOpisZadania.Size = new System.Drawing.Size(213, 277);
+            this.LabelOpisZadania.TabIndex = 3;
+            this.LabelOpisZadania.Text = "Kliknij na zadanie, aby wyświetlić opis.";
             // 
             // EkranDziennikZadan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Magenta;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(883, 451);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.LabelOpisZadania);
+            this.Controls.Add(this.ListBoxZadania);
+            this.Controls.Add(this.LabelOpis);
+            this.Controls.Add(this.LabelZadania);
+            this.ForeColor = System.Drawing.Color.MidnightBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranDziennikZadan";
             this.Text = "EkranDziennikZadan";
-            this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranOpcje_FormClosing);
+            this.Enter += new System.EventHandler(this.EkranDziennikZadan_Enter);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,9 +106,9 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox ListBoxZadania;
+        private System.Windows.Forms.Label LabelZadania;
+        private System.Windows.Forms.Label LabelOpis;
+        private System.Windows.Forms.Label LabelOpisZadania;
     }
 }

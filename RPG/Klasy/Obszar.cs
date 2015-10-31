@@ -11,7 +11,7 @@ namespace RPG
         public string nazwa;
         int zestawPotworow = 0;
 
-        public Obszar(String _nazwa, int _zestawPotworow)
+        public Obszar(string _nazwa, int _zestawPotworow)
         {
             nazwa = _nazwa;
             zestawPotworow = _zestawPotworow;

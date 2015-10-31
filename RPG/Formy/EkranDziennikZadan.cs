@@ -12,15 +12,48 @@ namespace RPG
 {
     public partial class EkranDziennikZadan : Form
     {
+        #region Zmienne
         EkranGry ekranGry;
+        #endregion
+
+        #region Metody
+        void RozmiescElementy()
+        {
+            LabelZadania.Size = new Size(Screen.PrimaryScreen.Bounds.Width * 40 / 100, Screen.PrimaryScreen.Bounds.Height * 10 / 100);
+            LabelOpis.Size = new Size(LabelZadania.Width, LabelZadania.Height);
+            ListBoxZadania.Size = new Size(Screen.PrimaryScreen.Bounds.Width * 35 / 100, Screen.PrimaryScreen.Bounds.Height * 80 / 100);
+            LabelOpisZadania.Size = new Size(ListBoxZadania.Width, ListBoxZadania.Height);
+
+            LabelZadania.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 5 / 100, Screen.PrimaryScreen.Bounds.Height * 5 / 100);
+            LabelOpis.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 50 / 100, LabelZadania.Location.Y);
+            ListBoxZadania.Location = new Point(LabelZadania.Location.X, LabelZadania.Location.Y + LabelZadania.Height);
+            LabelOpisZadania.Location = new Point(LabelOpis.Location.X, LabelOpis.Location.Y + LabelOpis.Height);
+         }
+
+        void UstawOpisZadania(string odKodoZadanie, string cel, string nagroda, string tresc)
+        {
+            LabelOpisZadania.Text = "Zleceniodawca:\n\t" + odKodoZadanie;
+            LabelOpisZadania.Text += "\n\nCel:\n\t" + cel;
+            LabelOpisZadania.Text += "\n\nNagroda:\n\t" + nagroda;
+            LabelOpisZadania.Text += "\n\nOpis:\n\t" + tresc;
+        }
+        void OdswiezListeZadan()
+        {//tak to widzę, ale nie potrawię przekazać gry
+          /* 
+            foreach (Zadanie zadanie in this.gra.zadanie)
+            {
+                ListBoxZadania.Items.Clear();
+                ListBoxZadania.Items.Add();
+            }*/
+        }
+        #endregion
+
         public EkranDziennikZadan(EkranGry ekranGry)
         {
             this.ekranGry = ekranGry;
-
             InitializeComponent();
             Program.DopasujRozmiarFormyDoEkranu(this);
-            Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Height / 2);
-            Size = new Size(Screen.PrimaryScreen.Bounds.Width/2, Screen.PrimaryScreen.Bounds.Height / 2);
+            RozmiescElementy();
         }
 
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
@@ -49,5 +82,24 @@ namespace RPG
             }
         }
         #endregion
+
+        private void ListBoxZadania_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListBoxZadania.SelectedIndex == 0)
+            {
+                UstawOpisZadania
+                    (
+                        "Wieśniaczka Laura",
+                        "Zabij wilki nieopodal strumienia",
+                        "Niezapomniana noc z Laurą",
+                        "No rusz się stary bydlaku, nie będziemy czekać wiecznie, aż wykonasz to zadanie!"
+                    );
+            }
+        }
+
+        private void EkranDziennikZadan_Enter(object sender, EventArgs e)
+        {
+            OdswiezListeZadan();
+        }
     }
 }

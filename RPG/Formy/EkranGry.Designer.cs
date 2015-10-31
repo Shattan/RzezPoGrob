@@ -161,10 +161,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1378, 780);
-            this.Controls.Add(this.panelMapa);
             this.Controls.Add(this.panelPraweMenu);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panelMapa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranGry";
             this.Text = "Gra";

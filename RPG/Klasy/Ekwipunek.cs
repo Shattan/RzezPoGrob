@@ -10,7 +10,7 @@ namespace RPG
     {
         public string nazwa;
 
-        public Ekwipunek(String _nazwa)
+        public Ekwipunek(string _nazwa)
         {
             nazwa = _nazwa;
         }

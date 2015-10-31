@@ -10,7 +10,7 @@ namespace RPG
     {
         public string nazwa;
 
-        public Przeszkoda(String _nazwa)
+        public Przeszkoda(string _nazwa)
         {
             nazwa = _nazwa;
         }
