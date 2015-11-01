@@ -108,8 +108,6 @@ namespace RPG
         }
         #endregion
 
-
-
         #region Obsluga zdarzen przyciskow
         private void PictureBoxEkranOpcje_Click(object sender, EventArgs e)
         {

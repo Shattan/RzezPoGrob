@@ -16,6 +16,21 @@ namespace RPG
         EkranGlowny ekranGlowny;
         EkranGry ekranGry;
         EkranGryTlo ekranGryTlo;
+        List<String> postacieDoWyboru = new List<String>();
+        static int wybranyBohater = 0;
+        enum Statystki
+        {
+            Pkt = 0,
+            Sila = 1,
+            Zrecznosc = 2,
+            Witalnosc = 3,
+            Inteligencja = 4
+        };
+        #if DEBUG
+                //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
+                // OdswiezStatystyki(10, 10, 15, 5, 23);
+                Postac postac = new Postac("Witek");
+        #endif
         #endregion
 
         #region Metody
@@ -71,8 +86,6 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWitalnoscPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
-
-
 
 
             //Ustawienie przycisków od bohatera
@@ -131,8 +144,73 @@ namespace RPG
             LabelWartosciStatystyk.Text += witalnosc * 5 + "\n";       //Zdrowie
             LabelWartosciStatystyk.Text += inteligencja * 5 + "\n";    //Energia
         }
-        #endregion
 
+        void DodajPunkt(Statystki statystki, int ile)
+        {
+            if (postac.Punkty > 0)
+            {
+                switch (statystki)
+                {
+                    case Statystki.Sila:
+                        postac.Sila += ile;
+                        break;
+                    case Statystki.Zrecznosc:
+                        postac.Zrecznosc += ile;
+                        break;
+                    case Statystki.Witalnosc:
+                        postac.Witalnosc += ile;
+                        break;
+                    case Statystki.Inteligencja:
+                        postac.Inteligencja += ile;
+                        break;
+                    default:
+                        break;
+                }
+
+                postac.Punkty -= ile;
+                OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+            }
+        }
+
+        void OdejmijPunkt(Statystki statystki, int ile)
+        {
+            const int minminalnaWartosc = 0;
+            switch (statystki)
+            {
+                case Statystki.Sila:
+                    if (postac.Sila > minminalnaWartosc)
+                    {
+                        postac.Sila -= ile;
+                        postac.Punkty += ile;
+                    }
+                    break;
+                case Statystki.Zrecznosc:
+                    if (postac.Zrecznosc > minminalnaWartosc)
+                    {
+                        postac.Zrecznosc -= ile;
+                        postac.Punkty += ile;
+                    }
+                    break;
+                case Statystki.Witalnosc:
+                    if (postac.Zrecznosc > minminalnaWartosc)
+                    {
+                        postac.Zrecznosc -= ile;
+                        postac.Punkty += ile;
+                    }
+                    break;
+                case Statystki.Inteligencja:
+                    if (postac.Inteligencja > minminalnaWartosc)
+                    {
+                        postac.Inteligencja -= ile;
+                        postac.Punkty += ile;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+        }
+        #endregion
 
         public EkranNowaGra(EkranGlowny ekranGlowny, EkranGry ekranGry, EkranGryTlo ekranGryTlo)
         {
@@ -142,8 +220,24 @@ namespace RPG
             this.ekranGry = ekranGry;
             this.ekranGryTlo = ekranGryTlo;
 
+            postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/0/");
+            postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/11/");
+            postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/12/");
+            postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/13/");
+            PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[wybranyBohater] + "dół.gif");
+
             RozmiescElementy();
-            OdswiezStatystyki(5, 10, 15, 5, 23);
+            #if DEBUG
+                //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
+                // OdswiezStatystyki(10, 10, 15, 5, 23);
+                postac = new Postac("Witek");
+                postac.Punkty = 10;
+                postac.Sila = 10;
+                postac.Zrecznosc = 15;
+                postac.Witalnosc = 5;
+                postac.Inteligencja = 23;
+            #endif
+            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
         }
 
 
@@ -186,6 +280,72 @@ namespace RPG
             LabelInformacje.Text = "";
         }
         #endregion
+
+        private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
+        {
+            OdejmijPunkt(Statystki.Sila, 1);
+        }
+
+        private void PictureBoxSilaPlus_Click(object sender, EventArgs e)
+        {
+            DodajPunkt(Statystki.Sila, 1);
+        }
+
+        private void PictureBoxZrecznoscMinus_Click(object sender, EventArgs e)
+        {
+            OdejmijPunkt(Statystki.Zrecznosc, 1);
+        }
+
+        private void PictureBoxZrecznoscPlus_Click(object sender, EventArgs e)
+        {
+            DodajPunkt(Statystki.Zrecznosc, 1);
+        }
+
+        private void PictureBoxWitalnoscMinus_Click(object sender, EventArgs e)
+        {
+            OdejmijPunkt(Statystki.Witalnosc, 1);
+        }
+
+        private void PictureBoxWitalnoscPlus_Click(object sender, EventArgs e)
+        {
+            DodajPunkt(Statystki.Witalnosc, 1);
+        }
+
+        private void PictureBoxInteligencjaMinus_Click(object sender, EventArgs e)
+        {
+            OdejmijPunkt(Statystki.Inteligencja, 1);
+        }
+
+        private void PictureBoxInteligencjaPlus_Click(object sender, EventArgs e)
+        {
+            DodajPunkt(Statystki.Inteligencja, 1);
+        }
+
+        private void PictureBoxPoprzedniBohater_Click(object sender, EventArgs e)
+        {
+            if (wybranyBohater > 0)
+            {
+                PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[--wybranyBohater] + "dół.gif");
+            }
+            else if (wybranyBohater == 0)
+            {
+                wybranyBohater = postacieDoWyboru.Count - 1;
+                PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[wybranyBohater] + "dół.gif");
+            }
+        }
+
+        private void PictureBoxNastepnyBohater_Click(object sender, EventArgs e)
+        {
+            if (wybranyBohater < postacieDoWyboru.Count-1)
+            {
+                PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[++wybranyBohater] + "dół.gif");
+            }
+            else if (wybranyBohater == postacieDoWyboru.Count - 1)
+            {
+                wybranyBohater = 0;
+                PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[wybranyBohater] + "dół.gif");
+            }
+        }
 
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
         /*

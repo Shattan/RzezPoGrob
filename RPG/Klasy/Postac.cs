@@ -17,8 +17,6 @@ namespace RPG
         int witalnosc;
         int inteligencja;
         
-
-        
         public Postac(string _nazwa)
         {
             nazwa = _nazwa;

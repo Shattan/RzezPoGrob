@@ -15,7 +15,6 @@ namespace RPG
     public partial class EkranEkwipunek : Form
     {
         EkranGry ekranGry;
-        PictureBox ZapisanyObrazek;
 
         enum Statystki
         {
@@ -27,9 +26,9 @@ namespace RPG
         };
 
         #if DEBUG
-        //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
-        // OdswiezStatystyki(10, 10, 15, 5, 23);
-        Postac postac = new Postac("Witek");
+            //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
+            // OdswiezStatystyki(10, 10, 15, 5, 23);
+            Postac postac = new Postac("Witek");
         #endif
 
         #region Metody
@@ -116,173 +115,6 @@ namespace RPG
             LabelWartosciStatystyk.Text += witalnosc * 5 + "\n";       //Zdrowie
             LabelWartosciStatystyk.Text += inteligencja * 5 + "\n";    //Energia
         }
-        #endregion
-
-        public EkranEkwipunek(EkranGry ekranGry)
-        {
-            this.ekranGry = ekranGry;
-            InitializeComponent();
-            Program.DopasujRozmiarFormyDoEkranu(this);
-            RozmiescElementy();
-
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZamknij, "Resources/Grafiki menu/Wyjdź.png");
-
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZrecznoscMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZrecznoscPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWitalnoscMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWitalnoscPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
-
-
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox1, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox2, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox3, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox4, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox5, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox6, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox7, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox8, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox9, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox10, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox11, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox12, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox13, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox14, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox15, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox16, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
-
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxBron, "Resources/Grafiki ekwipunku/Axe13.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxPancerz, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxTarcza, "Resources/Grafiki ekwipunku/ShieldCrestedSkull.PNG");
-
-            //FlowLayoutPanelPancerze.DragEnter += new DragEventHandler(FlowLayoutPanelPancerze_DragEnter);
-            //FlowLayoutPanelPancerze.DragDrop += new DragEventHandler(FlowLayoutPanelPancerz_DragDrop);
-       
-            #if DEBUG
-            //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
-            // OdswiezStatystyki(10, 10, 15, 5, 23);
-            postac = new Postac("Witek");
-            postac.Punkty = 10;
-            postac.Sila = 10;
-            postac.Zrecznosc = 15;
-            postac.Witalnosc = 5;
-            postac.Inteligencja = 23;
-            #endif
-
-            foreach (PictureBox obiekt in FlowLayoutPanelPancerze.Controls.OfType<PictureBox>().Cast<Control>().ToList())
-            {
-                obiekt.AllowDrop = true;
-                obiekt.DragEnter += new DragEventHandler(przedmiot_DragEnter);
-                obiekt.DragDrop += new DragEventHandler(przedmiot_DragDrop);
-                obiekt.MouseDown += przedmiot_MouseDown;
-            //    obiekt.MouseUp += przedmiot_MouseUp;
-            }
-
-            PictureBoxBron.AllowDrop = true;
-            PictureBoxPancerz.AllowDrop = true;
-            PictureBoxTarcza.AllowDrop = true;
-
-            PictureBoxBron.DragEnter += new DragEventHandler(przedmiot_DragEnter);
-            PictureBoxPancerz.DragEnter += new DragEventHandler(przedmiot_DragEnter);
-            PictureBoxTarcza.DragEnter += new DragEventHandler(przedmiot_DragEnter);
-
-            PictureBoxBron.DragDrop += new DragEventHandler(przedmiot_DragDrop);
-            PictureBoxPancerz.DragDrop += new DragEventHandler(przedmiot_DragDrop);
-            PictureBoxTarcza.DragDrop += new DragEventHandler(przedmiot_DragDrop);
-
-            PictureBoxBron.MouseDown += przedmiot_MouseDown;
-            PictureBoxPancerz.MouseDown += przedmiot_MouseDown;
-            PictureBoxTarcza.MouseDown += przedmiot_MouseDown;
-
-            pictureBoxWybrany.Visible = false;
-           // PictureBoxBron.MouseUp += przedmiot_MouseUp;
-          //  PictureBoxPancerz.MouseUp += przedmiot_MouseUp;
-         //   PictureBoxTarcza.MouseUp += przedmiot_MouseUp;
-        }
-
-        private void przedmiot_DragEnter(object sender, DragEventArgs e)
-        {
-            pictureBoxWybrany.Image = (sender as PictureBox).Image; ;
-            e.Effect = DragDropEffects.Move;      
-        }
-
-
-
-        private void przedmiot_DragDrop(object sender, DragEventArgs e)
-        {
-            PictureBox pb = e.Data.GetData(typeof(PictureBox)) as PictureBox;
-            if (pb != null)
-            {
-                ((PictureBox)sender).Image = pb.Image;
-                pb.Image = pictureBoxWybrany.Image;
-            }
-        }
-
-        void przedmiot_MouseDown(object sender, MouseEventArgs e)
-        {
-            
-            DoDragDrop(sender, DragDropEffects.Move);            
-        }
-
-        void przedmiot_MouseUp(object sender, MouseEventArgs e)
-        {
-           // pictureBoxWybrany = sender as PictureBox;
-        }
-
-        //private void FlowLayoutPanelPancerze_DragEnter(object sender, DragEventArgs e)
-        //{
-        //    e.Effect = DragDropEffects.All;
-        //}
-
-        //void FlowLayoutPanelPancerz_DragDrop(object sender, DragEventArgs e)
-        //{
-        //    PictureBox data = (PictureBox)e.Data.GetData(typeof(PictureBox));
-        //    FlowLayoutPanel _destination = (FlowLayoutPanel)sender;
-        //    FlowLayoutPanel _source = (FlowLayoutPanel)data.Parent;
-
-        //    if (_source != _destination)
-        //    {
-        //        // Add control to panel
-        //        _destination.Controls.Add(data);
-        //        data.Size = new Size(_destination.Width, 50);
-        
-        //        // Reorder
-        //        Point p = _destination.PointToClient(new Point(e.X, e.Y));
-        //        var item = _destination.GetChildAtPoint(p);
-        //        int index = _destination.Controls.GetChildIndex(item, false);
-        //        _destination.Controls.SetChildIndex(data, index);
-
-        //        // Invalidate to paint!
-        //        _destination.Invalidate();
-        //        _source.Invalidate();
-        //    }
-        //    else
-        //    {
-        //        // Just add the control to the new panel.
-        //        // No need to remove from the other panel,
-        //        // this changes the Control.Parent property.
-        //        Point p = _destination.PointToClient(new Point(e.X, e.Y));
-        //        var item = _destination.GetChildAtPoint(p);
-        //        int index = _destination.Controls.GetChildIndex(item, false);
-        //        _destination.Controls.SetChildIndex(data, index);
-        //        _destination.Invalidate();
-        //    }
-        //}
-
-        private void EkranEkwipunek_Load(object sender, EventArgs e)
-        {
-            //Tutaj powinny być wczytane statystyki z postaci gracza
-            //Ogólnie to najlepiej jakby całego gracza tutaj przekazywało, a funkcja sobie z niego wyciągała to, czego potrzeba
-            //np. label.text = "Sila:" + gracz.Sila; itd.
-            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
-        }
 
         void DodajPunkt(Statystki statystki, int ile)
         {
@@ -347,6 +179,120 @@ namespace RPG
                 default:
                     break;
             }
+            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+        }
+        #endregion
+
+        public EkranEkwipunek(EkranGry ekranGry)
+        {
+            this.ekranGry = ekranGry;
+
+            InitializeComponent();
+            Program.DopasujRozmiarFormyDoEkranu(this);
+            RozmiescElementy();
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZamknij, "Resources/Grafiki menu/Wyjdź.png");
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZrecznoscMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZrecznoscPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWitalnoscMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWitalnoscPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox1, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox2, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox3, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox4, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox5, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox6, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox7, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox8, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox9, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox10, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox11, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox12, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox13, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox14, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox15, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox16, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxBron, "Resources/Grafiki ekwipunku/Axe13.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxPancerz, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxTarcza, "Resources/Grafiki ekwipunku/ShieldCrestedSkull.PNG");
+      
+            #if DEBUG
+                //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
+                // OdswiezStatystyki(10, 10, 15, 5, 23);
+                postac = new Postac("Witek");
+                postac.Punkty = 10;
+                postac.Sila = 10;
+                postac.Zrecznosc = 15;
+                postac.Witalnosc = 5;
+                postac.Inteligencja = 23;
+            #endif
+
+            //Dodawanie operacji Drop and Drag dla wszystkich PictureBox z FlowLayoutPanelPancerze
+            foreach (PictureBox obiekt in FlowLayoutPanelPancerze.Controls.OfType<PictureBox>().Cast<Control>().ToList())
+            {
+                obiekt.AllowDrop = true;
+                obiekt.DragEnter += new DragEventHandler(przedmiot_DragEnter);
+                obiekt.DragDrop += new DragEventHandler(przedmiot_DragDrop);
+                obiekt.MouseDown += przedmiot_MouseDown;
+            }
+
+            //Dodawanie operacji Drop and Drag dla PictureBox Bron/Pancerz/Tarcza
+            PictureBoxBron.AllowDrop = true;
+            PictureBoxPancerz.AllowDrop = true;
+            PictureBoxTarcza.AllowDrop = true;
+
+            PictureBoxBron.DragEnter += new DragEventHandler(przedmiot_DragEnter);
+            PictureBoxPancerz.DragEnter += new DragEventHandler(przedmiot_DragEnter);
+            PictureBoxTarcza.DragEnter += new DragEventHandler(przedmiot_DragEnter);
+
+            PictureBoxBron.DragDrop += new DragEventHandler(przedmiot_DragDrop);
+            PictureBoxPancerz.DragDrop += new DragEventHandler(przedmiot_DragDrop);
+            PictureBoxTarcza.DragDrop += new DragEventHandler(przedmiot_DragDrop);
+
+            PictureBoxBron.MouseDown += przedmiot_MouseDown;
+            PictureBoxPancerz.MouseDown += przedmiot_MouseDown;
+            PictureBoxTarcza.MouseDown += przedmiot_MouseDown;
+
+            pictureBoxWybrany.Visible = false;
+        }
+
+        private void przedmiot_DragEnter(object sender, DragEventArgs e)
+        {
+            pictureBoxWybrany.Image = (sender as PictureBox).Image; ;
+            e.Effect = DragDropEffects.Move;      
+        }
+
+        private void przedmiot_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pb = e.Data.GetData(typeof(PictureBox)) as PictureBox;
+            if (pb != null)
+            {
+                ((PictureBox)sender).Image = pb.Image;
+                pb.Image = pictureBoxWybrany.Image;
+            }
+        }
+
+        void przedmiot_MouseDown(object sender, MouseEventArgs e)
+        {         
+            DoDragDrop(sender, DragDropEffects.Move);            
+        }
+
+        private void EkranEkwipunek_Load(object sender, EventArgs e)
+        {
+            //Tutaj powinny być wczytane statystyki z postaci gracza
+            //Ogólnie to najlepiej jakby całego gracza tutaj przekazywało, a funkcja sobie z niego wyciągała to, czego potrzeba
+            //np. label.text = "Sila:" + gracz.Sila; itd.
             OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
         }
 
