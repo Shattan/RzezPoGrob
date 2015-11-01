@@ -16,7 +16,6 @@ namespace RPG
         //int przesuniecie = 0;
         Bitmap plansza= new Bitmap("Resources/Mapy/Trawa.png");
 
-
         #region Zmienne
         EkranGry ekranGry;
 
@@ -27,11 +26,11 @@ namespace RPG
             InitializeComponent();
             Program.DopasujRozmiarFormyDoEkranu(this);
             this.ekranGry = ekranGry;
-           
-        
+                   
             BackgroundImage = plansza;
             UstawElementyNaEkranie();
             timer1.Start();
+            
         }
 
         #region Metody
@@ -41,13 +40,25 @@ namespace RPG
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
             //Ustawienie tła rysowanego w menu
-            BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło menu.png");
+            //BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło menu.png");
 
             PictureBoxTrawa.Size = new Size(plansza.Width,plansza.Height);
             PictureBoxTrawa.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
             PictureBoxTrawa.Image = plansza;
 
             //PictureBoxMgla.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
+        }
+
+        public void UstawPanelPrawy(Point point, Size size, String sciezkaGrafiki)
+        {
+            //panelPraweMenu.Location = point;
+            //panelPraweMenu.Size = size;
+            //panelPraweMenu.BackgroundImage = new Bitmap(sciezkaGrafiki);
+            //Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(panelPraweMenu, sciezkaGrafiki);
+
+            //pbPanelPraweMenu.Location = point;
+            //pbPanelPraweMenu.Size = size;
+            //pbPanelPraweMenu.BackgroundImage = new Bitmap(sciezkaGrafiki);
         }
 
         public void RuchPowierzchniMapy(int pozycja, int dystans)

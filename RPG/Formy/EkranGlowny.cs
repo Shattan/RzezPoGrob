@@ -144,7 +144,7 @@ namespace RPG
         //i wszystki te funkcje mozna by zastapic jedna, poprzez obsluge sender-a.
         private void PictureBoxWyjscie_MouseEnter(object sender, EventArgs e)
         {
-            ekranOpcje.OdtworzDzwiek(ekranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/szyld.wav");
+            ekranOpcje.OdtworzEfekt(1, "Resources/Dźwięki/szyld.wav");
             LabelInformacje.Text = "Wyjdź z gry.";
             PrzeskalujPrzycisk(true,PictureBoxWyjdz, "Resources/Grafiki menu/Wiej.png");
         }
@@ -157,7 +157,7 @@ namespace RPG
 
         private void PictureBoxWczytaj_MouseEnter(object sender, EventArgs e)
         {
-            ekranOpcje.OdtworzDzwiek(ekranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/szyld.wav");
+            ekranOpcje.OdtworzEfekt(2, "Resources/Dźwięki/szyld.wav");
             LabelInformacje.Text = "Wczytaj poprzednio zaczętą przygodę.";
             PrzeskalujPrzycisk(true, PictureBoxWczytaj, "Resources/Grafiki menu/Wczytaj.png");
         }
@@ -170,7 +170,7 @@ namespace RPG
 
         private void PictureBoxEkranOpcje_MouseEnter(object sender, EventArgs e)
         {
-            ekranOpcje.OdtworzDzwiek(ekranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/szyld.wav");
+            ekranOpcje.OdtworzEfekt(3, "Resources/Dźwięki/szyld.wav");
             LabelInformacje.Text = "Dostosuj grę do swoich potrzeb.";
             PrzeskalujPrzycisk(true, PictureBoxOpcje, "Resources/Grafiki menu/Opcje.png");
         }
@@ -183,7 +183,7 @@ namespace RPG
 
         private void PictureBoxRuszaj_MouseEnter(object sender, EventArgs e)
         {
-            ekranOpcje.OdtworzDzwiek(ekranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/szyld.wav");
+            ekranOpcje.OdtworzEfekt(4, "Resources/Dźwięki/szyld.wav");
             LabelInformacje.Text = "Rozpocznij nową przygodę!";
             PrzeskalujPrzycisk(true, PictureBoxRuszaj, "Resources/Grafiki menu/Do boju.png");
         }

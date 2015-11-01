@@ -33,9 +33,9 @@ namespace RPG
         public EkranOpcje ekranOpcje;
 
         Gra gra;
-        Mapa mapa;
         
         PictureBox[] praweMenu;
+
         //Poruszanie sie bohaterem
         int index = 0;
         bool prawo=false, lewo=false, gora=false, dol=false;
@@ -61,7 +61,7 @@ namespace RPG
             //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
 
             gra = new Gra();
-            mapa = new Mapa();
+
             ekranDziennikZadan = new EkranDziennikZadan(this);
             ekranEkwipunek = new EkranEkwipunek(this);
             ekranWalka = new EkranWalka(this);
@@ -72,8 +72,7 @@ namespace RPG
             
             InitializeComponent();
             UstawElementyNaEkranie();
-            timerPrzeplywCzasu.Start();
-            
+            timerPrzeplywCzasu.Start();     
         }
 
         void UstawElementyNaEkranie()
@@ -109,8 +108,8 @@ namespace RPG
 
             panelPraweMenu.Location = new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y);
             panelPraweMenu.Size = new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow);
-
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(panelPraweMenu, "Resources/Grafiki menu/Panel pod przyciski.png");
+
             praweMenu = new PictureBox[iloscPrzyciskow];
             for (int index = 0; index < praweMenu.Length; index++)
             {
@@ -215,9 +214,6 @@ namespace RPG
         {
             label1.Text = nazwa;
         }
-
-        //Tutaj dzieki zdarzeniom bedziemy tylko wywolywac metody z klasy Gra
-        //Dzieki temu mamy oddzielona gre od warstwy srodowiska
 
         #region Obsluga zdarzeń
         private void PictureBoxPraweMenuEkwipunek_MouseClick(object sender, EventArgs e)
@@ -453,5 +449,14 @@ namespace RPG
             }
         }
         #endregion
+
+        private void EkranGry_Load(object sender, EventArgs e)
+        {
+            const int wielkoscPrzyciskow = 90;
+            const int odlegloscMiedzyPrzyciskami = 20;
+            int iloscPrzyciskow = 5;
+
+            ekranGlowny.ekranGryTlo.UstawPanelPrawy(new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y), new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow), "Resources/Grafiki menu/Panel pod przyciski.png");
+        }
     }
 }

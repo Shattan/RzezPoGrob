@@ -23,7 +23,8 @@ namespace RPG
         public MediaPlayer odtwarzaczMuzyki = new MediaPlayer();
         public MediaPlayer odtwarzaczOtoczenia = new MediaPlayer();
         public MediaPlayer odtwarzaczDialogow = new MediaPlayer();
-        public MediaPlayer odtwarzaczEfektowSpecjalnych = new MediaPlayer();
+        public MediaPlayer[] odtwarzaczEfektowSpecjalnych = new MediaPlayer [5];
+        
 
         //zmienne sterujące
         public double obecnyPoziomGlosnosciMuzyki = 0.5;
@@ -36,6 +37,11 @@ namespace RPG
         {
             InitializeComponent();
             this.ekranGlowny = ekranGlowny;
+
+            for (int i = 0; i < odtwarzaczEfektowSpecjalnych.Count(); i++)
+			{
+			    odtwarzaczEfektowSpecjalnych[i] = new MediaPlayer();
+			} 
 
             PictureBoxOdrzuc.Image = new Bitmap("Resources/Grafiki menu/Odrzuć opcje.png");
             PictureBoxZapisz.Image = new Bitmap("Resources/Grafiki menu/Zapisz opcje.png");
@@ -52,6 +58,15 @@ namespace RPG
             odtwarzacz.Play();
         }
 
+        public void OdtworzEfekt(int nrOdtwarzacza, String sciezka)
+        {
+            if ((nrOdtwarzacza >= 0) && (nrOdtwarzacza <= odtwarzaczEfektowSpecjalnych.Count()))
+            {
+                odtwarzaczEfektowSpecjalnych[nrOdtwarzacza].Open(new Uri(sciezka, UriKind.Relative));
+                odtwarzaczEfektowSpecjalnych[nrOdtwarzacza].Play();
+            }      
+        }
+
         public void ZatrzymajDzwiek(MediaPlayer odtwarzacz)
         {
             odtwarzacz.Stop();
@@ -61,7 +76,11 @@ namespace RPG
         {
             odtwarzaczOtoczenia.Volume = glosnosc;
             odtwarzaczDialogow.Volume = glosnosc;
-            odtwarzaczEfektowSpecjalnych.Volume = glosnosc;
+
+            foreach (var odtwarzacz in odtwarzaczEfektowSpecjalnych)
+            {
+                odtwarzacz.Volume = glosnosc;
+            }
         }
         #endregion
 

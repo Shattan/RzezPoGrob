@@ -8,15 +8,15 @@ namespace RPG
 {
     class Gra
     {
-        public List<Zadanie> zadanie = new List<Zadanie>();
-        public List<Umiejetnosc> umiejetnosc = new List<Umiejetnosc>();
-        public List<Ekwipunek> ekwipunek = new List<Ekwipunek>();
-        public List<Przeszkoda> przeszkoda = new List<Przeszkoda>();
-        public List<List<Postac>> zestawPrzeciwnikow = new List<List<Postac>>();
-        public List<Postac> postacFabularna = new List<Postac>();
-        public List<Postac> postacZMiasta = new List<Postac>();
-        public List<Postac> postacZCmentarza = new List<Postac>();
-        public List<Postac> postacZDziczy = new List<Postac>();
+        List<Zadanie> zadanie = new List<Zadanie>();
+        List<Umiejetnosc> umiejetnosc = new List<Umiejetnosc>();
+        List<Ekwipunek> ekwipunek = new List<Ekwipunek>();
+        List<Przeszkoda> przeszkoda = new List<Przeszkoda>();
+        List<List<Postac>> zestawPrzeciwnikow = new List<List<Postac>>();
+        List<Postac> postacFabularna = new List<Postac>();
+        List<Postac> postacZMiasta = new List<Postac>();
+        List<Postac> postacZCmentarza = new List<Postac>();
+        List<Postac> postacZDziczy = new List<Postac>();
 
         public Gra()
         {
