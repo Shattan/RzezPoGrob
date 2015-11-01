@@ -24,7 +24,7 @@ namespace RPG
             InitializeComponent();
             this.ekranNowaGra = ekranNowaGra;
             Program.DopasujRozmiarFormyDoEkranu(this);
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this,"Resources/Grafiki menu/.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this,"Resources/Grafiki menu/Tło tworzenie postaci.png");
         }
 
         #region Obsluga zdarzeń

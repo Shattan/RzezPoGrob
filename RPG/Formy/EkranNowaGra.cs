@@ -12,9 +12,58 @@ namespace RPG
 {
     public partial class EkranNowaGra : Form
     {
+        #region Zmienne
         EkranGlowny ekranGlowny;
         EkranGry ekranGry;
         EkranGryTlo ekranGryTlo;
+        #endregion
+
+        #region Metody
+        void RozmiescElementy()
+        {
+            //Ustawienia okienka gry
+            Program.DopasujRozmiarFormyDoEkranu(this);
+
+            //Ustawienie ikony w trybie okienkowym
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
+
+            //Ustawienia dolnego panelu z informacjami
+            LabelInformacje.Size = new Size(Width, Height / 8);
+            LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
+            LabelInformacje.Text = "Aby rozpocząć należy wybrać postać i ją nazwać.";
+
+            //Ustawienie przycisków
+            PictureBoxWyjscie.Size = new Size(Width * 5 / 100, Height * 5 / 100);
+            PictureBoxWyjscie.Location = new Point(Width * 5 / 100, Height * 5 / 100);
+
+            PictureBoxPoprzedniBohater.Size = new Size(Width * 2 / 100, Height * 10/ 100);
+            PictureBoxBohater.Size = new Size(Width * 10 / 100, PictureBoxPoprzedniBohater.Height);
+            PictureBoxNastepnyBohater.Size = new Size(PictureBoxPoprzedniBohater.Width, PictureBoxPoprzedniBohater.Height);
+
+            PictureBoxPoprzedniBohater.Location = new Point(Width * 50 / 100 - (PictureBoxPoprzedniBohater.Width + PictureBoxBohater.Width + PictureBoxNastepnyBohater.Width)/2, Height * 50 / 100 - PictureBoxPoprzedniBohater.Height);
+            PictureBoxBohater.Location = new Point(PictureBoxPoprzedniBohater.Location.X + PictureBoxPoprzedniBohater.Width, PictureBoxPoprzedniBohater.Location.Y);
+            PictureBoxNastepnyBohater.Location = new Point(PictureBoxBohater.Location.X + PictureBoxBohater.Width, PictureBoxPoprzedniBohater.Location.Y);
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjscie, "Resources/Grafiki menu/Wyjdź.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPoprzedniBohater, "Resources/Grafiki menu/Przycisk poprzedni standard.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxBohater, "Resources/Grafiki menu/Tło opcji.png");
+            PictureBoxBohater.SizeMode = PictureBoxSizeMode.CenterImage;
+            PictureBoxBohater.Image = new Bitmap("Resources/Grafiki postaci na mapie/0/dół.gif");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxNastepnyBohater, "Resources/Grafiki menu/Przycisk następny standard.png");
+
+
+            //Ustawienie wpisywania nazwy
+            TextBoxNazwa.Width = PictureBoxBohater.Width;
+            PictureBoxPotwierdz.Size = new Size(TextBoxNazwa.Width, TextBoxNazwa.Height);
+
+            TextBoxNazwa.Location = new Point(PictureBoxBohater.Location.X, PictureBoxBohater.Location.Y + PictureBoxBohater.Height);
+            PictureBoxPotwierdz.Location = new Point(PictureBoxBohater.Location.X, TextBoxNazwa.Location.Y + TextBoxNazwa.Height);
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz,"Resources/Grafiki menu/Zapisz opcje.png");
+
+        }
+        #endregion
+
 
         public EkranNowaGra(EkranGlowny ekranGlowny, EkranGry ekranGry, EkranGryTlo ekranGryTlo)
         {
@@ -24,44 +73,19 @@ namespace RPG
             this.ekranGry = ekranGry;
             this.ekranGryTlo = ekranGryTlo;
 
-            UstawElementyNaEkranie();      
+            RozmiescElementy();      
         }
 
 
         private void PictureBoxPotwierdz_Click(object sender, EventArgs e)
         {
             //Zapisz Elementy do EkranGlowny.ekranGry.gra
-            ekranGry.ZapiszNazwe(textBox1.Text);
+            ekranGry.ZapiszNazwe(TextBoxNazwa.Text);
             ekranGryTlo.ShowDialog();
             
             //DialogResult = DialogResult.OK;
             this.Close();
         }
-
-        #region Metody
-        void UstawElementyNaEkranie()
-        {
-            //Ustawienia okienka gry
-            Program.DopasujRozmiarFormyDoEkranu(this);
-
-            //Ustawienie ikony w trybie okienkowym
-            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
-
-            //Ustawienie tła rysowanego w menu
-            //BackgroundImage = tlo;
-
-            //Ustawienia dolnego panelu z informacjami
-            LabelInformacje.Size = new Size(Width, Height / 8);
-            LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
-            LabelInformacje.Text = "";
-
-            //Ustawienie przycisków
-            PictureBoxWyjscie.Location = new Point(10, -30);
-
-            PictureBoxWyjscie.BackgroundImage = new Bitmap(new Bitmap("Resources/Grafiki menu/Wyjdź.png"), PictureBoxWyjscie.Width * 5 / 8, PictureBoxWyjscie.Height * 7 / 8);
-            
-        }
-        #endregion
 
         private void PictureBoxWyjscie_Click(object sender, EventArgs e)
         {

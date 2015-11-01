@@ -28,31 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TextBoxNazwa = new System.Windows.Forms.TextBox();
             this.PictureBoxPotwierdz = new System.Windows.Forms.PictureBox();
             this.LabelInformacje = new System.Windows.Forms.Label();
             this.PictureBoxWyjscie = new System.Windows.Forms.PictureBox();
+            this.PictureBoxPoprzedniBohater = new System.Windows.Forms.PictureBox();
+            this.PictureBoxNastepnyBohater = new System.Windows.Forms.PictureBox();
+            this.PictureBoxBohater = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPotwierdz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPoprzedniBohater)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxNastepnyBohater)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBohater)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TextBoxNazwa
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic);
-            this.textBox1.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox1.Location = new System.Drawing.Point(452, 387);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 27);
-            this.textBox1.TabIndex = 0;
+            this.TextBoxNazwa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TextBoxNazwa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxNazwa.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic);
+            this.TextBoxNazwa.ForeColor = System.Drawing.Color.Yellow;
+            this.TextBoxNazwa.Location = new System.Drawing.Point(194, 282);
+            this.TextBoxNazwa.Name = "TextBoxNazwa";
+            this.TextBoxNazwa.Size = new System.Drawing.Size(100, 27);
+            this.TextBoxNazwa.TabIndex = 0;
             // 
             // PictureBoxPotwierdz
             // 
-            this.PictureBoxPotwierdz.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.PictureBoxPotwierdz.Location = new System.Drawing.Point(611, 373);
+            this.PictureBoxPotwierdz.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxPotwierdz.Location = new System.Drawing.Point(194, 315);
             this.PictureBoxPotwierdz.Name = "PictureBoxPotwierdz";
-            this.PictureBoxPotwierdz.Size = new System.Drawing.Size(100, 50);
+            this.PictureBoxPotwierdz.Size = new System.Drawing.Size(100, 27);
             this.PictureBoxPotwierdz.TabIndex = 1;
             this.PictureBoxPotwierdz.TabStop = false;
             this.PictureBoxPotwierdz.Click += new System.EventHandler(this.PictureBoxPotwierdz_Click);
@@ -80,6 +86,30 @@
             this.PictureBoxWyjscie.TabStop = false;
             this.PictureBoxWyjscie.Click += new System.EventHandler(this.PictureBoxWyjscie_Click);
             // 
+            // PictureBoxPoprzedniBohater
+            // 
+            this.PictureBoxPoprzedniBohater.Location = new System.Drawing.Point(152, 167);
+            this.PictureBoxPoprzedniBohater.Name = "PictureBoxPoprzedniBohater";
+            this.PictureBoxPoprzedniBohater.Size = new System.Drawing.Size(35, 109);
+            this.PictureBoxPoprzedniBohater.TabIndex = 8;
+            this.PictureBoxPoprzedniBohater.TabStop = false;
+            // 
+            // PictureBoxNastepnyBohater
+            // 
+            this.PictureBoxNastepnyBohater.Location = new System.Drawing.Point(300, 167);
+            this.PictureBoxNastepnyBohater.Name = "PictureBoxNastepnyBohater";
+            this.PictureBoxNastepnyBohater.Size = new System.Drawing.Size(35, 109);
+            this.PictureBoxNastepnyBohater.TabIndex = 9;
+            this.PictureBoxNastepnyBohater.TabStop = false;
+            // 
+            // PictureBoxBohater
+            // 
+            this.PictureBoxBohater.Location = new System.Drawing.Point(194, 167);
+            this.PictureBoxBohater.Name = "PictureBoxBohater";
+            this.PictureBoxBohater.Size = new System.Drawing.Size(100, 109);
+            this.PictureBoxBohater.TabIndex = 10;
+            this.PictureBoxBohater.TabStop = false;
+            // 
             // EkranNowaGra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,10 +117,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1232, 780);
+            this.Controls.Add(this.PictureBoxBohater);
+            this.Controls.Add(this.PictureBoxNastepnyBohater);
+            this.Controls.Add(this.PictureBoxPoprzedniBohater);
             this.Controls.Add(this.PictureBoxWyjscie);
             this.Controls.Add(this.LabelInformacje);
             this.Controls.Add(this.PictureBoxPotwierdz);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TextBoxNazwa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranNowaGra";
             this.Text = "EkranNowaGra";
@@ -98,6 +131,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPotwierdz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjscie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPoprzedniBohater)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxNastepnyBohater)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBohater)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,9 +141,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TextBoxNazwa;
         private System.Windows.Forms.PictureBox PictureBoxPotwierdz;
         private System.Windows.Forms.Label LabelInformacje;
         private System.Windows.Forms.PictureBox PictureBoxWyjscie;
+        private System.Windows.Forms.PictureBox PictureBoxPoprzedniBohater;
+        private System.Windows.Forms.PictureBox PictureBoxNastepnyBohater;
+        private System.Windows.Forms.PictureBox PictureBoxBohater;
     }
 }
