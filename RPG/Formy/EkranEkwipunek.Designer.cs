@@ -353,6 +353,7 @@
             this.PictureBoxSilaMinus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxSilaMinus.TabIndex = 12;
             this.PictureBoxSilaMinus.TabStop = false;
+            this.PictureBoxSilaMinus.Click += new System.EventHandler(this.PictureBoxSilaMinus_Click);
             // 
             // PictureBoxSilaPlus
             // 
@@ -361,6 +362,7 @@
             this.PictureBoxSilaPlus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxSilaPlus.TabIndex = 13;
             this.PictureBoxSilaPlus.TabStop = false;
+            this.PictureBoxSilaPlus.Click += new System.EventHandler(this.PictureBoxSilaPlus_Click);
             // 
             // PictureBoxZrecznoscPlus
             // 
@@ -369,6 +371,7 @@
             this.PictureBoxZrecznoscPlus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxZrecznoscPlus.TabIndex = 15;
             this.PictureBoxZrecznoscPlus.TabStop = false;
+            this.PictureBoxZrecznoscPlus.Click += new System.EventHandler(this.PictureBoxZrecznoscPlus_Click);
             // 
             // PictureBoxZrecznoscMinus
             // 
@@ -377,6 +380,7 @@
             this.PictureBoxZrecznoscMinus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxZrecznoscMinus.TabIndex = 14;
             this.PictureBoxZrecznoscMinus.TabStop = false;
+            this.PictureBoxZrecznoscMinus.Click += new System.EventHandler(this.PictureBoxZrecznoscMinus_Click);
             // 
             // PictureBoxWitalnoscPlus
             // 
@@ -385,6 +389,7 @@
             this.PictureBoxWitalnoscPlus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxWitalnoscPlus.TabIndex = 17;
             this.PictureBoxWitalnoscPlus.TabStop = false;
+            this.PictureBoxWitalnoscPlus.Click += new System.EventHandler(this.PictureBoxWitalnoscPlus_Click);
             // 
             // PictureBoxWitalnoscMinus
             // 
@@ -393,6 +398,7 @@
             this.PictureBoxWitalnoscMinus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxWitalnoscMinus.TabIndex = 16;
             this.PictureBoxWitalnoscMinus.TabStop = false;
+            this.PictureBoxWitalnoscMinus.Click += new System.EventHandler(this.PictureBoxWitalnoscMinus_Click);
             // 
             // PictureBoxInteligencjaPlus
             // 
@@ -401,6 +407,7 @@
             this.PictureBoxInteligencjaPlus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxInteligencjaPlus.TabIndex = 19;
             this.PictureBoxInteligencjaPlus.TabStop = false;
+            this.PictureBoxInteligencjaPlus.Click += new System.EventHandler(this.PictureBoxInteligencjaPlus_Click);
             // 
             // PictureBoxInteligencjaMinus
             // 
@@ -409,6 +416,7 @@
             this.PictureBoxInteligencjaMinus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxInteligencjaMinus.TabIndex = 18;
             this.PictureBoxInteligencjaMinus.TabStop = false;
+            this.PictureBoxInteligencjaMinus.Click += new System.EventHandler(this.PictureBoxInteligencjaMinus_Click);
             // 
             // LabelStatystyki
             // 

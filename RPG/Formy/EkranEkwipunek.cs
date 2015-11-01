@@ -17,6 +17,21 @@ namespace RPG
         EkranGry ekranGry;
         PictureBox ZapisanyObrazek;
 
+        enum Statystki
+        {
+            Pkt = 0,
+            Sila = 1,
+            Zrecznosc = 2,
+            Witalnosc = 3,
+            Inteligencja = 4
+        };
+
+        #if DEBUG
+        //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
+        // OdswiezStatystyki(10, 10, 15, 5, 23);
+        Postac postac = new Postac("Witek");
+        #endif
+
         #region Metody
         void RozmiescElementy()
         {
@@ -150,6 +165,17 @@ namespace RPG
             //FlowLayoutPanelPancerze.DragEnter += new DragEventHandler(FlowLayoutPanelPancerze_DragEnter);
             //FlowLayoutPanelPancerze.DragDrop += new DragEventHandler(FlowLayoutPanelPancerz_DragDrop);
        
+            #if DEBUG
+            //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
+            // OdswiezStatystyki(10, 10, 15, 5, 23);
+            postac = new Postac("Witek");
+            postac.Punkty = 10;
+            postac.Sila = 10;
+            postac.Zrecznosc = 15;
+            postac.Witalnosc = 5;
+            postac.Inteligencja = 23;
+            #endif
+
             foreach (PictureBox obiekt in FlowLayoutPanelPancerze.Controls.OfType<PictureBox>().Cast<Control>().ToList())
             {
                 obiekt.AllowDrop = true;
@@ -255,12 +281,118 @@ namespace RPG
             //Tutaj powinny być wczytane statystyki z postaci gracza
             //Ogólnie to najlepiej jakby całego gracza tutaj przekazywało, a funkcja sobie z niego wyciągała to, czego potrzeba
             //np. label.text = "Sila:" + gracz.Sila; itd.
-            OdswiezStatystyki(10, 10, 15, 5, 23);
+            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+        }
+
+        void DodajPunkt(Statystki statystki, int ile)
+        {
+            if (postac.Punkty > 0)
+            {
+                switch (statystki)
+                {
+                    case Statystki.Sila:
+                        postac.Sila += ile;
+                        break;
+                    case Statystki.Zrecznosc:
+                        postac.Zrecznosc += ile;
+                        break;
+                    case Statystki.Witalnosc:
+                        postac.Witalnosc += ile;
+                        break;
+                    case Statystki.Inteligencja:
+                        postac.Inteligencja += ile;
+                        break;
+                    default:
+                        break;
+                }
+
+                postac.Punkty -= ile;
+                OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+            }
+        }
+
+        void OdejmijPunkt(Statystki statystki, int ile)
+        {
+            const int minminalnaWartosc = 0;
+            switch (statystki)
+            {
+                case Statystki.Sila:
+                    if (postac.Sila > minminalnaWartosc)
+                    {
+                        postac.Sila -= ile;
+                        postac.Punkty += ile;
+                    }
+                    break;
+                case Statystki.Zrecznosc:
+                    if (postac.Zrecznosc > minminalnaWartosc)
+                    {
+                        postac.Zrecznosc -= ile;
+                        postac.Punkty += ile;
+                    }
+                    break;
+                case Statystki.Witalnosc:
+                    if (postac.Zrecznosc > minminalnaWartosc)
+                    {
+                        postac.Zrecznosc -= ile;
+                        postac.Punkty += ile;
+                    }
+                    break;
+                case Statystki.Inteligencja:
+                    if (postac.Inteligencja > minminalnaWartosc)
+                    {
+                        postac.Inteligencja -= ile;
+                        postac.Punkty += ile;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
         }
 
         private void PictureBoxZamknij_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
+        {
+            OdejmijPunkt(Statystki.Sila, 1);
+        }
+
+        private void PictureBoxSilaPlus_Click(object sender, EventArgs e)
+        {
+            DodajPunkt(Statystki.Sila, 1);
+        }
+
+        private void PictureBoxZrecznoscMinus_Click(object sender, EventArgs e)
+        {
+            OdejmijPunkt(Statystki.Zrecznosc, 1);
+        }
+
+        private void PictureBoxZrecznoscPlus_Click(object sender, EventArgs e)
+        {
+            DodajPunkt(Statystki.Zrecznosc, 1);
+        }
+
+        private void PictureBoxWitalnoscMinus_Click(object sender, EventArgs e)
+        {
+            OdejmijPunkt(Statystki.Witalnosc, 1);
+        }
+
+        private void PictureBoxWitalnoscPlus_Click(object sender, EventArgs e)
+        {
+            DodajPunkt(Statystki.Witalnosc, 1);
+        }
+
+        private void PictureBoxInteligencjaMinus_Click(object sender, EventArgs e)
+        {
+            OdejmijPunkt(Statystki.Inteligencja, 1);
+        }
+
+        private void PictureBoxInteligencjaPlus_Click(object sender, EventArgs e)
+        {
+            DodajPunkt(Statystki.Inteligencja, 1);
         }
     }
 }
