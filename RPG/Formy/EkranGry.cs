@@ -239,7 +239,8 @@ namespace RPG
         
         private void PictureBox_Click(object sender, EventArgs e)
         {
-            ekranEkranDziennikZadanTlo.ShowDialog();
+            //Później trzeba to usunąć, bo do wychodzenia będzie służyło menu
+            Close();
         }
         #endregion
 

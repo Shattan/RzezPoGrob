@@ -25,16 +25,10 @@ namespace RPG
         void UstawElementyNaEkranie()
         {
             //Ustawienia okienka gry
-            Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y);
-            Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            Program.DopasujRozmiarFormyDoEkranu(this);
 
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
-
-            //Ustawienie tła rysowanego w menu
-
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
 
         }
         #endregion

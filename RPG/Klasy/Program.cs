@@ -20,7 +20,6 @@ namespace RPG
         /// 
         public static void DopasujRozmiarFormyDoEkranu(Form formularz)
         {
-            formularz.StartPosition = FormStartPosition.CenterParent;
             formularz.WindowState = FormWindowState.Maximized;
             formularz.Location = new Point(0, 0);
             formularz.Size = new Size (Screen.PrimaryScreen.Bounds.Width,Screen.PrimaryScreen.Bounds.Height);
@@ -138,15 +137,15 @@ namespace RPG
         {
             using (Image obrazekTlaWalki = new Bitmap(sciezkaDoObrazuTla))
             {
-                Bitmap obrazekDoWstawienia = new Bitmap(obrazekTlaWalki, Kontrolka.Width, Kontrolka.Height);
+                Bitmap obrazekDoWstawienia = new Bitmap(obrazekTlaWalki, Kontrolka.Bounds.Width, Kontrolka.Bounds.Height);
                 using (Graphics grafikaWalki = Graphics.FromImage(obrazekDoWstawienia))
                 {
                     using (Image obrazekPrzeciwnika = new Bitmap(sciezkaDoObrazuPrzeciwnika))
                     {
-                        int szerokoscPrzeciwnika = Kontrolka.Width * 30 / 100;
-                        int wysokoscPrzeciwnika = Kontrolka.Height * 50 / 100;
-                        int pozycjaPrzeciwnikaX = Kontrolka.Width / 2 - szerokoscPrzeciwnika / 2;
-                        int pozycjaPrzeciwnikaY = Kontrolka.Height/3;
+                        int szerokoscPrzeciwnika = Kontrolka.Bounds.Width * 30 / 100;
+                        int wysokoscPrzeciwnika = Kontrolka.Bounds.Height * 50 / 100;
+                        int pozycjaPrzeciwnikaX = Kontrolka.Bounds.Width / 2 - szerokoscPrzeciwnika / 2;
+                        int pozycjaPrzeciwnikaY = Kontrolka.Bounds.Height/3;
                         grafikaWalki.DrawImage(obrazekPrzeciwnika, pozycjaPrzeciwnikaX, pozycjaPrzeciwnikaY, szerokoscPrzeciwnika, wysokoscPrzeciwnika);
                         Kontrolka.BackgroundImage = obrazekDoWstawienia;
                     }

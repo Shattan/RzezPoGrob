@@ -28,6 +28,10 @@ namespace RPG
             LabelOpis.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 50 / 100, LabelZadania.Location.Y);
             ListBoxZadania.Location = new Point(LabelZadania.Location.X, LabelZadania.Location.Y + LabelZadania.Height);
             LabelOpisZadania.Location = new Point(LabelOpis.Location.X, LabelOpis.Location.Y + LabelOpis.Height);
+
+
+            PictureBoxZamknij.Size = new Size(Screen.PrimaryScreen.Bounds.Width * 15 / 100, Screen.PrimaryScreen.Bounds.Height * 15 / 100);
+            PictureBoxZamknij.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 75 / 100, Screen.PrimaryScreen.Bounds.Height * 80 / 100);
          }
 
         void UstawOpisZadania(string odKodoZadanie, string cel, string nagroda, string tresc)
@@ -54,6 +58,9 @@ namespace RPG
             InitializeComponent();
             Program.DopasujRozmiarFormyDoEkranu(this);
             RozmiescElementy();
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZamknij, "Resources/Grafiki menu/Wyjdź.png");
+
         }
 
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
@@ -97,9 +104,14 @@ namespace RPG
             }
         }
 
-        private void EkranDziennikZadan_Enter(object sender, EventArgs e)
+        private void EkranDziennikZadan_Load(object sender, EventArgs e)
         {
             OdswiezListeZadan();
+        }
+
+        private void PictureBoxZamknij_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

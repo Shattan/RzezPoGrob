@@ -34,22 +34,24 @@
             // 
             // buttonWygralem
             // 
-            this.buttonWygralem.Location = new System.Drawing.Point(474, 308);
+            this.buttonWygralem.BackColor = System.Drawing.Color.Lime;
+            this.buttonWygralem.Location = new System.Drawing.Point(30, 185);
             this.buttonWygralem.Name = "buttonWygralem";
             this.buttonWygralem.Size = new System.Drawing.Size(178, 69);
             this.buttonWygralem.TabIndex = 0;
             this.buttonWygralem.Text = "Wygrałem!";
-            this.buttonWygralem.UseVisualStyleBackColor = true;
+            this.buttonWygralem.UseVisualStyleBackColor = false;
             this.buttonWygralem.Click += new System.EventHandler(this.buttonWygralem_Click);
             // 
             // buttonPrzegralem
             // 
-            this.buttonPrzegralem.Location = new System.Drawing.Point(474, 415);
+            this.buttonPrzegralem.BackColor = System.Drawing.Color.Red;
+            this.buttonPrzegralem.Location = new System.Drawing.Point(30, 272);
             this.buttonPrzegralem.Name = "buttonPrzegralem";
             this.buttonPrzegralem.Size = new System.Drawing.Size(178, 69);
             this.buttonPrzegralem.TabIndex = 1;
             this.buttonPrzegralem.Text = "Przegrałem..";
-            this.buttonPrzegralem.UseVisualStyleBackColor = true;
+            this.buttonPrzegralem.UseVisualStyleBackColor = false;
             this.buttonPrzegralem.Click += new System.EventHandler(this.buttonPrzegralem_Click);
             // 
             // EkranWalka
@@ -57,7 +59,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(970, 800);
+            this.ClientSize = new System.Drawing.Size(970, 780);
             this.Controls.Add(this.buttonPrzegralem);
             this.Controls.Add(this.buttonWygralem);
             this.Cursor = System.Windows.Forms.Cursors.Default;

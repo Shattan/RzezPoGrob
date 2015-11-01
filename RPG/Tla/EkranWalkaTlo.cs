@@ -16,14 +16,15 @@ namespace RPG
     {
         #region Zmienne
         EkranWalka ekranWalka;
+
+        Random losowanie = new Random();
         #endregion
 
         public EkranWalkaTlo(EkranWalka ekranWalka)
         {
             InitializeComponent();
             this.ekranWalka = ekranWalka;
-
-            Program.UstawObrazPolaBitwy(this, "Resources/Grafiki tła walki/0.png", "Resources/Grafiki postaci walczących/goblin.png");
+            Program.DopasujRozmiarFormyDoEkranu(this);
         }
 
         #region Obsluga zdarzeń
@@ -32,5 +33,15 @@ namespace RPG
             DialogResult = ekranWalka.ShowDialog();
         }
         #endregion
+
+        private void EkranWalkaTlo_Load(object sender, EventArgs e)
+        {
+            string plansza = losowanie.Next(0, 10).ToString();
+            string sciezkaPlanszy = "Resources/Grafiki tła walki/" + plansza + ".png";
+            //Do losowania postaci potrzeba tu dostępu do obiektu Postac, zeby po indexach wczytywać
+            //string postac = losowanie.Next(0, 0).ToString();
+            //string sciezkaPostaci = "Resources/Grafiki tła walki/" + plansza + ".png";
+            Program.UstawObrazPolaBitwy(this, sciezkaPlanszy, "Resources/Grafiki postaci walczących/goblin.png");
+        }
     }
 }

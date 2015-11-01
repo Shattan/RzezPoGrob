@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranWalkaTlo";
@@ -43,6 +43,7 @@
             this.Text = "EkranWalkaTlo";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.EkranWalkaTlo_Load);
             this.Shown += new System.EventHandler(this.EkranNowaGraTlo_Shown);
             this.ResumeLayout(false);
 

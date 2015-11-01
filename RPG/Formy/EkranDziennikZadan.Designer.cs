@@ -32,6 +32,8 @@
             this.LabelZadania = new System.Windows.Forms.Label();
             this.LabelOpis = new System.Windows.Forms.Label();
             this.LabelOpisZadania = new System.Windows.Forms.Label();
+            this.PictureBoxZamknij = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).BeginInit();
             this.SuspendLayout();
             // 
             // ListBoxZadania
@@ -81,12 +83,24 @@
             this.LabelOpisZadania.TabIndex = 3;
             this.LabelOpisZadania.Text = "Kliknij na zadanie, aby wyświetlić opis.";
             // 
+            // PictureBoxZamknij
+            // 
+            this.PictureBoxZamknij.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxZamknij.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureBoxZamknij.Location = new System.Drawing.Point(679, 356);
+            this.PictureBoxZamknij.Name = "PictureBoxZamknij";
+            this.PictureBoxZamknij.Size = new System.Drawing.Size(158, 60);
+            this.PictureBoxZamknij.TabIndex = 23;
+            this.PictureBoxZamknij.TabStop = false;
+            this.PictureBoxZamknij.Click += new System.EventHandler(this.PictureBoxZamknij_Click);
+            // 
             // EkranDziennikZadan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(883, 451);
+            this.Controls.Add(this.PictureBoxZamknij);
             this.Controls.Add(this.LabelOpisZadania);
             this.Controls.Add(this.ListBoxZadania);
             this.Controls.Add(this.LabelOpis);
@@ -98,7 +112,8 @@
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranOpcje_FormClosing);
-            this.Enter += new System.EventHandler(this.EkranDziennikZadan_Enter);
+            this.Load += new System.EventHandler(this.EkranDziennikZadan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +125,6 @@
         private System.Windows.Forms.Label LabelZadania;
         private System.Windows.Forms.Label LabelOpis;
         private System.Windows.Forms.Label LabelOpisZadania;
+        private System.Windows.Forms.PictureBox PictureBoxZamknij;
     }
 }

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.PictureBox = new System.Windows.Forms.PictureBox();
+            this.PictureBoxZamknij = new System.Windows.Forms.PictureBox();
             this.panelPraweMenu = new System.Windows.Forms.Panel();
             this.panelMapa = new System.Windows.Forms.Panel();
             this.AkcjaStrazniczkaGor = new System.Windows.Forms.PictureBox();
@@ -40,7 +40,7 @@
             this.AkcjaWielkiMag = new System.Windows.Forms.PictureBox();
             this.Blok1 = new System.Windows.Forms.PictureBox();
             this.timerPrzeplywCzasu = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).BeginInit();
             this.panelMapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaGor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaLasu)).BeginInit();
@@ -59,15 +59,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
-            // PictureBox
+            // PictureBoxZamknij
             // 
-            this.PictureBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.PictureBox.Location = new System.Drawing.Point(133, 44);
-            this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(92, 50);
-            this.PictureBox.TabIndex = 2;
-            this.PictureBox.TabStop = false;
-            this.PictureBox.Click += new System.EventHandler(this.PictureBox_Click);
+            this.PictureBoxZamknij.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PictureBoxZamknij.Location = new System.Drawing.Point(81, 30);
+            this.PictureBoxZamknij.Name = "PictureBoxZamknij";
+            this.PictureBoxZamknij.Size = new System.Drawing.Size(144, 64);
+            this.PictureBoxZamknij.TabIndex = 2;
+            this.PictureBoxZamknij.TabStop = false;
+            this.PictureBoxZamknij.Click += new System.EventHandler(this.PictureBox_Click);
             // 
             // panelPraweMenu
             // 
@@ -162,7 +162,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.Controls.Add(this.panelPraweMenu);
-            this.Controls.Add(this.PictureBox);
+            this.Controls.Add(this.PictureBoxZamknij);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelMapa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -173,7 +173,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranOpcje_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.przechwytywanieKlawiszy_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.przechwytywanieKlawiszy_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).EndInit();
             this.panelMapa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaGor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaLasu)).EndInit();
@@ -188,7 +188,7 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox PictureBox;
+        private System.Windows.Forms.PictureBox PictureBoxZamknij;
         private System.Windows.Forms.Panel panelPraweMenu;
         private System.Windows.Forms.Panel panelMapa;
         private System.Windows.Forms.PictureBox pBGracz;
