@@ -17,16 +17,14 @@ namespace RPG
         #region Zmienne
         EkranNowaGra ekranNowaGra;
 
-        static readonly Image obrazTla = new Bitmap("Resources/Grafiki menu/Nowa Gra.png");
-        readonly Bitmap tlo = new Bitmap(obrazTla, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
         #endregion
 
         public EkranEkranNowaGraTlo(EkranNowaGra ekranNowaGra)
         {
             InitializeComponent();
             this.ekranNowaGra = ekranNowaGra;
-
-            BackgroundImage = tlo;
+            Program.DopasujRozmiarFormyDoEkranu(this);
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this,"Resources/Grafiki menu/.png");
         }
 
         #region Obsluga zdarzeń

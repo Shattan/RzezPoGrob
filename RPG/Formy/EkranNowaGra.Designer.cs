@@ -78,13 +78,15 @@
             this.PictureBoxWyjscie.Size = new System.Drawing.Size(133, 101);
             this.PictureBoxWyjscie.TabIndex = 7;
             this.PictureBoxWyjscie.TabStop = false;
+            this.PictureBoxWyjscie.Click += new System.EventHandler(this.PictureBoxWyjscie_Click);
             // 
             // EkranNowaGra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1232, 795);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1232, 780);
             this.Controls.Add(this.PictureBoxWyjscie);
             this.Controls.Add(this.LabelInformacje);
             this.Controls.Add(this.PictureBoxPotwierdz);

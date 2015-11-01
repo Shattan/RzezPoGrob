@@ -42,8 +42,7 @@ namespace RPG
         void UstawElementyNaEkranie()
         {
             //Ustawienia okienka gry
-            Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y);
-            Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
+            Program.DopasujRozmiarFormyDoEkranu(this);
 
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
@@ -51,8 +50,6 @@ namespace RPG
             //Ustawienie tła rysowanego w menu
             //BackgroundImage = tlo;
 
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
             //Ustawienia dolnego panelu z informacjami
             LabelInformacje.Size = new Size(Width, Height / 8);
             LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
@@ -95,7 +92,7 @@ namespace RPG
             LabelInformacje.Text = "";
         }
         #endregion
-              
+
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
         /*
         //Obsluga wychodzenia - zakaz alt+f4

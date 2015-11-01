@@ -2298,6 +2298,9 @@
     <Content Include="Resources\Grafiki menu\Bdark.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\Błędny obraz.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki menu\Blight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
