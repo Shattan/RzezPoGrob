@@ -66,6 +66,7 @@
             this.LabelNazwyStatystyk = new System.Windows.Forms.Label();
             this.PictureBoxZamknij = new System.Windows.Forms.PictureBox();
             this.LabelWartosciStatystyk = new System.Windows.Forms.Label();
+            this.pictureBoxWybrany = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -101,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInteligencjaPlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInteligencjaMinus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWybrany)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -311,7 +313,6 @@
             this.FlowLayoutPanelPancerze.Name = "FlowLayoutPanelPancerze";
             this.FlowLayoutPanelPancerze.Size = new System.Drawing.Size(291, 330);
             this.FlowLayoutPanelPancerze.TabIndex = 0;
-            this.FlowLayoutPanelPancerze.DragEnter += new System.Windows.Forms.DragEventHandler(this.FlowLayoutPanelPancerze_DragEnter);
             // 
             // pictureBox19
             // 
@@ -447,6 +448,15 @@
             this.LabelWartosciStatystyk.TabIndex = 23;
             this.LabelWartosciStatystyk.Text = "Tu powinny się pojawić wartości statystyk.";
             // 
+            // pictureBoxWybrany
+            // 
+            this.pictureBoxWybrany.BackColor = System.Drawing.Color.Silver;
+            this.pictureBoxWybrany.Location = new System.Drawing.Point(832, 22);
+            this.pictureBoxWybrany.Name = "pictureBoxWybrany";
+            this.pictureBoxWybrany.Size = new System.Drawing.Size(54, 50);
+            this.pictureBoxWybrany.TabIndex = 24;
+            this.pictureBoxWybrany.TabStop = false;
+            // 
             // EkranEkwipunek
             // 
             this.AllowDrop = true;
@@ -454,6 +464,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Magenta;
             this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.pictureBoxWybrany);
+            this.Controls.Add(this.PictureBoxSilaMinus);
             this.Controls.Add(this.PictureBoxInteligencjaPlus);
             this.Controls.Add(this.PictureBoxInteligencjaMinus);
             this.Controls.Add(this.PictureBoxWitalnoscPlus);
@@ -461,7 +473,6 @@
             this.Controls.Add(this.PictureBoxZrecznoscPlus);
             this.Controls.Add(this.PictureBoxZrecznoscMinus);
             this.Controls.Add(this.PictureBoxSilaPlus);
-            this.Controls.Add(this.PictureBoxSilaMinus);
             this.Controls.Add(this.LabelWartosciStatystyk);
             this.Controls.Add(this.PictureBoxZamknij);
             this.Controls.Add(this.LabelNazwyStatystyk);
@@ -511,6 +522,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInteligencjaPlus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxInteligencjaMinus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWybrany)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -555,5 +567,6 @@
         private System.Windows.Forms.Label LabelNazwyStatystyk;
         private System.Windows.Forms.PictureBox PictureBoxZamknij;
         private System.Windows.Forms.Label LabelWartosciStatystyk;
+        private System.Windows.Forms.PictureBox pictureBoxWybrany;
     }
 }

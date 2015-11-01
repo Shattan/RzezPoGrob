@@ -43,6 +43,22 @@ namespace RPG
             }
         }
 
+        public static void UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBox Kontrolka, string sciezkaDoObrazu)
+        {
+            try
+            {
+                Kontrolka.BackgroundImageLayout = ImageLayout.None;
+                using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+                {
+                    Kontrolka.Image = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
+                }
+            }
+            catch (System.ArgumentException e)
+            {
+                Kontrolka.Image = new Bitmap("Resources/Grafiki menu/Błędny obraz.png");
+                MessageBox.Show(e.Message + "\nŚcieżka do obrazu:\n" + sciezkaDoObrazu, "Błąd wczytywania obrazu", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
         
         public static void UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(PictureBox Kontrolka, string sciezkaDoObrazu)
         {

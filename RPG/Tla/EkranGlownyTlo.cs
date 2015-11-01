@@ -24,15 +24,14 @@ namespace RPG
             InitializeComponent();
             Width = Screen.PrimaryScreen.Bounds.Width;
             Height = Screen.PrimaryScreen.Bounds.Height;
+            
+            BackColor = System.Drawing.Color.Black;
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło menu.png");
 
             ekranGlowny = new EkranGlowny(this);
-            BackColor = System.Drawing.Color.Black;
-
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło menu.png");
-            //Program.UstawObrazPolaBitwy(this, "Resources/Grafiki tła walki/0.png", "Resources/Grafiki postaci walczących/waz.png");
         }
 
-        #region Obsluga zdarzeń
+        #region Zdarzenia
         private void EkranGlownyTlo_Shown(object sender, EventArgs e)
         {
             ekranGlowny.ShowDialog();

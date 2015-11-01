@@ -15,6 +15,7 @@ namespace RPG
     public partial class EkranEkwipunek : Form
     {
         EkranGry ekranGry;
+        PictureBox ZapisanyObrazek;
 
         #region Metody
         void RozmiescElementy()
@@ -121,103 +122,133 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
 
 
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox1, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox2, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox3, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox4, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox5, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox6, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox7, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox8, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox9, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox10, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox11, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox12, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox13, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox14, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox15, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox16, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
 
-            //pictureBox7.AllowDrop = true;
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox1,"Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox2, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox3, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox4, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox5, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox6, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox7, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox8, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox9, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox10, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox11, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox12, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox13, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox14, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox15, "Resources/Grafiki ekwipunku/ArmorChainmailGolden.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox16, "Resources/Grafiki ekwipunku/ArmorChainmailGreen.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox17, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox18, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox17, "Resources/Grafiki ekwipunku/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBox18, "Resources/Grafiki ekwipunku/ArmorChainMailDouble.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxBron, "Resources/Grafiki ekwipunku/Axe13.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxPancerz, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxTarcza, "Resources/Grafiki ekwipunku/ShieldCrestedSkull.PNG");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxBron, "Resources/Grafiki ekwipunku/Axe13.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPancerz, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxTarcza, "Resources/Grafiki ekwipunku/ShieldCrestedSkull.PNG");
+            //FlowLayoutPanelPancerze.DragEnter += new DragEventHandler(FlowLayoutPanelPancerze_DragEnter);
+            //FlowLayoutPanelPancerze.DragDrop += new DragEventHandler(FlowLayoutPanelPancerz_DragDrop);
+       
+            foreach (PictureBox obiekt in FlowLayoutPanelPancerze.Controls.OfType<PictureBox>().Cast<Control>().ToList())
+            {
+                obiekt.AllowDrop = true;
+                obiekt.DragEnter += new DragEventHandler(przedmiot_DragEnter);
+                obiekt.DragDrop += new DragEventHandler(przedmiot_DragDrop);
+                obiekt.MouseDown += przedmiot_MouseDown;
+            //    obiekt.MouseUp += przedmiot_MouseUp;
+            }
 
-
-            //pictureBox1.AllowDrop = true;
-            //pictureBox2.AllowDrop = true;
-            //pictureBox3.AllowDrop = true;
-            //pictureBox4.AllowDrop = true;
-            //pictureBox5.AllowDrop = true;
-            //pictureBox6.AllowDrop = true;
             PictureBoxBron.AllowDrop = true;
+            PictureBoxPancerz.AllowDrop = true;
+            PictureBoxTarcza.AllowDrop = true;
 
-            pictureBox1.MouseDown += PobierzObrazek_MouseDown;
-            pictureBox2.MouseDown += PobierzObrazek_MouseDown;
-            pictureBox3.MouseDown += PobierzObrazek_MouseDown;
-            pictureBox4.MouseDown += PobierzObrazek_MouseDown;
-            pictureBox5.MouseDown += PobierzObrazek_MouseDown;
-            pictureBox6.MouseDown += PobierzObrazek_MouseDown;
-            PictureBoxBron.MouseDown += PobierzObrazek_MouseDown;   
+            PictureBoxBron.DragEnter += new DragEventHandler(przedmiot_DragEnter);
+            PictureBoxPancerz.DragEnter += new DragEventHandler(przedmiot_DragEnter);
+            PictureBoxTarcza.DragEnter += new DragEventHandler(przedmiot_DragEnter);
 
+            PictureBoxBron.DragDrop += new DragEventHandler(przedmiot_DragDrop);
+            PictureBoxPancerz.DragDrop += new DragEventHandler(przedmiot_DragDrop);
+            PictureBoxTarcza.DragDrop += new DragEventHandler(przedmiot_DragDrop);
 
-            pictureBox1.DragEnter += pictureBox1_DragEnter;
-            pictureBox2.DragEnter += pictureBox1_DragEnter;
-            pictureBox3.DragEnter += pictureBox1_DragEnter;
-            pictureBox4.DragEnter += pictureBox1_DragEnter;
-            pictureBox5.DragEnter += pictureBox1_DragEnter;
-            pictureBox6.DragEnter += pictureBox1_DragEnter;
-            PictureBoxBron.DragEnter += pictureBox1_DragEnter;
+            PictureBoxBron.MouseDown += przedmiot_MouseDown;
+            PictureBoxPancerz.MouseDown += przedmiot_MouseDown;
+            PictureBoxTarcza.MouseDown += przedmiot_MouseDown;
 
-            pictureBox1.DragDrop += pictureBox7_DragDrop;
-            pictureBox2.DragDrop += pictureBox7_DragDrop;
-            pictureBox3.DragDrop += pictureBox7_DragDrop;
-            pictureBox4.DragDrop += pictureBox7_DragDrop;
-            pictureBox5.DragDrop += pictureBox7_DragDrop;
-            pictureBox6.DragDrop += pictureBox7_DragDrop;
-            PictureBoxBron.DragDrop += pictureBox7_DragDrop;
-
+            pictureBoxWybrany.Visible = false;
+           // PictureBoxBron.MouseUp += przedmiot_MouseUp;
+          //  PictureBoxPancerz.MouseUp += przedmiot_MouseUp;
+         //   PictureBoxTarcza.MouseUp += przedmiot_MouseUp;
         }
 
-        private void PobierzObrazek_MouseDown(object sender, MouseEventArgs e)
+        private void przedmiot_DragEnter(object sender, DragEventArgs e)
         {
-            PictureBox obrazek = sender as PictureBox;
-            var img = obrazek.Image;
+            pictureBoxWybrany.Image = (sender as PictureBox).Image; ;
+            e.Effect = DragDropEffects.Move;      
+        }
 
-            if (img == null) return;
-            if (DoDragDrop(img, DragDropEffects.Move) == DragDropEffects.Move)
-            {
-                obrazek.Image = null;
-            }
-            if (DoDragDrop(img, DragDropEffects.Copy) == DragDropEffects.Copy)
-            {
 
+
+        private void przedmiot_DragDrop(object sender, DragEventArgs e)
+        {
+            PictureBox pb = e.Data.GetData(typeof(PictureBox)) as PictureBox;
+            if (pb != null)
+            {
+                ((PictureBox)sender).Image = pb.Image;
+                pb.Image = pictureBoxWybrany.Image;
             }
         }
 
-        private void pictureBox1_DragEnter(object sender, DragEventArgs e)
+        void przedmiot_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.Bitmap))
-                e.Effect = DragDropEffects.Move;
+            
+            DoDragDrop(sender, DragDropEffects.Move);            
         }
 
-        private void pictureBox7_DragDrop(object sender, DragEventArgs e)
+        void przedmiot_MouseUp(object sender, MouseEventArgs e)
         {
-            PictureBox obrazek = sender as PictureBox;
-            var img = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
-
-            obrazek.Image = img;
+           // pictureBoxWybrany = sender as PictureBox;
         }
 
-        private void FlowLayoutPanelPancerze_DragEnter(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.All;
-        }
+        //private void FlowLayoutPanelPancerze_DragEnter(object sender, DragEventArgs e)
+        //{
+        //    e.Effect = DragDropEffects.All;
+        //}
+
+        //void FlowLayoutPanelPancerz_DragDrop(object sender, DragEventArgs e)
+        //{
+        //    PictureBox data = (PictureBox)e.Data.GetData(typeof(PictureBox));
+        //    FlowLayoutPanel _destination = (FlowLayoutPanel)sender;
+        //    FlowLayoutPanel _source = (FlowLayoutPanel)data.Parent;
+
+        //    if (_source != _destination)
+        //    {
+        //        // Add control to panel
+        //        _destination.Controls.Add(data);
+        //        data.Size = new Size(_destination.Width, 50);
+        
+        //        // Reorder
+        //        Point p = _destination.PointToClient(new Point(e.X, e.Y));
+        //        var item = _destination.GetChildAtPoint(p);
+        //        int index = _destination.Controls.GetChildIndex(item, false);
+        //        _destination.Controls.SetChildIndex(data, index);
+
+        //        // Invalidate to paint!
+        //        _destination.Invalidate();
+        //        _source.Invalidate();
+        //    }
+        //    else
+        //    {
+        //        // Just add the control to the new panel.
+        //        // No need to remove from the other panel,
+        //        // this changes the Control.Parent property.
+        //        Point p = _destination.PointToClient(new Point(e.X, e.Y));
+        //        var item = _destination.GetChildAtPoint(p);
+        //        int index = _destination.Controls.GetChildIndex(item, false);
+        //        _destination.Controls.SetChildIndex(data, index);
+        //        _destination.Invalidate();
+        //    }
+        //}
 
         private void EkranEkwipunek_Load(object sender, EventArgs e)
         {
@@ -231,7 +262,5 @@ namespace RPG
         {
             Close();
         }
-
-
     }
 }
