@@ -35,11 +35,8 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranGlownyTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult dr = ekranGlowny.ShowDialog();
-            if (dr == DialogResult.Abort)
-            {
-                Application.Exit();
-            }
+            ekranGlowny.ShowDialog();
+            Application.Exit();
         }
         #endregion
     }
