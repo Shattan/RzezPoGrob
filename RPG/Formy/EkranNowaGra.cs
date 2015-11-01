@@ -34,19 +34,15 @@ namespace RPG
         #endregion
 
         #region Metody
-        void RozmiescElementy()
+        void RozstawElementy()
         {
             //Ustawienia okienka gry
             Program.DopasujRozmiarFormyDoEkranu(this);
-
-            //Ustawienie ikony w trybie okienkowym
-            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
             //Ustawienia dolnego panelu z informacjami
             LabelInformacje.Size = new Size(Width, Height / 8);
             LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
             LabelInformacje.Text = "Aby rozpocząć należy wybrać postać i ją nazwać.";
-
 
             //Rozmieszczanie statystyk
             LabelNazwyStatystyk.Size = new Size(Width * 23 / 100, Height * 80 / 100);
@@ -78,16 +74,6 @@ namespace RPG
             PictureBoxInteligencjaMinus.Location = new Point(PictureBoxSilaMinus.Location.X, PictureBoxWitalnoscMinus.Location.Y + odleglosciMiedzyPrzyciskamiY);
             PictureBoxInteligencjaPlus.Location = new Point(PictureBoxInteligencjaMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxInteligencjaMinus.Location.Y);
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZrecznoscMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZrecznoscPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWitalnoscMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWitalnoscPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
-
-
             //Ustawienie przycisków od bohatera
             PictureBoxWyjscie.Size = new Size(Width * 5 / 100, Height * 5 / 100);
             PictureBoxWyjscie.Location = new Point(Width * 5 / 100, Height * 5 / 100);
@@ -100,12 +86,8 @@ namespace RPG
             PictureBoxBohater.Location = new Point(PictureBoxPoprzedniBohater.Location.X + PictureBoxPoprzedniBohater.Width, PictureBoxPoprzedniBohater.Location.Y);
             PictureBoxNastepnyBohater.Location = new Point(PictureBoxBohater.Location.X + PictureBoxBohater.Width, PictureBoxPoprzedniBohater.Location.Y);
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjscie, "Resources/Grafiki menu/Wyjdź.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPoprzedniBohater, "Resources/Grafiki menu/Przycisk poprzedni standard.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxBohater, "Resources/Grafiki menu/Tło opcji.png");
             PictureBoxBohater.SizeMode = PictureBoxSizeMode.CenterImage;
-            PictureBoxBohater.Image = new Bitmap("Resources/Grafiki postaci na mapie/0/dół.gif");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxNastepnyBohater, "Resources/Grafiki menu/Przycisk następny standard.png");
+            PictureBoxBohater.SizeMode = PictureBoxSizeMode.Zoom;
 
 
             //Ustawienie wpisywania nazwy
@@ -114,10 +96,33 @@ namespace RPG
 
             TextBoxNazwa.Location = new Point(PictureBoxBohater.Location.X, PictureBoxBohater.Location.Y + PictureBoxBohater.Height);
             PictureBoxPotwierdz.Location = new Point(PictureBoxBohater.Location.X, TextBoxNazwa.Location.Y + TextBoxNazwa.Height);
-
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz,"Resources/Grafiki menu/Zapisz opcje.png");
-
         }
+
+        void KolorujElementy()
+        {
+            //Ustawienie ikony dla trybu okienkowego
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
+
+            //Przyciski Statystyk
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZrecznoscMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZrecznoscPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWitalnoscMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWitalnoscPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPoprzedniBohater, "Resources/Grafiki menu/Przycisk poprzedni standard.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxBohater, "Resources/Grafiki menu/Tło opcji.png");
+            PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[wybranyBohater] + "dół.gif");
+            //PictureBoxBohater.Image = new Bitmap("Resources/Grafiki postaci na mapie/0/dół.gif");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxNastepnyBohater, "Resources/Grafiki menu/Przycisk następny standard.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz, "Resources/Grafiki menu/Zapisz opcje.png");
+            //Przycisk wychodzenia
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjscie, "Resources/Grafiki menu/Wyjdź.png");
+        }
+
         void OdswiezStatystyki(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
         {
             LabelNazwyStatystyk.Text = "Pozostałe punkty do rozdania:\n";
@@ -224,9 +229,10 @@ namespace RPG
             postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/11/");
             postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/12/");
             postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/13/");
-            PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[wybranyBohater] + "dół.gif");
+            
+            RozstawElementy();
+            KolorujElementy();
 
-            RozmiescElementy();
             #if DEBUG
                 //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
                 // OdswiezStatystyki(10, 10, 15, 5, 23);
