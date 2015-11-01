@@ -63,8 +63,9 @@
             this.PictureBoxInteligencjaPlus = new System.Windows.Forms.PictureBox();
             this.PictureBoxInteligencjaMinus = new System.Windows.Forms.PictureBox();
             this.LabelStatystyki = new System.Windows.Forms.Label();
-            this.LabelStatystykiSzczegoly = new System.Windows.Forms.Label();
+            this.LabelNazwyStatystyk = new System.Windows.Forms.Label();
             this.PictureBoxZamknij = new System.Windows.Forms.PictureBox();
+            this.LabelWartosciStatystyk = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -417,14 +418,14 @@
             this.LabelStatystyki.TabIndex = 20;
             this.LabelStatystyki.Text = "Statystyki";
             // 
-            // LabelStatystykiSzczegoly
+            // LabelNazwyStatystyk
             // 
-            this.LabelStatystykiSzczegoly.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelStatystykiSzczegoly.Location = new System.Drawing.Point(78, 144);
-            this.LabelStatystykiSzczegoly.Name = "LabelStatystykiSzczegoly";
-            this.LabelStatystykiSzczegoly.Size = new System.Drawing.Size(222, 184);
-            this.LabelStatystykiSzczegoly.TabIndex = 21;
-            this.LabelStatystykiSzczegoly.Text = "Tu powinny się pojawić szczegóły dotyczące statystyk.";
+            this.LabelNazwyStatystyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelNazwyStatystyk.Location = new System.Drawing.Point(78, 144);
+            this.LabelNazwyStatystyk.Name = "LabelNazwyStatystyk";
+            this.LabelNazwyStatystyk.Size = new System.Drawing.Size(222, 184);
+            this.LabelNazwyStatystyk.TabIndex = 21;
+            this.LabelNazwyStatystyk.Text = "Tu powinny się pojawić szczegóły dotyczące statystyk.";
             // 
             // PictureBoxZamknij
             // 
@@ -437,6 +438,15 @@
             this.PictureBoxZamknij.TabStop = false;
             this.PictureBoxZamknij.Click += new System.EventHandler(this.PictureBoxZamknij_Click);
             // 
+            // LabelWartosciStatystyk
+            // 
+            this.LabelWartosciStatystyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelWartosciStatystyk.Location = new System.Drawing.Point(198, 144);
+            this.LabelWartosciStatystyk.Name = "LabelWartosciStatystyk";
+            this.LabelWartosciStatystyk.Size = new System.Drawing.Size(102, 184);
+            this.LabelWartosciStatystyk.TabIndex = 23;
+            this.LabelWartosciStatystyk.Text = "Tu powinny się pojawić wartości statystyk.";
+            // 
             // EkranEkwipunek
             // 
             this.AllowDrop = true;
@@ -444,7 +454,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Magenta;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.PictureBoxZamknij);
             this.Controls.Add(this.PictureBoxInteligencjaPlus);
             this.Controls.Add(this.PictureBoxInteligencjaMinus);
             this.Controls.Add(this.PictureBoxWitalnoscPlus);
@@ -453,7 +462,9 @@
             this.Controls.Add(this.PictureBoxZrecznoscMinus);
             this.Controls.Add(this.PictureBoxSilaPlus);
             this.Controls.Add(this.PictureBoxSilaMinus);
-            this.Controls.Add(this.LabelStatystykiSzczegoly);
+            this.Controls.Add(this.LabelWartosciStatystyk);
+            this.Controls.Add(this.PictureBoxZamknij);
+            this.Controls.Add(this.LabelNazwyStatystyk);
             this.Controls.Add(this.LabelStatystyki);
             this.Controls.Add(this.PictureBoxTarcza);
             this.Controls.Add(this.PictureBoxPancerz);
@@ -541,7 +552,8 @@
         private System.Windows.Forms.PictureBox PictureBoxInteligencjaPlus;
         private System.Windows.Forms.PictureBox PictureBoxInteligencjaMinus;
         private System.Windows.Forms.Label LabelStatystyki;
-        private System.Windows.Forms.Label LabelStatystykiSzczegoly;
+        private System.Windows.Forms.Label LabelNazwyStatystyk;
         private System.Windows.Forms.PictureBox PictureBoxZamknij;
+        private System.Windows.Forms.Label LabelWartosciStatystyk;
     }
 }
