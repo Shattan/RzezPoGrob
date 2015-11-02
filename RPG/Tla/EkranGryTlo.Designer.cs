@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.PictureBoxTrawa = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrawa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,11 +42,6 @@
             this.PictureBoxTrawa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PictureBoxTrawa.TabIndex = 8;
             this.PictureBoxTrawa.TabStop = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // EkranGryTlo
             // 
@@ -73,6 +66,5 @@
         #endregion
 
         private System.Windows.Forms.PictureBox PictureBoxTrawa;
-        private System.Windows.Forms.Timer timer1;
     }
 }

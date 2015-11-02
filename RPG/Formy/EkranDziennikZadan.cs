@@ -13,8 +13,9 @@ namespace RPG
     public partial class EkranDziennikZadan : Form
     {
         #region Zmienne
-        EkranGry ekranGry;      //Dostep do: - ekranGry.opcje
-                                //ekranGry.gra;
+        EkranGry ekranGry;      //Dostep do:-ekranGry.opcje
+                                //          -ekranGry.gra;
+
         #endregion
 
         public EkranDziennikZadan(EkranGry ekranGry)
@@ -45,38 +46,29 @@ namespace RPG
             PictureBoxZamknij.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 75 / 100, Screen.PrimaryScreen.Bounds.Height * 80 / 100);
          }
 
-        void UstawOpisZadania(string odKodoZadanie, string cel, string nagroda, string tresc)
+        void UstawOpisZadania(Zadanie zadanie)
         {
-            LabelOpisZadania.Text = "Zleceniodawca:\n\t" + odKodoZadanie;
-            LabelOpisZadania.Text += "\n\nCel:\n\t" + cel;
-            LabelOpisZadania.Text += "\n\nNagroda:\n\t" + nagroda;
-            LabelOpisZadania.Text += "\n\nOpis:\n\t" + tresc;
+            LabelOpisZadania.Text = "Zleceniodawca:\n\t" + zadanie.Zleceniodawca;
+            LabelOpisZadania.Text += "\n\nCel:\n\t" + zadanie.Cel;
+            LabelOpisZadania.Text += "\n\nNagroda:\n\t" + zadanie.Nagroda;
+            LabelOpisZadania.Text += "\n\nOpis:\n\t" + zadanie.Opis;
         }
 
         void OdswiezListeZadan()
-        {//tak to widzę, ale nie potrawię przekazać gry
-          /* 
-            foreach (Zadanie zadanie in this.gra.zadanie)
-            {
-                ListBoxZadania.Items.Clear();
-                ListBoxZadania.Items.Add();
-            }*/
+        {
+            ListBoxZadania.Items.Clear();
+
+            foreach (Zadanie zadanie in ekranGry.gra.listaZadan)
+            {          
+                ListBoxZadania.Items.Add(zadanie);
+            }
         }
         #endregion
 
         #region Zdarzenia 
         private void ListBoxZadania_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ListBoxZadania.SelectedIndex == 0)
-            {
-                UstawOpisZadania
-                    (
-                        "Wieśniaczka Laura",
-                        "Zabij wilki nieopodal strumienia",
-                        "Niezapomniana noc z Laurą",
-                        "No rusz się stary bydlaku, nie będziemy czekać wiecznie, aż wykonasz to zadanie!"
-                    );
-            }
+            UstawOpisZadania(ekranGry.gra.ZwrocZadanie(ListBoxZadania.SelectedIndex));  
         }
 
         private void EkranDziennikZadan_Load(object sender, EventArgs e)

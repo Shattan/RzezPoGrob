@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    class Zadanie
+    public class Zadanie
     {
-        public string nazwa;
-        public string zleceniodawca;
-        public string cel;
-        public string nagroda;
-        public string opis;
+        public string Nazwa { get; set; }
+        public string Zleceniodawca { get; set; }
+        public string Cel { get; set; }
+        public string Nagroda { get; set; }
+        public string Opis { get; set; } 
 
-        public Zadanie(string _nazwa, string _zleceniodawca, string _cel, string _nagroda, string _opis)
+        public Zadanie(string nazwa, string zleceniodawca, string cel, string nagroda, string opis)
         {
-            nazwa = _nazwa;
-            zleceniodawca = _zleceniodawca;
-            cel = _cel;
-            nagroda = _nagroda;
-            opis = _opis;
+            Nazwa = nazwa;
+            Zleceniodawca = zleceniodawca;
+            Cel = cel;
+            Nagroda = nagroda;
+            Opis = opis;
         }
     }
 }
