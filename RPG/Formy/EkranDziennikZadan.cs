@@ -60,7 +60,7 @@ namespace RPG
 
             foreach (Zadanie zadanie in ekranGry.gra.listaZadan)
             {          
-                ListBoxZadania.Items.Add(zadanie);
+                ListBoxZadania.Items.Add(zadanie.Nazwa);
             }
         }
         #endregion
