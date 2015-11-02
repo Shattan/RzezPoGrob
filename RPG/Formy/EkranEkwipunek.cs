@@ -59,7 +59,7 @@ namespace RPG
 
             const int odleglosciMiedzyPrzyciskamiX = 5;
             const int odleglosciMiedzyPrzyciskamiY = wielkoscPrzyciskow;
-            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow);
+            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow*2);
             PictureBoxSilaPlus.Location = new Point(PictureBoxSilaMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxSilaMinus.Location.Y);
             PictureBoxZrecznoscMinus.Location = new Point(PictureBoxSilaMinus.Location.X, PictureBoxSilaMinus.Location.Y + odleglosciMiedzyPrzyciskamiY);
             PictureBoxZrecznoscPlus.Location = new Point(PictureBoxZrecznoscMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxZrecznoscMinus.Location.Y);
@@ -90,9 +90,10 @@ namespace RPG
             PictureBoxTarcza.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 57 / 100, Screen.PrimaryScreen.Bounds.Height * 23 / 100);
         }
 
-        void OdswiezStatystyki(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
+        void OdswiezStatystyki(Postac postac)
         {
-            LabelNazwyStatystyk.Text = "Pozostałe punkty do rozdania:\n";
+            LabelNazwyStatystyk.Text = postac.nazwa + "\n";   
+            LabelNazwyStatystyk.Text += "Pozostałe punkty do rozdania:\n";
             LabelNazwyStatystyk.Text += "Siła:\n";
             LabelNazwyStatystyk.Text += "Zręczność:\n";
             LabelNazwyStatystyk.Text += "Witalność:\n";
@@ -104,17 +105,18 @@ namespace RPG
             LabelNazwyStatystyk.Text += "Zdrowie:\n";
             LabelNazwyStatystyk.Text += "Energia:\n";
 
-            LabelWartosciStatystyk.Text = punkty + "\n";               //Pozostałe punkty do rozdania
-            LabelWartosciStatystyk.Text += sila + "\n";                //Siła
-            LabelWartosciStatystyk.Text += zrecznosc + "\n";           //Zręczność
-            LabelWartosciStatystyk.Text += witalnosc + "\n";           //Witalność
-            LabelWartosciStatystyk.Text += inteligencja + "\n";        //Inteligencja
-            LabelWartosciStatystyk.Text += sila * 5 + "\n";            //Obrażenia
-            LabelWartosciStatystyk.Text += (int)zrecznosc / 3 + "%\n";  //Szansa na trafienie
-            LabelWartosciStatystyk.Text += (int)zrecznosc / 5 + "%\n";  //Szansa na trafienie krytyczne
-            LabelWartosciStatystyk.Text += (int)zrecznosc / 5 + "\n";  //Pancerz
-            LabelWartosciStatystyk.Text += witalnosc * 5 + "\n";       //Zdrowie
-            LabelWartosciStatystyk.Text += inteligencja * 5 + "\n";    //Energia
+            LabelWartosciStatystyk.Text = "\n";
+            LabelWartosciStatystyk.Text += postac.Punkty + "\n";               //Pozostałe punkty do rozdania
+            LabelWartosciStatystyk.Text += postac.Sila + "\n";                //Siła
+            LabelWartosciStatystyk.Text += postac.Zrecznosc + "\n";           //Zręczność
+            LabelWartosciStatystyk.Text += postac.Witalnosc + "\n";           //Witalność
+            LabelWartosciStatystyk.Text += postac.Inteligencja + "\n";        //Inteligencja
+            LabelWartosciStatystyk.Text += postac.Sila * 5 + "\n";            //Obrażenia
+            LabelWartosciStatystyk.Text += (int)postac.Zrecznosc / 3 + "%\n";  //Szansa na trafienie
+            LabelWartosciStatystyk.Text += (int)postac.Zrecznosc / 5 + "%\n";  //Szansa na trafienie krytyczne
+            LabelWartosciStatystyk.Text += (int)postac.Zrecznosc / 5 + "\n";  //Pancerz
+            LabelWartosciStatystyk.Text += postac.Witalnosc * 5 + "\n";       //Zdrowie
+            LabelWartosciStatystyk.Text += postac.Inteligencja * 5 + "\n";    //Energia
         }
 
         void DodajPunkt(Statystki statystki, int ile)
@@ -140,7 +142,7 @@ namespace RPG
                 }
 
                 postac.Punkty -= ile;
-                OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+                OdswiezStatystyki(postac);
             }
         }
 
@@ -180,7 +182,7 @@ namespace RPG
                 default:
                     break;
             }
-            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+            OdswiezStatystyki(postac);
         }
         #endregion
 
@@ -283,7 +285,7 @@ namespace RPG
             //Tutaj powinny być wczytane statystyki z postaci gracza
             //Ogólnie to najlepiej jakby całego gracza tutaj przekazywało, a funkcja sobie z niego wyciągała to, czego potrzeba
             //np. label.text = "Sila:" + gracz.Sila; itd.
-            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+            OdswiezStatystyki(postac);
         }
 
         private void PictureBoxZamknij_Click(object sender, EventArgs e)
