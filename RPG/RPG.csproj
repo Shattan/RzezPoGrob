@@ -94,6 +94,7 @@
     <Compile Include="Formy\EkranDziennikZadan.Designer.cs">
       <DependentUpon>EkranDziennikZadan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klasy\Bohater.cs" />
     <Compile Include="Klasy\Zadanie.cs" />
     <Compile Include="Tla\EkranDziennikZadanTlo.cs">
       <SubType>Form</SubType>

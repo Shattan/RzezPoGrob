@@ -32,7 +32,7 @@ namespace RPG
         public EkranWalka ekranWalka;
         public EkranOpcje ekranOpcje;
 
-        Gra gra;
+        public Gra gra = new Gra();
         
         PictureBox[] praweMenu;
 
@@ -60,8 +60,6 @@ namespace RPG
 
             //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
 
-            gra = new Gra();
-
             ekranDziennikZadan = new EkranDziennikZadan(this);
             ekranEkwipunek = new EkranEkwipunek(this);
             ekranWalka = new EkranWalka(this);
@@ -70,6 +68,7 @@ namespace RPG
             ekranEkwipunekTlo = new EkranEkwipunekTlo(ekranEkwipunek);
             ekranWalkaTlo = new EkranWalkaTlo(ekranWalka);
             
+
             InitializeComponent();
             UstawElementyNaEkranie();
             timerPrzeplywCzasu.Start();     
@@ -91,7 +90,7 @@ namespace RPG
             AkcjaStrazniczkaGor.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/29/dół.png");
 
             //Chodzacy ludek
-            pBGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.png");
+            pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
             pBGracz.Size = new Size(pBGracz.Image.Width, pBGracz.Image.Height);
 
             //Wczytanie Right Menu Panel
@@ -206,13 +205,14 @@ namespace RPG
 
             //using (Graphics grafikaGracza = Graphics.FromImage(PictureBoxMgla.Image))
             //{
-            //    //grafikaGracza.DrawImage(new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.gif"), PictureBoxMgla.Width / 2, PictureBoxMgla.Height / 2);
+            //    //grafikaGracza.DrawImage(new Bitmap(gra.bohater.Obrazek + "lewo.gif"), PictureBoxMgla.Width / 2, PictureBoxMgla.Height / 2);
             //}
         }
 
-        public void ZapiszNazwe(string nazwa)
+        public void WczytajNowaGre()
         {
-            label1.Text = nazwa;
+            label1.Text = gra.bohater.Nazwa;
+            pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
         }
 
         #region Obsluga zdarzeń
@@ -263,7 +263,7 @@ namespace RPG
             {
                 this.Close(); //Zamienic na Pokaz Menu         
             }
-
+            
         }
 
         private void przechwytywanieKlawiszy_KeyUp(object sender, KeyEventArgs e)
@@ -271,22 +271,22 @@ namespace RPG
             if (e.KeyCode == Keys.Right)
             {
                 prawo = false;
-                pBGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/prawo.png");
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "prawo.png");
             }
             if (e.KeyCode == Keys.Left)
             {
                 lewo = false;
-                pBGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.png");
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "lewo.png");
             }
             if (e.KeyCode == Keys.Up)
             {
                 gora = false;
-                pBGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/góra.png");
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "góra.png");
             }
             if (e.KeyCode == Keys.Down)
             {
                 dol = false;
-                pBGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.png");
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
             }
         }
         #endregion
@@ -351,19 +351,19 @@ namespace RPG
             //Animacje Gifa
             if (prawo == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/prawo.gif");
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "prawo.gif");
             }
             if (lewo == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/lewo.gif");
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "lewo.gif");
             }
             if (dol == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.gif");
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.gif");
             }
             if (gora == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/góra.gif");
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "góra.gif");
             }
 
             //Ruch Bohatera i planszy
@@ -401,7 +401,7 @@ namespace RPG
             if (dR == DialogResult.OK)
             {
                 panelMapa.Controls.Remove(pB);
-                pBGracz.Image = new Bitmap("Resources/Grafiki postaci na mapie/2/dół.png");
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
                 timerPrzeplywCzasu.Start();
                 lewo = prawo = dol = gora = false;
             }

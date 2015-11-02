@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    class Gra
+    public class Gra
     {
         List<Zadanie> zadanie = new List<Zadanie>();
         List<Umiejetnosc> umiejetnosc = new List<Umiejetnosc>();
@@ -17,6 +17,8 @@ namespace RPG
         List<Postac> postacZMiasta = new List<Postac>();
         List<Postac> postacZCmentarza = new List<Postac>();
         List<Postac> postacZDziczy = new List<Postac>();
+        public Bohater bohater = new Bohater("Nazwa");
+        
 
         public Gra()
         {

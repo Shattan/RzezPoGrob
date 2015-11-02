@@ -16,7 +16,7 @@ namespace RPG
         EkranGlowny ekranGlowny;
         EkranGry ekranGry;
         EkranGryTlo ekranGryTlo;
-        List<String> postacieDoWyboru = new List<String>();
+        List<String> ListaPostaci = new List<String>();
         static int wybranyBohater = 0;
         enum Statystki
         {
@@ -26,11 +26,9 @@ namespace RPG
             Witalnosc = 3,
             Inteligencja = 4
         };
-        #if DEBUG
-                //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
-                // OdswiezStatystyki(10, 10, 15, 5, 23);
-                Postac postac = new Postac("Witek");
-        #endif
+
+        int [] wybraneStatystyki = new int [5];
+
         #endregion
 
         #region Metody
@@ -115,7 +113,7 @@ namespace RPG
 
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPoprzedniBohater, "Resources/Grafiki menu/Przycisk poprzedni standard.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxBohater, "Resources/Grafiki menu/Tło opcji.png");
-            PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[wybranyBohater] + "dół.gif");
+            
             //PictureBoxBohater.Image = new Bitmap("Resources/Grafiki postaci na mapie/0/dół.gif");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxNastepnyBohater, "Resources/Grafiki menu/Przycisk następny standard.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz, "Resources/Grafiki menu/Zapisz opcje.png");
@@ -152,68 +150,95 @@ namespace RPG
 
         void DodajPunkt(Statystki statystki, int ile)
         {
-            if (postac.Punkty > 0)
+            if (wybraneStatystyki[(int)Statystki.Pkt] > 0)
             {
                 switch (statystki)
                 {
-                    case Statystki.Sila:
-                        postac.Sila += ile;
+                    case Statystki.Sila:                     
+                            wybraneStatystyki[(int)Statystki.Sila] += ile;
                         break;
                     case Statystki.Zrecznosc:
-                        postac.Zrecznosc += ile;
+                        
+                            wybraneStatystyki[(int)Statystki.Zrecznosc] += ile;
                         break;
                     case Statystki.Witalnosc:
-                        postac.Witalnosc += ile;
+                       
+                            wybraneStatystyki[(int)Statystki.Witalnosc] += ile;
                         break;
                     case Statystki.Inteligencja:
-                        postac.Inteligencja += ile;
+                     
+                            wybraneStatystyki[(int)Statystki.Inteligencja] += ile;
                         break;
                     default:
                         break;
                 }
 
-                postac.Punkty -= ile;
-                OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+                wybraneStatystyki[(int)Statystki.Pkt] -= ile;
+                OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
             }
         }
 
         void OdejmijPunkt(Statystki statystki, int ile)
         {
-            const int minminalnaWartosc = 0;
             switch (statystki)
             {
                 case Statystki.Sila:
-                    if (postac.Sila > minminalnaWartosc)
+                    if (wybraneStatystyki[(int)Statystki.Sila] > ekranGry.gra.bohater.Sila)
                     {
-                        postac.Sila -= ile;
-                        postac.Punkty += ile;
+                        wybraneStatystyki[(int)Statystki.Sila] -= ile;
+                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
                     }
                     break;
                 case Statystki.Zrecznosc:
-                    if (postac.Zrecznosc > minminalnaWartosc)
+                    if (wybraneStatystyki[(int)Statystki.Zrecznosc] > ekranGry.gra.bohater.Zrecznosc)
                     {
-                        postac.Zrecznosc -= ile;
-                        postac.Punkty += ile;
+                        wybraneStatystyki[(int)Statystki.Zrecznosc] -= ile;
+                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
                     }
                     break;
                 case Statystki.Witalnosc:
-                    if (postac.Zrecznosc > minminalnaWartosc)
+                    if (wybraneStatystyki[(int)Statystki.Witalnosc] > ekranGry.gra.bohater.Witalnosc)
                     {
-                        postac.Zrecznosc -= ile;
-                        postac.Punkty += ile;
+                        wybraneStatystyki[(int)Statystki.Witalnosc] -= ile;
+                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
                     }
                     break;
                 case Statystki.Inteligencja:
-                    if (postac.Inteligencja > minminalnaWartosc)
+                    if (wybraneStatystyki[(int)Statystki.Inteligencja] > ekranGry.gra.bohater.Inteligencja)
                     {
-                        postac.Inteligencja -= ile;
-                        postac.Punkty += ile;
+                        wybraneStatystyki[(int)Statystki.Inteligencja] -= ile;
+                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
                     }
                     break;
                 default:
                     break;
             }
-            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+            OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
+        }
+
+        void ZapiszGre()
+        {
+            ekranGry.gra.bohater.Punkty = wybraneStatystyki[(int)Statystki.Pkt];
+            ekranGry.gra.bohater.Sila = wybraneStatystyki[(int)Statystki.Sila];
+            ekranGry.gra.bohater.Zrecznosc = wybraneStatystyki[(int)Statystki.Zrecznosc];
+            ekranGry.gra.bohater.Witalnosc = wybraneStatystyki[(int)Statystki.Witalnosc];
+            ekranGry.gra.bohater.Inteligencja = wybraneStatystyki[(int)Statystki.Inteligencja];
+
+            ekranGry.gra.bohater.Obrazek = ListaPostaci[wybranyBohater];
+            ekranGry.gra.bohater.Nazwa = TextBoxNazwa.Text;
+        }
+
+        void WczytajStatystykiBohater()
+        {
+            //Zapisujemy wybrane statystyki z klasy bohater
+            //Bazowe statystyki zapisane sa w konstruktorze klasy bohater)
+            wybraneStatystyki[(int)Statystki.Pkt] = ekranGry.gra.bohater.Punkty;
+            wybraneStatystyki[(int)Statystki.Sila] = ekranGry.gra.bohater.Sila;
+            wybraneStatystyki[(int)Statystki.Zrecznosc] = ekranGry.gra.bohater.Zrecznosc;
+            wybraneStatystyki[(int)Statystki.Witalnosc] = ekranGry.gra.bohater.Witalnosc;
+            wybraneStatystyki[(int)Statystki.Inteligencja] = ekranGry.gra.bohater.Inteligencja;
+
+            OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
         }
         #endregion
 
@@ -225,34 +250,35 @@ namespace RPG
             this.ekranGry = ekranGry;
             this.ekranGryTlo = ekranGryTlo;
 
-            postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/0/");
-            postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/11/");
-            postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/12/");
-            postacieDoWyboru.Add("Resources/Grafiki postaci na mapie/13/");
-            
             RozstawElementy();
             KolorujElementy();
 
-            #if DEBUG
-                //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
-                // OdswiezStatystyki(10, 10, 15, 5, 23);
-                postac = new Postac("Witek");
-                postac.Punkty = 10;
-                postac.Sila = 10;
-                postac.Zrecznosc = 15;
-                postac.Witalnosc = 5;
-                postac.Inteligencja = 23;
-            #endif
-            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
-        }
+            //Dodajemy mozliwe obrazki do wyboru bohatera
+            ListaPostaci.Add(ekranGry.gra.bohater.Obrazek);
+            ListaPostaci.Add("Resources/Grafiki postaci na mapie/0/");
+            ListaPostaci.Add("Resources/Grafiki postaci na mapie/11/");
+            ListaPostaci.Add("Resources/Grafiki postaci na mapie/12/");
+            ListaPostaci.Add("Resources/Grafiki postaci na mapie/13/");
+
+            //Wyswietlamy wybranego poczatkowego bohatera
+            PictureBoxBohater.Image = new Bitmap(ListaPostaci[wybranyBohater] + "dół.gif");
+
+            WczytajStatystykiBohater();
+     }
 
 
         private void PictureBoxPotwierdz_Click(object sender, EventArgs e)
         {
-            //Zapisz Elementy do EkranGlowny.ekranGry.gra
-            ekranGry.ZapiszNazwe(TextBoxNazwa.Text);
+            //Zapisz dane do klasy gra
+            ZapiszGre();
+
+            //Wczytaj zapisane dane w ekranGra
+            ekranGry.WczytajNowaGre();
+
+            //Uruchom Dialog
             ekranGryTlo.ShowDialog();
             
+            //Zamknij Forme
             //DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -331,25 +357,25 @@ namespace RPG
         {
             if (wybranyBohater > 0)
             {
-                PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[--wybranyBohater] + "dół.gif");
+                PictureBoxBohater.Image = new Bitmap(ListaPostaci[--wybranyBohater] + "dół.gif");
             }
             else if (wybranyBohater == 0)
             {
-                wybranyBohater = postacieDoWyboru.Count - 1;
-                PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[wybranyBohater] + "dół.gif");
+                wybranyBohater = ListaPostaci.Count - 1;
+                PictureBoxBohater.Image = new Bitmap(ListaPostaci[wybranyBohater] + "dół.gif");
             }
         }
 
         private void PictureBoxNastepnyBohater_Click(object sender, EventArgs e)
         {
-            if (wybranyBohater < postacieDoWyboru.Count-1)
+            if (wybranyBohater < ListaPostaci.Count - 1)
             {
-                PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[++wybranyBohater] + "dół.gif");
+                PictureBoxBohater.Image = new Bitmap(ListaPostaci[++wybranyBohater] + "dół.gif");
             }
-            else if (wybranyBohater == postacieDoWyboru.Count - 1)
+            else if (wybranyBohater == ListaPostaci.Count - 1)
             {
                 wybranyBohater = 0;
-                PictureBoxBohater.Image = new Bitmap(postacieDoWyboru[wybranyBohater] + "dół.gif");
+                PictureBoxBohater.Image = new Bitmap(ListaPostaci[wybranyBohater] + "dół.gif");
             }
         }
 

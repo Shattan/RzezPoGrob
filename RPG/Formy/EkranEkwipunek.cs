@@ -25,11 +25,7 @@ namespace RPG
             Inteligencja = 4
         };
 
-        #if DEBUG
-            //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
-            // OdswiezStatystyki(10, 10, 15, 5, 23);
-            Postac postac = new Postac("Witek");
-        #endif
+        int[] wybraneStatystyki = new int[5];
 
         #region Metody
         void RozmiescElementy()
@@ -119,68 +115,92 @@ namespace RPG
 
         void DodajPunkt(Statystki statystki, int ile)
         {
-            if (postac.Punkty > 0)
+            if (wybraneStatystyki[(int)Statystki.Pkt] > 0)
             {
                 switch (statystki)
                 {
                     case Statystki.Sila:
-                        postac.Sila += ile;
+                        wybraneStatystyki[(int)Statystki.Sila] += ile;
                         break;
                     case Statystki.Zrecznosc:
-                        postac.Zrecznosc += ile;
+
+                        wybraneStatystyki[(int)Statystki.Zrecznosc] += ile;
                         break;
                     case Statystki.Witalnosc:
-                        postac.Witalnosc += ile;
+
+                        wybraneStatystyki[(int)Statystki.Witalnosc] += ile;
                         break;
                     case Statystki.Inteligencja:
-                        postac.Inteligencja += ile;
+
+                        wybraneStatystyki[(int)Statystki.Inteligencja] += ile;
                         break;
                     default:
                         break;
                 }
 
-                postac.Punkty -= ile;
-                OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+                wybraneStatystyki[(int)Statystki.Pkt] -= ile;
+                OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
             }
         }
 
         void OdejmijPunkt(Statystki statystki, int ile)
         {
-            const int minminalnaWartosc = 0;
             switch (statystki)
             {
                 case Statystki.Sila:
-                    if (postac.Sila > minminalnaWartosc)
+                    if (wybraneStatystyki[(int)Statystki.Sila] > ekranGry.gra.bohater.Sila)
                     {
-                        postac.Sila -= ile;
-                        postac.Punkty += ile;
+                        wybraneStatystyki[(int)Statystki.Sila] -= ile;
+                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
                     }
                     break;
                 case Statystki.Zrecznosc:
-                    if (postac.Zrecznosc > minminalnaWartosc)
+                    if (wybraneStatystyki[(int)Statystki.Zrecznosc] > ekranGry.gra.bohater.Zrecznosc)
                     {
-                        postac.Zrecznosc -= ile;
-                        postac.Punkty += ile;
+                        wybraneStatystyki[(int)Statystki.Zrecznosc] -= ile;
+                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
                     }
                     break;
                 case Statystki.Witalnosc:
-                    if (postac.Zrecznosc > minminalnaWartosc)
+                    if (wybraneStatystyki[(int)Statystki.Witalnosc] > ekranGry.gra.bohater.Witalnosc)
                     {
-                        postac.Zrecznosc -= ile;
-                        postac.Punkty += ile;
+                        wybraneStatystyki[(int)Statystki.Witalnosc] -= ile;
+                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
                     }
                     break;
                 case Statystki.Inteligencja:
-                    if (postac.Inteligencja > minminalnaWartosc)
+                    if (wybraneStatystyki[(int)Statystki.Inteligencja] > ekranGry.gra.bohater.Inteligencja)
                     {
-                        postac.Inteligencja -= ile;
-                        postac.Punkty += ile;
+                        wybraneStatystyki[(int)Statystki.Inteligencja] -= ile;
+                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
                     }
                     break;
                 default:
                     break;
             }
-            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+            OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
+        }
+
+        void WczytajStatystykiBohater()
+        {
+            //Zapisujemy wybrane statystyki z klasy bohater
+            //Bazowe statystyki zapisane sa w konstruktorze klasy bohater)
+            wybraneStatystyki[(int)Statystki.Pkt] = ekranGry.gra.bohater.Punkty;
+            wybraneStatystyki[(int)Statystki.Sila] = ekranGry.gra.bohater.Sila;
+            wybraneStatystyki[(int)Statystki.Zrecznosc] = ekranGry.gra.bohater.Zrecznosc;
+            wybraneStatystyki[(int)Statystki.Witalnosc] = ekranGry.gra.bohater.Witalnosc;
+            wybraneStatystyki[(int)Statystki.Inteligencja] = ekranGry.gra.bohater.Inteligencja;
+
+            OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
+        }
+
+        void ZapiszGre()
+        {
+            ekranGry.gra.bohater.Punkty = wybraneStatystyki[(int)Statystki.Pkt];
+            ekranGry.gra.bohater.Sila = wybraneStatystyki[(int)Statystki.Sila];
+            ekranGry.gra.bohater.Zrecznosc = wybraneStatystyki[(int)Statystki.Zrecznosc];
+            ekranGry.gra.bohater.Witalnosc = wybraneStatystyki[(int)Statystki.Witalnosc];
+            ekranGry.gra.bohater.Inteligencja = wybraneStatystyki[(int)Statystki.Inteligencja];
         }
         #endregion
 
@@ -216,17 +236,6 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxBron, "Resources/Grafiki ekwipunku/Axe13.PNG");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxPancerz, "Resources/Grafiki ekwipunku/ArmorChainmailMithril.PNG");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxTarcza, "Resources/Grafiki ekwipunku/ShieldCrestedSkull.PNG");
-      
-            #if DEBUG
-                //(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
-                // OdswiezStatystyki(10, 10, 15, 5, 23);
-                postac = new Postac("Witek");
-                postac.Punkty = 10;
-                postac.Sila = 10;
-                postac.Zrecznosc = 15;
-                postac.Witalnosc = 5;
-                postac.Inteligencja = 23;
-            #endif
 
             //Dodawanie operacji Drop and Drag dla wszystkich PictureBox z FlowLayoutPanelPancerze
             foreach (PictureBox obiekt in FlowLayoutPanelPancerze.Controls.OfType<PictureBox>().Cast<Control>().ToList())
@@ -255,6 +264,9 @@ namespace RPG
             PictureBoxTarcza.MouseDown += przedmiot_MouseDown;
 
             pictureBoxWybrany.Visible = false;
+
+            //WczytajStatystykiBohater();
+     
         }
 
         private void przedmiot_DragEnter(object sender, DragEventArgs e)
@@ -283,11 +295,12 @@ namespace RPG
             //Tutaj powinny być wczytane statystyki z postaci gracza
             //Ogólnie to najlepiej jakby całego gracza tutaj przekazywało, a funkcja sobie z niego wyciągała to, czego potrzeba
             //np. label.text = "Sila:" + gracz.Sila; itd.
-            OdswiezStatystyki(postac.Punkty, postac.Sila, postac.Zrecznosc, postac.Witalnosc, postac.Inteligencja);
+            WczytajStatystykiBohater();
         }
 
         private void PictureBoxZamknij_Click(object sender, EventArgs e)
         {
+            ZapiszGre();
             Close();
         }
 
