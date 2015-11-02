@@ -41,7 +41,7 @@ namespace RPG
             //Do losowania postaci potrzeba tu dostępu do obiektu Postac, zeby po indexach wczytywać
             //string postac = losowanie.Next(0, 0).ToString();
             //string sciezkaPostaci = "Resources/Grafiki tła walki/" + plansza + ".png";
-            Program.UstawObrazPolaBitwy(this, sciezkaPlanszy, "Resources/Grafiki postaci walczących/goblin.png");
+            Program.UstawObrazPolaBitwy(this, sciezkaPlanszy, "Resources/Grafiki postaci walczących/cyklop.png");
         }
     }
 }

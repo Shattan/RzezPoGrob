@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonWygralem = new System.Windows.Forms.Button();
             this.buttonPrzegralem = new System.Windows.Forms.Button();
             this.LabelInformacje = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.FlowLayoutPanelWyborMikstury = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBoxWyjdzZEkwipunku = new System.Windows.Forms.PictureBox();
             this.FlowLayoutPanelWyboru = new System.Windows.Forms.FlowLayoutPanel();
+            this.TimerDoZamkniecia = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUcieczka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAtakMagiczny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkwipunek)).BeginInit();
@@ -209,6 +211,11 @@
             this.FlowLayoutPanelWyboru.Size = new System.Drawing.Size(386, 177);
             this.FlowLayoutPanelWyboru.TabIndex = 1;
             // 
+            // TimerDoZamkniecia
+            // 
+            this.TimerDoZamkniecia.Interval = 5000;
+            this.TimerDoZamkniecia.Tick += new System.EventHandler(this.TimerDoZamkniecia_Tick);
+            // 
             // EkranWalka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,5 +267,6 @@
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelWyborMikstury;
         private System.Windows.Forms.PictureBox pictureBoxWyjdzZEkwipunku;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelWyboru;
+        private System.Windows.Forms.Timer TimerDoZamkniecia;
     }
 }

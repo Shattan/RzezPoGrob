@@ -281,7 +281,7 @@ namespace RPG
                             int szerokoscPrzeciwnika = Kontrolka.Bounds.Width * 30 / 100;
                             int wysokoscPrzeciwnika = Kontrolka.Bounds.Height * 50 / 100;
                             int pozycjaPrzeciwnikaX = Kontrolka.Bounds.Width / 2 - szerokoscPrzeciwnika / 2;
-                            int pozycjaPrzeciwnikaY = Kontrolka.Bounds.Height / 3;
+                            int pozycjaPrzeciwnikaY = Kontrolka.Bounds.Height / 4;
                             grafikaWalki.DrawImage(obrazekPrzeciwnika, pozycjaPrzeciwnikaX, pozycjaPrzeciwnikaY, szerokoscPrzeciwnika, wysokoscPrzeciwnika);
                             Kontrolka.BackgroundImage = obrazekDoWstawienia;
                         }

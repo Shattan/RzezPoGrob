@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Windows.Input;
+
 namespace RPG
 {
     public partial class EkranWalka : Form
@@ -30,7 +32,8 @@ namespace RPG
             Program.DopasujRozmiarFormyDoEkranu(this);
 
             //Ustawienie przycisków
-            Program.UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(PictureBoxUcieczka,"Resources/Grafiki menu/Przykładowy przycisk.png");
+            PictureBoxUcieczka.Size = new Size(Width/3,30);
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka,"Resources/Grafiki menu/Przykładowy przycisk.png");
 
             foreach (PictureBox przycisk in FlowLayoutPanelWyboru.Controls)
             {
@@ -116,7 +119,7 @@ namespace RPG
             else
             {
                 LabelInformacje.Text = "Udało Ci się uciec!";
-                //DialogResult = DialogResult.Ignore;
+                TimerDoZamkniecia.Start();
             }
         }
         #endregion
@@ -141,6 +144,11 @@ namespace RPG
             FlowLayoutPanelWyborMikstury.Visible = false;
         }
         #endregion
+
+        private void TimerDoZamkniecia_Tick(object sender, EventArgs e)
+        {
+            LabelInformacje.Text = "HA! Chciałbyś, żeby się form zamknął, co?!? :D";
+        }
 
 
         /*
