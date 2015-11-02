@@ -30,11 +30,8 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult dr = ekranNowaGra.ShowDialog();
-            if (dr == DialogResult.Cancel)
-            {
-                Close();
-            }
+            DialogResult = ekranNowaGra.ShowDialog();
+            Close();
         }
         #endregion
     }

@@ -13,12 +13,10 @@ namespace RPG
 
     public partial class EkranGryTlo : Form
     {
-        //int przesuniecie = 0;
-        Bitmap plansza= new Bitmap("Resources/Mapy/Trawa.png");
-
         #region Zmienne
         EkranGry ekranGry;
 
+        Bitmap plansza = new Bitmap("Resources/Mapy/Trawa.png");
         #endregion
 
         public EkranGryTlo(EkranGry ekranGry)
@@ -27,10 +25,8 @@ namespace RPG
             Program.DopasujRozmiarFormyDoEkranu(this);
             this.ekranGry = ekranGry;
                    
-            BackgroundImage = plansza;
-            UstawElementyNaEkranie();
-            timer1.Start();
             
+            UstawElementyNaEkranie();           
         }
 
         #region Metody
@@ -40,13 +36,12 @@ namespace RPG
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
             //Ustawienie tła rysowanego w menu
-            //BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło menu.png");
+            BackgroundImage = plansza;
 
             PictureBoxTrawa.Size = new Size(plansza.Width,plansza.Height);
             PictureBoxTrawa.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
             PictureBoxTrawa.Image = plansza;
 
-            //PictureBoxMgla.Image = new Bitmap("Resources/Grafiki gracza/W dół.gif");
         }
 
         public void UstawPanelPrawy(Point point, Size size, String sciezkaGrafiki)
@@ -86,19 +81,9 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranGryTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult dr = ekranGry.ShowDialog();
-            if (dr == DialogResult.Cancel)
-            {
-                Close();
-            }
+            DialogResult = ekranGry.ShowDialog();
         }
         #endregion
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            //PictureBoxTrawa.Location = new Point(przesuniecie - plansza.Width / 2, 0 - plansza.Height / 3);
-            //przesuniecie += 5;
-        }
     }
 }
 

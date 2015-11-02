@@ -19,18 +19,21 @@ namespace RPG
     public partial class EkranOpcje : Form
     {
         #region Zmienne
-        //zmienna umozliwiajaca odtwarzanie muzyki
+        //Publiczne wskazywanie z ktrego odtwarzacza chcemy skorzystac
+        //Zalecam zmienie ich na prywatne i zrobienia publicznych metod "OdtworzMuzyke" "OdtworzOtoczenie" itd
         public MediaPlayer odtwarzaczMuzyki = new MediaPlayer();
         public MediaPlayer odtwarzaczOtoczenia = new MediaPlayer();
         public MediaPlayer odtwarzaczDialogow = new MediaPlayer();
-        public MediaPlayer[] odtwarzaczEfektowSpecjalnych = new MediaPlayer [5];
-        
 
-        //zmienne sterujące
+        private MediaPlayer[] odtwarzaczEfektowSpecjalnych = new MediaPlayer [5];
+        
         public double obecnyPoziomGlosnosciMuzyki = 0.5;
         public double obecnyPoziomGlosnosciEfektow = 0.5;
 
+        //Dostep do Formy EkranGlowny dla zdarzen:
+        //ZawszeNaWierzchu, PelnyEkran
         EkranGlowny ekranGlowny;
+
         #endregion  
 
         public EkranOpcje(EkranGlowny ekranGlowny)
@@ -38,11 +41,11 @@ namespace RPG
             InitializeComponent();
             this.ekranGlowny = ekranGlowny;
 
+            //Inicjalizacje MediaPlayerow z tablicy
             for (int i = 0; i < odtwarzaczEfektowSpecjalnych.Count(); i++)
-			{
-			    odtwarzaczEfektowSpecjalnych[i] = new MediaPlayer();
-			} 
+                odtwarzaczEfektowSpecjalnych[i] = new MediaPlayer();
 
+            //UstawNaEkranie
             PictureBoxOdrzuc.Image = new Bitmap("Resources/Grafiki menu/Odrzuć opcje.png");
             PictureBoxZapisz.Image = new Bitmap("Resources/Grafiki menu/Zapisz opcje.png");
 
@@ -51,7 +54,7 @@ namespace RPG
             ZmienGlosnoscOdtwarzaczyEfektow(0.5);
         }
 
-        #region Metody Dostepowe
+        #region Metody
         public void OdtworzDzwiek(MediaPlayer odtwarzacz, String sciezka)
         {
             odtwarzacz.Open(new Uri(sciezka, UriKind.Relative));
@@ -84,7 +87,7 @@ namespace RPG
         }
         #endregion
 
-        #region Obsluga zdarzeń
+        #region Zdarzenia
         private void PictureBoxOdrzuc_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -306,10 +309,8 @@ namespace RPG
                 }
             }
         }
-       #endregion
 
         #region Obsluga widocznosci okna
-
         //Obsluga wychodzenia - zakaz alt+f4
         private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -336,30 +337,6 @@ namespace RPG
             }
         }
         #endregion
+        #endregion
     }
 }
-
-//Notatki
-
-/* Tutaj masz inna wersje tych funkcji wyzej, mniej miejsca zajmuje, ale wymaga konwersji ze stringa. Jak wolisz ta pierwsza wersje to tą wywal, a jak nie to zamien
-
-        private void UstawGlosnoscMuzyki()
-        {
-            var checkedButton = GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>()
-                          .FirstOrDefault(r => r.Checked);
-
-            odtwarzaczMuzyki.Volume = Convert.ToDouble("0," + checkedButton.Text);
-            obecnyPoziomGlosnosciMuzyki = Convert.ToDouble("0," + checkedButton.Text);
-        }
-
-
-        private void UstawGlosnoscEfektyDzwiekowe()
-        {
-            var checkedButton = GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>()
-                                      .FirstOrDefault(r => r.Checked);
-
-            ZmienGlosnoscOdtwarzaczyEfektow(Convert.ToDouble("0," + checkedButton.Text));
-            obecnyPoziomGlosnosciEfektow = Convert.ToDouble("0," + checkedButton.Text);
-        }
- * 
-*/

@@ -12,7 +12,9 @@ namespace RPG
 {
     public partial class EkranWalka : Form
     {
+        #region Zmienne
         EkranGry ekranGry;
+        #endregion
 
         public EkranWalka(EkranGry ekranGry)
         {
@@ -33,6 +35,7 @@ namespace RPG
         }
         #endregion
 
+        #region Zdarzenia
         private void buttonWygralem_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
@@ -71,5 +74,6 @@ namespace RPG
         }
         #endregion
         */
+        #endregion
     }
 }

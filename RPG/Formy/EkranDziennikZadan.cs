@@ -13,8 +13,19 @@ namespace RPG
     public partial class EkranDziennikZadan : Form
     {
         #region Zmienne
-        EkranGry ekranGry;
+        EkranGry ekranGry;      //Dostep do: - ekranGry.opcje
+                                //ekranGry.gra;
         #endregion
+
+        public EkranDziennikZadan(EkranGry ekranGry)
+        {
+            this.ekranGry = ekranGry;
+            InitializeComponent();
+
+            Program.DopasujRozmiarFormyDoEkranu(this);
+            RozmiescElementy();
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZamknij, "Resources/Grafiki menu/Wyjdź.png");
+        }
 
         #region Metody
         void RozmiescElementy()
@@ -41,6 +52,7 @@ namespace RPG
             LabelOpisZadania.Text += "\n\nNagroda:\n\t" + nagroda;
             LabelOpisZadania.Text += "\n\nOpis:\n\t" + tresc;
         }
+
         void OdswiezListeZadan()
         {//tak to widzę, ale nie potrawię przekazać gry
           /* 
@@ -52,19 +64,32 @@ namespace RPG
         }
         #endregion
 
-        public EkranDziennikZadan(EkranGry ekranGry)
+        #region Zdarzenia 
+        private void ListBoxZadania_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.ekranGry = ekranGry;
-            InitializeComponent();
-            Program.DopasujRozmiarFormyDoEkranu(this);
-            RozmiescElementy();
+            if (ListBoxZadania.SelectedIndex == 0)
+            {
+                UstawOpisZadania
+                    (
+                        "Wieśniaczka Laura",
+                        "Zabij wilki nieopodal strumienia",
+                        "Niezapomniana noc z Laurą",
+                        "No rusz się stary bydlaku, nie będziemy czekać wiecznie, aż wykonasz to zadanie!"
+                    );
+            }
+        }
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZamknij, "Resources/Grafiki menu/Wyjdź.png");
+        private void EkranDziennikZadan_Load(object sender, EventArgs e)
+        {
+            OdswiezListeZadan();
+        }
 
+        private void PictureBoxZamknij_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
-
         //Obsluga wychodzenia - zakaz alt+f4
         private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -89,29 +114,6 @@ namespace RPG
             }
         }
         #endregion
-
-        private void ListBoxZadania_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ListBoxZadania.SelectedIndex == 0)
-            {
-                UstawOpisZadania
-                    (
-                        "Wieśniaczka Laura",
-                        "Zabij wilki nieopodal strumienia",
-                        "Niezapomniana noc z Laurą",
-                        "No rusz się stary bydlaku, nie będziemy czekać wiecznie, aż wykonasz to zadanie!"
-                    );
-            }
-        }
-
-        private void EkranDziennikZadan_Load(object sender, EventArgs e)
-        {
-            OdswiezListeZadan();
-        }
-
-        private void PictureBoxZamknij_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        #endregion
     }
 }

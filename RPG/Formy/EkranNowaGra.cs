@@ -13,11 +13,16 @@ namespace RPG
     public partial class EkranNowaGra : Form
     {
         #region Zmienne
-        EkranGlowny ekranGlowny;
-        EkranGry ekranGry;
-        EkranGryTlo ekranGryTlo;
+        //Dostepne tylko dla tej formy
+        private EkranGlowny ekranGlowny;        //Dostep do ekranGlowny.opcje
+        private EkranGry ekranGry;              //Dostep do ekranGry.Gry
+        private EkranGryTlo ekranGryTlo;        //Uzywamy do rozpoczenia ekranGryTlo.Dialog()
+
+        //Lista sciezek obrazkow dostepnych do wybory dla tworzonej postaci
         List<String> ListaPostaci = new List<String>();
         static int wybranyBohater = 0;
+
+        //Można stworzyc zamiast tego klase "Statystyki", bedzie czytelniej   
         enum Statystki
         {
             Pkt = 0,
@@ -26,10 +31,25 @@ namespace RPG
             Witalnosc = 3,
             Inteligencja = 4
         };
-
-        int [] wybraneStatystyki = new int [5];
+        //Zapamietujemy tutaj wybrane statystyki, jak damy "OK", to zapisza sie w gra.bohater
+        int[] wybraneStatystyki = new int[5];
 
         #endregion
+
+        public EkranNowaGra(EkranGlowny ekranGlowny, EkranGry ekranGry, EkranGryTlo ekranGryTlo)
+        {
+            InitializeComponent();
+
+            this.ekranGlowny = ekranGlowny;
+            this.ekranGry = ekranGry;
+            this.ekranGryTlo = ekranGryTlo;
+
+            RozstawElementy();
+            KolorujElementy();
+            DodajSkinyPostaci();         
+
+            WczytajStatystykiBohater();
+        }
 
         #region Metody
         void RozstawElementy()
@@ -87,7 +107,6 @@ namespace RPG
             PictureBoxBohater.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureBoxBohater.SizeMode = PictureBoxSizeMode.Zoom;
 
-
             //Ustawienie wpisywania nazwy
             TextBoxNazwa.Width = PictureBoxBohater.Width;
             PictureBoxPotwierdz.Size = new Size(TextBoxNazwa.Width, TextBoxNazwa.Height);
@@ -114,11 +133,23 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPoprzedniBohater, "Resources/Grafiki menu/Przycisk poprzedni standard.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxBohater, "Resources/Grafiki menu/Tło opcji.png");
             
-            //PictureBoxBohater.Image = new Bitmap("Resources/Grafiki postaci na mapie/0/dół.gif");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxNastepnyBohater, "Resources/Grafiki menu/Przycisk następny standard.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz, "Resources/Grafiki menu/Zapisz opcje.png");
+
             //Przycisk wychodzenia
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjscie, "Resources/Grafiki menu/Wyjdź.png");
+        }
+
+        void DodajSkinyPostaci()
+        {
+            ListaPostaci.Add(ekranGry.gra.bohater.Obrazek);
+            ListaPostaci.Add("Resources/Grafiki postaci na mapie/0/");
+            ListaPostaci.Add("Resources/Grafiki postaci na mapie/11/");
+            ListaPostaci.Add("Resources/Grafiki postaci na mapie/12/");
+            ListaPostaci.Add("Resources/Grafiki postaci na mapie/13/");
+
+            //Ustawienie domyslnego obrazka
+            PictureBoxBohater.Image = new Bitmap(ListaPostaci[wybranyBohater] + "dół.gif");
         }
 
         void OdswiezStatystyki(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
@@ -230,8 +261,7 @@ namespace RPG
 
         void WczytajStatystykiBohater()
         {
-            //Zapisujemy wybrane statystyki z klasy bohater
-            //Bazowe statystyki zapisane sa w konstruktorze klasy bohater)
+            //Wczytujemy statystyki bazowe bohatera (inicjowane sa w konstruktorze klasy bohater)
             wybraneStatystyki[(int)Statystki.Pkt] = ekranGry.gra.bohater.Punkty;
             wybraneStatystyki[(int)Statystki.Sila] = ekranGry.gra.bohater.Sila;
             wybraneStatystyki[(int)Statystki.Zrecznosc] = ekranGry.gra.bohater.Zrecznosc;
@@ -242,31 +272,7 @@ namespace RPG
         }
         #endregion
 
-        public EkranNowaGra(EkranGlowny ekranGlowny, EkranGry ekranGry, EkranGryTlo ekranGryTlo)
-        {
-            InitializeComponent();
-
-            this.ekranGlowny = ekranGlowny;
-            this.ekranGry = ekranGry;
-            this.ekranGryTlo = ekranGryTlo;
-
-            RozstawElementy();
-            KolorujElementy();
-
-            //Dodajemy mozliwe obrazki do wyboru bohatera
-            ListaPostaci.Add(ekranGry.gra.bohater.Obrazek);
-            ListaPostaci.Add("Resources/Grafiki postaci na mapie/0/");
-            ListaPostaci.Add("Resources/Grafiki postaci na mapie/11/");
-            ListaPostaci.Add("Resources/Grafiki postaci na mapie/12/");
-            ListaPostaci.Add("Resources/Grafiki postaci na mapie/13/");
-
-            //Wyswietlamy wybranego poczatkowego bohatera
-            PictureBoxBohater.Image = new Bitmap(ListaPostaci[wybranyBohater] + "dół.gif");
-
-            WczytajStatystykiBohater();
-     }
-
-
+        #region Zdarzenia
         private void PictureBoxPotwierdz_Click(object sender, EventArgs e)
         {
             //Zapisz dane do klasy gra
@@ -290,8 +296,6 @@ namespace RPG
         }
 
         #region Powiekszanie przyciskow
-        //Moim zdaniem, lepiej zasotoswac funkcje Hover - obsluguje zarowno MouseEnter jak i MouseLeave - 
-        //i wszystki te funkcje mozna by zastapic jedna, poprzez obsluge sender-a.
         private void PictureBoxWyjscie_MouseEnter(object sender, EventArgs e)
         {
             int powiekszenieX = Width * 1 / 100;
@@ -313,6 +317,7 @@ namespace RPG
         }
         #endregion
 
+        #region Minus/Plus przyciski
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
         {
             OdejmijPunkt(Statystki.Sila, 1);
@@ -352,6 +357,7 @@ namespace RPG
         {
             DodajPunkt(Statystki.Inteligencja, 1);
         }
+        #endregion
 
         private void PictureBoxPoprzedniBohater_Click(object sender, EventArgs e)
         {
@@ -378,34 +384,6 @@ namespace RPG
                 PictureBoxBohater.Image = new Bitmap(ListaPostaci[wybranyBohater] + "dół.gif");
             }
         }
-
-        #region sprawiamy, ze okno jest niewidoczne w alt+tab
-        /*
-        //Obsluga wychodzenia - zakaz alt+f4
-        private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //e.Cancel = true;
-        }
-
-        //Nie pojawia sie w alt+tab
-        private void EkranOpcje_Load(object sender, EventArgs e)
-        {
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.ShowInTaskbar = false;
-        }
-
-        //Usuwamy ramke (nie pojawia sie w alt+tab)
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x80;
-                return cp;
-            }
-        }
-        */
         #endregion
-
     }
 }

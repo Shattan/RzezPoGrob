@@ -19,32 +19,30 @@ namespace RPG
     public partial class EkranGlowny : Form
     {
         #region Zmienne
+        //Dostep dla tej formy
         private EkranGlownyTlo ekranGlownyTlo;
         private EkranEkranOpcjeTlo ekranEkranOpcjeTlo;
+
+        //Dostepne dla "EkranGry"
         public EkranGryTlo ekranGryTlo;
 
+        //Dostępne dla wszystkich "Ekran-ów"
         public EkranOpcje ekranOpcje;
         #endregion
 
         public EkranGlowny(EkranGlownyTlo ekranGlownyTlo)
         {
             InitializeComponent();
+
+            //Inicjalizacja Form
             this.ekranGlownyTlo = ekranGlownyTlo;
+            this.ekranOpcje = new EkranOpcje(this);
+            this.ekranEkranOpcjeTlo = new EkranEkranOpcjeTlo(ekranOpcje);
 
-            ekranOpcje = new EkranOpcje(this);
-            ekranEkranOpcjeTlo = new EkranEkranOpcjeTlo(ekranOpcje);
-
+            //Dzwiek zakmentowany ze wzgledow ciaglego debugowania
             //ekranOpcje.OdtworzDzwiek(ekranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
+
             UstawElementyNaEkranie();
-
-            //#if DEBUG
-            ////Przyspieszenie dostania sie na ekran z walka, 
-            //EkranGry ekranGry = new EkranGry(this, ekranOpcje);
-            //ekranGryTlo = new EkranGryTlo(ekranGry);
-
-            ////Deserializuj z XML i wpisz do je ekranGry
-            //ekranGryTlo.ShowDialog();
-            //#endif
         }
 
         #region Metody
@@ -72,16 +70,10 @@ namespace RPG
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
-
             //Ustawienia dolnego panelu z informacjami
             LabelInformacje.Size = new Size(Width, Height / 8);
             LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
             LabelInformacje.Text = "";
-
-           /* PictureBoxMgla.Size = new Size(plansza.Width,plansza.Height);
-            PictureBoxMgla.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
-            PictureBoxMgla.Image = plansza;*/
-
 
             //Ustawienie przycisków
             int szerokoscPrzyciskow = Screen.PrimaryScreen.Bounds.Width * 7 / 100;
@@ -90,7 +82,6 @@ namespace RPG
             PictureBoxOpcje.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
             PictureBoxWczytaj.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
             PictureBoxRuszaj.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
-
             const int odlegloscMiedzyPrzyciskami = 15;
             const int podniesieniePrzyciskow = 10;
             PictureBoxWyjdz.Location = new Point(odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
@@ -100,15 +91,14 @@ namespace RPG
             //Przeniesienie przyciskow na prawa strone:
             //PictureBoxWczytaj.Location = new Point(Screen.PrimaryScreen.Bounds.Width -PictureBoxEkranOpcje.Width- 10, -10);
             //PictureBoxRuszaj.Location = new Point(PictureBoxWczytaj.Location.X - PictureBoxRuszaj.Width - 10, -10);
-
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdz, "Resources/Grafiki menu/Wiej.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxOpcje, "Resources/Grafiki menu/Opcje.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWczytaj, "Resources/Grafiki menu/Wczytaj.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxRuszaj, "Resources/Grafiki menu/Do boju.png");
         }
         #endregion
-
-        #region Obsluga zdarzen przyciskow
+     
+        #region Zdarzenia
         private void PictureBoxEkranOpcje_Click(object sender, EventArgs e)
         {
             ekranEkranOpcjeTlo.ShowDialog();
@@ -116,6 +106,7 @@ namespace RPG
 
         private void PictureBoxRuszaj_Click(object sender, EventArgs e)
         {
+            //Uruchomienie EkranGry.ShowDialog() zostanie wywloane w EkranNowaGra
             EkranGry ekranGry = new EkranGry(this, ekranOpcje);
             ekranGryTlo = new EkranGryTlo(ekranGry);
 
@@ -129,7 +120,8 @@ namespace RPG
             EkranGry ekranGry = new EkranGry(this, ekranOpcje);
             ekranGryTlo = new EkranGryTlo(ekranGry);
 
-            //Deserializuj z XML i wpisz do je ekranGry
+            //Deserializuj z XML 
+            //i zapisz dane w ekranGry.WczytajDaneXML()
             ekranGryTlo.ShowDialog();
         }
 
@@ -137,11 +129,8 @@ namespace RPG
         {
             DialogResult = DialogResult.Abort;
         }
-        #endregion
-
+        
         #region Powiekszanie przyciskow
-        //Moim zdaniem, lepiej zasotoswac funkcje Hover - obsluguje zarowno MouseEnter jak i MouseLeave - 
-        //i wszystki te funkcje mozna by zastapic jedna, poprzez obsluge sender-a.
         private void PictureBoxWyjscie_MouseEnter(object sender, EventArgs e)
         {
             ekranOpcje.OdtworzEfekt(1, "Resources/Dźwięki/szyld.wav");
@@ -194,7 +183,7 @@ namespace RPG
             PrzeskalujPrzycisk(false, PictureBoxRuszaj, "Resources/Grafiki menu/Do boju.png");
         }
         #endregion
-        
+        #endregion
     }
 }
 

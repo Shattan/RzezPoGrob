@@ -20,20 +20,24 @@ namespace RPG
     public partial class EkranGry : Form
     {
         #region Zmienne
-        private EkranGlowny ekranGlowny;
+        //Zeby miec dostep do: ekranGlowny.ekranGryTlo,
+        private EkranGlowny ekranGlowny;    
 
-        //EkranGryTlo ekranGryTlo;
+        //Dostep do Teł Ekranow
         public EkranEkranDziennikZadanTlo ekranEkranDziennikZadanTlo;
         public EkranEkwipunekTlo ekranEkwipunekTlo;
         public EkranWalkaTlo ekranWalkaTlo;
 
+        //Dostep do Form zwiazanych z gra
         public EkranDziennikZadan ekranDziennikZadan;
         public EkranEkwipunek ekranEkwipunek;
         public EkranWalka ekranWalka;
         public EkranOpcje ekranOpcje;
 
+        //Nasz rdzen gry, dostepny dla wszystkich form zwiazanych z gra
         public Gra gra = new Gra();
         
+        //Zmienne dla przyciskow
         PictureBox[] praweMenu;
 
         //Poruszanie sie bohaterem
@@ -54,26 +58,40 @@ namespace RPG
 
         public EkranGry(EkranGlowny ekranGlowny, EkranOpcje ekranOpcje) 
         {
+            //Stworzenie dostepu do pozostalych Form i ich teł
             this.ekranGlowny = ekranGlowny;
-
             this.ekranOpcje = ekranOpcje;
 
-            //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
+            this.ekranDziennikZadan = new EkranDziennikZadan(this);
+            this.ekranEkwipunek = new EkranEkwipunek(this);
+            this.ekranWalka = new EkranWalka(this);
 
-            ekranDziennikZadan = new EkranDziennikZadan(this);
-            ekranEkwipunek = new EkranEkwipunek(this);
-            ekranWalka = new EkranWalka(this);
-
-            ekranEkranDziennikZadanTlo = new EkranEkranDziennikZadanTlo(ekranDziennikZadan);
-            ekranEkwipunekTlo = new EkranEkwipunekTlo(ekranEkwipunek);
-            ekranWalkaTlo = new EkranWalkaTlo(ekranWalka);
+            this.ekranEkranDziennikZadanTlo = new EkranEkranDziennikZadanTlo(ekranDziennikZadan);
+            this.ekranEkwipunekTlo = new EkranEkwipunekTlo(ekranEkwipunek);
+            this.ekranWalkaTlo = new EkranWalkaTlo(ekranWalka);
             
 
             InitializeComponent();
+            //Dzwiek zakomentowany na czas debugowania
+            //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
+
             UstawElementyNaEkranie();
+
+#if DEBUG
+            //tymczasowe elementy mapy, na czas debugowania
+            Blok1.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l3_wall_deco79.png");
+            Blok2.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l1_bridgestonensin.png");
+            AkcjaWielkiMag.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/31/dół.png");
+            AkcjaStrazniczkaLasu.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/23/dół.png");
+            AkcjaStrazniczkaGor.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/29/dół.png");
+#endif
+
+            //Pamietaj! 
+            //Zatrzymaj czasu przy wchodzeniu do innej formy lub uzywaj ShowDialog()!
             timerPrzeplywCzasu.Start();     
         }
 
+        #region Metody
         void UstawElementyNaEkranie()
         {
             //Ustawienia okienka gry
@@ -82,12 +100,6 @@ namespace RPG
 
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
-
-            Blok1.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l3_wall_deco79.png");
-            Blok2.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l1_bridgestonensin.png");
-            AkcjaWielkiMag.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/31/dół.png");
-            AkcjaStrazniczkaLasu.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/23/dół.png");
-            AkcjaStrazniczkaGor.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/29/dół.png");
 
             //Chodzacy ludek
             pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
@@ -193,7 +205,8 @@ namespace RPG
 
             }
 
-            //Kazdy blok o nazwie BlokKraniec przybiera odpowiedniImage
+            //KOD PRZYKŁADOWY:
+            //Dla każdego elementy zaczynającego się od nazwy "BlokKraniec" dodaj grafike "l2_terrain066.png".
             //foreach (PictureBox obiekt in panelMapa.Controls.OfType<PictureBox>().Cast<Control>().ToList())
             //{
             //    if (obiekt.Name.StartsWith("BlokKraniec"))
@@ -202,7 +215,7 @@ namespace RPG
             //    }
             //}
 
-
+            //Do usniecia? 
             //using (Graphics grafikaGracza = Graphics.FromImage(PictureBoxMgla.Image))
             //{
             //    //grafikaGracza.DrawImage(new Bitmap(gra.bohater.Obrazek + "lewo.gif"), PictureBoxMgla.Width / 2, PictureBoxMgla.Height / 2);
@@ -211,91 +224,45 @@ namespace RPG
 
         public void WczytajNowaGre()
         {
+            //Metoda Wywolywana w ekranNowaGra
             label1.Text = gra.bohater.Nazwa;
             pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
         }
 
-        #region Obsluga zdarzeń
-        private void PictureBoxPraweMenuEkwipunek_MouseClick(object sender, EventArgs e)
+        private void Walka(DialogResult dR, PictureBox pB)
         {
-            ekranEkwipunekTlo.ShowDialog();
-        }
-        private void PictureBoxPraweMenuEkwipunek_MouseEnter(object sender, EventArgs e)
-        {
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(praweMenu[0], "Resources/Grafiki menu/Alight.png");
-        }
-        private void PictureBoxPraweMenuEkwipunek_MouseLeave(object sender, EventArgs e)
-        {
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(praweMenu[0], "Resources/Grafiki menu/Adark.png");
-        }
-        private void PictureBoxPraweMenuEkranDziennikZadan_MouseClick(object sender, EventArgs e)
-        {
-            ekranEkranDziennikZadanTlo.ShowDialog();
-        }
-        
-        private void PictureBox_Click(object sender, EventArgs e)
-        {
-            //Później trzeba to usunąć, bo do wychodzenia będzie służyło menu
-            Close();
-        }
-        #endregion
-
-        #region Poruszanie sie bohatera
-        private void przechwytywanieKlawiszy_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Right)
+            if (dR == DialogResult.OK)
             {
-                prawo = true;                
-            }
-            if (e.KeyCode == Keys.Left)
-            {
-                lewo = true;            
-            }
-            if (e.KeyCode == Keys.Up)
-            {
-                gora = true;
-            }
-            if (e.KeyCode == Keys.Down)
-            {
-                dol = true;
-            }
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.Close(); //Zamienic na Pokaz Menu         
-            }
-            
-        }
-
-        private void przechwytywanieKlawiszy_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Right)
-            {
-                prawo = false;
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "prawo.png");
-            }
-            if (e.KeyCode == Keys.Left)
-            {
-                lewo = false;
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "lewo.png");
-            }
-            if (e.KeyCode == Keys.Up)
-            {
-                gora = false;
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "góra.png");
-            }
-            if (e.KeyCode == Keys.Down)
-            {
-                dol = false;
+                panelMapa.Controls.Remove(pB);
                 pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
+                timerPrzeplywCzasu.Start();
+                lewo = prawo = dol = gora = false;
+            }
+            else if (dR == DialogResult.Abort)
+            {
+
+                //Co robimy jak gracz przegral?
+                pBGracz.Visible = false;
+                //Co robimy jak gracz przegral? 
+                //Wylaczamy sterowanie gracza, 
+                //na dole pojawia się napis "Porażka", 
+                //włącza się muzyczka "Resources/Dźwięki/smierc.wav"
+                //Zmieniamy tło gracza na plamę krwi 
+            }
+            else
+            {
+                //Ktos zamknal na sile forme, zamykamy wiec gre, chociaz powinniosmy po prostu ukarac gracza
+                this.Close();
             }
         }
         #endregion
 
+        #region Zdarzenia
         private void timerPrzeplywCzasu_Tick(object sender, EventArgs e)
         {
             index++;
             const int czasOdnawiania = 5; //Gifa
-            
+
             //Sprawdz czy ktorys z obiektow jest w innym
             foreach (PictureBox obiekt in panelMapa.Controls.OfType<PictureBox>().Cast<Control>().ToList())
             {
@@ -328,7 +295,7 @@ namespace RPG
                                 ostatniZablokwanyObiekt = obiekt.Name;
                             }
                         }
-                        else if(obiekt.Name.StartsWith("Akcja"))
+                        else if (obiekt.Name.StartsWith("Akcja"))
                         {
                             timerPrzeplywCzasu.Stop();
                             Walka(ekranWalkaTlo.ShowDialog(), obiekt);
@@ -340,7 +307,7 @@ namespace RPG
                     }
                     else
                     {
-                        if(obiekt.Name == ostatniZablokwanyObiekt)
+                        if (obiekt.Name == ostatniZablokwanyObiekt)
                         {
                             zablokujPostac = false;
                         }
@@ -371,7 +338,7 @@ namespace RPG
             {
                 pBGracz.Left += 5;
                 panelMapa.Left -= 5;
-                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Prawo, 5); 
+                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Prawo, 5);
             }
 
             if (lewo == true)
@@ -396,32 +363,89 @@ namespace RPG
             }
         }
 
-        private void Walka(DialogResult dR, PictureBox pB)
+        private void EkranGry_Load(object sender, EventArgs e)
         {
-            if (dR == DialogResult.OK)
-            {
-                panelMapa.Controls.Remove(pB);
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
-                timerPrzeplywCzasu.Start();
-                lewo = prawo = dol = gora = false;
-            }
-            else if (dR == DialogResult.Abort)
-            {
+            const int wielkoscPrzyciskow = 90;
+            const int odlegloscMiedzyPrzyciskami = 20;
+            int iloscPrzyciskow = 5;
 
-                //Co robimy jak gracz przegral?
-                pBGracz.Visible = false; 
-                //Co robimy jak gracz przegral? 
-                //Wylaczamy sterowanie gracza, 
-                //na dole pojawia się napis "Porażka", 
-                //włącza się muzyczka "Resources/Dźwięki/smierc.wav"
-                //Zmieniamy tło gracza na plamę krwi 
-            }
-            else
+            ekranGlowny.ekranGryTlo.UstawPanelPrawy(new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y), new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow), "Resources/Grafiki menu/Panel pod przyciski.png");
+        }
+
+        private void PictureBoxPraweMenuEkwipunek_MouseClick(object sender, EventArgs e)
+        {
+            ekranEkwipunekTlo.ShowDialog();
+        }
+        private void PictureBoxPraweMenuEkwipunek_MouseEnter(object sender, EventArgs e)
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(praweMenu[0], "Resources/Grafiki menu/Alight.png");
+        }
+        private void PictureBoxPraweMenuEkwipunek_MouseLeave(object sender, EventArgs e)
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(praweMenu[0], "Resources/Grafiki menu/Adark.png");
+        }
+        private void PictureBoxPraweMenuEkranDziennikZadan_MouseClick(object sender, EventArgs e)
+        {
+            ekranEkranDziennikZadanTlo.ShowDialog();
+        }
+        
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            //Później trzeba to usunąć, bo w przypadku zamykania chcemy pokazac Menu
+            Close();
+        }
+
+        #region Poruszanie sie bohatera
+        private void przechwytywanieKlawiszy_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
             {
-                //Ktos zamknal na sile forme, zamykamy wiec gre, chociaz powinniosmy po prostu ukarac gracza
-                this.Close();
+                prawo = true;
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                lewo = true;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                gora = true;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                dol = true;
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); //Zamienic na Pokaz Menu         
+            }
+
+        }
+
+        private void przechwytywanieKlawiszy_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+            {
+                prawo = false;
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "prawo.png");
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                lewo = false;
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "lewo.png");
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                gora = false;
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "góra.png");
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                dol = false;
+                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
             }
         }
+        #endregion
+
 
         #region sprawiamy, ze okno jest niewidoczne w alt+tab
         //Obsluga wychodzenia - zakaz alt+f4
@@ -449,14 +473,6 @@ namespace RPG
             }
         }
         #endregion
-
-        private void EkranGry_Load(object sender, EventArgs e)
-        {
-            const int wielkoscPrzyciskow = 90;
-            const int odlegloscMiedzyPrzyciskami = 20;
-            int iloscPrzyciskow = 5;
-
-            ekranGlowny.ekranGryTlo.UstawPanelPrawy(new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y), new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow), "Resources/Grafiki menu/Panel pod przyciski.png");
-        }
+        #endregion
     }
 }

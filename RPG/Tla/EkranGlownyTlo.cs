@@ -22,13 +22,13 @@ namespace RPG
         public EkranGlownyTlo()
         {
             InitializeComponent();
+            ekranGlowny = new EkranGlowny(this);
+
             Width = Screen.PrimaryScreen.Bounds.Width;
             Height = Screen.PrimaryScreen.Bounds.Height;
             
             BackColor = System.Drawing.Color.Black;
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło menu.png");
-
-            ekranGlowny = new EkranGlowny(this);
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło menu.png");        
         }
 
         #region Zdarzenia
@@ -40,8 +40,6 @@ namespace RPG
         #endregion
     }
 }
-
-
 
 /*   #region sprawiamy, ze okno jest niewidoczne w alt+tab
 

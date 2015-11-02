@@ -18,17 +18,16 @@ namespace RPG
         EkranEkwipunek ekranEkwipunek;
         #endregion
 
-
         public EkranEkwipunekTlo(EkranEkwipunek ekranEkwipunek)
         {
             InitializeComponent();
             this.ekranEkwipunek = ekranEkwipunek;
+
             Program.DopasujRozmiarFormyDoEkranu(this);
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Karta postaci.png");
-            //BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
         }
 
-        #region Obsluga zdarzeń
+        #region Zdarzenia
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
             DialogResult = ekranEkwipunek.ShowDialog();

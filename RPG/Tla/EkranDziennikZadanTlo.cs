@@ -18,27 +18,26 @@ namespace RPG
         EkranDziennikZadan ekranDziennikZadan;
         #endregion
 
-        void UstawGrafike()
-        {
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Dziennik zadań.png");
-        }
-
         public EkranEkranDziennikZadanTlo(EkranDziennikZadan ekranDziennikZadan)
         {
             InitializeComponent();
             this.ekranDziennikZadan = ekranDziennikZadan;
+
             Program.DopasujRozmiarFormyDoEkranu(this);
             UstawGrafike();
         }
 
-        #region Obsluga zdarzeń
+        #region Metody
+        void UstawGrafike()
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Dziennik zadań.png");
+        }
+        #endregion
+
+        #region Zdarzenia
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult dr = ekranDziennikZadan.ShowDialog();
-            if (dr == DialogResult.Cancel)
-            {
-                Close();
-            }
+            DialogResult = ekranDziennikZadan.ShowDialog();
         }
         #endregion
     }
