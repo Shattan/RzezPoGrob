@@ -55,7 +55,7 @@ namespace RPG
 
             const int odleglosciMiedzyPrzyciskamiX = 5;
             const int odleglosciMiedzyPrzyciskamiY = wielkoscPrzyciskow;
-            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow);
+            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow*2);
             PictureBoxSilaPlus.Location = new Point(PictureBoxSilaMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxSilaMinus.Location.Y);
             PictureBoxZrecznoscMinus.Location = new Point(PictureBoxSilaMinus.Location.X, PictureBoxSilaMinus.Location.Y + odleglosciMiedzyPrzyciskamiY);
             PictureBoxZrecznoscPlus.Location = new Point(PictureBoxZrecznoscMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxZrecznoscMinus.Location.Y);
@@ -88,7 +88,8 @@ namespace RPG
 
         void OdswiezStatystyki(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
         {
-            LabelNazwyStatystyk.Text = "Pozostałe punkty do rozdania:\n";
+            LabelNazwyStatystyk.Text = ekranGry.gra.bohater.Nazwa + "\n";   
+            LabelNazwyStatystyk.Text += "Pozostałe punkty do rozdania:\n";
             LabelNazwyStatystyk.Text += "Siła:\n";
             LabelNazwyStatystyk.Text += "Zręczność:\n";
             LabelNazwyStatystyk.Text += "Witalność:\n";
@@ -100,7 +101,8 @@ namespace RPG
             LabelNazwyStatystyk.Text += "Zdrowie:\n";
             LabelNazwyStatystyk.Text += "Energia:\n";
 
-            LabelWartosciStatystyk.Text = punkty + "\n";               //Pozostałe punkty do rozdania
+            LabelWartosciStatystyk.Text = "\n";
+            LabelWartosciStatystyk.Text += punkty + "\n";               //Pozostałe punkty do rozdania
             LabelWartosciStatystyk.Text += sila + "\n";                //Siła
             LabelWartosciStatystyk.Text += zrecznosc + "\n";           //Zręczność
             LabelWartosciStatystyk.Text += witalnosc + "\n";           //Witalność
@@ -137,6 +139,7 @@ namespace RPG
                     default:
                         break;
                 }
+
 
                 wybraneStatystyki[(int)Statystki.Pkt] -= ile;
                 OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
@@ -201,6 +204,7 @@ namespace RPG
             ekranGry.gra.bohater.Zrecznosc = wybraneStatystyki[(int)Statystki.Zrecznosc];
             ekranGry.gra.bohater.Witalnosc = wybraneStatystyki[(int)Statystki.Witalnosc];
             ekranGry.gra.bohater.Inteligencja = wybraneStatystyki[(int)Statystki.Inteligencja];
+
         }
         #endregion
 
