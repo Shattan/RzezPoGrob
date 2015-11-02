@@ -88,6 +88,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tla\EkranGryTloObiekty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tla\EkranGryTloObiekty.Designer.cs">
+      <DependentUpon>EkranGryTloObiekty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formy\EkranDziennikZadan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,11 +120,17 @@
     <Compile Include="Tla\EkranEkwipunekTlo.Designer.cs">
       <DependentUpon>EkranEkwipunekTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tla\EkranGryTlo.cs">
+    <Compile Include="Tla\EkranGryTloMapa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tla\EkranGryTlo.Designer.cs">
-      <DependentUpon>EkranGryTlo.cs</DependentUpon>
+    <Compile Include="Tla\EkranGryTloMapa.Designer.cs">
+      <DependentUpon>EkranGryTloMapa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tla\EkranGryTloUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tla\EkranGryTloUI.Designer.cs">
+      <DependentUpon>EkranGryTloUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Tla\EkranWalkaTlo.cs">
       <SubType>Form</SubType>
@@ -195,8 +207,8 @@
     <EmbeddedResource Include="Tla\EkranEkwipunekTlo.resx">
       <DependentUpon>EkranEkwipunekTlo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tla\EkranGryTlo.resx">
-      <DependentUpon>EkranGryTlo.cs</DependentUpon>
+    <EmbeddedResource Include="Tla\EkranGryTloMapa.resx">
+      <DependentUpon>EkranGryTloMapa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranWalka.resx">
       <DependentUpon>EkranWalka.cs</DependentUpon>
@@ -215,6 +227,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranOpcje.resx">
       <DependentUpon>EkranOpcje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tla\EkranGryTloObiekty.resx">
+      <DependentUpon>EkranGryTloObiekty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tla\EkranGryTloUI.resx">
+      <DependentUpon>EkranGryTloUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tla\EkranNowaGraTlo.resx">
       <DependentUpon>EkranNowaGraTlo.cs</DependentUpon>

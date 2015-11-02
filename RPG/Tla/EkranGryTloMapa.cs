@@ -11,21 +11,20 @@ using System.Windows.Forms;
 namespace RPG
 {
 
-    public partial class EkranGryTlo : Form
+    public partial class EkranGryTloMapa : Form
     {
         #region Zmienne
-        EkranGry ekranGry;
+        EkranGlowny ekranGlowny;
 
         Bitmap plansza = new Bitmap("Resources/Mapy/Trawa.png");
         #endregion
 
-        public EkranGryTlo(EkranGry ekranGry)
+        public EkranGryTloMapa(EkranGlowny ekranGlowny)
         {
             InitializeComponent();
             Program.DopasujRozmiarFormyDoEkranu(this);
-            this.ekranGry = ekranGry;
-                   
-            
+            this.ekranGlowny = ekranGlowny;
+                            
             UstawElementyNaEkranie();           
         }
 
@@ -36,24 +35,11 @@ namespace RPG
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
             //Ustawienie tła rysowanego w menu
-            BackgroundImage = plansza;
+            //BackgroundImage = plansza;
 
             PictureBoxTrawa.Size = new Size(plansza.Width,plansza.Height);
             PictureBoxTrawa.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
             PictureBoxTrawa.Image = plansza;
-
-        }
-
-        public void UstawPanelPrawy(Point point, Size size, String sciezkaGrafiki)
-        {
-            //panelPraweMenu.Location = point;
-            //panelPraweMenu.Size = size;
-            //panelPraweMenu.BackgroundImage = new Bitmap(sciezkaGrafiki);
-            //Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(panelPraweMenu, sciezkaGrafiki);
-
-            //pbPanelPraweMenu.Location = point;
-            //pbPanelPraweMenu.Size = size;
-            //pbPanelPraweMenu.BackgroundImage = new Bitmap(sciezkaGrafiki);
         }
 
         public void RuchPowierzchniMapy(int pozycja, int dystans)
@@ -79,9 +65,9 @@ namespace RPG
         #endregion
 
         #region Obsluga zdarzeń
-        private void EkranGryTlo_Shown(object sender, EventArgs e)
+        private void EkranGryTloMapa_Shown(object sender, EventArgs e)
         {
-            DialogResult = ekranGry.ShowDialog();
+            DialogResult = ekranGlowny.ekranGryTloObiekty.ShowDialog();
         }
         #endregion
     }

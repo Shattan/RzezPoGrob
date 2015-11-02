@@ -16,7 +16,7 @@ namespace RPG
         //Dostepne tylko dla tej formy
         private EkranGlowny ekranGlowny;        //Dostep do ekranGlowny.opcje
         private EkranGry ekranGry;              //Dostep do ekranGry.Gry
-        private EkranGryTlo ekranGryTlo;        //Uzywamy do rozpoczenia ekranGryTlo.Dialog()
+        private EkranGryTloMapa EkranGryTloMapa;        //Uzywamy do rozpoczenia EkranGryTloMapa.Dialog()
 
         //Lista sciezek obrazkow dostepnych do wybory dla tworzonej postaci
         List<String> ListaPostaci = new List<String>();
@@ -36,13 +36,13 @@ namespace RPG
 
         #endregion
 
-        public EkranNowaGra(EkranGlowny ekranGlowny, EkranGry ekranGry, EkranGryTlo ekranGryTlo)
+        public EkranNowaGra(EkranGlowny ekranGlowny, EkranGry ekranGry, EkranGryTloMapa EkranGryTloMapa)
         {
             InitializeComponent();
 
             this.ekranGlowny = ekranGlowny;
             this.ekranGry = ekranGry;
-            this.ekranGryTlo = ekranGryTlo;
+            this.EkranGryTloMapa = EkranGryTloMapa;
 
             RozstawElementy();
             KolorujElementy();
@@ -282,7 +282,7 @@ namespace RPG
             ekranGry.WczytajNowaGre();
 
             //Uruchom Dialog
-            ekranGryTlo.ShowDialog();
+            EkranGryTloMapa.ShowDialog();
             
             //Zamknij Forme
             //DialogResult = DialogResult.OK;

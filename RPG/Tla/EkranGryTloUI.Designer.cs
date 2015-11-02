@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class EkranGryTlo
+    partial class EkranGryTloUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,43 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PictureBoxTrawa = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrawa)).BeginInit();
+            this.panelPraweMenu = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // PictureBoxTrawa
+            // panelPraweMenu
             // 
-            this.PictureBoxTrawa.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxTrawa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PictureBoxTrawa.Location = new System.Drawing.Point(345, 84);
-            this.PictureBoxTrawa.Name = "PictureBoxTrawa";
-            this.PictureBoxTrawa.Size = new System.Drawing.Size(172, 129);
-            this.PictureBoxTrawa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.PictureBoxTrawa.TabIndex = 8;
-            this.PictureBoxTrawa.TabStop = false;
+            this.panelPraweMenu.Location = new System.Drawing.Point(106, 50);
+            this.panelPraweMenu.Name = "panelPraweMenu";
+            this.panelPraweMenu.Size = new System.Drawing.Size(101, 100);
+            this.panelPraweMenu.TabIndex = 0;
             // 
-            // EkranGryTlo
+            // EkranGryTloUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(880, 601);
-            this.Controls.Add(this.PictureBoxTrawa);
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.panelPraweMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EkranGryTlo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EkranGryTlo";
+            this.Name = "EkranGryTloUI";
+            this.Text = "EkranGryTloUI";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Shown += new System.EventHandler(this.EkranGryTlo_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrawa)).EndInit();
+            this.Shown += new System.EventHandler(this.EkranGryTloUI_Shown);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PictureBoxTrawa;
+        private System.Windows.Forms.Panel panelPraweMenu;
     }
 }

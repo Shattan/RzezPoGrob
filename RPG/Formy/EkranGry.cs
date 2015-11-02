@@ -20,7 +20,7 @@ namespace RPG
     public partial class EkranGry : Form
     {
         #region Zmienne
-        //Zeby miec dostep do: ekranGlowny.ekranGryTlo,
+        //Zeby miec dostep do: ekranGlowny.EkranGryTloMapa,
         private EkranGlowny ekranGlowny;    
 
         //Dostep do Teł Ekranow
@@ -118,8 +118,8 @@ namespace RPG
             int iloscPrzyciskow = ListaObrazkow.Count();
 
             panelPraweMenu.Location = new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y);
-            panelPraweMenu.Size = new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow);
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(panelPraweMenu, "Resources/Grafiki menu/Panel pod przyciski.png");
+            panelPraweMenu.Size = new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow+40);
+            //Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(panelPraweMenu, "Resources/Grafiki menu/Panel pod przyciski.png");
 
             praweMenu = new PictureBox[iloscPrzyciskow];
             for (int index = 0; index < praweMenu.Length; index++)
@@ -338,28 +338,28 @@ namespace RPG
             {
                 pBGracz.Left += 5;
                 panelMapa.Left -= 5;
-                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Prawo, 5);
+                ekranGlowny.ekranGryTloMapa.RuchPowierzchniMapy((int)Ruch.Prawo, 5);
             }
 
             if (lewo == true)
             {
                 pBGracz.Left -= 5;
                 panelMapa.Left += 5;
-                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Lewo, 5);
+                ekranGlowny.ekranGryTloMapa.RuchPowierzchniMapy((int)Ruch.Lewo, 5);
             }
 
             if (gora == true)
             {
                 pBGracz.Top -= 5;
                 panelMapa.Top += 5;
-                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Gora, 5);
+                ekranGlowny.ekranGryTloMapa.RuchPowierzchniMapy((int)Ruch.Gora, 5);
             }
 
             if (dol == true)
             {
                 pBGracz.Top += 5;
                 panelMapa.Top -= 5;
-                ekranGlowny.ekranGryTlo.RuchPowierzchniMapy((int)Ruch.Dol, 5);
+                ekranGlowny.ekranGryTloMapa.RuchPowierzchniMapy((int)Ruch.Dol, 5);
             }
         }
 
@@ -369,7 +369,7 @@ namespace RPG
             const int odlegloscMiedzyPrzyciskami = 20;
             int iloscPrzyciskow = 5;
 
-            ekranGlowny.ekranGryTlo.UstawPanelPrawy(new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y), new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow), "Resources/Grafiki menu/Panel pod przyciski.png");
+            ekranGlowny.ekranGryTloUI.UstawPanelPrawy(new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y), new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow), "Resources/Grafiki menu/Panel pod przyciski.png");
         }
 
         private void PictureBoxPraweMenuEkwipunek_MouseClick(object sender, EventArgs e)

@@ -24,7 +24,19 @@ namespace RPG
         private EkranEkranOpcjeTlo ekranEkranOpcjeTlo;
 
         //Dostepne dla "EkranGry"
-        public EkranGryTlo ekranGryTlo;
+        public EkranGryTloMapa ekranGryTloMapa;
+        public EkranGryTloObiekty ekranGryTloObiekty;
+        public EkranGryTloUI ekranGryTloUI;
+
+        /* Od najwyżej do najzniszej położonej warstwy Form:
+         * EkranGry
+         * EkranGryUI
+         * EkranGryTloObiekty
+         * EkranGryTloMapa
+         */
+
+        //Dostep dla EkgranGryTlo*
+        public EkranGry ekranGry;
 
         //Dostępne dla wszystkich "Ekran-ów"
         public EkranOpcje ekranOpcje;
@@ -107,22 +119,26 @@ namespace RPG
         private void PictureBoxRuszaj_Click(object sender, EventArgs e)
         {
             //Uruchomienie EkranGry.ShowDialog() zostanie wywloane w EkranNowaGra
-            EkranGry ekranGry = new EkranGry(this, ekranOpcje);
-            ekranGryTlo = new EkranGryTlo(ekranGry);
+            ekranGry = new EkranGry(this, ekranOpcje);
+            ekranGryTloMapa = new EkranGryTloMapa(this);
+            ekranGryTloObiekty = new EkranGryTloObiekty(this);
+            ekranGryTloUI = new EkranGryTloUI(this);
 
-            EkranNowaGra ekranNowaGra = new EkranNowaGra(this, ekranGry, ekranGryTlo);
+            EkranNowaGra ekranNowaGra = new EkranNowaGra(this, ekranGry, ekranGryTloMapa);
             EkranEkranNowaGraTlo ekranNowaGraTlo = new EkranEkranNowaGraTlo(ekranNowaGra);
             ekranNowaGraTlo.ShowDialog();
         }
        
         private void PictureBoxWczytaj_Click(object sender, EventArgs e)
         {
-            EkranGry ekranGry = new EkranGry(this, ekranOpcje);
-            ekranGryTlo = new EkranGryTlo(ekranGry);
+            ekranGry = new EkranGry(this, ekranOpcje);
+            ekranGryTloMapa = new EkranGryTloMapa(this);
+            ekranGryTloObiekty = new EkranGryTloObiekty(this);
+            ekranGryTloUI = new EkranGryTloUI(this);
 
             //Deserializuj z XML 
             //i zapisz dane w ekranGry.WczytajDaneXML()
-            ekranGryTlo.ShowDialog();
+            ekranGryTloMapa.ShowDialog();
         }
 
         private void PictureBoxWyjscie_Click(object sender, EventArgs e)
