@@ -8,26 +8,28 @@ namespace RPG
 {
     public class Gra
     {
+        public Bohater bohater = new Bohater();
         public List<Zadanie> listaZadan = new List<Zadanie>();
-        //public List<Umiejetnosc> listaUmiejetnosc = new List<Umiejetnosc>();
-        //public List<Ekwipunek> listaEkwipunek = new List<Ekwipunek>();
-        //public List<Przeszkoda> listaPrzeszkoda = new List<Przeszkoda>();
-        //public List<List<Postac>> listaZestawPrzeciwnikow = new List<List<Postac>>();
-        //public List<Postac> listaPostacFabularna = new List<Postac>();
-        //public List<Postac> listaPostacZMiasta = new List<Postac>();
-        //public List<Postac> listaPostacZCmentarza = new List<Postac>();
-        //public List<Postac> listaPostacZDziczy = new List<Postac>();
-        public Bohater bohater = new Bohater("Nazwa");
+        public List<Ekwipunek> listaEkwipunek = new List<Ekwipunek>();
+
+        public List<Umiejetnosc> listaUmiejetnosc = new List<Umiejetnosc>();
+        public List<Przeszkoda> listaPrzeszkoda = new List<Przeszkoda>();
+        public List<List<NPC>> listaZestawPrzeciwnikow = new List<List<NPC>>();
+        public List<NPC> listaPostacFabularna = new List<NPC>();
+        public List<NPC> listaPostacZMiasta = new List<NPC>();
+        public List<NPC> listaPostacZCmentarza = new List<NPC>();
+        public List<NPC> listaPostacZDziczy = new List<NPC>();
         
 
         public Gra()
         {
             //Tworzenie infrastruktury
-            //UtworzUmiejetnosci();
-            //UtworzPrzedmiotyEkwipunku();
-            //UtworzPostacie();
-            //UtworzPrzeszkody();
-            //UtworzZestawyPrzeciwnikow();
+            UtworzUmiejetnosci();
+            UtworzPrzedmiotyEkwipunku();
+            UtworzPostacie();
+            UtworzPrzeszkody();
+            UtworzZestawyPrzeciwnikow();
+
             UtworzZadania();
         }
 
@@ -42,15 +44,6 @@ namespace RPG
                 return listaZadan[ktore];
             else return new Zadanie("BrakNazwy", "BrakZleceniodwacy", "BrakCelu", "BrakNagordy", "BrakOpisu");
         }
-
-
-
-        //public String WyswietlZadanie(int ktore)
-        //{
-        //    if ((ktore > 0) && (ktore <= listaZadan.Count))
-        //        listaZadan[ktore];
-        //    else return new Zadanie("BrakNazwy", "BrakZleceniodwacy", "BrakCelu", "BrakNagordy", "BrakOpisu");
-        //}
 
         public void UtworzZadania()
         {
@@ -91,113 +84,113 @@ namespace RPG
                     "Gobliny znajdziesz na wschód od wioski."
                 );
         }
-        //public void UtworzPostacie()
-        //{
-        //    //**************************************************************************************************************
-        //    //Postacie fabularne
-        //    //index 0
-        //    listaPostacFabularna.Add(new Postac("Lord Krwawy Mati"));
-        //    //index 1
-        //    listaPostacFabularna.Add(new Postac("Lord Seba"));
+        
+        public void UtworzPostacie()
+        {
+            //**************************************************************************************************************
+            //Postacie fabularne
+            //index 0
+            listaPostacFabularna.Add(new NPC("Lord Krwawy Mati", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 1
+            listaPostacFabularna.Add(new NPC("Lord Seba", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //**************************************************************************************************************
+            //index 0
+            listaPostacZMiasta.Add(new NPC("Szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
 
-        //    //**************************************************************************************************************
-        //    //index 0
-        //    listaPostacFabularna.Add(new Postac("Szczur"));
+            //**************************************************************************************************************
+            //index 0
+            listaPostacZCmentarza.Add(new NPC("Ghoul", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
 
-        //    //**************************************************************************************************************
-        //    //index 0
-        //    listaPostacFabularna.Add(new Postac("Ghoul"));
+            //**************************************************************************************************************
+            //index 0
+            listaPostacZDziczy.Add(new NPC("Wilk", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
 
-        //    //**************************************************************************************************************
-        //    //index 0
-        //    listaPostacFabularna.Add(new Postac("Wilk"));
+        }
 
-        //}
+        public void UtworzUmiejetnosci()
+        {
+            //index 0
+            listaUmiejetnosc.Add(new Umiejetnosc("Wymachiwanie"));
+        }
 
-        //public void UtworzUmiejetnosci()
-        //{
-        //    //index 0
-        //    listaUmiejetnosc.Add(new Umiejetnosc("Wymachiwanie"));
-        //}
+        public void UtworzPrzedmiotyEkwipunku()
+        {
+            //index 0
+            listaEkwipunek.Add(new Ekwipunek("Cywilne ubranie","",10,10,10,10,10,10,10,10,10,10,10));
+        }
 
-        //public void UtworzPrzedmiotyEkwipunku()
-        //{
-        //    //index 0
-        //    listaEkwipunek.Add(new Ekwipunek("Cywilne ubranie"));
-        //}
+        public void UtworzPrzeszkody()
+        {
+            //index 0
+            listaPrzeszkoda.Add(new Przeszkoda("Drzewo"));
+        }
 
-        //public void UtworzPrzeszkody()
-        //{
-        //    //index 0
-        //    listaPrzeszkoda.Add(new Przeszkoda("Drzewo"));
-        //}
-
-        //public void UtworzZestawyPrzeciwnikow()
-        //{
-        //    //index 0
-        //    listaZestawPrzeciwnikow.Add(listaPostacFabularna);
-        //    //index 1
-        //    listaZestawPrzeciwnikow.Add(listaPostacZMiasta);
-        //    //index 2
-        //    listaZestawPrzeciwnikow.Add(listaPostacZCmentarza);
-        //    //index 3
-        //    listaZestawPrzeciwnikow.Add(listaPostacZDziczy);
-        //}
+        public void UtworzZestawyPrzeciwnikow()
+        {
+            //index 0
+            listaZestawPrzeciwnikow.Add(listaPostacFabularna);
+            //index 1
+            listaZestawPrzeciwnikow.Add(listaPostacZMiasta);
+            //index 2
+            listaZestawPrzeciwnikow.Add(listaPostacZCmentarza);
+            //index 3
+            listaZestawPrzeciwnikow.Add(listaPostacZDziczy);
+        }
     
 
-        //public List<Zadanie> ListaZadan
+        public List<Zadanie> ListaZadan
+        {
+            get { return listaZadan; }
+            set { listaZadan = value; }
+        }
+
+
+        public List<Umiejetnosc> ListaUmiejetnosc
+        {
+            get { return listaUmiejetnosc; }
+            set { listaUmiejetnosc = value; }
+        }
+
+        public List<Ekwipunek> ListaEkwipunek
+        {
+            get { return listaEkwipunek; }
+            set { listaEkwipunek = value; }
+        }
+
+        public List<Przeszkoda> ListaPrzeszkoda
+        {
+            get { return listaPrzeszkoda; }
+            set { listaPrzeszkoda = value; }
+        }
+
+        //public List<Przeszkoda> ListaZestawPrzeciwnikow
         //{
-        //    get { return listaZadan; }
-        //    set { listaZadan = value; }
+        //    get { return listaZestawPrzeciwnikow; }
+        //    set { listaZestawPrzeciwnikow = value; }
         //}
 
+        public List<NPC> ListaPostacFabularna
+        {
+            get { return listaPostacFabularna; }
+            set { listaPostacFabularna = value; }
+        }
 
-        //public List<Umiejetnosc> ListaUmiejetnosc
-        //{
-        //    get { return listaUmiejetnosc; }
-        //    set { listaUmiejetnosc = value; }
-        //}
+        public List<NPC> ListaPostacZMiasta
+        {
+            get { return listaPostacZMiasta; }
+            set { listaPostacZMiasta = value; }
+        }
 
-        //public List<Ekwipunek> ListaEkwipunek
-        //{
-        //    get { return listaEkwipunek; }
-        //    set { listaEkwipunek = value; }
-        //}
+        public List<NPC> ListaPostacZCmentarza
+        {
+            get { return listaPostacZCmentarza; }
+            set { listaPostacZCmentarza = value; }
+        }
 
-        //public List<Przeszkoda> ListaPrzeszkoda
-        //{
-        //    get { return listaPrzeszkoda; }
-        //    set { listaPrzeszkoda = value; }
-        //}
-
-        ////public List<Przeszkoda> ListaZestawPrzeciwnikow
-        ////{
-        ////    get { return listaZestawPrzeciwnikow; }
-        ////    set { listaZestawPrzeciwnikow = value; }
-        ////}
-
-        //public List<Postac> ListaPostacFabularna
-        //{
-        //    get { return listaPostacFabularna; }
-        //    set { listaPostacFabularna = value; }
-        //}
-
-        //public List<Postac> ListaPostacZMiasta
-        //{
-        //    get { return listaPostacZMiasta; }
-        //    set { listaPostacZMiasta = value; }
-        //}
-
-        //public List<Postac> ListaPostacZCmentarza
-        //{
-        //    get { return listaPostacZCmentarza; }
-        //    set { listaPostacZCmentarza = value; }
-        //}
-
-        //public List<Postac> ListaPostacZDziczy
-        //{
-        //    get { return listaPostacZDziczy; }
-        //    set { listaPostacZDziczy = value; }
-        //}
+        public List<NPC> ListaPostacZDziczy
+        {
+            get { return listaPostacZDziczy; }
+            set { listaPostacZDziczy = value; }
+        }
     }
 }

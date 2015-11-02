@@ -43,7 +43,7 @@ namespace RPG
 
 
             PictureBoxZamknij.Size = new Size(Screen.PrimaryScreen.Bounds.Width * 15 / 100, Screen.PrimaryScreen.Bounds.Height * 15 / 100);
-            PictureBoxZamknij.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 75 / 100, Screen.PrimaryScreen.Bounds.Height * 80 / 100);
+            PictureBoxZamknij.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 70 / 100, Screen.PrimaryScreen.Bounds.Height * 80 / 100);
          }
 
         void UstawOpisZadania(Zadanie zadanie)

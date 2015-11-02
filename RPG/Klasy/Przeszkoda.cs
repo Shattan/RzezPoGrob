@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    class Przeszkoda
+    public class Przeszkoda
     {
         public string nazwa;
 

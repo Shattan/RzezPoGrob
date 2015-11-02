@@ -142,13 +142,13 @@ namespace RPG
 
         void DodajSkinyPostaci()
         {
-            ListaPostaci.Add(ekranGry.gra.bohater.Obrazek);
-            ListaPostaci.Add("Resources/Grafiki postaci na mapie/0/");
-            ListaPostaci.Add("Resources/Grafiki postaci na mapie/11/");
-            ListaPostaci.Add("Resources/Grafiki postaci na mapie/12/");
-            ListaPostaci.Add("Resources/Grafiki postaci na mapie/13/");
-
+            ListaPostaci.Add(ekranGry.gra.bohater.ObrazekNaMapie);
+            for (int i = 0; i <= 55; i++)
+            {
+                ListaPostaci.Add("Resources/Grafiki postaci na mapie/"+i+"/");
+            }
             //Ustawienie domyslnego obrazka
+            PictureBoxBohater.SizeMode = PictureBoxSizeMode.Zoom;
             PictureBoxBohater.Image = new Bitmap(ListaPostaci[wybranyBohater] + "dół.gif");
         }
 
@@ -255,7 +255,7 @@ namespace RPG
             ekranGry.gra.bohater.Witalnosc = wybraneStatystyki[(int)Statystki.Witalnosc];
             ekranGry.gra.bohater.Inteligencja = wybraneStatystyki[(int)Statystki.Inteligencja];
 
-            ekranGry.gra.bohater.Obrazek = ListaPostaci[wybranyBohater];
+            ekranGry.gra.bohater.ObrazekNaMapie = ListaPostaci[wybranyBohater];
             ekranGry.gra.bohater.Nazwa = TextBoxNazwa.Text;
         }
 
@@ -268,7 +268,7 @@ namespace RPG
             wybraneStatystyki[(int)Statystki.Witalnosc] = ekranGry.gra.bohater.Witalnosc;
             wybraneStatystyki[(int)Statystki.Inteligencja] = ekranGry.gra.bohater.Inteligencja;
 
-            OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
+            OdswiezStatystyki(ekranGry.gra.bohater.Sila, wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
         }
         #endregion
 

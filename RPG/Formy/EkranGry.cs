@@ -102,7 +102,8 @@ namespace RPG
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
             //Chodzacy ludek
-            pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
+            pBGracz.SizeMode = PictureBoxSizeMode.Zoom;
+            pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
             pBGracz.Size = new Size(pBGracz.Image.Width, pBGracz.Image.Height);
 
             //Wczytanie Right Menu Panel
@@ -226,7 +227,7 @@ namespace RPG
         {
             //Metoda Wywolywana w ekranNowaGra
             label1.Text = gra.bohater.Nazwa;
-            pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
+            pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
         }
 
         private void Walka(DialogResult dR, PictureBox pB)
@@ -234,7 +235,7 @@ namespace RPG
             if (dR == DialogResult.OK)
             {
                 panelMapa.Controls.Remove(pB);
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
+                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
                 timerPrzeplywCzasu.Start();
                 lewo = prawo = dol = gora = false;
             }
@@ -318,19 +319,19 @@ namespace RPG
             //Animacje Gifa
             if (prawo == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "prawo.gif");
+                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "prawo.gif");
             }
             if (lewo == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "lewo.gif");
+                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "lewo.gif");
             }
             if (dol == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.gif");
+                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.gif");
             }
             if (gora == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "góra.gif");
+                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "góra.gif");
             }
 
             //Ruch Bohatera i planszy
@@ -426,22 +427,22 @@ namespace RPG
             if (e.KeyCode == Keys.Right)
             {
                 prawo = false;
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "prawo.png");
+                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "prawo.png");
             }
             if (e.KeyCode == Keys.Left)
             {
                 lewo = false;
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "lewo.png");
+                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "lewo.png");
             }
             if (e.KeyCode == Keys.Up)
             {
                 gora = false;
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "góra.png");
+                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "góra.png");
             }
             if (e.KeyCode == Keys.Down)
             {
                 dol = false;
-                pBGracz.Image = new Bitmap(gra.bohater.Obrazek + "dół.png");
+                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
             }
         }
         #endregion

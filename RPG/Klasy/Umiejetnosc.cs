@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    class Umiejetnosc
+    public class Umiejetnosc
     {
         public string nazwa;
 

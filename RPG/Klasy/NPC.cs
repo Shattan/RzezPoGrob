@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    public class Bohater
-    {     
+    public class NPC
+    {
         public string Nazwa { get; set; }
-        public string ObrazekNaMapie { get; set; }
         public string ObrazekMowienia { get; set; }
-        public int Poziom { get; set; }
-        public int Doswiadczenie { get; set; }
-        public int DoswiadczenieDoNastepnegoPoziomu { get; set; }
-        public int Punkty{ get; set; }
-        public int Zloto { get; set; }
+        public string ObrazekNaMapie { get; set; }
+        public string ObrazekWalki { get; set; }
                                
         //statystyki bazowe    
         public int Sila{ get; set; }
@@ -36,17 +32,18 @@ namespace RPG
         public int SzansaNaTrafienie { get; set; }
         public int SzansaNaKrytyczne { get; set; }
 
-        
-        public Bohater()
+        public int SumaPunktow { get; set; }
+        public int Poziom { get; set; }
+        public int ZlotoZaZabicie { get; set; }
+        public int DoswiadczenieZaZabicie { get; set; }
+
+
+        public NPC()
         {
             Nazwa = "Gracz";
+            ObrazekMowienia = "Resources/Grafiki postaci mówiących/Mówca1.png";
             ObrazekNaMapie = "Resources/Grafiki postaci na mapie/2/";
-            ObrazekMowienia = "Resources/Grafiki postaci na mapie/2/dół.png";
-
-            Poziom = 1;
-            Doswiadczenie = 0;
-            Punkty = 10;
-            Zloto = 100;
+            ObrazekWalki = "Resources/Grafiki postaci walczących/szczur.png";
             Sila = 10;
             Zrecznosc = 10;
             Witalnosc = 10;
@@ -63,13 +60,33 @@ namespace RPG
             HP = BazoweHP + Witalnosc*5;
             Energia = BazowaEnergia + Inteligencja*5;
             SzansaNaTrafienie = BazowaSzansaNaTrafienie + Zrecznosc/5;
-            SzansaNaKrytyczne = BazowaSzansaNaKrytyczne + Zrecznosc/5;
+            SzansaNaKrytyczne = BazowaSzansaNaKrytyczne + Zrecznosc / 5;
 
-            DoswiadczenieDoNastepnegoPoziomu = 1000 * Poziom * Poziom;
+            SumaPunktow = Sila + Zrecznosc + Witalnosc + Inteligencja;
+            Poziom = SumaPunktow/4;
+            Random Losowanie = new Random();
+            ZlotoZaZabicie = Losowanie.Next(50,150)/100*SumaPunktow;
+            DoswiadczenieZaZabicie = SumaPunktow;
         }
 
-        public void OdswiezStatystyki()
+        public NPC(String nazwa, String obrazekMowienia, String obrazekNaMapie, String obrazekWalki, int sila, int zrecznosc, int witalnosc, int inteligencja, int bazoweObrazenia, int bazowyPancerz, int bazoweHP, int bazowaEnergia, int bazowaSzansaNaTrafienie, int bazowaSzansaNaKrytyczne)
         {
+            Nazwa = nazwa;
+            ObrazekMowienia = obrazekMowienia;
+            ObrazekNaMapie = obrazekNaMapie;
+            ObrazekWalki = obrazekWalki;
+
+            Sila = sila;
+            Zrecznosc = zrecznosc;
+            Witalnosc = witalnosc;
+            Inteligencja = inteligencja;
+            BazoweObrazenia = bazoweObrazenia;
+            BazowyPancerz = bazowyPancerz;
+            BazoweHP = bazoweHP;
+            BazowaEnergia = bazowaEnergia;
+            BazowaSzansaNaTrafienie = bazowaSzansaNaTrafienie;
+            BazowaSzansaNaKrytyczne = bazowaSzansaNaKrytyczne;
+
             Obrazenia = BazoweObrazenia + Sila / 5;
             Pancerz = BazowyPancerz + Zrecznosc / 5;
             HP = BazoweHP + Witalnosc * 5;
@@ -77,8 +94,11 @@ namespace RPG
             SzansaNaTrafienie = BazowaSzansaNaTrafienie + Zrecznosc / 5;
             SzansaNaKrytyczne = BazowaSzansaNaKrytyczne + Zrecznosc / 5;
 
-            DoswiadczenieDoNastepnegoPoziomu = 1000 * Poziom * Poziom;
+            SumaPunktow = Sila + Zrecznosc + Witalnosc + Inteligencja;
+            Poziom = SumaPunktow / 4;
+            Random Losowanie = new Random();
+            ZlotoZaZabicie = Losowanie.Next(50, 150) / 100 * SumaPunktow;
+            DoswiadczenieZaZabicie = SumaPunktow;
         }
     }
-
 }

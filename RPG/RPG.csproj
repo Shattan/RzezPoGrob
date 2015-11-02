@@ -184,7 +184,7 @@
     <Compile Include="Tla\EkranOpcjeTlo.Designer.cs">
       <DependentUpon>EkranOpcjeTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klasy\Postac.cs" />
+    <Compile Include="Klasy\NPC.cs" />
     <Compile Include="Klasy\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Klasy\Przeszkoda.cs" />
@@ -279,2017 +279,2017 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Grafiki ekwipunku\Ahammer1.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltFlaming.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorChainMail.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltFlaming2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorChainMailAugmented.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorChainMailBar.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltMagicGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorChainMailDouble.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltMagicRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorChainmailGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltPoisoned.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorChainmailGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltPoisoned2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorChainmailMithril.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltPoisoned3.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorChainMailRusty.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltPoisoned4.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorLeatherHard.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorLeatherHardStudded.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorLeatherScaleMail.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Belt\BoltWood.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorLeatherSoft.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Ahammer1.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorLeatherSoftStudded.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorMetalBrigandine.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorMetalLamellar.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorMetalScaleMail.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailAdamantite.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailEnhancedBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe06.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailEnhancedBrown.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe07.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailEnhancedGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe08.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailEnhancedPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe09.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailEnhancedSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe10.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailEnhancedYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe11.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailFull.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe12.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailMithril.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe13.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailPartial.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Axe14.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailRibbed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\AxeBattle.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailStuddedGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\AxeBeaked.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorPlatemailStuddedGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\AxeBroad.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\AxeGlaive.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonBronze.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\AxeGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonDarkGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\AxeGreat.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\AxeHalberd.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\AxeLochaber.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\BallAndChain.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonHellfire.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\BallAndChainGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonLightBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Club01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Club02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonRainbow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Club03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Club04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonWhite.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArmorScalemailDragonYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowFlaming.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowFlaming2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowMagicBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowMagicPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger06.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowPoisoned1.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger07.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowPoisoned2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger08.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowPoisoned3.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger09.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowPoisoned4.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Dagger10.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\DaggerGauche.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Flail01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ArrowWood.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Flail02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Flail03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Flail04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Flail05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Flail06.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Flail07.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe06.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\FlailSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe07.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\FlailTwoHanded.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe08.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\FlailWood.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe09.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Hammer01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe10.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Hammer02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe11.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Hammer03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe12.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Hammer04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe13.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Hammer05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Axe14.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\HammerGiant.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\AxeBattle.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\HammerGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\AxeBeaked.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\HammerLucerne.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\AxeBroad.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\HammerWar.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\AxeGlaive.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Mace.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\AxeGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Mace01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\AxeGreat.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Mace02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\AxeHalberd.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Mace03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\AxeLochaber.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Mace04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BallAndChain.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Mace05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BallAndChainGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Mace06.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Belt1.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Mace07.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Belt2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Mace08.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Belt3.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\MaceGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Belt4.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\MaceMagic.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltFlaming.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\MaceWar.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltFlaming2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\MaceWood.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Nunchaku.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltMagicGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\NunchakuGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltMagicRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Pick.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltPoisoned.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Pick2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltPoisoned2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\PickGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltPoisoned3.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\PickSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltPoisoned4.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Saber.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SabreSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BoltWood.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BootsGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BootsGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BootsLeatherHard.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BootsLeatherSoft.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter06.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BootsMetal.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter07.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter08.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter09.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter10.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter11.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter12.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter13.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow06.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter14.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow07.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter15.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow08.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter16.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow09.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter17.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Bow10.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Scepter18.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BowLong.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sling.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BowShort.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sling01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BrokenDagger.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sling02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BrokenShortSword.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sling03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BrokenStick.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sling04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\BrokenSword.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CandleStand1.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CandleStand2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CapGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CapIron.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CapLeather.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword06.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CapLeatherHard.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword07.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CapMetal.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword08.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CapSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword09.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CloakBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword10.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CloakBrown.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword11.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CloakDarkGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword12.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CloakGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword13.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CloakLightBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword14.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CloakPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword15.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CloakRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword16.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CloakSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword17.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CloakTorn.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword18.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CloakWhite.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword19.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Club01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword20.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Club02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword21.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Club03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword22.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Club04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword23.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CoinsBronze.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword24.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CoinsGold.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword25.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CoinsGoldLarge.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword26.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CoinsGoldMedium.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword27.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CoinsGoldSmall.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Sword28.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CoinsGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordAssasin.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CoinsSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordBroad.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CoinsTeal.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordBrokenJeweled.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Crossbow2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordCutlass.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CrossbowHeavy.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordFalchion.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CrossbowLight.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordFlaming.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CrownGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordKatana.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CrownIron.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordLong.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CrownIronJeweled.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordLong2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CrownJeweled.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordMagical.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CrownOfTheMagi.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordMedieval.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CrystalsBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordMedievalMagical.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CrystalsGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordRapier.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\CrystalsPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordSabre.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordScimitar.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordShort.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordShort2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordShortRounded.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordTulwar.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\SwordTwoHanded.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger06.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\ThrowingStar.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger07.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron1h\Whip.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger08.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger09.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dagger10.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\DaggerGauche.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Dart.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\DartPoisonBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\DartPoisonGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow06.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\DiscoloredSpot.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow07.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Flail01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow08.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Flail02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow09.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Flail03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Bow10.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Flail04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\BowLong.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Flail05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\BowShort.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Flail06.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Crossbow2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Flail07.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\CrossbowHeavy.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FlailSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\CrossbowLight.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FlailTwoHanded.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Lance.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FlailWood.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Pike.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodAle.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Quarterstaff.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodBiscuit.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\QuarterstaffLight.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodBread.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Scythe01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodDrumstick.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Scythe02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodJerky.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\ScytheSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMead.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\ScytheWood.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomBlack.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\ShovelGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\ShovelGolden2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomBrown.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\ShovelSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\ShovelWooden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomGreen2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Spear.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\SpearAwlPike.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomGrey2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomOrange.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomRed2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff06.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomTan.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff07.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomTeal.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff08.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomWhite.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff09.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodMushroomYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff10.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodShank.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff11.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\FoodSlimeMold.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff12.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\GeneralItems.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff13.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\GlovesGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff14.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\GlovesGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff15.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\GlovesLeatherHard.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff16.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\GlovesLeatherSoft.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff17.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\GlovesSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff18.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\GlovesSteelBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff19.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\GlyphGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff20.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\GlyphRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff21.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\GlyphYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff22.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Hammer01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Staff23.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Hammer02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\StaffBronze.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Hammer03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\StaffDarkYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Hammer04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\StaffGold.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Hammer05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\StaffGoldScales.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\HammerGiant.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\StaffGoldStriped.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\HammerGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\StaffRedStriped.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\HammerLucerne.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\StaffSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\HammerWar.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\TridenGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\HatGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Trident.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\HelmHorned.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\TridentGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\IronShot.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Xbow01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Jewels.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Xbow02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\JewelsBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Xbow03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\JewelsRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Xbow04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyAnkh.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\Xbow05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyBone.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Bron2h\xbow06.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyBrass.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\But\BootsGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyCopper.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\But\BootsGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyDagger.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\But\BootsLeatherHard.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyDruid.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\But\BootsLeatherSoft.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyFire.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\But\BootsMetal.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyIce.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CapGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyIron.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CapIron.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyMetal.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CapLeather.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyMoon.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CapLeatherHard.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyRoyal.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CapMetal.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeySkull.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CapSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeySun.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CrownGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyTap.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CrownIron.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\KeyTroll.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CrownIronJeweled.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Lance.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CrownJeweled.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Lantern.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\CrownOfTheMagi.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\LanternBronze.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\HatGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\LightChalice.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Helm\HelmHorned.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\LightOrb.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodAle.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\LightStar.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodBiscuit.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Mace.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodBread.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Mace01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodDrumstick.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Mace02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodJerky.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Mace03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMead.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Mace04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomBlack.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Mace05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Mace06.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomBrown.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Mace07.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Mace08.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomGreen2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\MaceGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\MaceMagic.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomGrey2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\MaceWar.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomOrange.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\MaceWood.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceBronzeJewelRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceGoldJewelBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomRed2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceGoldJewelGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceGoldJewelSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomTan.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceGoldJewelSilver2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomTeal.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceJewelBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomWhite.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceJewelRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodMushroomYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceJewelRed2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodShank.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceJewelRed3.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Jedzenie\FoodSlimeMold.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceJewelSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyAnkh.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceJewelSilver2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyBone.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceJewelSilver3.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyBrass.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceJewelSilver4.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyCopper.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceJewelSilver5.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyDagger.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceSilverJewelGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyDruid.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NecklaceSilverJewelOrange.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyFire.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Nunchaku.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyIce.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\NunchakuGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyIron.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Pebbles.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyMetal.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Pick.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyMoon.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Pick2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyRoyal.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PickGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeySkull.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PickSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeySun.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Pike.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyTap.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionAquamarine.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Klucz\KeyTroll.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionEmerald.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionAquamarine.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionEmerald2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionEmerald.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionLargeGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionEmerald2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionLargeGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionLargeGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionLargeRose.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionLargeGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionLargeTan.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionLargeRose.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionLargeTan2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionLargeTan.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionLargeViolet.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionLargeTan2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionLargeViolet2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionLargeViolet.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionLargeYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionLargeViolet2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionLargeYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionRoundedDarkGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionRoundedTopaz.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionRoundedDarkGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionRoundedTopaz.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortBrown.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortBrown.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortOrange.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortPink.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortOrange.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortPink.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortPurple2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortPurple2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortRose.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortRuby.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortRose.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortRuby.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortTan.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortTan2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortTan.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortViolet.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortTan2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionShortYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortViolet.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionSmallGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionShortYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionSmallPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionSmallGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionSmallRounededBrown.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionSmallPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionSmallTriangularTeal.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionSmallRounededBrown.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionSquareBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionSmallTriangularTeal.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionSquareBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallBlue2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallBrown.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallBlue2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallBrown.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallGreen2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallGreen2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallMagenta.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallMagenta.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallRed2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallRose.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallRed2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallRuby.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallRose.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallRuby.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallSilver2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallSilver3.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallSilver2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallSilver4.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallSilver3.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallTan.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallSilver4.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallWhite.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallTan.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallWhite.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallYellow2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTallYellow3.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallYellow2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTinyBrown.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTallYellow3.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTinyGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTinyBrown.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTriangleGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTinyGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTriangularGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTriangleGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTriangularRuby.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTriangularGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotionTriangularYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTriangularRuby.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\PotteryBroken.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\PotionTriangularYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Quarterstaff.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\VialBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\QuarterstaffLight.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\VialGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingBronze.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\VialOrange.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingGold.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\VialPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingGoldJeweledBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\VialRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingGoldJeweledRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Mikstura\VialYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingGoldJeweledYellowMagic.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceBronzeJewelRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingGoldMagic.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceGoldJewelBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingJewelBlack.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceGoldJewelGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingJewelBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceGoldJewelSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingJeweledRed2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceGoldJewelSilver2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingJewelGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceJewelBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingJewelOrange.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceJewelRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingJewelPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceJewelRed2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingJewelRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceJewelRed3.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingPlainGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceJewelSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingPlainSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceJewelSilver2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceJewelSilver3.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingSilverJeweledBlueMagic.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceJewelSilver4.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingSilverJeweledGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceJewelSilver5.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingSilverJeweledGreenMagic.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceSilverJewelGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingSilverJeweledMagenta.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Naszyjnik\NecklaceSilverJewelOrange.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingSilverJeweledPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorChainMail.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingSilverJeweledRedMagic.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorChainMailAugmented.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingSilverJeweledSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorChainMailBar.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RingSilverJeweledSilver2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorChainMailDouble.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RobeBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorChainmailGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RobeGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorChainmailGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RobePurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorChainmailMithril.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RobeRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorChainMailRusty.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RodBlack.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorLeatherHard.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RodBlackGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorLeatherHardStudded.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RodBronze.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorLeatherScaleMail.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RodBronzeGold.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorLeatherSoft.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RodBronzeGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorLeatherSoftStudded.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RodDarkGrey.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorMetalBrigandine.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RodGoldBronze.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorMetalLamellar.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RodSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorMetalScaleMail.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\RodTeal.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailAdamantite.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Saber.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailEnhancedBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SabreSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailEnhancedBrown.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailEnhancedGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailEnhancedPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailEnhancedSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailEnhancedYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailFull.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter06.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailMithril.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter07.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailPartial.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter08.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailRibbed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter09.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailStuddedGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter10.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorPlatemailStuddedGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter11.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter12.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonBronze.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter13.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonDarkGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter14.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter15.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter16.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter17.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonHellfire.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scepter18.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonLightBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0001.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0002.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonRainbow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0003.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0004.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonWhite.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0005.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\ArmorScalemailDragonYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0006.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\RobeBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0007.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\RobeGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0008.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\RobePurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0009.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pancerz\RobeRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0010.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pas\Belt1.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0011.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pas\Belt2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0012.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pas\Belt3.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0013.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pas\Belt4.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0014.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingBronze.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0015.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingGold.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0016.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingGoldJeweledBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0017.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingGoldJeweledRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0018.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingGoldJeweledYellowMagic.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0019.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingGoldMagic.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0020.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingJewelBlack.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0021.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingJewelBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0022.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingJeweledRed2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0023.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingJewelGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0024.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingJewelOrange.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0025.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingJewelPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0026.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingJewelRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0027.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingPlainGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0028.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingPlainSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0029.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0030.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingSilverJeweledBlueMagic.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0031.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingSilverJeweledGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0032.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingSilverJeweledGreenMagic.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0033.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingSilverJeweledMagenta.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0034.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingSilverJeweledPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0035.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingSilverJeweledRedMagic.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0036.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingSilverJeweledSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0037.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Pierscien\RingSilverJeweledSilver2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0038.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Plaszcz\CloakBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0039.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Plaszcz\CloakBrown.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0040.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Plaszcz\CloakDarkGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0041.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Plaszcz\CloakGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0042.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Plaszcz\CloakLightBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0043.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Plaszcz\CloakPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0044.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Plaszcz\CloakRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0045.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Plaszcz\CloakSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0046.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Plaszcz\CloakTorn.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0047.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Plaszcz\CloakWhite.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0048.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rekawica\GlovesGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0049.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rekawica\GlovesGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0050.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rekawica\GlovesLeatherHard.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0051.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rekawica\GlovesLeatherSoft.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0052.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rekawica\GlovesSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0053.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rekawica\GlovesSteelBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0054.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\RodBlack.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0072.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\RodBlackGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0091.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\RodBronze.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0092.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\RodBronzeGold.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0093.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\RodBronzeGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0094.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\RodDarkGrey.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0095.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\RodGoldBronze.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0096.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\RodSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0097.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\RodTeal.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0098.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand01.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0099.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand02.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0100.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand03.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0101.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand04.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0102.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand05.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0103.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand06.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0104.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand07.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0105.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand08.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0106.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand09.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0107.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand10.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0108.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand11.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0109.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand12.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0110.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand13.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0111.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand14.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0112.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand15.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0113.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand16.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0114.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand17.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0115.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand18.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0116.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\Wand19.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0117.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\WandBronzeGold.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0118.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\WandBronzeRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0119.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\WandBronzeSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0120.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\WandGold.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0121.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\WandSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0122.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\WandSilverBronze.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scroll0123.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\WandSilverGold.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scythe01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\WandSilverTeal.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Scythe02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozdzka\WandTeal.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ScytheSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\BrokenDagger.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ScytheWood.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\BrokenShortSword.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldColored1.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\BrokenStick.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldCrestedCrown.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\BrokenSword.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldCrestedGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\CandleStand1.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldCrestedLion.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\CandleStand2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldCrestedLion2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\DiscoloredSpot.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldCrestedSkull.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\GeneralItems.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldCrestedUnicorn.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\GlyphGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldCrestedUnicorn2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\GlyphRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldCrossed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\GlyphYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldCrossRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\IronShot.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldFourColoredBlueYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\Lantern.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldFourColoredRedYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\LanternBronze.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldFourColoredSilverYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\LightChalice.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldKiteRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\LightOrb.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldSmallSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\LightStar.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldSteelRoundLarge.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\Pebbles.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldStripeRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\PotteryBroken.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldTriangular.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\SpikeSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldWoodenRound.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rozne\Torch.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldWoodLarge.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rzutka\Dart.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShieldWoodSmall.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rzutka\DartPoisonBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShovelGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Rzutka\DartPoisonGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShovelGolden2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowFlaming.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShovelSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowFlaming2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ShovelWooden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SkeletonBrokenBone.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowMagicBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SkeletonDog.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowMagicPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SkeletonHumanLarge.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowPoisoned1.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SkeletonHumanMedium.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowPoisoned2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SkeletonHumanMedium2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowPoisoned3.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SkeletonHumanSmall.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowPoisoned4.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SkeletonRat.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SkeletonSkull.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sling.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Strzala\ArrowWood.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sling01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Szkielety\SkeletonBrokenBone.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sling02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Szkielety\SkeletonDog.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sling03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Szkielety\SkeletonHumanLarge.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sling04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Szkielety\SkeletonHumanMedium.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Spear.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Szkielety\SkeletonHumanMedium2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SpearAwlPike.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Szkielety\SkeletonHumanSmall.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SpikeSteel.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Szkielety\SkeletonRat.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Szkielety\SkeletonSkull.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldColored1.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldCrestedCrown.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldCrestedGolden.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldCrestedLion.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff06.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldCrestedLion2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff07.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldCrestedSkull.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff08.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldCrestedUnicorn.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff09.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldCrestedUnicorn2.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff10.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldCrossed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff11.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldCrossRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff12.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldFourColoredBlueYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff13.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldFourColoredRedYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff14.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldFourColoredSilverYellow.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff15.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldKiteRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff16.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldSmallSteel.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff17.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldSteelRoundLarge.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff18.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldStripeRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff19.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldTriangular.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff20.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldWoodenRound.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff21.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldWoodLarge.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff22.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Tarcza\ShieldWoodSmall.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Staff23.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CoinsBronze.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\StaffBronze.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CoinsGold.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\StaffDarkYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CoinsGoldLarge.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\StaffGold.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CoinsGoldMedium.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\StaffGoldScales.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CoinsGoldSmall.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\StaffGoldStriped.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CoinsGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\StaffRedStriped.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CoinsSilver.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\StaffSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CoinsTeal.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CrystalsBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CrystalsGreen.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\CrystalsPurple.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\Jewels.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\JewelsBlue.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword06.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zloto i klejnoty\JewelsRed.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword07.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0001.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword08.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0002.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword09.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0003.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword10.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0004.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword11.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0005.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword12.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0006.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword13.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0007.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword14.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0008.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword15.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0009.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword16.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0010.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword17.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0011.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword18.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0012.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword19.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0013.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword20.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0014.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword21.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0015.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword22.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0016.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword23.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0017.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword24.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0018.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword25.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0019.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword26.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0020.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword27.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0021.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Sword28.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0022.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordAssasin.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0023.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordBroad.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0024.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordBrokenJeweled.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0025.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordCutlass.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0026.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordFalchion.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0027.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordFlaming.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0028.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordKatana.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0029.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordLong.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0030.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordLong2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0031.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordMagical.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0032.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordMedieval.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0033.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordMedievalMagical.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0034.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordRapier.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0035.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordSabre.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0036.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordScimitar.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0037.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordShort.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0038.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordShort2.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0039.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordShortRounded.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0040.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordTulwar.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0041.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\SwordTwoHanded.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0042.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\ThrowingStar.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0043.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Torch.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0044.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\TridenGolden.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0045.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Trident.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0046.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\TridentGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0047.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\VialBlue.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0048.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\VialGreen.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0049.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\VialOrange.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0050.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\VialPurple.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0051.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\VialRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0052.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\VialYellow.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0053.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0054.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0072.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0091.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0092.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0093.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand06.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0094.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand07.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0095.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand08.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0096.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand09.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0097.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand10.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0098.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand11.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0099.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand12.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0100.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand13.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0101.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand14.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0102.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand15.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0103.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand16.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0104.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand17.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0105.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand18.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0106.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Wand19.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0107.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\WandBronzeGold.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0108.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\WandBronzeRed.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0109.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\WandBronzeSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0110.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\WandGold.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0111.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\WandSilver.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0112.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\WandSilverBronze.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0113.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\WandSilverGold.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0114.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\WandSilverTeal.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0115.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\WandTeal.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0116.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Whip.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0117.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Xbow01.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0118.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Xbow02.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0119.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Xbow03.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0120.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Xbow04.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0121.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\Xbow05.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0122.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki ekwipunku\xbow06.PNG">
+    <Content Include="Resources\Grafiki ekwipunku\Zwoj\Scroll0123.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Przycisk następny kliknięty.png">
@@ -3808,7 +3808,7 @@
     <Content Include="Resources\Grafiki postaci walczących\szaman.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki postaci walczących\Szczur.png">
+    <Content Include="Resources\Grafiki postaci walczących\szczur.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki postaci walczących\szkielet.png">
