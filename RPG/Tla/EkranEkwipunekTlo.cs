@@ -21,11 +21,22 @@ namespace RPG
         public EkranEkwipunekTlo(EkranEkwipunek ekranEkwipunek)
         {
             InitializeComponent();
-            this.ekranEkwipunek = ekranEkwipunek;
+            RozmiescElementy();
+            KolorujElementy();
 
+            this.ekranEkwipunek = ekranEkwipunek;
+        }
+
+        #region Metody
+        void RozmiescElementy()
+        {
             Program.DopasujRozmiarFormyDoEkranu(this);
+        }
+        void KolorujElementy()
+        {
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Karta postaci.png");
         }
+        #endregion
 
         #region Zdarzenia
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)

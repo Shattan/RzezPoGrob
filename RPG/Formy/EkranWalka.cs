@@ -20,9 +20,10 @@ namespace RPG
 
         public EkranWalka(EkranGry ekranGry)
         {
-            this.ekranGry = ekranGry;
             InitializeComponent();
             RozmiescElementy();
+
+            this.ekranGry = ekranGry;
         }
 
         #region Metody
@@ -33,7 +34,6 @@ namespace RPG
 
             //Ustawienie przycisków
             PictureBoxUcieczka.Size = new Size(Width/3,30);
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka,"Resources/Grafiki menu/Przykładowy przycisk.png");
 
             foreach (PictureBox przycisk in FlowLayoutPanelWyboru.Controls)
             {
@@ -69,9 +69,14 @@ namespace RPG
             LabelInformacje.Location = new Point(Width-LabelInformacje.Width, Height - LabelInformacje.Height);
             LabelInformacje.Text = "Rozpoczęłą się walka!";
 
+
+        }
+        void KolorujElementy()
+        {
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka, "Resources/Grafiki menu/Przykładowy przycisk.png");
         }
         #endregion
 

@@ -21,14 +21,18 @@ namespace RPG
         public EkranEkranDziennikZadanTlo(EkranDziennikZadan ekranDziennikZadan)
         {
             InitializeComponent();
-            this.ekranDziennikZadan = ekranDziennikZadan;
+            RozmiescElementy();
+            KolorujElementy();
 
-            Program.DopasujRozmiarFormyDoEkranu(this);
-            UstawGrafike();
+            this.ekranDziennikZadan = ekranDziennikZadan;
         }
 
         #region Metody
-        void UstawGrafike()
+        void RozmiescElementy()
+        {
+            Program.DopasujRozmiarFormyDoEkranu(this);
+        }
+        void KolorujElementy()
         {
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Dziennik zadań.png");
         }

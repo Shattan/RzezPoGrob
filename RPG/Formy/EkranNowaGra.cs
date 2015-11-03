@@ -143,6 +143,7 @@ namespace RPG
         void DodajSkinyPostaci()
         {
             ListaPostaci.Add(ekranGry.gra.bohater.ObrazekNaMapie);
+            
             for (int i = 0; i <= 55; i++)
             {
                 ListaPostaci.Add("Resources/Grafiki postaci na mapie/"+i+"/");

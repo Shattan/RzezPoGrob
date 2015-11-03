@@ -39,15 +39,15 @@ namespace RPG
         public EkranOpcje(EkranGlowny ekranGlowny)
         {
             InitializeComponent();
+            RozmiescElementy();
+            KolorujElementy();
+
             this.ekranGlowny = ekranGlowny;
 
-            //Inicjalizacje MediaPlayerow z tablicy
+            //Inicjalizacje MediaPlayery w tablicy
             for (int i = 0; i < odtwarzaczEfektowSpecjalnych.Count(); i++)
                 odtwarzaczEfektowSpecjalnych[i] = new MediaPlayer();
 
-            //UstawNaEkranie
-            PictureBoxOdrzuc.Image = new Bitmap("Resources/Grafiki menu/Odrzuć opcje.png");
-            PictureBoxZapisz.Image = new Bitmap("Resources/Grafiki menu/Zapisz opcje.png");
 
             //Ustawienia dzwieku
             odtwarzaczMuzyki.Volume = obecnyPoziomGlosnosciMuzyki;
@@ -55,6 +55,15 @@ namespace RPG
         }
 
         #region Metody
+        void RozmiescElementy()
+        {
+        }
+        void KolorujElementy()
+        {
+            //UstawNaEkranie
+            PictureBoxOdrzuc.Image = new Bitmap("Resources/Grafiki menu/Odrzuć opcje.png");
+            PictureBoxZapisz.Image = new Bitmap("Resources/Grafiki menu/Zapisz opcje.png");
+        }
         public void OdtworzDzwiek(MediaPlayer odtwarzacz, String sciezka)
         {
             odtwarzacz.Open(new Uri(sciezka, UriKind.Relative));
