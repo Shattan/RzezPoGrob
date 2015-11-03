@@ -78,12 +78,7 @@ namespace RPG
             UstawElementyNaEkranie();
 
 #if DEBUG
-            //tymczasowe elementy mapy, na czas debugowania
-            Blok1.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l3_wall_deco79.png");
-            Blok2.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l1_bridgestonensin.png");
-            AkcjaWielkiMag.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/31/dół.png");
-            AkcjaStrazniczkaLasu.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/23/dół.png");
-            AkcjaStrazniczkaGor.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/29/dół.png");
+
 #endif
 
             //Pamietaj! 
@@ -101,10 +96,7 @@ namespace RPG
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
-            //Chodzacy ludek
-            pBGracz.SizeMode = PictureBoxSizeMode.Zoom;
-            pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
-            pBGracz.Size = new Size(pBGracz.Image.Width, pBGracz.Image.Height);
+
 
             //Wczytanie Right Menu Panel
             List<Image> ListaObrazkow = new List<Image>();
@@ -143,99 +135,22 @@ namespace RPG
             //praweMenu[4].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
 
 
-            //Automatyczne Tworzenie obrzeża Krainy
-            List<PictureBox> ObzezaKariny = new List<PictureBox>();
-            int SzerokoscBokuPrzeszkody = 54;
-            int WysokoscBokuPrzeszkody = 54;
-            for (int i = 0; i < panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
-            {
-                PictureBox przeszkoda = new PictureBox();
-                przeszkoda.Name = "BlokPrzeszkodaDol" + i;
-                
-                przeszkoda.Location = new Point((i-1) * SzerokoscBokuPrzeszkody, panelMapa.Height - WysokoscBokuPrzeszkody);
-                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
-                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
-                //ObzezaKariny.Add(przeszkoda);
-                //panelMapa.Controls.Add(ObzezaKariny[i]);
-                panelMapa.Controls.Add(przeszkoda);
-            }
-            for (int i = 0; i < panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
-            {
-                PictureBox przeszkoda = new PictureBox();
-                przeszkoda.Name = "BlokPrzeszkodGora" + i;
-
-                przeszkoda.Location = new Point((i - 1) * SzerokoscBokuPrzeszkody, 0);
-                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
-                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
-                //ObzezaKariny.Add(przeszkoda);
-                //panelMapa.Controls.Add(ObzezaKariny[i]);
-                panelMapa.Controls.Add(przeszkoda);
-            }
-            for (int i = 0; i < panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
-            {
-                PictureBox przeszkoda = new PictureBox();
-                przeszkoda.Name = "BlokPrzeszkodaLewa" + i;
-
-                przeszkoda.Location = new Point(0, i * WysokoscBokuPrzeszkody);
-                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
-                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
-                //ObzezaKariny.Add(przeszkoda);
-                //panelMapa.Controls.Add(ObzezaKariny[i]);
-                panelMapa.Controls.Add(przeszkoda);
-
-            }
-            for (int i = 0; i < panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
-            {
-                PictureBox przeszkoda = new PictureBox();
-                przeszkoda.Name = "BlokPrzeszkodaPrawa" + i;
-
-                przeszkoda.Location = new Point(panelMapa.Width - SzerokoscBokuPrzeszkody, i * WysokoscBokuPrzeszkody);
-                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
-                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
-                //ObzezaKariny.Add(przeszkoda);
-                //panelMapa.Controls.Add(ObzezaKariny[i]);
-                panelMapa.Controls.Add(przeszkoda);
-
-            }
-
-            //KOD PRZYKŁADOWY:
-            //Dla każdego elementy zaczynającego się od nazwy "BlokKraniec" dodaj grafike "l2_terrain066.png".
-            //foreach (PictureBox obiekt in panelMapa.Controls.OfType<PictureBox>().Cast<Control>().ToList())
-            //{
-            //    if (obiekt.Name.StartsWith("BlokKraniec"))
-            //    {
-            //        obiekt.Image = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
-            //    }
-            //}
-
-            //Do usniecia? 
-            //using (Graphics grafikaGracza = Graphics.FromImage(PictureBoxMgla.Image))
-            //{
-            //    //grafikaGracza.DrawImage(new Bitmap(gra.bohater.Obrazek + "lewo.gif"), PictureBoxMgla.Width / 2, PictureBoxMgla.Height / 2);
-            //}
+          
         }
 
         public void WczytajNowaGre()
         {
             //Metoda Wywolywana w ekranNowaGra
             label1.Text = gra.bohater.Nazwa;
-            pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
+            ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
         }
 
         private void Walka(DialogResult dR, PictureBox pB)
         {
             if (dR == DialogResult.OK)
             {
-                panelMapa.Controls.Remove(pB);
-                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
+                ekranGlowny.ekranGryTloObiekty.panelMapa.Controls.Remove(pB);
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
                 timerPrzeplywCzasu.Start();
                 lewo = prawo = dol = gora = false;
             }
@@ -243,7 +158,7 @@ namespace RPG
             {
 
                 //Co robimy jak gracz przegral?
-                pBGracz.Visible = false;
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Visible = false;
                 //Co robimy jak gracz przegral? 
                 //Wylaczamy sterowanie gracza, 
                 //na dole pojawia się napis "Porażka", 
@@ -265,11 +180,11 @@ namespace RPG
             const int czasOdnawiania = 5; //Gifa
 
             //Sprawdz czy ktorys z obiektow jest w innym
-            foreach (PictureBox obiekt in panelMapa.Controls.OfType<PictureBox>().Cast<Control>().ToList())
+            foreach (PictureBox obiekt in ekranGlowny.ekranGryTloObiekty.panelMapa.Controls.OfType<PictureBox>().Cast<Control>().ToList())
             {
-                if (obiekt.Name != pBGracz.Name)
+                if (obiekt.Name != ekranGlowny.ekranGryTloObiekty.pBGracz.Name)
                 {
-                    if (pBGracz.Bounds.IntersectsWith(obiekt.Bounds))
+                    if (ekranGlowny.ekranGryTloObiekty.pBGracz.Bounds.IntersectsWith(obiekt.Bounds))
                     {
                         if (obiekt.Name.StartsWith("Blok"))
                         {
@@ -319,58 +234,149 @@ namespace RPG
             //Animacje Gifa
             if (prawo == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "prawo.gif");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "prawo.gif");
             }
             if (lewo == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "lewo.gif");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "lewo.gif");
             }
             if (dol == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.gif");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.gif");
             }
             if (gora == true && index % czasOdnawiania == 0)
             {
-                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "góra.gif");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "góra.gif");
             }
 
             //Ruch Bohatera i planszy
             if (prawo == true)
             {
-                pBGracz.Left += 5;
-                panelMapa.Left -= 5;
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Left += 5;
+                ekranGlowny.ekranGryTloObiekty.panelMapa.Left -= 5;
                 ekranGlowny.ekranGryTloMapa.RuchPowierzchniMapy((int)Ruch.Prawo, 5);
             }
 
             if (lewo == true)
             {
-                pBGracz.Left -= 5;
-                panelMapa.Left += 5;
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Left -= 5;
+                ekranGlowny.ekranGryTloObiekty.panelMapa.Left += 5;
                 ekranGlowny.ekranGryTloMapa.RuchPowierzchniMapy((int)Ruch.Lewo, 5);
             }
 
             if (gora == true)
             {
-                pBGracz.Top -= 5;
-                panelMapa.Top += 5;
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Top -= 5;
+                ekranGlowny.ekranGryTloObiekty.panelMapa.Top += 5;
                 ekranGlowny.ekranGryTloMapa.RuchPowierzchniMapy((int)Ruch.Gora, 5);
             }
 
             if (dol == true)
             {
-                pBGracz.Top += 5;
-                panelMapa.Top -= 5;
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Top += 5;
+                ekranGlowny.ekranGryTloObiekty.panelMapa.Top -= 5;
                 ekranGlowny.ekranGryTloMapa.RuchPowierzchniMapy((int)Ruch.Dol, 5);
             }
         }
 
         private void EkranGry_Load(object sender, EventArgs e)
         {
+            //Chodzacy ludek
+            ekranGlowny.ekranGryTloObiekty.pBGracz.SizeMode = PictureBoxSizeMode.Zoom;
+            ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
+            ekranGlowny.ekranGryTloObiekty.pBGracz.Size = new Size(ekranGlowny.ekranGryTloObiekty.pBGracz.Image.Width, ekranGlowny.ekranGryTloObiekty.pBGracz.Image.Height);
+
             const int wielkoscPrzyciskow = 90;
             const int odlegloscMiedzyPrzyciskami = 20;
             int iloscPrzyciskow = 5;
 
             ekranGlowny.ekranGryTloUI.UstawPanelPrawy(new Point(Screen.PrimaryScreen.Bounds.Width - wielkoscPrzyciskow, Screen.PrimaryScreen.Bounds.Y), new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow), "Resources/Grafiki menu/Panel pod przyciski.png");
+
+            //Automatyczne Tworzenie obrzeża Krainy
+            List<PictureBox> ObzezaKariny = new List<PictureBox>();
+            int SzerokoscBokuPrzeszkody = 54;
+            int WysokoscBokuPrzeszkody = 54;
+            for (int i = 0; i < ekranGlowny.ekranGryTloObiekty.panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
+            {
+                PictureBox przeszkoda = new PictureBox();
+                przeszkoda.Name = "BlokPrzeszkodaDol" + i;
+
+                przeszkoda.Location = new Point((i - 1) * SzerokoscBokuPrzeszkody, ekranGlowny.ekranGryTloObiekty.panelMapa.Height - WysokoscBokuPrzeszkody);
+                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
+                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
+                //ObzezaKariny.Add(przeszkoda);
+                //panelMapa.Controls.Add(ObzezaKariny[i]);
+                ekranGlowny.ekranGryTloObiekty.panelMapa.Controls.Add(przeszkoda);
+            }
+            for (int i = 0; i < ekranGlowny.ekranGryTloObiekty.panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
+            {
+                PictureBox przeszkoda = new PictureBox();
+                przeszkoda.Name = "BlokPrzeszkodGora" + i;
+
+                przeszkoda.Location = new Point((i - 1) * SzerokoscBokuPrzeszkody, 0);
+                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
+                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
+                //ObzezaKariny.Add(przeszkoda);
+                //panelMapa.Controls.Add(ObzezaKariny[i]);
+                ekranGlowny.ekranGryTloObiekty.panelMapa.Controls.Add(przeszkoda);
+            }
+            for (int i = 0; i < ekranGlowny.ekranGryTloObiekty.panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
+            {
+                PictureBox przeszkoda = new PictureBox();
+                przeszkoda.Name = "BlokPrzeszkodaLewa" + i;
+
+                przeszkoda.Location = new Point(0, i * WysokoscBokuPrzeszkody);
+                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
+                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
+                //ObzezaKariny.Add(przeszkoda);
+                //panelMapa.Controls.Add(ObzezaKariny[i]);
+                ekranGlowny.ekranGryTloObiekty.panelMapa.Controls.Add(przeszkoda);
+
+            }
+            for (int i = 0; i < ekranGlowny.ekranGryTloObiekty.panelMapa.Width / SzerokoscBokuPrzeszkody; i++)
+            {
+                PictureBox przeszkoda = new PictureBox();
+                przeszkoda.Name = "BlokPrzeszkodaPrawa" + i;
+
+                przeszkoda.Location = new Point(ekranGlowny.ekranGryTloObiekty.panelMapa.Width - SzerokoscBokuPrzeszkody, i * WysokoscBokuPrzeszkody);
+                przeszkoda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+                przeszkoda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                przeszkoda.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
+                przeszkoda.Size = new System.Drawing.Size(SzerokoscBokuPrzeszkody, WysokoscBokuPrzeszkody);
+                //ObzezaKariny.Add(przeszkoda);
+                //panelMapa.Controls.Add(ObzezaKariny[i]);
+                ekranGlowny.ekranGryTloObiekty.panelMapa.Controls.Add(przeszkoda);
+
+            }
+
+            //tymczasowe elementy mapy, na czas debugowania
+            ekranGlowny.ekranGryTloObiekty.Blok1.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l3_wall_deco79.png");
+            ekranGlowny.ekranGryTloObiekty.Blok2.BackgroundImage = new Bitmap("Resources/Grafiki przeszkód/l1_bridgestonensin.png");
+            ekranGlowny.ekranGryTloObiekty.AkcjaWielkiMag.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/31/dół.png");
+            ekranGlowny.ekranGryTloObiekty.AkcjaStrazniczkaLasu.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/23/dół.png");
+            ekranGlowny.ekranGryTloObiekty.AkcjaStrazniczkaGor.BackgroundImage = new Bitmap("Resources/Grafiki postaci na mapie/29/dół.png");
+
+            //KOD PRZYKŁADOWY:
+            //Dla każdego elementy zaczynającego się od nazwy "BlokKraniec" dodaj grafike "l2_terrain066.png".
+            //foreach (PictureBox obiekt in panelMapa.Controls.OfType<PictureBox>().Cast<Control>().ToList())
+            //{
+            //    if (obiekt.Name.StartsWith("BlokKraniec"))
+            //    {
+            //        obiekt.Image = new Bitmap("Resources/Grafiki przeszkód/l2_terrain066.png");
+            //    }
+            //}
+
+            //Do usniecia? 
+            //using (Graphics grafikaGracza = Graphics.FromImage(PictureBoxMgla.Image))
+            //{
+            //    //grafikaGracza.DrawImage(new Bitmap(gra.bohater.Obrazek + "lewo.gif"), PictureBoxMgla.Width / 2, PictureBoxMgla.Height / 2);
+            //}
         }
 
         private void PictureBoxPraweMenuEkwipunek_MouseClick(object sender, EventArgs e)
@@ -427,22 +433,22 @@ namespace RPG
             if (e.KeyCode == Keys.Right)
             {
                 prawo = false;
-                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "prawo.png");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "prawo.png");
             }
             if (e.KeyCode == Keys.Left)
             {
                 lewo = false;
-                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "lewo.png");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "lewo.png");
             }
             if (e.KeyCode == Keys.Up)
             {
                 gora = false;
-                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "góra.png");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "góra.png");
             }
             if (e.KeyCode == Keys.Down)
             {
                 dol = false;
-                pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
             }
         }
         #endregion
