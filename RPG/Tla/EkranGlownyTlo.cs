@@ -22,14 +22,24 @@ namespace RPG
         public EkranGlownyTlo()
         {
             InitializeComponent();
-            ekranGlowny = new EkranGlowny(this);
+            RozmiescElementy();
+            KolorujElementy();
 
-            Width = Screen.PrimaryScreen.Bounds.Width;
-            Height = Screen.PrimaryScreen.Bounds.Height;
-            
-            BackColor = System.Drawing.Color.Black;
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło menu.png");        
+            ekranGlowny = new EkranGlowny(this);
         }
+
+        #region Metody
+        void RozmiescElementy()
+        {
+            Program.DopasujRozmiarFormyDoEkranu(this);
+        }
+
+        void KolorujElementy()
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło menu.png"); 
+            BackColor = System.Drawing.Color.Black;      
+        }
+        #endregion
 
         #region Zdarzenia
         private void EkranGlownyTlo_Shown(object sender, EventArgs e)

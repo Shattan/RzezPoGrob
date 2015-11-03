@@ -156,7 +156,7 @@
             // PictureBoxBron
             // 
             this.PictureBoxBron.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.PictureBoxBron.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureBoxBron.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PictureBoxBron.Location = new System.Drawing.Point(429, 207);
             this.PictureBoxBron.Name = "PictureBoxBron";
             this.PictureBoxBron.Size = new System.Drawing.Size(34, 32);
@@ -167,7 +167,7 @@
             // PictureBoxTarcza
             // 
             this.PictureBoxTarcza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.PictureBoxTarcza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureBoxTarcza.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PictureBoxTarcza.Location = new System.Drawing.Point(530, 179);
             this.PictureBoxTarcza.Name = "PictureBoxTarcza";
             this.PictureBoxTarcza.Size = new System.Drawing.Size(32, 32);
@@ -178,7 +178,7 @@
             // PictureBoxPancerz
             // 
             this.PictureBoxPancerz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.PictureBoxPancerz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PictureBoxPancerz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PictureBoxPancerz.Location = new System.Drawing.Point(478, 179);
             this.PictureBoxPancerz.Name = "PictureBoxPancerz";
             this.PictureBoxPancerz.Size = new System.Drawing.Size(31, 32);
@@ -470,7 +470,7 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Magenta;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(5)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.pictureBoxWybrany);
             this.Controls.Add(this.PictureBoxSilaMinus);
@@ -493,7 +493,7 @@
             this.Name = "EkranEkwipunek";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EkranEkwipunek";
-            this.TransparencyKey = System.Drawing.Color.Magenta;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(5)))), ((int)(((byte)(0)))));
             this.Load += new System.EventHandler(this.EkranEkwipunek_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

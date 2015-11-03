@@ -73,9 +73,9 @@
             this.PictureBoxOpcje.Size = new System.Drawing.Size(133, 101);
             this.PictureBoxOpcje.TabIndex = 1;
             this.PictureBoxOpcje.TabStop = false;
-            this.PictureBoxOpcje.Click += new System.EventHandler(this.PictureBoxEkranOpcje_Click);
-            this.PictureBoxOpcje.MouseEnter += new System.EventHandler(this.PictureBoxEkranOpcje_MouseEnter);
-            this.PictureBoxOpcje.MouseLeave += new System.EventHandler(this.PictureBoxEkranOpcje_MouseLeave);
+            this.PictureBoxOpcje.Click += new System.EventHandler(this.PictureBoxOpcje_Click);
+            this.PictureBoxOpcje.MouseEnter += new System.EventHandler(this.PictureBoxOpcje_MouseEnter);
+            this.PictureBoxOpcje.MouseLeave += new System.EventHandler(this.PictureBoxOpcje_MouseLeave);
             // 
             // PictureBoxWyjdz
             // 

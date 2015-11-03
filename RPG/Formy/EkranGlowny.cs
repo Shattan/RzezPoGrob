@@ -45,6 +45,8 @@ namespace RPG
         public EkranGlowny(EkranGlownyTlo ekranGlownyTlo)
         {
             InitializeComponent();
+            RozmiescElementy();
+            KolorujElementy();
 
             //Inicjalizacja Form
             this.ekranGlownyTlo = ekranGlownyTlo;
@@ -54,10 +56,53 @@ namespace RPG
             //Dzwiek zakmentowany ze wzgledow ciaglego debugowania
             //ekranOpcje.OdtworzDzwiek(ekranOpcje.odtwarzaczMuzyki, "Resources/Dźwięki/VC-HOfaH.wav");
 
-            UstawElementyNaEkranie();
         }
 
         #region Metody
+        void RozmiescElementy()
+        {
+            //Zmaksymalizowanie okienka gry
+            Program.DopasujRozmiarFormyDoEkranu(this);
+
+            //Ustawienia dolnego panelu z informacjami
+            LabelInformacje.Size = new Size(Width, Height / 8);
+            LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
+            LabelInformacje.Text = "";
+
+            //Ustawienie wielkości przycisków
+            int szerokoscPrzyciskow = Width * 7 / 100;
+            int wysokoscPrzyciskow = Height * 15 / 100;
+            PictureBoxWyjdz.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
+            PictureBoxOpcje.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
+            PictureBoxWczytaj.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
+            PictureBoxRuszaj.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
+
+            //Ustawienie pozycji przycisków
+            const int odlegloscMiedzyPrzyciskami = 15;
+            const int podniesieniePrzyciskow = 10;
+            PictureBoxWyjdz.Location = new Point(odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
+            PictureBoxOpcje.Location = new Point(PictureBoxWyjdz.Location.X + PictureBoxOpcje.Width + odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
+            PictureBoxWczytaj.Location = new Point(PictureBoxOpcje.Location.X + PictureBoxWczytaj.Width + odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
+            PictureBoxRuszaj.Location = new Point(PictureBoxWczytaj.Location.X + PictureBoxRuszaj.Width + odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
+
+            //Przeniesienie przyciskow na prawa strone:
+            //PictureBoxWyjdz.Location = new Point(Width - PictureBoxOpcje.Width - 10, -10);
+            //PictureBoxOpcje.Location = new Point(PictureBoxWyjdz.Location.X - PictureBoxRuszaj.Width - odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
+            //PictureBoxWczytaj.Location = new Point(PictureBoxOpcje.Location.X - PictureBoxRuszaj.Width - odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
+            //PictureBoxRuszaj.Location = new Point(PictureBoxWczytaj.Location.X - PictureBoxRuszaj.Width - odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
+        }
+        void KolorujElementy()
+        {
+            //Ustawienie ikony w trybie okienkowym
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
+
+            //Obrazy dla przycisków
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdz, "Resources/Grafiki menu/Wiej.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxOpcje, "Resources/Grafiki menu/Opcje.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWczytaj, "Resources/Grafiki menu/Wczytaj.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxRuszaj, "Resources/Grafiki menu/Do boju.png");
+        }
+
         void PrzeskalujPrzycisk(bool powiekszanie, PictureBox przycisk, String obrazPrzycisku)
         {
             int powiekszenie;
@@ -73,45 +118,10 @@ namespace RPG
             przycisk.Location = new Point(przycisk.Location.X - powiekszenie / 2, przycisk.Location.Y - powiekszenie / 2);
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(przycisk, obrazPrzycisku);
         }
-
-        void UstawElementyNaEkranie()
-        {
-            //Ustawienia okienka gry
-            Program.DopasujRozmiarFormyDoEkranu(this);
-
-            //Ustawienie ikony w trybie okienkowym
-            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
-
-            //Ustawienia dolnego panelu z informacjami
-            LabelInformacje.Size = new Size(Width, Height / 8);
-            LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
-            LabelInformacje.Text = "";
-
-            //Ustawienie przycisków
-            int szerokoscPrzyciskow = Screen.PrimaryScreen.Bounds.Width * 7 / 100;
-            int wysokoscPrzyciskow = Screen.PrimaryScreen.Bounds.Height * 15 / 100;
-            PictureBoxWyjdz.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
-            PictureBoxOpcje.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
-            PictureBoxWczytaj.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
-            PictureBoxRuszaj.Size = new Size(szerokoscPrzyciskow, wysokoscPrzyciskow);
-            const int odlegloscMiedzyPrzyciskami = 15;
-            const int podniesieniePrzyciskow = 10;
-            PictureBoxWyjdz.Location = new Point(odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
-            PictureBoxOpcje.Location = new Point(PictureBoxWyjdz.Location.X + PictureBoxOpcje.Width + odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
-            PictureBoxWczytaj.Location = new Point(PictureBoxOpcje.Location.X + PictureBoxWczytaj.Width + odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
-            PictureBoxRuszaj.Location = new Point(PictureBoxWczytaj.Location.X + PictureBoxRuszaj.Width + odlegloscMiedzyPrzyciskami, -podniesieniePrzyciskow);
-            //Przeniesienie przyciskow na prawa strone:
-            //PictureBoxWczytaj.Location = new Point(Screen.PrimaryScreen.Bounds.Width -PictureBoxEkranOpcje.Width- 10, -10);
-            //PictureBoxRuszaj.Location = new Point(PictureBoxWczytaj.Location.X - PictureBoxRuszaj.Width - 10, -10);
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdz, "Resources/Grafiki menu/Wiej.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxOpcje, "Resources/Grafiki menu/Opcje.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWczytaj, "Resources/Grafiki menu/Wczytaj.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxRuszaj, "Resources/Grafiki menu/Do boju.png");
-        }
         #endregion
      
         #region Zdarzenia
-        private void PictureBoxEkranOpcje_Click(object sender, EventArgs e)
+        private void PictureBoxOpcje_Click(object sender, EventArgs e)
         {
             ekranEkranOpcjeTlo.ShowDialog();
         }
@@ -173,14 +183,14 @@ namespace RPG
             PrzeskalujPrzycisk(false, PictureBoxWczytaj, "Resources/Grafiki menu/Wczytaj.png");
         }
 
-        private void PictureBoxEkranOpcje_MouseEnter(object sender, EventArgs e)
+        private void PictureBoxOpcje_MouseEnter(object sender, EventArgs e)
         {
             ekranOpcje.OdtworzEfekt(3, "Resources/Dźwięki/szyld.wav");
             LabelInformacje.Text = "Dostosuj grę do swoich potrzeb.";
             PrzeskalujPrzycisk(true, PictureBoxOpcje, "Resources/Grafiki menu/Opcje.png");
         }
 
-        private void PictureBoxEkranOpcje_MouseLeave(object sender, EventArgs e)
+        private void PictureBoxOpcje_MouseLeave(object sender, EventArgs e)
         {
             LabelInformacje.Text = "Witaj! Rozgość się.";
             PrzeskalujPrzycisk(false, PictureBoxOpcje, "Resources/Grafiki menu/Opcje.png");
@@ -199,7 +209,9 @@ namespace RPG
             PrzeskalujPrzycisk(false, PictureBoxRuszaj, "Resources/Grafiki menu/Do boju.png");
         }
         #endregion
+
         #endregion
+
     }
 }
 

@@ -38,30 +38,30 @@ namespace RPG
 
 #if DEBUG
             //Obrazki Tymaczasowe
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox1, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox2, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainMailDouble.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox3, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailGolden.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox4, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailGreen.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox5, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox6, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox7, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox8, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainMailDouble.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox9, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailGolden.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox10, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailGreen.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox11, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox12, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox13, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox14, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainMailDouble.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox15, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailGolden.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox16, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailGreen.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainMail.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainMailDouble.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox1, "Resources/Grafiki ekwipunku/bron2hDługiMiecz.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox2, "Resources/Grafiki ekwipunku/bron2hDługiMieczUmarłegoRycerza.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox3, "Resources/Grafiki ekwipunku/bron2hHalabarda.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox4, "Resources/Grafiki ekwipunku/bron2hWłócznia.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox5, "Resources/Grafiki ekwipunku/bron2hKosaPowiewŚmierci.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox6, "Resources/Grafiki ekwipunku/bron2hKosturBiałegoMaga.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox7, "Resources/Grafiki ekwipunku/bron2hKosturCienia.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox8, "Resources/Grafiki ekwipunku/bron2hKosturNowicjusza.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox9, "Resources/Grafiki ekwipunku/bron2hKosturOgnia.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox10, "Resources/Grafiki ekwipunku/bron2hKosturŚmierci.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox11, "Resources/Grafiki ekwipunku/bron2hKosturŚwiatła.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox12, "Resources/Grafiki ekwipunku/bron2hKosturWody.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox13, "Resources/Grafiki ekwipunku/tarczaTarczaKróla.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox14, "Resources/Grafiki ekwipunku/bron2hŁukDługiElficki.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox15, "Resources/Grafiki ekwipunku/tarczaTarczaUmarłegoRycerza.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox16, "Resources/Grafiki ekwipunku/bron2hŁukZKrainPołudnia.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/bron2hŁukZKrainPółnocy.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/bron2hMłotBojowy.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/bron2hTopórBojowy.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/bron2hTrójząb.PNG");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxBron, "Resources/Grafiki ekwipunku/Bron1h/Axe13.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxPancerz, "Resources/Grafiki ekwipunku/Pancerz/ArmorChainmailMithril.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxTarcza, "Resources/Grafiki ekwipunku/Tarcza/ShieldCrestedSkull.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxBron, "Resources/Grafiki ekwipunku/bron2hKatana.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxPancerz, "Resources/Grafiki ekwipunku/tarczaDużaTarcza.PNG");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxTarcza, "Resources/Grafiki ekwipunku/tarczaMałaTarcza.PNG");
 #endif
 
             DodanieDragAndDropDlaObrazkow();
