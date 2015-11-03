@@ -19,11 +19,11 @@ namespace RPG
 
         public EkranGryTloMapa(EkranGlowny ekranGlowny)
         {
+            this.ekranGlowny = ekranGlowny;   
+
             InitializeComponent();
             RozmiescElementy();
-            KolorujElementy();
-
-            this.ekranGlowny = ekranGlowny;      
+            KolorujElementy();   
         }
 
         #region Metody
@@ -40,7 +40,6 @@ namespace RPG
         {
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
-
         }
 
         public void RuchPowierzchniMapy(int pozycja, int dystans)

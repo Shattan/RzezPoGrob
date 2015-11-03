@@ -18,11 +18,11 @@ namespace RPG
 
         public EkranGryTloObiekty(EkranGlowny ekranGlowny)
         {
+            this.ekranGlowny = ekranGlowny;  
+
             InitializeComponent();
             RozmiescElementy();
-            KolorujElementy();
-
-            this.ekranGlowny = ekranGlowny;          
+            KolorujElementy();        
         }
 
         #region Metody

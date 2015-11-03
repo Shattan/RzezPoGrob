@@ -21,16 +21,17 @@ namespace RPG
         public EkranDziennikZadan(EkranGry ekranGry)
         {
             this.ekranGry = ekranGry;
-            InitializeComponent();
 
-            Program.DopasujRozmiarFormyDoEkranu(this);
+            InitializeComponent();
             RozmiescElementy();
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZamknij, "Resources/Grafiki menu/Wyjdź.png");
+            KolorujElementy();
         }
 
         #region Metody
         void RozmiescElementy()
         {
+            Program.DopasujRozmiarFormyDoEkranu(this);
+
             LabelZadania.Size = new Size(Screen.PrimaryScreen.Bounds.Width * 40 / 100, Screen.PrimaryScreen.Bounds.Height * 10 / 100);
             LabelOpis.Size = new Size(LabelZadania.Width, LabelZadania.Height);
             ListBoxZadania.Size = new Size(Screen.PrimaryScreen.Bounds.Width * 35 / 100, Screen.PrimaryScreen.Bounds.Height * 80 / 100);
@@ -45,6 +46,10 @@ namespace RPG
             PictureBoxZamknij.Size = new Size(Screen.PrimaryScreen.Bounds.Width * 15 / 100, Screen.PrimaryScreen.Bounds.Height * 15 / 100);
             PictureBoxZamknij.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 70 / 100, Screen.PrimaryScreen.Bounds.Height * 80 / 100);
          }
+        void KolorujElementy()
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZamknij, "Resources/Grafiki menu/Wyjdź.png");
+        }
 
         void UstawOpisZadania(Zadanie zadanie)
         {

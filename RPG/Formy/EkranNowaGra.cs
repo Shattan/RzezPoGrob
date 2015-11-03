@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.IO;
+
 namespace RPG
 {
     public partial class EkranNowaGra : Form
@@ -143,8 +145,7 @@ namespace RPG
         void DodajSkinyPostaci()
         {
             ListaPostaci.Add(ekranGry.gra.bohater.ObrazekNaMapie);
-            
-            for (int i = 0; i <= 55; i++)
+            for (int i = 0; i <= Directory.GetDirectories("Resources/Grafiki postaci na mapie/").Count()-1; i++)
             {
                 ListaPostaci.Add("Resources/Grafiki postaci na mapie/"+i+"/");
             }

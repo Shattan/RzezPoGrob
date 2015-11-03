@@ -69,34 +69,24 @@ namespace RPG
             this.ekranEkranDziennikZadanTlo = new EkranEkranDziennikZadanTlo(ekranDziennikZadan);
             this.ekranEkwipunekTlo = new EkranEkwipunekTlo(ekranEkwipunek);
             this.ekranWalkaTlo = new EkranWalkaTlo(ekranWalka);
-            
+
 
             InitializeComponent();
+            RozmiescElementy();
+            KolorujElementy();
+
             //Dzwiek zakomentowany na czas debugowania
             //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
 
-            UstawElementyNaEkranie();
-
-#if DEBUG
-
-#endif
-
             //Pamietaj! 
-            //Zatrzymaj czasu przy wchodzeniu do innej formy lub uzywaj ShowDialog()!
-            timerPrzeplywCzasu.Start();     
+            //Zatrzymaj czas przy wchodzeniu do innej formy lub uzywaj ShowDialog()!
+            timerPrzeplywCzasu.Start();
         }
 
         #region Metody
-        void UstawElementyNaEkranie()
+        void RozmiescElementy()
         {
-            //Ustawienia okienka gry
-            Location = new Point(Screen.PrimaryScreen.Bounds.X, Screen.PrimaryScreen.Bounds.Y);
-            Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-
-            //Ustawienie ikony w trybie okienkowym
-            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
-
-
+            Program.DopasujRozmiarFormyDoEkranu(this);
 
             //Wczytanie Right Menu Panel
             List<Image> ListaObrazkow = new List<Image>();
@@ -136,6 +126,11 @@ namespace RPG
 
 
           
+        }
+        void KolorujElementy()
+        {
+            //Ustawienie ikony w trybie okienkowym
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
         }
 
         public void WczytajNowaGre()
