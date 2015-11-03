@@ -22,10 +22,22 @@ namespace RPG
         public EkranEkranNowaGraTlo(EkranNowaGra ekranNowaGra)
         {
             InitializeComponent();
+            RozmiescElementy();
+            KolorujElementy();
+
             this.ekranNowaGra = ekranNowaGra;
-            Program.DopasujRozmiarFormyDoEkranu(this);
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this,"Resources/Grafiki menu/Tło tworzenie postaci.png");
         }
+
+        #region Metody
+        void RozmiescElementy()
+        {
+            Program.DopasujRozmiarFormyDoEkranu(this);
+        }
+        void KolorujElementy()
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło tworzenie postaci.png");
+        }
+        #endregion
 
         #region Obsluga zdarzeń
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)

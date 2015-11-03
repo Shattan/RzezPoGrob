@@ -15,31 +15,32 @@ namespace RPG
     {
         #region Zmienne
         EkranGlowny ekranGlowny;
-
-        Bitmap plansza = new Bitmap("Resources/Mapy/Trawa.png");
         #endregion
 
         public EkranGryTloMapa(EkranGlowny ekranGlowny)
         {
             InitializeComponent();
-            Program.DopasujRozmiarFormyDoEkranu(this);
-            this.ekranGlowny = ekranGlowny;
-                            
-            UstawElementyNaEkranie();           
+            RozmiescElementy();
+            KolorujElementy();
+
+            this.ekranGlowny = ekranGlowny;      
         }
 
         #region Metody
-        void UstawElementyNaEkranie()
+        void RozmiescElementy()
+        {
+            Program.DopasujRozmiarFormyDoEkranu(this);
+
+            Program.UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(PictureBoxTrawa, "Resources/Mapy/Trawa.png");
+
+            PictureBoxTrawa.Size = new Size(PictureBoxTrawa.Width, PictureBoxTrawa.Height);
+            PictureBoxTrawa.Location = new Point(0 - PictureBoxTrawa.Width / 2, 0 - PictureBoxTrawa.Height / 2);
+        }
+        void KolorujElementy()
         {
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
 
-            //Ustawienie tła rysowanego w menu
-            //BackgroundImage = plansza;
-
-            PictureBoxTrawa.Size = new Size(plansza.Width,plansza.Height);
-            PictureBoxTrawa.Location = new Point(0-plansza.Width/2,0-plansza.Height/2);
-            PictureBoxTrawa.Image = plansza;
         }
 
         public void RuchPowierzchniMapy(int pozycja, int dystans)

@@ -23,10 +23,27 @@ namespace RPG
         public EkranWalkaTlo(EkranWalka ekranWalka)
         {
             InitializeComponent();
+            RozmiescElementy();
+            KolorujElementy();
+
             this.ekranWalka = ekranWalka;
-            Program.DopasujRozmiarFormyDoEkranu(this);
         }
 
+        #region Metody
+        void RozmiescElementy()
+        {
+            Program.DopasujRozmiarFormyDoEkranu(this);
+        }
+        void KolorujElementy()
+        {
+            string plansza = losowanie.Next(0, 10).ToString();
+            string sciezkaPlanszy = "Resources/Grafiki tła walki/" + plansza + ".png";
+            //Do losowania postaci potrzeba tu dostępu do obiektu Postac, zeby po indexach wczytywać
+            //string postac = losowanie.Next(0, 0).ToString();
+            //string sciezkaPostaci = "Resources/Grafiki tła walki/" + plansza + ".png";
+            Program.UstawObrazPolaBitwy(this, sciezkaPlanszy, "Resources/Grafiki postaci walczących/cyklop.png");
+        }
+        #endregion
         #region Obsluga zdarzeń
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
@@ -36,12 +53,8 @@ namespace RPG
 
         private void EkranWalkaTlo_Load(object sender, EventArgs e)
         {
-            string plansza = losowanie.Next(0, 10).ToString();
-            string sciezkaPlanszy = "Resources/Grafiki tła walki/" + plansza + ".png";
-            //Do losowania postaci potrzeba tu dostępu do obiektu Postac, zeby po indexach wczytywać
-            //string postac = losowanie.Next(0, 0).ToString();
-            //string sciezkaPostaci = "Resources/Grafiki tła walki/" + plansza + ".png";
-            Program.UstawObrazPolaBitwy(this, sciezkaPlanszy, "Resources/Grafiki postaci walczących/cyklop.png");
+            //Tutaj jeszcze raz, żeby co przeciwnika losowało sobie nową planszę
+            KolorujElementy();
         }
     }
 }

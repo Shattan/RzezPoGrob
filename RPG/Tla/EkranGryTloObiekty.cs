@@ -19,12 +19,20 @@ namespace RPG
         public EkranGryTloObiekty(EkranGlowny ekranGlowny)
         {
             InitializeComponent();
-            Program.DopasujRozmiarFormyDoEkranu(this);
-            this.ekranGlowny = ekranGlowny;
-            //BackgroundImage =  new Bitmap("Resources/Mapy/Trawa.png");               
+            RozmiescElementy();
+            KolorujElementy();
+
+            this.ekranGlowny = ekranGlowny;          
         }
 
         #region Metody
+        void RozmiescElementy()
+        {
+            Program.DopasujRozmiarFormyDoEkranu(this);
+        }
+        void KolorujElementy()
+        {
+        }
         #endregion
 
         #region Obsluga zdarzeń

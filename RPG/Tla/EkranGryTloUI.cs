@@ -19,12 +19,21 @@ namespace RPG
         public EkranGryTloUI(EkranGlowny ekranGlowny)
         {
             InitializeComponent();
-            Program.DopasujRozmiarFormyDoEkranu(this);
-            this.ekranGlowny = ekranGlowny;
-            //BackgroundImage =  new Bitmap("Resources/Mapy/Trawa.png");               
+            RozmiescElementy();
+            KolorujElementy();
+
+            this.ekranGlowny = ekranGlowny;         
         }
 
         #region Metody
+        void RozmiescElementy()
+        {
+            Program.DopasujRozmiarFormyDoEkranu(this);
+        }
+        void KolorujElementy()
+        {
+        }
+
         public void UstawPanelPrawy(Point point, Size size, String sciezkaGrafiki)
         {
             panelPraweMenu.Location = point;

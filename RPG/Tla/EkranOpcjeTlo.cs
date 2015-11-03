@@ -21,10 +21,21 @@ namespace RPG
         public EkranEkranOpcjeTlo(EkranOpcje ekranOpcje)
         {
             InitializeComponent();
+            RozmiescElementy();
+            KolorujElementy();
+
             this.ekranOpcje = ekranOpcje;
-           
+        }
+
+        #region Metody
+        void RozmiescElementy()
+        {
+        }
+        void KolorujElementy()
+        {
             BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
         }
+        #endregion
 
         #region Obsluga zdarzeń
         private void EkranEkranOpcjeTlo_Shown(object sender, EventArgs e)
