@@ -379,6 +379,9 @@
     <Content Include="Resources\Grafiki menu\Przykładowy przycisk.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\Tło przedmiotu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki menu\Tło tworzenie postaci.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -464,6 +467,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Tło opcji.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki menu\Tło wyboru bohatera.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Uciekaj.png">

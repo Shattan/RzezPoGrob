@@ -40,8 +40,8 @@ namespace RPG
         public Bohater()
         {
             Nazwa = "Gracz";
-            ObrazekNaMapie = "Resources/Grafiki postaci na mapie/2/";
-            ObrazekMowienia = "Resources/Grafiki postaci na mapie/2/dół.png";
+            ObrazekNaMapie = "Resources/Grafiki postaci na mapie/0/";
+            ObrazekMowienia = "Resources/Grafiki postaci mówiących/Mówca1.png";
 
             Poziom = 1;
             Doswiadczenie = 0;

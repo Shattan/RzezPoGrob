@@ -29,6 +29,7 @@ namespace RPG
             KolorujElementy();
 
             DodanieDragAndDropDlaObrazkow();
+            Zegar.Start();
         }
 
         #region Metody
@@ -45,8 +46,8 @@ namespace RPG
             LabelWartosciStatystyk.Location = new Point(LabelStatystyki.Location.X + LabelNazwyStatystyk.Width, LabelStatystyki.Location.Y + LabelStatystyki.Height);
 
             //Rozmieszczanie przycisków
-            PictureBoxZamknij.Size = new Size(Screen.PrimaryScreen.Bounds.Width * 15 / 100, Screen.PrimaryScreen.Bounds.Height * 15 / 100);
-            PictureBoxZamknij.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 75 / 100, Screen.PrimaryScreen.Bounds.Height * 80 / 100);
+            PictureBoxPotwierdz.Size = new Size(Screen.PrimaryScreen.Bounds.Width * 15 / 100, Screen.PrimaryScreen.Bounds.Height * 15 / 100);
+            PictureBoxPotwierdz.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 75 / 100, Screen.PrimaryScreen.Bounds.Height * 80 / 100);
 
             const int wielkoscPrzyciskow = 25;
             PictureBoxSilaMinus.Size = new Size(wielkoscPrzyciskow, wielkoscPrzyciskow);
@@ -80,10 +81,38 @@ namespace RPG
             PictureBoxBron.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 45 / 100, Screen.PrimaryScreen.Bounds.Height * 28 / 100);
             PictureBoxPancerz.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 51 / 100, Screen.PrimaryScreen.Bounds.Height * 23 / 100);
             PictureBoxTarcza.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 57 / 100, Screen.PrimaryScreen.Bounds.Height * 23 / 100);
+
+            int szerokoscIkon = Screen.PrimaryScreen.Bounds.Width * 5 / 100;
+            int wysokoscIkon = Screen.PrimaryScreen.Bounds.Height * 8 / 100;
+            pictureBox1.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox2.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox3.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox4.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox5.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox6.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox7.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox8.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox9.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox10.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox11.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox12.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox13.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox14.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox15.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox16.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox17.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox18.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox17.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox18.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox19.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox20.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox21.Size = new Size(szerokoscIkon, wysokoscIkon);
+            pictureBox22.Size = new Size(szerokoscIkon, wysokoscIkon);
+
         }
         void KolorujElementy()
         {
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZamknij, "Resources/Grafiki menu/Wyjdź.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz, "Resources/Grafiki menu/Wyjdź.png");
 
             //Przyciski do rozdawania statystyk
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
@@ -95,65 +124,35 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
 
-
-#if DEBUG
             //Obrazki Tymczasowe
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox1, ekranGry.gra.listaEkwipunek[0].Obrazek);
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox2, "Resources/Grafiki ekwipunku/bron2hDługiMieczUmarłegoRycerza.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox3, "Resources/Grafiki ekwipunku/bron2hHalabarda.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox4, "Resources/Grafiki ekwipunku/bron2hWłócznia.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox5, "Resources/Grafiki ekwipunku/bron2hKosaPowiewŚmierci.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox6, "Resources/Grafiki ekwipunku/bron2hKosturBiałegoMaga.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox7, "Resources/Grafiki ekwipunku/bron2hKosturCienia.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox8, "Resources/Grafiki ekwipunku/bron2hKosturNowicjusza.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox9, "Resources/Grafiki ekwipunku/bron2hKosturOgnia.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox10, "Resources/Grafiki ekwipunku/bron2hKosturŚmierci.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox11, "Resources/Grafiki ekwipunku/bron2hKosturŚwiatła.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox12, "Resources/Grafiki ekwipunku/bron2hKosturWody.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox13, "Resources/Grafiki ekwipunku/tarczaTarczaKróla.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox14, "Resources/Grafiki ekwipunku/bron2hŁukDługiElficki.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox15, "Resources/Grafiki ekwipunku/tarczaTarczaUmarłegoRycerza.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox16, "Resources/Grafiki ekwipunku/bron2hŁukZKrainPołudnia.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/bron2hŁukZKrainPółnocy.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/bron2hMłotBojowy.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox17, "Resources/Grafiki ekwipunku/bron2hTopórBojowy.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox18, "Resources/Grafiki ekwipunku/bron2hTrójząb.PNG");
+            Program.UstawObrazEkwipunku(pictureBox1, ekranGry.gra.listaEkwipunek[0].Obrazek);
+            Program.UstawObrazEkwipunku(pictureBox2, "Resources/Grafiki ekwipunku/bron2hDługiMieczUmarłegoRycerza.PNG");
+            Program.UstawObrazEkwipunku(pictureBox3, "Resources/Grafiki ekwipunku/bron2hHalabarda.PNG");
+            Program.UstawObrazEkwipunku(pictureBox4, "Resources/Grafiki ekwipunku/bron2hWłócznia.PNG");
+            Program.UstawObrazEkwipunku(pictureBox5, "Resources/Grafiki ekwipunku/bron2hKosaPowiewŚmierci.PNG");
+            Program.UstawObrazEkwipunku(pictureBox6, "Resources/Grafiki ekwipunku/bron2hKosturBiałegoMaga.PNG");
+            Program.UstawObrazEkwipunku(pictureBox7, "Resources/Grafiki ekwipunku/bron2hKosturCienia.PNG");
+            Program.UstawObrazEkwipunku(pictureBox8, "Resources/Grafiki ekwipunku/bron2hKosturNowicjusza.PNG");
+            Program.UstawObrazEkwipunku(pictureBox9, "Resources/Grafiki ekwipunku/bron2hKosturOgnia.PNG");
+            Program.UstawObrazEkwipunku(pictureBox10, "Resources/Grafiki ekwipunku/bron2hKosturŚmierci.PNG");
+            Program.UstawObrazEkwipunku(pictureBox11, "Resources/Grafiki ekwipunku/bron2hKosturŚwiatła.PNG");
+            Program.UstawObrazEkwipunku(pictureBox12, "Resources/Grafiki ekwipunku/bron2hKosturWody.PNG");
+            Program.UstawObrazEkwipunku(pictureBox13, "Resources/Grafiki ekwipunku/tarczaTarczaKróla.PNG");
+            Program.UstawObrazEkwipunku(pictureBox14, "Resources/Grafiki ekwipunku/bron2hŁukDługiElficki.PNG");
+            Program.UstawObrazEkwipunku(pictureBox15, "Resources/Grafiki ekwipunku/tarczaTarczaUmarłegoRycerza.PNG");
+            Program.UstawObrazEkwipunku(pictureBox16, "Resources/Grafiki ekwipunku/bron2hŁukZKrainPołudnia.PNG");
+            Program.UstawObrazEkwipunku(pictureBox17, "Resources/Grafiki ekwipunku/bron2hŁukZKrainPółnocy.PNG");
+            Program.UstawObrazEkwipunku(pictureBox18, "Resources/Grafiki ekwipunku/bron2hMłotBojowy.PNG");
+            Program.UstawObrazEkwipunku(pictureBox17, "Resources/Grafiki ekwipunku/bron2hTopórBojowy.PNG");
+            Program.UstawObrazEkwipunku(pictureBox18, "Resources/Grafiki ekwipunku/bron2hTrójząb.PNG");
+            Program.UstawObrazEkwipunku(pictureBox19, "Resources/Grafiki ekwipunku/bron2hTrójząb.PNG");
+            Program.UstawObrazEkwipunku(pictureBox20, "Resources/Grafiki ekwipunku/bron2hTrójząb.PNG");
+            Program.UstawObrazEkwipunku(pictureBox21, "Resources/Grafiki ekwipunku/bron2hTrójząb.PNG");
+            Program.UstawObrazEkwipunku(pictureBox22, "Resources/Grafiki ekwipunku/bron2hTrójząb.PNG");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxBron, "Resources/Grafiki ekwipunku/bron2hKatana.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxPancerz, "Resources/Grafiki ekwipunku/tarczaDużaTarcza.PNG");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxTarcza, "Resources/Grafiki ekwipunku/tarczaMałaTarcza.PNG");
-#endif
-        }
-
-        void DodanieDragAndDropDlaObrazkow()
-        {
-            //Dodawanie operacji Drop and Drag dla wszystkich PictureBox z FlowLayoutPanelPancerze
-            foreach (PictureBox obiekt in FlowLayoutPanelPancerze.Controls.OfType<PictureBox>().Cast<Control>().ToList())
-            {
-                obiekt.AllowDrop = true;
-                obiekt.DragEnter += new DragEventHandler(przedmiot_DragEnter);
-                obiekt.DragDrop += new DragEventHandler(przedmiot_DragDrop);
-                obiekt.MouseDown += przedmiot_MouseDown;
-            }
-
-            //Dodawanie operacji Drop and Drag dla PictureBox Bron/Pancerz/Tarcza
-            PictureBoxBron.AllowDrop = true;
-            PictureBoxPancerz.AllowDrop = true;
-            PictureBoxTarcza.AllowDrop = true;
-
-            PictureBoxBron.DragEnter += new DragEventHandler(przedmiot_DragEnter);
-            PictureBoxPancerz.DragEnter += new DragEventHandler(przedmiot_DragEnter);
-            PictureBoxTarcza.DragEnter += new DragEventHandler(przedmiot_DragEnter);
-
-            PictureBoxBron.DragDrop += new DragEventHandler(przedmiot_DragDrop);
-            PictureBoxPancerz.DragDrop += new DragEventHandler(przedmiot_DragDrop);
-            PictureBoxTarcza.DragDrop += new DragEventHandler(przedmiot_DragDrop);
-
-            PictureBoxBron.MouseDown += przedmiot_MouseDown;
-            PictureBoxPancerz.MouseDown += przedmiot_MouseDown;
-            PictureBoxTarcza.MouseDown += przedmiot_MouseDown;
-
-            pictureBoxWybrany.Visible = false;
+            Program.UstawObrazEkwipunku(PictureBoxBron, "Resources/Grafiki ekwipunku/bron2hKatana.PNG");
+            Program.UstawObrazEkwipunku(PictureBoxPancerz, "Resources/Grafiki ekwipunku/tarczaDużaTarcza.PNG");
+            Program.UstawObrazEkwipunku(PictureBoxTarcza, "Resources/Grafiki ekwipunku/tarczaMałaTarcza.PNG");
         }
 
         void OdswiezStatystyki()
@@ -185,54 +184,150 @@ namespace RPG
             LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczne + "%\n";   //Szansa na trafienie krytyczne
         }
 
-        void WczytajStatystykiBohater()
+        void WczytajStatystykiOdGracza()
         {
-            //Zapisujemy wybrane statystyki z klasy bohater
-            //Bazowe statystyki zapisane sa w konstruktorze klasy bohater)
             tymczasowyBohater = new Bohater(ekranGry.gra.bohater);
-
             OdswiezStatystyki();
         }
 
-        void ZapiszGre()
+        void ZapiszStatystykiDoGracza()
         {
             ekranGry.gra.bohater = new Bohater(tymczasowyBohater);
+        }
+
+        void DodanieDragAndDropDlaObrazkow()
+        {
+            //Dodawanie operacji Drop and Drag dla wszystkich PictureBox z FlowLayoutPanelPancerze
+            foreach (PictureBox obiekt in FlowLayoutPanelPancerze.Controls.OfType<PictureBox>())
+            {
+                obiekt.AllowDrop = true;
+                if (obiekt.ImageLocation.Contains("bron"))
+                {
+                    obiekt.DragEnter += new DragEventHandler(przedmiot_DragEnterBron);
+                    obiekt.DragDrop += new DragEventHandler(przedmiot_DragDropBron);
+                    obiekt.MouseDown += przedmiot_MouseDownBron;
+                }
+                if (obiekt.ImageLocation.Contains("pancerz"))
+                {
+                    obiekt.DragEnter += new DragEventHandler(przedmiot_DragEnterPancerz);
+                    obiekt.DragDrop += new DragEventHandler(przedmiot_DragDropPancerz);
+                    obiekt.MouseDown += przedmiot_MouseDownPancerz;
+                }
+                if (obiekt.ImageLocation.Contains("tarcza"))
+                {
+                    obiekt.DragEnter += new DragEventHandler(przedmiot_DragEnterTarcza);
+                    obiekt.DragDrop += new DragEventHandler(przedmiot_DragDropTarcza);
+                    obiekt.MouseDown += przedmiot_MouseDownTarcza;
+                }
+            }
+
+            //Dodawanie operacji Drop and Drag dla PictureBox Bron/Pancerz/Tarcza
+            PictureBoxBron.AllowDrop = true;
+            PictureBoxPancerz.AllowDrop = true;
+            PictureBoxTarcza.AllowDrop = true;
+
+            PictureBoxBron.DragEnter += new DragEventHandler(przedmiot_DragEnterBron);
+            PictureBoxPancerz.DragEnter += new DragEventHandler(przedmiot_DragEnterPancerz);
+            PictureBoxTarcza.DragEnter += new DragEventHandler(przedmiot_DragEnterTarcza);
+
+            PictureBoxBron.DragDrop += new DragEventHandler(przedmiot_DragDropBron);
+            PictureBoxPancerz.DragDrop += new DragEventHandler(przedmiot_DragDropPancerz);
+            PictureBoxTarcza.DragDrop += new DragEventHandler(przedmiot_DragDropTarcza);
+
+            PictureBoxBron.MouseDown += przedmiot_MouseDownBron;
+            PictureBoxPancerz.MouseDown += przedmiot_MouseDownPancerz;
+            PictureBoxTarcza.MouseDown += przedmiot_MouseDownTarcza;
+
+            //pictureBoxWybrany.Visible = false;
         }
         #endregion
 
         #region Zdarzenia
-        private void przedmiot_DragEnter(object sender, DragEventArgs e)
+        private void przedmiot_DragEnterBron(object sender, DragEventArgs e)
         {
-            pictureBoxWybrany.Image = (sender as PictureBox).Image; ;
-            e.Effect = DragDropEffects.Move;      
+            pictureBoxPrzenoszony.Image = (sender as PictureBox).Image;
+            e.Effect = DragDropEffects.Move;
         }
-
-        private void przedmiot_DragDrop(object sender, DragEventArgs e)
+        private void przedmiot_DragDropBron(object sender, DragEventArgs e)
         {
             PictureBox pb = e.Data.GetData(typeof(PictureBox)) as PictureBox;
             if (pb != null)
             {
                 ((PictureBox)sender).Image = pb.Image;
-                pb.Image = pictureBoxWybrany.Image;
+                pb.Image = pictureBoxPrzenoszony.Image;
             }
         }
-
-        void przedmiot_MouseDown(object sender, MouseEventArgs e)
-        {         
-            DoDragDrop(sender, DragDropEffects.Move);            
+        void przedmiot_MouseDownBron(object sender, MouseEventArgs e)
+        {
+            DoDragDrop(sender, DragDropEffects.Move);
+            pictureBoxPrzenoszony.Location = new Point(MousePosition.X, MousePosition.Y);
         }
+
+
+
+        private void przedmiot_DragEnterTarcza(object sender, DragEventArgs e)
+        {
+            pictureBoxPrzenoszony.Image = (sender as PictureBox).Image;
+            e.Effect = DragDropEffects.Move;
+        }
+        private void przedmiot_DragDropTarcza(object sender, DragEventArgs e)
+        {
+            PictureBox pb = e.Data.GetData(typeof(PictureBox)) as PictureBox;
+            if (pb != null)
+            {
+                ((PictureBox)sender).Image = pb.Image;
+                pb.Image = pictureBoxPrzenoszony.Image;
+            }
+        }
+        void przedmiot_MouseDownTarcza(object sender, MouseEventArgs e)
+        {
+            DoDragDrop(sender, DragDropEffects.Move);
+            pictureBoxPrzenoszony.Location = new Point(MousePosition.X, MousePosition.Y);
+        }
+
+
+
+        private void przedmiot_DragEnterPancerz(object sender, DragEventArgs e)
+        {
+            pictureBoxPrzenoszony.Image = (sender as PictureBox).Image;
+            e.Effect = DragDropEffects.Move;
+        }
+        private void przedmiot_DragDropPancerz(object sender, DragEventArgs e)
+        {
+            PictureBox pb = e.Data.GetData(typeof(PictureBox)) as PictureBox;
+            if (pb != null)
+            {
+                ((PictureBox)sender).Image = pb.Image;
+                pb.Image = pictureBoxPrzenoszony.Image;
+            }
+        }
+        void przedmiot_MouseDownPancerz(object sender, MouseEventArgs e)
+        {
+            DoDragDrop(sender, DragDropEffects.Move);
+            pictureBoxPrzenoszony.Location = new Point(MousePosition.X, MousePosition.Y);
+        }
+
+
+
+
+
+
+
+
 
         private void EkranEkwipunek_Load(object sender, EventArgs e)
         {
-            WczytajStatystykiBohater();
+            WczytajStatystykiOdGracza();
         }
 
-        private void PictureBoxZamknij_Click(object sender, EventArgs e)
+
+        private void Zegar_Tick(object sender, EventArgs e)
         {
-            ZapiszGre();
-            Close();
+            pictureBoxPrzenoszony.Location = new Point(MousePosition.X+10, MousePosition.Y);
         }
 
+
+        #region Przyciski do modyfikowania statystyk
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
         {
             if (tymczasowyBohater.Sila > ekranGry.gra.bohater.Sila)
@@ -313,5 +408,23 @@ namespace RPG
             }
         }
         #endregion
+
+        #region Zamykanie forma
+        private void PictureBoxPotwierdz_Click(object sender, EventArgs e)
+        {
+            ZapiszStatystykiDoGracza();
+            Close();
+        }
+
+        private void EkranEkwipunek_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Zegar.Stop();
+        }
+        #endregion
+
+
+
+        #endregion
+
     }
 }

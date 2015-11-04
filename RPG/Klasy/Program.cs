@@ -47,10 +47,27 @@ namespace RPG
         {
             try
             {
+                Kontrolka.SizeMode = PictureBoxSizeMode.Zoom;
+                Kontrolka.Image = new Bitmap(sciezkaDoObrazu);
+            }
+            catch (System.ArgumentException e)
+            {
+                Kontrolka.Image = new Bitmap("Resources/Grafiki menu/Błędny obraz.png");
+                MessageBox.Show(e.Message + "\nŚcieżka do obrazu:\n" + sciezkaDoObrazu, "Błąd wczytywania obrazu", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        public static void UstawObrazEkwipunku(PictureBox Kontrolka, string sciezkaDoObrazu)
+        {
+            try
+            {
                 Kontrolka.BackgroundImageLayout = ImageLayout.None;
-                using (Image obrazek = new Bitmap(sciezkaDoObrazu))
+                Kontrolka.SizeMode = PictureBoxSizeMode.Zoom;
+                using (Image obrazekTla = new Bitmap("Resources/Grafiki menu/Tło przedmiotu.png"))
                 {
-                    Kontrolka.Image = new Bitmap(obrazek, Kontrolka.Width, Kontrolka.Height);
+                    Kontrolka.BackgroundImage = new Bitmap(obrazekTla, Kontrolka.Width, Kontrolka.Height);
+                    Kontrolka.Image = new Bitmap(sciezkaDoObrazu);
+                    Kontrolka.Load(sciezkaDoObrazu);
                 }
             }
             catch (System.ArgumentException e)

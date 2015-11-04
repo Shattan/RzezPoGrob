@@ -71,6 +71,7 @@
             this.TextBoxNazwa.Name = "TextBoxNazwa";
             this.TextBoxNazwa.Size = new System.Drawing.Size(100, 27);
             this.TextBoxNazwa.TabIndex = 0;
+            this.TextBoxNazwa.TextChanged += new System.EventHandler(this.TextBoxNazwa_TextChanged);
             // 
             // PictureBoxPotwierdz
             // 
