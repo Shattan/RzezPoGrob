@@ -39,7 +39,6 @@ namespace RPG
 
             WczytajStatystykiOdGracza();
             DodajSkinyPostaci();
-
         }
 
         #region Metody
@@ -51,13 +50,13 @@ namespace RPG
             //Ustawienia dolnego panelu z informacjami
             LabelInformacje.Size = new Size(Width, Height / 8);
             LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
-            LabelInformacje.Text = "Aby rozpocząć należy wybrać postać i ją nazwać.";
+            LabelInformacje.Text = "Dostosuj swego bohatera!";
 
             //Rozmieszczanie statystyk
-            LabelNazwyStatystyk.Size = new Size(Width * 23 / 100, Height * 80 / 100);
+            LabelNazwyStatystyk.Size = new Size(Width * 23 / 100, Height * 60 / 100);
             LabelWartosciStatystyk.Size = new Size(Width * 4 / 100, LabelNazwyStatystyk.Height);
 
-            LabelStatystyki.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 5 / 100, Height * 20 / 100);
+            LabelStatystyki.Location = new Point(Width * 2 / 100, Height * 20 / 100);
             LabelNazwyStatystyk.Location = new Point(LabelStatystyki.Location.X, LabelStatystyki.Location.Y + LabelStatystyki.Height);
             LabelWartosciStatystyk.Location = new Point(LabelStatystyki.Location.X+LabelNazwyStatystyk.Width, LabelStatystyki.Location.Y + LabelStatystyki.Height);
 
@@ -85,19 +84,19 @@ namespace RPG
             PictureBoxInteligencjaPlus.Location = new Point(PictureBoxInteligencjaMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxInteligencjaMinus.Location.Y);
 
             //Ustawienie przycisków od bohatera
-            PictureBoxWyjscie.Size = new Size(Width * 5 / 100, Height * 5 / 100);
-            PictureBoxWyjscie.Location = new Point(Width * 5 / 100, Height * 5 / 100);
-
             PictureBoxPoprzedniBohater.Size = new Size(Width * 2 / 100, Height * 15/ 100);
             PictureBoxBohater.Size = new Size(Width * 10 / 100, PictureBoxPoprzedniBohater.Height);
             PictureBoxNastepnyBohater.Size = new Size(PictureBoxPoprzedniBohater.Width, PictureBoxPoprzedniBohater.Height);
 
-            PictureBoxPoprzedniBohater.Location = new Point(Width * 50 / 100 - (PictureBoxPoprzedniBohater.Width + PictureBoxBohater.Width + PictureBoxNastepnyBohater.Width)/2, Height * 50 / 100 - PictureBoxPoprzedniBohater.Height);
+            PictureBoxPoprzedniBohater.Location = new Point(Width * 45 / 100 - (PictureBoxPoprzedniBohater.Width + PictureBoxBohater.Width + PictureBoxNastepnyBohater.Width)/2, Height * 40 / 100 - PictureBoxPoprzedniBohater.Height);
             PictureBoxBohater.Location = new Point(PictureBoxPoprzedniBohater.Location.X + PictureBoxPoprzedniBohater.Width, PictureBoxPoprzedniBohater.Location.Y);
             PictureBoxNastepnyBohater.Location = new Point(PictureBoxBohater.Location.X + PictureBoxBohater.Width, PictureBoxPoprzedniBohater.Location.Y);
 
             PictureBoxBohater.SizeMode = PictureBoxSizeMode.CenterImage;
             PictureBoxBohater.SizeMode = PictureBoxSizeMode.Zoom;
+
+            PictureBoxWstecz.Size = new Size(Width * 8 / 100, Height * 8 / 100);
+            PictureBoxWstecz.Location = new Point(0, 0);
 
             //Ustawienie wpisywania nazwy
             TextBoxNazwa.Width = PictureBoxBohater.Width;
@@ -124,12 +123,11 @@ namespace RPG
 
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPoprzedniBohater, "Resources/Grafiki menu/Przycisk poprzedni standard.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxBohater, "Resources/Grafiki menu/Tło wyboru bohatera.png");
-            
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxNastepnyBohater, "Resources/Grafiki menu/Przycisk następny standard.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz, "Resources/Grafiki menu/Zapisz opcje.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz, "Resources/Grafiki menu/Potwierdź postać.png");
 
             //Przycisk wychodzenia
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjscie, "Resources/Grafiki menu/Wyjdź.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWstecz, "Resources/Grafiki menu/Wyjdź.png");
         }
 
         void DodajSkinyPostaci()
@@ -207,28 +205,6 @@ namespace RPG
             DialogResult = DialogResult.Cancel;
             Close();
         }
-
-        #region Powiekszanie przyciskow
-        private void PictureBoxWyjscie_MouseEnter(object sender, EventArgs e)
-        {
-            int powiekszenieX = Width * 1 / 100;
-            int powiekszenieY = Height * 1 / 100;
-            LabelInformacje.Text = "Wyjscie z Gry";
-            using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Wyjście.png"))
-            {
-                PictureBoxWyjscie.BackgroundImage = new Bitmap(obrazek, PictureBoxWyjscie.Width * 5 / 8 + powiekszenieX, PictureBoxWyjscie.Height * 7 / 8 + powiekszenieY);
-            }
-        }
-
-        private void PictureBoxWyjscie_MouseLeave(object sender, EventArgs e)
-        {
-            using (Bitmap obrazek = new Bitmap("Resources/Grafiki menu/Wyjście.png"))
-            {
-                PictureBoxWyjscie.BackgroundImage = new Bitmap(obrazek, PictureBoxWyjscie.Width * 5 / 8, PictureBoxWyjscie.Height * 7 / 8);
-            }
-            LabelInformacje.Text = "";
-        }
-        #endregion
 
         #region Przyciski do modyfikowania statystyk
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
