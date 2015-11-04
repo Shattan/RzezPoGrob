@@ -88,6 +88,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Klasy\Strawa.cs" />
     <Compile Include="Tla\EkranGryTloObiekty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,7 +382,6 @@
     <Content Include="Resources\Grafiki menu\Tło tworzenie postaci.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\attackdummy1.png" />
     <Content Include="Resources\Dźwięki\smierc.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -11,6 +11,7 @@ namespace RPG
         public Bohater bohater = new Bohater();
         public List<Zadanie> listaZadan = new List<Zadanie>();
         public List<Ekwipunek> listaEkwipunek = new List<Ekwipunek>();
+        public List<Strawa> listaStrawa = new List<Strawa>();
 
         public List<Umiejetnosc> listaUmiejetnosc = new List<Umiejetnosc>();
         public List<Przeszkoda> listaPrzeszkoda = new List<Przeszkoda>();
@@ -25,7 +26,8 @@ namespace RPG
         {
             //Tworzenie infrastruktury
             UtworzUmiejetnosci();
-            UtworzPrzedmiotyEkwipunku();
+            UtworzEkwipunek();
+            UtworzStrawy();
             UtworzPostacie();
             UtworzPrzeszkody();
             UtworzZestawyPrzeciwnikow();
@@ -113,10 +115,15 @@ namespace RPG
             listaUmiejetnosc.Add(new Umiejetnosc("Wymachiwanie"));
         }
 
-        public void UtworzPrzedmiotyEkwipunku()
+        public void UtworzEkwipunek()
         {
             //index 0
-            listaEkwipunek.Add(new Ekwipunek("Cywilne ubranie","",10,10,10,10,10,10,10,10,10,10,10));
+            listaEkwipunek.Add(new Ekwipunek("Długi Miecz","Resources/Grafiki ekwipunku/bron2hDługiMiecz.PNG",10,10,10,10,10,10,10,10,10,10));
+        }
+        public void UtworzStrawy()
+        {
+            //index 0
+            listaStrawa.Add(new Strawa("","",10,10));
         }
 
         public void UtworzPrzeszkody()
@@ -138,59 +145,59 @@ namespace RPG
         }
     
 
-        public List<Zadanie> ListaZadan
-        {
-            get { return listaZadan; }
-            set { listaZadan = value; }
-        }
-
-
-        public List<Umiejetnosc> ListaUmiejetnosc
-        {
-            get { return listaUmiejetnosc; }
-            set { listaUmiejetnosc = value; }
-        }
-
-        public List<Ekwipunek> ListaEkwipunek
-        {
-            get { return listaEkwipunek; }
-            set { listaEkwipunek = value; }
-        }
-
-        public List<Przeszkoda> ListaPrzeszkoda
-        {
-            get { return listaPrzeszkoda; }
-            set { listaPrzeszkoda = value; }
-        }
-
-        //public List<Przeszkoda> ListaZestawPrzeciwnikow
+        //public List<Zadanie> ListaZadan
         //{
-        //    get { return listaZestawPrzeciwnikow; }
-        //    set { listaZestawPrzeciwnikow = value; }
+        //    get { return listaZadan; }
+        //    set { listaZadan = value; }
         //}
-
-        public List<NPC> ListaPostacFabularna
-        {
-            get { return listaPostacFabularna; }
-            set { listaPostacFabularna = value; }
-        }
-
-        public List<NPC> ListaPostacZMiasta
-        {
-            get { return listaPostacZMiasta; }
-            set { listaPostacZMiasta = value; }
-        }
-
-        public List<NPC> ListaPostacZCmentarza
-        {
-            get { return listaPostacZCmentarza; }
-            set { listaPostacZCmentarza = value; }
-        }
-
-        public List<NPC> ListaPostacZDziczy
-        {
-            get { return listaPostacZDziczy; }
-            set { listaPostacZDziczy = value; }
-        }
+        //
+        //
+        //public List<Umiejetnosc> ListaUmiejetnosc
+        //{
+        //    get { return listaUmiejetnosc; }
+        //    set { listaUmiejetnosc = value; }
+        //}
+        //
+        //public List<Ekwipunek> ListaEkwipunek
+        //{
+        //    get { return listaEkwipunek; }
+        //    set { listaEkwipunek = value; }
+        //}
+        //
+        //public List<Przeszkoda> ListaPrzeszkoda
+        //{
+        //    get { return listaPrzeszkoda; }
+        //    set { listaPrzeszkoda = value; }
+        //}
+        //
+        ////public List<Przeszkoda> ListaZestawPrzeciwnikow
+        ////{
+        ////    get { return listaZestawPrzeciwnikow; }
+        ////    set { listaZestawPrzeciwnikow = value; }
+        ////}
+        //
+        //public List<NPC> ListaPostacFabularna
+        //{
+        //    get { return listaPostacFabularna; }
+        //    set { listaPostacFabularna = value; }
+        //}
+        //
+        //public List<NPC> ListaPostacZMiasta
+        //{
+        //    get { return listaPostacZMiasta; }
+        //    set { listaPostacZMiasta = value; }
+        //}
+        //
+        //public List<NPC> ListaPostacZCmentarza
+        //{
+        //    get { return listaPostacZCmentarza; }
+        //    set { listaPostacZCmentarza = value; }
+        //}
+        //
+        //public List<NPC> ListaPostacZDziczy
+        //{
+        //    get { return listaPostacZDziczy; }
+        //    set { listaPostacZDziczy = value; }
+        //}
     }
 }

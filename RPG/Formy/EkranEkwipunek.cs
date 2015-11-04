@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using System.IO;
 
 
@@ -15,17 +16,8 @@ namespace RPG
     public partial class EkranEkwipunek : Form
     {
         #region Zmienne
-        EkranGry ekranGry;      //Dostep do: - ekranGry.opcje
-                                //ekranGry.gra;
-        enum Statystki
-        {
-            Pkt = 0,
-            Sila = 1,
-            Zrecznosc = 2,
-            Witalnosc = 3,
-            Inteligencja = 4
-        };
-        int[] wybraneStatystyki = new int[5];
+        EkranGry ekranGry;      
+        Bohater tymczasowyBohater = new Bohater();
         #endregion
 
         public EkranEkwipunek(EkranGry ekranGry)
@@ -35,7 +27,6 @@ namespace RPG
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();
-
 
             DodanieDragAndDropDlaObrazkow();
         }
@@ -106,8 +97,8 @@ namespace RPG
 
 
 #if DEBUG
-            //Obrazki Tymaczasowe
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox1, "Resources/Grafiki ekwipunku/bron2hDługiMiecz.PNG");
+            //Obrazki Tymczasowe
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox1, ekranGry.gra.listaEkwipunek[0].Obrazek);
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox2, "Resources/Grafiki ekwipunku/bron2hDługiMieczUmarłegoRycerza.PNG");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox3, "Resources/Grafiki ekwipunku/bron2hHalabarda.PNG");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(pictureBox4, "Resources/Grafiki ekwipunku/bron2hWłócznia.PNG");
@@ -165,125 +156,47 @@ namespace RPG
             pictureBoxWybrany.Visible = false;
         }
 
-        void OdswiezStatystyki(int punkty, int sila, int zrecznosc, int witalnosc, int inteligencja)
+        void OdswiezStatystyki()
         {
-            LabelNazwyStatystyk.Text = ekranGry.gra.bohater.Nazwa + "\n";   
+            LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";   
             LabelNazwyStatystyk.Text += "Pozostałe punkty do rozdania:\n";
             LabelNazwyStatystyk.Text += "Siła:\n";
             LabelNazwyStatystyk.Text += "Zręczność:\n";
             LabelNazwyStatystyk.Text += "Witalność:\n";
             LabelNazwyStatystyk.Text += "Inteligencja:\n";
             LabelNazwyStatystyk.Text += "Obrażenia:\n";
-            LabelNazwyStatystyk.Text += "Szansa na trafienie:\n";
-            LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
             LabelNazwyStatystyk.Text += "Pancerz:\n";
             LabelNazwyStatystyk.Text += "Zdrowie:\n";
             LabelNazwyStatystyk.Text += "Energia:\n";
+            LabelNazwyStatystyk.Text += "Szansa na trafienie:\n";
+            LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
 
             LabelWartosciStatystyk.Text = "\n";
-            LabelWartosciStatystyk.Text += punkty + "\n";               //Pozostałe punkty do rozdania
-            LabelWartosciStatystyk.Text += sila + "\n";                //Siła
-            LabelWartosciStatystyk.Text += zrecznosc + "\n";           //Zręczność
-            LabelWartosciStatystyk.Text += witalnosc + "\n";           //Witalność
-            LabelWartosciStatystyk.Text += inteligencja + "\n";        //Inteligencja
-            LabelWartosciStatystyk.Text += sila * 5 + "\n";            //Obrażenia
-            LabelWartosciStatystyk.Text += (int)zrecznosc / 3 + "%\n";  //Szansa na trafienie
-            LabelWartosciStatystyk.Text += (int)zrecznosc / 5 + "%\n";  //Szansa na trafienie krytyczne
-            LabelWartosciStatystyk.Text += (int)zrecznosc / 5 + "\n";  //Pancerz
-            LabelWartosciStatystyk.Text += witalnosc * 5 + "\n";       //Zdrowie
-            LabelWartosciStatystyk.Text += inteligencja * 5 + "\n";    //Energia
-        }
-
-        void DodajPunkt(Statystki statystki, int ile)
-        {
-            if (wybraneStatystyki[(int)Statystki.Pkt] > 0)
-            {
-                switch (statystki)
-                {
-                    case Statystki.Sila:
-                        wybraneStatystyki[(int)Statystki.Sila] += ile;
-                        break;
-                    case Statystki.Zrecznosc:
-
-                        wybraneStatystyki[(int)Statystki.Zrecznosc] += ile;
-                        break;
-                    case Statystki.Witalnosc:
-
-                        wybraneStatystyki[(int)Statystki.Witalnosc] += ile;
-                        break;
-                    case Statystki.Inteligencja:
-
-                        wybraneStatystyki[(int)Statystki.Inteligencja] += ile;
-                        break;
-                    default:
-                        break;
-                }
-
-
-                wybraneStatystyki[(int)Statystki.Pkt] -= ile;
-                OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
-            }
-        }
-
-        void OdejmijPunkt(Statystki statystki, int ile)
-        {
-            switch (statystki)
-            {
-                case Statystki.Sila:
-                    if (wybraneStatystyki[(int)Statystki.Sila] > ekranGry.gra.bohater.Sila)
-                    {
-                        wybraneStatystyki[(int)Statystki.Sila] -= ile;
-                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
-                    }
-                    break;
-                case Statystki.Zrecznosc:
-                    if (wybraneStatystyki[(int)Statystki.Zrecznosc] > ekranGry.gra.bohater.Zrecznosc)
-                    {
-                        wybraneStatystyki[(int)Statystki.Zrecznosc] -= ile;
-                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
-                    }
-                    break;
-                case Statystki.Witalnosc:
-                    if (wybraneStatystyki[(int)Statystki.Witalnosc] > ekranGry.gra.bohater.Witalnosc)
-                    {
-                        wybraneStatystyki[(int)Statystki.Witalnosc] -= ile;
-                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
-                    }
-                    break;
-                case Statystki.Inteligencja:
-                    if (wybraneStatystyki[(int)Statystki.Inteligencja] > ekranGry.gra.bohater.Inteligencja)
-                    {
-                        wybraneStatystyki[(int)Statystki.Inteligencja] -= ile;
-                        wybraneStatystyki[(int)Statystki.Pkt] += ile;
-                    }
-                    break;
-                default:
-                    break;
-            }
-            OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";               //Pozostałe punkty do rozdania
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Sila + "\n";                 //Siła
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Zrecznosc + "\n";            //Zręczność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Witalnosc + "\n";            //Witalność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Inteligencja + "\n";         //Inteligencja
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Obrazenia + "\n";            //Obrażenia
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Pancerz + "\n";              //Pancerz
+            LabelWartosciStatystyk.Text += tymczasowyBohater.HP + "\n";                   //Zdrowie
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Energia + "\n";              //Energia
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienie + "%\n";   //Szansa na trafienie
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczne + "%\n";   //Szansa na trafienie krytyczne
         }
 
         void WczytajStatystykiBohater()
         {
             //Zapisujemy wybrane statystyki z klasy bohater
             //Bazowe statystyki zapisane sa w konstruktorze klasy bohater)
-            wybraneStatystyki[(int)Statystki.Pkt] = ekranGry.gra.bohater.Punkty;
-            wybraneStatystyki[(int)Statystki.Sila] = ekranGry.gra.bohater.Sila;
-            wybraneStatystyki[(int)Statystki.Zrecznosc] = ekranGry.gra.bohater.Zrecznosc;
-            wybraneStatystyki[(int)Statystki.Witalnosc] = ekranGry.gra.bohater.Witalnosc;
-            wybraneStatystyki[(int)Statystki.Inteligencja] = ekranGry.gra.bohater.Inteligencja;
+            tymczasowyBohater = new Bohater(ekranGry.gra.bohater);
 
-            OdswiezStatystyki(wybraneStatystyki[(int)Statystki.Pkt], wybraneStatystyki[(int)Statystki.Sila], wybraneStatystyki[(int)Statystki.Zrecznosc], wybraneStatystyki[(int)Statystki.Witalnosc], wybraneStatystyki[(int)Statystki.Inteligencja]);
+            OdswiezStatystyki();
         }
 
         void ZapiszGre()
         {
-            ekranGry.gra.bohater.Punkty = wybraneStatystyki[(int)Statystki.Pkt];
-            ekranGry.gra.bohater.Sila = wybraneStatystyki[(int)Statystki.Sila];
-            ekranGry.gra.bohater.Zrecznosc = wybraneStatystyki[(int)Statystki.Zrecznosc];
-            ekranGry.gra.bohater.Witalnosc = wybraneStatystyki[(int)Statystki.Witalnosc];
-            ekranGry.gra.bohater.Inteligencja = wybraneStatystyki[(int)Statystki.Inteligencja];
-
+            ekranGry.gra.bohater = new Bohater(tymczasowyBohater);
         }
         #endregion
 
@@ -322,42 +235,82 @@ namespace RPG
 
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
         {
-            OdejmijPunkt(Statystki.Sila, 1);
+            if (tymczasowyBohater.Sila > ekranGry.gra.bohater.Sila)
+            {
+                tymczasowyBohater.Sila--;
+                tymczasowyBohater.Punkty++;
+            }
+            OdswiezStatystyki();
         }
 
         private void PictureBoxSilaPlus_Click(object sender, EventArgs e)
         {
-            DodajPunkt(Statystki.Sila, 1);
+            if (tymczasowyBohater.Punkty > 0)
+            {
+                tymczasowyBohater.Sila++;
+                tymczasowyBohater.Punkty--;
+                OdswiezStatystyki();
+            }
         }
 
         private void PictureBoxZrecznoscMinus_Click(object sender, EventArgs e)
         {
-            OdejmijPunkt(Statystki.Zrecznosc, 1);
+            if (tymczasowyBohater.Zrecznosc > ekranGry.gra.bohater.Zrecznosc)
+            {
+                tymczasowyBohater.Zrecznosc--;
+                tymczasowyBohater.Punkty++;
+            }
+            OdswiezStatystyki();
         }
 
         private void PictureBoxZrecznoscPlus_Click(object sender, EventArgs e)
         {
-            DodajPunkt(Statystki.Zrecznosc, 1);
+            if (tymczasowyBohater.Punkty > 0)
+            {
+                tymczasowyBohater.Zrecznosc++;
+                tymczasowyBohater.Punkty--;
+                OdswiezStatystyki();
+            }
         }
 
         private void PictureBoxWitalnoscMinus_Click(object sender, EventArgs e)
         {
-            OdejmijPunkt(Statystki.Witalnosc, 1);
+            if (tymczasowyBohater.Witalnosc > ekranGry.gra.bohater.Witalnosc)
+            {
+                tymczasowyBohater.Witalnosc--;
+                tymczasowyBohater.Punkty++;
+            }
+            OdswiezStatystyki();
         }
 
         private void PictureBoxWitalnoscPlus_Click(object sender, EventArgs e)
         {
-            DodajPunkt(Statystki.Witalnosc, 1);
+            if (tymczasowyBohater.Punkty > 0)
+            {
+                tymczasowyBohater.Witalnosc++;
+                tymczasowyBohater.Punkty--;
+                OdswiezStatystyki();
+            }
         }
 
         private void PictureBoxInteligencjaMinus_Click(object sender, EventArgs e)
         {
-            OdejmijPunkt(Statystki.Inteligencja, 1);
+            if (tymczasowyBohater.Inteligencja > ekranGry.gra.bohater.Inteligencja)
+            {
+                tymczasowyBohater.Inteligencja--;
+                tymczasowyBohater.Punkty++;
+            }
+            OdswiezStatystyki();
         }
 
         private void PictureBoxInteligencjaPlus_Click(object sender, EventArgs e)
         {
-            DodajPunkt(Statystki.Inteligencja, 1);
+            if (tymczasowyBohater.Punkty > 0)
+            {
+                tymczasowyBohater.Inteligencja++;
+                tymczasowyBohater.Punkty--;
+                OdswiezStatystyki();
+            }
         }
         #endregion
     }

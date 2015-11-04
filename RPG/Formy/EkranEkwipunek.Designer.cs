@@ -459,7 +459,7 @@
             // pictureBoxWybrany
             // 
             this.pictureBoxWybrany.BackColor = System.Drawing.Color.Silver;
-            this.pictureBoxWybrany.Location = new System.Drawing.Point(832, 22);
+            this.pictureBoxWybrany.Location = new System.Drawing.Point(478, 80);
             this.pictureBoxWybrany.Name = "pictureBoxWybrany";
             this.pictureBoxWybrany.Size = new System.Drawing.Size(54, 50);
             this.pictureBoxWybrany.TabIndex = 24;

@@ -8,9 +8,8 @@ namespace RPG
 {
     public class Ekwipunek
     {
-        public string Nazwa { get; set; }
         public string Obrazek { get; set; }
-        public int Ilosc { get; set; }
+        public string Nazwa { get; set; }
         public int Sila { get; set; }
         public int zrecznosc { get; set; }
         public int Witalnosc { get; set; }
@@ -21,13 +20,35 @@ namespace RPG
         public int Energia { get; set; }
         public int SzansaNaTrafienie { get; set; }
         public int SzansaNaKrytyczne { get; set; }
-        public int Wartosc { get; set; }
+        
+        const double przemnoznikStatystyk = 5;
+        const double przemnoznikCechEkwipunku = 2;
+        const double przemnoznikHPIEnergii = 1;
+        const double przemnoznikTrafieniaIKrytycznego = 20;
 
-        public Ekwipunek(string _nazwa, string _obrazek, int _ilosc, int _sila, int _zrecznosc, int _witalnosc, int _inteligencja, int _obrazenia, int _pancerz, int _hp, int _energia, int _szansaNaTrafienie, int _szansaNaKrytyczne)
+        public int Cena
+        {
+            get
+            {
+                return (int)(
+                    Sila * przemnoznikStatystyk
+                    + zrecznosc * przemnoznikStatystyk
+                    + Witalnosc * przemnoznikStatystyk
+                    + Inteligencja * przemnoznikStatystyk
+                    + Obrazenia * przemnoznikCechEkwipunku
+                    + Pancerz * przemnoznikCechEkwipunku
+                    + HP * przemnoznikHPIEnergii
+                    + Energia * przemnoznikHPIEnergii
+                    + SzansaNaTrafienie * przemnoznikTrafieniaIKrytycznego
+                    + SzansaNaKrytyczne * przemnoznikTrafieniaIKrytycznego
+                    );
+            }
+        }
+
+        public Ekwipunek(string _nazwa, string _obrazek, int _sila, int _zrecznosc, int _witalnosc, int _inteligencja, int _obrazenia, int _pancerz, int _hp, int _energia, int _szansaNaTrafienie, int _szansaNaKrytyczne)
         {
             Nazwa = _nazwa;
             Obrazek = _obrazek;
-            Ilosc = _ilosc;
             Sila = _sila;
             zrecznosc = _zrecznosc;
             Witalnosc = _witalnosc;
@@ -38,24 +59,6 @@ namespace RPG
             Energia = _energia;
             SzansaNaTrafienie = _szansaNaTrafienie;
             SzansaNaKrytyczne = _szansaNaKrytyczne;
-
-            const double przemnoznikStatystyk = 5;
-            const double przemnoznikCechEkwipunku = 2;
-            const double przemnoznikHPIEnergii = 1;
-            const double przemnoznikTrafieniaIKrytycznego = 20;
-            Wartosc = Ilosc 
-                * (int) (
-                Sila * przemnoznikStatystyk
-                + zrecznosc * przemnoznikStatystyk 
-                + Witalnosc * przemnoznikStatystyk 
-                + Inteligencja * przemnoznikStatystyk
-                + Obrazenia * przemnoznikCechEkwipunku
-                + Pancerz * przemnoznikCechEkwipunku
-                + HP * przemnoznikHPIEnergii
-                + Energia * przemnoznikHPIEnergii
-                + SzansaNaTrafienie * przemnoznikTrafieniaIKrytycznego
-                + SzansaNaKrytyczne * przemnoznikTrafieniaIKrytycznego 
-                );
         }
     }
 }
