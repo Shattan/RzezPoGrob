@@ -101,7 +101,7 @@
     <Compile Include="Formy\EkranDziennikZadan.Designer.cs">
       <DependentUpon>EkranDziennikZadan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klasy\Bohater.cs" />
+    <Compile Include="Klasy\Gracz.cs" />
     <Compile Include="Klasy\Zadanie.cs" />
     <Compile Include="Tla\EkranDziennikZadanTlo.cs">
       <SubType>Form</SubType>
@@ -280,6 +280,45 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hKrólewskiMiecz.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hMieczNajemnika.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hMieczPogromnaGoblinów.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hMieczProsty.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hMieczRekiniKieł.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hMorgensztern.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hRapier.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hSztylet.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hSztyletKrwi.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hSztyletProsty.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hSztyletZabójcy.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hToporek.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hWekiera.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki ekwipunku\bron2hDługiMiecz.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -341,6 +380,39 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki ekwipunku\bron2hŁukZKrainPółnocy.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzKolczuga.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzLekkaMagicznaZbroja.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzPancerzCienia.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzPancerzKróla.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzPancerzLekki.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzPłaszczŚmierci.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzSzataCzerwonegoMaga.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzSzataNiebieskiegoMaga.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzSzataRóżowegoMaga.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzSzataZielonegoMaga.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzZbrojaPłytowa.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki ekwipunku\tarczaDużaTarcza.PNG">
@@ -1901,6 +1973,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki postaci walczących\zywiolak wody.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki pożywienia i mikstur\SuchyChleb.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki przeszkód\attackdummy1.png">
@@ -4823,6 +4898,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Potwierdź postać.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\bron1hNóż do masła.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\tarczaPochodnia.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki ekwipunku\pancerzStara tunika.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

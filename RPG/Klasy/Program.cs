@@ -66,8 +66,11 @@ namespace RPG
                 using (Image obrazekTla = new Bitmap("Resources/Grafiki menu/Tło przedmiotu.png"))
                 {
                     Kontrolka.BackgroundImage = new Bitmap(obrazekTla, Kontrolka.Width, Kontrolka.Height);
-                    Kontrolka.Image = new Bitmap(sciezkaDoObrazu);
-                    Kontrolka.Load(sciezkaDoObrazu);
+                    if (sciezkaDoObrazu != null)
+                    {
+                        Kontrolka.Image = new Bitmap(sciezkaDoObrazu);
+                        Kontrolka.ImageLocation = sciezkaDoObrazu;
+                    }
                 }
             }
             catch (System.ArgumentException e)

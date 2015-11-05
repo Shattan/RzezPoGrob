@@ -136,8 +136,8 @@ namespace RPG
         public void WczytajNowaGre()
         {
             //Metoda Wywolywana w ekranNowaGra
-            label1.Text = gra.bohater.Nazwa;
-            ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
+            label1.Text = gra.gracz.Nazwa;
+            ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "dół.png");
         }
 
         private void Walka(DialogResult dR, PictureBox pB)
@@ -145,7 +145,7 @@ namespace RPG
             if (dR == DialogResult.OK)
             {
                 ekranGlowny.ekranGryTloObiekty.panelMapa.Controls.Remove(pB);
-                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "dół.png");
                 timerPrzeplywCzasu.Start();
                 lewo = prawo = dol = gora = false;
             }
@@ -229,19 +229,19 @@ namespace RPG
             //Animacje Gifa
             if (prawo == true && index % czasOdnawiania == 0)
             {
-                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "prawo.gif");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "prawo.gif");
             }
             if (lewo == true && index % czasOdnawiania == 0)
             {
-                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "lewo.gif");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "lewo.gif");
             }
             if (dol == true && index % czasOdnawiania == 0)
             {
-                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.gif");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "dół.gif");
             }
             if (gora == true && index % czasOdnawiania == 0)
             {
-                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "góra.gif");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "góra.gif");
             }
 
             //Ruch Bohatera i planszy
@@ -278,7 +278,7 @@ namespace RPG
         {
             //Chodzacy ludek
             ekranGlowny.ekranGryTloObiekty.pBGracz.SizeMode = PictureBoxSizeMode.Zoom;
-            ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
+            ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "dół.png");
             ekranGlowny.ekranGryTloObiekty.pBGracz.Size = new Size(ekranGlowny.ekranGryTloObiekty.pBGracz.Image.Width, ekranGlowny.ekranGryTloObiekty.pBGracz.Image.Height);
 
             const int wielkoscPrzyciskow = 90;
@@ -428,22 +428,22 @@ namespace RPG
             if (e.KeyCode == Keys.Right)
             {
                 prawo = false;
-                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "prawo.png");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "prawo.png");
             }
             if (e.KeyCode == Keys.Left)
             {
                 lewo = false;
-                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "lewo.png");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "lewo.png");
             }
             if (e.KeyCode == Keys.Up)
             {
                 gora = false;
-                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "góra.png");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "góra.png");
             }
             if (e.KeyCode == Keys.Down)
             {
                 dol = false;
-                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.bohater.ObrazekNaMapie + "dół.png");
+                ekranGlowny.ekranGryTloObiekty.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "dół.png");
             }
         }
         #endregion

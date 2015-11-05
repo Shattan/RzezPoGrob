@@ -8,31 +8,32 @@ namespace RPG
 {
     public class Gra
     {
-        public Bohater bohater = new Bohater();
-        public List<Zadanie> listaZadan = new List<Zadanie>();
-        public List<Ekwipunek> listaEkwipunek = new List<Ekwipunek>();
-        public List<Strawa> listaStrawa = new List<Strawa>();
+        public Gracz gracz = new Gracz();
 
-        public List<Umiejetnosc> listaUmiejetnosc = new List<Umiejetnosc>();
-        public List<Przeszkoda> listaPrzeszkoda = new List<Przeszkoda>();
-        public List<List<NPC>> listaZestawPrzeciwnikow = new List<List<NPC>>();
-        public List<NPC> listaPostacFabularna = new List<NPC>();
-        public List<NPC> listaPostacZMiasta = new List<NPC>();
-        public List<NPC> listaPostacZCmentarza = new List<NPC>();
-        public List<NPC> listaPostacZDziczy = new List<NPC>();
+        public List<Zadanie> listaZadan = new List<Zadanie>();
+        public List<Ekwipunek> listaPrzedmiotow = new List<Ekwipunek>();
+        public List<Strawa> listaPozywieniaIMikstur = new List<Strawa>();
+        public List<Umiejetnosc> listaUmiejetnosci = new List<Umiejetnosc>();
+
+        public List<Przeszkoda> listaPrzeszkod = new List<Przeszkoda>();
+        public List<NPC> listaPostaciFabularnych = new List<NPC>();
+        public List<NPC> listaPostaciZMiasta = new List<NPC>();
+        public List<NPC> listaPostaciZCmentarza = new List<NPC>();
+        public List<NPC> listaPostaciZDziczy = new List<NPC>();
+        public List<List<NPC>> listaZestawowPrzeciwnikow = new List<List<NPC>>();
         
 
         public Gra()
         {
             //Tworzenie infrastruktury
-            UtworzUmiejetnosci();
-            UtworzEkwipunek();
-            UtworzStrawy();
-            UtworzPostacie();
-            UtworzPrzeszkody();
+            UtworzListeZadan();
+            UtworzListePrzedmiotow();
+            UtworzListePozywieniaIMikstur();
+            UtworzListeUmiejetnosci();
+            UtworzListePrzeszkod();
+            UtworzZbioryPostaci();
             UtworzZestawyPrzeciwnikow();
 
-            UtworzZadania();
         }
 
         public void DodajZadanie(string nazwa, string zleceniodawca, string cel, string nagroda, string opis)
@@ -47,7 +48,7 @@ namespace RPG
             else return new Zadanie("BrakNazwy", "BrakZleceniodwacy", "BrakCelu", "BrakNagordy", "BrakOpisu");
         }
 
-        public void UtworzZadania()
+        public void UtworzListeZadan()
         {
             //index 0
             DodajZadanie
@@ -86,62 +87,103 @@ namespace RPG
                     "Gobliny znajdziesz na wschód od wioski."
                 );
         }
-        
-        public void UtworzPostacie()
-        {
-            //**************************************************************************************************************
-            //Postacie fabularne
-            //index 0
-            listaPostacFabularna.Add(new NPC("Lord Krwawy Mati", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
-            //index 1
-            listaPostacFabularna.Add(new NPC("Lord Seba", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
-            //**************************************************************************************************************
-            //index 0
-            listaPostacZMiasta.Add(new NPC("Szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
 
-            //**************************************************************************************************************
-            //index 0
-            listaPostacZCmentarza.Add(new NPC("Ghoul", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
-
-            //**************************************************************************************************************
-            //index 0
-            listaPostacZDziczy.Add(new NPC("Wilk", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
-
-        }
-
-        public void UtworzUmiejetnosci()
-        {
-            //index 0
-            listaUmiejetnosc.Add(new Umiejetnosc("Wymachiwanie"));
-        }
-
-        public void UtworzEkwipunek()
-        {
-            //index 0
-            listaEkwipunek.Add(new Ekwipunek("Długi Miecz","Resources/Grafiki ekwipunku/bron2hDługiMiecz.PNG",10,10,10,10,10,10,10,10,10,10));
-        }
-        public void UtworzStrawy()
-        {
-            //index 0
-            listaStrawa.Add(new Strawa("","",10,10));
-        }
-
-        public void UtworzPrzeszkody()
-        {
-            //index 0
-            listaPrzeszkoda.Add(new Przeszkoda("Drzewo"));
-        }
 
         public void UtworzZestawyPrzeciwnikow()
         {
             //index 0
-            listaZestawPrzeciwnikow.Add(listaPostacFabularna);
+            listaZestawowPrzeciwnikow.Add(listaPostaciFabularnych);
             //index 1
-            listaZestawPrzeciwnikow.Add(listaPostacZMiasta);
+            listaZestawowPrzeciwnikow.Add(listaPostaciZMiasta);
             //index 2
-            listaZestawPrzeciwnikow.Add(listaPostacZCmentarza);
+            listaZestawowPrzeciwnikow.Add(listaPostaciZCmentarza);
             //index 3
-            listaZestawPrzeciwnikow.Add(listaPostacZDziczy);
+            listaZestawowPrzeciwnikow.Add(listaPostaciZDziczy);
+        }
+
+        public void UtworzZbioryPostaci()
+        {
+            //**************************************************************************************************************
+            //Postacie fabularne
+            //index 0
+            listaPostaciFabularnych.Add(new NPC("Lord Krwawy Mati", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 1
+            listaPostaciFabularnych.Add(new NPC("Lord Seba", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //**************************************************************************************************************
+            //index 0
+            listaPostaciZMiasta.Add(new NPC("Szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+
+            //**************************************************************************************************************
+            //index 0
+            listaPostaciZCmentarza.Add(new NPC("Ghoul", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+
+            //**************************************************************************************************************
+            //index 0
+            listaPostaciZDziczy.Add(new NPC("Wilk", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+
+        }
+
+        public void UtworzListeUmiejetnosci()
+        {
+            //index 0
+            listaUmiejetnosci.Add(new Umiejetnosc("Wymachiwanie"));
+        }
+
+        public void UtworzListePrzedmiotow()
+        {
+            //index 0
+            listaPrzedmiotow.Add( new Ekwipunek("Nóż do masła","Resources/Grafiki ekwipunku/bron1hNóż do masła.png",1,1,0,0,1,0,0,0,0,0));
+            //index 1
+            listaPrzedmiotow.Add( new Ekwipunek("Stara tunika", "Resources/Grafiki ekwipunku/pancerzStara tunika.png", 0, 0, 1, 0, 0, 1, 5, 0, 0, 0));
+            //index 2
+            listaPrzedmiotow.Add( new Ekwipunek("Pochodnia", "Resources/Grafiki ekwipunku/tarczaPochodnia.png", 0, 0, 0, 1, 0, 0, 0, 5, 1, 0));
+            //index 3
+            listaPrzedmiotow.Add(new Ekwipunek("Długi Miecz", "Resources/Grafiki ekwipunku/bron2hDługiMiecz.PNG", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 4
+            listaPrzedmiotow.Add(new Ekwipunek("Kosa Powiew Śmierci", "Resources/Grafiki ekwipunku/bron2hKosaPowiewŚmierci.PNG", 5, 10, 80, 10, 10, 0, 10, 10, 10, 10));
+            //index 5
+            listaPrzedmiotow.Add(new Ekwipunek("Kostur Nowicjusza", "Resources/Grafiki ekwipunku/bron2hKosturNowicjusza.PNG", 10, 10, 10, 0, 10, 0, 10, 10, 10, 10));
+            //index 6
+            listaPrzedmiotow.Add(new Ekwipunek("Łuk Z Krain Południa", "Resources/Grafiki ekwipunku/bron2hŁukZKrainPołudnia.PNG", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 7
+            listaPrzedmiotow.Add(new Ekwipunek("Młot Bojowy", "Resources/Grafiki ekwipunku/bron2hMłotBojowy.PNG", 10, 10, 10, 10, 10, 10, 0, 10, 10, 10));
+            //index 8
+            listaPrzedmiotow.Add(new Ekwipunek("Topór Bojowy", "Resources/Grafiki ekwipunku/bron2hTopórBojowy.PNG", 10, 10, 0, 10, 10, 10, 10, 10, 10, 10));
+            //index 9
+            listaPrzedmiotow.Add(new Ekwipunek("Trójząb", "Resources/Grafiki ekwipunku/bron2hTrójząb.PNG", 0, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 10
+            listaPrzedmiotow.Add(new Ekwipunek("Duża Tarcza", "Resources/Grafiki ekwipunku/tarczaDużaTarcza.PNG", 0, 0, 0, 10, 10, 10, 10, 10, 10, 10));
+            //index 11
+            listaPrzedmiotow.Add(new Ekwipunek("Tarcza Króla", "Resources/Grafiki ekwipunku/tarczaTarczaKróla.PNG", 10, 10, 0, 10, 10, 10, 10, 10, 10, 10));
+            //index 12
+            listaPrzedmiotow.Add(new Ekwipunek("Sztylet Prosty", "Resources/Grafiki ekwipunku/bron1hSztyletProsty.PNG", 10, 10, 0, 10, 10, 10, 10, 10, 10, 10));
+            //index 13
+            listaPrzedmiotow.Add(new Ekwipunek("Sztylet Zabójcy", "Resources/Grafiki ekwipunku/bron1hSztyletZabójcy.PNG", 10, 10, 0, 10, 10, 10, 10, 10, 10, 10));
+            //index 14
+            listaPrzedmiotow.Add(new Ekwipunek("Szata Niebieskiego Maga", "Resources/Grafiki ekwipunku/pancerzSzataNiebieskiegoMaga.PNG", 10, 10, 0, 0, 0, 10, 10, 10, 10, 10));
+            //index 15
+            listaPrzedmiotow.Add(new Ekwipunek("Pancerz Cienia", "Resources/Grafiki ekwipunku/pancerzPancerzCienia.PNG", 10, 10, 10, 10, 10, 10, 10, 0, 0, 0));
+        }
+        public void UtworzListePozywieniaIMikstur()
+        {
+            //index 0
+            listaPozywieniaIMikstur.Add(new Strawa("Świeży chleb", "Resources/Grafiki pożywienia i mikstur/SuchyChleb.PNG", 10, 10));
+            //index 1
+            listaPozywieniaIMikstur.Add(new Strawa("Suchy chleb", "Resources/Grafiki pożywienia i mikstur/SuchyChleb.PNG", 10, 0));
+            //index 2
+            listaPozywieniaIMikstur.Add(new Strawa("Stary chleb", "Resources/Grafiki pożywienia i mikstur/SuchyChleb.PNG", 0, 10));
+            //index 3
+            listaPozywieniaIMikstur.Add(new Strawa("Czerstwy chleb", "Resources/Grafiki pożywienia i mikstur/SuchyChleb.PNG", 5, 10));
+            //index 4
+            listaPozywieniaIMikstur.Add(new Strawa("Chrupiący chleb", "Resources/Grafiki pożywienia i mikstur/SuchyChleb.PNG", 10, 5));
+            //index 5
+            listaPozywieniaIMikstur.Add(new Strawa("Chleb z pleśnią", "Resources/Grafiki pożywienia i mikstur/SuchyChleb.PNG", 5, 5));
+        }
+
+        public void UtworzListePrzeszkod()
+        {
+            //index 0
+            listaPrzeszkod.Add(new Przeszkoda("Drzewo"));
         }
     
 

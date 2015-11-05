@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    public class Bohater
+    public class Gracz
     {     
         public string Nazwa { get; set; }
         public string ObrazekNaMapie { get; set; }
@@ -36,8 +36,16 @@ namespace RPG
         public int SzansaNaTrafienie { get { return BazowaSzansaNaTrafienie + Zrecznosc / 10; } }
         public int SzansaNaKrytyczne { get { return BazowaSzansaNaKrytyczne + Zrecznosc / 10; } }
 
-        
-        public Bohater()
+        public Ekwipunek obecnaBronGracza { get; set; }
+        public Ekwipunek obecnyPancerzGracza { get; set; }
+        public Ekwipunek obecnaTarczaGracza { get; set; }
+
+        public List<Ekwipunek> plecakGracza {get;set;}
+        public List<Zadanie> zadaniaGracza {get;set;}
+
+
+
+        public Gracz()
         {
             Nazwa = "Gracz";
             ObrazekNaMapie = "Resources/Grafiki postaci na mapie/0/";
@@ -57,17 +65,15 @@ namespace RPG
             BazowaEnergia = 10;
             BazowaSzansaNaTrafienie = 75;
             BazowaSzansaNaKrytyczne = 5;
-            /*
-            Obrazenia = BazoweObrazenia + Sila / 5;
-            Pancerz = BazowyPancerz + Zrecznosc / 5;
-            HP = BazoweHP + Witalnosc*5;
-            Energia = BazowaEnergia + Inteligencja*5;
-            SzansaNaTrafienie = BazowaSzansaNaTrafienie + Zrecznosc/5;
-            SzansaNaKrytyczne = BazowaSzansaNaKrytyczne + Zrecznosc/5;
 
-            DoswiadczenieDoNastepnegoPoziomu = 1000 * Poziom * Poziom;*/
+            obecnaBronGracza = new Ekwipunek("Nóż do masła", "Resources/Grafiki ekwipunku/bron1hNóż do masła.png", 1, 1, 0, 0, 1, 0, 0, 0, 0, 0);
+            obecnyPancerzGracza = new Ekwipunek("Stara tunika", "Resources/Grafiki ekwipunku/pancerzStara tunika.png", 0, 0, 1, 0, 0, 1, 5, 0, 0, 0);
+            obecnaTarczaGracza = new Ekwipunek("Pochodnia", "Resources/Grafiki ekwipunku/tarczaPochodnia.png", 0, 0, 0, 1, 0, 0, 0, 5, 1, 0);
+
+            plecakGracza = new List<Ekwipunek>();
+            zadaniaGracza = new List<Zadanie>();
         }
-        public Bohater(Bohater nowyBohater)
+        public Gracz(Gracz nowyBohater)
         {
             this.Nazwa = nowyBohater.Nazwa;
             this.ObrazekNaMapie = nowyBohater.ObrazekNaMapie;
@@ -86,7 +92,15 @@ namespace RPG
             this.BazowaEnergia = nowyBohater.BazowaEnergia;
             this.BazowaSzansaNaTrafienie = nowyBohater.BazowaSzansaNaTrafienie;
             this.BazowaSzansaNaKrytyczne = nowyBohater.BazowaSzansaNaKrytyczne;
-            }
+
+
+            this.obecnaBronGracza = obecnaBronGracza;
+            this.obecnyPancerzGracza = obecnyPancerzGracza;
+            this.obecnaTarczaGracza = obecnaTarczaGracza;
+
+            this.plecakGracza = nowyBohater.plecakGracza;
+            this.zadaniaGracza = nowyBohater.zadaniaGracza;
+        }
     }
 
 }

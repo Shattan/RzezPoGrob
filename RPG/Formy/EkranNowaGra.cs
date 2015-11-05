@@ -23,7 +23,7 @@ namespace RPG
         //Lista sciezek obrazkow dostepnych do wybory dla tworzonej postaci
         List<String> ListaPostaci = new List<String>();
         static int wybranyBohater = 0;
-        Bohater tymczasowyBohater = new Bohater();
+        Gracz tymczasowyBohater = new Gracz();
         #endregion
 
         public EkranNowaGra(EkranGlowny ekranGlowny, EkranGry ekranGry, EkranGryTloMapa EkranGryTloMapa)
@@ -172,13 +172,13 @@ namespace RPG
 
         void WczytajStatystykiOdGracza()
         {
-            tymczasowyBohater = new Bohater(ekranGry.gra.bohater);
+            tymczasowyBohater = new Gracz(ekranGry.gra.gracz);
             OdswiezStatystyki();
         }
 
         void ZapiszStatystykiDoGracza()
         {
-            ekranGry.gra.bohater = new Bohater(tymczasowyBohater);
+            ekranGry.gra.gracz = new Gracz(tymczasowyBohater);
         }
         #endregion
 
@@ -209,7 +209,7 @@ namespace RPG
         #region Przyciski do modyfikowania statystyk
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Sila > ekranGry.gra.bohater.Sila)
+            if (tymczasowyBohater.Sila > ekranGry.gra.gracz.Sila)
             {
                 tymczasowyBohater.Sila--;
                 tymczasowyBohater.Punkty++;
@@ -229,7 +229,7 @@ namespace RPG
 
         private void PictureBoxZrecznoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Zrecznosc > ekranGry.gra.bohater.Zrecznosc)
+            if (tymczasowyBohater.Zrecznosc > ekranGry.gra.gracz.Zrecznosc)
             {
                 tymczasowyBohater.Zrecznosc--;
                 tymczasowyBohater.Punkty++;
@@ -249,7 +249,7 @@ namespace RPG
 
         private void PictureBoxWitalnoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Witalnosc > ekranGry.gra.bohater.Witalnosc)
+            if (tymczasowyBohater.Witalnosc > ekranGry.gra.gracz.Witalnosc)
             {
                 tymczasowyBohater.Witalnosc--;
                 tymczasowyBohater.Punkty++;
@@ -269,7 +269,7 @@ namespace RPG
 
         private void PictureBoxInteligencjaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Inteligencja > ekranGry.gra.bohater.Inteligencja)
+            if (tymczasowyBohater.Inteligencja > ekranGry.gra.gracz.Inteligencja)
             {
                 tymczasowyBohater.Inteligencja--;
                 tymczasowyBohater.Punkty++;
