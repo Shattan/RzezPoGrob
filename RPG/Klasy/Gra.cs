@@ -34,58 +34,120 @@ namespace RPG
             UtworzZbioryPostaci();
             UtworzZestawyPrzeciwnikow();
 
+            UstawPoczatkowegoGracza();
         }
 
-        public void DodajZadanie(string nazwa, string zleceniodawca, string cel, string nagroda, string opis)
+        //Ustawienie statystyk, przedmiotow i zadan gracza na takie jakie ma miec na początku gry
+        public void UstawPoczatkowegoGracza()
         {
-            listaZadan.Add(new Zadanie(nazwa, zleceniodawca, cel, nagroda, opis));
+            gracz.SilaPodstawa=5;
+            gracz.ZrecznoscPodstawa=5;
+            gracz.WitalnoscPodstawa=5;
+            gracz.InteligencjaPodstawa=5;
+            gracz.ObrazeniaPodstawa=5;
+            gracz.PancerzPodstawa=5;
+            gracz.HPPodstawa=5;
+            gracz.EnergiaPodstawa=5;
+            gracz.SzansaNaTrafieniePodstawa=75;
+            gracz.SzansaNaKrytycznePodstawa=5;
+            gracz.ZalozonaBron = listaPrzedmiotow[0];
+            gracz.ZalozonyPancerz = listaPrzedmiotow[1];
+            gracz.ZalozonaTarcza = listaPrzedmiotow[2];
+
+            gracz.plecakGracza.Add(listaPrzedmiotow[0]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[5]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[6]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[0]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[0]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[0]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[0]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[0]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[0]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
+            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
+
+            gracz.zadaniaGracza.Add(listaZadan[0]);
+            gracz.zadaniaGracza.Add(listaZadan[1]);
+            gracz.zadaniaGracza.Add(listaZadan[2]);
+            gracz.zadaniaGracza.Add(listaZadan[3]);
+            gracz.zadaniaGracza.Add(listaZadan[2]);
+            gracz.zadaniaGracza.Add(listaZadan[1]);
+            gracz.zadaniaGracza.Add(listaZadan[0]);
+            gracz.zadaniaGracza.Add(listaZadan[2]);
+            gracz.zadaniaGracza.Add(listaZadan[2]);
         }
 
-        public Zadanie ZwrocZadanie(int ktore)
-        {
-            if ((ktore >= 0) && (ktore <= listaZadan.Count))
-                return listaZadan[ktore];
-            else return new Zadanie("BrakNazwy", "BrakZleceniodwacy", "BrakCelu", "BrakNagordy", "BrakOpisu");
-        }
+        //public void DodajZadanie(string nazwa, string zleceniodawca, string cel, string nagroda, string opis)
+        //{
+        //    listaZadan.Add(new Zadanie(nazwa, zleceniodawca, cel, nagroda, opis));
+        //}
+        //
+        //public Zadanie ZwrocZadanie(int ktore)
+        //{
+        //    if ((ktore >= 0) && (ktore <= listaZadan.Count))
+        //        return listaZadan[ktore];
+        //    else return new Zadanie("BrakNazwy", "BrakZleceniodwacy", "BrakCelu", "BrakNagordy", "BrakOpisu");
+        //}
 
         public void UtworzListeZadan()
         {
             //index 0
-            DodajZadanie
+            listaZadan.Add(new Zadanie
                 (
                     "Głodne wilki dwa",
                     "Wieśniaczka Laura",
                     "Zabij wilki nieopodal strumienia",
                     "Niezapomniana noc z Laurą",
                     "No rusz się stary bydlaku, nie będziemy czekać wiecznie, aż wykonasz to zadanie!"
-                );
+                ));
             //index 1
-            DodajZadanie
+            listaZadan.Add(new Zadanie
                 (
                     "Na ratunek goblinom",
                     "Wódz Gubin",
                     "Przynieś wiadro wody do wioski goblinów",
                     "Gobliny przeżyją kolejny dzień",
                     "Wodę znajdziesz w strumieniu na wschód od wioski goblinów."
-                );
+                ));
             //index 2
-            DodajZadanie
+            listaZadan.Add(new Zadanie
                 (
                     "Były sobie ogry trzy",
                     "Rycerz Lancit",
                     "Pomóż rycerzowi w pokonaniu Ogrów",
                     "Rycerz będzie zadowolony",
                     "Uważaj na siebie! Ogry to trudni przeciwnicy."
-                );
+                ));
             //index 3
-            DodajZadanie
+            listaZadan.Add(new Zadanie
                 (
                     "Więcej! Trzeba więcej!",
                     "Starszy wioski Edward",
                     "Dostarcz do wioski 3 goblińskie miecze",
                     "Wioska będzie mogła przetrwać kolejne ataki szczurów",
                     "Gobliny znajdziesz na wschód od wioski."
-                );
+                ));
         }
 
 

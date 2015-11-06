@@ -451,6 +451,9 @@
     <Content Include="Resources\Grafiki menu\Przykładowy przycisk.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\Tło informacji o przedmiocie.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki menu\Tło przedmiotu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

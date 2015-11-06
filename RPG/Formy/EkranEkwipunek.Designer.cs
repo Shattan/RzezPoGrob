@@ -222,11 +222,11 @@
             // 
             // PictureBoxPrzenoszony
             // 
-            this.PictureBoxPrzenoszony.BackColor = System.Drawing.Color.Silver;
+            this.PictureBoxPrzenoszony.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxPrzenoszony.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PictureBoxPrzenoszony.Location = new System.Drawing.Point(157, 0);
+            this.PictureBoxPrzenoszony.Location = new System.Drawing.Point(136, 60);
             this.PictureBoxPrzenoszony.Name = "PictureBoxPrzenoszony";
-            this.PictureBoxPrzenoszony.Size = new System.Drawing.Size(92, 85);
+            this.PictureBoxPrzenoszony.Size = new System.Drawing.Size(126, 120);
             this.PictureBoxPrzenoszony.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxPrzenoszony.TabIndex = 24;
             this.PictureBoxPrzenoszony.TabStop = false;
@@ -238,44 +238,49 @@
             // 
             // LabelOpisStatystykPrzedmiotu
             // 
-            this.LabelOpisStatystykPrzedmiotu.Font = new System.Drawing.Font("Garamond", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelOpisStatystykPrzedmiotu.Location = new System.Drawing.Point(-2, 83);
+            this.LabelOpisStatystykPrzedmiotu.Font = new System.Drawing.Font("Garamond", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelOpisStatystykPrzedmiotu.Location = new System.Drawing.Point(51, 58);
             this.LabelOpisStatystykPrzedmiotu.Name = "LabelOpisStatystykPrzedmiotu";
-            this.LabelOpisStatystykPrzedmiotu.Size = new System.Drawing.Size(160, 189);
+            this.LabelOpisStatystykPrzedmiotu.Size = new System.Drawing.Size(205, 189);
             this.LabelOpisStatystykPrzedmiotu.TabIndex = 25;
             this.LabelOpisStatystykPrzedmiotu.Text = "Tutaj wyświetlają się dane dotyczące przedmiotu";
             // 
             // PanelOpisPrzedmiotu
             // 
-            this.PanelOpisPrzedmiotu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.PanelOpisPrzedmiotu.BackColor = System.Drawing.Color.Transparent;
             this.PanelOpisPrzedmiotu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PanelOpisPrzedmiotu.Controls.Add(this.PictureBoxPrzenoszony);
+            this.PanelOpisPrzedmiotu.CausesValidation = false;
             this.PanelOpisPrzedmiotu.Controls.Add(this.LabelNazwaPrzedmiotu);
-            this.PanelOpisPrzedmiotu.Controls.Add(this.LabelWartosciStatystykPrzedmiotu);
+            this.PanelOpisPrzedmiotu.Controls.Add(this.PictureBoxPrzenoszony);
             this.PanelOpisPrzedmiotu.Controls.Add(this.LabelOpisStatystykPrzedmiotu);
+            this.PanelOpisPrzedmiotu.Controls.Add(this.LabelWartosciStatystykPrzedmiotu);
+            this.PanelOpisPrzedmiotu.ForeColor = System.Drawing.Color.Yellow;
             this.PanelOpisPrzedmiotu.Location = new System.Drawing.Point(329, 292);
             this.PanelOpisPrzedmiotu.Name = "PanelOpisPrzedmiotu";
-            this.PanelOpisPrzedmiotu.Size = new System.Drawing.Size(249, 271);
+            this.PanelOpisPrzedmiotu.Size = new System.Drawing.Size(260, 251);
             this.PanelOpisPrzedmiotu.TabIndex = 26;
             this.PanelOpisPrzedmiotu.Visible = false;
             // 
             // LabelNazwaPrzedmiotu
             // 
             this.LabelNazwaPrzedmiotu.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelNazwaPrzedmiotu.Location = new System.Drawing.Point(-3, 0);
+            this.LabelNazwaPrzedmiotu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(10)))));
+            this.LabelNazwaPrzedmiotu.Location = new System.Drawing.Point(6, 6);
             this.LabelNazwaPrzedmiotu.Name = "LabelNazwaPrzedmiotu";
-            this.LabelNazwaPrzedmiotu.Size = new System.Drawing.Size(169, 81);
+            this.LabelNazwaPrzedmiotu.Size = new System.Drawing.Size(239, 56);
             this.LabelNazwaPrzedmiotu.TabIndex = 27;
             this.LabelNazwaPrzedmiotu.Text = "Tutaj pojawia się nazwa przedmiotu.";
+            this.LabelNazwaPrzedmiotu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // LabelWartosciStatystykPrzedmiotu
             // 
-            this.LabelWartosciStatystykPrzedmiotu.Font = new System.Drawing.Font("Garamond", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelWartosciStatystykPrzedmiotu.Location = new System.Drawing.Point(155, 83);
+            this.LabelWartosciStatystykPrzedmiotu.Font = new System.Drawing.Font("Garamond", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelWartosciStatystykPrzedmiotu.Location = new System.Drawing.Point(19, 58);
             this.LabelWartosciStatystykPrzedmiotu.Name = "LabelWartosciStatystykPrzedmiotu";
-            this.LabelWartosciStatystykPrzedmiotu.Size = new System.Drawing.Size(92, 189);
+            this.LabelWartosciStatystykPrzedmiotu.Size = new System.Drawing.Size(38, 189);
             this.LabelWartosciStatystykPrzedmiotu.TabIndex = 26;
             this.LabelWartosciStatystykPrzedmiotu.Text = "Tutaj wyświetlają się dane dotyczące przedmiotu";
+            this.LabelWartosciStatystykPrzedmiotu.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // EkranEkwipunek
             // 
@@ -308,6 +313,7 @@
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(5)))), ((int)(((byte)(0)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranEkwipunek_FormClosing);
             this.Load += new System.EventHandler(this.EkranEkwipunek_Load);
+            this.Shown += new System.EventHandler(this.EkranEkwipunek_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBron)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTarcza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPancerz)).EndInit();
@@ -347,8 +353,8 @@
         private System.Windows.Forms.PictureBox PictureBoxPrzenoszony;
         private System.Windows.Forms.Timer Zegar;
         private System.Windows.Forms.Label LabelOpisStatystykPrzedmiotu;
-        private System.Windows.Forms.Panel PanelOpisPrzedmiotu;
         private System.Windows.Forms.Label LabelWartosciStatystykPrzedmiotu;
         private System.Windows.Forms.Label LabelNazwaPrzedmiotu;
+        private System.Windows.Forms.Panel PanelOpisPrzedmiotu;
     }
 }

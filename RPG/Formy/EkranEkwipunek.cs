@@ -27,11 +27,9 @@ namespace RPG
             this.ekranGry = ekranGry;
 
             InitializeComponent();
+
             RozmiescElementy();
             KolorujElementy();
-
-            DodanieDragAndDropDlaObrazkow();
-            Zegar.Start();
         }
 
         #region Metody
@@ -83,26 +81,12 @@ namespace RPG
             PictureBoxBron.Location = new Point(Width * 45 / 100, Height * 28 / 100);
             PictureBoxPancerz.Location = new Point(Width * 51 / 100, Height * 23 / 100);
             PictureBoxTarcza.Location = new Point(Width * 57 / 100, Height * 23 / 100);
-
-            int szerokoscIkon = (Width * 5 / 100)-5;
-            int wysokoscIkon = Height * 8 / 100;
-
-            //Dodawanie pól ekwipunku
-            const int miejscWEkwipunku = 59;
-            for (int i = 0; i <= miejscWEkwipunku; i++)
-            {
-                PictureBox x = new PictureBox();
-                x.Size = new Size(szerokoscIkon, wysokoscIkon);
-                Program.UstawObrazEkwipunku(x, null);
-                x.ImageLocation = null;
-                x.Name = null;
-                FlowLayoutPanelPancerze.Controls.Add(x);
-            }
         }
         void KolorujElementy()
         {
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz, "Resources/Grafiki menu/Wyjdź.png");
 
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PanelOpisPrzedmiotu, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
             //Przyciski do rozdawania statystyk
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxSilaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
@@ -112,25 +96,9 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWitalnoscPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaMinus, "Resources/Grafiki menu/Przycisk odejmij.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxInteligencjaPlus, "Resources/Grafiki menu/Przycisk dodaj.png");
-
-            Program.UstawObrazEkwipunku(PictureBoxBron, ekranGry.gra.gracz.obecnaBronGracza.Obrazek);
-            Program.UstawObrazEkwipunku(PictureBoxPancerz, ekranGry.gra.gracz.obecnyPancerzGracza.Obrazek);
-            Program.UstawObrazEkwipunku(PictureBoxTarcza, ekranGry.gra.gracz.obecnaTarczaGracza.Obrazek);
-
-
-            //pozniej trzeba zmienic .listaPrzedmiotow na .gracz.plecakGracza 
-            foreach (Ekwipunek przedmiot in ekranGry.gra.listaPrzedmiotow)
-            {
-                //tymczasowe zabezpieczenie na wypadek wiekszej ilosci przedmiotow niz miejsc w plecaku
-                if (ekranGry.gra.listaPrzedmiotow.IndexOf(przedmiot) < FlowLayoutPanelPancerze.Controls.Count)
-                {
-                    Program.UstawObrazEkwipunku((FlowLayoutPanelPancerze.Controls[ekranGry.gra.listaPrzedmiotow.IndexOf(przedmiot)] as PictureBox), przedmiot.Obrazek);
-                    (FlowLayoutPanelPancerze.Controls[ekranGry.gra.listaPrzedmiotow.IndexOf(przedmiot)] as PictureBox).Name = przedmiot.Nazwa;
-                }
-            }
         }
 
-        #region Funkcje odświeżające okienka z informacjami
+        #region Funkcje odświeżające okienka z informacjami i ekwipunek
         void OdswiezStatystyki()
         {
             LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";   
@@ -148,33 +116,34 @@ namespace RPG
 
             LabelWartosciStatystyk.Text = "\n";
             LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";               //Pozostałe punkty do rozdania
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Sila + "\n";                 //Siła
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Zrecznosc + "\n";            //Zręczność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Witalnosc + "\n";            //Witalność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Inteligencja + "\n";         //Inteligencja
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Obrazenia + "\n";            //Obrażenia
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Pancerz + "\n";              //Pancerz
-            LabelWartosciStatystyk.Text += tymczasowyBohater.HP + "\n";                   //Zdrowie
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Energia + "\n";              //Energia
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienie + "%\n";   //Szansa na trafienie
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczne + "%\n";   //Szansa na trafienie krytyczne
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SilaSuma + "\n";                 //Siła
+            LabelWartosciStatystyk.Text += tymczasowyBohater.ZrecznoscSuma + "\n";            //Zręczność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.WitalnoscSuma + "\n";            //Witalność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.InteligencjaSuma + "\n";         //Inteligencja
+            LabelWartosciStatystyk.Text += tymczasowyBohater.ObrazeniaSuma + "\n";            //Obrażenia
+            LabelWartosciStatystyk.Text += tymczasowyBohater.PancerzSuma + "\n";              //Pancerz
+            LabelWartosciStatystyk.Text += tymczasowyBohater.HPSuma + "\n";                   //Zdrowie
+            LabelWartosciStatystyk.Text += tymczasowyBohater.EnergiaSuma + "\n";              //Energia
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienieSuma + "%\n";   //Szansa na trafienie
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";   //Szansa na trafienie krytyczne
         }
 
         void OdswiezInformacjeOPrzedmiocie(Ekwipunek przedmiot)
         {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxPrzenoszony, przedmiot.Obrazek);
             LabelNazwaPrzedmiotu.Text = przedmiot.Nazwa;
 
-            LabelOpisStatystykPrzedmiotu.Text = "Wartość:";
-            LabelOpisStatystykPrzedmiotu.Text += "\nSiła:";
-            LabelOpisStatystykPrzedmiotu.Text += "\nZręczność:";
-            LabelOpisStatystykPrzedmiotu.Text += "\nWitalność:";
-            LabelOpisStatystykPrzedmiotu.Text += "\nInteligencja:";
-            LabelOpisStatystykPrzedmiotu.Text += "\nObrazenia:";
-            LabelOpisStatystykPrzedmiotu.Text += "\nPancerz:";
-            LabelOpisStatystykPrzedmiotu.Text += "\nPunkty życia:";
-            LabelOpisStatystykPrzedmiotu.Text += "\nEnergia:";
-            LabelOpisStatystykPrzedmiotu.Text += "\nSzansa na trafienie:";
-            LabelOpisStatystykPrzedmiotu.Text += "\nSzansa na krytyczne:";
+            LabelOpisStatystykPrzedmiotu.Text = "Wartość";
+            LabelOpisStatystykPrzedmiotu.Text += "\nSiła";
+            LabelOpisStatystykPrzedmiotu.Text += "\nZręczność";
+            LabelOpisStatystykPrzedmiotu.Text += "\nWitalność";
+            LabelOpisStatystykPrzedmiotu.Text += "\nInteligencja";
+            LabelOpisStatystykPrzedmiotu.Text += "\nObrazenia";
+            LabelOpisStatystykPrzedmiotu.Text += "\nPancerz";
+            LabelOpisStatystykPrzedmiotu.Text += "\nPunkty życia";
+            LabelOpisStatystykPrzedmiotu.Text += "\nEnergia";
+            LabelOpisStatystykPrzedmiotu.Text += "\nSzansa na trafienie";
+            LabelOpisStatystykPrzedmiotu.Text += "\nSzansa na krytyczne";
 
             LabelWartosciStatystykPrzedmiotu.Text = przedmiot.Cena.ToString();
             LabelWartosciStatystykPrzedmiotu.Text += "\n" + przedmiot.Sila;
@@ -188,12 +157,46 @@ namespace RPG
             LabelWartosciStatystykPrzedmiotu.Text += "\n" + przedmiot.SzansaNaTrafienie;
             LabelWartosciStatystykPrzedmiotu.Text += "\n" + przedmiot.SzansaNaKrytyczne;
         }
+        void OdswiezEkwipunek()
+        {
+            Program.UstawObrazEkwipunku(PictureBoxBron, tymczasowyBohater.ZalozonaBron.Obrazek);
+            Program.UstawObrazEkwipunku(PictureBoxPancerz, tymczasowyBohater.ZalozonyPancerz.Obrazek);
+            Program.UstawObrazEkwipunku(PictureBoxTarcza, tymczasowyBohater.ZalozonaTarcza.Obrazek);
+
+            FlowLayoutPanelPancerze.Controls.Clear();
+
+            int szerokoscIkon = (Width * 5 / 100) - 5;
+            int wysokoscIkon = Height * 8 / 100;
+
+            //Dodawanie pól ekwipunku
+            const int miejscWEkwipunku = 59;
+            for (int i = 0; i <= miejscWEkwipunku; i++)
+            {
+                PictureBox x = new PictureBox();
+                x.Size = new Size(szerokoscIkon, wysokoscIkon);
+                Program.UstawObrazEkwipunku(x, null);
+                x.ImageLocation = null;
+                x.Name = null;
+                FlowLayoutPanelPancerze.Controls.Add(x);
+            }
+
+            foreach (Ekwipunek przedmiot in tymczasowyBohater.plecakGracza)
+            {
+                //tymczasowe zabezpieczenie na wypadek wiekszej ilosci przedmiotow niz miejsc w plecaku
+                if (tymczasowyBohater.plecakGracza.IndexOf(przedmiot) < FlowLayoutPanelPancerze.Controls.Count)
+                {
+                    Program.UstawObrazEkwipunku((FlowLayoutPanelPancerze.Controls[tymczasowyBohater.plecakGracza.IndexOf(przedmiot)] as PictureBox), przedmiot.Obrazek);
+                }
+            }
+        }
         #endregion
 
         void WczytajStatystykiOdGracza()
         {
             tymczasowyBohater = new Gracz(ekranGry.gra.gracz);
             OdswiezStatystyki();
+            OdswiezEkwipunek();
+            DodanieDragAndDropDlaObrazkow();
         }
 
         void ZapiszStatystykiDoGracza()
@@ -209,8 +212,8 @@ namespace RPG
                 obiekt.AllowDrop = true;
                 
                 obiekt.MouseDown += przedmiot_MouseDownPrzedmiot;
-                //obiekt.DragEnter += new DragEventHandler(przedmiot_DragEnterPrzedmiot);
-                obiekt.DragOver += new DragEventHandler(przedmiot_DragOverPrzedmiot);
+                obiekt.DragEnter += new DragEventHandler(przedmiot_DragEnterPrzedmiot);
+                //obiekt.DragOver += new DragEventHandler(przedmiot_DragOverPrzedmiot);
                 //obiekt.DragLeave += new EventHandler(przedmiot_DragLeavePrzedmiot);
                 obiekt.DragDrop += new DragEventHandler(przedmiot_DragDropPrzedmiot);
 
@@ -279,7 +282,6 @@ namespace RPG
                 int index = ekranGry.gra.listaPrzedmiotow.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));
                 if (index >= 0)
                 {
-                    Program.UstawObrazEkwipunku(PictureBoxPrzenoszony, ekranGry.gra.listaPrzedmiotow[index].Obrazek);
                     OdswiezInformacjeOPrzedmiocie(ekranGry.gra.listaPrzedmiotow[index]);
                 }
             }
@@ -301,21 +303,20 @@ namespace RPG
                 if (index >= 0)
                 {
                     przenoszonyPrzedmiot = ekranGry.gra.listaPrzedmiotow[index];
-                    Program.UstawObrazEkwipunku(PictureBoxPrzenoszony, przenoszonyPrzedmiot.Obrazek);
                     OdswiezInformacjeOPrzedmiocie(przenoszonyPrzedmiot);
                 }
                 DoDragDrop(sender, DragDropEffects.Move);
                 PanelOpisPrzedmiotu.Visible = false;
             }
         }
-        //private void przedmiot_DragEnterPrzedmiot(object sender, DragEventArgs e)
-        //{
-        //    e.Effect = DragDropEffects.Move;
-        //}
-        private void przedmiot_DragOverPrzedmiot(object sender, DragEventArgs e)
+        private void przedmiot_DragEnterPrzedmiot(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Move;
         }
+        //private void przedmiot_DragOverPrzedmiot(object sender, DragEventArgs e)
+        //{
+        //    e.Effect = DragDropEffects.Move;
+        //}
         //private void przedmiot_DragLeavePrzedmiot(object sender, EventArgs e)
         //{
         //}
@@ -398,18 +399,6 @@ namespace RPG
 
 
 
-
-
-
-
-
-
-        private void EkranEkwipunek_Load(object sender, EventArgs e)
-        {
-            WczytajStatystykiOdGracza();
-        }
-
-
         private void Zegar_Tick(object sender, EventArgs e)
         {
             PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y);
@@ -420,9 +409,9 @@ namespace RPG
         #region Przyciski do modyfikowania statystyk
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Sila > ekranGry.gra.gracz.Sila)
+            if (tymczasowyBohater.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
             {
-                tymczasowyBohater.Sila--;
+                tymczasowyBohater.SilaPodstawa--;
                 tymczasowyBohater.Punkty++;
             }
             OdswiezStatystyki();
@@ -432,7 +421,7 @@ namespace RPG
         {
             if (tymczasowyBohater.Punkty > 0)
             {
-                tymczasowyBohater.Sila++;
+                tymczasowyBohater.SilaPodstawa++;
                 tymczasowyBohater.Punkty--;
                 OdswiezStatystyki();
             }
@@ -440,9 +429,9 @@ namespace RPG
 
         private void PictureBoxZrecznoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Zrecznosc > ekranGry.gra.gracz.Zrecznosc)
+            if (tymczasowyBohater.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
             {
-                tymczasowyBohater.Zrecznosc--;
+                tymczasowyBohater.ZrecznoscPodstawa--;
                 tymczasowyBohater.Punkty++;
             }
             OdswiezStatystyki();
@@ -452,7 +441,7 @@ namespace RPG
         {
             if (tymczasowyBohater.Punkty > 0)
             {
-                tymczasowyBohater.Zrecznosc++;
+                tymczasowyBohater.ZrecznoscPodstawa++;
                 tymczasowyBohater.Punkty--;
                 OdswiezStatystyki();
             }
@@ -460,9 +449,9 @@ namespace RPG
 
         private void PictureBoxWitalnoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Witalnosc > ekranGry.gra.gracz.Witalnosc)
+            if (tymczasowyBohater.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
             {
-                tymczasowyBohater.Witalnosc--;
+                tymczasowyBohater.WitalnoscPodstawa--;
                 tymczasowyBohater.Punkty++;
             }
             OdswiezStatystyki();
@@ -472,7 +461,7 @@ namespace RPG
         {
             if (tymczasowyBohater.Punkty > 0)
             {
-                tymczasowyBohater.Witalnosc++;
+                tymczasowyBohater.WitalnoscPodstawa++;
                 tymczasowyBohater.Punkty--;
                 OdswiezStatystyki();
             }
@@ -480,9 +469,9 @@ namespace RPG
 
         private void PictureBoxInteligencjaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Inteligencja > ekranGry.gra.gracz.Inteligencja)
+            if (tymczasowyBohater.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
             {
-                tymczasowyBohater.Inteligencja--;
+                tymczasowyBohater.InteligencjaPodstawa--;
                 tymczasowyBohater.Punkty++;
             }
             OdswiezStatystyki();
@@ -492,7 +481,7 @@ namespace RPG
         {
             if (tymczasowyBohater.Punkty > 0)
             {
-                tymczasowyBohater.Inteligencja++;
+                tymczasowyBohater.InteligencjaPodstawa++;
                 tymczasowyBohater.Punkty--;
                 OdswiezStatystyki();
             }
@@ -512,7 +501,17 @@ namespace RPG
         }
         #endregion
 
+        private void EkranEkwipunek_Shown(object sender, EventArgs e)
+        {
+        }
+
         #endregion
+
+        private void EkranEkwipunek_Load(object sender, EventArgs e)
+        {
+            Zegar.Start();
+            WczytajStatystykiOdGracza();
+        }
 
     }
 }

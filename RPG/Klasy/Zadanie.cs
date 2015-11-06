@@ -22,5 +22,14 @@ namespace RPG
             Nagroda = nagroda;
             Opis = opis;
         }
+
+        public Zadanie(Zadanie kopiowaneZadanie)
+        {
+            this.Nazwa = kopiowaneZadanie.Nazwa;
+            this.Zleceniodawca = kopiowaneZadanie.Zleceniodawca;
+            this.Cel = kopiowaneZadanie.Cel;
+            this.Nagroda = kopiowaneZadanie.Nagroda;
+            this.Opis = kopiowaneZadanie.Opis;
+        }
     }
 }

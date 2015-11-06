@@ -158,10 +158,10 @@ namespace RPG
 
             LabelWartosciStatystyk.Text = "\n";
             LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";               //Pozostałe punkty do rozdania
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Sila + "\n";                 //Siła
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Zrecznosc + "\n";            //Zręczność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Witalnosc + "\n";            //Witalność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Inteligencja + "\n";         //Inteligencja
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SilaPodstawa + "\n";                 //Siła
+            LabelWartosciStatystyk.Text += tymczasowyBohater.ZrecznoscPodstawa + "\n";            //Zręczność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.WitalnoscPodstawa + "\n";            //Witalność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.InteligencjaPodstawa + "\n";         //Inteligencja
             LabelWartosciStatystyk.Text += tymczasowyBohater.Obrazenia + "\n";            //Obrażenia
             LabelWartosciStatystyk.Text += tymczasowyBohater.Pancerz + "\n";              //Pancerz
             LabelWartosciStatystyk.Text += tymczasowyBohater.HP + "\n";                   //Zdrowie
@@ -209,9 +209,9 @@ namespace RPG
         #region Przyciski do modyfikowania statystyk
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Sila > ekranGry.gra.gracz.Sila)
+            if (tymczasowyBohater.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
             {
-                tymczasowyBohater.Sila--;
+                tymczasowyBohater.SilaPodstawa--;
                 tymczasowyBohater.Punkty++;
             }
             OdswiezStatystyki();
@@ -221,7 +221,7 @@ namespace RPG
         {
             if (tymczasowyBohater.Punkty > 0)
             {
-                tymczasowyBohater.Sila++;
+                tymczasowyBohater.SilaPodstawa++;
                 tymczasowyBohater.Punkty--;
                 OdswiezStatystyki();
             }
@@ -229,9 +229,9 @@ namespace RPG
 
         private void PictureBoxZrecznoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Zrecznosc > ekranGry.gra.gracz.Zrecznosc)
+            if (tymczasowyBohater.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
             {
-                tymczasowyBohater.Zrecznosc--;
+                tymczasowyBohater.ZrecznoscPodstawa--;
                 tymczasowyBohater.Punkty++;
             }
             OdswiezStatystyki();
@@ -241,7 +241,7 @@ namespace RPG
         {
             if (tymczasowyBohater.Punkty > 0)
             {
-                tymczasowyBohater.Zrecznosc++;
+                tymczasowyBohater.ZrecznoscPodstawa++;
                 tymczasowyBohater.Punkty--;
                 OdswiezStatystyki();
             }
@@ -249,9 +249,9 @@ namespace RPG
 
         private void PictureBoxWitalnoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Witalnosc > ekranGry.gra.gracz.Witalnosc)
+            if (tymczasowyBohater.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
             {
-                tymczasowyBohater.Witalnosc--;
+                tymczasowyBohater.WitalnoscPodstawa--;
                 tymczasowyBohater.Punkty++;
             }
             OdswiezStatystyki();
@@ -261,7 +261,7 @@ namespace RPG
         {
             if (tymczasowyBohater.Punkty > 0)
             {
-                tymczasowyBohater.Witalnosc++;
+                tymczasowyBohater.WitalnoscPodstawa++;
                 tymczasowyBohater.Punkty--;
                 OdswiezStatystyki();
             }
@@ -269,9 +269,9 @@ namespace RPG
 
         private void PictureBoxInteligencjaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Inteligencja > ekranGry.gra.gracz.Inteligencja)
+            if (tymczasowyBohater.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
             {
-                tymczasowyBohater.Inteligencja--;
+                tymczasowyBohater.InteligencjaPodstawa--;
                 tymczasowyBohater.Punkty++;
             }
             OdswiezStatystyki();
@@ -281,7 +281,7 @@ namespace RPG
         {
             if (tymczasowyBohater.Punkty > 0)
             {
-                tymczasowyBohater.Inteligencja++;
+                tymczasowyBohater.InteligencjaPodstawa++;
                 tymczasowyBohater.Punkty--;
                 OdswiezStatystyki();
             }

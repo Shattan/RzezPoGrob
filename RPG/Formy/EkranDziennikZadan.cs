@@ -63,7 +63,7 @@ namespace RPG
         {
             ListBoxZadania.Items.Clear();
 
-            foreach (Zadanie zadanie in ekranGry.gra.listaZadan)
+            foreach (Zadanie zadanie in ekranGry.gra.gracz.zadaniaGracza)
             {          
                 ListBoxZadania.Items.Add(zadanie.Nazwa);
             }
@@ -73,7 +73,7 @@ namespace RPG
         #region Zdarzenia 
         private void ListBoxZadania_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UstawOpisZadania(ekranGry.gra.ZwrocZadanie(ListBoxZadania.SelectedIndex));  
+            UstawOpisZadania(ekranGry.gra.gracz.zadaniaGracza[ListBoxZadania.SelectedIndex]);  
         }
 
         private void EkranDziennikZadan_Load(object sender, EventArgs e)

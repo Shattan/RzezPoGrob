@@ -76,5 +76,21 @@ namespace RPG
             SzansaNaTrafienie = _szansaNaTrafienie;
             SzansaNaKrytyczne = _szansaNaKrytyczne;
         }
+
+        public Ekwipunek(Ekwipunek kopiowanyEkwipunek)
+        {
+            this.Nazwa = kopiowanyEkwipunek.Nazwa;
+            this.Obrazek = kopiowanyEkwipunek.Obrazek;
+            this.Sila = kopiowanyEkwipunek.Sila;
+            this.Zrecznosc = kopiowanyEkwipunek.Zrecznosc;
+            this.Witalnosc = kopiowanyEkwipunek.Witalnosc;
+            this.Inteligencja = kopiowanyEkwipunek.Inteligencja;
+            this.Obrazenia = kopiowanyEkwipunek.Obrazenia;
+            this.Pancerz = kopiowanyEkwipunek.Pancerz;
+            this.HP = kopiowanyEkwipunek.HP;
+            this.Energia = kopiowanyEkwipunek.Energia;
+            this.SzansaNaTrafienie = kopiowanyEkwipunek.SzansaNaTrafienie;
+            this.SzansaNaKrytyczne = kopiowanyEkwipunek.SzansaNaKrytyczne;
+        }
     }
 }

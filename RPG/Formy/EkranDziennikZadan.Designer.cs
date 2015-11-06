@@ -44,7 +44,7 @@
             this.ListBoxZadania.FormattingEnabled = true;
             this.ListBoxZadania.ItemHeight = 23;
             this.ListBoxZadania.Items.AddRange(new object[] {
-            "Głodne wilki dwa"});
+            "Tutaj powinien pojawić się tytuł zadania"});
             this.ListBoxZadania.Location = new System.Drawing.Point(107, 76);
             this.ListBoxZadania.Name = "ListBoxZadania";
             this.ListBoxZadania.Size = new System.Drawing.Size(226, 257);
