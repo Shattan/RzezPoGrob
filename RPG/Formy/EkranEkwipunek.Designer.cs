@@ -51,6 +51,7 @@
             this.PanelOpisPrzedmiotu = new System.Windows.Forms.Panel();
             this.LabelNazwaPrzedmiotu = new System.Windows.Forms.Label();
             this.LabelWartosciStatystykPrzedmiotu = new System.Windows.Forms.Label();
+            this.LabelPorownanieStatystyk = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBron)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTarcza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPancerz)).BeginInit();
@@ -185,7 +186,7 @@
             // LabelStatystyki
             // 
             this.LabelStatystyki.Font = new System.Drawing.Font("Segoe Print", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelStatystyki.Location = new System.Drawing.Point(75, 87);
+            this.LabelStatystyki.Location = new System.Drawing.Point(4, 87);
             this.LabelStatystyki.Name = "LabelStatystyki";
             this.LabelStatystyki.Size = new System.Drawing.Size(185, 43);
             this.LabelStatystyki.TabIndex = 20;
@@ -194,7 +195,7 @@
             // LabelNazwyStatystyk
             // 
             this.LabelNazwyStatystyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelNazwyStatystyk.Location = new System.Drawing.Point(78, 144);
+            this.LabelNazwyStatystyk.Location = new System.Drawing.Point(7, 144);
             this.LabelNazwyStatystyk.Name = "LabelNazwyStatystyk";
             this.LabelNazwyStatystyk.Size = new System.Drawing.Size(222, 184);
             this.LabelNazwyStatystyk.TabIndex = 21;
@@ -214,7 +215,7 @@
             // LabelWartosciStatystyk
             // 
             this.LabelWartosciStatystyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelWartosciStatystyk.Location = new System.Drawing.Point(198, 144);
+            this.LabelWartosciStatystyk.Location = new System.Drawing.Point(127, 144);
             this.LabelWartosciStatystyk.Name = "LabelWartosciStatystyk";
             this.LabelWartosciStatystyk.Size = new System.Drawing.Size(102, 184);
             this.LabelWartosciStatystyk.TabIndex = 23;
@@ -282,6 +283,15 @@
             this.LabelWartosciStatystykPrzedmiotu.Text = "Tutaj wyświetlają się dane dotyczące przedmiotu";
             this.LabelWartosciStatystykPrzedmiotu.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // LabelPorownanieStatystyk
+            // 
+            this.LabelPorownanieStatystyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelPorownanieStatystyk.Location = new System.Drawing.Point(208, 144);
+            this.LabelPorownanieStatystyk.Name = "LabelPorownanieStatystyk";
+            this.LabelPorownanieStatystyk.Size = new System.Drawing.Size(102, 184);
+            this.LabelPorownanieStatystyk.TabIndex = 27;
+            this.LabelPorownanieStatystyk.Text = "Tu powinny się pojawić różnice między przedmiotem zakładanym a założonym.";
+            // 
             // EkranEkwipunek
             // 
             this.AllowDrop = true;
@@ -290,6 +300,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(5)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.PanelOpisPrzedmiotu);
+            this.Controls.Add(this.LabelPorownanieStatystyk);
             this.Controls.Add(this.PictureBoxSilaMinus);
             this.Controls.Add(this.PictureBoxInteligencjaPlus);
             this.Controls.Add(this.PictureBoxInteligencjaMinus);
@@ -312,7 +323,6 @@
             this.Text = "EkranEkwipunek";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(5)))), ((int)(((byte)(0)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranEkwipunek_FormClosing);
-            this.Load += new System.EventHandler(this.EkranEkwipunek_Load);
             this.Shown += new System.EventHandler(this.EkranEkwipunek_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBron)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTarcza)).EndInit();
@@ -356,5 +366,6 @@
         private System.Windows.Forms.Label LabelWartosciStatystykPrzedmiotu;
         private System.Windows.Forms.Label LabelNazwaPrzedmiotu;
         private System.Windows.Forms.Panel PanelOpisPrzedmiotu;
+        private System.Windows.Forms.Label LabelPorownanieStatystyk;
     }
 }

@@ -38,12 +38,15 @@ namespace RPG
             Program.DopasujRozmiarFormyDoEkranu(this);
 
             //Rozmieszczanie statystyk
-            LabelNazwyStatystyk.Size = new Size(Width * 23 / 100, Height * 80 / 100);
+            LabelNazwyStatystyk.Size = new Size(Width * 20 / 100, Height * 80 / 100);
             LabelWartosciStatystyk.Size = new Size(Width * 4 / 100, LabelNazwyStatystyk.Height);
+            LabelPorownanieStatystyk.Size = new Size(Width * 4 / 100, LabelNazwyStatystyk.Height);
 
             LabelStatystyki.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 5 / 100, Screen.PrimaryScreen.Bounds.Height * 8 / 100);
             LabelNazwyStatystyk.Location = new Point(LabelStatystyki.Location.X, LabelStatystyki.Location.Y + LabelStatystyki.Height);
-            LabelWartosciStatystyk.Location = new Point(LabelStatystyki.Location.X + LabelNazwyStatystyk.Width, LabelStatystyki.Location.Y + LabelStatystyki.Height);
+            LabelPorownanieStatystyk.Location = new Point(LabelStatystyki.Location.X + LabelNazwyStatystyk.Width, LabelStatystyki.Location.Y + LabelStatystyki.Height);
+            LabelWartosciStatystyk.Location = new Point(LabelPorownanieStatystyk.Location.X + LabelPorownanieStatystyk.Width, LabelStatystyki.Location.Y + LabelStatystyki.Height);
+
 
             //Rozmieszczanie przycisków
             PictureBoxPotwierdz.Size = new Size(Screen.PrimaryScreen.Bounds.Width * 15 / 100, Screen.PrimaryScreen.Bounds.Height * 15 / 100);
@@ -61,7 +64,7 @@ namespace RPG
 
             const int odleglosciMiedzyPrzyciskamiX = 5;
             const int odleglosciMiedzyPrzyciskamiY = wielkoscPrzyciskow;
-            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow*2);
+            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width + LabelPorownanieStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow*2);
             PictureBoxSilaPlus.Location = new Point(PictureBoxSilaMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxSilaMinus.Location.Y);
             PictureBoxZrecznoscMinus.Location = new Point(PictureBoxSilaMinus.Location.X, PictureBoxSilaMinus.Location.Y + odleglosciMiedzyPrzyciskamiY);
             PictureBoxZrecznoscPlus.Location = new Point(PictureBoxZrecznoscMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxZrecznoscMinus.Location.Y);
@@ -102,7 +105,7 @@ namespace RPG
         void OdswiezStatystyki()
         {
             LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";   
-            LabelNazwyStatystyk.Text += "Pozostałe punkty do rozdania:\n";
+            LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
             LabelNazwyStatystyk.Text += "Siła:\n";
             LabelNazwyStatystyk.Text += "Zręczność:\n";
             LabelNazwyStatystyk.Text += "Witalność:\n";
@@ -126,6 +129,429 @@ namespace RPG
             LabelWartosciStatystyk.Text += tymczasowyBohater.EnergiaSuma + "\n";              //Energia
             LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienieSuma + "%\n";   //Szansa na trafienie
             LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";   //Szansa na trafienie krytyczne
+
+            //Czyszczenie wartości porównań
+            LabelPorownanieStatystyk.Text = "";
+        }
+
+        void OdswiezStatystykiZPorownaniemPrzedmiotow(Ekwipunek zalozonyPrzedmiot, Ekwipunek zakladanyPrzedmiot)
+        {
+            LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";
+            LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
+            LabelNazwyStatystyk.Text += "Siła:\n";
+            LabelNazwyStatystyk.Text += "Zręczność:\n";
+            LabelNazwyStatystyk.Text += "Witalność:\n";
+            LabelNazwyStatystyk.Text += "Inteligencja:\n";
+            LabelNazwyStatystyk.Text += "Obrażenia:\n";
+            LabelNazwyStatystyk.Text += "Pancerz:\n";
+            LabelNazwyStatystyk.Text += "Zdrowie:\n";
+            LabelNazwyStatystyk.Text += "Energia:\n";
+            LabelNazwyStatystyk.Text += "Szansa na trafienie:\n";
+            LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
+
+            LabelWartosciStatystyk.Text = "\n";
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";                         //Pozostałe punkty do rozdania
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SilaSuma + "\n";                       //Siła
+            LabelWartosciStatystyk.Text += tymczasowyBohater.ZrecznoscSuma + "\n";                  //Zręczność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.WitalnoscSuma + "\n";                  //Witalność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.InteligencjaSuma + "\n";               //Inteligencja
+            LabelWartosciStatystyk.Text += tymczasowyBohater.ObrazeniaSuma + "\n";                  //Obrażenia
+            LabelWartosciStatystyk.Text += tymczasowyBohater.PancerzSuma + "\n";                    //Pancerz
+            LabelWartosciStatystyk.Text += tymczasowyBohater.HPSuma + "\n";                         //Zdrowie
+            LabelWartosciStatystyk.Text += tymczasowyBohater.EnergiaSuma + "\n";                    //Energia
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienieSuma + "%\n";         //Szansa na trafienie
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";         //Szansa na trafienie krytyczne
+
+            int oblicz = 0;
+            LabelPorownanieStatystyk.Text = "\n";
+            LabelPorownanieStatystyk.Text += "\n";
+            oblicz = zakladanyPrzedmiot.Sila - zalozonyPrzedmiot.Sila;
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanyPrzedmiot.Zrecznosc - zalozonyPrzedmiot.Zrecznosc;
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanyPrzedmiot.Witalnosc - zalozonyPrzedmiot.Witalnosc;
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanyPrzedmiot.Inteligencja - zalozonyPrzedmiot.Inteligencja;
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanyPrzedmiot.Obrazenia - zalozonyPrzedmiot.Obrazenia;
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanyPrzedmiot.Pancerz - zalozonyPrzedmiot.Pancerz;
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanyPrzedmiot.HP - zalozonyPrzedmiot.HP;
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanyPrzedmiot.Energia - zalozonyPrzedmiot.Energia;
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanyPrzedmiot.SzansaNaTrafienie - zalozonyPrzedmiot.SzansaNaTrafienie;
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanyPrzedmiot.SzansaNaKrytyczne - zalozonyPrzedmiot.SzansaNaKrytyczne;
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+        }
+
+        //Przeciążenie dla broni 2 ręcznej i broni z tarczą
+        void OdswiezStatystykiZPorownaniemPrzedmiotow(Ekwipunek zalozonaBron,Ekwipunek zalozonaTarcza, Ekwipunek zakladanaBron2h)
+        {
+            LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";
+            LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
+            LabelNazwyStatystyk.Text += "Siła:\n";
+            LabelNazwyStatystyk.Text += "Zręczność:\n";
+            LabelNazwyStatystyk.Text += "Witalność:\n";
+            LabelNazwyStatystyk.Text += "Inteligencja:\n";
+            LabelNazwyStatystyk.Text += "Obrażenia:\n";
+            LabelNazwyStatystyk.Text += "Pancerz:\n";
+            LabelNazwyStatystyk.Text += "Zdrowie:\n";
+            LabelNazwyStatystyk.Text += "Energia:\n";
+            LabelNazwyStatystyk.Text += "Szansa na trafienie:\n";
+            LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
+
+            LabelWartosciStatystyk.Text = "\n";
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";                         //Pozostałe punkty do rozdania
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SilaSuma + "\n";                       //Siła
+            LabelWartosciStatystyk.Text += tymczasowyBohater.ZrecznoscSuma + "\n";                  //Zręczność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.WitalnoscSuma + "\n";                  //Witalność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.InteligencjaSuma + "\n";               //Inteligencja
+            LabelWartosciStatystyk.Text += tymczasowyBohater.ObrazeniaSuma + "\n";                  //Obrażenia
+            LabelWartosciStatystyk.Text += tymczasowyBohater.PancerzSuma + "\n";                    //Pancerz
+            LabelWartosciStatystyk.Text += tymczasowyBohater.HPSuma + "\n";                         //Zdrowie
+            LabelWartosciStatystyk.Text += tymczasowyBohater.EnergiaSuma + "\n";                    //Energia
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienieSuma + "%\n";         //Szansa na trafienie
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";         //Szansa na trafienie krytyczne
+
+
+            int oblicz = 0;
+            LabelPorownanieStatystyk.Text = "\n";
+            LabelPorownanieStatystyk.Text += "\n";
+            oblicz = zakladanaBron2h.Sila - (zalozonaBron.Sila + zalozonaTarcza.Sila);
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanaBron2h.Zrecznosc - (zalozonaBron.Zrecznosc + zalozonaTarcza.Zrecznosc);
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanaBron2h.Witalnosc - (zalozonaBron.Witalnosc + zalozonaTarcza.Witalnosc);
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanaBron2h.Inteligencja - (zalozonaBron.Inteligencja + zalozonaTarcza.Inteligencja);
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanaBron2h.Obrazenia - (zalozonaBron.Obrazenia + zalozonaTarcza.Obrazenia);
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanaBron2h.Pancerz - (zalozonaBron.Pancerz + zalozonaTarcza.Pancerz);
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+            
+            oblicz = zakladanaBron2h.HP - (zalozonaBron.HP + zalozonaTarcza.HP);
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanaBron2h.Energia - (zalozonaBron.Energia + zalozonaTarcza.Energia);
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanaBron2h.SzansaNaTrafienie - (zalozonaBron.SzansaNaTrafienie + zalozonaTarcza.SzansaNaTrafienie);
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+            oblicz = zakladanaBron2h.SzansaNaKrytyczne - (zalozonaBron.SzansaNaKrytyczne + zalozonaTarcza.SzansaNaKrytyczne);
+            if (oblicz == 0)
+                LabelPorownanieStatystyk.Text += "\n";
+            else if (oblicz < 0)
+                LabelPorownanieStatystyk.Text += oblicz + "\n";
+            else
+                LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+        }
+
+        //Przeciążenie dla gracza bez przedmiotu
+        void OdswiezStatystykiZPorownaniemPrzedmiotow(Ekwipunek zakladanyPrzedmiot)
+        {
+            LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";
+            LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
+            LabelNazwyStatystyk.Text += "Siła:\n";
+            LabelNazwyStatystyk.Text += "Zręczność:\n";
+            LabelNazwyStatystyk.Text += "Witalność:\n";
+            LabelNazwyStatystyk.Text += "Inteligencja:\n";
+            LabelNazwyStatystyk.Text += "Obrażenia:\n";
+            LabelNazwyStatystyk.Text += "Pancerz:\n";
+            LabelNazwyStatystyk.Text += "Zdrowie:\n";
+            LabelNazwyStatystyk.Text += "Energia:\n";
+            LabelNazwyStatystyk.Text += "Szansa na trafienie:\n";
+            LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
+
+            LabelWartosciStatystyk.Text = "\n";
+            LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";                         //Pozostałe punkty do rozdania
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SilaSuma + "\n";                       //Siła
+            LabelWartosciStatystyk.Text += tymczasowyBohater.ZrecznoscSuma + "\n";                  //Zręczność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.WitalnoscSuma + "\n";                  //Witalność
+            LabelWartosciStatystyk.Text += tymczasowyBohater.InteligencjaSuma + "\n";               //Inteligencja
+            LabelWartosciStatystyk.Text += tymczasowyBohater.ObrazeniaSuma + "\n";                  //Obrażenia
+            LabelWartosciStatystyk.Text += tymczasowyBohater.PancerzSuma + "\n";                    //Pancerz
+            LabelWartosciStatystyk.Text += tymczasowyBohater.HPSuma + "\n";                         //Zdrowie
+            LabelWartosciStatystyk.Text += tymczasowyBohater.EnergiaSuma + "\n";                    //Energia
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienieSuma + "%\n";         //Szansa na trafienie
+            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";         //Szansa na trafienie krytyczne
+
+
+            if (zakladanyPrzedmiot.Obrazek.Contains("tarcza") && tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))
+            {
+                //Wersja dla gracza z dwuręczną bronią próbującego założyć tarczę
+                int oblicz = 0;
+                LabelPorownanieStatystyk.Text = "\n";
+                LabelPorownanieStatystyk.Text += "\n";
+                oblicz = zakladanyPrzedmiot.Sila - tymczasowyBohater.ZalozonaBron.Sila;
+                if (oblicz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (oblicz < 0)
+                    LabelPorownanieStatystyk.Text += oblicz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+                oblicz = zakladanyPrzedmiot.Zrecznosc - tymczasowyBohater.ZalozonaBron.Zrecznosc;
+                if (oblicz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (oblicz < 0)
+                    LabelPorownanieStatystyk.Text += oblicz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+                oblicz = zakladanyPrzedmiot.Witalnosc - tymczasowyBohater.ZalozonaBron.Witalnosc;
+                if (oblicz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (oblicz < 0)
+                    LabelPorownanieStatystyk.Text += oblicz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+                oblicz = zakladanyPrzedmiot.Inteligencja - tymczasowyBohater.ZalozonaBron.Inteligencja;
+                if (oblicz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (oblicz < 0)
+                    LabelPorownanieStatystyk.Text += oblicz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+                oblicz = zakladanyPrzedmiot.Obrazenia - tymczasowyBohater.ZalozonaBron.Obrazenia;
+                if (oblicz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (oblicz < 0)
+                    LabelPorownanieStatystyk.Text += oblicz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+                oblicz = zakladanyPrzedmiot.Pancerz - tymczasowyBohater.ZalozonaBron.Pancerz;
+                if (oblicz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (oblicz < 0)
+                    LabelPorownanieStatystyk.Text += oblicz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+                oblicz = zakladanyPrzedmiot.HP - tymczasowyBohater.ZalozonaBron.HP;
+                if (oblicz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (oblicz < 0)
+                    LabelPorownanieStatystyk.Text += oblicz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+                oblicz = zakladanyPrzedmiot.Energia - tymczasowyBohater.ZalozonaBron.Energia;
+                if (oblicz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (oblicz < 0)
+                    LabelPorownanieStatystyk.Text += oblicz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+                oblicz = zakladanyPrzedmiot.SzansaNaTrafienie - tymczasowyBohater.ZalozonaBron.SzansaNaTrafienie;
+                if (oblicz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (oblicz < 0)
+                    LabelPorownanieStatystyk.Text += oblicz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+
+                oblicz = zakladanyPrzedmiot.SzansaNaKrytyczne - tymczasowyBohater.ZalozonaBron.SzansaNaKrytyczne;
+                if (oblicz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (oblicz < 0)
+                    LabelPorownanieStatystyk.Text += oblicz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + oblicz + "\n";
+            }
+            else
+            {
+                LabelPorownanieStatystyk.Text = "\n";
+                LabelPorownanieStatystyk.Text += "\n";
+
+                if (zakladanyPrzedmiot.Sila == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (zakladanyPrzedmiot.Sila < 0)
+                    LabelPorownanieStatystyk.Text += zakladanyPrzedmiot.Sila + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + zakladanyPrzedmiot.Sila + "\n";
+
+                if (zakladanyPrzedmiot.Zrecznosc == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (zakladanyPrzedmiot.Zrecznosc < 0)
+                    LabelPorownanieStatystyk.Text += zakladanyPrzedmiot.Zrecznosc + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + zakladanyPrzedmiot.Zrecznosc + "\n";
+
+                if (zakladanyPrzedmiot.Witalnosc == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (zakladanyPrzedmiot.Witalnosc < 0)
+                    LabelPorownanieStatystyk.Text += zakladanyPrzedmiot.Witalnosc + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + zakladanyPrzedmiot.Witalnosc + "\n";
+
+                if (zakladanyPrzedmiot.Inteligencja == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (zakladanyPrzedmiot.Inteligencja < 0)
+                    LabelPorownanieStatystyk.Text += zakladanyPrzedmiot.Inteligencja + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + zakladanyPrzedmiot.Inteligencja + "\n";
+
+                if (zakladanyPrzedmiot.Obrazenia == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (zakladanyPrzedmiot.Obrazenia < 0)
+                    LabelPorownanieStatystyk.Text += zakladanyPrzedmiot.Obrazenia + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + zakladanyPrzedmiot.Obrazenia + "\n";
+
+                if (zakladanyPrzedmiot.Pancerz == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (zakladanyPrzedmiot.Pancerz < 0)
+                    LabelPorownanieStatystyk.Text += zakladanyPrzedmiot.Pancerz + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + zakladanyPrzedmiot.Pancerz + "\n";
+
+                if (zakladanyPrzedmiot.HP == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (zakladanyPrzedmiot.HP < 0)
+                    LabelPorownanieStatystyk.Text += zakladanyPrzedmiot.HP + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + zakladanyPrzedmiot.HP + "\n";
+
+                if (zakladanyPrzedmiot.Energia == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (zakladanyPrzedmiot.Energia < 0)
+                    LabelPorownanieStatystyk.Text += zakladanyPrzedmiot.Energia + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + zakladanyPrzedmiot.Energia + "\n";
+
+                if (zakladanyPrzedmiot.SzansaNaTrafienie == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (zakladanyPrzedmiot.SzansaNaTrafienie < 0)
+                    LabelPorownanieStatystyk.Text += zakladanyPrzedmiot.SzansaNaTrafienie + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + zakladanyPrzedmiot.SzansaNaTrafienie + "\n";
+
+                if (zakladanyPrzedmiot.SzansaNaKrytyczne == 0)
+                    LabelPorownanieStatystyk.Text += "\n";
+                else if (zakladanyPrzedmiot.SzansaNaKrytyczne < 0)
+                    LabelPorownanieStatystyk.Text += zakladanyPrzedmiot.SzansaNaKrytyczne + "\n";
+                else
+                    LabelPorownanieStatystyk.Text += "+" + zakladanyPrzedmiot.SzansaNaKrytyczne + "\n";
+            }
         }
 
         void OdswiezInformacjeOPrzedmiocie(Ekwipunek przedmiot)
@@ -157,6 +583,7 @@ namespace RPG
             LabelWartosciStatystykPrzedmiotu.Text += "\n" + przedmiot.SzansaNaTrafienie;
             LabelWartosciStatystykPrzedmiotu.Text += "\n" + przedmiot.SzansaNaKrytyczne;
         }
+
         void OdswiezEkwipunek()
         {
             Program.UstawObrazEkwipunku(PictureBoxBron, tymczasowyBohater.ZalozonaBron.Obrazek);
@@ -211,14 +638,12 @@ namespace RPG
             {
                 obiekt.AllowDrop = true;
                 
-                obiekt.MouseDown += przedmiot_MouseDownPrzedmiot;
-                obiekt.DragEnter += new DragEventHandler(przedmiot_DragEnterPrzedmiot);
-                //obiekt.DragOver += new DragEventHandler(przedmiot_DragOverPrzedmiot);
-                //obiekt.DragLeave += new EventHandler(przedmiot_DragLeavePrzedmiot);
-                obiekt.DragDrop += new DragEventHandler(przedmiot_DragDropPrzedmiot);
+                obiekt.MouseDown += MouseDownPrzedmiotWPlecaku;
+                obiekt.DragEnter += new DragEventHandler(DragEnterPrzedmiotWPlecaku);
+                obiekt.DragDrop += new DragEventHandler(DragDropPrzedmiotWPlecaku);
 
-                obiekt.MouseEnter += przedmiot_MouseEnterPrzedmiot;
-                obiekt.MouseLeave += przedmiot_MouseLeavePrzedmiot;
+                obiekt.MouseEnter += MouseEnterKazdyPrzedmiot;
+                obiekt.MouseLeave += MouseLeaveKazdyPrzedmiot;
             }
 
             //Dodawanie operacji Drop and Drag dla PictureBox Bron/Pancerz/Tarcza
@@ -227,39 +652,29 @@ namespace RPG
             PictureBoxTarcza.AllowDrop = true;
             
             //Gdy mysz jest naciśnięta na PictureBox, bądź obiekt upuszczony jest poza innym obiektem mogącym go przyjąć
-            PictureBoxBron.MouseDown += przedmiot_MouseDownBron;
-            PictureBoxPancerz.MouseDown += przedmiot_MouseDownPancerz;
-            PictureBoxTarcza.MouseDown += przedmiot_MouseDownTarcza;
+            PictureBoxBron.MouseDown += MouseDownPictureBoxBron;
+            PictureBoxPancerz.MouseDown += MouseDownPictureBoxPancerz;
+            PictureBoxTarcza.MouseDown += MouseDownPictureBoxTarcza;
 
             //Gdy w obręb obiektu zostaje wniesiony przenoszony obiekt 
-            PictureBoxBron.DragEnter += new DragEventHandler(przedmiot_DragEnterBron);
-            PictureBoxPancerz.DragEnter += new DragEventHandler(przedmiot_DragEnterPancerz);
-            PictureBoxTarcza.DragEnter += new DragEventHandler(przedmiot_DragEnterTarcza);
-
-            //Gdy w obrębie obiektu porusza się przenoszony obiekt
-            PictureBoxBron.DragOver += new DragEventHandler(przedmiot_DragOverBron);
-            PictureBoxPancerz.DragOver += new DragEventHandler(przedmiot_DragOverPancerz);
-            PictureBoxTarcza.DragOver += new DragEventHandler(przedmiot_DragOverTarcza);
-
-            //Gdy z obrębu obiektu zostaje wyniesiony przenoszony obiekt
-            PictureBoxBron.DragLeave += new EventHandler(przedmiot_DragLeaveBron);
-            PictureBoxPancerz.DragLeave += new EventHandler(przedmiot_DragLeavePancerz);
-            PictureBoxTarcza.DragLeave += new EventHandler(przedmiot_DragLeaveTarcza);
+            PictureBoxBron.DragEnter += new DragEventHandler(DragEnterPictureBoxBron);
+            PictureBoxPancerz.DragEnter += new DragEventHandler(DragEnterPictureBoxPancerz);
+            PictureBoxTarcza.DragEnter += new DragEventHandler(DragEnterPictureBoxTarcza);
 
             //Gdy w obrębie obiektu zostanie upuszczony przenoszony obiekt
-            PictureBoxBron.DragDrop += new DragEventHandler(przedmiot_DragDropBron);
-            PictureBoxPancerz.DragDrop += new DragEventHandler(przedmiot_DragDropPancerz);
-            PictureBoxTarcza.DragDrop += new DragEventHandler(przedmiot_DragDropTarcza);
+            PictureBoxBron.DragDrop += new DragEventHandler(DragDropPictureBoxBron);
+            PictureBoxPancerz.DragDrop += new DragEventHandler(DragDropPictureBoxPancerz);
+            PictureBoxTarcza.DragDrop += new DragEventHandler(DragDropPictureBoxTarcza);
 
 
-            PictureBoxBron.MouseEnter += przedmiot_MouseEnterPrzedmiot;
-            PictureBoxPancerz.MouseEnter += przedmiot_MouseEnterPrzedmiot;
-            PictureBoxTarcza.MouseEnter += przedmiot_MouseEnterPrzedmiot;
+            PictureBoxBron.MouseEnter += MouseEnterKazdyPrzedmiot;
+            PictureBoxPancerz.MouseEnter += MouseEnterKazdyPrzedmiot;
+            PictureBoxTarcza.MouseEnter += MouseEnterKazdyPrzedmiot;
 
 
-            PictureBoxBron.MouseLeave += przedmiot_MouseLeavePrzedmiot;
-            PictureBoxPancerz.MouseLeave += przedmiot_MouseLeavePrzedmiot;
-            PictureBoxTarcza.MouseLeave += przedmiot_MouseLeavePrzedmiot;
+            PictureBoxBron.MouseLeave += MouseLeaveKazdyPrzedmiot;
+            PictureBoxPancerz.MouseLeave += MouseLeaveKazdyPrzedmiot;
+            PictureBoxTarcza.MouseLeave += MouseLeaveKazdyPrzedmiot;
             
         }
         #endregion
@@ -274,53 +689,107 @@ namespace RPG
         //Aby dostać się do przedmiotu, na którym aktualnie jest Drag and Drop
         //(sender as PictureBox).Name
 
-        void przedmiot_MouseEnterPrzedmiot(object sender, EventArgs e)
+        void MouseEnterKazdyPrzedmiot(object sender, EventArgs e)
         {
             if (MouseButtons != MouseButtons.Left && (sender as PictureBox).ImageLocation!=null)
             {
-                PanelOpisPrzedmiotu.Visible = true;
-                int index = ekranGry.gra.listaPrzedmiotow.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));
-                if (index >= 0)
+                int indexPrzedmiotuNadKtorymJestKursor = ekranGry.gra.listaPrzedmiotow.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));
+                if (indexPrzedmiotuNadKtorymJestKursor >= 0)
                 {
-                    OdswiezInformacjeOPrzedmiocie(ekranGry.gra.listaPrzedmiotow[index]);
+                    OdswiezInformacjeOPrzedmiocie(ekranGry.gra.listaPrzedmiotow[indexPrzedmiotuNadKtorymJestKursor]);
                 }
+
+                przenoszonyPrzedmiot = ekranGry.gra.listaPrzedmiotow[indexPrzedmiotuNadKtorymJestKursor];
+                if (przenoszonyPrzedmiot.Obrazek.Contains("bron1h"))
+                {
+                    if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h"))
+                    {
+                        OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaBron, przenoszonyPrzedmiot);
+                    }
+                    else
+                    {
+                        OdswiezStatystykiZPorownaniemPrzedmiotow(przenoszonyPrzedmiot);
+                    }
+                }
+                else if (przenoszonyPrzedmiot.Obrazek.Contains("bron2h"))
+                {
+                    if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))
+                    {
+                        OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaBron, przenoszonyPrzedmiot);
+                    }
+                    else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h"))
+                    {
+                        if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))
+                        {
+                            OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaBron, tymczasowyBohater.ZalozonaTarcza, przenoszonyPrzedmiot);
+                        }
+                        else
+                        {
+                            OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaBron, przenoszonyPrzedmiot);
+                        }
+                    }
+                }
+                else if (przenoszonyPrzedmiot.Obrazek.Contains("pancerz"))
+                {
+                    if (tymczasowyBohater.ZalozonyPancerz.Obrazek.Contains("pancerz"))
+                    {
+                        OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonyPancerz, przenoszonyPrzedmiot);
+                    }
+                    else
+                    {
+                        OdswiezStatystykiZPorownaniemPrzedmiotow(przenoszonyPrzedmiot);
+                    }
+                }
+                else if (przenoszonyPrzedmiot.Obrazek.Contains("tarcza"))
+                {
+                    if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))
+                    {
+                        OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaTarcza, przenoszonyPrzedmiot);
+                    }
+                    else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))
+                    {
+                        OdswiezStatystykiZPorownaniemPrzedmiotow(przenoszonyPrzedmiot);
+                    }
+                    else
+                    {
+                        OdswiezStatystykiZPorownaniemPrzedmiotow(przenoszonyPrzedmiot);
+                    }
+                }
+
+                PanelOpisPrzedmiotu.Visible = true;
             }
         }
-        void przedmiot_MouseLeavePrzedmiot(object sender, EventArgs e)
+        void MouseLeaveKazdyPrzedmiot(object sender, EventArgs e)
         {
             if (MouseButtons != MouseButtons.Left)
             {
                 PanelOpisPrzedmiotu.Visible = false;
+                OdswiezStatystyki();
             }
         }
 
-        void przedmiot_MouseDownPrzedmiot(object sender, MouseEventArgs e)
+        void MouseDownPrzedmiotWPlecaku(object sender, MouseEventArgs e)
         {
             if ((sender as PictureBox).ImageLocation != null)
             {
                 PanelOpisPrzedmiotu.Visible = true;
-                int index = ekranGry.gra.listaPrzedmiotow.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));
-                if (index >= 0)
+                int indexPrzedmiotuNadKtorymJestKursor = ekranGry.gra.listaPrzedmiotow.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));
+                if (indexPrzedmiotuNadKtorymJestKursor >= 0)
                 {
-                    przenoszonyPrzedmiot = ekranGry.gra.listaPrzedmiotow[index];
+                    przenoszonyPrzedmiot = ekranGry.gra.listaPrzedmiotow[indexPrzedmiotuNadKtorymJestKursor];
                     OdswiezInformacjeOPrzedmiocie(przenoszonyPrzedmiot);
                 }
                 DoDragDrop(sender, DragDropEffects.Move);
                 PanelOpisPrzedmiotu.Visible = false;
             }
         }
-        private void przedmiot_DragEnterPrzedmiot(object sender, DragEventArgs e)
+
+        private void DragEnterPrzedmiotWPlecaku(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Move;
         }
-        //private void przedmiot_DragOverPrzedmiot(object sender, DragEventArgs e)
-        //{
-        //    e.Effect = DragDropEffects.Move;
-        //}
-        //private void przedmiot_DragLeavePrzedmiot(object sender, EventArgs e)
-        //{
-        //}
-        private void przedmiot_DragDropPrzedmiot(object sender, DragEventArgs e)
+
+        private void DragDropPrzedmiotWPlecaku(object sender, DragEventArgs e)
         {
             if (MouseButtons != System.Windows.Forms.MouseButtons.Left)
             {
@@ -343,19 +812,13 @@ namespace RPG
 
 
 
-        void przedmiot_MouseDownBron(object sender, MouseEventArgs e)
+        void MouseDownPictureBoxBron(object sender, MouseEventArgs e)
         {
         }
-        private void przedmiot_DragEnterBron(object sender, DragEventArgs e)
+        private void DragEnterPictureBoxBron(object sender, DragEventArgs e)
         {
         }
-        private void przedmiot_DragDropBron(object sender, DragEventArgs e)
-        {
-        }
-        private void przedmiot_DragOverBron(object sender, DragEventArgs e)
-        {
-        }
-        private void przedmiot_DragLeaveBron(object sender, EventArgs e)
+        private void DragDropPictureBoxBron(object sender, DragEventArgs e)
         {
         }
         
@@ -363,37 +826,25 @@ namespace RPG
 
 
 
-        void przedmiot_MouseDownTarcza(object sender, MouseEventArgs e)
+        void MouseDownPictureBoxTarcza(object sender, MouseEventArgs e)
         {
         }
-        private void przedmiot_DragEnterTarcza(object sender, DragEventArgs e)
+        private void DragEnterPictureBoxTarcza(object sender, DragEventArgs e)
         {
         }
-        private void przedmiot_DragOverTarcza(object sender, DragEventArgs e)
-        {
-        }
-        private void przedmiot_DragLeaveTarcza(object sender, EventArgs e)
-        {
-        }
-        private void przedmiot_DragDropTarcza(object sender, DragEventArgs e)
+        private void DragDropPictureBoxTarcza(object sender, DragEventArgs e)
         {
         }
 
 
 
-        void przedmiot_MouseDownPancerz(object sender, MouseEventArgs e)
+        void MouseDownPictureBoxPancerz(object sender, MouseEventArgs e)
         {
         }
-        private void przedmiot_DragEnterPancerz(object sender, DragEventArgs e)
+        private void DragEnterPictureBoxPancerz(object sender, DragEventArgs e)
         {
         }
-        private void przedmiot_DragOverPancerz(object sender, DragEventArgs e)
-        {
-        }
-        private void przedmiot_DragLeavePancerz(object sender, EventArgs e)
-        {
-        }
-        private void przedmiot_DragDropPancerz(object sender, DragEventArgs e)
+        private void DragDropPictureBoxPancerz(object sender, DragEventArgs e)
         {
         }
 
@@ -401,7 +852,28 @@ namespace RPG
 
         private void Zegar_Tick(object sender, EventArgs e)
         {
-            PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y);
+            if (MousePosition.X + 10 + PanelOpisPrzedmiotu.Width < Width)
+            {
+                if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
+                {
+                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y);
+                }
+                else
+                {
+                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y - PanelOpisPrzedmiotu.Height);
+                }
+            }
+            else
+            {
+                if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
+                {
+                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X - 10 - PanelOpisPrzedmiotu.Width, MousePosition.Y);
+                }
+                else
+                {
+                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X - 10 - PanelOpisPrzedmiotu.Width, MousePosition.Y - PanelOpisPrzedmiotu.Height);
+                }
+            }
             PanelOpisPrzedmiotu.BringToFront();
         }
 
@@ -503,15 +975,11 @@ namespace RPG
 
         private void EkranEkwipunek_Shown(object sender, EventArgs e)
         {
-        }
-
-        #endregion
-
-        private void EkranEkwipunek_Load(object sender, EventArgs e)
-        {
             Zegar.Start();
             WczytajStatystykiOdGracza();
         }
+
+        #endregion
 
     }
 }
