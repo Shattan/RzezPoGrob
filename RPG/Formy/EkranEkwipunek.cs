@@ -66,7 +66,7 @@ namespace RPG
 
             const int odleglosciMiedzyPrzyciskamiX = 5;
             const int odleglosciMiedzyPrzyciskamiY = wielkoscPrzyciskow;
-            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width + LabelPorownanieStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow*2);
+            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow*2);
             PictureBoxSilaPlus.Location = new Point(PictureBoxSilaMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxSilaMinus.Location.Y);
             PictureBoxZrecznoscMinus.Location = new Point(PictureBoxSilaMinus.Location.X, PictureBoxSilaMinus.Location.Y + odleglosciMiedzyPrzyciskamiY);
             PictureBoxZrecznoscPlus.Location = new Point(PictureBoxZrecznoscMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxZrecznoscMinus.Location.Y);
@@ -137,9 +137,7 @@ namespace RPG
             LabelPorownanieStatystyk.Text = "";
         }
 
-
-        //Przeciążenie dla gracza bez przedmiotu
-        void OdswiezStatystykiZPorownaniemPrzedmiotow(Ekwipunek zakladanyPrzedmiot)
+        void OdswiezLabelZPorownaniemPrzedmiotow()
         {
             LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";
             LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
@@ -168,123 +166,81 @@ namespace RPG
             LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";         //Szansa na trafienie krytyczne
 
 
-            if (zakladanyPrzedmiot.Obrazek.Contains("bron2h") && tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))
-            {
-                //Wersja dla gracza z bez broni, ale z tarczą, próbującego założyć broń dwuręczną
-                LabelPorownanieStatystyk.Text = "\n";
-                LabelPorownanieStatystyk.Text += "\n";
 
-                List<int> wartosci = PorownajDoListy(zakladanyPrzedmiot, '-', tymczasowyBohater.ZalozonaTarcza, ' ', null);
-                foreach (int wartosc in wartosci)
+            if (przenoszonyPrzedmiot.Obrazek.Contains("bron1h"))//Jeżeli najechany przedmiot jest bronią jednoręczną
+            {
+                if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h")) //jeżeli obecnie założona broń jest jednoręczna
                 {
-                    DodajLinijkeTekstuDoPorownan(wartosc);
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj dwie bronie jednoręczne (bez tarczy)
+                }
+                else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))//jeżeli obecnie założona broń jest dwuręczna
+                {//Nie trzeba sprawdzać "if(tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza")", bo taka sytuacja nie powinna wystąpić przy broni dwuręcznej
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj broń jednoręczną (bez tarczy) i dwuręczną
+                }
+                else //Jeżeli jeśli gracz nie ma na sobie broni
+                {
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, ' ', null, ' ', null));//Wyświetl statystyki najechanej broni jednoręcznej
                 }
             }
-            else if (zakladanyPrzedmiot.Obrazek.Contains("tarcza") && tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))
+            else if (przenoszonyPrzedmiot.Obrazek.Contains("bron2h"))//Jeżeli najechany przedmiot jest bronią dwuręczną
             {
-                //Wersja dla gracza z dwuręczną bronią próbującego założyć tarczę
-                LabelPorownanieStatystyk.Text = "\n";
-                LabelPorownanieStatystyk.Text += "\n";
-
-                List<int> wartosci = PorownajDoListy(zakladanyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null);
-                foreach (int wartosc in wartosci)
+                if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))//Jeżeli obecnie założona broń jest dwuręczna
+                {//Nie trzeba sprawdzać "if(tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza")", bo taka sytuacja nie powinna wystąpić przy broni dwuręcznej
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj dwie bronie dwuręczne
+                }
+                else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h"))//Jeżeli obecnie założona broń jest jednoręczna
                 {
-                    DodajLinijkeTekstuDoPorownan(wartosc);
+                    if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
+                    {
+                        WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, '-', tymczasowyBohater.ZalozonaTarcza));//Porównaj założoną broń jednoręczną + założoną tarczę z najechaną bronią dwuręczną
+                    }
+                    else//Jeżeli gracz nie ma na sobie tarczy
+                    {
+                        WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj najechaną broń dwuręczną z wyposażoną bronią jednoręczną
+                    }
+                }
+                else //Jeżeli jeśli gracz nie ma na sobie broni
+                {
+                    if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
+                    {
+                        WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaTarcza, ' ', null));//Wyświetl statystyki najechanej broni - statystyki tarczy
+                    }
+                    else//Jeżeli gracz nie ma na sobie tarczy
+                    {
+                        WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, ' ', null, ' ', null));//Wyświetl statystyki najechanej broni dwuręcznej
+                    }
                 }
             }
-            else
+            else if (przenoszonyPrzedmiot.Obrazek.Contains("pancerz"))//Jeżeli przenoszony przedmiot jest pancerzem
             {
-                //Wersja dla gracza, który zakłada broń jednoręczną na puste pole broni, lub dwuręczną na puste pola broni i tarczy
-                LabelPorownanieStatystyk.Text = "\n";
-                LabelPorownanieStatystyk.Text += "\n";
-
-                List<int> wartosci = PorownajDoListy(zakladanyPrzedmiot, ' ', null, ' ', null);
-                foreach (int wartosc in wartosci)
+                if (tymczasowyBohater.ZalozonyPancerz.Obrazek.Contains("pancerz"))//Jeżeli najechany przedmiot jest pancerzem
                 {
-                    DodajLinijkeTekstuDoPorownan(wartosc);
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonyPancerz, ' ', null));//Porównaj pancerz najechany z założonym
+                }
+                else//Jeżeli gracz nie ma na sobie pancerza
+                {
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, ' ', null, ' ', null));//Wyświetl statystyki najechanego pancerza
+                }
+            }
+            else if (przenoszonyPrzedmiot.Obrazek.Contains("tarcza"))//Jeżeli przenoszony przedmiot jest tarczą
+            {
+                if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma założoną tarczę
+                {//Nie trzeba sprawdzać if(tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h")), bo broń jednoręczna nie konfliktuje z tarczą
+
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaTarcza, ' ', null));//Porównaj tarczę najechaną z założoną
+                }
+                else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))//Jeżeli gracz ma założoną broń dwuręczną
+                {
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Wyświetl statystyki najechanej tarczy - statystyki założonej broni dwuręcznej
+                }
+                else//Jeżeli gracz nie ma na sobie ani tarczy ani broni dwuręcznej
+                {
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, ' ', null, ' ', null));//Wyświetl statystyki najechanej tarczy
                 }
             }
         }
-        //Przeciążenie dla dwóch przedmiotów
-        void OdswiezStatystykiZPorownaniemPrzedmiotow(Ekwipunek zalozonyPrzedmiot, Ekwipunek zakladanyPrzedmiot)
-        {
-            LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";
-            LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
-            LabelNazwyStatystyk.Text += "Siła:\n";
-            LabelNazwyStatystyk.Text += "Zręczność:\n";
-            LabelNazwyStatystyk.Text += "Witalność:\n";
-            LabelNazwyStatystyk.Text += "Inteligencja:\n";
-            LabelNazwyStatystyk.Text += "Obrażenia:\n";
-            LabelNazwyStatystyk.Text += "Pancerz:\n";
-            LabelNazwyStatystyk.Text += "Zdrowie:\n";
-            LabelNazwyStatystyk.Text += "Energia:\n";
-            LabelNazwyStatystyk.Text += "Szansa na trafienie:\n";
-            LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
 
-            LabelWartosciStatystyk.Text = "\n";
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";                         //Pozostałe punkty do rozdania
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SilaSuma + "\n";                       //Siła
-            LabelWartosciStatystyk.Text += tymczasowyBohater.ZrecznoscSuma + "\n";                  //Zręczność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.WitalnoscSuma + "\n";                  //Witalność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.InteligencjaSuma + "\n";               //Inteligencja
-            LabelWartosciStatystyk.Text += tymczasowyBohater.ObrazeniaSuma + "\n";                  //Obrażenia
-            LabelWartosciStatystyk.Text += tymczasowyBohater.PancerzSuma + "\n";                    //Pancerz
-            LabelWartosciStatystyk.Text += tymczasowyBohater.HPSuma + "\n";                         //Zdrowie
-            LabelWartosciStatystyk.Text += tymczasowyBohater.EnergiaSuma + "\n";                    //Energia
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienieSuma + "%\n";         //Szansa na trafienie
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";         //Szansa na trafienie krytyczne
-
-            LabelPorownanieStatystyk.Text = "\n";
-            LabelPorownanieStatystyk.Text += "\n";
-
-            List<int> wartosci = PorownajDoListy(zakladanyPrzedmiot, '-', zalozonyPrzedmiot, ' ', null);
-            foreach (int wartosc in wartosci)
-            {
-                DodajLinijkeTekstuDoPorownan(wartosc);
-            }
-        }
-
-        //Przeciążenie dla broni 2 ręcznej i broni z tarczą
-        void OdswiezStatystykiZPorownaniemPrzedmiotow(Ekwipunek zalozonaBron,Ekwipunek zalozonaTarcza, Ekwipunek zakladanaBron2h)
-        {
-            LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";
-            LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
-            LabelNazwyStatystyk.Text += "Siła:\n";
-            LabelNazwyStatystyk.Text += "Zręczność:\n";
-            LabelNazwyStatystyk.Text += "Witalność:\n";
-            LabelNazwyStatystyk.Text += "Inteligencja:\n";
-            LabelNazwyStatystyk.Text += "Obrażenia:\n";
-            LabelNazwyStatystyk.Text += "Pancerz:\n";
-            LabelNazwyStatystyk.Text += "Zdrowie:\n";
-            LabelNazwyStatystyk.Text += "Energia:\n";
-            LabelNazwyStatystyk.Text += "Szansa na trafienie:\n";
-            LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
-
-            LabelWartosciStatystyk.Text = "\n";
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";                         //Pozostałe punkty do rozdania
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SilaSuma + "\n";                       //Siła
-            LabelWartosciStatystyk.Text += tymczasowyBohater.ZrecznoscSuma + "\n";                  //Zręczność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.WitalnoscSuma + "\n";                  //Witalność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.InteligencjaSuma + "\n";               //Inteligencja
-            LabelWartosciStatystyk.Text += tymczasowyBohater.ObrazeniaSuma + "\n";                  //Obrażenia
-            LabelWartosciStatystyk.Text += tymczasowyBohater.PancerzSuma + "\n";                    //Pancerz
-            LabelWartosciStatystyk.Text += tymczasowyBohater.HPSuma + "\n";                         //Zdrowie
-            LabelWartosciStatystyk.Text += tymczasowyBohater.EnergiaSuma + "\n";                    //Energia
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienieSuma + "%\n";         //Szansa na trafienie
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";         //Szansa na trafienie krytyczne
-
-            LabelPorownanieStatystyk.Text = "\n";
-            LabelPorownanieStatystyk.Text += "\n";
-
-            List<int> wartosci = PorownajDoListy(zakladanaBron2h, '-', zalozonaBron, '+', zalozonaTarcza);
-            foreach (int wartosc in wartosci)
-            {
-                DodajLinijkeTekstuDoPorownan(wartosc);
-            }
-        }
-
-
-        void OdswiezInformacjeOPrzedmiocie(Ekwipunek przedmiot)
+        void OdswiezInformacjeONejchanymPrzedmiocie(Ekwipunek przedmiot)
         {
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolkiJakoImage(PictureBoxPrzenoszony, przedmiot.Obrazek);
             LabelNazwaPrzedmiotu.Text = przedmiot.Nazwa;
@@ -349,132 +305,163 @@ namespace RPG
         #endregion
 
         #region Metody odpowiadające za mechanikę
-        List<int> PorownajDoListy(Ekwipunek pierwszyElement, char dzialanie, Ekwipunek drugiElement, char drugieDzialanie, Ekwipunek trzeciElement)
+        List<int> PorownaneWartosciDoListy(Ekwipunek pierwszyElement, char dzialanie, Ekwipunek drugiElement, char drugieDzialanie, Ekwipunek trzeciElement)
         {
-            List<int> listaZWynikami = new List<int>();
-            if (drugiElement == null || dzialanie == ' ')
+            List<int> listaZWynikami = null;
+            if (pierwszyElement != null)
             {
-                listaZWynikami.Add(pierwszyElement.Sila              );
-                listaZWynikami.Add(pierwszyElement.Zrecznosc         );
-                listaZWynikami.Add(pierwszyElement.Witalnosc         );
-                listaZWynikami.Add(pierwszyElement.Inteligencja      );
-                listaZWynikami.Add(pierwszyElement.Obrazenia         );
-                listaZWynikami.Add(pierwszyElement.Pancerz           );
-                listaZWynikami.Add(pierwszyElement.HP                );
-                listaZWynikami.Add(pierwszyElement.Energia           );
-                listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie );
-                listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne );
-            }
-            else if (trzeciElement == null || drugieDzialanie == ' ')
-            {
-                switch (dzialanie)
+                listaZWynikami = new List<int>();
+                if (drugiElement == null || dzialanie == ' ')
                 {
-                    case '+':
-                        listaZWynikami.Add(pierwszyElement.Sila                 + drugiElement.Sila);
-                        listaZWynikami.Add(pierwszyElement.Zrecznosc            + drugiElement.Zrecznosc);
-                        listaZWynikami.Add(pierwszyElement.Witalnosc            + drugiElement.Witalnosc);
-                        listaZWynikami.Add(pierwszyElement.Inteligencja         + drugiElement.Inteligencja);
-                        listaZWynikami.Add(pierwszyElement.Obrazenia            + drugiElement.Obrazenia);
-                        listaZWynikami.Add(pierwszyElement.Pancerz              + drugiElement.Pancerz);
-                        listaZWynikami.Add(pierwszyElement.HP                   + drugiElement.HP);
-                        listaZWynikami.Add(pierwszyElement.Energia              + drugiElement.Energia);
-                        listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie    + drugiElement.SzansaNaTrafienie);
-                        listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne    + drugiElement.SzansaNaKrytyczne);
-                        break;
-                    case '-':
-                        listaZWynikami.Add(pierwszyElement.Sila                 - drugiElement.Sila);
-                        listaZWynikami.Add(pierwszyElement.Zrecznosc            - drugiElement.Zrecznosc);
-                        listaZWynikami.Add(pierwszyElement.Witalnosc            - drugiElement.Witalnosc);
-                        listaZWynikami.Add(pierwszyElement.Inteligencja         - drugiElement.Inteligencja);
-                        listaZWynikami.Add(pierwszyElement.Obrazenia            - drugiElement.Obrazenia);
-                        listaZWynikami.Add(pierwszyElement.Pancerz              - drugiElement.Pancerz);
-                        listaZWynikami.Add(pierwszyElement.HP                   - drugiElement.HP);
-                        listaZWynikami.Add(pierwszyElement.Energia              - drugiElement.Energia);
-                        listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie    - drugiElement.SzansaNaTrafienie);
-                        listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne    - drugiElement.SzansaNaKrytyczne);
-                        break;
+                    listaZWynikami.Add(pierwszyElement.Sila);
+                    listaZWynikami.Add(pierwszyElement.Zrecznosc);
+                    listaZWynikami.Add(pierwszyElement.Witalnosc);
+                    listaZWynikami.Add(pierwszyElement.Inteligencja);
+                    listaZWynikami.Add(pierwszyElement.Obrazenia);
+                    listaZWynikami.Add(pierwszyElement.Pancerz);
+                    listaZWynikami.Add(pierwszyElement.HP);
+                    listaZWynikami.Add(pierwszyElement.Energia);
+                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie);
+                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne);
+                }
+                else if (trzeciElement == null || drugieDzialanie == ' ')
+                {
+                    switch (dzialanie)
+                    {
+                        case '+':
+                            listaZWynikami.Add(pierwszyElement.Sila + drugiElement.Sila);
+                            listaZWynikami.Add(pierwszyElement.Zrecznosc + drugiElement.Zrecznosc);
+                            listaZWynikami.Add(pierwszyElement.Witalnosc + drugiElement.Witalnosc);
+                            listaZWynikami.Add(pierwszyElement.Inteligencja + drugiElement.Inteligencja);
+                            listaZWynikami.Add(pierwszyElement.Obrazenia + drugiElement.Obrazenia);
+                            listaZWynikami.Add(pierwszyElement.Pancerz + drugiElement.Pancerz);
+                            listaZWynikami.Add(pierwszyElement.HP + drugiElement.HP);
+                            listaZWynikami.Add(pierwszyElement.Energia + drugiElement.Energia);
+                            listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie + drugiElement.SzansaNaTrafienie);
+                            listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne + drugiElement.SzansaNaKrytyczne);
+                            break;
+                        case '-':
+                            listaZWynikami.Add(pierwszyElement.Sila - drugiElement.Sila);
+                            listaZWynikami.Add(pierwszyElement.Zrecznosc - drugiElement.Zrecznosc);
+                            listaZWynikami.Add(pierwszyElement.Witalnosc - drugiElement.Witalnosc);
+                            listaZWynikami.Add(pierwszyElement.Inteligencja - drugiElement.Inteligencja);
+                            listaZWynikami.Add(pierwszyElement.Obrazenia - drugiElement.Obrazenia);
+                            listaZWynikami.Add(pierwszyElement.Pancerz - drugiElement.Pancerz);
+                            listaZWynikami.Add(pierwszyElement.HP - drugiElement.HP);
+                            listaZWynikami.Add(pierwszyElement.Energia - drugiElement.Energia);
+                            listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie - drugiElement.SzansaNaTrafienie);
+                            listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne - drugiElement.SzansaNaKrytyczne);
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (dzialanie)
+                    {
+                        case '+':
+                            switch (drugieDzialanie)
+                            {
+                                case '+':
+                                    listaZWynikami.Add(pierwszyElement.Sila + drugiElement.Sila + trzeciElement.Sila);
+                                    listaZWynikami.Add(pierwszyElement.Zrecznosc + drugiElement.Zrecznosc + trzeciElement.Zrecznosc);
+                                    listaZWynikami.Add(pierwszyElement.Witalnosc + drugiElement.Witalnosc + trzeciElement.Witalnosc);
+                                    listaZWynikami.Add(pierwszyElement.Inteligencja + drugiElement.Inteligencja + trzeciElement.Inteligencja);
+                                    listaZWynikami.Add(pierwszyElement.Obrazenia + drugiElement.Obrazenia + trzeciElement.Obrazenia);
+                                    listaZWynikami.Add(pierwszyElement.Pancerz + drugiElement.Pancerz + trzeciElement.Pancerz);
+                                    listaZWynikami.Add(pierwszyElement.HP + drugiElement.HP + trzeciElement.HP);
+                                    listaZWynikami.Add(pierwszyElement.Energia + drugiElement.Energia + trzeciElement.Energia);
+                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie + drugiElement.SzansaNaTrafienie + trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne + drugiElement.SzansaNaKrytyczne + trzeciElement.SzansaNaKrytyczne);
+                                    break;
+                                case '-':
+                                    listaZWynikami.Add(pierwszyElement.Sila + drugiElement.Sila - trzeciElement.Sila);
+                                    listaZWynikami.Add(pierwszyElement.Zrecznosc + drugiElement.Zrecznosc - trzeciElement.Zrecznosc);
+                                    listaZWynikami.Add(pierwszyElement.Witalnosc + drugiElement.Witalnosc - trzeciElement.Witalnosc);
+                                    listaZWynikami.Add(pierwszyElement.Inteligencja + drugiElement.Inteligencja - trzeciElement.Inteligencja);
+                                    listaZWynikami.Add(pierwszyElement.Obrazenia + drugiElement.Obrazenia - trzeciElement.Obrazenia);
+                                    listaZWynikami.Add(pierwszyElement.Pancerz + drugiElement.Pancerz - trzeciElement.Pancerz);
+                                    listaZWynikami.Add(pierwszyElement.HP + drugiElement.HP - trzeciElement.HP);
+                                    listaZWynikami.Add(pierwszyElement.Energia + drugiElement.Energia - trzeciElement.Energia);
+                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie + drugiElement.SzansaNaTrafienie - trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne + drugiElement.SzansaNaKrytyczne - trzeciElement.SzansaNaKrytyczne);
+                                    break;
+                            }
+                            break;
+                        case '-':
+                            switch (drugieDzialanie)
+                            {
+                                case '+':
+                                    listaZWynikami.Add(pierwszyElement.Sila - drugiElement.Sila + trzeciElement.Sila);
+                                    listaZWynikami.Add(pierwszyElement.Zrecznosc - drugiElement.Zrecznosc + trzeciElement.Zrecznosc);
+                                    listaZWynikami.Add(pierwszyElement.Witalnosc - drugiElement.Witalnosc + trzeciElement.Witalnosc);
+                                    listaZWynikami.Add(pierwszyElement.Inteligencja - drugiElement.Inteligencja + trzeciElement.Inteligencja);
+                                    listaZWynikami.Add(pierwszyElement.Obrazenia - drugiElement.Obrazenia + trzeciElement.Obrazenia);
+                                    listaZWynikami.Add(pierwszyElement.Pancerz - drugiElement.Pancerz + trzeciElement.Pancerz);
+                                    listaZWynikami.Add(pierwszyElement.HP - drugiElement.HP + trzeciElement.HP);
+                                    listaZWynikami.Add(pierwszyElement.Energia - drugiElement.Energia + trzeciElement.Energia);
+                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie - drugiElement.SzansaNaTrafienie + trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne - drugiElement.SzansaNaKrytyczne + trzeciElement.SzansaNaKrytyczne);
+                                    break;
+                                case '-':
+                                    listaZWynikami.Add(pierwszyElement.Sila - drugiElement.Sila - trzeciElement.Sila);
+                                    listaZWynikami.Add(pierwszyElement.Zrecznosc - drugiElement.Zrecznosc - trzeciElement.Zrecznosc);
+                                    listaZWynikami.Add(pierwszyElement.Witalnosc - drugiElement.Witalnosc - trzeciElement.Witalnosc);
+                                    listaZWynikami.Add(pierwszyElement.Inteligencja - drugiElement.Inteligencja - trzeciElement.Inteligencja);
+                                    listaZWynikami.Add(pierwszyElement.Obrazenia - drugiElement.Obrazenia - trzeciElement.Obrazenia);
+                                    listaZWynikami.Add(pierwszyElement.Pancerz - drugiElement.Pancerz - trzeciElement.Pancerz);
+                                    listaZWynikami.Add(pierwszyElement.HP - drugiElement.HP - trzeciElement.HP);
+                                    listaZWynikami.Add(pierwszyElement.Energia - drugiElement.Energia - trzeciElement.Energia);
+                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie - drugiElement.SzansaNaTrafienie - trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne - drugiElement.SzansaNaKrytyczne - trzeciElement.SzansaNaKrytyczne);
+                                    break;
+                            }
+                            break;
+                    }
                 }
             }
-            else
-            {
-                switch (dzialanie)
-                {
-                    case '+':
-                        switch (drugieDzialanie)
-                        {
-                            case '+':
-                        listaZWynikami.Add(pierwszyElement.Sila                 + drugiElement.Sila              + trzeciElement.Sila                );
-                        listaZWynikami.Add(pierwszyElement.Zrecznosc            + drugiElement.Zrecznosc         + trzeciElement.Zrecznosc           );
-                        listaZWynikami.Add(pierwszyElement.Witalnosc            + drugiElement.Witalnosc         + trzeciElement.Witalnosc           );
-                        listaZWynikami.Add(pierwszyElement.Inteligencja         + drugiElement.Inteligencja      + trzeciElement.Inteligencja        );
-                        listaZWynikami.Add(pierwszyElement.Obrazenia            + drugiElement.Obrazenia         + trzeciElement.Obrazenia           );
-                        listaZWynikami.Add(pierwszyElement.Pancerz              + drugiElement.Pancerz           + trzeciElement.Pancerz             );
-                        listaZWynikami.Add(pierwszyElement.HP                   + drugiElement.HP                + trzeciElement.HP                  );
-                        listaZWynikami.Add(pierwszyElement.Energia              + drugiElement.Energia           + trzeciElement.Energia             );
-                        listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie    + drugiElement.SzansaNaTrafienie + trzeciElement.SzansaNaTrafienie   );
-                        listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne    + drugiElement.SzansaNaKrytyczne + trzeciElement.SzansaNaKrytyczne   );
-                                break;
-                            case '-':
-                        listaZWynikami.Add(pierwszyElement.Sila                 + drugiElement.Sila              - trzeciElement.Sila                );
-                        listaZWynikami.Add(pierwszyElement.Zrecznosc            + drugiElement.Zrecznosc         - trzeciElement.Zrecznosc           );
-                        listaZWynikami.Add(pierwszyElement.Witalnosc            + drugiElement.Witalnosc         - trzeciElement.Witalnosc           );
-                        listaZWynikami.Add(pierwszyElement.Inteligencja         + drugiElement.Inteligencja      - trzeciElement.Inteligencja        );
-                        listaZWynikami.Add(pierwszyElement.Obrazenia            + drugiElement.Obrazenia         - trzeciElement.Obrazenia           );
-                        listaZWynikami.Add(pierwszyElement.Pancerz              + drugiElement.Pancerz           - trzeciElement.Pancerz             );
-                        listaZWynikami.Add(pierwszyElement.HP                   + drugiElement.HP                - trzeciElement.HP                  );
-                        listaZWynikami.Add(pierwszyElement.Energia              + drugiElement.Energia           - trzeciElement.Energia             );
-                        listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie    + drugiElement.SzansaNaTrafienie - trzeciElement.SzansaNaTrafienie   );
-                        listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne    + drugiElement.SzansaNaKrytyczne - trzeciElement.SzansaNaKrytyczne   );
-                                break;
-                        }
-                        break;
-                    case '-':
-                        switch (drugieDzialanie)
-                        {
-                            case '+':
-                        listaZWynikami.Add(pierwszyElement.Sila                 - drugiElement.Sila              + trzeciElement.Sila                );
-                        listaZWynikami.Add(pierwszyElement.Zrecznosc            - drugiElement.Zrecznosc         + trzeciElement.Zrecznosc           );
-                        listaZWynikami.Add(pierwszyElement.Witalnosc            - drugiElement.Witalnosc         + trzeciElement.Witalnosc           );
-                        listaZWynikami.Add(pierwszyElement.Inteligencja         - drugiElement.Inteligencja      + trzeciElement.Inteligencja        );
-                        listaZWynikami.Add(pierwszyElement.Obrazenia            - drugiElement.Obrazenia         + trzeciElement.Obrazenia           );
-                        listaZWynikami.Add(pierwszyElement.Pancerz              - drugiElement.Pancerz           + trzeciElement.Pancerz             );
-                        listaZWynikami.Add(pierwszyElement.HP                   - drugiElement.HP                + trzeciElement.HP                  );
-                        listaZWynikami.Add(pierwszyElement.Energia              - drugiElement.Energia           + trzeciElement.Energia             );
-                        listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie    - drugiElement.SzansaNaTrafienie + trzeciElement.SzansaNaTrafienie   );
-                        listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne    - drugiElement.SzansaNaKrytyczne + trzeciElement.SzansaNaKrytyczne   );
-                                break;
-                            case '-':
-                        listaZWynikami.Add(pierwszyElement.Sila                 - drugiElement.Sila              - trzeciElement.Sila                );
-                        listaZWynikami.Add(pierwszyElement.Zrecznosc            - drugiElement.Zrecznosc         - trzeciElement.Zrecznosc           );
-                        listaZWynikami.Add(pierwszyElement.Witalnosc            - drugiElement.Witalnosc         - trzeciElement.Witalnosc           );
-                        listaZWynikami.Add(pierwszyElement.Inteligencja         - drugiElement.Inteligencja      - trzeciElement.Inteligencja        );
-                        listaZWynikami.Add(pierwszyElement.Obrazenia            - drugiElement.Obrazenia         - trzeciElement.Obrazenia           );
-                        listaZWynikami.Add(pierwszyElement.Pancerz              - drugiElement.Pancerz           - trzeciElement.Pancerz             );
-                        listaZWynikami.Add(pierwszyElement.HP                   - drugiElement.HP                - trzeciElement.HP                  );
-                        listaZWynikami.Add(pierwszyElement.Energia              - drugiElement.Energia           - trzeciElement.Energia             );
-                        listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie    - drugiElement.SzansaNaTrafienie - trzeciElement.SzansaNaTrafienie   );
-                        listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne    - drugiElement.SzansaNaKrytyczne - trzeciElement.SzansaNaKrytyczne   );
-                                break;
-                        }
-                        break;
-                }
-            }
+
             return listaZWynikami;
         }
 
-        void DodajLinijkeTekstuDoPorownan(int WartoscDoDodania)
+        void WyswietlWartosciPorownan(List<int> wartosci)
         {
-            if (WartoscDoDodania == 0)
-                LabelPorownanieStatystyk.Text += "\n";
-            else if (WartoscDoDodania < 0)
-                LabelPorownanieStatystyk.Text += WartoscDoDodania + "\n";
+            LabelPorownanieStatystyk.Text = "\n";
+            LabelPorownanieStatystyk.Text += "\n";
+
+            if (wartosci != null)
+            {
+                foreach (int wartosc in wartosci)
+                {
+                    if (wartosc == 0)
+                        LabelPorownanieStatystyk.Text += "\n";
+                    else if (wartosc < 0)
+                        LabelPorownanieStatystyk.Text += wartosc + "\n";
+                    else
+                        LabelPorownanieStatystyk.Text += "+" + wartosc + "\n";
+                }
+            }
             else
-                LabelPorownanieStatystyk.Text += "+" + WartoscDoDodania + "\n";
+            {
+                LabelPorownanieStatystyk.Text = "BŁĄD \nWCZYTYWANIA \nDANYCH";
+            }
+        }
+        /*
+        void PrzeniesPrzedmioty(object sender, DragEventArgs e)
+        {
+            ZamienPrzedmiotyNaListach(przenoszonyPrzedmiot.Obrazek, tymczasowyBohater.plecakGracza[0].Obrazek);
+            ZamienPrzedmiotyNaPictureBoxach(przenoszonyPrzedmiot.Obrazek, tymczasowyBohater.plecakGracza[0].Obrazek);
         }
 
-        void ZamienPrzedmiotyMiejscami(PictureBox pierwszyPrzedmiot, PictureBox drugiPrzedmiot)
+        void ZamienPrzedmiotyNaListach(String obrazekPierwszegoPrzedmiotu, String obrazekDrugiegoPrzedmiotu)
         {
+            tymczasowyBohater.plecakGracza.Find(x => x.Obrazek.Equals(przenoszonyPrzedmiot.Obrazek));
         }
+        void ZamienPrzedmiotyNaPictureBoxach(String obrazekPierwszegoPrzedmiotu, String obrazekDrugiegoPrzedmiotu)
+        {
+            tymczasowyBohater.plecakGracza.Find(x => x.Obrazek.Equals(przenoszonyPrzedmiot.Obrazek));
+        }
+        */
+
 
         void WczytajStatystykiOdGracza()
         {
@@ -555,78 +542,9 @@ namespace RPG
             if (MouseButtons != MouseButtons.Left && (sender as PictureBox).ImageLocation!=null)//Zabezpieczenie przed wyświetlaniem pustych pól i zmienianiem przedmiotów podczas przenoszenia
             {
                 przenoszonyPrzedmiot = new Ekwipunek(tymczasowyBohater.plecakGracza.Find(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation))); //Znalezienie przenoszonego przedmiotu w plecaku gracza
-                OdswiezInformacjeOPrzedmiocie(przenoszonyPrzedmiot); //Zaktualizowanie panelu z informacjami o przedmiocie
+                OdswiezInformacjeONejchanymPrzedmiocie(przenoszonyPrzedmiot); //Zaktualizowanie panelu z informacjami o przedmiocie
 
-                if (przenoszonyPrzedmiot.Obrazek.Contains("bron1h"))//Jeżeli najechany przedmiot jest bronią jednoręczną
-                {
-                    if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h")) //jeżeli obecnie założona broń jest jednoręczna
-                    {
-                        OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaBron, przenoszonyPrzedmiot); //Porównaj dwie bronie jednoręczne (bez tarczy)
-                    }
-                    else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))//jeżeli obecnie założona broń jest dwuręczna
-                    {//Nie trzeba sprawdzać "if(tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza")", bo taka sytuacja nie powinna wystąpić przy broni dwuręcznej
-                        OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaBron, przenoszonyPrzedmiot); //Porównaj broń jednoręczną (bez tarczy) i dwuręczną
-                    }
-                    else //Jeżeli jeśli gracz nie ma na sobie broni
-                    {
-                        OdswiezStatystykiZPorownaniemPrzedmiotow(przenoszonyPrzedmiot); //Wyświetl statystyki najechanej broni jednoręcznej
-                    }
-                }
-                else if (przenoszonyPrzedmiot.Obrazek.Contains("bron2h"))//Jeżeli najechany przedmiot jest bronią dwuręczną
-                {
-                    if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))//Jeżeli obecnie założona broń jest dwuręczna
-                    {
-                        OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaBron, przenoszonyPrzedmiot);//Porównaj dwie bronie dwuręczne
-                    }
-                    else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h"))//Jeżeli obecnie założona broń jest jednoręczna
-                    {
-                        if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
-                        {
-                            OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaBron, tymczasowyBohater.ZalozonaTarcza, przenoszonyPrzedmiot);//Porównaj założoną broń jednoręczną + założoną tarczę z najechaną bronią dwuręczną
-                        }
-                        else//Jeżeli gracz nie ma na sobie tarczy
-                        {
-                            OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaBron, przenoszonyPrzedmiot);//Porównaj najechaną broń dwuręczną z wyposażoną bronią jednoręczną
-                        }
-                    }
-                    else //Jeżeli jeśli gracz nie ma na sobie broni
-                    {
-                        if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
-                        {
-                            OdswiezStatystykiZPorownaniemPrzedmiotow(przenoszonyPrzedmiot);//Wyświetl statystyki najechanej broni - statystyki tarczy
-                        }
-                        else//Jeżeli gracz nie ma na sobie tarczy
-                        {
-                            OdswiezStatystykiZPorownaniemPrzedmiotow(przenoszonyPrzedmiot); //Wyświetl statystyki najechanej broni dwuręcznej
-                        }
-                    }
-                }
-                else if (przenoszonyPrzedmiot.Obrazek.Contains("pancerz"))//Jeżeli przenoszony przedmiot jest pancerzem
-                {
-                    if (tymczasowyBohater.ZalozonyPancerz.Obrazek.Contains("pancerz"))//Jeżeli najechany przedmiot jest pancerzem
-                    {
-                        OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonyPancerz, przenoszonyPrzedmiot);//Porównaj pancerz najechany z założonym
-                    }
-                    else//Jeżeli gracz nie ma na sobie pancerza
-                    {
-                        OdswiezStatystykiZPorownaniemPrzedmiotow(przenoszonyPrzedmiot);//Wyświetl statystyki najechanego pancerza
-                    }
-                }
-                else if (przenoszonyPrzedmiot.Obrazek.Contains("tarcza"))//Jeżeli przenoszony przedmiot jest tarczą
-                {
-                    if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma założoną tarczę
-                    {//Nie trzeba sprawdzać if(tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h")), bo broń jednoręczna nie konfliktuje z tarczą
-                        OdswiezStatystykiZPorownaniemPrzedmiotow(tymczasowyBohater.ZalozonaTarcza, przenoszonyPrzedmiot);//Porównaj tarczę najechaną z założoną
-                    }
-                    else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))//Jeżeli gracz ma założoną broń dwuręczną
-                    {
-                        OdswiezStatystykiZPorownaniemPrzedmiotow(przenoszonyPrzedmiot);//Wyświetl statystyki najechanej tarczy - statystyki założonej broni dwuręcznej
-                    }
-                    else//Jeżeli gracz nie ma na sobie ani tarczy ani broni dwuręcznej
-                    {
-                        OdswiezStatystykiZPorownaniemPrzedmiotow(przenoszonyPrzedmiot);//Wyświetl statystyki najechanej tarczy
-                    }
-                }
+                OdswiezLabelZPorownaniemPrzedmiotow(); //Porownuje przedmiot najechany z przedmiotami w plecaku i wyświetla wynik w Labelu porównującym
 
                 PanelOpisPrzedmiotu.Visible = true;//Uwidocznij panel z informacjami o najechanym przedmiocie po zaktualizowaniu danych
             }
@@ -643,6 +561,7 @@ namespace RPG
 
 
 
+
         #region Akcje dla przedmiotów w plecaku
 
         void MouseDownPrzedmiotWPlecaku(object sender, MouseEventArgs e)//Gdy zostanie kliknięte pole w plecaku
@@ -652,7 +571,7 @@ namespace RPG
                 int indexPrzedmiotuNadKtorymJestKursor = tymczasowyBohater.plecakGracza.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));//Znajdź w plecaku gracza przedmiotu zgodnego z nazwą przenoszonego PictureBox
                 if (indexPrzedmiotuNadKtorymJestKursor >= 0)//Jeżeli znaleziono przedmiot (gdyby nie znaleziono index wyniesie -1
                 {
-                    przenoszonyPrzedmiot = ekranGry.gra.listaPrzedmiotow[indexPrzedmiotuNadKtorymJestKursor]; //Zapamiętanie przenoszonego przedmiotu jako obiekt typu Ekwipunek
+                    przenoszonyPrzedmiot = tymczasowyBohater.plecakGracza[indexPrzedmiotuNadKtorymJestKursor]; //Zapamiętanie przenoszonego przedmiotu jako obiekt typu Ekwipunek
                 }
                 DoDragDrop(sender, DragDropEffects.Move);//Aktywowanie Drag and Drop dla klikniętego przedmiotu
                 PanelOpisPrzedmiotu.Visible = false; //Po wykonaniu Drag and Drop chowa panel informacyjny (przydatne, gdy ktoś wyrzuca przedmioty poza pola)
@@ -666,6 +585,8 @@ namespace RPG
 
         private void DragDropPrzedmiotWPlecaku(object sender, DragEventArgs e)//Gdy zostanie upuszczony przedmiot na polu w plecaku
         {
+            //PrzeniesPrzedmioty(sender, e);
+            /*
             int indexPrzedmiotuNadKtorymJestKursor = tymczasowyBohater.plecakGracza.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));
             int indexPrzedmiotuKtoryPrzenosimy = tymczasowyBohater.plecakGracza.FindIndex(x => x.Obrazek.Equals(przenoszonyPrzedmiot.Obrazek));
             if ((e.Data.GetData(typeof(PictureBox)) as PictureBox).Name == "PictureBoxBron")//Jeżeli przenoszony przedmiot pochodzi z PictureBoxBron
@@ -741,7 +662,7 @@ namespace RPG
                     //[TODO]Zamień miejscami najechany przedmiot z przedmiotem przenoszonym
                 }
             }
-
+            */
         }
         #endregion
 
@@ -750,21 +671,17 @@ namespace RPG
 
 
         #region Akcje dla przedmiotów na miejscu broni
-        void MouseDownPictureBoxBron(object sender, MouseEventArgs e)
+        void MouseDownPictureBoxBron(object sender, MouseEventArgs e)//Gdy kliknięte zostanie pole broni
         {
-            if ((sender as PictureBox).ImageLocation != null)//Aby nie można przenosić pustych pól
+            if ((sender as PictureBox).ImageLocation != null)//Aby nie można przenosić pola, gdy puste
             {
-                int indexPrzedmiotuNadKtorymJestKursor = ekranGry.gra.listaPrzedmiotow.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));
-                if (indexPrzedmiotuNadKtorymJestKursor >= 0)
-                {
-                    przenoszonyPrzedmiot = ekranGry.gra.listaPrzedmiotow[indexPrzedmiotuNadKtorymJestKursor];
-                }
-                DoDragDrop(sender, DragDropEffects.Move);
-                PanelOpisPrzedmiotu.Visible = false;
+                przenoszonyPrzedmiot = tymczasowyBohater.ZalozonaBron;//Ustawienie założonej broni jako przenoszonego przedmiotu
+                DoDragDrop(sender, DragDropEffects.Move);//Aktywowanie Drag and Drop dla klikniętego przedmiotu
+                PanelOpisPrzedmiotu.Visible = false;//Po wykonaniu Drag and Drop chowa panel informacyjny (przydatne, gdy ktoś wyrzuca przedmioty poza pola)
             }
         }
 
-        private void DragEnterPictureBoxBron(object sender, DragEventArgs e)
+        private void DragEnterPictureBoxBron(object sender, DragEventArgs e)//Gdy przenoszony obiekt znajdzie się na polu broni
         {
             if (przenoszonyPrzedmiot.Obrazek.Contains("bron"))//sprawdzenie, czy przenoszony przedmiot jest bronią
             {
@@ -772,17 +689,17 @@ namespace RPG
             }
         }
 
-        private void DragDropPictureBoxBron(object sender, DragEventArgs e)
+        private void DragDropPictureBoxBron(object sender, DragEventArgs e)//Gdy przenoszony obiekt zostanie upuszczony na polu broni
         {
-            if ((e.Data.GetData(typeof(PictureBox)) as PictureBox).ImageLocation.Contains("bron1h"))
+            if (przenoszonyPrzedmiot.Obrazek.Contains("bron1h"))//Jeżeli przedmiot, który chcemy upuścić jest bronią jednoręczną
             {
             }
-            else if ((e.Data.GetData(typeof(PictureBox)) as PictureBox).ImageLocation.Contains("bron2h"))
+            else if (przenoszonyPrzedmiot.Obrazek.Contains("bron2h"))//Jeżeli przedmiot, który chcemy upuścić jest bronią dwuręczną
             {
-                if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))
+                if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
                 {
                 }
-                else
+                else//Jeżeli gracz nie ma na sobie tarczy
                 {
                 }
             }
@@ -792,29 +709,25 @@ namespace RPG
 
 
         #region Akcje dla przedmiotów na miejscu pancerza
-        void MouseDownPictureBoxPancerz(object sender, MouseEventArgs e)
+        void MouseDownPictureBoxPancerz(object sender, MouseEventArgs e)//Gdy zostanie kliknięte pole pancerza
         {
             if ((sender as PictureBox).ImageLocation != null)//Aby nie można przenosić pustych pól
             {
-                int indexPrzedmiotuNadKtorymJestKursor = ekranGry.gra.listaPrzedmiotow.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));
-                if (indexPrzedmiotuNadKtorymJestKursor >= 0)
-                {
-                    przenoszonyPrzedmiot = ekranGry.gra.listaPrzedmiotow[indexPrzedmiotuNadKtorymJestKursor];
-                }
-                DoDragDrop(sender, DragDropEffects.Move);
-                PanelOpisPrzedmiotu.Visible = false;
+                przenoszonyPrzedmiot = tymczasowyBohater.ZalozonyPancerz;//Ustawienie założonego pancerza jako przenoszonego przedmiotu
+                DoDragDrop(sender, DragDropEffects.Move);//Aktywowanie Drag and Drop dla klikniętego przedmiotu
+                PanelOpisPrzedmiotu.Visible = false;//Po wykonaniu Drag and Drop chowa panel informacyjny (przydatne, gdy ktoś wyrzuca przedmioty poza pola)
             }
         }
 
-        private void DragEnterPictureBoxPancerz(object sender, DragEventArgs e)
+        private void DragEnterPictureBoxPancerz(object sender, DragEventArgs e)//Gdy przenoszony obiekt znajdzie się na polu pancerza
         {
-            if (przenoszonyPrzedmiot.Obrazek.Contains("pancerz"))//sprawdzenie, czy przenoszony przedmiot jest pancerzem
+            if (przenoszonyPrzedmiot.Obrazek.Contains("pancerz"))//Jeżeli przenoszony przedmiot jest pancerzem
             {
                 e.Effect = DragDropEffects.Move;//Umożliwienie upuszczenia przedmiotów na najechanym polu
             }
         }
 
-        private void DragDropPictureBoxPancerz(object sender, DragEventArgs e)
+        private void DragDropPictureBoxPancerz(object sender, DragEventArgs e)//Gdy przenoszony obiekt zostanie upuszczony na polu pancerza
         {
         }
         #endregion
@@ -822,29 +735,25 @@ namespace RPG
 
 
         #region Akcje dla przedmiotów na miejscu tarczy
-        void MouseDownPictureBoxTarcza(object sender, MouseEventArgs e)
+        void MouseDownPictureBoxTarcza(object sender, MouseEventArgs e)//Gdy zostanie kliknięte pole tarczy
         {
             if ((sender as PictureBox).ImageLocation != null)//Aby nie można przenosić pustych pól
             {
-                int indexPrzedmiotuNadKtorymJestKursor = ekranGry.gra.listaPrzedmiotow.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));
-                if (indexPrzedmiotuNadKtorymJestKursor >= 0)
-                {
-                    przenoszonyPrzedmiot = ekranGry.gra.listaPrzedmiotow[indexPrzedmiotuNadKtorymJestKursor];
-                }
-                DoDragDrop(sender, DragDropEffects.Move);
-                PanelOpisPrzedmiotu.Visible = false;
+                przenoszonyPrzedmiot = tymczasowyBohater.ZalozonaTarcza;//Ustawienie założonej tarczy jako przenoszonego przedmiotu
+                DoDragDrop(sender, DragDropEffects.Move);//Aktywowanie Drag and Drop dla klikniętego przedmiotu
+                PanelOpisPrzedmiotu.Visible = false;//Po wykonaniu Drag and Drop chowa panel informacyjny (przydatne, gdy ktoś wyrzuca przedmioty poza pola)
             }
         }
 
-        private void DragEnterPictureBoxTarcza(object sender, DragEventArgs e)
+        private void DragEnterPictureBoxTarcza(object sender, DragEventArgs e)//Gdy przenoszony obiekt znajdzie się na polu tarczy
         {
-            if (przenoszonyPrzedmiot.Obrazek.Contains("tarcza"))//sprawdzenie, czy przenoszony przedmiot jest tarczą
+            if (przenoszonyPrzedmiot.Obrazek.Contains("tarcza"))//Jeżeli przenoszony przedmiot jest tarczą
             {
                 e.Effect = DragDropEffects.Move;//Umożliwienie upuszczenia przedmiotów na najechanym polu
             }
         }
 
-        private void DragDropPictureBoxTarcza(object sender, DragEventArgs e)
+        private void DragDropPictureBoxTarcza(object sender, DragEventArgs e)//Gdy przenoszony obiekt zostanie upuszczony na polu tarczy
         {
         }
         #endregion

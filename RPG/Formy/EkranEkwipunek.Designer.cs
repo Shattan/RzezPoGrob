@@ -200,6 +200,7 @@
             this.LabelNazwyStatystyk.Size = new System.Drawing.Size(222, 184);
             this.LabelNazwyStatystyk.TabIndex = 21;
             this.LabelNazwyStatystyk.Text = "Tu powinny się pojawić szczegóły dotyczące statystyk.";
+            this.LabelNazwyStatystyk.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // PictureBoxPotwierdz
             // 
