@@ -32,7 +32,7 @@
             this.PictureBoxBron = new System.Windows.Forms.PictureBox();
             this.PictureBoxTarcza = new System.Windows.Forms.PictureBox();
             this.PictureBoxPancerz = new System.Windows.Forms.PictureBox();
-            this.FlowLayoutPanelPancerze = new System.Windows.Forms.FlowLayoutPanel();
+            this.FlowLayoutPanelPlecak = new System.Windows.Forms.FlowLayoutPanel();
             this.PictureBoxSilaMinus = new System.Windows.Forms.PictureBox();
             this.PictureBoxSilaPlus = new System.Windows.Forms.PictureBox();
             this.PictureBoxZrecznoscPlus = new System.Windows.Forms.PictureBox();
@@ -101,15 +101,15 @@
             this.PictureBoxPancerz.TabIndex = 11;
             this.PictureBoxPancerz.TabStop = false;
             // 
-            // FlowLayoutPanelPancerze
+            // FlowLayoutPanelPlecak
             // 
-            this.FlowLayoutPanelPancerze.AllowDrop = true;
-            this.FlowLayoutPanelPancerze.AutoScroll = true;
-            this.FlowLayoutPanelPancerze.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.FlowLayoutPanelPancerze.Location = new System.Drawing.Point(595, 112);
-            this.FlowLayoutPanelPancerze.Name = "FlowLayoutPanelPancerze";
-            this.FlowLayoutPanelPancerze.Size = new System.Drawing.Size(291, 330);
-            this.FlowLayoutPanelPancerze.TabIndex = 0;
+            this.FlowLayoutPanelPlecak.AllowDrop = true;
+            this.FlowLayoutPanelPlecak.AutoScroll = true;
+            this.FlowLayoutPanelPlecak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.FlowLayoutPanelPlecak.Location = new System.Drawing.Point(595, 112);
+            this.FlowLayoutPanelPlecak.Name = "FlowLayoutPanelPlecak";
+            this.FlowLayoutPanelPlecak.Size = new System.Drawing.Size(291, 330);
+            this.FlowLayoutPanelPlecak.TabIndex = 0;
             // 
             // PictureBoxSilaMinus
             // 
@@ -317,7 +317,7 @@
             this.Controls.Add(this.PictureBoxTarcza);
             this.Controls.Add(this.PictureBoxPancerz);
             this.Controls.Add(this.PictureBoxBron);
-            this.Controls.Add(this.FlowLayoutPanelPancerze);
+            this.Controls.Add(this.FlowLayoutPanelPlecak);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranEkwipunek";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -348,7 +348,7 @@
         private System.Windows.Forms.PictureBox PictureBoxBron;
         private System.Windows.Forms.PictureBox PictureBoxTarcza;
         private System.Windows.Forms.PictureBox PictureBoxPancerz;
-        private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelPancerze;
+        private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelPlecak;
         private System.Windows.Forms.PictureBox PictureBoxSilaMinus;
         private System.Windows.Forms.PictureBox PictureBoxSilaPlus;
         private System.Windows.Forms.PictureBox PictureBoxZrecznoscPlus;

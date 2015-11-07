@@ -47,8 +47,8 @@ namespace RPG
 
         public Ekwipunek()
         {
-            Nazwa = "Nieustawiony przedmiot";
-            Obrazek = "Resources/Grafiki menu/A.png";
+            Nazwa = "Brak";
+            Obrazek = null;
             Sila = 0;
             Zrecznosc = 0;
             Witalnosc = 0;

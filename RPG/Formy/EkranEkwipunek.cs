@@ -77,12 +77,12 @@ namespace RPG
 
 
             //Rozmieszczanie ekwipunku
-            FlowLayoutPanelPancerze.Size = new Size(Width * 22 / 100, Height * 60 / 100);
+            FlowLayoutPanelPlecak.Size = new Size(Width * 22 / 100, Height * 60 / 100);
             PictureBoxBron.Size = new Size(Width * 5 / 100, Height * 8 / 100);
             PictureBoxPancerz.Size = new Size(PictureBoxBron.Width, PictureBoxBron.Height);
             PictureBoxTarcza.Size = new Size(PictureBoxBron.Width, PictureBoxBron.Height);
 
-            FlowLayoutPanelPancerze.Location = new Point(Width * 71 / 100, Height * 10 / 100);
+            FlowLayoutPanelPlecak.Location = new Point(Width * 71 / 100, Height * 10 / 100);
             PictureBoxBron.Location = new Point(Width * 45 / 100, Height * 28 / 100);
             PictureBoxPancerz.Location = new Point(Width * 51 / 100, Height * 23 / 100);
             PictureBoxTarcza.Location = new Point(Width * 57 / 100, Height * 23 / 100);
@@ -166,15 +166,47 @@ namespace RPG
             LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";         //Szansa na trafienie krytyczne
 
 
+            #region przekształceni używanych przedmiotów na string, żeby nie występowały null dla  .Contains()
+            String WyposazonaBron = "";
+            String WyposazonyPancerz = "";
+            String WyposazonaTarcza = "";
+
+            if (tymczasowyBohater.ZalozonaBron.Obrazek == null)//Gdy bohater nie ma na sobie broni
+            {
+                WyposazonaBron = "Brak";
+            }
+            else//Gdy bohater ma na sobie broń
+            {
+                WyposazonaBron = tymczasowyBohater.ZalozonaBron.Obrazek;
+            }
+
+            if (tymczasowyBohater.ZalozonyPancerz.Obrazek == null)//Gdy bohater nie ma na sobie pancerza
+            {
+                WyposazonyPancerz = "Brak";
+            }
+            else//Gdy bohater ma na sobie pancerz
+            {
+                WyposazonyPancerz = tymczasowyBohater.ZalozonyPancerz.Obrazek;
+            }
+
+            if (tymczasowyBohater.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
+            {
+                WyposazonaTarcza = "Brak";
+            }
+            else//Gdy bohater ma na sobie tarczę
+            {
+                WyposazonaTarcza = tymczasowyBohater.ZalozonaTarcza.Obrazek;
+            }
+            #endregion
 
             if (przenoszonyPrzedmiot.Obrazek.Contains("bron1h"))//Jeżeli najechany przedmiot jest bronią jednoręczną
             {
-                if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h")) //jeżeli obecnie założona broń jest jednoręczna
+                if (WyposazonaBron.Contains("bron1h")) //jeżeli obecnie założona broń jest jednoręczna
                 {
                     WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj dwie bronie jednoręczne (bez tarczy)
                 }
-                else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))//jeżeli obecnie założona broń jest dwuręczna
-                {//Nie trzeba sprawdzać "if(tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza")", bo taka sytuacja nie powinna wystąpić przy broni dwuręcznej
+                else if (WyposazonaBron.Contains("bron2h"))//jeżeli obecnie założona broń jest dwuręczna
+                {//Nie trzeba sprawdzać "if(WyposazonaTarcza.Contains("tarcza")", bo taka sytuacja nie powinna wystąpić przy broni dwuręcznej
                     WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj broń jednoręczną (bez tarczy) i dwuręczną
                 }
                 else //Jeżeli jeśli gracz nie ma na sobie broni
@@ -184,13 +216,13 @@ namespace RPG
             }
             else if (przenoszonyPrzedmiot.Obrazek.Contains("bron2h"))//Jeżeli najechany przedmiot jest bronią dwuręczną
             {
-                if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))//Jeżeli obecnie założona broń jest dwuręczna
-                {//Nie trzeba sprawdzać "if(tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza")", bo taka sytuacja nie powinna wystąpić przy broni dwuręcznej
+                if (WyposazonaBron.Contains("bron2h"))//Jeżeli obecnie założona broń jest dwuręczna
+                {//Nie trzeba sprawdzać "if(WyposazonaTarcza.Contains("tarcza")", bo taka sytuacja nie powinna wystąpić przy broni dwuręcznej
                     WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj dwie bronie dwuręczne
                 }
-                else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h"))//Jeżeli obecnie założona broń jest jednoręczna
+                else if (WyposazonaBron.Contains("bron1h"))//Jeżeli obecnie założona broń jest jednoręczna
                 {
-                    if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
+                    if (WyposazonaTarcza.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
                     {
                         WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, '-', tymczasowyBohater.ZalozonaTarcza));//Porównaj założoną broń jednoręczną + założoną tarczę z najechaną bronią dwuręczną
                     }
@@ -201,7 +233,7 @@ namespace RPG
                 }
                 else //Jeżeli jeśli gracz nie ma na sobie broni
                 {
-                    if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
+                    if (WyposazonaTarcza.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
                     {
                         WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaTarcza, ' ', null));//Wyświetl statystyki najechanej broni - statystyki tarczy
                     }
@@ -213,7 +245,7 @@ namespace RPG
             }
             else if (przenoszonyPrzedmiot.Obrazek.Contains("pancerz"))//Jeżeli przenoszony przedmiot jest pancerzem
             {
-                if (tymczasowyBohater.ZalozonyPancerz.Obrazek.Contains("pancerz"))//Jeżeli najechany przedmiot jest pancerzem
+                if (WyposazonyPancerz.Contains("pancerz"))//Jeżeli najechany przedmiot jest pancerzem
                 {
                     WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonyPancerz, ' ', null));//Porównaj pancerz najechany z założonym
                 }
@@ -224,12 +256,12 @@ namespace RPG
             }
             else if (przenoszonyPrzedmiot.Obrazek.Contains("tarcza"))//Jeżeli przenoszony przedmiot jest tarczą
             {
-                if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma założoną tarczę
-                {//Nie trzeba sprawdzać if(tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron1h")), bo broń jednoręczna nie konfliktuje z tarczą
+                if (WyposazonaTarcza.Contains("tarcza"))//Jeżeli gracz ma założoną tarczę
+                {//Nie trzeba sprawdzać if(WyposazonaBron.Contains("bron1h")), bo broń jednoręczna nie konfliktuje z tarczą
 
                     WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaTarcza, ' ', null));//Porównaj tarczę najechaną z założoną
                 }
-                else if (tymczasowyBohater.ZalozonaBron.Obrazek.Contains("bron2h"))//Jeżeli gracz ma założoną broń dwuręczną
+                else if (WyposazonaBron.Contains("bron2h"))//Jeżeli gracz ma założoną broń dwuręczną
                 {
                     WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Wyświetl statystyki najechanej tarczy - statystyki założonej broni dwuręcznej
                 }
@@ -276,30 +308,26 @@ namespace RPG
             Program.UstawObrazEkwipunku(PictureBoxPancerz, tymczasowyBohater.ZalozonyPancerz.Obrazek);
             Program.UstawObrazEkwipunku(PictureBoxTarcza, tymczasowyBohater.ZalozonaTarcza.Obrazek);
 
-            FlowLayoutPanelPancerze.Controls.Clear();
+            FlowLayoutPanelPlecak.Controls.Clear();
 
             int szerokoscIkon = (Width * 5 / 100) - 5;
             int wysokoscIkon = Height * 8 / 100;
 
             //Dodawanie pól ekwipunku
-            const int miejscWEkwipunku = 59;
-            for (int i = 0; i <= miejscWEkwipunku; i++)
+            int miejscWEkwipunku = tymczasowyBohater.plecakGracza.Count+10 -(tymczasowyBohater.plecakGracza.Count+10)%4;//Plecak zawsze dodaje puste pola na końcu, wyrównujące poziom pól(nieograniczona ilość miejsc w plecaku)
+            for (int i = 0; i < miejscWEkwipunku; i++)
             {
                 PictureBox x = new PictureBox();
                 x.Size = new Size(szerokoscIkon, wysokoscIkon);
                 Program.UstawObrazEkwipunku(x, null);
                 x.ImageLocation = null;
                 x.Name = null;
-                FlowLayoutPanelPancerze.Controls.Add(x);
+                FlowLayoutPanelPlecak.Controls.Add(x);
             }
 
             foreach (Ekwipunek przedmiot in tymczasowyBohater.plecakGracza)
             {
-                //tymczasowe zabezpieczenie na wypadek wiekszej ilosci przedmiotow niz miejsc w plecaku
-                if (tymczasowyBohater.plecakGracza.IndexOf(przedmiot) < FlowLayoutPanelPancerze.Controls.Count)
-                {
-                    Program.UstawObrazEkwipunku((FlowLayoutPanelPancerze.Controls[tymczasowyBohater.plecakGracza.IndexOf(przedmiot)] as PictureBox), przedmiot.Obrazek);
-                }
+                Program.UstawObrazEkwipunku((FlowLayoutPanelPlecak.Controls[tymczasowyBohater.plecakGracza.IndexOf(przedmiot)] as PictureBox), przedmiot.Obrazek);
             }
         }
         #endregion
@@ -445,23 +473,215 @@ namespace RPG
                 LabelPorownanieStatystyk.Text = "BŁĄD \nWCZYTYWANIA \nDANYCH";
             }
         }
-        /*
-        void PrzeniesPrzedmioty(object sender, DragEventArgs e)
+
+        void PrzeniesPrzedmiotyUpuszczoneNaPlecak(object sender, DragEventArgs e)
         {
-            ZamienPrzedmiotyNaListach(przenoszonyPrzedmiot.Obrazek, tymczasowyBohater.plecakGracza[0].Obrazek);
-            ZamienPrzedmiotyNaPictureBoxach(przenoszonyPrzedmiot.Obrazek, tymczasowyBohater.plecakGracza[0].Obrazek);
+            PictureBox przedmiotUpuszczany = (e.Data.GetData(typeof(PictureBox)) as PictureBox);
+            PictureBox przedmiotNaKtoryUpuszczamy = (sender as PictureBox);
+
+            #region przekształceni używanych przedmiotów na string, żeby nie występowały null dla  .Contains()
+            String WyposazonaBron = "";
+            String WyposazonyPancerz = "";
+            String WyposazonaTarcza = "";
+            String NaCoUpuszczamy = "";
+
+            if (tymczasowyBohater.ZalozonaBron.Obrazek == null)//Gdy bohater nie ma na sobie broni
+            {
+                WyposazonaBron = "Brak";
+            }
+            else//Gdy bohater ma na sobie broń
+            {
+                WyposazonaBron = tymczasowyBohater.ZalozonaBron.Obrazek;
+            }
+
+            if (tymczasowyBohater.ZalozonyPancerz.Obrazek == null)//Gdy bohater nie ma na sobie pancerza
+            {
+                WyposazonyPancerz = "Brak";
+            }
+            else//Gdy bohater ma na sobie pancerz
+            {
+                WyposazonyPancerz = tymczasowyBohater.ZalozonyPancerz.Obrazek;
+            }
+
+            if (tymczasowyBohater.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
+            {
+                WyposazonaTarcza = "Brak";
+            }
+            else//Gdy bohater ma na sobie tarczę
+            {
+                WyposazonaTarcza = tymczasowyBohater.ZalozonaTarcza.Obrazek;
+            }
+
+            if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Gdy upuszczamy na puste pole
+            {
+                NaCoUpuszczamy = "Brak";
+            }
+            else//Gdy gdy upuszczamy na przedmiot
+            {
+                NaCoUpuszczamy = przedmiotNaKtoryUpuszczamy.ImageLocation;
+            }
+            #endregion
+
+            if (przedmiotUpuszczany.Name == "PictureBoxBron")//Jeżeli przenoszony przedmiot pochodzi z PictureBoxBron
+            {
+                if (NaCoUpuszczamy.Contains("bron1h"))//Jeżeli najechany przedmiot jest bronią jednoręczną
+                {//Nie potrzeba sprawdzeń, czy przedmiot z PictureBoxBron jest pancerzem, tarczą, czy bronią dwuręczną (dla bron2h obsługa taka sama)
+                    ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+                }
+                else if (NaCoUpuszczamy.Contains("bron2h"))//Jeżeli najechany przedmiot jest bronią dwuręczną
+                {
+                    if (przenoszonyPrzedmiot.Obrazek.Contains("bron1h"))//Jeżeli przenoszony przedmiot jest bronią jednoręczną
+                    {
+                        if (WyposazonaTarcza.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
+                        {
+                            ZdejmijPrzedmiotDoPlecaka(PictureBoxTarcza);
+                            ZamienPrzedmiotyMiejscami(przedmiotUpuszczany,przedmiotNaKtoryUpuszczamy);
+                        }
+                        else//Jeżeli gracz nie ma na sobie tarczy
+                        {
+                            ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+                        }
+                    }
+                    else if (przenoszonyPrzedmiot.Obrazek.Contains("bron2h"))//Jeżeli przenoszony przedmiot jest bronią dwuręczną
+                    {
+                        ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+                    }
+                    else//Jeżeli przenoszony przedmiot nie jest ani bronią jednoręczną, ani bronią dwuręczną
+                    {
+                        //Taka sytuacja zdaje się nie wymaga żadnej akcji (w miejsce broni nie należy umieszczać pancerzy, ani tarcz, a pustych pól nie chcemy przenosić)
+                    }
+                }
+                else if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Jeżeli najechane pole jest puste
+                {
+                    ZdejmijPrzedmiotDoPlecaka(PictureBoxBron);
+                }
+                else//Jeżeli najechane pole jest pancerzem, tarczą, bądź czymś innym
+                {
+                    //Nie wymagana żadna akcja (w pole broni można wprowadzić tylko broń)
+                }
+            }
+            else if (przedmiotUpuszczany.Name == "PictureBoxPancerz")//Jeżeli przenoszony przedmiot pochodzi z PictureBoxPancerz
+            {
+                if (NaCoUpuszczamy.Contains("pancerz"))//Jeżeli najechany przedmiot jest pancerzem
+                {//Nie potrzeba więcej sprawdzeń, z PictureBoxPancerz można wynieść tylko pancerz
+                    ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+                }
+                else if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Jeżeli najechane pole jest puste
+                {
+                    ZdejmijPrzedmiotDoPlecaka(PictureBoxPancerz);
+                }
+                else//Jeżeli najechany przedmiot najechany nie jest pancerzem
+                {
+                    //Nie wymagana akcja (nie można ubrać nic innego niż pancerz)
+                }
+            }
+            else if (przedmiotUpuszczany.Name == "PictureBoxTarcza")//Jeżeli przenoszony przedmiot pochodzi z PictureBoxTarcza
+            {
+                if (NaCoUpuszczamy.Contains("tarcza"))//Jeżeli najechany przedmiot jest tarczą
+                {//Nie potrzeba więcej sprawdzeń, z PictureBoxTarcza można wynieść tylko tarczę
+                    ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+                }
+                else if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Jeżeli najechane pole jest puste
+                {
+                    ZdejmijPrzedmiotDoPlecaka(PictureBoxTarcza);
+                }
+                else//Jeżeli najechany przedmiot najechany nie jest tarczą
+                {
+                    //Nie wymagana akcja (nie można ubrać nic innego niż tarczę)
+                }
+            }
+            else//Jeżeli przenoszony przedmiot pochodzi z plecaka
+            {
+                if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Jeżeli najechany przedmiot jest pustym polem
+                {
+                    ZdejmijPrzedmiotDoPlecaka(przedmiotUpuszczany);
+                }
+                else//Jeżeli najechany przedmiot nie jest pustym polem
+                {
+                    ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+                }
+            }
         }
 
-        void ZamienPrzedmiotyNaListach(String obrazekPierwszegoPrzedmiotu, String obrazekDrugiegoPrzedmiotu)
+        void PrzeniesPrzedmiotyUpuszczoneNaBron(object sender, DragEventArgs e)
         {
-            tymczasowyBohater.plecakGracza.Find(x => x.Obrazek.Equals(przenoszonyPrzedmiot.Obrazek));
         }
-        void ZamienPrzedmiotyNaPictureBoxach(String obrazekPierwszegoPrzedmiotu, String obrazekDrugiegoPrzedmiotu)
-        {
-            tymczasowyBohater.plecakGracza.Find(x => x.Obrazek.Equals(przenoszonyPrzedmiot.Obrazek));
-        }
-        */
 
+        void PrzeniesPrzedmiotyUpuszczoneNaPancerz(object sender, DragEventArgs e)
+        {
+        }
+
+        void PrzeniesPrzedmiotyUpuszczoneNaTarcze(object sender, DragEventArgs e)
+        {
+        }
+
+        void ZamienPrzedmiotyMiejscami(PictureBox przedmiotUpuszczany, PictureBox przedmiotNaKtoryUpuszczamy)
+        {
+            //Zamienianie wizualne (na PictureBox'ach)
+            if (przedmiotNaKtoryUpuszczamy.ImageLocation != null)//Jeżeli przedmiot upuszczany jest na inny przedmiot
+            {
+                String przechowalnia = przedmiotNaKtoryUpuszczamy.ImageLocation;
+                Program.UstawObrazEkwipunku(przedmiotNaKtoryUpuszczamy, przedmiotUpuszczany.ImageLocation);
+                Program.UstawObrazEkwipunku(przedmiotUpuszczany, przechowalnia);
+            }
+            else//Jeżeli przedmiot upuszczany jest na puste pole
+            {
+                Program.UstawObrazEkwipunku(przedmiotNaKtoryUpuszczamy, przedmiotUpuszczany.ImageLocation);
+                przedmiotUpuszczany.ImageLocation = null;
+                przedmiotUpuszczany.Image = null;
+            }
+            //Przepisanie stanu PictureBox'ów do gracza tymczasowego
+            ZapiszEkwipunekZPictureBoxowDoList();
+        }
+
+        void ZdejmijPrzedmiotDoPlecaka(PictureBox ktoryPrzedmiot)
+        {
+            //Usuwanie wizualne (na PictureBox'ach)
+            Program.UstawObrazEkwipunku(FlowLayoutPanelPlecak.Controls.OfType<PictureBox>().First(x => x.ImageLocation==null),ktoryPrzedmiot.ImageLocation);//Skopiowanie obrazka  z któryPrzedmiot do pierwszego wolnego pola w plecaku
+            ktoryPrzedmiot.Image = null;
+            ktoryPrzedmiot.ImageLocation = null;
+            //Przepisanie stanu PictureBox'ów do gracza tymczasowego
+            ZapiszEkwipunekZPictureBoxowDoList();
+        }
+
+        void ZapiszEkwipunekZPictureBoxowDoList()
+        {
+            if (PictureBoxBron.ImageLocation != null)
+            {
+                tymczasowyBohater.ZalozonaBron = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxBron.ImageLocation));
+            }
+            else
+            {
+                tymczasowyBohater.ZalozonaBron = new Ekwipunek();
+            }
+            if (PictureBoxPancerz.ImageLocation != null)
+            {
+                tymczasowyBohater.ZalozonyPancerz = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxPancerz.ImageLocation));
+            }
+            else
+            {
+                tymczasowyBohater.ZalozonyPancerz = new Ekwipunek();
+            }
+            if (PictureBoxTarcza.ImageLocation != null)
+            { 
+                tymczasowyBohater.ZalozonaTarcza = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxTarcza.ImageLocation));
+            }
+            else
+            {
+                tymczasowyBohater.ZalozonaTarcza = new Ekwipunek();
+            }
+
+
+            tymczasowyBohater.plecakGracza.Clear();
+
+            foreach (PictureBox przedmiot in FlowLayoutPanelPlecak.Controls)
+            {
+                if (przedmiot.ImageLocation != null)//Jeżeli pole nie jest puste (po wejściu w ekwipunek układa przedmioty bez pustych pól)
+                {
+                    tymczasowyBohater.plecakGracza.Add(new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == przedmiot.ImageLocation)));
+                }
+            }
+        }
 
         void WczytajStatystykiOdGracza()
         {
@@ -479,7 +699,7 @@ namespace RPG
         void DodanieDragAndDropDlaObrazkow()
         {
             //Dodawanie operacji Drop and Drag dla wszystkich PictureBox z FlowLayoutPanelPancerze
-            foreach (PictureBox obiekt in FlowLayoutPanelPancerze.Controls.OfType<PictureBox>())
+            foreach (PictureBox obiekt in FlowLayoutPanelPlecak.Controls.OfType<PictureBox>())
             {
                 obiekt.AllowDrop = true;
                 
@@ -585,84 +805,7 @@ namespace RPG
 
         private void DragDropPrzedmiotWPlecaku(object sender, DragEventArgs e)//Gdy zostanie upuszczony przedmiot na polu w plecaku
         {
-            //PrzeniesPrzedmioty(sender, e);
-            /*
-            int indexPrzedmiotuNadKtorymJestKursor = tymczasowyBohater.plecakGracza.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));
-            int indexPrzedmiotuKtoryPrzenosimy = tymczasowyBohater.plecakGracza.FindIndex(x => x.Obrazek.Equals(przenoszonyPrzedmiot.Obrazek));
-            if ((e.Data.GetData(typeof(PictureBox)) as PictureBox).Name == "PictureBoxBron")//Jeżeli przenoszony przedmiot pochodzi z PictureBoxBron
-            {
-                if ((sender as PictureBox).ImageLocation.Contains("bron1h"))//Jeżeli najechany przedmiot jest bronią jednoręczną
-                {//Nie potrzeba sprawdzeń, czy przedmiot z PictureBoxBron jest pancerzem, tarczą, czy bronią dwuręczną (dla bron2h obsługa taka sama)
-                    //[TODO]Zamień miejscami założoną broń z bronią najechaną
-                }
-                else if ((sender as PictureBox).ImageLocation.Contains("bron2h"))//Jeżeli najechany przedmiot jest bronią dwuręczną
-                {
-                    if (przenoszonyPrzedmiot.Obrazek.Contains("bron1h"))//Jeżeli przenoszony przedmiot jest bronią jednoręczną
-                    {
-                        if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
-                        {
-                            //[TODO]Znajdź wolne miejsce w plecaku gracza, umieść tam tarczę, wyczyść pole tarczy
-                            //[TODO]Zamień miejscami najechany przedmiot z przedmiotem założonym
-                        }
-                        else//Jeżeli gracz nie ma na sobie tarczy
-                        {
-                            //[TODO]Zamień miejscami najechany przedmiot z przedmiotem założonym
-                        }
-                    }
-                    else if (przenoszonyPrzedmiot.Obrazek.Contains("bron2h"))//Jeżeli przenoszony przedmiot jest bronią dwuręczną
-                    {
-                        //[TODO]Zamień miejscami najechany przedmiot z przedmiotem założonym
-                    }
-                    else//Jeżeli przenoszony przedmiot nie jest ani bronią jednoręczną, ani bronią dwuręczną
-                    {
-                        //Taka sytuacja zdaje się nie wymaga żadnej akcji (w miejsce broni nie należy umieszczać pancerzy, ani tarcz, a pustych pól nie chcemy przenosić)
-                    }
-                }
-                else if ((sender as PictureBox).ImageLocation == null)//Jeżeli najechane pole jest puste
-                {
-                    //[TODO]Skopiuj używaną broń na puste pole, i wyczyść pole broni
-                }
-                else//Jeżeli najechane pole jest pancerzem, tarczą, bądź czymś innym
-                {
-                    //Nie wymagana żadna akcja (w pole broni można wprowadzić tylko broń)
-                }
-            }
-            else if ((e.Data.GetData(typeof(PictureBox)) as PictureBox).Name == "PictureBoxPancerz")//Jeżeli przenoszony przedmiot pochodzi z PictureBoxPancerz
-            {
-                if ((sender as PictureBox).ImageLocation.Contains("pancerz"))//Jeżeli najechany przedmiot jest pancerzem
-                {//Nie potrzeba więcej sprawdzeń, z PictureBoxPancerz można wynieść tylko pancerz
-                    //[TODO]Zamień miejscami pancerz z plecaka z pancerzem założonym
-                }
-                else//Jeżeli najechany przedmiot najechany nie jest pancerzem
-                {
-                    //Nie wymagana akcja (nie można ubrać nic innego niż pancerz)
-                }
-            }
-            else if ((e.Data.GetData(typeof(PictureBox)) as PictureBox).Name == "PictureBoxTarcza")//Jeżeli przenoszony przedmiot pochodzi z PictureBoxTarcza
-            {
-                if ((sender as PictureBox).ImageLocation.Contains("tarcza"))//Jeżeli najechany przedmiot jest tarczą
-                {//Nie potrzeba więcej sprawdzeń, z PictureBoxTarcza można wynieść tylko tarczę
-                    //[TODO]Zamień miejscami tarczę z plecaka z tarczą założoną
-                }
-                else//Jeżeli najechany przedmiot najechany nie jest tarczą
-                {
-                    //Nie wymagana akcja (nie można ubrać nic innego niż tarczę)
-                }
-            }
-            else//Jeżeli przenoszony przedmiot pochodzi z plecaka
-            {
-                if ((sender as PictureBox).ImageLocation == null)//Jeżeli najechany przedmiot jest pustym polem
-                {
-                    //[TODO]Skopiuj przenoszony przedmiot w najechane pole, a pole przedmiotu wyczyść
-                    Program.UstawObrazEkwipunku((sender as PictureBox), przenoszonyPrzedmiot.Obrazek);
-                    (e.Data.GetData(typeof(PictureBox)) as PictureBox).Image = null;
-                }
-                else//Jeżeli najechany przedmiot nie jest pustym polem
-                {
-                    //[TODO]Zamień miejscami najechany przedmiot z przedmiotem przenoszonym
-                }
-            }
-            */
+            PrzeniesPrzedmiotyUpuszczoneNaPlecak(sender, e);
         }
         #endregion
 
@@ -691,18 +834,6 @@ namespace RPG
 
         private void DragDropPictureBoxBron(object sender, DragEventArgs e)//Gdy przenoszony obiekt zostanie upuszczony na polu broni
         {
-            if (przenoszonyPrzedmiot.Obrazek.Contains("bron1h"))//Jeżeli przedmiot, który chcemy upuścić jest bronią jednoręczną
-            {
-            }
-            else if (przenoszonyPrzedmiot.Obrazek.Contains("bron2h"))//Jeżeli przedmiot, który chcemy upuścić jest bronią dwuręczną
-            {
-                if (tymczasowyBohater.ZalozonaTarcza.Obrazek.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
-                {
-                }
-                else//Jeżeli gracz nie ma na sobie tarczy
-                {
-                }
-            }
         }
         #endregion
 
