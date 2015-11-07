@@ -166,7 +166,7 @@ namespace RPG
             LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";         //Szansa na trafienie krytyczne
 
 
-            #region przekształceni używanych przedmiotów na string, żeby nie występowały null dla  .Contains()
+            #region Przekształcenia używanych przedmiotów na string, żeby nie występowały null dla  .Contains()
             String WyposazonaBron = "";
             String WyposazonyPancerz = "";
             String WyposazonaTarcza = "";
@@ -479,7 +479,7 @@ namespace RPG
             PictureBox przedmiotUpuszczany = (e.Data.GetData(typeof(PictureBox)) as PictureBox);
             PictureBox przedmiotNaKtoryUpuszczamy = (sender as PictureBox);
 
-            #region przekształceni używanych przedmiotów na string, żeby nie występowały null dla  .Contains()
+            #region Przekształcenia używanych przedmiotów na string, żeby nie występowały null dla  .Contains()
             String WyposazonaBron = "";
             String WyposazonyPancerz = "";
             String WyposazonaTarcza = "";
@@ -605,14 +605,124 @@ namespace RPG
 
         void PrzeniesPrzedmiotyUpuszczoneNaBron(object sender, DragEventArgs e)
         {
+            PictureBox przedmiotUpuszczany = (e.Data.GetData(typeof(PictureBox)) as PictureBox);
+            PictureBox przedmiotNaKtoryUpuszczamy = (sender as PictureBox);
+
+            #region Przekształcenia używanych przedmiotów na string, żeby nie występowały null dla  .Contains()
+            String WyposazonaTarcza = "";
+            String NaCoUpuszczamy = "";
+
+            if (tymczasowyBohater.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
+            {
+                WyposazonaTarcza = "Brak";
+            }
+            else//Gdy bohater ma na sobie tarczę
+            {
+                WyposazonaTarcza = tymczasowyBohater.ZalozonaTarcza.Obrazek;
+            }
+
+            if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Gdy upuszczamy na puste pole
+            {
+                NaCoUpuszczamy = "Brak";
+            }
+            else//Gdy gdy upuszczamy na przedmiot
+            {
+                NaCoUpuszczamy = przedmiotNaKtoryUpuszczamy.ImageLocation;
+            }
+            #endregion
+
+            if (przedmiotUpuszczany.ImageLocation.Contains("bron1h"))//Jeżeli upuszczana jest broń jednoręczna
+            {
+                ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+            }
+            else if (przedmiotUpuszczany.ImageLocation.Contains("bron2h"))//Jeżeli upuszczana jest broń dwuręczna
+            {
+                if (WyposazonaTarcza.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
+                {
+                    ZdejmijPrzedmiotDoPlecaka(PictureBoxTarcza);
+                    ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+                }
+                else//Jeżeli gracz nie ma na sobie tarczy
+                {
+                    ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+                }
+            }
         }
 
         void PrzeniesPrzedmiotyUpuszczoneNaPancerz(object sender, DragEventArgs e)
         {
+            PictureBox przedmiotUpuszczany = (e.Data.GetData(typeof(PictureBox)) as PictureBox);
+            PictureBox przedmiotNaKtoryUpuszczamy = (sender as PictureBox);
+
+            #region Przekształcenia używanych przedmiotów na string, żeby nie występowały null dla  .Contains()
+            String NaCoUpuszczamy = "";
+
+            if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Gdy upuszczamy na puste pole
+            {
+                NaCoUpuszczamy = "Brak";
+            }
+            else//Gdy gdy upuszczamy na przedmiot
+            {
+                NaCoUpuszczamy = przedmiotNaKtoryUpuszczamy.ImageLocation;
+            }
+            #endregion
+
+            if (przedmiotUpuszczany.ImageLocation.Contains("pancerz"))//Jeżeli upuszczany przedmiot jest pancerzem
+            {
+                ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+            }
         }
 
         void PrzeniesPrzedmiotyUpuszczoneNaTarcze(object sender, DragEventArgs e)
         {
+            PictureBox przedmiotUpuszczany = (e.Data.GetData(typeof(PictureBox)) as PictureBox);
+            PictureBox przedmiotNaKtoryUpuszczamy = (sender as PictureBox);
+
+            #region Przekształcenia używanych przedmiotów na string, żeby nie występowały null dla  .Contains()
+            String WyposazonaBron = "";
+            String WyposazonaTarcza = "";
+            String NaCoUpuszczamy = "";
+
+            if (tymczasowyBohater.ZalozonaBron.Obrazek == null)//Gdy bohater nie ma na sobie broni
+            {
+                WyposazonaBron = "Brak";
+            }
+            else//Gdy bohater ma na sobie broń
+            {
+                WyposazonaBron = tymczasowyBohater.ZalozonaBron.Obrazek;
+            }
+
+            if (tymczasowyBohater.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
+            {
+                WyposazonaTarcza = "Brak";
+            }
+            else//Gdy bohater ma na sobie tarczę
+            {
+                WyposazonaTarcza = tymczasowyBohater.ZalozonaTarcza.Obrazek;
+            }
+
+            if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Gdy upuszczamy na puste pole
+            {
+                NaCoUpuszczamy = "Brak";
+            }
+            else//Gdy gdy upuszczamy na przedmiot
+            {
+                NaCoUpuszczamy = przedmiotNaKtoryUpuszczamy.ImageLocation;
+            }
+            #endregion
+
+            if (przedmiotUpuszczany.ImageLocation.Contains("tarcza"))//Jeżeli upuszczana jest broń jednoręczna
+            {
+                if(WyposazonaBron.Contains("bron2h"))
+                {
+                    ZdejmijPrzedmiotDoPlecaka(PictureBoxBron);
+                    ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+                }
+                else
+                {
+                    ZamienPrzedmiotyMiejscami(przedmiotUpuszczany, przedmiotNaKtoryUpuszczamy);
+                }
+            }
         }
 
         void ZamienPrzedmiotyMiejscami(PictureBox przedmiotUpuszczany, PictureBox przedmiotNaKtoryUpuszczamy)
@@ -834,6 +944,7 @@ namespace RPG
 
         private void DragDropPictureBoxBron(object sender, DragEventArgs e)//Gdy przenoszony obiekt zostanie upuszczony na polu broni
         {
+            PrzeniesPrzedmiotyUpuszczoneNaBron(sender,e);
         }
         #endregion
 
@@ -860,6 +971,7 @@ namespace RPG
 
         private void DragDropPictureBoxPancerz(object sender, DragEventArgs e)//Gdy przenoszony obiekt zostanie upuszczony na polu pancerza
         {
+            PrzeniesPrzedmiotyUpuszczoneNaPancerz(sender, e);
         }
         #endregion
 
@@ -886,6 +998,7 @@ namespace RPG
 
         private void DragDropPictureBoxTarcza(object sender, DragEventArgs e)//Gdy przenoszony obiekt zostanie upuszczony na polu tarczy
         {
+            PrzeniesPrzedmiotyUpuszczoneNaTarcze(sender, e);
         }
         #endregion
 
