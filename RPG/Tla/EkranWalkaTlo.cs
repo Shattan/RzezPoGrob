@@ -33,15 +33,35 @@ namespace RPG
         void RozmiescElementy()
         {
             Program.DopasujRozmiarFormyDoEkranu(this);
+
+
+            //Ustawienie paneli z informacjami o graczu i przeciwniku
+            PanelDanychGracza.Size = PanelDanychPrzeciwnika.Size = new Size(Width * 30 / 100, Height * 10 / 100);
+
+            PanelDanychPrzeciwnika.Location = new Point(Width - PanelDanychPrzeciwnika.Width, 0);
+            PanelDanychGracza.Location = new Point(0, 0);
+
+            PictureBoxTloHPGracza.Size = PictureBoxTloHPPrzeciwnika.Size = PictureBoxTloEnergiiGracza.Size = PictureBoxTloEnergiiPrzeciwnika.Size = new Size(PanelDanychGracza.Width * 80 / 100, PanelDanychGracza.Height * 30 / 100);
+            PictureBoxTloHPGracza.Location = PictureBoxTloHPPrzeciwnika.Location = new Point(PanelDanychGracza.Width * 10 / 100, PanelDanychGracza.Height * 10 / 100);
+            PictureBoxTloEnergiiGracza.Location = PictureBoxTloEnergiiPrzeciwnika.Location = new Point(PictureBoxTloHPGracza.Location.X, PictureBoxTloHPGracza.Location.Y + PictureBoxTloHPGracza.Height);
         }
         void KolorujElementy()
         {
             string plansza = losowanie.Next(0, 10).ToString();
             string sciezkaPlanszy = "Resources/Grafiki tła walki/" + plansza + ".png";
             //Do losowania postaci potrzeba tu dostępu do obiektu Postac, zeby po indexach wczytywać
-            //string postac = losowanie.Next(0, 0).ToString();
-            //string sciezkaPostaci = "Resources/Grafiki tła walki/" + plansza + ".png";
+            //string postac = ekranGry.gra.listaPostaci[losowanie.Next(0, ekranGry.gra.listaPostaci.count)];
+            string sciezkaPostaci = "Resources/Grafiki tła walki/" + plansza + ".png";
             Program.UstawObrazPolaBitwy(this, sciezkaPlanszy, "Resources/Grafiki postaci walczących/cyklop.png");
+
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PanelDanychGracza, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PanelDanychPrzeciwnika, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxTloHPGracza, "Resources/Grafiki menu/Pasek brakującej statystyki.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxTloHPPrzeciwnika, "Resources/Grafiki menu/Pasek brakującej statystyki.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxTloEnergiiGracza, "Resources/Grafiki menu/Pasek brakującej statystyki.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxTloEnergiiPrzeciwnika, "Resources/Grafiki menu/Pasek brakującej statystyki.png");
         }
         #endregion
         #region Obsluga zdarzeń

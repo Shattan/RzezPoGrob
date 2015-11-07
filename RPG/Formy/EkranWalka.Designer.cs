@@ -44,6 +44,14 @@
             this.pictureBoxWyjdzZEkwipunku = new System.Windows.Forms.PictureBox();
             this.FlowLayoutPanelWyboru = new System.Windows.Forms.FlowLayoutPanel();
             this.TimerDoZamkniecia = new System.Windows.Forms.Timer(this.components);
+            this.PictureBoxPasekHPGracza = new System.Windows.Forms.PictureBox();
+            this.PictureBoxPasekEnergiiGracza = new System.Windows.Forms.PictureBox();
+            this.PanelDanychPrzeciwnika = new System.Windows.Forms.Panel();
+            this.PanelDanychGracza = new System.Windows.Forms.Panel();
+            this.LabelDanePrzeciwnika = new System.Windows.Forms.Label();
+            this.LabelDaneGracza = new System.Windows.Forms.Label();
+            this.PictureBoxPasekEnergiiPrzeciwnika = new System.Windows.Forms.PictureBox();
+            this.PictureBoxPasekHPPrzeciwnika = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUcieczka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAtakMagiczny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkwipunek)).BeginInit();
@@ -55,12 +63,18 @@
             this.FlowLayoutPanelWyborMikstury.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWyjdzZEkwipunku)).BeginInit();
             this.FlowLayoutPanelWyboru.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekHPGracza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiGracza)).BeginInit();
+            this.PanelDanychPrzeciwnika.SuspendLayout();
+            this.PanelDanychGracza.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiPrzeciwnika)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekHPPrzeciwnika)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonWygralem
             // 
             this.buttonWygralem.BackColor = System.Drawing.Color.Lime;
-            this.buttonWygralem.Location = new System.Drawing.Point(40, 12);
+            this.buttonWygralem.Location = new System.Drawing.Point(227, 48);
             this.buttonWygralem.Name = "buttonWygralem";
             this.buttonWygralem.Size = new System.Drawing.Size(178, 69);
             this.buttonWygralem.TabIndex = 0;
@@ -71,7 +85,7 @@
             // buttonPrzegralem
             // 
             this.buttonPrzegralem.BackColor = System.Drawing.Color.Red;
-            this.buttonPrzegralem.Location = new System.Drawing.Point(224, 12);
+            this.buttonPrzegralem.Location = new System.Drawing.Point(408, 48);
             this.buttonPrzegralem.Name = "buttonPrzegralem";
             this.buttonPrzegralem.Size = new System.Drawing.Size(178, 69);
             this.buttonPrzegralem.TabIndex = 1;
@@ -84,7 +98,7 @@
             this.LabelInformacje.BackColor = System.Drawing.Color.Black;
             this.LabelInformacje.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelInformacje.ForeColor = System.Drawing.Color.Red;
-            this.LabelInformacje.Location = new System.Drawing.Point(409, 450);
+            this.LabelInformacje.Location = new System.Drawing.Point(14, 103);
             this.LabelInformacje.Name = "LabelInformacje";
             this.LabelInformacje.Size = new System.Drawing.Size(393, 128);
             this.LabelInformacje.TabIndex = 2;
@@ -137,7 +151,7 @@
             this.FlowLayoutPanelWyborAtakuFizycznego.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.FlowLayoutPanelWyborAtakuFizycznego.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FlowLayoutPanelWyborAtakuFizycznego.Controls.Add(this.PictureBoxWyjdzZAtakowFizycznych);
-            this.FlowLayoutPanelWyborAtakuFizycznego.Location = new System.Drawing.Point(19, 87);
+            this.FlowLayoutPanelWyborAtakuFizycznego.Location = new System.Drawing.Point(16, 234);
             this.FlowLayoutPanelWyborAtakuFizycznego.Name = "FlowLayoutPanelWyborAtakuFizycznego";
             this.FlowLayoutPanelWyborAtakuFizycznego.Size = new System.Drawing.Size(386, 177);
             this.FlowLayoutPanelWyborAtakuFizycznego.TabIndex = 0;
@@ -159,7 +173,7 @@
             this.FlowLayoutPanelWyborAtakuMagicznego.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.FlowLayoutPanelWyborAtakuMagicznego.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FlowLayoutPanelWyborAtakuMagicznego.Controls.Add(this.pictureBoxWyjdzZAtakowMagicznych);
-            this.FlowLayoutPanelWyborAtakuMagicznego.Location = new System.Drawing.Point(411, 87);
+            this.FlowLayoutPanelWyborAtakuMagicznego.Location = new System.Drawing.Point(408, 234);
             this.FlowLayoutPanelWyborAtakuMagicznego.Name = "FlowLayoutPanelWyborAtakuMagicznego";
             this.FlowLayoutPanelWyborAtakuMagicznego.Size = new System.Drawing.Size(386, 177);
             this.FlowLayoutPanelWyborAtakuMagicznego.TabIndex = 1;
@@ -181,7 +195,7 @@
             this.FlowLayoutPanelWyborMikstury.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.FlowLayoutPanelWyborMikstury.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FlowLayoutPanelWyborMikstury.Controls.Add(this.pictureBoxWyjdzZEkwipunku);
-            this.FlowLayoutPanelWyborMikstury.Location = new System.Drawing.Point(411, 270);
+            this.FlowLayoutPanelWyborMikstury.Location = new System.Drawing.Point(408, 417);
             this.FlowLayoutPanelWyborMikstury.Name = "FlowLayoutPanelWyborMikstury";
             this.FlowLayoutPanelWyborMikstury.Size = new System.Drawing.Size(386, 177);
             this.FlowLayoutPanelWyborMikstury.TabIndex = 1;
@@ -206,15 +220,85 @@
             this.FlowLayoutPanelWyboru.Controls.Add(this.PictureBoxAtakMagiczny);
             this.FlowLayoutPanelWyboru.Controls.Add(this.PictureBoxEkwipunek);
             this.FlowLayoutPanelWyboru.Controls.Add(this.PictureBoxUcieczka);
-            this.FlowLayoutPanelWyboru.Location = new System.Drawing.Point(16, 270);
+            this.FlowLayoutPanelWyboru.Location = new System.Drawing.Point(13, 417);
             this.FlowLayoutPanelWyboru.Name = "FlowLayoutPanelWyboru";
             this.FlowLayoutPanelWyboru.Size = new System.Drawing.Size(386, 177);
             this.FlowLayoutPanelWyboru.TabIndex = 1;
             // 
             // TimerDoZamkniecia
             // 
-            this.TimerDoZamkniecia.Interval = 5000;
+            this.TimerDoZamkniecia.Interval = 3000;
             this.TimerDoZamkniecia.Tick += new System.EventHandler(this.TimerDoZamkniecia_Tick);
+            // 
+            // PictureBoxPasekHPGracza
+            // 
+            this.PictureBoxPasekHPGracza.Location = new System.Drawing.Point(3, 3);
+            this.PictureBoxPasekHPGracza.Name = "PictureBoxPasekHPGracza";
+            this.PictureBoxPasekHPGracza.Size = new System.Drawing.Size(416, 17);
+            this.PictureBoxPasekHPGracza.TabIndex = 6;
+            this.PictureBoxPasekHPGracza.TabStop = false;
+            // 
+            // PictureBoxPasekEnergiiGracza
+            // 
+            this.PictureBoxPasekEnergiiGracza.Location = new System.Drawing.Point(3, 26);
+            this.PictureBoxPasekEnergiiGracza.Name = "PictureBoxPasekEnergiiGracza";
+            this.PictureBoxPasekEnergiiGracza.Size = new System.Drawing.Size(416, 17);
+            this.PictureBoxPasekEnergiiGracza.TabIndex = 8;
+            this.PictureBoxPasekEnergiiGracza.TabStop = false;
+            // 
+            // PanelDanychPrzeciwnika
+            // 
+            this.PanelDanychPrzeciwnika.BackColor = System.Drawing.Color.Transparent;
+            this.PanelDanychPrzeciwnika.Controls.Add(this.LabelDanePrzeciwnika);
+            this.PanelDanychPrzeciwnika.Controls.Add(this.PictureBoxPasekHPPrzeciwnika);
+            this.PanelDanychPrzeciwnika.Controls.Add(this.PictureBoxPasekEnergiiPrzeciwnika);
+            this.PanelDanychPrzeciwnika.Location = new System.Drawing.Point(483, 12);
+            this.PanelDanychPrzeciwnika.Name = "PanelDanychPrzeciwnika";
+            this.PanelDanychPrzeciwnika.Size = new System.Drawing.Size(424, 89);
+            this.PanelDanychPrzeciwnika.TabIndex = 9;
+            // 
+            // PanelDanychGracza
+            // 
+            this.PanelDanychGracza.BackColor = System.Drawing.Color.Transparent;
+            this.PanelDanychGracza.Controls.Add(this.LabelDaneGracza);
+            this.PanelDanychGracza.Controls.Add(this.PictureBoxPasekHPGracza);
+            this.PanelDanychGracza.Controls.Add(this.PictureBoxPasekEnergiiGracza);
+            this.PanelDanychGracza.Location = new System.Drawing.Point(411, 107);
+            this.PanelDanychGracza.Name = "PanelDanychGracza";
+            this.PanelDanychGracza.Size = new System.Drawing.Size(422, 100);
+            this.PanelDanychGracza.TabIndex = 10;
+            // 
+            // LabelDanePrzeciwnika
+            // 
+            this.LabelDanePrzeciwnika.Location = new System.Drawing.Point(3, 46);
+            this.LabelDanePrzeciwnika.Name = "LabelDanePrzeciwnika";
+            this.LabelDanePrzeciwnika.Size = new System.Drawing.Size(418, 43);
+            this.LabelDanePrzeciwnika.TabIndex = 8;
+            this.LabelDanePrzeciwnika.Text = "Tutaj powinny wyświetlić się informacje o przeciwniku";
+            // 
+            // LabelDaneGracza
+            // 
+            this.LabelDaneGracza.Location = new System.Drawing.Point(3, 46);
+            this.LabelDaneGracza.Name = "LabelDaneGracza";
+            this.LabelDaneGracza.Size = new System.Drawing.Size(416, 54);
+            this.LabelDaneGracza.TabIndex = 9;
+            this.LabelDaneGracza.Text = "Tutaj powinny wyświetlić się informacje o graczu";
+            // 
+            // PictureBoxPasekEnergiiPrzeciwnika
+            // 
+            this.PictureBoxPasekEnergiiPrzeciwnika.Location = new System.Drawing.Point(3, 26);
+            this.PictureBoxPasekEnergiiPrzeciwnika.Name = "PictureBoxPasekEnergiiPrzeciwnika";
+            this.PictureBoxPasekEnergiiPrzeciwnika.Size = new System.Drawing.Size(418, 17);
+            this.PictureBoxPasekEnergiiPrzeciwnika.TabIndex = 7;
+            this.PictureBoxPasekEnergiiPrzeciwnika.TabStop = false;
+            // 
+            // PictureBoxPasekHPPrzeciwnika
+            // 
+            this.PictureBoxPasekHPPrzeciwnika.Location = new System.Drawing.Point(3, 3);
+            this.PictureBoxPasekHPPrzeciwnika.Name = "PictureBoxPasekHPPrzeciwnika";
+            this.PictureBoxPasekHPPrzeciwnika.Size = new System.Drawing.Size(418, 17);
+            this.PictureBoxPasekHPPrzeciwnika.TabIndex = 5;
+            this.PictureBoxPasekHPPrzeciwnika.TabStop = false;
             // 
             // EkranWalka
             // 
@@ -222,6 +306,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(970, 780);
+            this.Controls.Add(this.PanelDanychGracza);
+            this.Controls.Add(this.PanelDanychPrzeciwnika);
             this.Controls.Add(this.FlowLayoutPanelWyborAtakuFizycznego);
             this.Controls.Add(this.FlowLayoutPanelWyborAtakuMagicznego);
             this.Controls.Add(this.FlowLayoutPanelWyborMikstury);
@@ -247,6 +333,12 @@
             this.FlowLayoutPanelWyborMikstury.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWyjdzZEkwipunku)).EndInit();
             this.FlowLayoutPanelWyboru.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekHPGracza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiGracza)).EndInit();
+            this.PanelDanychPrzeciwnika.ResumeLayout(false);
+            this.PanelDanychGracza.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiPrzeciwnika)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekHPPrzeciwnika)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -268,5 +360,13 @@
         private System.Windows.Forms.PictureBox pictureBoxWyjdzZEkwipunku;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelWyboru;
         private System.Windows.Forms.Timer TimerDoZamkniecia;
+        private System.Windows.Forms.PictureBox PictureBoxPasekHPGracza;
+        private System.Windows.Forms.PictureBox PictureBoxPasekEnergiiGracza;
+        private System.Windows.Forms.Panel PanelDanychPrzeciwnika;
+        private System.Windows.Forms.Panel PanelDanychGracza;
+        private System.Windows.Forms.Label LabelDanePrzeciwnika;
+        private System.Windows.Forms.Label LabelDaneGracza;
+        private System.Windows.Forms.PictureBox PictureBoxPasekHPPrzeciwnika;
+        private System.Windows.Forms.PictureBox PictureBoxPasekEnergiiPrzeciwnika;
     }
 }
