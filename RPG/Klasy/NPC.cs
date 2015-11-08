@@ -33,7 +33,7 @@ namespace RPG
         public int Inteligencja { get { return InteligencjaPodstawa; } }
         public int Obrazenia { get { return ObrazeniaPodstawa + Sila / 5; } }
         public int Pancerz { get { return PancerzPodstawa + Zrecznosc / 5; } }
-        public int HP { get { return HP + WitalnoscPodstawa * 5; } }
+        public int HP { get { return 1 + WitalnoscPodstawa * 5; } }//tu jest błąd stack overflow
         public int Energia { get { return EnergiaPodstawa + Inteligencja * 5; } }
         public int SzansaNaTrafienie { get { return SzansaNaTrafieniePodstawa + Zrecznosc / 10; } }
         public int SzansaNaKrytyczne { get { return SzansaNaKrytycznePodstawa + Zrecznosc / 10; } }
