@@ -212,7 +212,6 @@ namespace RPG
             if (tymczasowyBohater.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
             {
                 tymczasowyBohater.SilaPodstawa--;
-                tymczasowyBohater.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
@@ -222,7 +221,6 @@ namespace RPG
             if (tymczasowyBohater.PunktyStatystykDoRozdania > 0)
             {
                 tymczasowyBohater.SilaPodstawa++;
-                tymczasowyBohater.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -232,7 +230,6 @@ namespace RPG
             if (tymczasowyBohater.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
             {
                 tymczasowyBohater.ZrecznoscPodstawa--;
-                tymczasowyBohater.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
@@ -242,7 +239,6 @@ namespace RPG
             if (tymczasowyBohater.PunktyStatystykDoRozdania > 0)
             {
                 tymczasowyBohater.ZrecznoscPodstawa++;
-                tymczasowyBohater.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -252,7 +248,6 @@ namespace RPG
             if (tymczasowyBohater.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
             {
                 tymczasowyBohater.WitalnoscPodstawa--;
-                tymczasowyBohater.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
@@ -262,7 +257,6 @@ namespace RPG
             if (tymczasowyBohater.PunktyStatystykDoRozdania > 0)
             {
                 tymczasowyBohater.WitalnoscPodstawa++;
-                tymczasowyBohater.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -272,7 +266,6 @@ namespace RPG
             if (tymczasowyBohater.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
             {
                 tymczasowyBohater.InteligencjaPodstawa--;
-                tymczasowyBohater.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
@@ -282,7 +275,6 @@ namespace RPG
             if (tymczasowyBohater.PunktyStatystykDoRozdania > 0)
             {
                 tymczasowyBohater.InteligencjaPodstawa++;
-                tymczasowyBohater.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }

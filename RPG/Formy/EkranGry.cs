@@ -68,7 +68,7 @@ namespace RPG
 
             this.ekranEkranDziennikZadanTlo = new EkranEkranDziennikZadanTlo(ekranDziennikZadan);
             this.ekranEkwipunekTlo = new EkranEkwipunekTlo(ekranEkwipunek);
-            this.ekranWalkaTlo = new EkranWalkaTlo(ekranWalka);
+            this.ekranWalkaTlo = new EkranWalkaTlo(ekranWalka,gra.listaZestawowPrzeciwnikow);
 
 
             InitializeComponent();

@@ -17,11 +17,15 @@ namespace RPG
         #region Zmienne
         EkranWalka ekranWalka;
 
+        public List<List<Przeciwnik>> listaZestawowPrzeciwnikow = new List<List<Przeciwnik>>();
+
         Random losowanie = new Random();
         #endregion
 
-        public EkranWalkaTlo(EkranWalka ekranWalka)
+        public EkranWalkaTlo(EkranWalka ekranWalka, List<List<Przeciwnik>> listaZestawowPrzeciwnikow)
         {
+            this.listaZestawowPrzeciwnikow = listaZestawowPrzeciwnikow;
+
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();
@@ -53,9 +57,10 @@ namespace RPG
             string plansza = losowanie.Next(0, 10).ToString();
             string sciezkaPlanszy = "Resources/Grafiki tła walki/" + plansza + ".png";
             //Do losowania postaci potrzeba tu dostępu do obiektu Postac, zeby po indexach wczytywać
-            //string postac = ekranGry.gra.listaPostaci[losowanie.Next(0, ekranGry.gra.listaPostaci.count)];
-            string sciezkaPostaci = "Resources/Grafiki tła walki/" + plansza + ".png";
-            Program.UstawObrazPolaBitwy(this, sciezkaPlanszy, "Resources/Grafiki postaci walczących/cyklop.png");
+            int numerZestawu = losowanie.Next(0, listaZestawowPrzeciwnikow.Count);
+            int numerPotwora = losowanie.Next(0, listaZestawowPrzeciwnikow[numerZestawu].Count);
+            string sciezkaPostaci = listaZestawowPrzeciwnikow[numerZestawu][numerPotwora].ObrazekWalki;
+            Program.UstawObrazPolaBitwy(this, sciezkaPlanszy, sciezkaPostaci);
 
 
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PanelDanychGracza, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");

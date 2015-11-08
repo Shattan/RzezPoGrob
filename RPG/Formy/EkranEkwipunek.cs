@@ -41,7 +41,7 @@ namespace RPG
 
             //Rozmieszczanie statystyk
             LabelNazwyStatystyk.Size = new Size(Width * 20 / 100, Height * 80 / 100);
-            LabelWartosciStatystyk.Size = new Size(Width * 4 / 100, LabelNazwyStatystyk.Height);
+            LabelWartosciStatystyk.Size = new Size(Width * 10 / 100, LabelNazwyStatystyk.Height);
             LabelPorownanieStatystyk.Size = new Size(Width * 4 / 100, LabelNazwyStatystyk.Height);
 
             LabelStatystyki.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 5 / 100, Screen.PrimaryScreen.Bounds.Height * 8 / 100);
@@ -66,7 +66,7 @@ namespace RPG
 
             const int odleglosciMiedzyPrzyciskamiX = 5;
             const int odleglosciMiedzyPrzyciskamiY = wielkoscPrzyciskow;
-            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow*2);
+            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow*4);
             PictureBoxSilaPlus.Location = new Point(PictureBoxSilaMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxSilaMinus.Location.Y);
             PictureBoxZrecznoscMinus.Location = new Point(PictureBoxSilaMinus.Location.X, PictureBoxSilaMinus.Location.Y + odleglosciMiedzyPrzyciskamiY);
             PictureBoxZrecznoscPlus.Location = new Point(PictureBoxZrecznoscMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxZrecznoscMinus.Location.Y);
@@ -107,7 +107,9 @@ namespace RPG
         #region Metody odświeżające okienka z informacjami i ekwipunek
         void OdswiezStatystyki()
         {
-            LabelNazwyStatystyk.Text = gracz.Nazwa + "\n";   
+            LabelNazwyStatystyk.Text = gracz.Nazwa + "\n";
+            LabelNazwyStatystyk.Text += "Doświadczenie:\n";
+            LabelNazwyStatystyk.Text += "Poziom:\n";
             LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
             LabelNazwyStatystyk.Text += "Siła:\n";
             LabelNazwyStatystyk.Text += "Zręczność:\n";
@@ -121,6 +123,8 @@ namespace RPG
             LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
 
             LabelWartosciStatystyk.Text = "\n";
+            LabelWartosciStatystyk.Text += gracz.Doswiadczenie + "/" + gracz.DoswiadczenieWymaganeNaKonkretnyPoziom[gracz.Poziom-1] + "\n"; 
+            LabelWartosciStatystyk.Text += gracz.Poziom + "\n"; 
             LabelWartosciStatystyk.Text += gracz.PunktyStatystykDoRozdania + "\n";               //Pozostałe punkty do rozdania
             LabelWartosciStatystyk.Text += gracz.Sila + "\n";                 //Siła
             LabelWartosciStatystyk.Text += gracz.Zrecznosc + "\n";            //Zręczność
@@ -140,6 +144,8 @@ namespace RPG
         void OdswiezLabelZPorownaniemPrzedmiotow()
         {
             LabelNazwyStatystyk.Text = gracz.Nazwa + "\n";
+            LabelNazwyStatystyk.Text += "Doświadczenie:\n";
+            LabelNazwyStatystyk.Text += "Poziom:\n";
             LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
             LabelNazwyStatystyk.Text += "Siła:\n";
             LabelNazwyStatystyk.Text += "Zręczność:\n";
@@ -153,6 +159,8 @@ namespace RPG
             LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
 
             LabelWartosciStatystyk.Text = "\n";
+            LabelWartosciStatystyk.Text += gracz.Doswiadczenie + "/" + gracz.DoswiadczenieWymaganeNaKonkretnyPoziom[gracz.Poziom-1] + "\n"; 
+            LabelWartosciStatystyk.Text += gracz.Poziom + "\n";  
             LabelWartosciStatystyk.Text += gracz.PunktyStatystykDoRozdania + "\n";                         //Pozostałe punkty do rozdania
             LabelWartosciStatystyk.Text += gracz.Sila + "\n";                       //Siła
             LabelWartosciStatystyk.Text += gracz.Zrecznosc + "\n";                  //Zręczność
@@ -454,6 +462,8 @@ namespace RPG
         void WyswietlWartosciPorownan(List<int> wartosci)
         {
             LabelPorownanieStatystyk.Text = "\n";
+            LabelPorownanieStatystyk.Text += "\n";
+            LabelPorownanieStatystyk.Text += "\n";
             LabelPorownanieStatystyk.Text += "\n";
 
             if (wartosci != null)
@@ -871,7 +881,7 @@ namespace RPG
         {
             if (MouseButtons != MouseButtons.Left && (sender as PictureBox).ImageLocation!=null)//Zabezpieczenie przed wyświetlaniem pustych pól i zmienianiem przedmiotów podczas przenoszenia
             {
-                przenoszonyPrzedmiot = new Ekwipunek(gracz.Plecak.Find(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation))); //Znalezienie przenoszonego przedmiotu w plecaku gracza
+                przenoszonyPrzedmiot = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation))); //Znalezienie przenoszonego przedmiotu w plecaku gracza
                 OdswiezInformacjeONejchanymPrzedmiocie(przenoszonyPrzedmiot); //Zaktualizowanie panelu z informacjami o przedmiocie
 
                 OdswiezLabelZPorownaniemPrzedmiotow(); //Porownuje przedmiot najechany z przedmiotami w plecaku i wyświetla wynik w Labelu porównującym
@@ -1009,9 +1019,9 @@ namespace RPG
 
 
 
-
         private void Zegar_Tick(object sender, EventArgs e)
         {
+            //Ustawianie pozycji okienka z informacjami o przedmiocie
             if (MousePosition.X + 10 + PanelOpisPrzedmiotu.Width < Width)
             {
                 if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
@@ -1044,7 +1054,6 @@ namespace RPG
             if (gracz.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
             {
                 gracz.SilaPodstawa--;
-                gracz.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
@@ -1054,7 +1063,6 @@ namespace RPG
             if (gracz.PunktyStatystykDoRozdania > 0)
             {
                 gracz.SilaPodstawa++;
-                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -1064,7 +1072,6 @@ namespace RPG
             if (gracz.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
             {
                 gracz.ZrecznoscPodstawa--;
-                gracz.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
@@ -1074,7 +1081,6 @@ namespace RPG
             if (gracz.PunktyStatystykDoRozdania > 0)
             {
                 gracz.ZrecznoscPodstawa++;
-                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -1084,7 +1090,6 @@ namespace RPG
             if (gracz.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
             {
                 gracz.WitalnoscPodstawa--;
-                gracz.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
@@ -1094,7 +1099,6 @@ namespace RPG
             if (gracz.PunktyStatystykDoRozdania > 0)
             {
                 gracz.WitalnoscPodstawa++;
-                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -1104,7 +1108,6 @@ namespace RPG
             if (gracz.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
             {
                 gracz.InteligencjaPodstawa--;
-                gracz.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
@@ -1114,7 +1117,6 @@ namespace RPG
             if (gracz.PunktyStatystykDoRozdania > 0)
             {
                 gracz.InteligencjaPodstawa++;
-                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }

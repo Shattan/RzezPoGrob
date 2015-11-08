@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy
 {
-    class NPC : Postac
+    class Sprzedawca : NPC
     {
-
+        List<Ekwipunek> sklep = new List<Ekwipunek>();
     }
 }

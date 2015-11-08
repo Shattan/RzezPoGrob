@@ -88,6 +88,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Klasy\NPC.cs" />
+    <Compile Include="Klasy\Postac.cs" />
+    <Compile Include="Klasy\Sprzedawca.cs" />
     <Compile Include="Klasy\Strawa.cs" />
     <Compile Include="Tla\EkranGryTloObiekty.cs">
       <SubType>Form</SubType>
@@ -185,7 +188,7 @@
     <Compile Include="Tla\EkranOpcjeTlo.Designer.cs">
       <DependentUpon>EkranOpcjeTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klasy\NPC.cs" />
+    <Compile Include="Klasy\Przeciwnik.cs" />
     <Compile Include="Klasy\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Klasy\Przeszkoda.cs" />

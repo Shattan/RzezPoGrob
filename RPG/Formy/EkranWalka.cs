@@ -18,7 +18,7 @@ namespace RPG
         EkranGry ekranGry;
 
         Gracz gracz = new Gracz();
-        NPC przeciwnik = new NPC();
+        Przeciwnik przeciwnik = new Przeciwnik();
 
         int obecnyPoziomHPGracza = 0;
         int obecnyPoziomHPPrzeciwnika = 0;
@@ -148,7 +148,7 @@ namespace RPG
         void WczytajPrzeciwnikaIGracza()
         {
             gracz = new Gracz(ekranGry.gra.gracz);
-            przeciwnik = new NPC(ekranGry.gra.listaPostaciZMiasta[0]);
+            przeciwnik = new Przeciwnik(ekranGry.gra.listaPostaciZMiasta[0]);
         }
 
         void OdswiezDane()
