@@ -8,65 +8,71 @@ namespace RPG
 {
     public class NPC
     {
-        public string Nazwa { get; set; }
-        public string ObrazekMowienia { get; set; }
-        public string ObrazekNaMapie { get; set; }
-        public string ObrazekWalki { get; set; }
-                               
-        //statystyki bazowe    
-        public int Sila{ get; set; }
-        public int Zrecznosc{ get; set; }
-        public int Witalnosc{ get; set; }
-        public int Inteligencja { get; set; }
-        public int BazoweObrazenia { get; set; }
-        public int BazowyPancerz { get; set; }
-        public int BazoweHP { get; set; }
-        public int BazowaEnergia { get; set; }
-        public int BazowaSzansaNaTrafienie { get; set; }
-        public int BazowaSzansaNaKrytyczne { get; set; }
+        public string Nazwa { get; private set; }
+        public string ObrazekNaMapie { get; private set; }
+        public string ObrazekMowienia { get; private set; }
+        public string ObrazekWalki { get; private set; }
+        public int Zloto { get; private set; }
 
-        public int Obrazenia { get; set; }
-        public int Pancerz { get; set; }
-        public int HP { get; set; }
-        public int Energia { get; set; }
-        public int SzansaNaTrafienie { get; set; }
-        public int SzansaNaKrytyczne { get; set; }
+        //statystyki bez obliczeń bonusów 
+        public int SilaPodstawa { get; set; }
+        public int ZrecznoscPodstawa { get; set; }
+        public int WitalnoscPodstawa { get; set; }
+        public int InteligencjaPodstawa { get; set; }
+        public int ObrazeniaPodstawa { get; set; }
+        public int PancerzPodstawa { get; set; }
+        public int HPPodstawa { get; set; }
+        public int EnergiaPodstawa { get; set; }
+        public int SzansaNaTrafieniePodstawa { get; set; }
+        public int SzansaNaKrytycznePodstawa { get; set; }
 
-        public int SumaPunktow { get; set; }
-        public int Poziom { get; set; }
-        public int ZlotoZaZabicie { get; set; }
-        public int DoswiadczenieZaZabicie { get; set; }
+        //statystyki po obliczeniu bonusów 
+        public int Sila { get { return SilaPodstawa; } }
+        public int Zrecznosc { get { return ZrecznoscPodstawa; } }
+        public int Witalnosc { get { return WitalnoscPodstawa; } }
+        public int Inteligencja { get { return InteligencjaPodstawa; } }
+        public int Obrazenia { get { return ObrazeniaPodstawa + Sila / 5; } }
+        public int Pancerz { get { return PancerzPodstawa + Zrecznosc / 5; } }
+        public int HP { get { return HP + WitalnoscPodstawa * 5; } }
+        public int Energia { get { return EnergiaPodstawa + Inteligencja * 5; } }
+        public int SzansaNaTrafienie { get { return SzansaNaTrafieniePodstawa + Zrecznosc / 10; } }
+        public int SzansaNaKrytyczne { get { return SzansaNaKrytycznePodstawa + Zrecznosc / 10; } }
 
 
+        public int SumaPunktow { get { return SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa; } }
+        public int Poziom { get { return SumaPunktow / 4; } }
+        public int ZlotoZaZabicie { get
+        {
+            Random Losowanie = new Random();
+            return Losowanie.Next(50,150)/100*SumaPunktow;
+        }}
+        public int DoswiadczenieZaZabicie { get { return SumaPunktow; } }
+
+        public List<Umiejetnosc> umiejetnosci { get; set; }
+
+        
+        
+        //Konstruktor domyślny
         public NPC()
         {
-            Nazwa = "Gracz";
-            ObrazekMowienia = "Resources/Grafiki postaci mówiących/Mówca1.png";
+            Nazwa = "Nieustawiony potwór";
             ObrazekNaMapie = "Resources/Grafiki postaci na mapie/2/";
+            ObrazekMowienia = "Resources/Grafiki postaci mówiących/Mówca1.png";
             ObrazekWalki = "Resources/Grafiki postaci walczących/szczur.png";
-            Sila = 10;
-            Zrecznosc = 10;
-            Witalnosc = 10;
-            Inteligencja = 10;
-            BazoweObrazenia = 10;
-            BazowyPancerz = 10;
-            BazoweHP = 10;
-            BazowaEnergia = 10;
-            BazowaSzansaNaTrafienie = 75;
-            BazowaSzansaNaKrytyczne = 5;
 
-            Obrazenia = BazoweObrazenia + Sila / 5;
-            Pancerz = BazowyPancerz + Zrecznosc / 5;
-            HP = BazoweHP + Witalnosc*5;
-            Energia = BazowaEnergia + Inteligencja*5;
-            SzansaNaTrafienie = BazowaSzansaNaTrafienie + Zrecznosc/5;
-            SzansaNaKrytyczne = BazowaSzansaNaKrytyczne + Zrecznosc / 5;
+            Zloto = 1;
+            SilaPodstawa = 1;
+            ZrecznoscPodstawa = 1;
+            WitalnoscPodstawa = 1;
+            InteligencjaPodstawa = 1;
+            ObrazeniaPodstawa = 1;
+            PancerzPodstawa = 1;
+            HPPodstawa = 1;
+            EnergiaPodstawa = 1;
+            SzansaNaTrafieniePodstawa = 1;
+            SzansaNaKrytycznePodstawa = 1;
 
-            SumaPunktow = Sila + Zrecznosc + Witalnosc + Inteligencja;
-            Poziom = SumaPunktow/4;
-            Random Losowanie = new Random();
-            ZlotoZaZabicie = Losowanie.Next(50,150)/100*SumaPunktow;
-            DoswiadczenieZaZabicie = SumaPunktow;
+            umiejetnosci = new List<Umiejetnosc>();
         }
 
         public NPC(String nazwa, String obrazekMowienia, String obrazekNaMapie, String obrazekWalki, int sila, int zrecznosc, int witalnosc, int inteligencja, int bazoweObrazenia, int bazowyPancerz, int bazoweHP, int bazowaEnergia, int bazowaSzansaNaTrafienie, int bazowaSzansaNaKrytyczne)
@@ -76,29 +82,20 @@ namespace RPG
             ObrazekNaMapie = obrazekNaMapie;
             ObrazekWalki = obrazekWalki;
 
-            Sila = sila;
-            Zrecznosc = zrecznosc;
-            Witalnosc = witalnosc;
-            Inteligencja = inteligencja;
-            BazoweObrazenia = bazoweObrazenia;
-            BazowyPancerz = bazowyPancerz;
-            BazoweHP = bazoweHP;
-            BazowaEnergia = bazowaEnergia;
-            BazowaSzansaNaTrafienie = bazowaSzansaNaTrafienie;
-            BazowaSzansaNaKrytyczne = bazowaSzansaNaKrytyczne;
+            SilaPodstawa = sila;
+            ZrecznoscPodstawa = zrecznosc;
+            WitalnoscPodstawa = witalnosc;
+            InteligencjaPodstawa = inteligencja;
+            ObrazeniaPodstawa = bazoweObrazenia;
+            PancerzPodstawa = bazowyPancerz;
+            HPPodstawa = bazoweHP;
+            EnergiaPodstawa = bazowaEnergia;
+            SzansaNaTrafieniePodstawa = bazowaSzansaNaTrafienie;
+            SzansaNaKrytycznePodstawa = bazowaSzansaNaKrytyczne;
+        }
 
-            Obrazenia = BazoweObrazenia + Sila / 5;
-            Pancerz = BazowyPancerz + Zrecznosc / 5;
-            HP = BazoweHP + Witalnosc * 5;
-            Energia = BazowaEnergia + Inteligencja * 5;
-            SzansaNaTrafienie = BazowaSzansaNaTrafienie + Zrecznosc / 5;
-            SzansaNaKrytyczne = BazowaSzansaNaKrytyczne + Zrecznosc / 5;
-
-            SumaPunktow = Sila + Zrecznosc + Witalnosc + Inteligencja;
-            Poziom = SumaPunktow / 4;
-            Random Losowanie = new Random();
-            ZlotoZaZabicie = Losowanie.Next(50, 150) / 100 * SumaPunktow;
-            DoswiadczenieZaZabicie = SumaPunktow;
+        public NPC(NPC kopiowanyNPC)
+        {
         }
     }
 }

@@ -33,5 +33,13 @@ namespace RPG
             HP = _hp;
             Energia = _energia;
         }
+
+        public Strawa(Strawa kopiowanaStrawa)
+        {
+            this.Obrazek = kopiowanaStrawa.Obrazek;
+            this.Nazwa = kopiowanaStrawa.Nazwa;
+            this.HP = kopiowanaStrawa.HP;
+            this.Energia = kopiowanaStrawa.Energia;
+        }
     }
 }

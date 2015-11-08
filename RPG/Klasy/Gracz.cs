@@ -11,9 +11,8 @@ namespace RPG
         public string Nazwa { get; set; }
         public string ObrazekNaMapie { get; set; }
         public string ObrazekMowienia { get; set; }
-        public int Poziom { get; set; }
         public int Doswiadczenie { get; set; }
-        public int Punkty{ get; set; }
+        public int PunktyStatystykDoRozdania{ get; set; }
         public int Zloto { get; set; }
                                
         //statystyki bez przedmiotow    
@@ -21,81 +20,170 @@ namespace RPG
         public int ZrecznoscPodstawa { get; set; }
         public int WitalnoscPodstawa { get; set; }
         public int InteligencjaPodstawa { get; set; }
-        public int ObrazeniaPodstawa;
-        public int PancerzPodstawa;
-        public int HPPodstawa;
-        public int EnergiaPodstawa;
-        public int SzansaNaTrafieniePodstawa;
-        public int SzansaNaKrytycznePodstawa;
+        public int ObrazeniaPodstawa { get; set; }
+        public int PancerzPodstawa { get; set; }
+        public int HPPodstawa { get; set; }
+        public int EnergiaPodstawa { get; set; }
+        public int SzansaNaTrafieniePodstawa { get; set; }
+        public int SzansaNaKrytycznePodstawa { get; set; }
 
         //statystyki z przedmiotami
-        public int SilaSuma { get { return SilaPodstawa + ZalozonaBron.Sila + ZalozonyPancerz.Sila + ZalozonaTarcza.Sila; } }
-        public int ZrecznoscSuma { get { return ZrecznoscPodstawa + ZalozonaBron.Zrecznosc + ZalozonyPancerz.Zrecznosc + ZalozonaTarcza.Zrecznosc; } }
-        public int WitalnoscSuma { get { return WitalnoscPodstawa + ZalozonaBron.Witalnosc + ZalozonyPancerz.Witalnosc + ZalozonaTarcza.Witalnosc; } }
-        public int InteligencjaSuma { get { return InteligencjaPodstawa + ZalozonaBron.Inteligencja + ZalozonyPancerz.Inteligencja + ZalozonaTarcza.Inteligencja; } }
-        public int ObrazeniaSuma { get { return ObrazeniaPodstawa + ZalozonaBron.Obrazenia + ZalozonyPancerz.Obrazenia + ZalozonaTarcza.Obrazenia; } }
-        public int PancerzSuma { get { return PancerzPodstawa + ZalozonaBron.Pancerz + ZalozonyPancerz.Pancerz + ZalozonaTarcza.Pancerz; } }
-        public int HPSuma { get { return HPPodstawa + ZalozonaBron.HP + ZalozonyPancerz.HP + ZalozonaTarcza.HP; } }
-        public int EnergiaSuma { get { return EnergiaPodstawa + ZalozonaBron.Energia + ZalozonyPancerz.Energia + ZalozonaTarcza.Energia; } }
-        public int SzansaNaTrafienieSuma { get { return SzansaNaTrafieniePodstawa + ZalozonaBron.SzansaNaTrafienie + ZalozonyPancerz.SzansaNaTrafienie + ZalozonaTarcza.SzansaNaTrafienie; } }
-        public int SzansaNaKrytyczneSuma { get { return SzansaNaKrytycznePodstawa + ZalozonaBron.SzansaNaKrytyczne + ZalozonyPancerz.SzansaNaKrytyczne + ZalozonaTarcza.SzansaNaKrytyczne; } }
-
-
-
+        public int SilaZPrzedmiotami { get { return SilaPodstawa + ZalozonaBron.Sila + ZalozonyPancerz.Sila + ZalozonaTarcza.Sila; } }
+        public int ZrecznoscZPrzedmiotami {  get { return ZrecznoscPodstawa + ZalozonaBron.Zrecznosc + ZalozonyPancerz.Zrecznosc + ZalozonaTarcza.Zrecznosc; } }
+        public int WitalnoscZPrzedmiotami {  get { return WitalnoscPodstawa + ZalozonaBron.Witalnosc + ZalozonyPancerz.Witalnosc + ZalozonaTarcza.Witalnosc; } }
+        public int InteligencjaZPrzedmiotami {  get { return InteligencjaPodstawa + ZalozonaBron.Inteligencja + ZalozonyPancerz.Inteligencja + ZalozonaTarcza.Inteligencja; } }
+        public int ObrazeniaZPrzedmiotami {  get { return ObrazeniaPodstawa + ZalozonaBron.Obrazenia + ZalozonyPancerz.Obrazenia + ZalozonaTarcza.Obrazenia; } }
+        public int PancerzZPrzedmiotami {  get { return PancerzPodstawa + ZalozonaBron.Pancerz + ZalozonyPancerz.Pancerz + ZalozonaTarcza.Pancerz; } }
+        public int HPZPrzedmiotami {  get { return HPPodstawa + ZalozonaBron.HP + ZalozonyPancerz.HP + ZalozonaTarcza.HP; } }
+        public int EnergiaZPrzedmiotami {  get { return EnergiaPodstawa + ZalozonaBron.Energia + ZalozonyPancerz.Energia + ZalozonaTarcza.Energia; } }
+        public int SzansaNaTrafienieZPrzedmiotami {  get { return SzansaNaTrafieniePodstawa + ZalozonaBron.SzansaNaTrafienie + ZalozonyPancerz.SzansaNaTrafienie + ZalozonaTarcza.SzansaNaTrafienie; } }
+        public int SzansaNaKrytyczneZPrzedmiotami {  get { return SzansaNaKrytycznePodstawa + ZalozonaBron.SzansaNaKrytyczne + ZalozonyPancerz.SzansaNaKrytyczne + ZalozonaTarcza.SzansaNaKrytyczne; } }
 
         public int DoswiadczenieDoNastepnegoPoziomu { get { return 1000 * Poziom * Poziom; ;} }
-        public int Obrazenia { get { return ObrazeniaPodstawa + SilaSuma / 5; } }
-        public int Pancerz { get { return PancerzPodstawa + ZrecznoscSuma / 5; } }
-        public int HP { get { return HPSuma + WitalnoscSuma * 5; } }
-        public int Energia { get { return EnergiaPodstawa + InteligencjaSuma * 5; } }
-        public int SzansaNaTrafienie { get { return SzansaNaTrafienieSuma + ZrecznoscSuma / 10; } }
-        public int SzansaNaKrytyczne { get { return SzansaNaKrytyczneSuma + ZrecznoscSuma / 10; } }
+
+        public int Sila { get { return SilaZPrzedmiotami; } }
+        public int Zrecznosc { get { return ZrecznoscZPrzedmiotami; } }
+        public int Witalnosc { get { return WitalnoscZPrzedmiotami; } }
+        public int Inteligencja { get { return InteligencjaZPrzedmiotami; } }
+        public int Obrazenia { get { return ObrazeniaPodstawa + Sila / 5; } }
+        public int Pancerz { get { return PancerzPodstawa + Zrecznosc / 5; } }
+        public int HP { get { return HPZPrzedmiotami + Witalnosc * 5; } }
+        public int Energia { get { return EnergiaPodstawa + Inteligencja * 5; } }
+        public int SzansaNaTrafienie { get { return SzansaNaTrafienieZPrzedmiotami + Zrecznosc / 10; } }
+        public int SzansaNaKrytyczne { get { return SzansaNaKrytyczneZPrzedmiotami + Zrecznosc / 10; } }
+
+        public int Poziom { get{return (SilaPodstawa +ZrecznoscPodstawa +WitalnoscPodstawa +InteligencjaPodstawa)/4;} }
 
         public Ekwipunek ZalozonaBron { get; set; }
         public Ekwipunek ZalozonyPancerz { get; set; }
         public Ekwipunek ZalozonaTarcza { get; set; }
 
-        public List<Ekwipunek> plecakGracza {get;set;}
-        public List<Zadanie> zadaniaGracza {get;set;}
+        public List<Umiejetnosc> Umiejetnosci { get; set; }
+        public List<Ekwipunek> Plecak { get; set; }
+        public List<Strawa> MiksturyIPozywienie { get; set; }
+        public List<Zadanie> Zadania {get;set;}
 
 
-
+        //Konstruktor domyślny
         public Gracz()
         {
-            Nazwa = "Gracz";
+            Nazwa = "Gracz nienazwany";
             ObrazekNaMapie = "Resources/Grafiki postaci na mapie/0/";
             ObrazekMowienia = "Resources/Grafiki postaci mówiących/Mówca1.png";
 
-            Poziom = 1;
-            Doswiadczenie = 0;
-            Punkty = 10;
-            Zloto = 100;
-            SilaPodstawa = 10;
-            ZrecznoscPodstawa = 10;
-            WitalnoscPodstawa = 10;
-            InteligencjaPodstawa = 10;
-            ObrazeniaPodstawa = 10;
-            PancerzPodstawa = 10;
-            HPPodstawa = 10;
-            EnergiaPodstawa = 10;
-            SzansaNaTrafieniePodstawa = 75;
-            SzansaNaKrytycznePodstawa = 5;
+            Doswiadczenie = 1;
+            PunktyStatystykDoRozdania = 1;
+            Zloto = 1;
+            SilaPodstawa = 1;
+            ZrecznoscPodstawa = 1;
+            WitalnoscPodstawa = 1;
+            InteligencjaPodstawa = 1;
+            ObrazeniaPodstawa = 1;
+            PancerzPodstawa = 1;
+            HPPodstawa = 1;
+            EnergiaPodstawa = 1;
+            SzansaNaTrafieniePodstawa = 1;
+            SzansaNaKrytycznePodstawa = 1;
 
-            ZalozonaBron = new Ekwipunek("Nóż do masła", "Resources/Grafiki ekwipunku/bron1hNóż do masła.png", 1, 1, 0, 0, 1, 0, 0, 0, 0, 0);
-            ZalozonyPancerz = new Ekwipunek("Stara tunika", "Resources/Grafiki ekwipunku/pancerzStara tunika.png", 0, 0, 1, 0, 0, 1, 5, 0, 0, 0);
-            ZalozonaTarcza = new Ekwipunek("Pochodnia", "Resources/Grafiki ekwipunku/tarczaPochodnia.png", 0, 0, 0, 1, 0, 0, 0, 5, 1, 0);
+            ZalozonaBron = new Ekwipunek();
+            ZalozonyPancerz = new Ekwipunek();
+            ZalozonaTarcza = new Ekwipunek();
 
-            plecakGracza = new List<Ekwipunek>();
-            zadaniaGracza = new List<Zadanie>();
+            Umiejetnosci = new List<Umiejetnosc>();
+            Plecak = new List<Ekwipunek>();
+            MiksturyIPozywienie = new List<Strawa>();
+            Zadania = new List<Zadanie>();
         }
+
+        //Konstruktor z parametrami
+        public Gracz(string nazwa, string obrazekNaMapie, string obrazekMowienia, int doswiadczenie, int punktyStatystykDoRozdania, int zloto, int silaPodstawa, int zrecznoscPodstawa,int witalnoscPodstawa, int inteligencjaPodstawa, int obrazeniaPodstawa, int pancerzPodstawa, int hPPodstawa, int energiaPodstawa, int szansaNaTrafieniePodstawa, int szansaNaKrytycznePodstawa,Ekwipunek zalozonaBron, Ekwipunek zalozonyPancerz,Ekwipunek zalozonaTarcza, List<Umiejetnosc> umiejetnosci, List<Ekwipunek>plecak,List<Zadanie>zadania,List<Strawa> miksturyIPozywienie)
+        {
+            Nazwa = nazwa;
+            ObrazekNaMapie = obrazekNaMapie;
+            ObrazekMowienia = obrazekMowienia;
+
+            Doswiadczenie = doswiadczenie;
+            PunktyStatystykDoRozdania = punktyStatystykDoRozdania;
+            Zloto = zloto;
+            SilaPodstawa = silaPodstawa;
+            ZrecznoscPodstawa = zrecznoscPodstawa;
+            WitalnoscPodstawa = witalnoscPodstawa;
+            InteligencjaPodstawa = inteligencjaPodstawa;
+            ObrazeniaPodstawa = obrazeniaPodstawa;
+            PancerzPodstawa = pancerzPodstawa;
+            HPPodstawa = hPPodstawa;
+            EnergiaPodstawa = energiaPodstawa;
+            SzansaNaTrafieniePodstawa = szansaNaTrafieniePodstawa;
+            SzansaNaKrytycznePodstawa = szansaNaKrytycznePodstawa;
+
+            if (zalozonaBron != null)
+            {
+                ZalozonaBron = new Ekwipunek(zalozonaBron);
+            }
+            else
+            {
+                ZalozonaBron = new Ekwipunek();
+            }
+            if (zalozonyPancerz != null)
+            {
+                ZalozonyPancerz = new Ekwipunek(zalozonyPancerz);
+            }
+            else
+            {
+                ZalozonyPancerz = new Ekwipunek();
+            }
+
+            if (zalozonaTarcza != null)
+            {
+                ZalozonaTarcza = new Ekwipunek(zalozonaTarcza);
+            }
+            else
+            {
+                ZalozonaTarcza = new Ekwipunek();
+            }
+
+            if (umiejetnosci != null)
+            {
+                Umiejetnosci = new List<Umiejetnosc>(umiejetnosci);
+            }
+            else
+            {
+                Umiejetnosci = new List<Umiejetnosc>();
+            }
+            if (plecak != null)
+            {
+                Plecak = new List<Ekwipunek>(plecak);
+            }
+            else
+            {
+                Plecak = new List<Ekwipunek>();
+            }
+            if (miksturyIPozywienie != null)
+            {
+                MiksturyIPozywienie = new List<Strawa>(miksturyIPozywienie);
+            }
+            else
+            {
+                MiksturyIPozywienie = new List<Strawa>();
+            }
+            if (zadania != null)
+            {
+                Zadania = new List<Zadanie>(zadania);
+            }
+            else
+            {
+                Zadania = new List<Zadanie>();
+            }
+        }
+
+        //Konstruktor kopiujący
         public Gracz(Gracz kopiowanyBohater)
         {
             this.Nazwa = kopiowanyBohater.Nazwa;
             this.ObrazekNaMapie = kopiowanyBohater.ObrazekNaMapie;
             this.ObrazekMowienia = kopiowanyBohater.ObrazekMowienia;
-            this.Poziom = kopiowanyBohater.Poziom;
             this.Doswiadczenie = kopiowanyBohater.Doswiadczenie;
-            this.Punkty = kopiowanyBohater.Punkty;
+            this.PunktyStatystykDoRozdania = kopiowanyBohater.PunktyStatystykDoRozdania;
             this.Zloto = kopiowanyBohater.Zloto;
             this.SilaPodstawa = kopiowanyBohater.SilaPodstawa;
             this.ZrecznoscPodstawa = kopiowanyBohater.ZrecznoscPodstawa;
@@ -113,19 +201,37 @@ namespace RPG
             this.ZalozonyPancerz = new Ekwipunek(kopiowanyBohater.ZalozonyPancerz);
             this.ZalozonaTarcza = new Ekwipunek(kopiowanyBohater.ZalozonaTarcza);
 
-            this.plecakGracza = new List<Ekwipunek>();
-            if (kopiowanyBohater.plecakGracza != null)
+            this.Umiejetnosci = new List<Umiejetnosc>();
+            if (kopiowanyBohater.Umiejetnosci != null)
             {
-                foreach (Ekwipunek przedmiot in kopiowanyBohater.plecakGracza)
+                foreach (Umiejetnosc umiejetnosc in kopiowanyBohater.Umiejetnosci)
                 {
-                    this.plecakGracza.Add(new Ekwipunek(przedmiot));
+                    this.Umiejetnosci.Add(new Umiejetnosc(umiejetnosc));
                 }
             }
 
-            this.zadaniaGracza = new List<Zadanie>();
-            foreach (Zadanie zadanie in kopiowanyBohater.zadaniaGracza)
+            this.Plecak = new List<Ekwipunek>();
+            if (kopiowanyBohater.Plecak != null)
             {
-                this.zadaniaGracza.Add(new Zadanie(zadanie));
+                foreach (Ekwipunek przedmiot in kopiowanyBohater.Plecak)
+                {
+                    this.Plecak.Add(new Ekwipunek(przedmiot));
+                }
+            }
+
+            this.MiksturyIPozywienie = new List<Strawa>();
+            if (kopiowanyBohater.MiksturyIPozywienie != null)
+            {
+                foreach (Strawa strawa in kopiowanyBohater.MiksturyIPozywienie)
+                {
+                    this.MiksturyIPozywienie.Add(new Strawa(strawa));
+                }
+            }
+
+            this.Zadania = new List<Zadanie>();
+            foreach (Zadanie zadanie in kopiowanyBohater.Zadania)
+            {
+                this.Zadania.Add(new Zadanie(zadanie));
             }
         }
     }

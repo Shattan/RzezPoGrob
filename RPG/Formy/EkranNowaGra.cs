@@ -157,7 +157,7 @@ namespace RPG
             LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
 
             LabelWartosciStatystyk.Text = "\n";
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";               //Pozostałe punkty do rozdania
+            LabelWartosciStatystyk.Text += tymczasowyBohater.PunktyStatystykDoRozdania + "\n";               //Pozostałe punkty do rozdania
             LabelWartosciStatystyk.Text += tymczasowyBohater.SilaPodstawa + "\n";                 //Siła
             LabelWartosciStatystyk.Text += tymczasowyBohater.ZrecznoscPodstawa + "\n";            //Zręczność
             LabelWartosciStatystyk.Text += tymczasowyBohater.WitalnoscPodstawa + "\n";            //Witalność
@@ -212,17 +212,17 @@ namespace RPG
             if (tymczasowyBohater.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
             {
                 tymczasowyBohater.SilaPodstawa--;
-                tymczasowyBohater.Punkty++;
+                tymczasowyBohater.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
 
         private void PictureBoxSilaPlus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Punkty > 0)
+            if (tymczasowyBohater.PunktyStatystykDoRozdania > 0)
             {
                 tymczasowyBohater.SilaPodstawa++;
-                tymczasowyBohater.Punkty--;
+                tymczasowyBohater.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -232,17 +232,17 @@ namespace RPG
             if (tymczasowyBohater.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
             {
                 tymczasowyBohater.ZrecznoscPodstawa--;
-                tymczasowyBohater.Punkty++;
+                tymczasowyBohater.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
 
         private void PictureBoxZrecznoscPlus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Punkty > 0)
+            if (tymczasowyBohater.PunktyStatystykDoRozdania > 0)
             {
                 tymczasowyBohater.ZrecznoscPodstawa++;
-                tymczasowyBohater.Punkty--;
+                tymczasowyBohater.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -252,17 +252,17 @@ namespace RPG
             if (tymczasowyBohater.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
             {
                 tymczasowyBohater.WitalnoscPodstawa--;
-                tymczasowyBohater.Punkty++;
+                tymczasowyBohater.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
 
         private void PictureBoxWitalnoscPlus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Punkty > 0)
+            if (tymczasowyBohater.PunktyStatystykDoRozdania > 0)
             {
                 tymczasowyBohater.WitalnoscPodstawa++;
-                tymczasowyBohater.Punkty--;
+                tymczasowyBohater.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -272,17 +272,17 @@ namespace RPG
             if (tymczasowyBohater.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
             {
                 tymczasowyBohater.InteligencjaPodstawa--;
-                tymczasowyBohater.Punkty++;
+                tymczasowyBohater.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
 
         private void PictureBoxInteligencjaPlus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Punkty > 0)
+            if (tymczasowyBohater.PunktyStatystykDoRozdania > 0)
             {
                 tymczasowyBohater.InteligencjaPodstawa++;
-                tymczasowyBohater.Punkty--;
+                tymczasowyBohater.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }

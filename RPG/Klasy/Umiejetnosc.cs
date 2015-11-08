@@ -14,5 +14,10 @@ namespace RPG
         {
             nazwa = _nazwa;
         }
+
+        public Umiejetnosc(Umiejetnosc umiejetnosc)
+        {
+            this.nazwa = umiejetnosc.nazwa;
+        }
     }
 }

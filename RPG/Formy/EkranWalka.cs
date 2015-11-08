@@ -16,15 +16,29 @@ namespace RPG
     {
         #region Zmienne
         EkranGry ekranGry;
+
+        Gracz gracz = new Gracz();
+        NPC przeciwnik = new NPC();
+
+        int obecnyPoziomHPGracza = 0;
+        int obecnyPoziomHPPrzeciwnika = 0;
+        int obecnyPoziomEnergiiGracza = 0;
+        int obecnyPoziomEnergiiPrzeciwnika = 0;
+        int maksymalnyPoziomHPGracza = 0;
+        int maksymalnyPoziomHPPrzeciwnika = 0;
+        int maksymalnyPoziomEnergiiGracza = 0;
+        int maksymalnyPoziomEnergiiPrzeciwnika = 0;
         #endregion
 
         public EkranWalka(EkranGry ekranGry)
         {
+            this.ekranGry = ekranGry;
+
             InitializeComponent();
+
             RozmiescElementy();
             KolorujElementy();
-
-            this.ekranGry = ekranGry;
+            OdswiezDane();
         }
 
         #region Metody
@@ -71,13 +85,31 @@ namespace RPG
             LabelInformacje.Text = "Rozpoczęłą się walka!";
 
             //Ustawienie paneli z informacjami o graczu i przeciwniku
-            PanelDanychGracza.Size = PanelDanychPrzeciwnika.Size = new Size(Width*30/100,Height*10/100);
+            PanelDanychGracza.Size = PanelDanychPrzeciwnika.Size = new Size(Width * 30 / 100, Height * 10 / 100);
 
             PanelDanychPrzeciwnika.Location = new Point(Width - PanelDanychPrzeciwnika.Width, 0);
             PanelDanychGracza.Location = new Point(0, 0);
-            PictureBoxPasekHPGracza.Size = PictureBoxPasekHPPrzeciwnika.Size = PictureBoxPasekEnergiiGracza.Size = PictureBoxPasekEnergiiPrzeciwnika.Size = new Size(PanelDanychGracza.Width * 80 / 100, PanelDanychGracza.Height * 30 / 100);
-            PictureBoxPasekHPGracza.Location = PictureBoxPasekHPPrzeciwnika.Location = new Point(PanelDanychGracza.Width * 10 / 100, PanelDanychGracza.Height * 10 / 100);
-            PictureBoxPasekEnergiiGracza.Location = PictureBoxPasekEnergiiPrzeciwnika.Location = new Point(PictureBoxPasekHPGracza.Location.X, PictureBoxPasekHPGracza.Location.Y + PictureBoxPasekHPGracza.Height);
+
+            PictureBoxPasekHPGracza.Size = PictureBoxPasekHPPrzeciwnika.Size = PictureBoxPasekEnergiiGracza.Size = PictureBoxPasekEnergiiPrzeciwnika.Size = new Size(PanelDanychGracza.Width * 80 / 100, PanelDanychGracza.Height * 10 / 100);
+
+            PictureBoxPasekHPGracza.Location = new Point(PanelDanychGracza.Width * 10 / 100, PanelDanychGracza.Height * 10 / 100);
+            PictureBoxPasekEnergiiGracza.Location = new Point(PictureBoxPasekHPGracza.Location.X, PictureBoxPasekHPGracza.Location.Y + PictureBoxPasekHPGracza.Height);
+            PictureBoxPasekHPPrzeciwnika.Location = new Point(PictureBoxPasekHPGracza.Location.X, PictureBoxPasekHPGracza.Location.Y);
+            PictureBoxPasekEnergiiPrzeciwnika.Location = new Point(PictureBoxPasekHPGracza.Location.X, PictureBoxPasekHPGracza.Location.Y + PictureBoxPasekHPGracza.Height);
+
+            LabelDaneGracza.Size = new Size(PictureBoxPasekEnergiiGracza.Width, PictureBoxPasekEnergiiGracza.Location.Y + PictureBoxPasekEnergiiGracza.Height);
+            LabelDanePrzeciwnika.Size = new Size(PictureBoxPasekEnergiiPrzeciwnika.Width, PictureBoxPasekEnergiiPrzeciwnika.Location.Y + PictureBoxPasekEnergiiPrzeciwnika.Height);
+            LabelDaneGracza.Location = new Point(PictureBoxPasekEnergiiGracza.Location.X, PictureBoxPasekEnergiiGracza.Location.Y + PictureBoxPasekEnergiiGracza.Height);
+            LabelDanePrzeciwnika.Location = new Point(PictureBoxPasekEnergiiPrzeciwnika.Location.X, PictureBoxPasekEnergiiPrzeciwnika.Location.Y + PictureBoxPasekEnergiiPrzeciwnika.Height);
+
+            obecnyPoziomHPGracza = PictureBoxPasekHPGracza.Width;
+            obecnyPoziomHPPrzeciwnika = PictureBoxPasekHPPrzeciwnika.Width;
+            obecnyPoziomEnergiiGracza = PictureBoxPasekEnergiiGracza.Width;
+            obecnyPoziomEnergiiPrzeciwnika = PictureBoxPasekEnergiiPrzeciwnika.Width;
+            maksymalnyPoziomHPGracza = PictureBoxPasekHPGracza.Width;
+            maksymalnyPoziomHPPrzeciwnika = PictureBoxPasekHPPrzeciwnika.Width;
+            maksymalnyPoziomEnergiiGracza = PictureBoxPasekEnergiiGracza.Width;
+            maksymalnyPoziomEnergiiPrzeciwnika = PictureBoxPasekEnergiiPrzeciwnika.Width;
         }
         void KolorujElementy()
         {
@@ -111,6 +143,45 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekHPPrzeciwnika, "Resources/Grafiki menu/Pasek HP.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekEnergiiGracza, "Resources/Grafiki menu/Pasek energii.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekEnergiiPrzeciwnika, "Resources/Grafiki menu/Pasek energii.png");
+        }
+
+        void WczytajPrzeciwnikaIGracza()
+        {
+            gracz = new Gracz(ekranGry.gra.gracz);
+            przeciwnik = new NPC(ekranGry.gra.listaPostaciZMiasta[0]);
+        }
+
+        void OdswiezDane()
+        {
+            LabelDaneGracza.Text = ekranGry.gra.gracz.Nazwa;
+            LabelDaneGracza.Text += "Poziom:" + ekranGry.gra.gracz.Poziom;
+            LabelDaneGracza.Text += "Punkty życia: "+ekranGry.gra.gracz.HPZPrzedmiotami*obecnyPoziomHPPrzeciwnika/maksymalnyPoziomHPGracza+"/"+ekranGry.gra.gracz.HPZPrzedmiotami;
+
+            LabelDanePrzeciwnika.Text = "";
+            LabelDanePrzeciwnika.Text += "";
+
+            obecnyPoziomHPGracza = (ekranGry.gra.gracz.HP - 2) / (ekranGry.gra.gracz.HP);
+            obecnyPoziomEnergiiGracza = (ekranGry.gra.gracz.Energia - 3) / (ekranGry.gra.gracz.Energia);
+            obecnyPoziomHPPrzeciwnika = (ekranGry.gra.listaPostaciZMiasta[0].HP - 2) / (ekranGry.gra.listaPostaciZMiasta[0].HP);
+            obecnyPoziomEnergiiPrzeciwnika = (ekranGry.gra.listaPostaciZMiasta[0].Energia - 3) / (ekranGry.gra.listaPostaciZMiasta[0].Energia);
+
+            double procentHPGracza = obecnyPoziomHPGracza/maksymalnyPoziomHPGracza;
+            double procentHPPrzeciwnika = obecnyPoziomHPPrzeciwnika/maksymalnyPoziomHPPrzeciwnika;
+            double procentEnergiiGracza = obecnyPoziomEnergiiGracza/maksymalnyPoziomEnergiiGracza;
+            double procentEnergiiPrzeciwnika = obecnyPoziomEnergiiPrzeciwnika/maksymalnyPoziomEnergiiPrzeciwnika;
+
+            UstawPoziomPaska(PictureBoxPasekHPGracza, 70);
+        }
+        void UstawPoziomPaska(PictureBox pasek, double procentPozostalo)
+        {
+            if (pasek.Parent.Name == "PanelDanychPrzeciwnika")
+            {
+                pasek.Width = (int)(procentPozostalo / 100 * pasek.Width);
+            }
+            else
+            {
+                pasek.Width = (int)(procentPozostalo / 100 * pasek.Width);
+            }
         }
         #endregion
 

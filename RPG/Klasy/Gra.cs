@@ -13,7 +13,8 @@ namespace RPG
         public List<Zadanie> listaZadan = new List<Zadanie>();
         public List<Ekwipunek> listaPrzedmiotow = new List<Ekwipunek>();
         public List<Strawa> listaPozywieniaIMikstur = new List<Strawa>();
-        public List<Umiejetnosc> listaUmiejetnosci = new List<Umiejetnosc>();
+        public List<Umiejetnosc> listaUmiejetnosciFizycznych = new List<Umiejetnosc>();
+        public List<Umiejetnosc> listaUmiejetnosciMagicznych = new List<Umiejetnosc>();
 
         public List<Przeszkoda> listaPrzeszkod = new List<Przeszkoda>();
         public List<NPC> listaPostaciFabularnych = new List<NPC>();
@@ -29,9 +30,9 @@ namespace RPG
             UtworzListeZadan();
             UtworzListePrzedmiotow();
             UtworzListePozywieniaIMikstur();
-            UtworzListeUmiejetnosci();
+            UtworzListyUmiejetnosci();
             UtworzListePrzeszkod();
-            UtworzZbioryPostaci();
+            UtworzListyPostaci();
             UtworzZestawyPrzeciwnikow();
 
             UstawPoczatkowegoGracza();
@@ -50,62 +51,70 @@ namespace RPG
             gracz.EnergiaPodstawa=5;
             gracz.SzansaNaTrafieniePodstawa=75;
             gracz.SzansaNaKrytycznePodstawa=5;
+
             gracz.ZalozonaBron = listaPrzedmiotow[0];
             gracz.ZalozonyPancerz = listaPrzedmiotow[1];
             gracz.ZalozonaTarcza = listaPrzedmiotow[2];
 
-            gracz.plecakGracza.Add(listaPrzedmiotow[0]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[5]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[6]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[3]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[5]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[6]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[7]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[8]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[9]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[10]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[11]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[12]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[13]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[14]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[15]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[0]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[5]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[6]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[1]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[2]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[9]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[10]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[11]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[6]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[7]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[12]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[3]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[4]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[5]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[8]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[13]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[14]);
-            gracz.plecakGracza.Add(listaPrzedmiotow[15]);
+            gracz.Plecak.Add(listaPrzedmiotow[0]);
+            gracz.Plecak.Add(listaPrzedmiotow[1]);
+            gracz.Plecak.Add(listaPrzedmiotow[2]);
+            gracz.Plecak.Add(listaPrzedmiotow[4]);
+            gracz.Plecak.Add(listaPrzedmiotow[5]);
+            gracz.Plecak.Add(listaPrzedmiotow[6]);
+            gracz.Plecak.Add(listaPrzedmiotow[1]);
+            gracz.Plecak.Add(listaPrzedmiotow[2]);
+            gracz.Plecak.Add(listaPrzedmiotow[3]);
+            gracz.Plecak.Add(listaPrzedmiotow[4]);
+            gracz.Plecak.Add(listaPrzedmiotow[5]);
+            gracz.Plecak.Add(listaPrzedmiotow[6]);
+            gracz.Plecak.Add(listaPrzedmiotow[7]);
+            gracz.Plecak.Add(listaPrzedmiotow[8]);
+            gracz.Plecak.Add(listaPrzedmiotow[9]);
+            gracz.Plecak.Add(listaPrzedmiotow[10]);
+            gracz.Plecak.Add(listaPrzedmiotow[11]);
+            gracz.Plecak.Add(listaPrzedmiotow[12]);
+            gracz.Plecak.Add(listaPrzedmiotow[13]);
+            gracz.Plecak.Add(listaPrzedmiotow[14]);
+            gracz.Plecak.Add(listaPrzedmiotow[15]);
+            gracz.Plecak.Add(listaPrzedmiotow[0]);
+            gracz.Plecak.Add(listaPrzedmiotow[1]);
+            gracz.Plecak.Add(listaPrzedmiotow[2]);
+            gracz.Plecak.Add(listaPrzedmiotow[4]);
+            gracz.Plecak.Add(listaPrzedmiotow[5]);
+            gracz.Plecak.Add(listaPrzedmiotow[6]);
+            gracz.Plecak.Add(listaPrzedmiotow[1]);
+            gracz.Plecak.Add(listaPrzedmiotow[2]);
+            gracz.Plecak.Add(listaPrzedmiotow[9]);
+            gracz.Plecak.Add(listaPrzedmiotow[10]);
+            gracz.Plecak.Add(listaPrzedmiotow[11]);
+            gracz.Plecak.Add(listaPrzedmiotow[6]);
+            gracz.Plecak.Add(listaPrzedmiotow[7]);
+            gracz.Plecak.Add(listaPrzedmiotow[12]);
+            gracz.Plecak.Add(listaPrzedmiotow[3]);
+            gracz.Plecak.Add(listaPrzedmiotow[4]);
+            gracz.Plecak.Add(listaPrzedmiotow[5]);
+            gracz.Plecak.Add(listaPrzedmiotow[8]);
+            gracz.Plecak.Add(listaPrzedmiotow[13]);
+            gracz.Plecak.Add(listaPrzedmiotow[14]);
+            gracz.Plecak.Add(listaPrzedmiotow[15]);
 
-            gracz.zadaniaGracza.Add(listaZadan[0]);
-            gracz.zadaniaGracza.Add(listaZadan[1]);
-            gracz.zadaniaGracza.Add(listaZadan[2]);
-            gracz.zadaniaGracza.Add(listaZadan[3]);
-            gracz.zadaniaGracza.Add(listaZadan[2]);
-            gracz.zadaniaGracza.Add(listaZadan[1]);
-            gracz.zadaniaGracza.Add(listaZadan[0]);
-            gracz.zadaniaGracza.Add(listaZadan[2]);
-            gracz.zadaniaGracza.Add(listaZadan[2]);
+            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[0]);
+            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[1]);
+            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[2]);
+            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[3]);
+            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[4]);
+            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[5]);
+
+            gracz.Zadania.Add(listaZadan[0]);
+            gracz.Zadania.Add(listaZadan[1]);
+            gracz.Zadania.Add(listaZadan[2]);
+            gracz.Zadania.Add(listaZadan[3]);
+            gracz.Zadania.Add(listaZadan[2]);
+            gracz.Zadania.Add(listaZadan[1]);
+            gracz.Zadania.Add(listaZadan[0]);
+            gracz.Zadania.Add(listaZadan[2]);
+            gracz.Zadania.Add(listaZadan[2]);
         }
 
         //public void DodajZadanie(string nazwa, string zleceniodawca, string cel, string nagroda, string opis)
@@ -173,7 +182,7 @@ namespace RPG
             listaZestawowPrzeciwnikow.Add(listaPostaciZDziczy);
         }
 
-        public void UtworzZbioryPostaci()
+        public void UtworzListyPostaci()
         {
             //**************************************************************************************************************
             //Postacie fabularne
@@ -181,24 +190,73 @@ namespace RPG
             listaPostaciFabularnych.Add(new NPC("Lord Krwawy Mati", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
             //index 1
             listaPostaciFabularnych.Add(new NPC("Lord Seba", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 2
+            listaPostaciFabularnych.Add(new NPC("Lord Ezechiel Kaczor", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 3
+            listaPostaciFabularnych.Add(new NPC("Lord Dziwny Karol", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 4
+            listaPostaciFabularnych.Add(new NPC("Klucznik Piotr", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 5
+            listaPostaciFabularnych.Add(new NPC("Brzydki syn", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
             //**************************************************************************************************************
             //index 0
             listaPostaciZMiasta.Add(new NPC("Szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 1
+            listaPostaciZMiasta.Add(new NPC("Bandyta łucznik", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 2
+            listaPostaciZMiasta.Add(new NPC("Rabuś", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 3
+            listaPostaciZMiasta.Add(new NPC("Psychopata", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 4
+            listaPostaciZMiasta.Add(new NPC("Rozwścieczona wieśniaczka", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+
 
             //**************************************************************************************************************
             //index 0
             listaPostaciZCmentarza.Add(new NPC("Ghoul", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 1
+            listaPostaciZCmentarza.Add(new NPC("Szkielet wojownik", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 2
+            listaPostaciZCmentarza.Add(new NPC("Bardzo stary szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 3
+            listaPostaciZCmentarza.Add(new NPC("Lisz", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 4
+            listaPostaciZCmentarza.Add(new NPC("Wampir", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 6
+            listaPostaciZCmentarza.Add(new NPC("Szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
 
             //**************************************************************************************************************
             //index 0
             listaPostaciZDziczy.Add(new NPC("Wilk", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 1
+            listaPostaciZDziczy.Add(new NPC("Pajęczyca", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 2
+            listaPostaciZDziczy.Add(new NPC("Szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 3
+            listaPostaciZDziczy.Add(new NPC("Goblin wojownik", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 4
+            listaPostaciZDziczy.Add(new NPC("Cyklop", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            //index 5
+            listaPostaciZDziczy.Add(new NPC("Żywiołak wody", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
 
         }
 
-        public void UtworzListeUmiejetnosci()
+        public void UtworzListyUmiejetnosci()
         {
             //index 0
-            listaUmiejetnosci.Add(new Umiejetnosc("Wymachiwanie"));
+            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Wymachiwanie"));
+            //index 1
+            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Szarża"));
+            //index 2
+            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Pacnięcie"));
+
+
+            //index 0
+            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula ognia"));
+            //index 1
+            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula kwasu"));
+            //index 2
+            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula pustki"));
         }
 
         public void UtworzListePrzedmiotow()
@@ -236,6 +294,7 @@ namespace RPG
             //index 15
             listaPrzedmiotow.Add(new Ekwipunek("Pancerz Cienia", "Resources/Grafiki ekwipunku/pancerzPancerzCienia.PNG", 10, 10, 10, 4, 10, 10, 8, 0, 0, 0));
         }
+
         public void UtworzListePozywieniaIMikstur()
         {
             //index 0
@@ -257,61 +316,5 @@ namespace RPG
             //index 0
             listaPrzeszkod.Add(new Przeszkoda("Drzewo"));
         }
-    
-
-        //public List<Zadanie> ListaZadan
-        //{
-        //    get { return listaZadan; }
-        //    set { listaZadan = value; }
-        //}
-        //
-        //
-        //public List<Umiejetnosc> ListaUmiejetnosc
-        //{
-        //    get { return listaUmiejetnosc; }
-        //    set { listaUmiejetnosc = value; }
-        //}
-        //
-        //public List<Ekwipunek> ListaEkwipunek
-        //{
-        //    get { return listaEkwipunek; }
-        //    set { listaEkwipunek = value; }
-        //}
-        //
-        //public List<Przeszkoda> ListaPrzeszkoda
-        //{
-        //    get { return listaPrzeszkoda; }
-        //    set { listaPrzeszkoda = value; }
-        //}
-        //
-        ////public List<Przeszkoda> ListaZestawPrzeciwnikow
-        ////{
-        ////    get { return listaZestawPrzeciwnikow; }
-        ////    set { listaZestawPrzeciwnikow = value; }
-        ////}
-        //
-        //public List<NPC> ListaPostacFabularna
-        //{
-        //    get { return listaPostacFabularna; }
-        //    set { listaPostacFabularna = value; }
-        //}
-        //
-        //public List<NPC> ListaPostacZMiasta
-        //{
-        //    get { return listaPostacZMiasta; }
-        //    set { listaPostacZMiasta = value; }
-        //}
-        //
-        //public List<NPC> ListaPostacZCmentarza
-        //{
-        //    get { return listaPostacZCmentarza; }
-        //    set { listaPostacZCmentarza = value; }
-        //}
-        //
-        //public List<NPC> ListaPostacZDziczy
-        //{
-        //    get { return listaPostacZDziczy; }
-        //    set { listaPostacZDziczy = value; }
-        //}
     }
 }

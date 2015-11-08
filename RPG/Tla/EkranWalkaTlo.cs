@@ -41,9 +41,12 @@ namespace RPG
             PanelDanychPrzeciwnika.Location = new Point(Width - PanelDanychPrzeciwnika.Width, 0);
             PanelDanychGracza.Location = new Point(0, 0);
 
-            PictureBoxTloHPGracza.Size = PictureBoxTloHPPrzeciwnika.Size = PictureBoxTloEnergiiGracza.Size = PictureBoxTloEnergiiPrzeciwnika.Size = new Size(PanelDanychGracza.Width * 80 / 100, PanelDanychGracza.Height * 30 / 100);
-            PictureBoxTloHPGracza.Location = PictureBoxTloHPPrzeciwnika.Location = new Point(PanelDanychGracza.Width * 10 / 100, PanelDanychGracza.Height * 10 / 100);
-            PictureBoxTloEnergiiGracza.Location = PictureBoxTloEnergiiPrzeciwnika.Location = new Point(PictureBoxTloHPGracza.Location.X, PictureBoxTloHPGracza.Location.Y + PictureBoxTloHPGracza.Height);
+            PictureBoxPasekHPGracza.Size = PictureBoxPasekHPPrzeciwnika.Size = PictureBoxPasekEnergiiGracza.Size = PictureBoxPasekEnergiiPrzeciwnika.Size = new Size(PanelDanychGracza.Width * 80 / 100, PanelDanychGracza.Height * 10 / 100);
+
+            PictureBoxPasekHPGracza.Location = new Point(PanelDanychGracza.Width * 10 / 100, PanelDanychGracza.Height * 10 / 100);
+            PictureBoxPasekEnergiiGracza.Location = new Point(PictureBoxPasekHPGracza.Location.X, PictureBoxPasekHPGracza.Location.Y + PictureBoxPasekHPGracza.Height);
+            PictureBoxPasekHPPrzeciwnika.Location = new Point(PictureBoxPasekHPGracza.Location.X, PictureBoxPasekHPGracza.Location.Y);
+            PictureBoxPasekEnergiiPrzeciwnika.Location = new Point(PictureBoxPasekHPGracza.Location.X, PictureBoxPasekHPGracza.Location.Y + PictureBoxPasekHPGracza.Height);
         }
         void KolorujElementy()
         {
@@ -58,10 +61,10 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PanelDanychGracza, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PanelDanychPrzeciwnika, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxTloHPGracza, "Resources/Grafiki menu/Pasek brakującej statystyki.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxTloHPPrzeciwnika, "Resources/Grafiki menu/Pasek brakującej statystyki.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxTloEnergiiGracza, "Resources/Grafiki menu/Pasek brakującej statystyki.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxTloEnergiiPrzeciwnika, "Resources/Grafiki menu/Pasek brakującej statystyki.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekHPGracza, "Resources/Grafiki menu/Pasek tło.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekHPPrzeciwnika, "Resources/Grafiki menu/Pasek tło.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekEnergiiGracza, "Resources/Grafiki menu/Pasek tło.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekEnergiiPrzeciwnika, "Resources/Grafiki menu/Pasek tło.png");
         }
         #endregion
         #region Obsluga zdarzeń

@@ -17,7 +17,7 @@ namespace RPG
     {
         #region Zmienne
         EkranGry ekranGry;
-        Gracz tymczasowyBohater = new Gracz();
+        Gracz gracz = new Gracz();
         Ekwipunek przenoszonyPrzedmiot = new Ekwipunek();
         //Ekwipunek przechowanyPrzedmiot = new Ekwipunek();
         #endregion
@@ -107,7 +107,7 @@ namespace RPG
         #region Metody odświeżające okienka z informacjami i ekwipunek
         void OdswiezStatystyki()
         {
-            LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";   
+            LabelNazwyStatystyk.Text = gracz.Nazwa + "\n";   
             LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
             LabelNazwyStatystyk.Text += "Siła:\n";
             LabelNazwyStatystyk.Text += "Zręczność:\n";
@@ -121,17 +121,17 @@ namespace RPG
             LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
 
             LabelWartosciStatystyk.Text = "\n";
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";               //Pozostałe punkty do rozdania
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SilaSuma + "\n";                 //Siła
-            LabelWartosciStatystyk.Text += tymczasowyBohater.ZrecznoscSuma + "\n";            //Zręczność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.WitalnoscSuma + "\n";            //Witalność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.InteligencjaSuma + "\n";         //Inteligencja
-            LabelWartosciStatystyk.Text += tymczasowyBohater.ObrazeniaSuma + "\n";            //Obrażenia
-            LabelWartosciStatystyk.Text += tymczasowyBohater.PancerzSuma + "\n";              //Pancerz
-            LabelWartosciStatystyk.Text += tymczasowyBohater.HPSuma + "\n";                   //Zdrowie
-            LabelWartosciStatystyk.Text += tymczasowyBohater.EnergiaSuma + "\n";              //Energia
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienieSuma + "%\n";   //Szansa na trafienie
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";   //Szansa na trafienie krytyczne
+            LabelWartosciStatystyk.Text += gracz.PunktyStatystykDoRozdania + "\n";               //Pozostałe punkty do rozdania
+            LabelWartosciStatystyk.Text += gracz.Sila + "\n";                 //Siła
+            LabelWartosciStatystyk.Text += gracz.Zrecznosc + "\n";            //Zręczność
+            LabelWartosciStatystyk.Text += gracz.Witalnosc + "\n";            //Witalność
+            LabelWartosciStatystyk.Text += gracz.Inteligencja + "\n";         //Inteligencja
+            LabelWartosciStatystyk.Text += gracz.Obrazenia + "\n";            //Obrażenia
+            LabelWartosciStatystyk.Text += gracz.Pancerz + "\n";              //Pancerz
+            LabelWartosciStatystyk.Text += gracz.HP + "\n";                   //Zdrowie
+            LabelWartosciStatystyk.Text += gracz.Energia + "\n";              //Energia
+            LabelWartosciStatystyk.Text += gracz.SzansaNaTrafienie + "%\n";   //Szansa na trafienie
+            LabelWartosciStatystyk.Text += gracz.SzansaNaKrytyczne + "%\n";   //Szansa na trafienie krytyczne
 
             //Czyszczenie wartości porównań
             LabelPorownanieStatystyk.Text = "";
@@ -139,7 +139,7 @@ namespace RPG
 
         void OdswiezLabelZPorownaniemPrzedmiotow()
         {
-            LabelNazwyStatystyk.Text = tymczasowyBohater.Nazwa + "\n";
+            LabelNazwyStatystyk.Text = gracz.Nazwa + "\n";
             LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
             LabelNazwyStatystyk.Text += "Siła:\n";
             LabelNazwyStatystyk.Text += "Zręczność:\n";
@@ -153,17 +153,17 @@ namespace RPG
             LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
 
             LabelWartosciStatystyk.Text = "\n";
-            LabelWartosciStatystyk.Text += tymczasowyBohater.Punkty + "\n";                         //Pozostałe punkty do rozdania
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SilaSuma + "\n";                       //Siła
-            LabelWartosciStatystyk.Text += tymczasowyBohater.ZrecznoscSuma + "\n";                  //Zręczność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.WitalnoscSuma + "\n";                  //Witalność
-            LabelWartosciStatystyk.Text += tymczasowyBohater.InteligencjaSuma + "\n";               //Inteligencja
-            LabelWartosciStatystyk.Text += tymczasowyBohater.ObrazeniaSuma + "\n";                  //Obrażenia
-            LabelWartosciStatystyk.Text += tymczasowyBohater.PancerzSuma + "\n";                    //Pancerz
-            LabelWartosciStatystyk.Text += tymczasowyBohater.HPSuma + "\n";                         //Zdrowie
-            LabelWartosciStatystyk.Text += tymczasowyBohater.EnergiaSuma + "\n";                    //Energia
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaTrafienieSuma + "%\n";         //Szansa na trafienie
-            LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczneSuma + "%\n";         //Szansa na trafienie krytyczne
+            LabelWartosciStatystyk.Text += gracz.PunktyStatystykDoRozdania + "\n";                         //Pozostałe punkty do rozdania
+            LabelWartosciStatystyk.Text += gracz.Sila + "\n";                       //Siła
+            LabelWartosciStatystyk.Text += gracz.Zrecznosc + "\n";                  //Zręczność
+            LabelWartosciStatystyk.Text += gracz.Witalnosc + "\n";                  //Witalność
+            LabelWartosciStatystyk.Text += gracz.Inteligencja + "\n";               //Inteligencja
+            LabelWartosciStatystyk.Text += gracz.Obrazenia + "\n";                  //Obrażenia
+            LabelWartosciStatystyk.Text += gracz.Pancerz + "\n";                    //Pancerz
+            LabelWartosciStatystyk.Text += gracz.HP + "\n";                         //Zdrowie
+            LabelWartosciStatystyk.Text += gracz.Energia + "\n";                    //Energia
+            LabelWartosciStatystyk.Text += gracz.SzansaNaTrafienie + "%\n";         //Szansa na trafienie
+            LabelWartosciStatystyk.Text += gracz.SzansaNaKrytyczne + "%\n";         //Szansa na trafienie krytyczne
 
 
             #region Przekształcenia używanych przedmiotów na string, żeby nie występowały null dla  .Contains()
@@ -171,31 +171,31 @@ namespace RPG
             String WyposazonyPancerz = "";
             String WyposazonaTarcza = "";
 
-            if (tymczasowyBohater.ZalozonaBron.Obrazek == null)//Gdy bohater nie ma na sobie broni
+            if (gracz.ZalozonaBron.Obrazek == null)//Gdy bohater nie ma na sobie broni
             {
                 WyposazonaBron = "Brak";
             }
             else//Gdy bohater ma na sobie broń
             {
-                WyposazonaBron = tymczasowyBohater.ZalozonaBron.Obrazek;
+                WyposazonaBron = gracz.ZalozonaBron.Obrazek;
             }
 
-            if (tymczasowyBohater.ZalozonyPancerz.Obrazek == null)//Gdy bohater nie ma na sobie pancerza
+            if (gracz.ZalozonyPancerz.Obrazek == null)//Gdy bohater nie ma na sobie pancerza
             {
                 WyposazonyPancerz = "Brak";
             }
             else//Gdy bohater ma na sobie pancerz
             {
-                WyposazonyPancerz = tymczasowyBohater.ZalozonyPancerz.Obrazek;
+                WyposazonyPancerz = gracz.ZalozonyPancerz.Obrazek;
             }
 
-            if (tymczasowyBohater.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
+            if (gracz.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
             {
                 WyposazonaTarcza = "Brak";
             }
             else//Gdy bohater ma na sobie tarczę
             {
-                WyposazonaTarcza = tymczasowyBohater.ZalozonaTarcza.Obrazek;
+                WyposazonaTarcza = gracz.ZalozonaTarcza.Obrazek;
             }
             #endregion
 
@@ -203,11 +203,11 @@ namespace RPG
             {
                 if (WyposazonaBron.Contains("bron1h")) //jeżeli obecnie założona broń jest jednoręczna
                 {
-                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj dwie bronie jednoręczne (bez tarczy)
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', gracz.ZalozonaBron, ' ', null));//Porównaj dwie bronie jednoręczne (bez tarczy)
                 }
                 else if (WyposazonaBron.Contains("bron2h"))//jeżeli obecnie założona broń jest dwuręczna
                 {//Nie trzeba sprawdzać "if(WyposazonaTarcza.Contains("tarcza")", bo taka sytuacja nie powinna wystąpić przy broni dwuręcznej
-                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj broń jednoręczną (bez tarczy) i dwuręczną
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', gracz.ZalozonaBron, ' ', null));//Porównaj broń jednoręczną (bez tarczy) i dwuręczną
                 }
                 else //Jeżeli jeśli gracz nie ma na sobie broni
                 {
@@ -218,24 +218,24 @@ namespace RPG
             {
                 if (WyposazonaBron.Contains("bron2h"))//Jeżeli obecnie założona broń jest dwuręczna
                 {//Nie trzeba sprawdzać "if(WyposazonaTarcza.Contains("tarcza")", bo taka sytuacja nie powinna wystąpić przy broni dwuręcznej
-                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj dwie bronie dwuręczne
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', gracz.ZalozonaBron, ' ', null));//Porównaj dwie bronie dwuręczne
                 }
                 else if (WyposazonaBron.Contains("bron1h"))//Jeżeli obecnie założona broń jest jednoręczna
                 {
                     if (WyposazonaTarcza.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
                     {
-                        WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, '-', tymczasowyBohater.ZalozonaTarcza));//Porównaj założoną broń jednoręczną + założoną tarczę z najechaną bronią dwuręczną
+                        WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', gracz.ZalozonaBron, '-', gracz.ZalozonaTarcza));//Porównaj założoną broń jednoręczną + założoną tarczę z najechaną bronią dwuręczną
                     }
                     else//Jeżeli gracz nie ma na sobie tarczy
                     {
-                        WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Porównaj najechaną broń dwuręczną z wyposażoną bronią jednoręczną
+                        WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', gracz.ZalozonaBron, ' ', null));//Porównaj najechaną broń dwuręczną z wyposażoną bronią jednoręczną
                     }
                 }
                 else //Jeżeli jeśli gracz nie ma na sobie broni
                 {
                     if (WyposazonaTarcza.Contains("tarcza"))//Jeżeli gracz ma na sobie tarczę
                     {
-                        WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaTarcza, ' ', null));//Wyświetl statystyki najechanej broni - statystyki tarczy
+                        WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', gracz.ZalozonaTarcza, ' ', null));//Wyświetl statystyki najechanej broni - statystyki tarczy
                     }
                     else//Jeżeli gracz nie ma na sobie tarczy
                     {
@@ -247,7 +247,7 @@ namespace RPG
             {
                 if (WyposazonyPancerz.Contains("pancerz"))//Jeżeli najechany przedmiot jest pancerzem
                 {
-                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonyPancerz, ' ', null));//Porównaj pancerz najechany z założonym
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', gracz.ZalozonyPancerz, ' ', null));//Porównaj pancerz najechany z założonym
                 }
                 else//Jeżeli gracz nie ma na sobie pancerza
                 {
@@ -259,11 +259,11 @@ namespace RPG
                 if (WyposazonaTarcza.Contains("tarcza"))//Jeżeli gracz ma założoną tarczę
                 {//Nie trzeba sprawdzać if(WyposazonaBron.Contains("bron1h")), bo broń jednoręczna nie konfliktuje z tarczą
 
-                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaTarcza, ' ', null));//Porównaj tarczę najechaną z założoną
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', gracz.ZalozonaTarcza, ' ', null));//Porównaj tarczę najechaną z założoną
                 }
                 else if (WyposazonaBron.Contains("bron2h"))//Jeżeli gracz ma założoną broń dwuręczną
                 {
-                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', tymczasowyBohater.ZalozonaBron, ' ', null));//Wyświetl statystyki najechanej tarczy - statystyki założonej broni dwuręcznej
+                    WyswietlWartosciPorownan(PorownaneWartosciDoListy(przenoszonyPrzedmiot, '-', gracz.ZalozonaBron, ' ', null));//Wyświetl statystyki najechanej tarczy - statystyki założonej broni dwuręcznej
                 }
                 else//Jeżeli gracz nie ma na sobie ani tarczy ani broni dwuręcznej
                 {
@@ -304,9 +304,9 @@ namespace RPG
 
         void OdswiezEkwipunek()
         {
-            Program.UstawObrazEkwipunku(PictureBoxBron, tymczasowyBohater.ZalozonaBron.Obrazek);
-            Program.UstawObrazEkwipunku(PictureBoxPancerz, tymczasowyBohater.ZalozonyPancerz.Obrazek);
-            Program.UstawObrazEkwipunku(PictureBoxTarcza, tymczasowyBohater.ZalozonaTarcza.Obrazek);
+            Program.UstawObrazEkwipunku(PictureBoxBron, gracz.ZalozonaBron.Obrazek);
+            Program.UstawObrazEkwipunku(PictureBoxPancerz, gracz.ZalozonyPancerz.Obrazek);
+            Program.UstawObrazEkwipunku(PictureBoxTarcza, gracz.ZalozonaTarcza.Obrazek);
 
             FlowLayoutPanelPlecak.Controls.Clear();
 
@@ -314,7 +314,7 @@ namespace RPG
             int wysokoscIkon = Height * 8 / 100;
 
             //Dodawanie pól ekwipunku
-            int miejscWEkwipunku = tymczasowyBohater.plecakGracza.Count+10 -(tymczasowyBohater.plecakGracza.Count+10)%4;//Plecak zawsze dodaje puste pola na końcu, wyrównujące poziom pól(nieograniczona ilość miejsc w plecaku)
+            int miejscWEkwipunku = gracz.Plecak.Count+10 -(gracz.Plecak.Count+10)%4;//Plecak zawsze dodaje puste pola na końcu, wyrównujące poziom pól(nieograniczona ilość miejsc w plecaku)
             for (int i = 0; i < miejscWEkwipunku; i++)
             {
                 PictureBox x = new PictureBox();
@@ -325,9 +325,9 @@ namespace RPG
                 FlowLayoutPanelPlecak.Controls.Add(x);
             }
 
-            foreach (Ekwipunek przedmiot in tymczasowyBohater.plecakGracza)
+            foreach (Ekwipunek przedmiot in gracz.Plecak)
             {
-                Program.UstawObrazEkwipunku((FlowLayoutPanelPlecak.Controls[tymczasowyBohater.plecakGracza.IndexOf(przedmiot)] as PictureBox), przedmiot.Obrazek);
+                Program.UstawObrazEkwipunku((FlowLayoutPanelPlecak.Controls[gracz.Plecak.IndexOf(przedmiot)] as PictureBox), przedmiot.Obrazek);
             }
         }
         #endregion
@@ -485,31 +485,31 @@ namespace RPG
             String WyposazonaTarcza = "";
             String NaCoUpuszczamy = "";
 
-            if (tymczasowyBohater.ZalozonaBron.Obrazek == null)//Gdy bohater nie ma na sobie broni
+            if (gracz.ZalozonaBron.Obrazek == null)//Gdy bohater nie ma na sobie broni
             {
                 WyposazonaBron = "Brak";
             }
             else//Gdy bohater ma na sobie broń
             {
-                WyposazonaBron = tymczasowyBohater.ZalozonaBron.Obrazek;
+                WyposazonaBron = gracz.ZalozonaBron.Obrazek;
             }
 
-            if (tymczasowyBohater.ZalozonyPancerz.Obrazek == null)//Gdy bohater nie ma na sobie pancerza
+            if (gracz.ZalozonyPancerz.Obrazek == null)//Gdy bohater nie ma na sobie pancerza
             {
                 WyposazonyPancerz = "Brak";
             }
             else//Gdy bohater ma na sobie pancerz
             {
-                WyposazonyPancerz = tymczasowyBohater.ZalozonyPancerz.Obrazek;
+                WyposazonyPancerz = gracz.ZalozonyPancerz.Obrazek;
             }
 
-            if (tymczasowyBohater.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
+            if (gracz.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
             {
                 WyposazonaTarcza = "Brak";
             }
             else//Gdy bohater ma na sobie tarczę
             {
-                WyposazonaTarcza = tymczasowyBohater.ZalozonaTarcza.Obrazek;
+                WyposazonaTarcza = gracz.ZalozonaTarcza.Obrazek;
             }
 
             if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Gdy upuszczamy na puste pole
@@ -612,13 +612,13 @@ namespace RPG
             String WyposazonaTarcza = "";
             String NaCoUpuszczamy = "";
 
-            if (tymczasowyBohater.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
+            if (gracz.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
             {
                 WyposazonaTarcza = "Brak";
             }
             else//Gdy bohater ma na sobie tarczę
             {
-                WyposazonaTarcza = tymczasowyBohater.ZalozonaTarcza.Obrazek;
+                WyposazonaTarcza = gracz.ZalozonaTarcza.Obrazek;
             }
 
             if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Gdy upuszczamy na puste pole
@@ -683,22 +683,22 @@ namespace RPG
             String WyposazonaTarcza = "";
             String NaCoUpuszczamy = "";
 
-            if (tymczasowyBohater.ZalozonaBron.Obrazek == null)//Gdy bohater nie ma na sobie broni
+            if (gracz.ZalozonaBron.Obrazek == null)//Gdy bohater nie ma na sobie broni
             {
                 WyposazonaBron = "Brak";
             }
             else//Gdy bohater ma na sobie broń
             {
-                WyposazonaBron = tymczasowyBohater.ZalozonaBron.Obrazek;
+                WyposazonaBron = gracz.ZalozonaBron.Obrazek;
             }
 
-            if (tymczasowyBohater.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
+            if (gracz.ZalozonaTarcza.Obrazek == null)//Gdy bohater nie ma na sobie tarczy
             {
                 WyposazonaTarcza = "Brak";
             }
             else//Gdy bohater ma na sobie tarczę
             {
-                WyposazonaTarcza = tymczasowyBohater.ZalozonaTarcza.Obrazek;
+                WyposazonaTarcza = gracz.ZalozonaTarcza.Obrazek;
             }
 
             if (przedmiotNaKtoryUpuszczamy.ImageLocation == null)//Gdy upuszczamy na puste pole
@@ -758,44 +758,44 @@ namespace RPG
         {
             if (PictureBoxBron.ImageLocation != null)
             {
-                tymczasowyBohater.ZalozonaBron = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxBron.ImageLocation));
+                gracz.ZalozonaBron = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxBron.ImageLocation));
             }
             else
             {
-                tymczasowyBohater.ZalozonaBron = new Ekwipunek();
+                gracz.ZalozonaBron = new Ekwipunek();
             }
             if (PictureBoxPancerz.ImageLocation != null)
             {
-                tymczasowyBohater.ZalozonyPancerz = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxPancerz.ImageLocation));
+                gracz.ZalozonyPancerz = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxPancerz.ImageLocation));
             }
             else
             {
-                tymczasowyBohater.ZalozonyPancerz = new Ekwipunek();
+                gracz.ZalozonyPancerz = new Ekwipunek();
             }
             if (PictureBoxTarcza.ImageLocation != null)
             { 
-                tymczasowyBohater.ZalozonaTarcza = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxTarcza.ImageLocation));
+                gracz.ZalozonaTarcza = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxTarcza.ImageLocation));
             }
             else
             {
-                tymczasowyBohater.ZalozonaTarcza = new Ekwipunek();
+                gracz.ZalozonaTarcza = new Ekwipunek();
             }
 
 
-            tymczasowyBohater.plecakGracza.Clear();
+            gracz.Plecak.Clear();
 
             foreach (PictureBox przedmiot in FlowLayoutPanelPlecak.Controls)
             {
                 if (przedmiot.ImageLocation != null)//Jeżeli pole nie jest puste (po wejściu w ekwipunek układa przedmioty bez pustych pól)
                 {
-                    tymczasowyBohater.plecakGracza.Add(new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == przedmiot.ImageLocation)));
+                    gracz.Plecak.Add(new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == przedmiot.ImageLocation)));
                 }
             }
         }
 
         void WczytajStatystykiOdGracza()
         {
-            tymczasowyBohater = new Gracz(ekranGry.gra.gracz);
+            gracz = new Gracz(ekranGry.gra.gracz);
             OdswiezStatystyki();
             OdswiezEkwipunek();
             DodanieDragAndDropDlaObrazkow();
@@ -803,7 +803,7 @@ namespace RPG
 
         void ZapiszStatystykiDoGracza()
         {
-            ekranGry.gra.gracz = new Gracz(tymczasowyBohater);
+            ekranGry.gra.gracz = new Gracz(gracz);
         }
 
         void DodanieDragAndDropDlaObrazkow()
@@ -871,7 +871,7 @@ namespace RPG
         {
             if (MouseButtons != MouseButtons.Left && (sender as PictureBox).ImageLocation!=null)//Zabezpieczenie przed wyświetlaniem pustych pól i zmienianiem przedmiotów podczas przenoszenia
             {
-                przenoszonyPrzedmiot = new Ekwipunek(tymczasowyBohater.plecakGracza.Find(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation))); //Znalezienie przenoszonego przedmiotu w plecaku gracza
+                przenoszonyPrzedmiot = new Ekwipunek(gracz.Plecak.Find(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation))); //Znalezienie przenoszonego przedmiotu w plecaku gracza
                 OdswiezInformacjeONejchanymPrzedmiocie(przenoszonyPrzedmiot); //Zaktualizowanie panelu z informacjami o przedmiocie
 
                 OdswiezLabelZPorownaniemPrzedmiotow(); //Porownuje przedmiot najechany z przedmiotami w plecaku i wyświetla wynik w Labelu porównującym
@@ -898,10 +898,10 @@ namespace RPG
         {
             if ((sender as PictureBox).ImageLocation != null)//Jeżeli pole nie jest puste
             {
-                int indexPrzedmiotuNadKtorymJestKursor = tymczasowyBohater.plecakGracza.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));//Znajdź w plecaku gracza przedmiotu zgodnego z nazwą przenoszonego PictureBox
+                int indexPrzedmiotuNadKtorymJestKursor = gracz.Plecak.FindIndex(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation));//Znajdź w plecaku gracza przedmiotu zgodnego z nazwą przenoszonego PictureBox
                 if (indexPrzedmiotuNadKtorymJestKursor >= 0)//Jeżeli znaleziono przedmiot (gdyby nie znaleziono index wyniesie -1
                 {
-                    przenoszonyPrzedmiot = tymczasowyBohater.plecakGracza[indexPrzedmiotuNadKtorymJestKursor]; //Zapamiętanie przenoszonego przedmiotu jako obiekt typu Ekwipunek
+                    przenoszonyPrzedmiot = gracz.Plecak[indexPrzedmiotuNadKtorymJestKursor]; //Zapamiętanie przenoszonego przedmiotu jako obiekt typu Ekwipunek
                 }
                 DoDragDrop(sender, DragDropEffects.Move);//Aktywowanie Drag and Drop dla klikniętego przedmiotu
                 PanelOpisPrzedmiotu.Visible = false; //Po wykonaniu Drag and Drop chowa panel informacyjny (przydatne, gdy ktoś wyrzuca przedmioty poza pola)
@@ -928,7 +928,7 @@ namespace RPG
         {
             if ((sender as PictureBox).ImageLocation != null)//Aby nie można przenosić pola, gdy puste
             {
-                przenoszonyPrzedmiot = tymczasowyBohater.ZalozonaBron;//Ustawienie założonej broni jako przenoszonego przedmiotu
+                przenoszonyPrzedmiot = gracz.ZalozonaBron;//Ustawienie założonej broni jako przenoszonego przedmiotu
                 DoDragDrop(sender, DragDropEffects.Move);//Aktywowanie Drag and Drop dla klikniętego przedmiotu
                 PanelOpisPrzedmiotu.Visible = false;//Po wykonaniu Drag and Drop chowa panel informacyjny (przydatne, gdy ktoś wyrzuca przedmioty poza pola)
             }
@@ -955,7 +955,7 @@ namespace RPG
         {
             if ((sender as PictureBox).ImageLocation != null)//Aby nie można przenosić pustych pól
             {
-                przenoszonyPrzedmiot = tymczasowyBohater.ZalozonyPancerz;//Ustawienie założonego pancerza jako przenoszonego przedmiotu
+                przenoszonyPrzedmiot = gracz.ZalozonyPancerz;//Ustawienie założonego pancerza jako przenoszonego przedmiotu
                 DoDragDrop(sender, DragDropEffects.Move);//Aktywowanie Drag and Drop dla klikniętego przedmiotu
                 PanelOpisPrzedmiotu.Visible = false;//Po wykonaniu Drag and Drop chowa panel informacyjny (przydatne, gdy ktoś wyrzuca przedmioty poza pola)
             }
@@ -982,7 +982,7 @@ namespace RPG
         {
             if ((sender as PictureBox).ImageLocation != null)//Aby nie można przenosić pustych pól
             {
-                przenoszonyPrzedmiot = tymczasowyBohater.ZalozonaTarcza;//Ustawienie założonej tarczy jako przenoszonego przedmiotu
+                przenoszonyPrzedmiot = gracz.ZalozonaTarcza;//Ustawienie założonej tarczy jako przenoszonego przedmiotu
                 DoDragDrop(sender, DragDropEffects.Move);//Aktywowanie Drag and Drop dla klikniętego przedmiotu
                 PanelOpisPrzedmiotu.Visible = false;//Po wykonaniu Drag and Drop chowa panel informacyjny (przydatne, gdy ktoś wyrzuca przedmioty poza pola)
             }
@@ -1041,80 +1041,80 @@ namespace RPG
         #region Przyciski do modyfikowania statystyk
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
+            if (gracz.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
             {
-                tymczasowyBohater.SilaPodstawa--;
-                tymczasowyBohater.Punkty++;
+                gracz.SilaPodstawa--;
+                gracz.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
 
         private void PictureBoxSilaPlus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Punkty > 0)
+            if (gracz.PunktyStatystykDoRozdania > 0)
             {
-                tymczasowyBohater.SilaPodstawa++;
-                tymczasowyBohater.Punkty--;
+                gracz.SilaPodstawa++;
+                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
 
         private void PictureBoxZrecznoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
+            if (gracz.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
             {
-                tymczasowyBohater.ZrecznoscPodstawa--;
-                tymczasowyBohater.Punkty++;
+                gracz.ZrecznoscPodstawa--;
+                gracz.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
 
         private void PictureBoxZrecznoscPlus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Punkty > 0)
+            if (gracz.PunktyStatystykDoRozdania > 0)
             {
-                tymczasowyBohater.ZrecznoscPodstawa++;
-                tymczasowyBohater.Punkty--;
+                gracz.ZrecznoscPodstawa++;
+                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
 
         private void PictureBoxWitalnoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
+            if (gracz.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
             {
-                tymczasowyBohater.WitalnoscPodstawa--;
-                tymczasowyBohater.Punkty++;
+                gracz.WitalnoscPodstawa--;
+                gracz.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
 
         private void PictureBoxWitalnoscPlus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Punkty > 0)
+            if (gracz.PunktyStatystykDoRozdania > 0)
             {
-                tymczasowyBohater.WitalnoscPodstawa++;
-                tymczasowyBohater.Punkty--;
+                gracz.WitalnoscPodstawa++;
+                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
 
         private void PictureBoxInteligencjaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
+            if (gracz.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
             {
-                tymczasowyBohater.InteligencjaPodstawa--;
-                tymczasowyBohater.Punkty++;
+                gracz.InteligencjaPodstawa--;
+                gracz.PunktyStatystykDoRozdania++;
             }
             OdswiezStatystyki();
         }
 
         private void PictureBoxInteligencjaPlus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.Punkty > 0)
+            if (gracz.PunktyStatystykDoRozdania > 0)
             {
-                tymczasowyBohater.InteligencjaPodstawa++;
-                tymczasowyBohater.Punkty--;
+                gracz.InteligencjaPodstawa++;
+                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
