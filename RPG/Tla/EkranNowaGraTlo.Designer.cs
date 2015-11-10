@@ -43,6 +43,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EkranEkranNowaGraTlo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranEkranNowaGraTlo_FormClosing);
             this.Shown += new System.EventHandler(this.EkranNowaGraTlo_Shown);
             this.ResumeLayout(false);
 

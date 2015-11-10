@@ -16,9 +16,7 @@ namespace RPG
     {
         #region Zmienne
         //Dostepne tylko dla tej formy
-        private EkranGlowny ekranGlowny;        //Dostep do ekranGlowny.opcje
-        private EkranGry ekranGry;              //Dostep do ekranGry.Gry
-        private EkranGryTloMapa EkranGryTloMapa;        //Uzywamy do rozpoczenia EkranGryTloMapa.Dialog()
+        private EkranGlowny ekranGlowny;
 
         //Lista sciezek obrazkow dostepnych do wybory dla tworzonej postaci
         List<String> ListaPostaci = new List<String>();
@@ -26,13 +24,11 @@ namespace RPG
         Gracz tymczasowyBohater = new Gracz();
         #endregion
 
-        public EkranNowaGra(EkranGlowny ekranGlowny, EkranGry ekranGry, EkranGryTloMapa EkranGryTloMapa)
+        public EkranNowaGra(EkranGlowny ekranGlowny)
         {
-            InitializeComponent();
-
             this.ekranGlowny = ekranGlowny;
-            this.ekranGry = ekranGry;
-            this.EkranGryTloMapa = EkranGryTloMapa;
+
+            InitializeComponent();
 
             RozstawElementy();
             KolorujElementy();
@@ -44,6 +40,7 @@ namespace RPG
         #region Metody
         void RozstawElementy()
         {
+            ShowInTaskbar = false;
             //Ustawienia okienka gry
             Program.DopasujRozmiarFormyDoEkranu(this);
 
@@ -172,13 +169,13 @@ namespace RPG
 
         void WczytajStatystykiOdGracza()
         {
-            tymczasowyBohater = new Gracz(ekranGry.gra.gracz);
+            tymczasowyBohater = new Gracz(ekranGlowny.gra.gracz);
             OdswiezStatystyki();
         }
 
         void ZapiszStatystykiDoGracza()
         {
-            ekranGry.gra.gracz = new Gracz(tymczasowyBohater);
+            ekranGlowny.gra.gracz = new Gracz(tymczasowyBohater);
         }
         #endregion
 
@@ -189,14 +186,8 @@ namespace RPG
             //Zapisz dane do klasy gra
             ZapiszStatystykiDoGracza();
 
-            //Wczytaj zapisane dane w ekranGra
-            ekranGry.WczytajNowaGre();
-
-            //Uruchom Dialog
-            EkranGryTloMapa.ShowDialog();
-
             //Zamknij Forme
-            //DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -209,7 +200,7 @@ namespace RPG
         #region Przyciski do modyfikowania statystyk
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
+            if (tymczasowyBohater.SilaPodstawa > ekranGlowny.gra.gracz.SilaPodstawa)
             {
                 tymczasowyBohater.SilaPodstawa--;
             }
@@ -227,7 +218,7 @@ namespace RPG
 
         private void PictureBoxZrecznoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
+            if (tymczasowyBohater.ZrecznoscPodstawa > ekranGlowny.gra.gracz.ZrecznoscPodstawa)
             {
                 tymczasowyBohater.ZrecznoscPodstawa--;
             }
@@ -245,7 +236,7 @@ namespace RPG
 
         private void PictureBoxWitalnoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
+            if (tymczasowyBohater.WitalnoscPodstawa > ekranGlowny.gra.gracz.WitalnoscPodstawa)
             {
                 tymczasowyBohater.WitalnoscPodstawa--;
             }
@@ -263,7 +254,7 @@ namespace RPG
 
         private void PictureBoxInteligencjaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
+            if (tymczasowyBohater.InteligencjaPodstawa > ekranGlowny.gra.gracz.InteligencjaPodstawa)
             {
                 tymczasowyBohater.InteligencjaPodstawa--;
             }
@@ -311,6 +302,11 @@ namespace RPG
             OdswiezStatystyki();
         }
         #endregion
+
+        private void EkranNowaGra_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
 
     }
 }

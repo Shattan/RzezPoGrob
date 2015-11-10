@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class EkranEkranDziennikZadanTlo
+    partial class EkranDziennikZadanTlo
     {
         /// <summary>
         /// Required designer variable.
@@ -40,6 +40,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranEkranDziennikZadanTlo";
             this.Text = "EkranEkranDziennikZadanTlo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranEkranDziennikZadanTlo_FormClosing);
             this.Shown += new System.EventHandler(this.EkranNowaGraTlo_Shown);
             this.ResumeLayout(false);
 

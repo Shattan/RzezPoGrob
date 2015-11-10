@@ -15,26 +15,27 @@ namespace RPG
     public partial class EkranEkranNowaGraTlo : Form
     {
         #region Zmienne
-        EkranNowaGra ekranNowaGra;
-
+        EkranGlowny ekranGlowny;
         #endregion
 
-        public EkranEkranNowaGraTlo(EkranNowaGra ekranNowaGra)
+        public EkranEkranNowaGraTlo(EkranGlowny ekranGlowny)
         {
+            this.ekranGlowny = ekranGlowny;
+
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();
-
-            this.ekranNowaGra = ekranNowaGra;
         }
 
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             Program.DopasujRozmiarFormyDoEkranu(this);
         }
         void KolorujElementy()
         {
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło tworzenie postaci.png");
         }
         #endregion
@@ -42,9 +43,23 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
+            EkranNowaGra ekranNowaGra = new EkranNowaGra(ekranGlowny);
             DialogResult = ekranNowaGra.ShowDialog();
-            Close();
+            if (ekranNowaGra.DialogResult == DialogResult.OK)
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else if (ekranNowaGra.DialogResult == DialogResult.Cancel)
+            {
+                Close();
+            }
         }
         #endregion
+
+        private void EkranEkranNowaGraTlo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

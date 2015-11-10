@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class EkranGryTloObiekty
+    partial class EkranGryObiektyTlo
     {
         /// <summary>
         /// Required designer variable.
@@ -117,7 +117,7 @@
             this.Blok1.TabIndex = 30;
             this.Blok1.TabStop = false;
             // 
-            // EkranGryTloObiekty
+            // EkranGryObiektyTlo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -125,9 +125,10 @@
             this.ClientSize = new System.Drawing.Size(1243, 537);
             this.Controls.Add(this.panelMapa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EkranGryTloObiekty";
+            this.Name = "EkranGryObiektyTlo";
             this.Text = "EkranGryTloObiekty";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranGryObiektyTlo_FormClosing);
             this.Shown += new System.EventHandler(this.EkranGryTloObiekty_Shown);
             this.panelMapa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AkcjaStrazniczkaGor)).EndInit();

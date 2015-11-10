@@ -47,11 +47,11 @@
             this.PictureBoxPasekHPGracza = new System.Windows.Forms.PictureBox();
             this.PictureBoxPasekEnergiiGracza = new System.Windows.Forms.PictureBox();
             this.PanelDanychPrzeciwnika = new System.Windows.Forms.Panel();
-            this.PanelDanychGracza = new System.Windows.Forms.Panel();
             this.LabelDanePrzeciwnika = new System.Windows.Forms.Label();
-            this.LabelDaneGracza = new System.Windows.Forms.Label();
-            this.PictureBoxPasekEnergiiPrzeciwnika = new System.Windows.Forms.PictureBox();
             this.PictureBoxPasekHPPrzeciwnika = new System.Windows.Forms.PictureBox();
+            this.PictureBoxPasekEnergiiPrzeciwnika = new System.Windows.Forms.PictureBox();
+            this.PanelDanychGracza = new System.Windows.Forms.Panel();
+            this.LabelDaneGracza = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUcieczka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAtakMagiczny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkwipunek)).BeginInit();
@@ -66,9 +66,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekHPGracza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiGracza)).BeginInit();
             this.PanelDanychPrzeciwnika.SuspendLayout();
-            this.PanelDanychGracza.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiPrzeciwnika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekHPPrzeciwnika)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiPrzeciwnika)).BeginInit();
+            this.PanelDanychGracza.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonWygralem
@@ -257,6 +257,30 @@
             this.PanelDanychPrzeciwnika.Size = new System.Drawing.Size(424, 89);
             this.PanelDanychPrzeciwnika.TabIndex = 9;
             // 
+            // LabelDanePrzeciwnika
+            // 
+            this.LabelDanePrzeciwnika.Location = new System.Drawing.Point(3, 46);
+            this.LabelDanePrzeciwnika.Name = "LabelDanePrzeciwnika";
+            this.LabelDanePrzeciwnika.Size = new System.Drawing.Size(418, 43);
+            this.LabelDanePrzeciwnika.TabIndex = 8;
+            this.LabelDanePrzeciwnika.Text = "Tutaj powinny wyświetlić się informacje o przeciwniku";
+            // 
+            // PictureBoxPasekHPPrzeciwnika
+            // 
+            this.PictureBoxPasekHPPrzeciwnika.Location = new System.Drawing.Point(3, 3);
+            this.PictureBoxPasekHPPrzeciwnika.Name = "PictureBoxPasekHPPrzeciwnika";
+            this.PictureBoxPasekHPPrzeciwnika.Size = new System.Drawing.Size(418, 17);
+            this.PictureBoxPasekHPPrzeciwnika.TabIndex = 5;
+            this.PictureBoxPasekHPPrzeciwnika.TabStop = false;
+            // 
+            // PictureBoxPasekEnergiiPrzeciwnika
+            // 
+            this.PictureBoxPasekEnergiiPrzeciwnika.Location = new System.Drawing.Point(3, 26);
+            this.PictureBoxPasekEnergiiPrzeciwnika.Name = "PictureBoxPasekEnergiiPrzeciwnika";
+            this.PictureBoxPasekEnergiiPrzeciwnika.Size = new System.Drawing.Size(418, 17);
+            this.PictureBoxPasekEnergiiPrzeciwnika.TabIndex = 7;
+            this.PictureBoxPasekEnergiiPrzeciwnika.TabStop = false;
+            // 
             // PanelDanychGracza
             // 
             this.PanelDanychGracza.BackColor = System.Drawing.Color.Transparent;
@@ -268,14 +292,6 @@
             this.PanelDanychGracza.Size = new System.Drawing.Size(422, 100);
             this.PanelDanychGracza.TabIndex = 10;
             // 
-            // LabelDanePrzeciwnika
-            // 
-            this.LabelDanePrzeciwnika.Location = new System.Drawing.Point(3, 46);
-            this.LabelDanePrzeciwnika.Name = "LabelDanePrzeciwnika";
-            this.LabelDanePrzeciwnika.Size = new System.Drawing.Size(418, 43);
-            this.LabelDanePrzeciwnika.TabIndex = 8;
-            this.LabelDanePrzeciwnika.Text = "Tutaj powinny wyświetlić się informacje o przeciwniku";
-            // 
             // LabelDaneGracza
             // 
             this.LabelDaneGracza.Location = new System.Drawing.Point(3, 46);
@@ -283,22 +299,6 @@
             this.LabelDaneGracza.Size = new System.Drawing.Size(416, 54);
             this.LabelDaneGracza.TabIndex = 9;
             this.LabelDaneGracza.Text = "Tutaj powinny wyświetlić się informacje o graczu";
-            // 
-            // PictureBoxPasekEnergiiPrzeciwnika
-            // 
-            this.PictureBoxPasekEnergiiPrzeciwnika.Location = new System.Drawing.Point(3, 26);
-            this.PictureBoxPasekEnergiiPrzeciwnika.Name = "PictureBoxPasekEnergiiPrzeciwnika";
-            this.PictureBoxPasekEnergiiPrzeciwnika.Size = new System.Drawing.Size(418, 17);
-            this.PictureBoxPasekEnergiiPrzeciwnika.TabIndex = 7;
-            this.PictureBoxPasekEnergiiPrzeciwnika.TabStop = false;
-            // 
-            // PictureBoxPasekHPPrzeciwnika
-            // 
-            this.PictureBoxPasekHPPrzeciwnika.Location = new System.Drawing.Point(3, 3);
-            this.PictureBoxPasekHPPrzeciwnika.Name = "PictureBoxPasekHPPrzeciwnika";
-            this.PictureBoxPasekHPPrzeciwnika.Size = new System.Drawing.Size(418, 17);
-            this.PictureBoxPasekHPPrzeciwnika.TabIndex = 5;
-            this.PictureBoxPasekHPPrzeciwnika.TabStop = false;
             // 
             // EkranWalka
             // 
@@ -322,6 +322,7 @@
             this.Text = "Walka";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranWalka_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUcieczka)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAtakMagiczny)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkwipunek)).EndInit();
@@ -336,9 +337,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekHPGracza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiGracza)).EndInit();
             this.PanelDanychPrzeciwnika.ResumeLayout(false);
-            this.PanelDanychGracza.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiPrzeciwnika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekHPPrzeciwnika)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiPrzeciwnika)).EndInit();
+            this.PanelDanychGracza.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

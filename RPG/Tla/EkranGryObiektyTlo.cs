@@ -10,15 +10,17 @@ using System.Windows.Forms;
 
 namespace RPG
 {
-    public partial class EkranGryTloObiekty : Form
+    public partial class EkranGryObiektyTlo : Form
     {
         #region Zmienne
         EkranGlowny ekranGlowny;
+        EkranGryMapaTlo ekranGryMapaTlo;
         #endregion
 
-        public EkranGryTloObiekty(EkranGlowny ekranGlowny)
+        public EkranGryObiektyTlo(EkranGlowny ekranGlowny, EkranGryMapaTlo ekranGryMapaTlo)
         {
-            this.ekranGlowny = ekranGlowny;  
+            this.ekranGlowny = ekranGlowny;
+            this.ekranGryMapaTlo = ekranGryMapaTlo;
 
             InitializeComponent();
             RozmiescElementy();
@@ -28,19 +30,28 @@ namespace RPG
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             Program.DopasujRozmiarFormyDoEkranu(this);
         }
         void KolorujElementy()
         {
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
         }
         #endregion
 
         #region Obsluga zdarzeń
         private void EkranGryTloObiekty_Shown(object sender, EventArgs e)
         {
-            DialogResult = ekranGlowny.ekranGryTloUI.ShowDialog();
+            EkranGryUITlo ekranGryUITlo = new EkranGryUITlo(ekranGlowny, ekranGryMapaTlo, this);
+            DialogResult = ekranGryUITlo.ShowDialog();
+            DialogResult = ekranGryUITlo.DialogResult;
         }
         #endregion
+
+        private void EkranGryObiektyTlo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
 

@@ -40,6 +40,7 @@
             this.Name = "EkranEkwipunekTlo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EkranEkwipunekTlo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranEkwipunekTlo_FormClosing);
             this.Shown += new System.EventHandler(this.EkranNowaGraTlo_Shown);
             this.ResumeLayout(false);
 

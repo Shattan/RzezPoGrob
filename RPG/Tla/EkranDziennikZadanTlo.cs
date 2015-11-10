@@ -12,28 +12,29 @@ using System.Windows.Forms;
 
 namespace RPG
 {
-    public partial class EkranEkranDziennikZadanTlo : Form
+    public partial class EkranDziennikZadanTlo : Form
     {
         #region Zmienne
-        EkranDziennikZadan ekranDziennikZadan;
+        EkranGry ekranGry;
         #endregion
 
-        public EkranEkranDziennikZadanTlo(EkranDziennikZadan ekranDziennikZadan)
+        public EkranDziennikZadanTlo(EkranGry ekranGry)
         {
+            this.ekranGry = ekranGry;
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();
-
-            this.ekranDziennikZadan = ekranDziennikZadan;
         }
 
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             Program.DopasujRozmiarFormyDoEkranu(this);
         }
         void KolorujElementy()
         {
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Dziennik zadań.png");
         }
         #endregion
@@ -41,8 +42,15 @@ namespace RPG
         #region Zdarzenia
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult = ekranDziennikZadan.ShowDialog();
+            EkranDziennikZadan ekranDziennikZadan = new EkranDziennikZadan(ekranGry);
+            ekranDziennikZadan.ShowDialog();
+            DialogResult = ekranDziennikZadan.DialogResult;
         }
         #endregion
+
+        private void EkranEkranDziennikZadanTlo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

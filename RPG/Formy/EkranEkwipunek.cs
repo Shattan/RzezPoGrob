@@ -37,6 +37,7 @@ namespace RPG
         #region Metody ustawiające elementy na ekranie
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             Program.DopasujRozmiarFormyDoEkranu(this);
 
             //Rozmieszczanie statystyk
@@ -89,6 +90,7 @@ namespace RPG
         }
         void KolorujElementy()
         {
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz, "Resources/Grafiki menu/Wyjdź.png");
 
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PanelOpisPrzedmiotu, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
@@ -1126,12 +1128,13 @@ namespace RPG
         private void PictureBoxPotwierdz_Click(object sender, EventArgs e)
         {
             ZapiszStatystykiDoGracza();
-            Close();
+            DialogResult = DialogResult.OK;
         }
 
         private void EkranEkwipunek_FormClosing(object sender, FormClosingEventArgs e)
         {
             Zegar.Stop();
+            this.Dispose();
         }
         #endregion
 

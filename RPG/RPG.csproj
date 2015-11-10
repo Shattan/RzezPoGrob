@@ -92,11 +92,11 @@
     <Compile Include="Klasy\Postac.cs" />
     <Compile Include="Klasy\Sprzedawca.cs" />
     <Compile Include="Klasy\Strawa.cs" />
-    <Compile Include="Tla\EkranGryTloObiekty.cs">
+    <Compile Include="Tla\EkranGryObiektyTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tla\EkranGryTloObiekty.Designer.cs">
-      <DependentUpon>EkranGryTloObiekty.cs</DependentUpon>
+    <Compile Include="Tla\EkranGryObiektyTlo.Designer.cs">
+      <DependentUpon>EkranGryObiektyTlo.cs</DependentUpon>
     </Compile>
     <Compile Include="Formy\EkranDziennikZadan.cs">
       <SubType>Form</SubType>
@@ -124,17 +124,17 @@
     <Compile Include="Tla\EkranEkwipunekTlo.Designer.cs">
       <DependentUpon>EkranEkwipunekTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tla\EkranGryTloMapa.cs">
+    <Compile Include="Tla\EkranGryMapaTlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tla\EkranGryTloMapa.Designer.cs">
-      <DependentUpon>EkranGryTloMapa.cs</DependentUpon>
+    <Compile Include="Tla\EkranGryMapaTlo.Designer.cs">
+      <DependentUpon>EkranGryMapaTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tla\EkranGryTloUI.cs">
+    <Compile Include="Tla\EkranGryUITlo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tla\EkranGryTloUI.Designer.cs">
-      <DependentUpon>EkranGryTloUI.cs</DependentUpon>
+    <Compile Include="Tla\EkranGryUITlo.Designer.cs">
+      <DependentUpon>EkranGryUITlo.cs</DependentUpon>
     </Compile>
     <Compile Include="Tla\EkranWalkaTlo.cs">
       <SubType>Form</SubType>
@@ -211,8 +211,8 @@
     <EmbeddedResource Include="Tla\EkranEkwipunekTlo.resx">
       <DependentUpon>EkranEkwipunekTlo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tla\EkranGryTloMapa.resx">
-      <DependentUpon>EkranGryTloMapa.cs</DependentUpon>
+    <EmbeddedResource Include="Tla\EkranGryMapaTlo.resx">
+      <DependentUpon>EkranGryMapaTlo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranWalka.resx">
       <DependentUpon>EkranWalka.cs</DependentUpon>
@@ -232,11 +232,11 @@
     <EmbeddedResource Include="Formy\EkranOpcje.resx">
       <DependentUpon>EkranOpcje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tla\EkranGryTloObiekty.resx">
-      <DependentUpon>EkranGryTloObiekty.cs</DependentUpon>
+    <EmbeddedResource Include="Tla\EkranGryObiektyTlo.resx">
+      <DependentUpon>EkranGryObiektyTlo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tla\EkranGryTloUI.resx">
-      <DependentUpon>EkranGryTloUI.cs</DependentUpon>
+    <EmbeddedResource Include="Tla\EkranGryUITlo.resx">
+      <DependentUpon>EkranGryUITlo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tla\EkranNowaGraTlo.resx">
       <DependentUpon>EkranNowaGraTlo.cs</DependentUpon>
@@ -433,6 +433,12 @@
     <Content Include="Resources\Grafiki ekwipunku\tarczaTarczaUmarłegoRycerza.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\Odrzuć opcje najechany.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki menu\Odrzuć opcje.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki menu\Pasek energii.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -535,9 +541,6 @@
     <Content Include="Resources\Grafiki menu\Nowa Gra.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki menu\Odrzuć opcje.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Grafiki menu\Opcje.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -572,6 +575,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Wyjdź.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki menu\Zapisz opcje najechany.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Zapisz opcje.png">
@@ -4925,6 +4931,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki ekwipunku\pancerzStara tunika.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki menu\Obraz wczytywania.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

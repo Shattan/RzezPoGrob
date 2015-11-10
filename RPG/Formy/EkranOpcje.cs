@@ -19,153 +19,242 @@ namespace RPG
     public partial class EkranOpcje : Form
     {
         #region Zmienne
-        //Publiczne wskazywanie z ktrego odtwarzacza chcemy skorzystac
-        //Zalecam zmienie ich na prywatne i zrobienia publicznych metod "OdtworzMuzyke" "OdtworzOtoczenie" itd
-        public MediaPlayer odtwarzaczMuzyki = new MediaPlayer();
-        public MediaPlayer odtwarzaczOtoczenia = new MediaPlayer();
-        public MediaPlayer odtwarzaczDialogow = new MediaPlayer();
-
-        private MediaPlayer[] odtwarzaczEfektowSpecjalnych = new MediaPlayer [5];
         
-        public double obecnyPoziomGlosnosciMuzyki = 0.5;
-        public double obecnyPoziomGlosnosciEfektow = 0.5;
-
         //Dostep do Formy EkranGlowny dla zdarzen:
         //ZawszeNaWierzchu, PelnyEkran
         EkranGlowny ekranGlowny;
-
+        List<double> glosnosciPrzedUstawianiem = new List<double>();
         #endregion  
 
         public EkranOpcje(EkranGlowny ekranGlowny)
         {
+            this.ekranGlowny = ekranGlowny;
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();
-
-            this.ekranGlowny = ekranGlowny;
-
-            //Inicjalizacje MediaPlayery w tablicy
-            for (int i = 0; i < odtwarzaczEfektowSpecjalnych.Count(); i++)
-                odtwarzaczEfektowSpecjalnych[i] = new MediaPlayer();
-
-
-            //Ustawienia dzwieku
-            odtwarzaczMuzyki.Volume = obecnyPoziomGlosnosciMuzyki;
-            ZmienGlosnoscOdtwarzaczyEfektow(0.5);
+            UstawRadiobuttony();
+            ZapiszGlosnosci();
         }
 
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
         }
+
         void KolorujElementy()
         {
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
             //UstawNaEkranie
-            PictureBoxOdrzuc.Image = new Bitmap("Resources/Grafiki menu/Odrzuć opcje.png");
-            PictureBoxZapisz.Image = new Bitmap("Resources/Grafiki menu/Zapisz opcje.png");
-        }
-        public void OdtworzDzwiek(MediaPlayer odtwarzacz, String sciezka)
-        {
-            odtwarzacz.Open(new Uri(sciezka, UriKind.Relative));
-            odtwarzacz.Play();
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxOdrzuc,"Resources/Grafiki menu/Odrzuć opcje.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZapisz,"Resources/Grafiki menu/Zapisz opcje.png");
         }
 
-        public void OdtworzEfekt(int nrOdtwarzacza, String sciezka)
+        #region Zapis i wczytywanie wartości przed zmianami
+        void ZapiszGlosnosci()
         {
-            if ((nrOdtwarzacza >= 0) && (nrOdtwarzacza <= odtwarzaczEfektowSpecjalnych.Count()))
+            glosnosciPrzedUstawianiem.Clear();
+            foreach (MediaPlayer player in ekranGlowny.odtwarzaczeDzwieku)
             {
-                odtwarzaczEfektowSpecjalnych[nrOdtwarzacza].Open(new Uri(sciezka, UriKind.Relative));
-                odtwarzaczEfektowSpecjalnych[nrOdtwarzacza].Play();
-            }      
+                glosnosciPrzedUstawianiem.Add(player.Volume);
+            }
         }
-
-        public void ZatrzymajDzwiek(MediaPlayer odtwarzacz)
+        void WczytajGlosnosci()
         {
-            odtwarzacz.Stop();
-        }
-
-        public void ZmienGlosnoscOdtwarzaczyEfektow(double glosnosc)
-        {
-            odtwarzaczOtoczenia.Volume = glosnosc;
-            odtwarzaczDialogow.Volume = glosnosc;
-
-            foreach (var odtwarzacz in odtwarzaczEfektowSpecjalnych)
+            int i = 0;
+            foreach (MediaPlayer player in ekranGlowny.odtwarzaczeDzwieku)
             {
-                odtwarzacz.Volume = glosnosc;
+                player.Volume = glosnosciPrzedUstawianiem[i];
+                i++;
             }
         }
         #endregion
 
-        #region Zdarzenia
-        private void PictureBoxOdrzuc_Click(object sender, EventArgs e)
+        #region Sterowanie radiobuttonami
+        private void AktywacjaPrzyciskiMuzyki(bool aktywowac)
         {
-            DialogResult = DialogResult.Cancel;
-            Close();
-        }
-
-        private void CheckBoxWylaczMuzyke_CheckedChanged(object sender, EventArgs e)
-        {
-            //Wylaczamy muzyke
-            if (CheckBoxWylaczMuzyke.Checked && obecnyPoziomGlosnosciMuzyki != 0.0)
-            {
-                odtwarzaczMuzyki.Volume = 0.0;
-                obecnyPoziomGlosnosciMuzyki = 0.0;
-
-                if (RadioButtonGlosnoscMuzyki1.Enabled)
-                {
-                    foreach (var rB in GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>())
-                    {
-                        rB.Enabled = false;
-                    }
-                }
-            }
-
-            //Wlaczamy muzyke
             if (!CheckBoxWylaczMuzyke.Checked)
             {
                 if (!RadioButtonGlosnoscMuzyki1.Enabled)
                 {
-                    foreach (var rB in GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>())
+                    foreach (var poziomGlosnosci in GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>())
                     {
-                        rB.Enabled = true;
+                        poziomGlosnosci.Enabled = aktywowac;
                     }
                 }
-
-                UstawGlosnoscMuzyki();
             }
         }
 
-
-        private void CheckBoxWylaczEfektyDzwiekowe_CheckedChanged(object sender, EventArgs e)
+        private void AktywacjaPrzyciskiEfektowDzwiekowych(bool aktywowac)
         {
-            //Wylaczamy dziweki
-            if (CheckBoxWylaczEfektyDzwiekowe.Checked == true && obecnyPoziomGlosnosciEfektow != 0.0)
-            {
-                odtwarzaczOtoczenia.Volume = 0.0;
-                ZmienGlosnoscOdtwarzaczyEfektow(0.0);
-                obecnyPoziomGlosnosciEfektow = 0.0;
-
-                if (RadioButtonGlosnoscEfektowDzwiekowych1.Enabled == true)
-                {
-                    foreach (var rB in GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>())
-                    {
-                        rB.Enabled = false;
-                    }
-                }
-            }
-
-            //Wlaczamy dzwieki
+            //Deaktywujemy przyciski
             if (CheckBoxWylaczEfektyDzwiekowe.Checked == false)
             {
                 if (RadioButtonGlosnoscEfektowDzwiekowych1.Enabled == false)
                 {
-                    foreach (var rB in GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>())
+                    foreach (var poziomGlosnosci in GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>())
                     {
-                        rB.Enabled = true;
+                        poziomGlosnosci.Enabled = aktywowac;
                     }
                 }
+            }
+        }
 
+        private void UstawRadiobuttony()
+        {
+            string glosnosc;
+            RadioButton ustawianyRadiobutton;
+            //Buttony głośności muzyki
+            int calkowita = (int)ekranGlowny.odtwarzaczeDzwieku[0].Volume;
+            int dziesietna = (int)((ekranGlowny.odtwarzaczeDzwieku[0].Volume - calkowita) * 10);
+            glosnosc = dziesietna.ToString();
+
+            ustawianyRadiobutton = GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>().First(x => x.Name.EndsWith(glosnosc));
+            ustawianyRadiobutton.Checked = true;
+
+            //Buttony głośności efektów dźwiękowych
+            calkowita = (int)ekranGlowny.odtwarzaczeDzwieku[2].Volume;
+            dziesietna = (int)((ekranGlowny.odtwarzaczeDzwieku[2].Volume - calkowita) * 10);
+            glosnosc = dziesietna.ToString();
+
+            ustawianyRadiobutton = GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>().First(x => x.Name.EndsWith(glosnosc));
+            ustawianyRadiobutton.Checked = true;
+            
+        }
+        #endregion
+
+        #region Kontrola głośności muzyki (odtwarzacze 0-1)
+        private void WyciszMuzyke()
+        {
+            for (int i = 0; i < 2; i++)//Odtwarzacze 0-1 zajmować się będą muzyką
+            {
+                if (ekranGlowny.odtwarzaczeDzwieku[i].Volume != 0.0)
+                {
+                    ekranGlowny.odtwarzaczeDzwieku[i].Volume = 0.0;
+                }
+            }
+        }
+
+        private void UstawGlosnoscMuzyki()
+        {
+            string nazwaAktywnegoPoziomu = "0";
+
+            foreach (RadioButton poziom in GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>())
+            {
+                if (poziom.Checked)
+                {
+                    nazwaAktywnegoPoziomu = poziom.Name;
+                }
+            }
+
+            double glosnosc = Convert.ToDouble("0," + nazwaAktywnegoPoziomu.Substring(nazwaAktywnegoPoziomu.Length - 1));
+            if (glosnosc == 0.0)
+            {
+                glosnosc = 1.0;
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                if (ekranGlowny.odtwarzaczeDzwieku[i].Volume != glosnosc)
+                    ekranGlowny.odtwarzaczeDzwieku[i].Volume = glosnosc;
+            }
+        }
+        #endregion
+
+        #region Kontrola głośności efektów dźwiękowych (odtwarzacze 2-ostatni)
+        private void WyciszEfektyDzwiekowe()
+        {
+            for (int i = 2; i < ekranGlowny.odtwarzaczeDzwieku.Count; i++)//Odtwarzacze od 2 zajmować się będą dialogami i efektami
+            {
+                if (ekranGlowny.odtwarzaczeDzwieku[i].Volume != 0.0)
+                {
+                    ekranGlowny.odtwarzaczeDzwieku[i].Volume = 0.0;
+                }
+            }
+        }
+
+        private void UstawGlosnoscEfektyDzwiekowe()
+        {
+            string nazwaAktywnegoPoziomu = "0";
+            foreach (RadioButton poziom in GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>())
+            {
+                if (poziom.Checked)
+                {
+                    nazwaAktywnegoPoziomu = poziom.Name;
+                }
+            }
+
+            double glosnosc = Convert.ToDouble("0," + nazwaAktywnegoPoziomu.Substring(nazwaAktywnegoPoziomu.Length - 1));
+            if (glosnosc == 0.0)
+            {
+                glosnosc = 1.0;
+            }
+            for (int i = 2; i < ekranGlowny.odtwarzaczeDzwieku.Count; i++)
+            {
+                if (ekranGlowny.odtwarzaczeDzwieku[i].Volume != glosnosc)
+                    ekranGlowny.odtwarzaczeDzwieku[i].Volume = glosnosc;
+            }
+
+        }
+        #endregion
+        #endregion
+
+        #region Zdarzenia
+
+        private void PictureBoxZapisz_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+        private void PictureBoxZapisz_MouseEnter(object sender, EventArgs e)
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZapisz, "Resources/Grafiki menu/Zapisz opcje najechany.png");
+        }
+        private void PictureBoxZapisz_MouseLeave(object sender, EventArgs e)
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZapisz, "Resources/Grafiki menu/Zapisz opcje.png");
+        }
+
+        private void PictureBoxOdrzuc_Click(object sender, EventArgs e)
+        {
+            WczytajGlosnosci();
+            UstawRadiobuttony(); 
+            UstawGlosnoscMuzyki();
+            UstawGlosnoscEfektyDzwiekowe();
+            DialogResult = DialogResult.Ignore;
+        }
+        private void PictureBoxOdrzuc_MouseEnter(object sender, EventArgs e)
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxOdrzuc, "Resources/Grafiki menu/Odrzuć opcje najechany.png");
+        }
+        private void PictureBoxOdrzuc_MouseLeave(object sender, EventArgs e)
+        {
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxOdrzuc, "Resources/Grafiki menu/Odrzuć opcje.png");
+        }
+
+        private void CheckBoxWylaczMuzyke_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBoxWylaczMuzyke.Checked)
+            {
+                WyciszMuzyke();
+                AktywacjaPrzyciskiMuzyki(false);
+            }
+            else
+            {
+                UstawGlosnoscMuzyki();
+                AktywacjaPrzyciskiMuzyki(true);
+            }
+        }
+
+        private void CheckBoxWylaczEfektyDzwiekowe_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBoxWylaczEfektyDzwiekowe.Checked)
+            {
+                WyciszEfektyDzwiekowe();
+                AktywacjaPrzyciskiEfektowDzwiekowych(false);
+            }
+            else
+            {
                 UstawGlosnoscEfektyDzwiekowe();
+                AktywacjaPrzyciskiEfektowDzwiekowych(true);
             }
         }
 
@@ -179,117 +268,11 @@ namespace RPG
             UstawGlosnoscEfektyDzwiekowe();
         }
 
-        private void UstawGlosnoscMuzyki()
-        {
-            if (RadioButtonGlosnoscMuzyki1.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.1)
-            {
-                odtwarzaczMuzyki.Volume = 0.1;
-                obecnyPoziomGlosnosciMuzyki = 0.1;
-            }
-            if (RadioButtonGlosnoscMuzyki2.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.2)
-            {
-                odtwarzaczMuzyki.Volume = 0.2;
-                obecnyPoziomGlosnosciMuzyki = 0.2;
-            }
-            if (RadioButtonGlosnoscMuzyki3.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.3)
-            {
-                odtwarzaczMuzyki.Volume = 0.3;
-                obecnyPoziomGlosnosciMuzyki = 0.3;
-            }
-            if (RadioButtonGlosnoscMuzyki4.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.4)
-            {
-                odtwarzaczMuzyki.Volume = 0.4;
-                obecnyPoziomGlosnosciMuzyki = 0.4;
-            }
-            if (RadioButtonGlosnoscMuzyki5.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.5)
-            {
-                odtwarzaczMuzyki.Volume = 0.5;
-                obecnyPoziomGlosnosciMuzyki = 0.5;
-            }
-            if (RadioButtonGlosnoscMuzyki6.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.6)
-            {
-                odtwarzaczMuzyki.Volume = 0.6;
-                obecnyPoziomGlosnosciMuzyki = 0.6;
-            }
-            if (RadioButtonGlosnoscMuzyki7.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.7)
-            {
-                odtwarzaczMuzyki.Volume = 0.7;
-                obecnyPoziomGlosnosciMuzyki = 0.7;
-            }
-            if (RadioButtonGlosnoscMuzyki8.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.8)
-            {
-                odtwarzaczMuzyki.Volume = 0.8;
-                obecnyPoziomGlosnosciMuzyki = 0.8;
-            }
-            if (RadioButtonGlosnoscMuzyki9.Checked == true && obecnyPoziomGlosnosciMuzyki != 0.9)
-            {
-                odtwarzaczMuzyki.Volume = 0.9;
-                obecnyPoziomGlosnosciMuzyki = 0.9;
-            }
-            if (RadioButtonGlosnoscMuzyki10.Checked == true && obecnyPoziomGlosnosciMuzyki != 1.0)
-            {
-                odtwarzaczMuzyki.Volume = 1.0;
-                obecnyPoziomGlosnosciMuzyki = 1.0;
-            }
-        }
-
-        private void UstawGlosnoscEfektyDzwiekowe()
-        {
-
-            if (RadioButtonGlosnoscEfektowDzwiekowych1.Checked == true && obecnyPoziomGlosnosciEfektow != 0.1)
-            {
-                ZmienGlosnoscOdtwarzaczyEfektow(0.1);
-                obecnyPoziomGlosnosciEfektow = 0.1;
-            }
-            if (RadioButtonGlosnoscEfektowDzwiekowych2.Checked == true && obecnyPoziomGlosnosciEfektow != 0.2)
-            {
-                ZmienGlosnoscOdtwarzaczyEfektow(0.2);
-                obecnyPoziomGlosnosciEfektow = 0.2;
-            }
-            if (RadioButtonGlosnoscEfektowDzwiekowych3.Checked == true && obecnyPoziomGlosnosciEfektow != 0.3)
-            {
-                ZmienGlosnoscOdtwarzaczyEfektow(0.3);
-                obecnyPoziomGlosnosciEfektow = 0.3;
-            }
-            if (RadioButtonGlosnoscEfektowDzwiekowych4.Checked == true && obecnyPoziomGlosnosciEfektow != 0.4)
-            {
-                ZmienGlosnoscOdtwarzaczyEfektow(0.4);
-                obecnyPoziomGlosnosciEfektow = 0.4;
-            }
-            if (RadioButtonGlosnoscEfektowDzwiekowych5.Checked == true && obecnyPoziomGlosnosciEfektow != 0.5)
-            {
-                ZmienGlosnoscOdtwarzaczyEfektow(0.5);
-                obecnyPoziomGlosnosciEfektow = 0.5;
-            }
-            if (RadioButtonGlosnoscEfektowDzwiekowych6.Checked == true && obecnyPoziomGlosnosciEfektow != 0.6)
-            {
-                ZmienGlosnoscOdtwarzaczyEfektow(0.6);
-                obecnyPoziomGlosnosciEfektow = 0.6;
-            }
-            if (RadioButtonGlosnoscEfektowDzwiekowych7.Checked == true && obecnyPoziomGlosnosciEfektow != 0.7)
-            {
-                ZmienGlosnoscOdtwarzaczyEfektow(0.7);
-                obecnyPoziomGlosnosciEfektow = 0.7;
-            }
-            if (RadioButtonGlosnoscEfektowDzwiekowych8.Checked == true && obecnyPoziomGlosnosciEfektow != 0.8)
-            {
-                ZmienGlosnoscOdtwarzaczyEfektow(0.8);
-                obecnyPoziomGlosnosciEfektow = 0.8;
-            }
-            if (RadioButtonGlosnoscEfektowDzwiekowych9.Checked == true && obecnyPoziomGlosnosciEfektow != 0.9)
-            {
-                ZmienGlosnoscOdtwarzaczyEfektow(0.9);
-                obecnyPoziomGlosnosciEfektow = 0.9;
-            }
-            if (RadioButtonGlosnoscEfektowDzwiekowych10.Checked == true && obecnyPoziomGlosnosciEfektow != 1.0)
-            {
-                ZmienGlosnoscOdtwarzaczyEfektow(1.0);
-                obecnyPoziomGlosnosciEfektow = 1.0;
-            }
-        }
-
         private void CheckBoxZawszeNaWierzchu_CheckedChanged(object sender, EventArgs e)
         {
+            MessageBox.Show("Opcja chwilowo niedostępna.");
+            //Opcja tymczasowo nieaktywna
+            /*
             if (CheckBoxZawszeNaWierzchu.Checked == true && ekranGlowny.TopMost != true)
             {
                 ekranGlowny.TopMost = true;
@@ -298,10 +281,14 @@ namespace RPG
             {
                 ekranGlowny.TopMost = false;
             }
+            */
         }
 
         private void CheckBoxPelnyEkran_CheckedChanged(object sender, EventArgs e)
         {
+            MessageBox.Show("Opcja chwilowo niedostępna.");
+            //Opcja tymczasowo nieaktywna
+            /*
             if (ekranGlowny.WindowState != FormWindowState.Maximized)
             {
                 if (ekranGlowny.FormBorderStyle != FormBorderStyle.None)
@@ -317,12 +304,14 @@ namespace RPG
                         ekranGlowny.FormBorderStyle = FormBorderStyle.Sizable;
                 }
             }
+            */
         }
 
         #region Obsluga widocznosci okna
         //Obsluga wychodzenia - zakaz alt+f4
         private void EkranOpcje_FormClosing(object sender, FormClosingEventArgs e)
         {
+            this.Dispose();
             //Do dialogu nie może być tego zabezpieczenia. Dialog w razie alt+F4 zwraca po prostu Abort, albo jakoś tak.
             //e.Cancel = true;
             //Tu (w FormClosing) należy robić .Dispose() , żeby zwolnić zasoby dla innych formów
@@ -346,6 +335,7 @@ namespace RPG
             }
         }
         #endregion
+
         #endregion
     }
 }

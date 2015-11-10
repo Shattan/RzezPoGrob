@@ -10,15 +10,19 @@ using System.Windows.Forms;
 
 namespace RPG
 {
-    public partial class EkranGryTloUI : Form
+    public partial class EkranGryUITlo : Form
     {
         #region Zmienne
         EkranGlowny ekranGlowny;
+        EkranGryMapaTlo ekranGryMapaTlo;
+        EkranGryObiektyTlo ekranGryObiektyTlo;
         #endregion
 
-        public EkranGryTloUI(EkranGlowny ekranGlowny)
+        public EkranGryUITlo(EkranGlowny ekranGlowny, EkranGryMapaTlo ekranGryMapaTlo, EkranGryObiektyTlo ekranGryObiektyTlo)
         {
             this.ekranGlowny = ekranGlowny;    
+            this.ekranGryMapaTlo = ekranGryMapaTlo;
+            this.ekranGryObiektyTlo = ekranGryObiektyTlo;
 
             InitializeComponent();
             RozmiescElementy();
@@ -28,16 +32,18 @@ namespace RPG
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             Program.DopasujRozmiarFormyDoEkranu(this);
         }
         void KolorujElementy()
         {
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
         }
 
-        public void UstawPanelPrawy(Point point, Size size, String sciezkaGrafiki)
+        public void UstawPanelPrawy(Size size, Point point, String sciezkaGrafiki)
         {
-            panelPraweMenu.Location = point;
             panelPraweMenu.Size = size;
+            panelPraweMenu.Location = point;
             panelPraweMenu.BackgroundImage = new Bitmap(sciezkaGrafiki);
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(panelPraweMenu, sciezkaGrafiki);
         }
@@ -46,9 +52,16 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranGryTloUI_Shown(object sender, EventArgs e)
         {
-            DialogResult = ekranGlowny.ekranGry.ShowDialog();
+            EkranGry ekranGry = new EkranGry(ekranGlowny, ekranGryMapaTlo, ekranGryObiektyTlo, this);
+            ekranGry.ShowDialog();
+            DialogResult = ekranGry.DialogResult;
         }
         #endregion
+
+        private void EkranGryUITlo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
 

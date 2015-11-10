@@ -18,7 +18,7 @@ namespace RPG
         EkranGry ekranGry;
 
         Gracz gracz = new Gracz();
-        Przeciwnik przeciwnik = new Przeciwnik();
+        Przeciwnik wylosowanyPrzeciwnik = new Przeciwnik();
 
         int obecnyPoziomHPGracza = 0;
         int obecnyPoziomHPPrzeciwnika = 0;
@@ -44,11 +44,12 @@ namespace RPG
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             //Ustawienia okienka gry
             Program.DopasujRozmiarFormyDoEkranu(this);
 
             //Ustawienie przycisków
-            PictureBoxUcieczka.Size = new Size(Width/3,30);
+            PictureBoxUcieczka.Size = new Size(Width*30/100,Height*5/100);
 
             foreach (PictureBox przycisk in FlowLayoutPanelWyboru.Controls)
             {
@@ -136,8 +137,6 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZEkwipunku, "Resources/Grafiki menu/Przykładowy przycisk.png");
 
 
-
-
             //Okienka informacyjne
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekHPGracza, "Resources/Grafiki menu/Pasek HP.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekHPPrzeciwnika, "Resources/Grafiki menu/Pasek HP.png");
@@ -148,7 +147,7 @@ namespace RPG
         void WczytajPrzeciwnikaIGracza()
         {
             gracz = new Gracz(ekranGry.gra.gracz);
-            przeciwnik = new Przeciwnik(ekranGry.gra.listaPostaciZMiasta[0]);
+            wylosowanyPrzeciwnik = new Przeciwnik(ekranGry.wylosowanyPrzeciwnik);
         }
 
         void OdswiezDane()
@@ -255,6 +254,11 @@ namespace RPG
             LabelInformacje.Text = "HA! Chciałbyś, żeby się form zamknął, co?!? :D";
             TimerDoZamkniecia.Stop();
             DialogResult = DialogResult.OK;
+        }
+
+        private void EkranWalka_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
         }
 
 

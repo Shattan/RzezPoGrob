@@ -15,29 +15,26 @@ namespace RPG
     public partial class EkranWalkaTlo : Form
     {
         #region Zmienne
-        EkranWalka ekranWalka;
-
-        public List<List<Przeciwnik>> listaZestawowPrzeciwnikow = new List<List<Przeciwnik>>();
-
-        Random losowanie = new Random();
+        String wylosowanyTeren = "";
+        Przeciwnik wylosowanyPrzeciwnik = new Przeciwnik();
+        EkranGry ekranGry;
         #endregion
 
-        public EkranWalkaTlo(EkranWalka ekranWalka, List<List<Przeciwnik>> listaZestawowPrzeciwnikow)
+        public EkranWalkaTlo(EkranGry ekranGry)
         {
-            this.listaZestawowPrzeciwnikow = listaZestawowPrzeciwnikow;
-
+            this.ekranGry = ekranGry;
+            this.wylosowanyTeren = ekranGry.wylosowanyTeren;
+            this.wylosowanyPrzeciwnik = ekranGry.wylosowanyPrzeciwnik;
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();
-
-            this.ekranWalka = ekranWalka;
         }
 
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             Program.DopasujRozmiarFormyDoEkranu(this);
-
 
             //Ustawienie paneli z informacjami o graczu i przeciwniku
             PanelDanychGracza.Size = PanelDanychPrzeciwnika.Size = new Size(Width * 30 / 100, Height * 10 / 100);
@@ -54,14 +51,8 @@ namespace RPG
         }
         void KolorujElementy()
         {
-            string plansza = losowanie.Next(0, 10).ToString();
-            string sciezkaPlanszy = "Resources/Grafiki tła walki/" + plansza + ".png";
-            //Do losowania postaci potrzeba tu dostępu do obiektu Postac, zeby po indexach wczytywać
-            int numerZestawu = losowanie.Next(0, listaZestawowPrzeciwnikow.Count);
-            int numerPotwora = losowanie.Next(0, listaZestawowPrzeciwnikow[numerZestawu].Count);
-            string sciezkaPostaci = listaZestawowPrzeciwnikow[numerZestawu][numerPotwora].ObrazekWalki;
-            Program.UstawObrazPolaBitwy(this, sciezkaPlanszy, sciezkaPostaci);
-
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
+            Program.UstawObrazPolaBitwy(this, wylosowanyTeren, wylosowanyPrzeciwnik.ObrazekWalki);
 
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PanelDanychGracza, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PanelDanychPrzeciwnika, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
@@ -75,14 +66,15 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult = ekranWalka.ShowDialog();
+            EkranWalka ekranWalka = new EkranWalka(ekranGry);
+            ekranWalka.ShowDialog();
+            DialogResult = ekranWalka.DialogResult;
         }
         #endregion
 
-        private void EkranWalkaTlo_Load(object sender, EventArgs e)
+        private void EkranWalkaTlo_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Tutaj jeszcze raz, żeby co przeciwnika losowało sobie nową planszę
-            KolorujElementy();
+            this.Dispose();
         }
     }
 }

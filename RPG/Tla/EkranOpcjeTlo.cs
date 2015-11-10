@@ -12,27 +12,29 @@ using System.Windows.Forms;
 
 namespace RPG
 {
-    public partial class EkranEkranOpcjeTlo : Form
+    public partial class EkranOpcjeTlo : Form
     {
         #region Zmienne
-        EkranOpcje ekranOpcje;
+        EkranGlowny ekranGlowny;
         #endregion
 
-        public EkranEkranOpcjeTlo(EkranOpcje ekranOpcje)
+        public EkranOpcjeTlo(EkranGlowny ekranGlowny)
         {
+            this.ekranGlowny = ekranGlowny;
+
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();
-
-            this.ekranOpcje = ekranOpcje;
         }
 
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
         }
         void KolorujElementy()
         {
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
             BackgroundImage = new Bitmap("Resources/Grafiki menu/Tło opcji.png");
         }
         #endregion
@@ -40,12 +42,15 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranEkranOpcjeTlo_Shown(object sender, EventArgs e)
         {
-            DialogResult dr = ekranOpcje.ShowDialog();
-            if (dr == DialogResult.Cancel)
-            {
-                Close();
-            }
+            EkranOpcje ekranOpcje = new EkranOpcje(ekranGlowny);
+            ekranOpcje.ShowDialog();
+            DialogResult = ekranOpcje.DialogResult;//Przekazanie wyniku dialogu dalej
         }
         #endregion
+
+        private void EkranOpcjeTlo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
