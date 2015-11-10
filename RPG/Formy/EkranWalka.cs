@@ -231,6 +231,7 @@ namespace RPG
             else
             {
                 LabelInformacje.Text = "Udało Ci się uciec!";
+                Enabled = false;
                 TimerDoZamkniecia.Start();
             }
         }

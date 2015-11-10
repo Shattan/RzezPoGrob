@@ -259,6 +259,7 @@
             this.Controls.Add(this.PictureBoxWstecz);
             this.Controls.Add(this.PictureBoxPotwierdz);
             this.Controls.Add(this.TextBoxNazwa);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranNowaGra";
             this.Text = "EkranNowaGra";

@@ -30,15 +30,16 @@
         {
             this.SuspendLayout();
             // 
-            // EkranEkranDziennikZadanTlo
+            // EkranDziennikZadanTlo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EkranEkranDziennikZadanTlo";
+            this.Name = "EkranDziennikZadanTlo";
             this.Text = "EkranEkranDziennikZadanTlo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranEkranDziennikZadanTlo_FormClosing);
             this.Shown += new System.EventHandler(this.EkranNowaGraTlo_Shown);

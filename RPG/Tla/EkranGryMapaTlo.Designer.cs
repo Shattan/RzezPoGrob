@@ -51,6 +51,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(880, 601);
             this.Controls.Add(this.PictureBoxTrawa);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranGryMapaTlo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

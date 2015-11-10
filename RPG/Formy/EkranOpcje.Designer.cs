@@ -528,6 +528,7 @@
             this.Controls.Add(this.PictureBoxZapisz);
             this.Controls.Add(this.GroupBoxDzwiek);
             this.Controls.Add(this.GroupBoxEkran);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Goldenrod;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranOpcje";

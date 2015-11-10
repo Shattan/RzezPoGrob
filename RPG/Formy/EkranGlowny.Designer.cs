@@ -129,6 +129,7 @@
             this.Controls.Add(this.PictureBoxOpcje);
             this.Controls.Add(this.PictureBoxWyjdz);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Yellow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(400, 300);

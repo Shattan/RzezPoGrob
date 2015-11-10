@@ -103,6 +103,7 @@
             this.ClientSize = new System.Drawing.Size(767, 375);
             this.Controls.Add(this.PanelDanychGracza);
             this.Controls.Add(this.PanelDanychPrzeciwnika);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranWalkaTlo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

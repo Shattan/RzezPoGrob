@@ -318,6 +318,7 @@
             this.Controls.Add(this.PictureBoxPancerz);
             this.Controls.Add(this.PictureBoxBron);
             this.Controls.Add(this.FlowLayoutPanelPlecak);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranEkwipunek";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

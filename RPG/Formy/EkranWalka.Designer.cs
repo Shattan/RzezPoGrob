@@ -318,6 +318,7 @@
             this.Controls.Add(this.buttonPrzegralem);
             this.Controls.Add(this.buttonWygralem);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranWalka";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

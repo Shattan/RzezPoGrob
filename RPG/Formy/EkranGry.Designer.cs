@@ -105,6 +105,7 @@
             this.Controls.Add(this.panelPraweMenu);
             this.Controls.Add(this.PictureBoxZamknij);
             this.Controls.Add(this.LabelInformacje);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranGry";
             this.Text = "Gra";
