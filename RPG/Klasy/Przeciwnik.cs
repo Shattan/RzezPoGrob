@@ -12,12 +12,12 @@ namespace RPG
         public int BonusDoZrecznosci { get { return 0; } }
         public int BonusDoWitalnosci { get { return 0; } }
         public int BonusDoInteligencji { get { return 0; } }
-        public int BonusDoObrazen { get { return SilaPodstawa / 5; } }
-        public int BonusDoPancerza { get { return ZrecznoscPodstawa / 5; } }
-        public int BonusDoHP { get { return WitalnoscPodstawa * 5; } }
-        public int BonusDoEnergii { get { return InteligencjaPodstawa * 5; } }
-        public int BonusDoSzansyNaTrafienie { get { return ZrecznoscPodstawa / 10; } }
-        public int BonusDoSzansyNaKrytyczne { get { return ZrecznoscPodstawa / 10; } }
+        public double BonusDoObrazen { get { return SilaPodstawa / 5; } }
+        public double BonusDoPancerza { get { return ZrecznoscPodstawa / 5; } }
+        public double BonusDoHP { get { return WitalnoscPodstawa * 5; } }
+        public double BonusDoEnergii { get { return InteligencjaPodstawa * 5; } }
+        public double BonusDoSzansyNaTrafienie { get { return ZrecznoscPodstawa / 10; } }
+        public double BonusDoSzansyNaKrytyczne { get { return ZrecznoscPodstawa / 10; } }
 
 
         //statystyki po obliczeniu bonusów 
@@ -25,12 +25,12 @@ namespace RPG
         public int Zrecznosc { get { return ZrecznoscPodstawa; } }
         public int Witalnosc { get { return WitalnoscPodstawa; } }
         public int Inteligencja { get { return InteligencjaPodstawa; } }
-        public int Obrazenia { get { return ObrazeniaPodstawa + BonusDoObrazen; } }
-        public int Pancerz { get { return PancerzPodstawa + BonusDoPancerza; } }
-        public int HP { get { return HPPodstawa + BonusDoHP; } }
-        public int Energia { get { return EnergiaPodstawa + BonusDoEnergii; } }
-        public int SzansaNaTrafienie { get { return SzansaNaTrafieniePodstawa + BonusDoSzansyNaTrafienie; } }
-        public int SzansaNaKrytyczne { get { return SzansaNaKrytycznePodstawa + BonusDoSzansyNaKrytyczne; } }
+        public double Obrazenia { get { return ObrazeniaPodstawa + BonusDoObrazen; } }
+        public double Pancerz { get { return PancerzPodstawa + BonusDoPancerza; } }
+        public double HP { get { return HPPodstawa + BonusDoHP; } }
+        public double Energia { get { return EnergiaPodstawa + BonusDoEnergii; } }
+        public double SzansaNaTrafienie { get { return SzansaNaTrafieniePodstawa + BonusDoSzansyNaTrafienie; } }
+        public double SzansaNaKrytyczne { get { return SzansaNaKrytycznePodstawa + BonusDoSzansyNaKrytyczne; } }
 
 
         public int SumaStatystyk { get { return SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa; } }
@@ -68,7 +68,7 @@ namespace RPG
             UmiejetnosciMagiczne = new List<Umiejetnosc>();
         }
 
-        public Przeciwnik(String nazwa, String obrazekMowienia, String obrazekNaMapie, String obrazekWalki, int sila, int zrecznosc, int witalnosc, int inteligencja, int bazoweObrazenia, int bazowyPancerz, int bazoweHP, int bazowaEnergia, int bazowaSzansaNaTrafienie, int bazowaSzansaNaKrytyczne,List<Umiejetnosc> umiejetnosciFizyczne,List<Umiejetnosc> umiejetnosciMagiczne)
+        public Przeciwnik(String nazwa, String obrazekMowienia, String obrazekNaMapie, String obrazekWalki, int sila, int zrecznosc, int witalnosc, int inteligencja, double bazoweObrazenia, double bazowyPancerz, double bazoweHP, double bazowaEnergia, double bazowaSzansaNaTrafienie, double bazowaSzansaNaKrytyczne, List<Umiejetnosc> umiejetnosciFizyczne, List<Umiejetnosc> umiejetnosciMagiczne)
         {
             Nazwa = nazwa;
             ObrazekMowienia = obrazekMowienia;

@@ -259,6 +259,7 @@
             // 
             // LabelDanePrzeciwnika
             // 
+            this.LabelDanePrzeciwnika.ForeColor = System.Drawing.Color.Yellow;
             this.LabelDanePrzeciwnika.Location = new System.Drawing.Point(3, 46);
             this.LabelDanePrzeciwnika.Name = "LabelDanePrzeciwnika";
             this.LabelDanePrzeciwnika.Size = new System.Drawing.Size(418, 43);
@@ -294,6 +295,7 @@
             // 
             // LabelDaneGracza
             // 
+            this.LabelDaneGracza.ForeColor = System.Drawing.Color.Yellow;
             this.LabelDaneGracza.Location = new System.Drawing.Point(3, 46);
             this.LabelDaneGracza.Name = "LabelDaneGracza";
             this.LabelDaneGracza.Size = new System.Drawing.Size(416, 54);

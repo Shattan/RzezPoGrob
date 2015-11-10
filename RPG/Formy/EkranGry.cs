@@ -60,11 +60,12 @@ namespace RPG
             this.ekranGryMapaTlo = ekranGryMapaTlo;
             this.ekranGryObiektyTlo = ekranGryObiektyTlo;
             this.ekranGryUITlo = ekranGryUITlo;
+            this.gra = new Gra(ekranGlowny.gra);
 
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();
-
+            DodajZdarzeniaDlaPrawegoMenu();
             //Dzwiek zakomentowany na czas debugowania
             //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
 
@@ -78,6 +79,15 @@ namespace RPG
         {
             Program.DopasujRozmiarFormyDoEkranu(this);
 
+            LabelInformacje.Size = new Size(Width, Height / 8);
+            LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
+            LabelInformacje.Text = "Witaj w grze!";
+
+            PictureBoxLewyMowiacy.Size = new Size(Width*20/100,Height*40/100);
+            PictureBoxPrawyMowiacy.Size = PictureBoxLewyMowiacy.Size;
+            PictureBoxLewyMowiacy.Location = new Point(0, LabelInformacje.Location.Y - PictureBoxLewyMowiacy.Height);
+            PictureBoxPrawyMowiacy.Location = new Point(Width - PictureBoxPrawyMowiacy.Width, LabelInformacje.Location.Y - PictureBoxPrawyMowiacy.Height);
+
             //Wczytanie Right Menu Panel
             List<string> ListaObrazkow = new List<string>();
             ListaObrazkow.Add("Resources/Grafiki menu/Adark.png");
@@ -90,7 +100,7 @@ namespace RPG
             const int odlegloscMiedzyPrzyciskami = 20;
             int iloscPrzyciskow = ListaObrazkow.Count();
 
-            panelPraweMenu.Size = new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow+odlegloscMiedzyPrzyciskami);
+            panelPraweMenu.Size = new Size(wielkoscPrzyciskow + odlegloscMiedzyPrzyciskami, wielkoscPrzyciskow * iloscPrzyciskow + odlegloscMiedzyPrzyciskami * iloscPrzyciskow);
             panelPraweMenu.Location = new Point(Screen.PrimaryScreen.Bounds.Width - panelPraweMenu.Width, 0);
 
             praweMenu = new PictureBox[iloscPrzyciskow];
@@ -108,6 +118,17 @@ namespace RPG
             ekranGryUITlo.UstawPanelPrawy(panelPraweMenu.Size, panelPraweMenu.Location, "Resources/Grafiki menu/Panel pod przyciski.png");
 
 
+          
+        }
+
+        void KolorujElementy()
+        {
+            //Ustawienie ikony w trybie okienkowym
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
+        }
+
+        void DodajZdarzeniaDlaPrawegoMenu()
+        {
             praweMenu[0].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             praweMenu[0].MouseEnter += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseEnter);
             praweMenu[0].MouseLeave += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseLeave);
@@ -120,15 +141,6 @@ namespace RPG
             //praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             //praweMenu[3].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             //praweMenu[4].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
-
-
-          
-        }
-
-        void KolorujElementy()
-        {
-            //Ustawienie ikony w trybie okienkowym
-            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
         }
         void UniewidocznijGre()
         {
@@ -143,13 +155,6 @@ namespace RPG
             ekranGryObiektyTlo.Show();
             ekranGryUITlo.Show();
             Show();
-        }
-
-        public void WczytajNowaGre()
-        {
-            //Metoda Wywolywana w ekranNowaGra
-            label1.Text = gra.gracz.Nazwa;
-            ekranGryObiektyTlo.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "dół.png");
         }
 
         void LosujPrzeciwnika()
@@ -287,6 +292,7 @@ namespace RPG
             }
             else if (ekranWalkaTlo.DialogResult == DialogResult.Abort)//Jeżeli gracz przegrał
             {
+                ekranGlowny.OdtworzDzwiek("Resources/Dźwięki/smierc.wav");
                 UwidocznijGre();
                 //Co robimy jak gracz przegral?
                 ekranGryObiektyTlo.pBGracz.Visible = false;

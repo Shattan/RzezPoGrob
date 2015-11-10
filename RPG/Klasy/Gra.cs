@@ -8,22 +8,23 @@ namespace RPG
 {
     public class Gra
     {
+        //Wdrożone pola
         public Gracz gracz = new Gracz();
-
         public List<Zadanie> listaZadan = new List<Zadanie>();
         public List<Ekwipunek> listaPrzedmiotow = new List<Ekwipunek>();
         public List<Strawa> listaPozywieniaIMikstur = new List<Strawa>();
         public List<Umiejetnosc> listaUmiejetnosciFizycznych = new List<Umiejetnosc>();
         public List<Umiejetnosc> listaUmiejetnosciMagicznych = new List<Umiejetnosc>();
-
-        public List<Przeszkoda> listaPrzeszkod = new List<Przeszkoda>();
+        public List<List<Przeciwnik>> listaZestawowPrzeciwnikow = new List<List<Przeciwnik>>();
         public List<Przeciwnik> listaPostaciFabularnych = new List<Przeciwnik>();
         public List<Przeciwnik> listaPostaciZMiasta = new List<Przeciwnik>();
         public List<Przeciwnik> listaPostaciZCmentarza = new List<Przeciwnik>();
         public List<Przeciwnik> listaPostaciZDziczy = new List<Przeciwnik>();
-        public List<List<Przeciwnik>> listaZestawowPrzeciwnikow = new List<List<Przeciwnik>>();
-        
 
+        //Jeszcze nie używane
+        public List<Przeszkoda> listaPrzeszkod = new List<Przeszkoda>();
+        
+        //Konstruktor domyślny
         public Gra()
         {
             //Tworzenie infrastruktury
@@ -34,8 +35,24 @@ namespace RPG
             UtworzListePrzeszkod();
             UtworzListyPostaci();
             UtworzZestawyPrzeciwnikow();
-
             UstawPoczatkowegoGracza();
+        }
+
+        //Konstruktor kopiujący
+        public Gra(Gra kopiowanaGra)
+        {
+            this.gracz = kopiowanaGra.gracz;
+            this.listaZadan = kopiowanaGra.listaZadan;
+            this.listaPrzedmiotow = kopiowanaGra.listaPrzedmiotow;
+            this.listaPozywieniaIMikstur = kopiowanaGra.listaPozywieniaIMikstur;
+            this.listaUmiejetnosciFizycznych = kopiowanaGra.listaUmiejetnosciFizycznych;
+            this.listaUmiejetnosciMagicznych = kopiowanaGra.listaUmiejetnosciMagicznych;
+            this.listaPrzeszkod = kopiowanaGra.listaPrzeszkod;
+            this.listaPostaciFabularnych = kopiowanaGra.listaPostaciFabularnych;
+            this.listaPostaciZMiasta = kopiowanaGra.listaPostaciZMiasta;
+            this.listaPostaciZCmentarza = kopiowanaGra.listaPostaciZCmentarza;
+            this.listaPostaciZDziczy = kopiowanaGra.listaPostaciZDziczy;
+            this.listaZestawowPrzeciwnikow = kopiowanaGra.listaZestawowPrzeciwnikow;
         }
 
         //Ustawienie statystyk, przedmiotow i zadan gracza na takie jakie ma miec na początku gry

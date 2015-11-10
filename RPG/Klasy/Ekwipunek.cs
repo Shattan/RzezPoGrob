@@ -14,12 +14,12 @@ namespace RPG
         public int Zrecznosc { get; set; }
         public int Witalnosc { get; set; }
         public int Inteligencja { get; set; }
-        public int Obrazenia { get; set; }
-        public int Pancerz { get; set; }
-        public int HP { get; set; }
-        public int Energia { get; set; }
-        public int SzansaNaTrafienie { get; set; }
-        public int SzansaNaKrytyczne { get; set; }
+        public double Obrazenia { get; set; }
+        public double Pancerz { get; set; }
+        public double HP { get; set; }
+        public double Energia { get; set; }
+        public double SzansaNaTrafienie { get; set; }
+        public double SzansaNaKrytyczne { get; set; }
         
         const double przemnoznikStatystyk = 5;
         const double przemnoznikCechEkwipunku = 2;

@@ -21,12 +21,12 @@ namespace RPG
         public int ZrecznoscPodstawa { get; set; }
         public int WitalnoscPodstawa { get; set; }
         public int InteligencjaPodstawa { get; set; }
-        public int ObrazeniaPodstawa { get; set; }
-        public int PancerzPodstawa { get; set; }
-        public int HPPodstawa { get; set; }
-        public int EnergiaPodstawa { get; set; }
-        public int SzansaNaTrafieniePodstawa { get; set; }
-        public int SzansaNaKrytycznePodstawa { get; set; }
+        public double ObrazeniaPodstawa { get; set; }
+        public double PancerzPodstawa { get; set; }
+        public double HPPodstawa { get; set; }
+        public double EnergiaPodstawa { get; set; }
+        public double SzansaNaTrafieniePodstawa { get; set; }
+        public double SzansaNaKrytycznePodstawa { get; set; }
 
         public int SumaStatystykPodstawowych { get { return SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa; } }
 

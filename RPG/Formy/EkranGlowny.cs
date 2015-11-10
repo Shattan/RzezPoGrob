@@ -44,7 +44,7 @@ namespace RPG
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();
-            //Dzwiek zakomentowany ze wzgledow ciaglego debugowania
+
             OdtworzDzwiek("Resources/Dźwięki/VC-HOfaH.wav");
         }
 
@@ -113,11 +113,11 @@ namespace RPG
         public void OdswiezWolneOdtwarzacze()
         {
             wolneOdtwarzacze.Clear();
-            foreach (MediaPlayer player in odtwarzaczeDzwieku)
+            foreach (MediaPlayer odtwarzacz in odtwarzaczeDzwieku)
             {
-                if (player.HasAudio)
+                if (odtwarzacz.HasAudio)
                 {
-                    if (player.NaturalDuration == player.Position)
+                    if (odtwarzacz.NaturalDuration == odtwarzacz.Position)
                     {
                         wolneOdtwarzacze.Add(true);
                     }
@@ -144,9 +144,17 @@ namespace RPG
             }
         }
 
-        public void ZatrzymajDzwiek(MediaPlayer odtwarzacz)
+        public void ZatrzymajDzwiek(string sciezkaDzwieku)
         {
-            odtwarzacz.Stop();
+            MediaPlayer odtwarzaczDoZatrzymania = odtwarzaczeDzwieku.Find(x => x.Source.Equals(sciezkaDzwieku));
+            odtwarzaczDoZatrzymania.Stop();
+        }
+        public void ZatrzymajWszystkieOdtwarzacze()
+        {
+            foreach (MediaPlayer odtwarzacz in odtwarzaczeDzwieku)
+            {
+                odtwarzacz.Stop();
+            }
         }
 
         //Metoda do zmiany głośności grających odtwarzaczy (przyciszenie wszystkiego, gdy chcemy zaakcentować na przykład rozmowę)
@@ -210,6 +218,7 @@ namespace RPG
 
         private void UruchomGre()
         {
+            ZatrzymajWszystkieOdtwarzacze();
             PictureBoxObrazWczytywania.Visible = true;
             EkranGryMapaTlo ekranGryMapaTlo = new EkranGryMapaTlo(this);
             ekranGryMapaTlo.ShowDialog();
@@ -217,16 +226,19 @@ namespace RPG
             if (ekranGryMapaTlo.DialogResult == DialogResult.OK)
             {
                 PictureBoxObrazWczytywania.Visible = false;
+                OdtworzDzwiek("Resources/Dźwięki/VC-HOfaH.wav");
                 //DialogResult = DialogResult.OK;
             }
             else if (ekranGryMapaTlo.DialogResult == DialogResult.Cancel)
             {
                 PictureBoxObrazWczytywania.Visible = false;
+                OdtworzDzwiek("Resources/Dźwięki/VC-HOfaH.wav");
                 //DialogResult = DialogResult.Cancel;
             }
             else if (ekranGryMapaTlo.DialogResult == DialogResult.Abort)
             {
                 PictureBoxObrazWczytywania.Visible = false;
+                OdtworzDzwiek("Resources/Dźwięki/VC-HOfaH.wav");
                 //DialogResult = DialogResult.Abort;
             }
         }

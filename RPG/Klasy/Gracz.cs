@@ -17,12 +17,12 @@ namespace RPG
         public int ZrecznoscZPrzedmiotami {  get { return ZrecznoscPodstawa + ZalozonaBron.Zrecznosc + ZalozonyPancerz.Zrecznosc + ZalozonaTarcza.Zrecznosc; } }
         public int WitalnoscZPrzedmiotami {  get { return WitalnoscPodstawa + ZalozonaBron.Witalnosc + ZalozonyPancerz.Witalnosc + ZalozonaTarcza.Witalnosc; } }
         public int InteligencjaZPrzedmiotami {  get { return InteligencjaPodstawa + ZalozonaBron.Inteligencja + ZalozonyPancerz.Inteligencja + ZalozonaTarcza.Inteligencja; } }
-        public int ObrazeniaZPrzedmiotami {  get { return ObrazeniaPodstawa + ZalozonaBron.Obrazenia + ZalozonyPancerz.Obrazenia + ZalozonaTarcza.Obrazenia; } }
-        public int PancerzZPrzedmiotami {  get { return PancerzPodstawa + ZalozonaBron.Pancerz + ZalozonyPancerz.Pancerz + ZalozonaTarcza.Pancerz; } }
-        public int HPZPrzedmiotami {  get { return HPPodstawa + ZalozonaBron.HP + ZalozonyPancerz.HP + ZalozonaTarcza.HP; } }
-        public int EnergiaZPrzedmiotami {  get { return EnergiaPodstawa + ZalozonaBron.Energia + ZalozonyPancerz.Energia + ZalozonaTarcza.Energia; } }
-        public int SzansaNaTrafienieZPrzedmiotami {  get { return SzansaNaTrafieniePodstawa + ZalozonaBron.SzansaNaTrafienie + ZalozonyPancerz.SzansaNaTrafienie + ZalozonaTarcza.SzansaNaTrafienie; } }
-        public int SzansaNaKrytyczneZPrzedmiotami {  get { return SzansaNaKrytycznePodstawa + ZalozonaBron.SzansaNaKrytyczne + ZalozonyPancerz.SzansaNaKrytyczne + ZalozonaTarcza.SzansaNaKrytyczne; } }
+        public double ObrazeniaZPrzedmiotami { get { return ObrazeniaPodstawa + ZalozonaBron.Obrazenia + ZalozonyPancerz.Obrazenia + ZalozonaTarcza.Obrazenia; } }
+        public double PancerzZPrzedmiotami { get { return PancerzPodstawa + ZalozonaBron.Pancerz + ZalozonyPancerz.Pancerz + ZalozonaTarcza.Pancerz; } }
+        public double HPZPrzedmiotami { get { return HPPodstawa + ZalozonaBron.HP + ZalozonyPancerz.HP + ZalozonaTarcza.HP; } }
+        public double EnergiaZPrzedmiotami { get { return EnergiaPodstawa + ZalozonaBron.Energia + ZalozonyPancerz.Energia + ZalozonaTarcza.Energia; } }
+        public double SzansaNaTrafienieZPrzedmiotami { get { return SzansaNaTrafieniePodstawa + ZalozonaBron.SzansaNaTrafienie + ZalozonyPancerz.SzansaNaTrafienie + ZalozonaTarcza.SzansaNaTrafienie; } }
+        public double SzansaNaKrytyczneZPrzedmiotami { get { return SzansaNaKrytycznePodstawa + ZalozonaBron.SzansaNaKrytyczne + ZalozonyPancerz.SzansaNaKrytyczne + ZalozonaTarcza.SzansaNaKrytyczne; } }
 
         public int BonusDoSily { get { return 0; } }
         public int BonusDoZrecznosci { get { return 0; } }
@@ -39,12 +39,12 @@ namespace RPG
         public int Zrecznosc { get { return ZrecznoscZPrzedmiotami + BonusDoZrecznosci; } }
         public int Witalnosc { get { return WitalnoscZPrzedmiotami + BonusDoWitalnosci; } }
         public int Inteligencja { get { return InteligencjaZPrzedmiotami + BonusDoInteligencji; } }
-        public int Obrazenia { get { return ObrazeniaPodstawa + BonusDoObrazen; } }
-        public int Pancerz { get { return PancerzPodstawa + BonusDoPancerza; } }
-        public int HP { get { return HPZPrzedmiotami + BonusDoHP; } }
-        public int Energia { get { return EnergiaPodstawa + BonusDoEnergii; } }
-        public int SzansaNaTrafienie { get { return SzansaNaTrafienieZPrzedmiotami + BonusDoSzansyNaTrafienie; } }
-        public int SzansaNaKrytyczne { get { return SzansaNaKrytyczneZPrzedmiotami + BonusDoSzansyNaKrytyczne; } }
+        public double Obrazenia { get { return ObrazeniaPodstawa + BonusDoObrazen; } }
+        public double Pancerz { get { return PancerzPodstawa + BonusDoPancerza; } }
+        public double HP { get { return HPZPrzedmiotami + BonusDoHP; } }
+        public double Energia { get { return EnergiaPodstawa + BonusDoEnergii; } }
+        public double SzansaNaTrafienie { get { return SzansaNaTrafienieZPrzedmiotami + BonusDoSzansyNaTrafienie; } }
+        public double SzansaNaKrytyczne { get { return SzansaNaKrytyczneZPrzedmiotami + BonusDoSzansyNaKrytyczne; } }
 
         private int obecnyPoziom=1;
 
@@ -117,7 +117,7 @@ namespace RPG
         }
 
         //Konstruktor z parametrami
-        public Gracz(string nazwa, string obrazekNaMapie, string obrazekMowienia, int doswiadczenie, int zloto, int silaPodstawa, int zrecznoscPodstawa,int witalnoscPodstawa, int inteligencjaPodstawa, int obrazeniaPodstawa, int pancerzPodstawa, int hPPodstawa, int energiaPodstawa, int szansaNaTrafieniePodstawa, int szansaNaKrytycznePodstawa,Ekwipunek zalozonaBron, Ekwipunek zalozonyPancerz,Ekwipunek zalozonaTarcza, List<Umiejetnosc> umiejetnosciFizyczne,List<Umiejetnosc> umiejetnosciMagiczne, List<Ekwipunek>plecak,List<Zadanie>zadania,List<Strawa> miksturyIPozywienie)
+        public Gracz(string nazwa, string obrazekNaMapie, string obrazekMowienia, int doswiadczenie, int zloto, int silaPodstawa, int zrecznoscPodstawa, int witalnoscPodstawa, int inteligencjaPodstawa, double obrazeniaPodstawa, double pancerzPodstawa, double hPPodstawa, double energiaPodstawa, double szansaNaTrafieniePodstawa, double szansaNaKrytycznePodstawa, Ekwipunek zalozonaBron, Ekwipunek zalozonyPancerz, Ekwipunek zalozonaTarcza, List<Umiejetnosc> umiejetnosciFizyczne, List<Umiejetnosc> umiejetnosciMagiczne, List<Ekwipunek> plecak, List<Zadanie> zadania, List<Strawa> miksturyIPozywienie)
         {
             Nazwa = nazwa;
             ObrazekNaMapie = obrazekNaMapie;

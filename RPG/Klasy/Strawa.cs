@@ -10,8 +10,8 @@ namespace RPG
     {
         public string Obrazek { get; set; }
         public string Nazwa { get; set; }
-        public int HP { get; set; }
-        public int Energia { get; set; }
+        public double HP { get; set; }
+        public double Energia { get; set; }
         
         const double przemnoznikHPIEnergii = 1;
 

@@ -355,12 +355,12 @@ namespace RPG
                     listaZWynikami.Add(pierwszyElement.Zrecznosc);
                     listaZWynikami.Add(pierwszyElement.Witalnosc);
                     listaZWynikami.Add(pierwszyElement.Inteligencja);
-                    listaZWynikami.Add(pierwszyElement.Obrazenia);
-                    listaZWynikami.Add(pierwszyElement.Pancerz);
-                    listaZWynikami.Add(pierwszyElement.HP);
-                    listaZWynikami.Add(pierwszyElement.Energia);
-                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie);
-                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne);
+                    listaZWynikami.Add((int)pierwszyElement.Obrazenia);
+                    listaZWynikami.Add((int)pierwszyElement.Pancerz);
+                    listaZWynikami.Add((int)pierwszyElement.HP);
+                    listaZWynikami.Add((int)pierwszyElement.Energia);
+                    listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie);
+                    listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne);
                 }
                 else if (trzeciElement == null || drugieDzialanie == ' ')
                 {
@@ -371,24 +371,24 @@ namespace RPG
                             listaZWynikami.Add(pierwszyElement.Zrecznosc + drugiElement.Zrecznosc);
                             listaZWynikami.Add(pierwszyElement.Witalnosc + drugiElement.Witalnosc);
                             listaZWynikami.Add(pierwszyElement.Inteligencja + drugiElement.Inteligencja);
-                            listaZWynikami.Add(pierwszyElement.Obrazenia + drugiElement.Obrazenia);
-                            listaZWynikami.Add(pierwszyElement.Pancerz + drugiElement.Pancerz);
-                            listaZWynikami.Add(pierwszyElement.HP + drugiElement.HP);
-                            listaZWynikami.Add(pierwszyElement.Energia + drugiElement.Energia);
-                            listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie + drugiElement.SzansaNaTrafienie);
-                            listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne + drugiElement.SzansaNaKrytyczne);
+                            listaZWynikami.Add((int)pierwszyElement.Obrazenia + (int)drugiElement.Obrazenia);
+                            listaZWynikami.Add((int)pierwszyElement.Pancerz + (int)drugiElement.Pancerz);
+                            listaZWynikami.Add((int)pierwszyElement.HP + (int)drugiElement.HP);
+                            listaZWynikami.Add((int)pierwszyElement.Energia + (int)drugiElement.Energia);
+                            listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie + (int)drugiElement.SzansaNaTrafienie);
+                            listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne + (int)drugiElement.SzansaNaKrytyczne);
                             break;
                         case '-':
                             listaZWynikami.Add(pierwszyElement.Sila - drugiElement.Sila);
                             listaZWynikami.Add(pierwszyElement.Zrecznosc - drugiElement.Zrecznosc);
                             listaZWynikami.Add(pierwszyElement.Witalnosc - drugiElement.Witalnosc);
                             listaZWynikami.Add(pierwszyElement.Inteligencja - drugiElement.Inteligencja);
-                            listaZWynikami.Add(pierwszyElement.Obrazenia - drugiElement.Obrazenia);
-                            listaZWynikami.Add(pierwszyElement.Pancerz - drugiElement.Pancerz);
-                            listaZWynikami.Add(pierwszyElement.HP - drugiElement.HP);
-                            listaZWynikami.Add(pierwszyElement.Energia - drugiElement.Energia);
-                            listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie - drugiElement.SzansaNaTrafienie);
-                            listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne - drugiElement.SzansaNaKrytyczne);
+                            listaZWynikami.Add((int)pierwszyElement.Obrazenia - (int)drugiElement.Obrazenia);
+                            listaZWynikami.Add((int)pierwszyElement.Pancerz - (int)drugiElement.Pancerz);
+                            listaZWynikami.Add((int)pierwszyElement.HP - (int)drugiElement.HP);
+                            listaZWynikami.Add((int)pierwszyElement.Energia - (int)drugiElement.Energia);
+                            listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie - (int)drugiElement.SzansaNaTrafienie);
+                            listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne - (int)drugiElement.SzansaNaKrytyczne);
                             break;
                     }
                 }
@@ -404,24 +404,24 @@ namespace RPG
                                     listaZWynikami.Add(pierwszyElement.Zrecznosc + drugiElement.Zrecznosc + trzeciElement.Zrecznosc);
                                     listaZWynikami.Add(pierwszyElement.Witalnosc + drugiElement.Witalnosc + trzeciElement.Witalnosc);
                                     listaZWynikami.Add(pierwszyElement.Inteligencja + drugiElement.Inteligencja + trzeciElement.Inteligencja);
-                                    listaZWynikami.Add(pierwszyElement.Obrazenia + drugiElement.Obrazenia + trzeciElement.Obrazenia);
-                                    listaZWynikami.Add(pierwszyElement.Pancerz + drugiElement.Pancerz + trzeciElement.Pancerz);
-                                    listaZWynikami.Add(pierwszyElement.HP + drugiElement.HP + trzeciElement.HP);
-                                    listaZWynikami.Add(pierwszyElement.Energia + drugiElement.Energia + trzeciElement.Energia);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie + drugiElement.SzansaNaTrafienie + trzeciElement.SzansaNaTrafienie);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne + drugiElement.SzansaNaKrytyczne + trzeciElement.SzansaNaKrytyczne);
+                                    listaZWynikami.Add((int)pierwszyElement.Obrazenia + (int)drugiElement.Obrazenia + (int)trzeciElement.Obrazenia);
+                                    listaZWynikami.Add((int)pierwszyElement.Pancerz + (int)drugiElement.Pancerz + (int)trzeciElement.Pancerz);
+                                    listaZWynikami.Add((int)pierwszyElement.HP + (int)drugiElement.HP + (int)trzeciElement.HP);
+                                    listaZWynikami.Add((int)pierwszyElement.Energia + (int)drugiElement.Energia + (int)trzeciElement.Energia);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie + (int)drugiElement.SzansaNaTrafienie + (int)trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne + (int)drugiElement.SzansaNaKrytyczne + (int)trzeciElement.SzansaNaKrytyczne);
                                     break;
                                 case '-':
                                     listaZWynikami.Add(pierwszyElement.Sila + drugiElement.Sila - trzeciElement.Sila);
                                     listaZWynikami.Add(pierwszyElement.Zrecznosc + drugiElement.Zrecznosc - trzeciElement.Zrecznosc);
                                     listaZWynikami.Add(pierwszyElement.Witalnosc + drugiElement.Witalnosc - trzeciElement.Witalnosc);
                                     listaZWynikami.Add(pierwszyElement.Inteligencja + drugiElement.Inteligencja - trzeciElement.Inteligencja);
-                                    listaZWynikami.Add(pierwszyElement.Obrazenia + drugiElement.Obrazenia - trzeciElement.Obrazenia);
-                                    listaZWynikami.Add(pierwszyElement.Pancerz + drugiElement.Pancerz - trzeciElement.Pancerz);
-                                    listaZWynikami.Add(pierwszyElement.HP + drugiElement.HP - trzeciElement.HP);
-                                    listaZWynikami.Add(pierwszyElement.Energia + drugiElement.Energia - trzeciElement.Energia);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie + drugiElement.SzansaNaTrafienie - trzeciElement.SzansaNaTrafienie);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne + drugiElement.SzansaNaKrytyczne - trzeciElement.SzansaNaKrytyczne);
+                                    listaZWynikami.Add((int)pierwszyElement.Obrazenia + (int)drugiElement.Obrazenia - (int)trzeciElement.Obrazenia);
+                                    listaZWynikami.Add((int)pierwszyElement.Pancerz + (int)drugiElement.Pancerz - (int)trzeciElement.Pancerz);
+                                    listaZWynikami.Add((int)pierwszyElement.HP + (int)drugiElement.HP - (int)trzeciElement.HP);
+                                    listaZWynikami.Add((int)pierwszyElement.Energia + (int)drugiElement.Energia - (int)trzeciElement.Energia);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie + (int)drugiElement.SzansaNaTrafienie - (int)trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne + (int)drugiElement.SzansaNaKrytyczne - (int)trzeciElement.SzansaNaKrytyczne);
                                     break;
                             }
                             break;
@@ -433,24 +433,24 @@ namespace RPG
                                     listaZWynikami.Add(pierwszyElement.Zrecznosc - drugiElement.Zrecznosc + trzeciElement.Zrecznosc);
                                     listaZWynikami.Add(pierwszyElement.Witalnosc - drugiElement.Witalnosc + trzeciElement.Witalnosc);
                                     listaZWynikami.Add(pierwszyElement.Inteligencja - drugiElement.Inteligencja + trzeciElement.Inteligencja);
-                                    listaZWynikami.Add(pierwszyElement.Obrazenia - drugiElement.Obrazenia + trzeciElement.Obrazenia);
-                                    listaZWynikami.Add(pierwszyElement.Pancerz - drugiElement.Pancerz + trzeciElement.Pancerz);
-                                    listaZWynikami.Add(pierwszyElement.HP - drugiElement.HP + trzeciElement.HP);
-                                    listaZWynikami.Add(pierwszyElement.Energia - drugiElement.Energia + trzeciElement.Energia);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie - drugiElement.SzansaNaTrafienie + trzeciElement.SzansaNaTrafienie);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne - drugiElement.SzansaNaKrytyczne + trzeciElement.SzansaNaKrytyczne);
+                                    listaZWynikami.Add((int)pierwszyElement.Obrazenia - (int)drugiElement.Obrazenia + (int)trzeciElement.Obrazenia);
+                                    listaZWynikami.Add((int)pierwszyElement.Pancerz - (int)drugiElement.Pancerz + (int)trzeciElement.Pancerz);
+                                    listaZWynikami.Add((int)pierwszyElement.HP - (int)drugiElement.HP + (int)trzeciElement.HP);
+                                    listaZWynikami.Add((int)pierwszyElement.Energia - (int)drugiElement.Energia + (int)trzeciElement.Energia);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie - (int)drugiElement.SzansaNaTrafienie + (int)trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne - (int)drugiElement.SzansaNaKrytyczne + (int)trzeciElement.SzansaNaKrytyczne);
                                     break;
                                 case '-':
                                     listaZWynikami.Add(pierwszyElement.Sila - drugiElement.Sila - trzeciElement.Sila);
                                     listaZWynikami.Add(pierwszyElement.Zrecznosc - drugiElement.Zrecznosc - trzeciElement.Zrecznosc);
                                     listaZWynikami.Add(pierwszyElement.Witalnosc - drugiElement.Witalnosc - trzeciElement.Witalnosc);
                                     listaZWynikami.Add(pierwszyElement.Inteligencja - drugiElement.Inteligencja - trzeciElement.Inteligencja);
-                                    listaZWynikami.Add(pierwszyElement.Obrazenia - drugiElement.Obrazenia - trzeciElement.Obrazenia);
-                                    listaZWynikami.Add(pierwszyElement.Pancerz - drugiElement.Pancerz - trzeciElement.Pancerz);
-                                    listaZWynikami.Add(pierwszyElement.HP - drugiElement.HP - trzeciElement.HP);
-                                    listaZWynikami.Add(pierwszyElement.Energia - drugiElement.Energia - trzeciElement.Energia);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie - drugiElement.SzansaNaTrafienie - trzeciElement.SzansaNaTrafienie);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne - drugiElement.SzansaNaKrytyczne - trzeciElement.SzansaNaKrytyczne);
+                                    listaZWynikami.Add((int)pierwszyElement.Obrazenia - (int)drugiElement.Obrazenia - (int)trzeciElement.Obrazenia);
+                                    listaZWynikami.Add((int)pierwszyElement.Pancerz - (int)drugiElement.Pancerz - (int)trzeciElement.Pancerz);
+                                    listaZWynikami.Add((int)pierwszyElement.HP - (int)drugiElement.HP - (int)trzeciElement.HP);
+                                    listaZWynikami.Add((int)pierwszyElement.Energia - (int)drugiElement.Energia - (int)trzeciElement.Energia);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie - (int)drugiElement.SzansaNaTrafienie - (int)trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne - (int)drugiElement.SzansaNaKrytyczne - (int)trzeciElement.SzansaNaKrytyczne);
                                     break;
                             }
                             break;
