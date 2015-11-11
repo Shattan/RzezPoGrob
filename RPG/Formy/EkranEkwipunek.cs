@@ -1023,30 +1023,33 @@ namespace RPG
 
         private void Zegar_Tick(object sender, EventArgs e)
         {
-            //Ustawianie pozycji okienka z informacjami o przedmiocie
-            if (MousePosition.X + 10 + PanelOpisPrzedmiotu.Width < Width)
+            if (PanelOpisPrzedmiotu.Visible == true)
             {
-                if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
+                //Ustawianie pozycji okienka z informacjami o przedmiocie
+                if (MousePosition.X + 10 + PanelOpisPrzedmiotu.Width < Width)
                 {
-                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y);
+                    if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
+                    {
+                        PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y);
+                    }
+                    else
+                    {
+                        PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y - PanelOpisPrzedmiotu.Height);
+                    }
                 }
                 else
                 {
-                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y - PanelOpisPrzedmiotu.Height);
+                    if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
+                    {
+                        PanelOpisPrzedmiotu.Location = new Point(MousePosition.X - 10 - PanelOpisPrzedmiotu.Width, MousePosition.Y);
+                    }
+                    else
+                    {
+                        PanelOpisPrzedmiotu.Location = new Point(MousePosition.X - 10 - PanelOpisPrzedmiotu.Width, MousePosition.Y - PanelOpisPrzedmiotu.Height);
+                    }
                 }
+                PanelOpisPrzedmiotu.BringToFront();
             }
-            else
-            {
-                if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
-                {
-                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X - 10 - PanelOpisPrzedmiotu.Width, MousePosition.Y);
-                }
-                else
-                {
-                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X - 10 - PanelOpisPrzedmiotu.Width, MousePosition.Y - PanelOpisPrzedmiotu.Height);
-                }
-            }
-            PanelOpisPrzedmiotu.BringToFront();
         }
 
 
@@ -1056,8 +1059,8 @@ namespace RPG
             if (gracz.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
             {
                 gracz.SilaPodstawa--;
+                OdswiezStatystyki();
             }
-            OdswiezStatystyki();
         }
 
         private void PictureBoxSilaPlus_Click(object sender, EventArgs e)
@@ -1074,8 +1077,8 @@ namespace RPG
             if (gracz.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
             {
                 gracz.ZrecznoscPodstawa--;
+                OdswiezStatystyki();
             }
-            OdswiezStatystyki();
         }
 
         private void PictureBoxZrecznoscPlus_Click(object sender, EventArgs e)
@@ -1092,8 +1095,8 @@ namespace RPG
             if (gracz.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
             {
                 gracz.WitalnoscPodstawa--;
+                OdswiezStatystyki();
             }
-            OdswiezStatystyki();
         }
 
         private void PictureBoxWitalnoscPlus_Click(object sender, EventArgs e)
@@ -1110,8 +1113,8 @@ namespace RPG
             if (gracz.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
             {
                 gracz.InteligencjaPodstawa--;
+                OdswiezStatystyki();
             }
-            OdswiezStatystyki();
         }
 
         private void PictureBoxInteligencjaPlus_Click(object sender, EventArgs e)

@@ -466,7 +466,7 @@
     <Content Include="Resources\Grafiki menu\Przycisk poprzedni standard.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki menu\Przykładowy przycisk.png">
+    <Content Include="Resources\Grafiki przycisków umiejętności\Przykładowy przycisk.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Tło dla pasków.png">

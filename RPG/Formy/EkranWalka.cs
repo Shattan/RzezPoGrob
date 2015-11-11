@@ -126,16 +126,16 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyborMikstury, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
 
             //Przyciski sterujące
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakFizyczny, "Resources/Grafiki menu/Przykładowy przycisk.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakMagiczny, "Resources/Grafiki menu/Przykładowy przycisk.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxEkwipunek, "Resources/Grafiki menu/Przykładowy przycisk.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka, "Resources/Grafiki menu/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakFizyczny, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakMagiczny, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxEkwipunek, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdzZAtakowFizycznych, "Resources/Grafiki menu/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdzZAtakowFizycznych, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZAtakowMagicznych, "Resources/Grafiki menu/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZAtakowMagicznych, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZEkwipunku, "Resources/Grafiki menu/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZEkwipunku, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
 
 
             //Okienka informacyjne
@@ -149,6 +149,31 @@ namespace RPG
         {
             gracz = new Gracz(ekranGry.gra.gracz);
             przeciwnik = new Przeciwnik(ekranGry.wylosowanyPrzeciwnik);
+
+            foreach (Umiejetnosc umiejetnosc in gracz.UmiejetnosciFizyczne)
+            {
+                PictureBox nowaUmiejetnosc = new PictureBox();
+                nowaUmiejetnosc.Size = new Size(Width*30/100,Height*5/100);
+                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaUmiejetnosc, umiejetnosc.ObrazekPrzycisku);
+                nowaUmiejetnosc.Name = umiejetnosc.Nazwa;
+                FlowLayoutPanelWyborAtakuFizycznego.Controls.Add(nowaUmiejetnosc);
+            }
+            foreach (Umiejetnosc umiejetnosc in gracz.UmiejetnosciMagiczne)
+            {
+                PictureBox nowaUmiejetnosc = new PictureBox();
+                nowaUmiejetnosc.Size = new Size(Width * 30 / 100, Height * 5 / 100);
+                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaUmiejetnosc, umiejetnosc.ObrazekPrzycisku);
+                nowaUmiejetnosc.Name = umiejetnosc.Nazwa;
+                FlowLayoutPanelWyborAtakuMagicznego.Controls.Add(nowaUmiejetnosc);
+            }
+            foreach (Strawa strawa in gracz.MiksturyIPozywienie)
+            {
+                PictureBox nowaStrawa = new PictureBox();
+                nowaStrawa.Size = new Size(50, 50);
+                Program.UstawObrazEkwipunku(nowaStrawa, strawa.Obrazek);
+                nowaStrawa.Name = strawa.Nazwa;
+                FlowLayoutPanelWyborMikstury.Controls.Add(nowaStrawa);
+            }
         }
 
         void OdswiezDane()

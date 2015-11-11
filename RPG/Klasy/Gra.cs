@@ -212,19 +212,19 @@ namespace RPG
         public void UtworzListyUmiejetnosci()
         {
             //index 0
-            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Wymachiwanie"));
+            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Wymachiwanie", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "Brak", "Sila", 0, 0, 0, 0, 0, 1, 0, 0, true, false, false, false, false));
             //index 1
-            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Szarża"));
+            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Szarża", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "tarcza", "Witalnosc", 0, 0, 0, 0, 0, 1, 0, 0, true, false, false, false, false));
             //index 2
-            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Pacnięcie"));
+            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Pacnięcie", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "Brak", "Zrecznosc", 0, 0, 0, 0, 0, 1, 0, 0, true, false, false, false, false));
 
 
             //index 0
-            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula ognia"));
+            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula ognia", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "Brak", "Sila", 0, 0, 0, 0, 0, 1, 0, 0, false, false, false, false, false));
             //index 1
-            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula kwasu"));
+            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula kwasu", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "Brak", "Sila", 0, 0, 0, 0, 0, 1, 0, 0, false, false, false, false, false));
             //index 2
-            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula pustki"));
+            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula pustki", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "Brak", "Sila", 0, 0, 0, 0, 0, 1, 0, 0, false, false, false, false, false));
         }
 
         public void UtworzListePrzedmiotow()
