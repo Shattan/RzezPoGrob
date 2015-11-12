@@ -103,13 +103,14 @@
             this.ClientSize = new System.Drawing.Size(767, 375);
             this.Controls.Add(this.PanelDanychGracza);
             this.Controls.Add(this.PanelDanychPrzeciwnika);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranWalkaTlo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EkranWalkaTlo";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.EkranWalkaTlo_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranWalkaTlo_FormClosing);
             this.Shown += new System.EventHandler(this.EkranNowaGraTlo_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiGracza)).EndInit();
             this.PanelDanychGracza.ResumeLayout(false);

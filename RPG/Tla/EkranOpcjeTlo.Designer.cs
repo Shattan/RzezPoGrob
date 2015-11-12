@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class EkranEkranOpcjeTlo
+    partial class EkranOpcjeTlo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,20 @@
         {
             this.SuspendLayout();
             // 
-            // EkranEkranOpcjeTlo
+            // EkranOpcjeTlo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(803, 395);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EkranEkranOpcjeTlo";
+            this.Name = "EkranOpcjeTlo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EkranEkranOpcjeTlo";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranOpcjeTlo_FormClosing);
             this.Shown += new System.EventHandler(this.EkranEkranOpcjeTlo_Shown);
             this.ResumeLayout(false);
 

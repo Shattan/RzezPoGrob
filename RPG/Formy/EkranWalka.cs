@@ -18,16 +18,16 @@ namespace RPG
         EkranGry ekranGry;
 
         Gracz gracz = new Gracz();
-        NPC przeciwnik = new NPC();
+        Przeciwnik przeciwnik = new Przeciwnik();
 
-        int obecnyPoziomHPGracza = 0;
-        int obecnyPoziomHPPrzeciwnika = 0;
-        int obecnyPoziomEnergiiGracza = 0;
-        int obecnyPoziomEnergiiPrzeciwnika = 0;
-        int maksymalnyPoziomHPGracza = 0;
-        int maksymalnyPoziomHPPrzeciwnika = 0;
-        int maksymalnyPoziomEnergiiGracza = 0;
-        int maksymalnyPoziomEnergiiPrzeciwnika = 0;
+        double obecnyPoziomHPGracza = 0;
+        double obecnyPoziomHPPrzeciwnika = 0;
+        double obecnyPoziomEnergiiGracza = 0;
+        double obecnyPoziomEnergiiPrzeciwnika = 0;
+        double maksymalnyPoziomHPGracza = 0;
+        double maksymalnyPoziomHPPrzeciwnika = 0;
+        double maksymalnyPoziomEnergiiGracza = 0;
+        double maksymalnyPoziomEnergiiPrzeciwnika = 0;
         #endregion
 
         public EkranWalka(EkranGry ekranGry)
@@ -38,17 +38,19 @@ namespace RPG
 
             RozmiescElementy();
             KolorujElementy();
+            WczytajPrzeciwnikaIGracza();
             OdswiezDane();
         }
 
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             //Ustawienia okienka gry
             Program.DopasujRozmiarFormyDoEkranu(this);
 
             //Ustawienie przycisków
-            PictureBoxUcieczka.Size = new Size(Width/3,30);
+            PictureBoxUcieczka.Size = new Size(Width*30/100,Height*5/100);
 
             foreach (PictureBox przycisk in FlowLayoutPanelWyboru.Controls)
             {
@@ -97,8 +99,8 @@ namespace RPG
             PictureBoxPasekHPPrzeciwnika.Location = new Point(PictureBoxPasekHPGracza.Location.X, PictureBoxPasekHPGracza.Location.Y);
             PictureBoxPasekEnergiiPrzeciwnika.Location = new Point(PictureBoxPasekHPGracza.Location.X, PictureBoxPasekHPGracza.Location.Y + PictureBoxPasekHPGracza.Height);
 
-            LabelDaneGracza.Size = new Size(PictureBoxPasekEnergiiGracza.Width, PictureBoxPasekEnergiiGracza.Location.Y + PictureBoxPasekEnergiiGracza.Height);
-            LabelDanePrzeciwnika.Size = new Size(PictureBoxPasekEnergiiPrzeciwnika.Width, PictureBoxPasekEnergiiPrzeciwnika.Location.Y + PictureBoxPasekEnergiiPrzeciwnika.Height);
+            LabelDaneGracza.Size = new Size(PictureBoxPasekEnergiiGracza.Width, PanelDanychGracza.Height - PictureBoxPasekEnergiiGracza.Location.Y - PictureBoxPasekEnergiiGracza.Height);
+            LabelDanePrzeciwnika.Size = new Size(PictureBoxPasekEnergiiPrzeciwnika.Width, PanelDanychPrzeciwnika.Height - PictureBoxPasekEnergiiPrzeciwnika.Location.Y - PictureBoxPasekEnergiiPrzeciwnika.Height);
             LabelDaneGracza.Location = new Point(PictureBoxPasekEnergiiGracza.Location.X, PictureBoxPasekEnergiiGracza.Location.Y + PictureBoxPasekEnergiiGracza.Height);
             LabelDanePrzeciwnika.Location = new Point(PictureBoxPasekEnergiiPrzeciwnika.Location.X, PictureBoxPasekEnergiiPrzeciwnika.Location.Y + PictureBoxPasekEnergiiPrzeciwnika.Height);
 
@@ -124,18 +126,16 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyborMikstury, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
 
             //Przyciski sterujące
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakFizyczny, "Resources/Grafiki menu/Przykładowy przycisk.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakMagiczny, "Resources/Grafiki menu/Przykładowy przycisk.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxEkwipunek, "Resources/Grafiki menu/Przykładowy przycisk.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka, "Resources/Grafiki menu/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakFizyczny, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakMagiczny, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxEkwipunek, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdzZAtakowFizycznych, "Resources/Grafiki menu/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdzZAtakowFizycznych, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZAtakowMagicznych, "Resources/Grafiki menu/Przykładowy przycisk.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZAtakowMagicznych, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZEkwipunku, "Resources/Grafiki menu/Przykładowy przycisk.png");
-
-
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZEkwipunku, "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png");
 
 
             //Okienka informacyjne
@@ -148,39 +148,71 @@ namespace RPG
         void WczytajPrzeciwnikaIGracza()
         {
             gracz = new Gracz(ekranGry.gra.gracz);
-            przeciwnik = new NPC(ekranGry.gra.listaPostaciZMiasta[0]);
+            przeciwnik = new Przeciwnik(ekranGry.wylosowanyPrzeciwnik);
+
+            foreach (Umiejetnosc umiejetnosc in gracz.UmiejetnosciFizyczne)
+            {
+                PictureBox nowaUmiejetnosc = new PictureBox();
+                nowaUmiejetnosc.Size = new Size(Width*30/100,Height*5/100);
+                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaUmiejetnosc, umiejetnosc.ObrazekPrzycisku);
+                nowaUmiejetnosc.Name = umiejetnosc.Nazwa;
+                FlowLayoutPanelWyborAtakuFizycznego.Controls.Add(nowaUmiejetnosc);
+            }
+            foreach (Umiejetnosc umiejetnosc in gracz.UmiejetnosciMagiczne)
+            {
+                PictureBox nowaUmiejetnosc = new PictureBox();
+                nowaUmiejetnosc.Size = new Size(Width * 30 / 100, Height * 5 / 100);
+                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaUmiejetnosc, umiejetnosc.ObrazekPrzycisku);
+                nowaUmiejetnosc.Name = umiejetnosc.Nazwa;
+                FlowLayoutPanelWyborAtakuMagicznego.Controls.Add(nowaUmiejetnosc);
+            }
+            foreach (Strawa strawa in gracz.MiksturyIPozywienie)
+            {
+                PictureBox nowaStrawa = new PictureBox();
+                nowaStrawa.Size = new Size(50, 50);
+                Program.UstawObrazEkwipunku(nowaStrawa, strawa.Obrazek);
+                nowaStrawa.Name = strawa.Nazwa;
+                FlowLayoutPanelWyborMikstury.Controls.Add(nowaStrawa);
+            }
         }
 
         void OdswiezDane()
         {
-            LabelDaneGracza.Text = ekranGry.gra.gracz.Nazwa;
-            LabelDaneGracza.Text += "Poziom:" + ekranGry.gra.gracz.Poziom;
-            LabelDaneGracza.Text += "Punkty życia: "+ekranGry.gra.gracz.HPZPrzedmiotami*obecnyPoziomHPPrzeciwnika/maksymalnyPoziomHPGracza+"/"+ekranGry.gra.gracz.HPZPrzedmiotami;
+            //obecnyPoziomHP i obecnyPoziomEnergii bedziemy edytowac w trakcie przeliczania walki, te 4 linijki są tylko dla sprawdzenia i będą do usunięcia
+            obecnyPoziomHPGracza = gracz.HP - 15;
+            obecnyPoziomEnergiiGracza = gracz.Energia - 10;
+            obecnyPoziomHPPrzeciwnika = przeciwnik.HP - 20;
+            obecnyPoziomEnergiiPrzeciwnika = przeciwnik.Energia - 5;
 
-            LabelDanePrzeciwnika.Text = "";
-            LabelDanePrzeciwnika.Text += "";
+            double procentHPGracza = obecnyPoziomHPGracza / gracz.HP;
+            double procentHPPrzeciwnika = obecnyPoziomHPPrzeciwnika / przeciwnik.HP;
+            double procentEnergiiGracza = obecnyPoziomEnergiiGracza / gracz.Energia;
+            double procentEnergiiPrzeciwnika = obecnyPoziomEnergiiPrzeciwnika / przeciwnik.Energia;
 
-            obecnyPoziomHPGracza = (ekranGry.gra.gracz.HP - 2) / (ekranGry.gra.gracz.HP);
-            obecnyPoziomEnergiiGracza = (ekranGry.gra.gracz.Energia - 3) / (ekranGry.gra.gracz.Energia);
-            obecnyPoziomHPPrzeciwnika = (ekranGry.gra.listaPostaciZMiasta[0].HP - 2) / (ekranGry.gra.listaPostaciZMiasta[0].HP);
-            obecnyPoziomEnergiiPrzeciwnika = (ekranGry.gra.listaPostaciZMiasta[0].Energia - 3) / (ekranGry.gra.listaPostaciZMiasta[0].Energia);
+            LabelDaneGracza.Text = gracz.Nazwa;
+            LabelDaneGracza.Text += "\nPoziom:" + gracz.Poziom;
+            LabelDaneGracza.Text += "\nPunkty życia: " + gracz.HP * procentHPGracza + "/" + gracz.HP;
+            LabelDaneGracza.Text += "\nEnergia: " + gracz.Energia * procentEnergiiGracza + "/" + gracz.Energia;
 
-            double procentHPGracza = obecnyPoziomHPGracza/maksymalnyPoziomHPGracza;
-            double procentHPPrzeciwnika = obecnyPoziomHPPrzeciwnika/maksymalnyPoziomHPPrzeciwnika;
-            double procentEnergiiGracza = obecnyPoziomEnergiiGracza/maksymalnyPoziomEnergiiGracza;
-            double procentEnergiiPrzeciwnika = obecnyPoziomEnergiiPrzeciwnika/maksymalnyPoziomEnergiiPrzeciwnika;
+            LabelDanePrzeciwnika.Text = przeciwnik.Nazwa;
+            LabelDanePrzeciwnika.Text += "\nPoziom: " + przeciwnik.Poziom;
+            LabelDanePrzeciwnika.Text += "\nPunkty życia: " + przeciwnik.HP * procentHPPrzeciwnika + "/" + przeciwnik.HP;
+            LabelDanePrzeciwnika.Text += "\nEnergia: " + przeciwnik.Energia * procentEnergiiPrzeciwnika + "/" + przeciwnik.Energia;
 
-            UstawPoziomPaska(PictureBoxPasekHPGracza, 70);
+            UstawPoziomPaska(PictureBoxPasekHPGracza, procentHPGracza);
+            UstawPoziomPaska(PictureBoxPasekEnergiiGracza, procentEnergiiGracza);
+            UstawPoziomPaska(PictureBoxPasekHPPrzeciwnika, procentHPPrzeciwnika);
+            UstawPoziomPaska(PictureBoxPasekEnergiiPrzeciwnika, procentEnergiiPrzeciwnika);
         }
         void UstawPoziomPaska(PictureBox pasek, double procentPozostalo)
         {
             if (pasek.Parent.Name == "PanelDanychPrzeciwnika")
             {
-                pasek.Width = (int)(procentPozostalo / 100 * pasek.Width);
+                pasek.Width = (int)(procentPozostalo * pasek.Width);
             }
             else
             {
-                pasek.Width = (int)(procentPozostalo / 100 * pasek.Width);
+                pasek.Width = (int)(procentPozostalo * pasek.Width);
             }
         }
         #endregion
@@ -224,6 +256,7 @@ namespace RPG
             else
             {
                 LabelInformacje.Text = "Udało Ci się uciec!";
+                Enabled = false;
                 TimerDoZamkniecia.Start();
             }
         }
@@ -255,6 +288,11 @@ namespace RPG
             LabelInformacje.Text = "HA! Chciałbyś, żeby się form zamknął, co?!? :D";
             TimerDoZamkniecia.Stop();
             DialogResult = DialogResult.OK;
+        }
+
+        private void EkranWalka_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
         }
 
 

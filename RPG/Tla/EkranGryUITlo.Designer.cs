@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class EkranGryTloUI
+    partial class EkranGryUITlo
     {
         /// <summary>
         /// Required designer variable.
@@ -38,17 +38,19 @@
             this.panelPraweMenu.Size = new System.Drawing.Size(101, 100);
             this.panelPraweMenu.TabIndex = 0;
             // 
-            // EkranGryTloUI
+            // EkranGryUITlo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.panelPraweMenu);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EkranGryTloUI";
+            this.Name = "EkranGryUITlo";
             this.Text = "EkranGryTloUI";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranGryUITlo_FormClosing);
             this.Shown += new System.EventHandler(this.EkranGryTloUI_Shown);
             this.ResumeLayout(false);
 

@@ -8,22 +8,23 @@ namespace RPG
 {
     public class Gra
     {
+        //Wdrożone pola
         public Gracz gracz = new Gracz();
-
         public List<Zadanie> listaZadan = new List<Zadanie>();
         public List<Ekwipunek> listaPrzedmiotow = new List<Ekwipunek>();
         public List<Strawa> listaPozywieniaIMikstur = new List<Strawa>();
         public List<Umiejetnosc> listaUmiejetnosciFizycznych = new List<Umiejetnosc>();
         public List<Umiejetnosc> listaUmiejetnosciMagicznych = new List<Umiejetnosc>();
+        public List<List<Przeciwnik>> listaZestawowPrzeciwnikow = new List<List<Przeciwnik>>();
+        public List<Przeciwnik> listaPostaciFabularnych = new List<Przeciwnik>();
+        public List<Przeciwnik> listaPostaciZMiasta = new List<Przeciwnik>();
+        public List<Przeciwnik> listaPostaciZCmentarza = new List<Przeciwnik>();
+        public List<Przeciwnik> listaPostaciZDziczy = new List<Przeciwnik>();
 
+        //Jeszcze nie używane
         public List<Przeszkoda> listaPrzeszkod = new List<Przeszkoda>();
-        public List<NPC> listaPostaciFabularnych = new List<NPC>();
-        public List<NPC> listaPostaciZMiasta = new List<NPC>();
-        public List<NPC> listaPostaciZCmentarza = new List<NPC>();
-        public List<NPC> listaPostaciZDziczy = new List<NPC>();
-        public List<List<NPC>> listaZestawowPrzeciwnikow = new List<List<NPC>>();
         
-
+        //Konstruktor domyślny
         public Gra()
         {
             //Tworzenie infrastruktury
@@ -34,87 +35,54 @@ namespace RPG
             UtworzListePrzeszkod();
             UtworzListyPostaci();
             UtworzZestawyPrzeciwnikow();
-
             UstawPoczatkowegoGracza();
+        }
+
+        //Konstruktor kopiujący
+        public Gra(Gra kopiowanaGra)
+        {
+            this.gracz = kopiowanaGra.gracz;
+            this.listaZadan = kopiowanaGra.listaZadan;
+            this.listaPrzedmiotow = kopiowanaGra.listaPrzedmiotow;
+            this.listaPozywieniaIMikstur = kopiowanaGra.listaPozywieniaIMikstur;
+            this.listaUmiejetnosciFizycznych = kopiowanaGra.listaUmiejetnosciFizycznych;
+            this.listaUmiejetnosciMagicznych = kopiowanaGra.listaUmiejetnosciMagicznych;
+            this.listaPrzeszkod = kopiowanaGra.listaPrzeszkod;
+            this.listaPostaciFabularnych = kopiowanaGra.listaPostaciFabularnych;
+            this.listaPostaciZMiasta = kopiowanaGra.listaPostaciZMiasta;
+            this.listaPostaciZCmentarza = kopiowanaGra.listaPostaciZCmentarza;
+            this.listaPostaciZDziczy = kopiowanaGra.listaPostaciZDziczy;
+            this.listaZestawowPrzeciwnikow = kopiowanaGra.listaZestawowPrzeciwnikow;
         }
 
         //Ustawienie statystyk, przedmiotow i zadan gracza na takie jakie ma miec na początku gry
         public void UstawPoczatkowegoGracza()
         {
-            gracz.SilaPodstawa=5;
-            gracz.ZrecznoscPodstawa=5;
-            gracz.WitalnoscPodstawa=5;
-            gracz.InteligencjaPodstawa=5;
-            gracz.ObrazeniaPodstawa=5;
-            gracz.PancerzPodstawa=5;
-            gracz.HPPodstawa=5;
-            gracz.EnergiaPodstawa=5;
-            gracz.SzansaNaTrafieniePodstawa=75;
-            gracz.SzansaNaKrytycznePodstawa=5;
-
-            gracz.ZalozonaBron = listaPrzedmiotow[0];
-            gracz.ZalozonyPancerz = listaPrzedmiotow[1];
-            gracz.ZalozonaTarcza = listaPrzedmiotow[2];
-
-            gracz.Plecak.Add(listaPrzedmiotow[0]);
-            gracz.Plecak.Add(listaPrzedmiotow[1]);
-            gracz.Plecak.Add(listaPrzedmiotow[2]);
-            gracz.Plecak.Add(listaPrzedmiotow[4]);
-            gracz.Plecak.Add(listaPrzedmiotow[5]);
-            gracz.Plecak.Add(listaPrzedmiotow[6]);
-            gracz.Plecak.Add(listaPrzedmiotow[1]);
-            gracz.Plecak.Add(listaPrzedmiotow[2]);
-            gracz.Plecak.Add(listaPrzedmiotow[3]);
-            gracz.Plecak.Add(listaPrzedmiotow[4]);
-            gracz.Plecak.Add(listaPrzedmiotow[5]);
-            gracz.Plecak.Add(listaPrzedmiotow[6]);
-            gracz.Plecak.Add(listaPrzedmiotow[7]);
-            gracz.Plecak.Add(listaPrzedmiotow[8]);
-            gracz.Plecak.Add(listaPrzedmiotow[9]);
-            gracz.Plecak.Add(listaPrzedmiotow[10]);
-            gracz.Plecak.Add(listaPrzedmiotow[11]);
-            gracz.Plecak.Add(listaPrzedmiotow[12]);
-            gracz.Plecak.Add(listaPrzedmiotow[13]);
-            gracz.Plecak.Add(listaPrzedmiotow[14]);
-            gracz.Plecak.Add(listaPrzedmiotow[15]);
-            gracz.Plecak.Add(listaPrzedmiotow[0]);
-            gracz.Plecak.Add(listaPrzedmiotow[1]);
-            gracz.Plecak.Add(listaPrzedmiotow[2]);
-            gracz.Plecak.Add(listaPrzedmiotow[4]);
-            gracz.Plecak.Add(listaPrzedmiotow[5]);
-            gracz.Plecak.Add(listaPrzedmiotow[6]);
-            gracz.Plecak.Add(listaPrzedmiotow[1]);
-            gracz.Plecak.Add(listaPrzedmiotow[2]);
-            gracz.Plecak.Add(listaPrzedmiotow[9]);
-            gracz.Plecak.Add(listaPrzedmiotow[10]);
-            gracz.Plecak.Add(listaPrzedmiotow[11]);
-            gracz.Plecak.Add(listaPrzedmiotow[6]);
-            gracz.Plecak.Add(listaPrzedmiotow[7]);
-            gracz.Plecak.Add(listaPrzedmiotow[12]);
-            gracz.Plecak.Add(listaPrzedmiotow[3]);
-            gracz.Plecak.Add(listaPrzedmiotow[4]);
-            gracz.Plecak.Add(listaPrzedmiotow[5]);
-            gracz.Plecak.Add(listaPrzedmiotow[8]);
-            gracz.Plecak.Add(listaPrzedmiotow[13]);
-            gracz.Plecak.Add(listaPrzedmiotow[14]);
-            gracz.Plecak.Add(listaPrzedmiotow[15]);
-
-            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[0]);
-            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[1]);
-            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[2]);
-            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[3]);
-            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[4]);
-            gracz.MiksturyIPozywienie.Add(listaPozywieniaIMikstur[5]);
-
-            gracz.Zadania.Add(listaZadan[0]);
-            gracz.Zadania.Add(listaZadan[1]);
-            gracz.Zadania.Add(listaZadan[2]);
-            gracz.Zadania.Add(listaZadan[3]);
-            gracz.Zadania.Add(listaZadan[2]);
-            gracz.Zadania.Add(listaZadan[1]);
-            gracz.Zadania.Add(listaZadan[0]);
-            gracz.Zadania.Add(listaZadan[2]);
-            gracz.Zadania.Add(listaZadan[2]);
+            gracz = new Gracz(
+                "Gracz",                                                                                     //Nazwa
+                "Resources/Grafiki postaci na mapie/0/",                                                     //Obraz na mapie
+                "Resources/Grafiki postaci mówiących/Mówca1.png",                                            //Obraz w trakcie rozmowy
+                0,                                                                                           //Doświadczenie
+                3000,                                                                                        //Złoto
+                5,                                                                                           //Siła
+                5,                                                                                           //Zręczność
+                5,                                                                                           //Witalność
+                5,                                                                                           //Inteligencja
+                5,                                                                                           //Obrażenia
+                5,                                                                                           //Pancerz
+                10,                                                                                          //Punkty życia
+                10,                                                                                          //Energia
+                75,                                                                                          //Szansa na trafienie
+                5,                                                                                           //Szansa na krytyczne
+                listaPrzedmiotow[0],                                                                         //Broń
+                listaPrzedmiotow[1],                                                                         //Pancerz
+                listaPrzedmiotow[2],                                                                         //Tarcza
+                new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] },    //Umiejętności fizyczne
+                new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] },    //Umiejętności magiczne
+                new List<Ekwipunek> {listaPrzedmiotow[5], listaPrzedmiotow[10] },                            //Przedmioty w plecaku
+                new List<Zadanie> {listaZadan[0],listaZadan[1],listaZadan[2] },                              //Zadania
+                new List<Strawa> {listaPozywieniaIMikstur[0],listaPozywieniaIMikstur[1] }                    //Jedzenie i mikstury
+                );
         }
 
         //public void DodajZadanie(string nazwa, string zleceniodawca, string cel, string nagroda, string opis)
@@ -187,76 +155,76 @@ namespace RPG
             //**************************************************************************************************************
             //Postacie fabularne
             //index 0
-            listaPostaciFabularnych.Add(new NPC("Lord Krwawy Mati", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciFabularnych.Add(new Przeciwnik("Lord Krwawy Mati", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/argul.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 1
-            listaPostaciFabularnych.Add(new NPC("Lord Seba", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciFabularnych.Add(new Przeciwnik("Lord Seba", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/cyklop.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 2
-            listaPostaciFabularnych.Add(new NPC("Lord Ezechiel Kaczor", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciFabularnych.Add(new Przeciwnik("Lord Ezechiel Kaczor", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/czarna wdowa.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 3
-            listaPostaciFabularnych.Add(new NPC("Lord Dziwny Karol", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciFabularnych.Add(new Przeciwnik("Lord Dziwny Karol", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/ghoul.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 4
-            listaPostaciFabularnych.Add(new NPC("Klucznik Piotr", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciFabularnych.Add(new Przeciwnik("Klucznik Piotr", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/glucznik.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 5
-            listaPostaciFabularnych.Add(new NPC("Brzydki syn", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciFabularnych.Add(new Przeciwnik("Brzydki syn", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/goblin.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //**************************************************************************************************************
             //index 0
-            listaPostaciZMiasta.Add(new NPC("Szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZMiasta.Add(new Przeciwnik("Szczur", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/goblinzabojca.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 1
-            listaPostaciZMiasta.Add(new NPC("Bandyta łucznik", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZMiasta.Add(new Przeciwnik("Bandyta łucznik", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/golem.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 2
-            listaPostaciZMiasta.Add(new NPC("Rabuś", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZMiasta.Add(new Przeciwnik("Rabuś", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/gwojownik.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 3
-            listaPostaciZMiasta.Add(new NPC("Psychopata", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZMiasta.Add(new Przeciwnik("Psychopata", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/gzwiadowca.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 4
-            listaPostaciZMiasta.Add(new NPC("Rozwścieczona wieśniaczka", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZMiasta.Add(new Przeciwnik("Rozwścieczona wieśniaczka", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/hydra.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
 
 
             //**************************************************************************************************************
             //index 0
-            listaPostaciZCmentarza.Add(new NPC("Ghoul", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZCmentarza.Add(new Przeciwnik("Ghoul", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/scierwojad.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 1
-            listaPostaciZCmentarza.Add(new NPC("Szkielet wojownik", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZCmentarza.Add(new Przeciwnik("Szkielet wojownik", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/szaman.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 2
-            listaPostaciZCmentarza.Add(new NPC("Bardzo stary szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZCmentarza.Add(new Przeciwnik("Bardzo stary szczur", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/poludnica.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 3
-            listaPostaciZCmentarza.Add(new NPC("Lisz", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZCmentarza.Add(new Przeciwnik("Lisz", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/szczur.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 4
-            listaPostaciZCmentarza.Add(new NPC("Wampir", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZCmentarza.Add(new Przeciwnik("Wampir", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/szkielet.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 6
-            listaPostaciZCmentarza.Add(new NPC("Szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZCmentarza.Add(new Przeciwnik("Szczur", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/topielec.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
 
             //**************************************************************************************************************
             //index 0
-            listaPostaciZDziczy.Add(new NPC("Wilk", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZDziczy.Add(new Przeciwnik("Wilk", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/waz.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 1
-            listaPostaciZDziczy.Add(new NPC("Pajęczyca", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZDziczy.Add(new Przeciwnik("Pajęczyca", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/wilk.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 2
-            listaPostaciZDziczy.Add(new NPC("Szczur", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZDziczy.Add(new Przeciwnik("Szczur", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/wilkolak.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 3
-            listaPostaciZDziczy.Add(new NPC("Goblin wojownik", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZDziczy.Add(new Przeciwnik("Goblin wojownik", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/zywiolak ognia.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 4
-            listaPostaciZDziczy.Add(new NPC("Cyklop", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZDziczy.Add(new Przeciwnik("Cyklop", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/zywiolak wody.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
             //index 5
-            listaPostaciZDziczy.Add(new NPC("Żywiołak wody", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", "Resources/Grafiki postaci mówiących/Mowca1.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10));
+            listaPostaciZDziczy.Add(new Przeciwnik("Żywiołak wody", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci mówiących/Mówca1.png", "Resources/Grafiki postaci walczących/szczur.png", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, new List<Umiejetnosc> { listaUmiejetnosciFizycznych[0], listaUmiejetnosciFizycznych[1] }, new List<Umiejetnosc> { listaUmiejetnosciMagicznych[0], listaUmiejetnosciMagicznych[1] }));
 
         }
 
         public void UtworzListyUmiejetnosci()
         {
             //index 0
-            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Wymachiwanie"));
+            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Wymachiwanie", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "Brak", "Sila", 0, 0, 0, 0, 0, 1, 0, 0, true, false, false, false, false));
             //index 1
-            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Szarża"));
+            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Szarża", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "tarcza", "Witalnosc", 0, 0, 0, 0, 0, 1, 0, 0, true, false, false, false, false));
             //index 2
-            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Pacnięcie"));
+            listaUmiejetnosciFizycznych.Add(new Umiejetnosc("Pacnięcie", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "Brak", "Zrecznosc", 0, 0, 0, 0, 0, 1, 0, 0, true, false, false, false, false));
 
 
             //index 0
-            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula ognia"));
+            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula ognia", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "Brak", "Sila", 0, 0, 0, 0, 0, 1, 0, 0, false, false, false, false, false));
             //index 1
-            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula kwasu"));
+            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula kwasu", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "Brak", "Sila", 0, 0, 0, 0, 0, 1, 0, 0, false, false, false, false, false));
             //index 2
-            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula pustki"));
+            listaUmiejetnosciMagicznych.Add(new Umiejetnosc("Kula pustki", "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png", "Resources/Grafiki umiejętności/Eksplozja.png", "Brak", "Sila", 0, 0, 0, 0, 0, 1, 0, 0, false, false, false, false, false));
         }
 
         public void UtworzListePrzedmiotow()

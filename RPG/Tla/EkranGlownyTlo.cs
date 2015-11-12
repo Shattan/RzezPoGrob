@@ -23,31 +23,40 @@ namespace RPG
         {
             InitializeComponent();
             RozmiescElementy();
-            KolorujElementy();
-
-            ekranGlowny = new EkranGlowny(this);
+            KolorujElementy(); 
         }
 
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             Program.DopasujRozmiarFormyDoEkranu(this);
         }
 
         void KolorujElementy()
         {
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(this, "Resources/Grafiki menu/Tło menu.png"); 
-            BackColor = System.Drawing.Color.Black;      
+            BackColor = System.Drawing.Color.Black;
         }
         #endregion
 
         #region Zdarzenia
         private void EkranGlownyTlo_Shown(object sender, EventArgs e)
         {
+            ekranGlowny = new EkranGlowny(this);
             ekranGlowny.ShowDialog();
-            Application.Exit();
+            if (ekranGlowny.DialogResult == DialogResult.Cancel)
+            {
+                this.Dispose();
+            }
         }
         #endregion
+
+        private void EkranGlownyTlo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
 

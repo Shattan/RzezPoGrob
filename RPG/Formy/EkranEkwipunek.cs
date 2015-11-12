@@ -37,11 +37,12 @@ namespace RPG
         #region Metody ustawiające elementy na ekranie
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             Program.DopasujRozmiarFormyDoEkranu(this);
 
             //Rozmieszczanie statystyk
             LabelNazwyStatystyk.Size = new Size(Width * 20 / 100, Height * 80 / 100);
-            LabelWartosciStatystyk.Size = new Size(Width * 4 / 100, LabelNazwyStatystyk.Height);
+            LabelWartosciStatystyk.Size = new Size(Width * 10 / 100, LabelNazwyStatystyk.Height);
             LabelPorownanieStatystyk.Size = new Size(Width * 4 / 100, LabelNazwyStatystyk.Height);
 
             LabelStatystyki.Location = new Point(Screen.PrimaryScreen.Bounds.Width * 5 / 100, Screen.PrimaryScreen.Bounds.Height * 8 / 100);
@@ -66,7 +67,7 @@ namespace RPG
 
             const int odleglosciMiedzyPrzyciskamiX = 5;
             const int odleglosciMiedzyPrzyciskamiY = wielkoscPrzyciskow;
-            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow*2);
+            PictureBoxSilaMinus.Location = new Point(LabelWartosciStatystyk.Location.X + LabelWartosciStatystyk.Width, LabelWartosciStatystyk.Location.Y + wielkoscPrzyciskow*4);
             PictureBoxSilaPlus.Location = new Point(PictureBoxSilaMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxSilaMinus.Location.Y);
             PictureBoxZrecznoscMinus.Location = new Point(PictureBoxSilaMinus.Location.X, PictureBoxSilaMinus.Location.Y + odleglosciMiedzyPrzyciskamiY);
             PictureBoxZrecznoscPlus.Location = new Point(PictureBoxZrecznoscMinus.Location.X + wielkoscPrzyciskow + odleglosciMiedzyPrzyciskamiX, PictureBoxZrecznoscMinus.Location.Y);
@@ -89,6 +90,7 @@ namespace RPG
         }
         void KolorujElementy()
         {
+            Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPotwierdz, "Resources/Grafiki menu/Wyjdź.png");
 
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PanelOpisPrzedmiotu, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
@@ -107,7 +109,9 @@ namespace RPG
         #region Metody odświeżające okienka z informacjami i ekwipunek
         void OdswiezStatystyki()
         {
-            LabelNazwyStatystyk.Text = gracz.Nazwa + "\n";   
+            LabelNazwyStatystyk.Text = gracz.Nazwa + "\n";
+            LabelNazwyStatystyk.Text += "Doświadczenie:\n";
+            LabelNazwyStatystyk.Text += "Poziom:\n";
             LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
             LabelNazwyStatystyk.Text += "Siła:\n";
             LabelNazwyStatystyk.Text += "Zręczność:\n";
@@ -121,6 +125,8 @@ namespace RPG
             LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
 
             LabelWartosciStatystyk.Text = "\n";
+            LabelWartosciStatystyk.Text += gracz.Doswiadczenie + "/" + gracz.DoswiadczenieWymaganeNaKonkretnyPoziom[gracz.Poziom-1] + "\n"; 
+            LabelWartosciStatystyk.Text += gracz.Poziom + "\n"; 
             LabelWartosciStatystyk.Text += gracz.PunktyStatystykDoRozdania + "\n";               //Pozostałe punkty do rozdania
             LabelWartosciStatystyk.Text += gracz.Sila + "\n";                 //Siła
             LabelWartosciStatystyk.Text += gracz.Zrecznosc + "\n";            //Zręczność
@@ -140,6 +146,8 @@ namespace RPG
         void OdswiezLabelZPorownaniemPrzedmiotow()
         {
             LabelNazwyStatystyk.Text = gracz.Nazwa + "\n";
+            LabelNazwyStatystyk.Text += "Doświadczenie:\n";
+            LabelNazwyStatystyk.Text += "Poziom:\n";
             LabelNazwyStatystyk.Text += "Punkty do rozdania:\n";
             LabelNazwyStatystyk.Text += "Siła:\n";
             LabelNazwyStatystyk.Text += "Zręczność:\n";
@@ -153,6 +161,8 @@ namespace RPG
             LabelNazwyStatystyk.Text += "Szansa na trafienie krytyczne:\n";
 
             LabelWartosciStatystyk.Text = "\n";
+            LabelWartosciStatystyk.Text += gracz.Doswiadczenie + "/" + gracz.DoswiadczenieWymaganeNaKonkretnyPoziom[gracz.Poziom-1] + "\n"; 
+            LabelWartosciStatystyk.Text += gracz.Poziom + "\n";  
             LabelWartosciStatystyk.Text += gracz.PunktyStatystykDoRozdania + "\n";                         //Pozostałe punkty do rozdania
             LabelWartosciStatystyk.Text += gracz.Sila + "\n";                       //Siła
             LabelWartosciStatystyk.Text += gracz.Zrecznosc + "\n";                  //Zręczność
@@ -345,12 +355,12 @@ namespace RPG
                     listaZWynikami.Add(pierwszyElement.Zrecznosc);
                     listaZWynikami.Add(pierwszyElement.Witalnosc);
                     listaZWynikami.Add(pierwszyElement.Inteligencja);
-                    listaZWynikami.Add(pierwszyElement.Obrazenia);
-                    listaZWynikami.Add(pierwszyElement.Pancerz);
-                    listaZWynikami.Add(pierwszyElement.HP);
-                    listaZWynikami.Add(pierwszyElement.Energia);
-                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie);
-                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne);
+                    listaZWynikami.Add((int)pierwszyElement.Obrazenia);
+                    listaZWynikami.Add((int)pierwszyElement.Pancerz);
+                    listaZWynikami.Add((int)pierwszyElement.HP);
+                    listaZWynikami.Add((int)pierwszyElement.Energia);
+                    listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie);
+                    listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne);
                 }
                 else if (trzeciElement == null || drugieDzialanie == ' ')
                 {
@@ -361,24 +371,24 @@ namespace RPG
                             listaZWynikami.Add(pierwszyElement.Zrecznosc + drugiElement.Zrecznosc);
                             listaZWynikami.Add(pierwszyElement.Witalnosc + drugiElement.Witalnosc);
                             listaZWynikami.Add(pierwszyElement.Inteligencja + drugiElement.Inteligencja);
-                            listaZWynikami.Add(pierwszyElement.Obrazenia + drugiElement.Obrazenia);
-                            listaZWynikami.Add(pierwszyElement.Pancerz + drugiElement.Pancerz);
-                            listaZWynikami.Add(pierwszyElement.HP + drugiElement.HP);
-                            listaZWynikami.Add(pierwszyElement.Energia + drugiElement.Energia);
-                            listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie + drugiElement.SzansaNaTrafienie);
-                            listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne + drugiElement.SzansaNaKrytyczne);
+                            listaZWynikami.Add((int)pierwszyElement.Obrazenia + (int)drugiElement.Obrazenia);
+                            listaZWynikami.Add((int)pierwszyElement.Pancerz + (int)drugiElement.Pancerz);
+                            listaZWynikami.Add((int)pierwszyElement.HP + (int)drugiElement.HP);
+                            listaZWynikami.Add((int)pierwszyElement.Energia + (int)drugiElement.Energia);
+                            listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie + (int)drugiElement.SzansaNaTrafienie);
+                            listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne + (int)drugiElement.SzansaNaKrytyczne);
                             break;
                         case '-':
                             listaZWynikami.Add(pierwszyElement.Sila - drugiElement.Sila);
                             listaZWynikami.Add(pierwszyElement.Zrecznosc - drugiElement.Zrecznosc);
                             listaZWynikami.Add(pierwszyElement.Witalnosc - drugiElement.Witalnosc);
                             listaZWynikami.Add(pierwszyElement.Inteligencja - drugiElement.Inteligencja);
-                            listaZWynikami.Add(pierwszyElement.Obrazenia - drugiElement.Obrazenia);
-                            listaZWynikami.Add(pierwszyElement.Pancerz - drugiElement.Pancerz);
-                            listaZWynikami.Add(pierwszyElement.HP - drugiElement.HP);
-                            listaZWynikami.Add(pierwszyElement.Energia - drugiElement.Energia);
-                            listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie - drugiElement.SzansaNaTrafienie);
-                            listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne - drugiElement.SzansaNaKrytyczne);
+                            listaZWynikami.Add((int)pierwszyElement.Obrazenia - (int)drugiElement.Obrazenia);
+                            listaZWynikami.Add((int)pierwszyElement.Pancerz - (int)drugiElement.Pancerz);
+                            listaZWynikami.Add((int)pierwszyElement.HP - (int)drugiElement.HP);
+                            listaZWynikami.Add((int)pierwszyElement.Energia - (int)drugiElement.Energia);
+                            listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie - (int)drugiElement.SzansaNaTrafienie);
+                            listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne - (int)drugiElement.SzansaNaKrytyczne);
                             break;
                     }
                 }
@@ -394,24 +404,24 @@ namespace RPG
                                     listaZWynikami.Add(pierwszyElement.Zrecznosc + drugiElement.Zrecznosc + trzeciElement.Zrecznosc);
                                     listaZWynikami.Add(pierwszyElement.Witalnosc + drugiElement.Witalnosc + trzeciElement.Witalnosc);
                                     listaZWynikami.Add(pierwszyElement.Inteligencja + drugiElement.Inteligencja + trzeciElement.Inteligencja);
-                                    listaZWynikami.Add(pierwszyElement.Obrazenia + drugiElement.Obrazenia + trzeciElement.Obrazenia);
-                                    listaZWynikami.Add(pierwszyElement.Pancerz + drugiElement.Pancerz + trzeciElement.Pancerz);
-                                    listaZWynikami.Add(pierwszyElement.HP + drugiElement.HP + trzeciElement.HP);
-                                    listaZWynikami.Add(pierwszyElement.Energia + drugiElement.Energia + trzeciElement.Energia);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie + drugiElement.SzansaNaTrafienie + trzeciElement.SzansaNaTrafienie);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne + drugiElement.SzansaNaKrytyczne + trzeciElement.SzansaNaKrytyczne);
+                                    listaZWynikami.Add((int)pierwszyElement.Obrazenia + (int)drugiElement.Obrazenia + (int)trzeciElement.Obrazenia);
+                                    listaZWynikami.Add((int)pierwszyElement.Pancerz + (int)drugiElement.Pancerz + (int)trzeciElement.Pancerz);
+                                    listaZWynikami.Add((int)pierwszyElement.HP + (int)drugiElement.HP + (int)trzeciElement.HP);
+                                    listaZWynikami.Add((int)pierwszyElement.Energia + (int)drugiElement.Energia + (int)trzeciElement.Energia);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie + (int)drugiElement.SzansaNaTrafienie + (int)trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne + (int)drugiElement.SzansaNaKrytyczne + (int)trzeciElement.SzansaNaKrytyczne);
                                     break;
                                 case '-':
                                     listaZWynikami.Add(pierwszyElement.Sila + drugiElement.Sila - trzeciElement.Sila);
                                     listaZWynikami.Add(pierwszyElement.Zrecznosc + drugiElement.Zrecznosc - trzeciElement.Zrecznosc);
                                     listaZWynikami.Add(pierwszyElement.Witalnosc + drugiElement.Witalnosc - trzeciElement.Witalnosc);
                                     listaZWynikami.Add(pierwszyElement.Inteligencja + drugiElement.Inteligencja - trzeciElement.Inteligencja);
-                                    listaZWynikami.Add(pierwszyElement.Obrazenia + drugiElement.Obrazenia - trzeciElement.Obrazenia);
-                                    listaZWynikami.Add(pierwszyElement.Pancerz + drugiElement.Pancerz - trzeciElement.Pancerz);
-                                    listaZWynikami.Add(pierwszyElement.HP + drugiElement.HP - trzeciElement.HP);
-                                    listaZWynikami.Add(pierwszyElement.Energia + drugiElement.Energia - trzeciElement.Energia);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie + drugiElement.SzansaNaTrafienie - trzeciElement.SzansaNaTrafienie);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne + drugiElement.SzansaNaKrytyczne - trzeciElement.SzansaNaKrytyczne);
+                                    listaZWynikami.Add((int)pierwszyElement.Obrazenia + (int)drugiElement.Obrazenia - (int)trzeciElement.Obrazenia);
+                                    listaZWynikami.Add((int)pierwszyElement.Pancerz + (int)drugiElement.Pancerz - (int)trzeciElement.Pancerz);
+                                    listaZWynikami.Add((int)pierwszyElement.HP + (int)drugiElement.HP - (int)trzeciElement.HP);
+                                    listaZWynikami.Add((int)pierwszyElement.Energia + (int)drugiElement.Energia - (int)trzeciElement.Energia);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie + (int)drugiElement.SzansaNaTrafienie - (int)trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne + (int)drugiElement.SzansaNaKrytyczne - (int)trzeciElement.SzansaNaKrytyczne);
                                     break;
                             }
                             break;
@@ -423,24 +433,24 @@ namespace RPG
                                     listaZWynikami.Add(pierwszyElement.Zrecznosc - drugiElement.Zrecznosc + trzeciElement.Zrecznosc);
                                     listaZWynikami.Add(pierwszyElement.Witalnosc - drugiElement.Witalnosc + trzeciElement.Witalnosc);
                                     listaZWynikami.Add(pierwszyElement.Inteligencja - drugiElement.Inteligencja + trzeciElement.Inteligencja);
-                                    listaZWynikami.Add(pierwszyElement.Obrazenia - drugiElement.Obrazenia + trzeciElement.Obrazenia);
-                                    listaZWynikami.Add(pierwszyElement.Pancerz - drugiElement.Pancerz + trzeciElement.Pancerz);
-                                    listaZWynikami.Add(pierwszyElement.HP - drugiElement.HP + trzeciElement.HP);
-                                    listaZWynikami.Add(pierwszyElement.Energia - drugiElement.Energia + trzeciElement.Energia);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie - drugiElement.SzansaNaTrafienie + trzeciElement.SzansaNaTrafienie);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne - drugiElement.SzansaNaKrytyczne + trzeciElement.SzansaNaKrytyczne);
+                                    listaZWynikami.Add((int)pierwszyElement.Obrazenia - (int)drugiElement.Obrazenia + (int)trzeciElement.Obrazenia);
+                                    listaZWynikami.Add((int)pierwszyElement.Pancerz - (int)drugiElement.Pancerz + (int)trzeciElement.Pancerz);
+                                    listaZWynikami.Add((int)pierwszyElement.HP - (int)drugiElement.HP + (int)trzeciElement.HP);
+                                    listaZWynikami.Add((int)pierwszyElement.Energia - (int)drugiElement.Energia + (int)trzeciElement.Energia);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie - (int)drugiElement.SzansaNaTrafienie + (int)trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne - (int)drugiElement.SzansaNaKrytyczne + (int)trzeciElement.SzansaNaKrytyczne);
                                     break;
                                 case '-':
                                     listaZWynikami.Add(pierwszyElement.Sila - drugiElement.Sila - trzeciElement.Sila);
                                     listaZWynikami.Add(pierwszyElement.Zrecznosc - drugiElement.Zrecznosc - trzeciElement.Zrecznosc);
                                     listaZWynikami.Add(pierwszyElement.Witalnosc - drugiElement.Witalnosc - trzeciElement.Witalnosc);
                                     listaZWynikami.Add(pierwszyElement.Inteligencja - drugiElement.Inteligencja - trzeciElement.Inteligencja);
-                                    listaZWynikami.Add(pierwszyElement.Obrazenia - drugiElement.Obrazenia - trzeciElement.Obrazenia);
-                                    listaZWynikami.Add(pierwszyElement.Pancerz - drugiElement.Pancerz - trzeciElement.Pancerz);
-                                    listaZWynikami.Add(pierwszyElement.HP - drugiElement.HP - trzeciElement.HP);
-                                    listaZWynikami.Add(pierwszyElement.Energia - drugiElement.Energia - trzeciElement.Energia);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaTrafienie - drugiElement.SzansaNaTrafienie - trzeciElement.SzansaNaTrafienie);
-                                    listaZWynikami.Add(pierwszyElement.SzansaNaKrytyczne - drugiElement.SzansaNaKrytyczne - trzeciElement.SzansaNaKrytyczne);
+                                    listaZWynikami.Add((int)pierwszyElement.Obrazenia - (int)drugiElement.Obrazenia - (int)trzeciElement.Obrazenia);
+                                    listaZWynikami.Add((int)pierwszyElement.Pancerz - (int)drugiElement.Pancerz - (int)trzeciElement.Pancerz);
+                                    listaZWynikami.Add((int)pierwszyElement.HP - (int)drugiElement.HP - (int)trzeciElement.HP);
+                                    listaZWynikami.Add((int)pierwszyElement.Energia - (int)drugiElement.Energia - (int)trzeciElement.Energia);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaTrafienie - (int)drugiElement.SzansaNaTrafienie - (int)trzeciElement.SzansaNaTrafienie);
+                                    listaZWynikami.Add((int)pierwszyElement.SzansaNaKrytyczne - (int)drugiElement.SzansaNaKrytyczne - (int)trzeciElement.SzansaNaKrytyczne);
                                     break;
                             }
                             break;
@@ -454,6 +464,8 @@ namespace RPG
         void WyswietlWartosciPorownan(List<int> wartosci)
         {
             LabelPorownanieStatystyk.Text = "\n";
+            LabelPorownanieStatystyk.Text += "\n";
+            LabelPorownanieStatystyk.Text += "\n";
             LabelPorownanieStatystyk.Text += "\n";
 
             if (wartosci != null)
@@ -871,7 +883,7 @@ namespace RPG
         {
             if (MouseButtons != MouseButtons.Left && (sender as PictureBox).ImageLocation!=null)//Zabezpieczenie przed wyświetlaniem pustych pól i zmienianiem przedmiotów podczas przenoszenia
             {
-                przenoszonyPrzedmiot = new Ekwipunek(gracz.Plecak.Find(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation))); //Znalezienie przenoszonego przedmiotu w plecaku gracza
+                przenoszonyPrzedmiot = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation))); //Znalezienie przenoszonego przedmiotu w plecaku gracza
                 OdswiezInformacjeONejchanymPrzedmiocie(przenoszonyPrzedmiot); //Zaktualizowanie panelu z informacjami o przedmiocie
 
                 OdswiezLabelZPorownaniemPrzedmiotow(); //Porownuje przedmiot najechany z przedmiotami w plecaku i wyświetla wynik w Labelu porównującym
@@ -1009,32 +1021,35 @@ namespace RPG
 
 
 
-
         private void Zegar_Tick(object sender, EventArgs e)
         {
-            if (MousePosition.X + 10 + PanelOpisPrzedmiotu.Width < Width)
+            if (PanelOpisPrzedmiotu.Visible == true)
             {
-                if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
+                //Ustawianie pozycji okienka z informacjami o przedmiocie
+                if (MousePosition.X + 10 + PanelOpisPrzedmiotu.Width < Width)
                 {
-                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y);
+                    if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
+                    {
+                        PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y);
+                    }
+                    else
+                    {
+                        PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y - PanelOpisPrzedmiotu.Height);
+                    }
                 }
                 else
                 {
-                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X + 10, MousePosition.Y - PanelOpisPrzedmiotu.Height);
+                    if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
+                    {
+                        PanelOpisPrzedmiotu.Location = new Point(MousePosition.X - 10 - PanelOpisPrzedmiotu.Width, MousePosition.Y);
+                    }
+                    else
+                    {
+                        PanelOpisPrzedmiotu.Location = new Point(MousePosition.X - 10 - PanelOpisPrzedmiotu.Width, MousePosition.Y - PanelOpisPrzedmiotu.Height);
+                    }
                 }
+                PanelOpisPrzedmiotu.BringToFront();
             }
-            else
-            {
-                if (MousePosition.Y + PanelOpisPrzedmiotu.Height < Height)
-                {
-                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X - 10 - PanelOpisPrzedmiotu.Width, MousePosition.Y);
-                }
-                else
-                {
-                    PanelOpisPrzedmiotu.Location = new Point(MousePosition.X - 10 - PanelOpisPrzedmiotu.Width, MousePosition.Y - PanelOpisPrzedmiotu.Height);
-                }
-            }
-            PanelOpisPrzedmiotu.BringToFront();
         }
 
 
@@ -1044,9 +1059,8 @@ namespace RPG
             if (gracz.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
             {
                 gracz.SilaPodstawa--;
-                gracz.PunktyStatystykDoRozdania++;
+                OdswiezStatystyki();
             }
-            OdswiezStatystyki();
         }
 
         private void PictureBoxSilaPlus_Click(object sender, EventArgs e)
@@ -1054,7 +1068,6 @@ namespace RPG
             if (gracz.PunktyStatystykDoRozdania > 0)
             {
                 gracz.SilaPodstawa++;
-                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -1064,9 +1077,8 @@ namespace RPG
             if (gracz.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
             {
                 gracz.ZrecznoscPodstawa--;
-                gracz.PunktyStatystykDoRozdania++;
+                OdswiezStatystyki();
             }
-            OdswiezStatystyki();
         }
 
         private void PictureBoxZrecznoscPlus_Click(object sender, EventArgs e)
@@ -1074,7 +1086,6 @@ namespace RPG
             if (gracz.PunktyStatystykDoRozdania > 0)
             {
                 gracz.ZrecznoscPodstawa++;
-                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -1084,9 +1095,8 @@ namespace RPG
             if (gracz.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
             {
                 gracz.WitalnoscPodstawa--;
-                gracz.PunktyStatystykDoRozdania++;
+                OdswiezStatystyki();
             }
-            OdswiezStatystyki();
         }
 
         private void PictureBoxWitalnoscPlus_Click(object sender, EventArgs e)
@@ -1094,7 +1104,6 @@ namespace RPG
             if (gracz.PunktyStatystykDoRozdania > 0)
             {
                 gracz.WitalnoscPodstawa++;
-                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -1104,9 +1113,8 @@ namespace RPG
             if (gracz.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
             {
                 gracz.InteligencjaPodstawa--;
-                gracz.PunktyStatystykDoRozdania++;
+                OdswiezStatystyki();
             }
-            OdswiezStatystyki();
         }
 
         private void PictureBoxInteligencjaPlus_Click(object sender, EventArgs e)
@@ -1114,7 +1122,6 @@ namespace RPG
             if (gracz.PunktyStatystykDoRozdania > 0)
             {
                 gracz.InteligencjaPodstawa++;
-                gracz.PunktyStatystykDoRozdania--;
                 OdswiezStatystyki();
             }
         }
@@ -1124,12 +1131,13 @@ namespace RPG
         private void PictureBoxPotwierdz_Click(object sender, EventArgs e)
         {
             ZapiszStatystykiDoGracza();
-            Close();
+            DialogResult = DialogResult.OK;
         }
 
         private void EkranEkwipunek_FormClosing(object sender, FormClosingEventArgs e)
         {
             Zegar.Stop();
+            this.Dispose();
         }
         #endregion
 

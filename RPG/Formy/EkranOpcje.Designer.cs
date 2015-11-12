@@ -500,6 +500,9 @@
             this.PictureBoxZapisz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBoxZapisz.TabIndex = 28;
             this.PictureBoxZapisz.TabStop = false;
+            this.PictureBoxZapisz.Click += new System.EventHandler(this.PictureBoxZapisz_Click);
+            this.PictureBoxZapisz.MouseEnter += new System.EventHandler(this.PictureBoxZapisz_MouseEnter);
+            this.PictureBoxZapisz.MouseLeave += new System.EventHandler(this.PictureBoxZapisz_MouseLeave);
             // 
             // PictureBoxOdrzuc
             // 
@@ -511,6 +514,8 @@
             this.PictureBoxOdrzuc.TabIndex = 29;
             this.PictureBoxOdrzuc.TabStop = false;
             this.PictureBoxOdrzuc.Click += new System.EventHandler(this.PictureBoxOdrzuc_Click);
+            this.PictureBoxOdrzuc.MouseEnter += new System.EventHandler(this.PictureBoxOdrzuc_MouseEnter);
+            this.PictureBoxOdrzuc.MouseLeave += new System.EventHandler(this.PictureBoxOdrzuc_MouseLeave);
             // 
             // EkranOpcje
             // 
@@ -523,6 +528,7 @@
             this.Controls.Add(this.PictureBoxZapisz);
             this.Controls.Add(this.GroupBoxDzwiek);
             this.Controls.Add(this.GroupBoxEkran);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Goldenrod;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranOpcje";

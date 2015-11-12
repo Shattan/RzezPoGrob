@@ -11,13 +11,13 @@ using System.Windows.Forms;
 namespace RPG
 {
 
-    public partial class EkranGryTloMapa : Form
+    public partial class EkranGryMapaTlo : Form
     {
         #region Zmienne
         EkranGlowny ekranGlowny;
         #endregion
 
-        public EkranGryTloMapa(EkranGlowny ekranGlowny)
+        public EkranGryMapaTlo(EkranGlowny ekranGlowny)
         {
             this.ekranGlowny = ekranGlowny;   
 
@@ -29,6 +29,7 @@ namespace RPG
         #region Metody
         void RozmiescElementy()
         {
+            ShowInTaskbar = false;
             Program.DopasujRozmiarFormyDoEkranu(this);
 
             Program.UstawObrazZDopasowaniemWielkosciKontrolkiDoObrazu(PictureBoxTrawa, "Resources/Mapy/Trawa.png");
@@ -67,9 +68,19 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranGryTloMapa_Shown(object sender, EventArgs e)
         {
-            DialogResult = ekranGlowny.ekranGryTloObiekty.ShowDialog();
+            EkranGryObiektyTlo ekranGryObiektyTlo = new EkranGryObiektyTlo(ekranGlowny, this);
+            DialogResult = ekranGryObiektyTlo.ShowDialog();
+            if (ekranGryObiektyTlo.DialogResult == DialogResult.Cancel)
+            {
+                DialogResult = ekranGryObiektyTlo.DialogResult;
+            }
         }
         #endregion
+
+        private void EkranGryMapaTlo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
 

@@ -105,6 +105,7 @@
             this.Controls.Add(this.ListBoxZadania);
             this.Controls.Add(this.LabelOpis);
             this.Controls.Add(this.LabelZadania);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.MidnightBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranDziennikZadan";

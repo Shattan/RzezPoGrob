@@ -33,10 +33,12 @@
             this.PictureBoxOpcje = new System.Windows.Forms.PictureBox();
             this.PictureBoxWyjdz = new System.Windows.Forms.PictureBox();
             this.PictureBoxWczytaj = new System.Windows.Forms.PictureBox();
+            this.PictureBoxObrazWczytywania = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxObrazWczytywania)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelInformacje
@@ -103,6 +105,16 @@
             this.PictureBoxWczytaj.MouseEnter += new System.EventHandler(this.PictureBoxWczytaj_MouseEnter);
             this.PictureBoxWczytaj.MouseLeave += new System.EventHandler(this.PictureBoxWczytaj_MouseLeave);
             // 
+            // PictureBoxObrazWczytywania
+            // 
+            this.PictureBoxObrazWczytywania.BackColor = System.Drawing.Color.Black;
+            this.PictureBoxObrazWczytywania.Location = new System.Drawing.Point(115, 210);
+            this.PictureBoxObrazWczytywania.Name = "PictureBoxObrazWczytywania";
+            this.PictureBoxObrazWczytywania.Size = new System.Drawing.Size(503, 150);
+            this.PictureBoxObrazWczytywania.TabIndex = 9;
+            this.PictureBoxObrazWczytywania.TabStop = false;
+            this.PictureBoxObrazWczytywania.Visible = false;
+            // 
             // EkranGlowny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,12 +122,14 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(869, 409);
+            this.Controls.Add(this.PictureBoxObrazWczytywania);
             this.Controls.Add(this.PictureBoxWczytaj);
             this.Controls.Add(this.LabelInformacje);
             this.Controls.Add(this.PictureBoxRuszaj);
             this.Controls.Add(this.PictureBoxOpcje);
             this.Controls.Add(this.PictureBoxWyjdz);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Yellow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(400, 300);
@@ -124,10 +138,12 @@
             this.Text = "Rzeź Po Grób";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranGlowny_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxObrazWczytywania)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,6 +155,7 @@
         private System.Windows.Forms.PictureBox PictureBoxOpcje;
         private System.Windows.Forms.PictureBox PictureBoxWyjdz;
         private System.Windows.Forms.PictureBox PictureBoxWczytaj;
+        private System.Windows.Forms.PictureBox PictureBoxObrazWczytywania;
     }
 }
 

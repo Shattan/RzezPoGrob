@@ -1,6 +1,6 @@
 ﻿namespace RPG
 {
-    partial class EkranGryTloMapa
+    partial class EkranGryMapaTlo
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@
             this.PictureBoxTrawa.TabIndex = 8;
             this.PictureBoxTrawa.TabStop = false;
             // 
-            // EkranGryTloMapa
+            // EkranGryMapaTlo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -51,12 +51,14 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(880, 601);
             this.Controls.Add(this.PictureBoxTrawa);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EkranGryTloMapa";
+            this.Name = "EkranGryMapaTlo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EkranGryTloMapa";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranGryMapaTlo_FormClosing);
             this.Shown += new System.EventHandler(this.EkranGryTloMapa_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTrawa)).EndInit();
             this.ResumeLayout(false);

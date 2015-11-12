@@ -6,59 +6,78 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    public class Gracz
+    public class Gracz:Postac
     {     
-        public string Nazwa { get; set; }
-        public string ObrazekNaMapie { get; set; }
-        public string ObrazekMowienia { get; set; }
         public int Doswiadczenie { get; set; }
-        public int PunktyStatystykDoRozdania{ get; set; }
-        public int Zloto { get; set; }
-                               
-        //statystyki bez przedmiotow    
-        public int SilaPodstawa{ get; set; }
-        public int ZrecznoscPodstawa { get; set; }
-        public int WitalnoscPodstawa { get; set; }
-        public int InteligencjaPodstawa { get; set; }
-        public int ObrazeniaPodstawa { get; set; }
-        public int PancerzPodstawa { get; set; }
-        public int HPPodstawa { get; set; }
-        public int EnergiaPodstawa { get; set; }
-        public int SzansaNaTrafieniePodstawa { get; set; }
-        public int SzansaNaKrytycznePodstawa { get; set; }
+
+        private int sumaPoczatkowychStatystyk;
 
         //statystyki z przedmiotami
         public int SilaZPrzedmiotami { get { return SilaPodstawa + ZalozonaBron.Sila + ZalozonyPancerz.Sila + ZalozonaTarcza.Sila; } }
         public int ZrecznoscZPrzedmiotami {  get { return ZrecznoscPodstawa + ZalozonaBron.Zrecznosc + ZalozonyPancerz.Zrecznosc + ZalozonaTarcza.Zrecznosc; } }
         public int WitalnoscZPrzedmiotami {  get { return WitalnoscPodstawa + ZalozonaBron.Witalnosc + ZalozonyPancerz.Witalnosc + ZalozonaTarcza.Witalnosc; } }
         public int InteligencjaZPrzedmiotami {  get { return InteligencjaPodstawa + ZalozonaBron.Inteligencja + ZalozonyPancerz.Inteligencja + ZalozonaTarcza.Inteligencja; } }
-        public int ObrazeniaZPrzedmiotami {  get { return ObrazeniaPodstawa + ZalozonaBron.Obrazenia + ZalozonyPancerz.Obrazenia + ZalozonaTarcza.Obrazenia; } }
-        public int PancerzZPrzedmiotami {  get { return PancerzPodstawa + ZalozonaBron.Pancerz + ZalozonyPancerz.Pancerz + ZalozonaTarcza.Pancerz; } }
-        public int HPZPrzedmiotami {  get { return HPPodstawa + ZalozonaBron.HP + ZalozonyPancerz.HP + ZalozonaTarcza.HP; } }
-        public int EnergiaZPrzedmiotami {  get { return EnergiaPodstawa + ZalozonaBron.Energia + ZalozonyPancerz.Energia + ZalozonaTarcza.Energia; } }
-        public int SzansaNaTrafienieZPrzedmiotami {  get { return SzansaNaTrafieniePodstawa + ZalozonaBron.SzansaNaTrafienie + ZalozonyPancerz.SzansaNaTrafienie + ZalozonaTarcza.SzansaNaTrafienie; } }
-        public int SzansaNaKrytyczneZPrzedmiotami {  get { return SzansaNaKrytycznePodstawa + ZalozonaBron.SzansaNaKrytyczne + ZalozonyPancerz.SzansaNaKrytyczne + ZalozonaTarcza.SzansaNaKrytyczne; } }
+        public double ObrazeniaZPrzedmiotami { get { return ObrazeniaPodstawa + ZalozonaBron.Obrazenia + ZalozonyPancerz.Obrazenia + ZalozonaTarcza.Obrazenia; } }
+        public double PancerzZPrzedmiotami { get { return PancerzPodstawa + ZalozonaBron.Pancerz + ZalozonyPancerz.Pancerz + ZalozonaTarcza.Pancerz; } }
+        public double HPZPrzedmiotami { get { return HPPodstawa + ZalozonaBron.HP + ZalozonyPancerz.HP + ZalozonaTarcza.HP; } }
+        public double EnergiaZPrzedmiotami { get { return EnergiaPodstawa + ZalozonaBron.Energia + ZalozonyPancerz.Energia + ZalozonaTarcza.Energia; } }
+        public double SzansaNaTrafienieZPrzedmiotami { get { return SzansaNaTrafieniePodstawa + ZalozonaBron.SzansaNaTrafienie + ZalozonyPancerz.SzansaNaTrafienie + ZalozonaTarcza.SzansaNaTrafienie; } }
+        public double SzansaNaKrytyczneZPrzedmiotami { get { return SzansaNaKrytycznePodstawa + ZalozonaBron.SzansaNaKrytyczne + ZalozonyPancerz.SzansaNaKrytyczne + ZalozonaTarcza.SzansaNaKrytyczne; } }
 
-        public int DoswiadczenieDoNastepnegoPoziomu { get { return 1000 * Poziom * Poziom; ;} }
+        public int BonusDoSily { get { return 0; } }
+        public int BonusDoZrecznosci { get { return 0; } }
+        public int BonusDoWitalnosci { get { return 0; } }
+        public int BonusDoInteligencji { get { return 0; } }
+        public int BonusDoObrazen { get { return SilaZPrzedmiotami / 5; } }
+        public int BonusDoPancerza { get { return ZrecznoscZPrzedmiotami / 5; } }
+        public int BonusDoHP { get { return WitalnoscZPrzedmiotami * 5; } }
+        public int BonusDoEnergii { get { return InteligencjaZPrzedmiotami * 5; } }
+        public int BonusDoSzansyNaTrafienie { get { return ZrecznoscZPrzedmiotami / 10; } }
+        public int BonusDoSzansyNaKrytyczne { get { return ZrecznoscZPrzedmiotami / 10; } }
 
-        public int Sila { get { return SilaZPrzedmiotami; } }
-        public int Zrecznosc { get { return ZrecznoscZPrzedmiotami; } }
-        public int Witalnosc { get { return WitalnoscZPrzedmiotami; } }
-        public int Inteligencja { get { return InteligencjaZPrzedmiotami; } }
-        public int Obrazenia { get { return ObrazeniaPodstawa + Sila / 5; } }
-        public int Pancerz { get { return PancerzPodstawa + Zrecznosc / 5; } }
-        public int HP { get { return HPZPrzedmiotami + Witalnosc * 5; } }
-        public int Energia { get { return EnergiaPodstawa + Inteligencja * 5; } }
-        public int SzansaNaTrafienie { get { return SzansaNaTrafienieZPrzedmiotami + Zrecznosc / 10; } }
-        public int SzansaNaKrytyczne { get { return SzansaNaKrytyczneZPrzedmiotami + Zrecznosc / 10; } }
+        public int Sila { get { return SilaZPrzedmiotami + BonusDoSily; } }
+        public int Zrecznosc { get { return ZrecznoscZPrzedmiotami + BonusDoZrecznosci; } }
+        public int Witalnosc { get { return WitalnoscZPrzedmiotami + BonusDoWitalnosci; } }
+        public int Inteligencja { get { return InteligencjaZPrzedmiotami + BonusDoInteligencji; } }
+        public double Obrazenia { get { return ObrazeniaPodstawa + BonusDoObrazen; } }
+        public double Pancerz { get { return PancerzPodstawa + BonusDoPancerza; } }
+        public double HP { get { return HPZPrzedmiotami + BonusDoHP; } }
+        public double Energia { get { return EnergiaPodstawa + BonusDoEnergii; } }
+        public double SzansaNaTrafienie { get { return SzansaNaTrafienieZPrzedmiotami + BonusDoSzansyNaTrafienie; } }
+        public double SzansaNaKrytyczne { get { return SzansaNaKrytyczneZPrzedmiotami + BonusDoSzansyNaKrytyczne; } }
 
-        public int Poziom { get{return (SilaPodstawa +ZrecznoscPodstawa +WitalnoscPodstawa +InteligencjaPodstawa)/4;} }
+        private int obecnyPoziom=1;
 
+        public List<int> DoswiadczenieWymaganeNaKonkretnyPoziom{ get { 
+            List<int> listaDoswiadczenia = new List<int>();
+            listaDoswiadczenia.Clear(); 
+            const int ograniczeniePoziomu = 40; 
+            for (int i = 1; i <= ograniczeniePoziomu; i++) 
+            { listaDoswiadczenia.Add(1000 * i * i); } 
+            return listaDoswiadczenia; 
+        } }
+
+        public int Poziom { get {
+            if (DoswiadczenieWymaganeNaKonkretnyPoziom[obecnyPoziom-1] - Doswiadczenie < 0)
+            {
+                int roznicaDoswiadczenia = Doswiadczenie;
+                int i = 0;
+                while(roznicaDoswiadczenia>0)
+                {
+                    roznicaDoswiadczenia = roznicaDoswiadczenia - DoswiadczenieWymaganeNaKonkretnyPoziom[i];
+                    i++;
+                }
+                obecnyPoziom = i;
+            }
+            return obecnyPoziom; 
+        } }
+
+        public int PunktyStatystykDoRozdania { get { return obecnyPoziom * iloscPunktowDoRozdaniaCoPoziom - SumaStatystykPodstawowych + sumaPoczatkowychStatystyk; } }
+        
         public Ekwipunek ZalozonaBron { get; set; }
         public Ekwipunek ZalozonyPancerz { get; set; }
         public Ekwipunek ZalozonaTarcza { get; set; }
 
-        public List<Umiejetnosc> Umiejetnosci { get; set; }
         public List<Ekwipunek> Plecak { get; set; }
         public List<Strawa> MiksturyIPozywienie { get; set; }
         public List<Zadanie> Zadania {get;set;}
@@ -72,7 +91,6 @@ namespace RPG
             ObrazekMowienia = "Resources/Grafiki postaci mówiących/Mówca1.png";
 
             Doswiadczenie = 1;
-            PunktyStatystykDoRozdania = 1;
             Zloto = 1;
             SilaPodstawa = 1;
             ZrecznoscPodstawa = 1;
@@ -85,25 +103,27 @@ namespace RPG
             SzansaNaTrafieniePodstawa = 1;
             SzansaNaKrytycznePodstawa = 1;
 
+            sumaPoczatkowychStatystyk = SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa;
+
             ZalozonaBron = new Ekwipunek();
             ZalozonyPancerz = new Ekwipunek();
             ZalozonaTarcza = new Ekwipunek();
 
-            Umiejetnosci = new List<Umiejetnosc>();
+            UmiejetnosciFizyczne = new List<Umiejetnosc>();
+            UmiejetnosciMagiczne = new List<Umiejetnosc>();
             Plecak = new List<Ekwipunek>();
             MiksturyIPozywienie = new List<Strawa>();
             Zadania = new List<Zadanie>();
         }
 
         //Konstruktor z parametrami
-        public Gracz(string nazwa, string obrazekNaMapie, string obrazekMowienia, int doswiadczenie, int punktyStatystykDoRozdania, int zloto, int silaPodstawa, int zrecznoscPodstawa,int witalnoscPodstawa, int inteligencjaPodstawa, int obrazeniaPodstawa, int pancerzPodstawa, int hPPodstawa, int energiaPodstawa, int szansaNaTrafieniePodstawa, int szansaNaKrytycznePodstawa,Ekwipunek zalozonaBron, Ekwipunek zalozonyPancerz,Ekwipunek zalozonaTarcza, List<Umiejetnosc> umiejetnosci, List<Ekwipunek>plecak,List<Zadanie>zadania,List<Strawa> miksturyIPozywienie)
+        public Gracz(string nazwa, string obrazekNaMapie, string obrazekMowienia, int doswiadczenie, int zloto, int silaPodstawa, int zrecznoscPodstawa, int witalnoscPodstawa, int inteligencjaPodstawa, double obrazeniaPodstawa, double pancerzPodstawa, double hPPodstawa, double energiaPodstawa, double szansaNaTrafieniePodstawa, double szansaNaKrytycznePodstawa, Ekwipunek zalozonaBron, Ekwipunek zalozonyPancerz, Ekwipunek zalozonaTarcza, List<Umiejetnosc> umiejetnosciFizyczne, List<Umiejetnosc> umiejetnosciMagiczne, List<Ekwipunek> plecak, List<Zadanie> zadania, List<Strawa> miksturyIPozywienie)
         {
             Nazwa = nazwa;
             ObrazekNaMapie = obrazekNaMapie;
             ObrazekMowienia = obrazekMowienia;
 
             Doswiadczenie = doswiadczenie;
-            PunktyStatystykDoRozdania = punktyStatystykDoRozdania;
             Zloto = zloto;
             SilaPodstawa = silaPodstawa;
             ZrecznoscPodstawa = zrecznoscPodstawa;
@@ -116,13 +136,15 @@ namespace RPG
             SzansaNaTrafieniePodstawa = szansaNaTrafieniePodstawa;
             SzansaNaKrytycznePodstawa = szansaNaKrytycznePodstawa;
 
+            sumaPoczatkowychStatystyk = SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa;
+
             if (zalozonaBron != null)
             {
                 ZalozonaBron = new Ekwipunek(zalozonaBron);
             }
             else
             {
-                ZalozonaBron = new Ekwipunek();
+                ZalozonaBron = null;
             }
             if (zalozonyPancerz != null)
             {
@@ -130,7 +152,7 @@ namespace RPG
             }
             else
             {
-                ZalozonyPancerz = new Ekwipunek();
+                ZalozonyPancerz = null;
             }
 
             if (zalozonaTarcza != null)
@@ -139,17 +161,27 @@ namespace RPG
             }
             else
             {
-                ZalozonaTarcza = new Ekwipunek();
+                ZalozonaTarcza = null;
             }
 
-            if (umiejetnosci != null)
+            if (umiejetnosciFizyczne != null)
             {
-                Umiejetnosci = new List<Umiejetnosc>(umiejetnosci);
+                UmiejetnosciFizyczne = new List<Umiejetnosc>(umiejetnosciFizyczne);
             }
             else
             {
-                Umiejetnosci = new List<Umiejetnosc>();
+                UmiejetnosciFizyczne = new List<Umiejetnosc>();
             }
+
+            if (umiejetnosciMagiczne != null)
+            {
+                UmiejetnosciMagiczne = new List<Umiejetnosc>(umiejetnosciMagiczne);
+            }
+            else
+            {
+                UmiejetnosciMagiczne = new List<Umiejetnosc>();
+            }
+
             if (plecak != null)
             {
                 Plecak = new List<Ekwipunek>(plecak);
@@ -183,7 +215,6 @@ namespace RPG
             this.ObrazekNaMapie = kopiowanyBohater.ObrazekNaMapie;
             this.ObrazekMowienia = kopiowanyBohater.ObrazekMowienia;
             this.Doswiadczenie = kopiowanyBohater.Doswiadczenie;
-            this.PunktyStatystykDoRozdania = kopiowanyBohater.PunktyStatystykDoRozdania;
             this.Zloto = kopiowanyBohater.Zloto;
             this.SilaPodstawa = kopiowanyBohater.SilaPodstawa;
             this.ZrecznoscPodstawa = kopiowanyBohater.ZrecznoscPodstawa;
@@ -195,18 +226,27 @@ namespace RPG
             this.EnergiaPodstawa = kopiowanyBohater.EnergiaPodstawa;
             this.SzansaNaTrafieniePodstawa = kopiowanyBohater.SzansaNaTrafieniePodstawa;
             this.SzansaNaKrytycznePodstawa = kopiowanyBohater.SzansaNaKrytycznePodstawa;
-
+            this.sumaPoczatkowychStatystyk = kopiowanyBohater.sumaPoczatkowychStatystyk;
 
             this.ZalozonaBron = new Ekwipunek(kopiowanyBohater.ZalozonaBron);
             this.ZalozonyPancerz = new Ekwipunek(kopiowanyBohater.ZalozonyPancerz);
             this.ZalozonaTarcza = new Ekwipunek(kopiowanyBohater.ZalozonaTarcza);
 
-            this.Umiejetnosci = new List<Umiejetnosc>();
-            if (kopiowanyBohater.Umiejetnosci != null)
+            this.UmiejetnosciFizyczne = new List<Umiejetnosc>();
+            if (kopiowanyBohater.UmiejetnosciFizyczne != null)
             {
-                foreach (Umiejetnosc umiejetnosc in kopiowanyBohater.Umiejetnosci)
+                foreach (Umiejetnosc umiejetnosc in kopiowanyBohater.UmiejetnosciFizyczne)
                 {
-                    this.Umiejetnosci.Add(new Umiejetnosc(umiejetnosc));
+                    this.UmiejetnosciFizyczne.Add(new Umiejetnosc(umiejetnosc));
+                }
+            }
+
+            this.UmiejetnosciMagiczne = new List<Umiejetnosc>();
+            if (kopiowanyBohater.UmiejetnosciMagiczne != null)
+            {
+                foreach (Umiejetnosc umiejetnosc in kopiowanyBohater.UmiejetnosciMagiczne)
+                {
+                    this.UmiejetnosciMagiczne.Add(new Umiejetnosc(umiejetnosc));
                 }
             }
 
@@ -235,5 +275,4 @@ namespace RPG
             }
         }
     }
-
 }
