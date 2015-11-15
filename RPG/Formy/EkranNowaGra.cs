@@ -308,5 +308,10 @@ namespace RPG
             this.Dispose();
         }
 
+        private void EkranNowaGra_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

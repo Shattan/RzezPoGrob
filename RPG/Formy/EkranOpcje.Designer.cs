@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EkranOpcje));
             this.GroupBoxEkran = new System.Windows.Forms.GroupBox();
             this.CheckBoxZawszeNaWierzchu = new System.Windows.Forms.CheckBox();
             this.CheckBoxPelnyEkran = new System.Windows.Forms.CheckBox();
@@ -68,7 +69,7 @@
             // 
             // GroupBoxEkran
             // 
-            this.GroupBoxEkran.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.GroupBoxEkran.BackColor = System.Drawing.Color.Transparent;
             this.GroupBoxEkran.Controls.Add(this.CheckBoxZawszeNaWierzchu);
             this.GroupBoxEkran.Controls.Add(this.CheckBoxPelnyEkran);
             this.GroupBoxEkran.Location = new System.Drawing.Point(376, 90);
@@ -81,10 +82,10 @@
             // CheckBoxZawszeNaWierzchu
             // 
             this.CheckBoxZawszeNaWierzchu.AutoSize = true;
-            this.CheckBoxZawszeNaWierzchu.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CheckBoxZawszeNaWierzchu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CheckBoxZawszeNaWierzchu.Location = new System.Drawing.Point(6, 52);
             this.CheckBoxZawszeNaWierzchu.Name = "CheckBoxZawszeNaWierzchu";
-            this.CheckBoxZawszeNaWierzchu.Size = new System.Drawing.Size(154, 22);
+            this.CheckBoxZawszeNaWierzchu.Size = new System.Drawing.Size(177, 24);
             this.CheckBoxZawszeNaWierzchu.TabIndex = 1;
             this.CheckBoxZawszeNaWierzchu.Text = "Zawsze Na Wierzchu";
             this.CheckBoxZawszeNaWierzchu.UseVisualStyleBackColor = true;
@@ -96,10 +97,10 @@
             this.CheckBoxPelnyEkran.Checked = true;
             this.CheckBoxPelnyEkran.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBoxPelnyEkran.Enabled = false;
-            this.CheckBoxPelnyEkran.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CheckBoxPelnyEkran.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CheckBoxPelnyEkran.Location = new System.Drawing.Point(6, 24);
             this.CheckBoxPelnyEkran.Name = "CheckBoxPelnyEkran";
-            this.CheckBoxPelnyEkran.Size = new System.Drawing.Size(99, 22);
+            this.CheckBoxPelnyEkran.Size = new System.Drawing.Size(113, 24);
             this.CheckBoxPelnyEkran.TabIndex = 0;
             this.CheckBoxPelnyEkran.Text = "Pełny Ekran";
             this.CheckBoxPelnyEkran.UseVisualStyleBackColor = true;
@@ -107,7 +108,7 @@
             // 
             // GroupBoxDzwiek
             // 
-            this.GroupBoxDzwiek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.GroupBoxDzwiek.BackColor = System.Drawing.Color.Transparent;
             this.GroupBoxDzwiek.Controls.Add(this.GroupBoxGlosnoscMuzyki);
             this.GroupBoxDzwiek.Controls.Add(this.GroupBoxGlosnoscEfektowDzwiekowych);
             this.GroupBoxDzwiek.Location = new System.Drawing.Point(118, 90);
@@ -119,7 +120,7 @@
             // 
             // GroupBoxGlosnoscMuzyki
             // 
-            this.GroupBoxGlosnoscMuzyki.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.GroupBoxGlosnoscMuzyki.BackColor = System.Drawing.Color.Transparent;
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.RadioButtonGlosnoscMuzyki10);
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.RadioButtonGlosnoscMuzyki1);
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.CheckBoxWylaczMuzyke);
@@ -131,7 +132,7 @@
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.RadioButtonGlosnoscMuzyki7);
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.RadioButtonGlosnoscMuzyki8);
             this.GroupBoxGlosnoscMuzyki.Controls.Add(this.RadioButtonGlosnoscMuzyki9);
-            this.GroupBoxGlosnoscMuzyki.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GroupBoxGlosnoscMuzyki.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GroupBoxGlosnoscMuzyki.Location = new System.Drawing.Point(6, 24);
             this.GroupBoxGlosnoscMuzyki.Name = "GroupBoxGlosnoscMuzyki";
             this.GroupBoxGlosnoscMuzyki.Size = new System.Drawing.Size(216, 88);
@@ -143,12 +144,12 @@
             // 
             this.RadioButtonGlosnoscMuzyki10.AutoSize = true;
             this.RadioButtonGlosnoscMuzyki10.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscMuzyki10.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscMuzyki10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscMuzyki10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscMuzyki10.Location = new System.Drawing.Point(149, 52);
             this.RadioButtonGlosnoscMuzyki10.Name = "RadioButtonGlosnoscMuzyki10";
             this.RadioButtonGlosnoscMuzyki10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscMuzyki10.Size = new System.Drawing.Size(26, 35);
+            this.RadioButtonGlosnoscMuzyki10.Size = new System.Drawing.Size(31, 37);
             this.RadioButtonGlosnoscMuzyki10.TabIndex = 11;
             this.RadioButtonGlosnoscMuzyki10.Text = "10";
             this.RadioButtonGlosnoscMuzyki10.UseVisualStyleBackColor = true;
@@ -160,12 +161,12 @@
             this.RadioButtonGlosnoscMuzyki1.BackColor = System.Drawing.Color.Transparent;
             this.RadioButtonGlosnoscMuzyki1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.RadioButtonGlosnoscMuzyki1.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscMuzyki1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscMuzyki1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscMuzyki1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscMuzyki1.Location = new System.Drawing.Point(6, 52);
             this.RadioButtonGlosnoscMuzyki1.Name = "RadioButtonGlosnoscMuzyki1";
             this.RadioButtonGlosnoscMuzyki1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscMuzyki1.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscMuzyki1.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscMuzyki1.TabIndex = 2;
             this.RadioButtonGlosnoscMuzyki1.Text = "1";
             this.RadioButtonGlosnoscMuzyki1.UseVisualStyleBackColor = false;
@@ -174,10 +175,10 @@
             // CheckBoxWylaczMuzyke
             // 
             this.CheckBoxWylaczMuzyke.AutoSize = true;
-            this.CheckBoxWylaczMuzyke.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CheckBoxWylaczMuzyke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CheckBoxWylaczMuzyke.Location = new System.Drawing.Point(6, 24);
             this.CheckBoxWylaczMuzyke.Name = "CheckBoxWylaczMuzyke";
-            this.CheckBoxWylaczMuzyke.Size = new System.Drawing.Size(123, 22);
+            this.CheckBoxWylaczMuzyke.Size = new System.Drawing.Size(137, 24);
             this.CheckBoxWylaczMuzyke.TabIndex = 0;
             this.CheckBoxWylaczMuzyke.Text = "Wyłącz Muzykę";
             this.CheckBoxWylaczMuzyke.UseVisualStyleBackColor = true;
@@ -187,12 +188,12 @@
             // 
             this.RadioButtonGlosnoscMuzyki2.AutoSize = true;
             this.RadioButtonGlosnoscMuzyki2.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscMuzyki2.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscMuzyki2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscMuzyki2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscMuzyki2.Location = new System.Drawing.Point(22, 52);
             this.RadioButtonGlosnoscMuzyki2.Name = "RadioButtonGlosnoscMuzyki2";
             this.RadioButtonGlosnoscMuzyki2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscMuzyki2.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscMuzyki2.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscMuzyki2.TabIndex = 3;
             this.RadioButtonGlosnoscMuzyki2.Text = "2";
             this.RadioButtonGlosnoscMuzyki2.UseVisualStyleBackColor = true;
@@ -202,12 +203,12 @@
             // 
             this.RadioButtonGlosnoscMuzyki3.AutoSize = true;
             this.RadioButtonGlosnoscMuzyki3.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscMuzyki3.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscMuzyki3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscMuzyki3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscMuzyki3.Location = new System.Drawing.Point(38, 52);
             this.RadioButtonGlosnoscMuzyki3.Name = "RadioButtonGlosnoscMuzyki3";
             this.RadioButtonGlosnoscMuzyki3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscMuzyki3.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscMuzyki3.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscMuzyki3.TabIndex = 4;
             this.RadioButtonGlosnoscMuzyki3.Text = "3";
             this.RadioButtonGlosnoscMuzyki3.UseVisualStyleBackColor = true;
@@ -217,12 +218,12 @@
             // 
             this.RadioButtonGlosnoscMuzyki4.AutoSize = true;
             this.RadioButtonGlosnoscMuzyki4.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscMuzyki4.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscMuzyki4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscMuzyki4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscMuzyki4.Location = new System.Drawing.Point(54, 52);
             this.RadioButtonGlosnoscMuzyki4.Name = "RadioButtonGlosnoscMuzyki4";
             this.RadioButtonGlosnoscMuzyki4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscMuzyki4.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscMuzyki4.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscMuzyki4.TabIndex = 5;
             this.RadioButtonGlosnoscMuzyki4.Text = "4";
             this.RadioButtonGlosnoscMuzyki4.UseVisualStyleBackColor = true;
@@ -232,15 +233,13 @@
             // 
             this.RadioButtonGlosnoscMuzyki5.AutoSize = true;
             this.RadioButtonGlosnoscMuzyki5.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscMuzyki5.Checked = true;
-            this.RadioButtonGlosnoscMuzyki5.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscMuzyki5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscMuzyki5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscMuzyki5.Location = new System.Drawing.Point(70, 52);
             this.RadioButtonGlosnoscMuzyki5.Name = "RadioButtonGlosnoscMuzyki5";
             this.RadioButtonGlosnoscMuzyki5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscMuzyki5.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscMuzyki5.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscMuzyki5.TabIndex = 6;
-            this.RadioButtonGlosnoscMuzyki5.TabStop = true;
             this.RadioButtonGlosnoscMuzyki5.Text = "5";
             this.RadioButtonGlosnoscMuzyki5.UseVisualStyleBackColor = true;
             this.RadioButtonGlosnoscMuzyki5.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscMuzyki_CheckedChanged);
@@ -249,12 +248,12 @@
             // 
             this.RadioButtonGlosnoscMuzyki6.AutoSize = true;
             this.RadioButtonGlosnoscMuzyki6.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscMuzyki6.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscMuzyki6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscMuzyki6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscMuzyki6.Location = new System.Drawing.Point(86, 52);
             this.RadioButtonGlosnoscMuzyki6.Name = "RadioButtonGlosnoscMuzyki6";
             this.RadioButtonGlosnoscMuzyki6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscMuzyki6.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscMuzyki6.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscMuzyki6.TabIndex = 7;
             this.RadioButtonGlosnoscMuzyki6.Text = "6";
             this.RadioButtonGlosnoscMuzyki6.UseVisualStyleBackColor = true;
@@ -264,12 +263,12 @@
             // 
             this.RadioButtonGlosnoscMuzyki7.AutoSize = true;
             this.RadioButtonGlosnoscMuzyki7.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscMuzyki7.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscMuzyki7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscMuzyki7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscMuzyki7.Location = new System.Drawing.Point(102, 52);
             this.RadioButtonGlosnoscMuzyki7.Name = "RadioButtonGlosnoscMuzyki7";
             this.RadioButtonGlosnoscMuzyki7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscMuzyki7.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscMuzyki7.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscMuzyki7.TabIndex = 8;
             this.RadioButtonGlosnoscMuzyki7.Text = "7";
             this.RadioButtonGlosnoscMuzyki7.UseVisualStyleBackColor = true;
@@ -279,12 +278,12 @@
             // 
             this.RadioButtonGlosnoscMuzyki8.AutoSize = true;
             this.RadioButtonGlosnoscMuzyki8.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscMuzyki8.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscMuzyki8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscMuzyki8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscMuzyki8.Location = new System.Drawing.Point(118, 52);
             this.RadioButtonGlosnoscMuzyki8.Name = "RadioButtonGlosnoscMuzyki8";
             this.RadioButtonGlosnoscMuzyki8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscMuzyki8.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscMuzyki8.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscMuzyki8.TabIndex = 9;
             this.RadioButtonGlosnoscMuzyki8.Text = "8";
             this.RadioButtonGlosnoscMuzyki8.UseVisualStyleBackColor = true;
@@ -294,12 +293,12 @@
             // 
             this.RadioButtonGlosnoscMuzyki9.AutoSize = true;
             this.RadioButtonGlosnoscMuzyki9.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscMuzyki9.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscMuzyki9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscMuzyki9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscMuzyki9.Location = new System.Drawing.Point(134, 52);
             this.RadioButtonGlosnoscMuzyki9.Name = "RadioButtonGlosnoscMuzyki9";
             this.RadioButtonGlosnoscMuzyki9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscMuzyki9.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscMuzyki9.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscMuzyki9.TabIndex = 10;
             this.RadioButtonGlosnoscMuzyki9.Text = "9";
             this.RadioButtonGlosnoscMuzyki9.UseVisualStyleBackColor = true;
@@ -307,7 +306,7 @@
             // 
             // GroupBoxGlosnoscEfektowDzwiekowych
             // 
-            this.GroupBoxGlosnoscEfektowDzwiekowych.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.GroupBoxGlosnoscEfektowDzwiekowych.BackColor = System.Drawing.Color.Transparent;
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.RadioButtonGlosnoscEfektowDzwiekowych1);
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.CheckBoxWylaczEfektyDzwiekowe);
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.RadioButtonGlosnoscEfektowDzwiekowych9);
@@ -319,7 +318,7 @@
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.RadioButtonGlosnoscEfektowDzwiekowych7);
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.RadioButtonGlosnoscEfektowDzwiekowych5);
             this.GroupBoxGlosnoscEfektowDzwiekowych.Controls.Add(this.RadioButtonGlosnoscEfektowDzwiekowych6);
-            this.GroupBoxGlosnoscEfektowDzwiekowych.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GroupBoxGlosnoscEfektowDzwiekowych.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GroupBoxGlosnoscEfektowDzwiekowych.Location = new System.Drawing.Point(6, 118);
             this.GroupBoxGlosnoscEfektowDzwiekowych.Name = "GroupBoxGlosnoscEfektowDzwiekowych";
             this.GroupBoxGlosnoscEfektowDzwiekowych.Size = new System.Drawing.Size(216, 88);
@@ -331,12 +330,12 @@
             // 
             this.RadioButtonGlosnoscEfektowDzwiekowych1.AutoSize = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych1.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscEfektowDzwiekowych1.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscEfektowDzwiekowych1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscEfektowDzwiekowych1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscEfektowDzwiekowych1.Location = new System.Drawing.Point(6, 52);
             this.RadioButtonGlosnoscEfektowDzwiekowych1.Name = "RadioButtonGlosnoscEfektowDzwiekowych1";
             this.RadioButtonGlosnoscEfektowDzwiekowych1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscEfektowDzwiekowych1.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscEfektowDzwiekowych1.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscEfektowDzwiekowych1.TabIndex = 13;
             this.RadioButtonGlosnoscEfektowDzwiekowych1.Text = "1";
             this.RadioButtonGlosnoscEfektowDzwiekowych1.UseVisualStyleBackColor = true;
@@ -345,10 +344,10 @@
             // CheckBoxWylaczEfektyDzwiekowe
             // 
             this.CheckBoxWylaczEfektyDzwiekowe.AutoSize = true;
-            this.CheckBoxWylaczEfektyDzwiekowe.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CheckBoxWylaczEfektyDzwiekowe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.CheckBoxWylaczEfektyDzwiekowe.Location = new System.Drawing.Point(6, 24);
             this.CheckBoxWylaczEfektyDzwiekowe.Name = "CheckBoxWylaczEfektyDzwiekowe";
-            this.CheckBoxWylaczEfektyDzwiekowe.Size = new System.Drawing.Size(190, 22);
+            this.CheckBoxWylaczEfektyDzwiekowe.Size = new System.Drawing.Size(212, 24);
             this.CheckBoxWylaczEfektyDzwiekowe.TabIndex = 24;
             this.CheckBoxWylaczEfektyDzwiekowe.Text = "Wyłącz Efekty Dźwiękowe";
             this.CheckBoxWylaczEfektyDzwiekowe.UseVisualStyleBackColor = true;
@@ -358,12 +357,12 @@
             // 
             this.RadioButtonGlosnoscEfektowDzwiekowych9.AutoSize = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych9.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscEfektowDzwiekowych9.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscEfektowDzwiekowych9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscEfektowDzwiekowych9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscEfektowDzwiekowych9.Location = new System.Drawing.Point(134, 52);
             this.RadioButtonGlosnoscEfektowDzwiekowych9.Name = "RadioButtonGlosnoscEfektowDzwiekowych9";
             this.RadioButtonGlosnoscEfektowDzwiekowych9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscEfektowDzwiekowych9.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscEfektowDzwiekowych9.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscEfektowDzwiekowych9.TabIndex = 21;
             this.RadioButtonGlosnoscEfektowDzwiekowych9.Text = "9";
             this.RadioButtonGlosnoscEfektowDzwiekowych9.UseVisualStyleBackColor = true;
@@ -373,12 +372,12 @@
             // 
             this.RadioButtonGlosnoscEfektowDzwiekowych2.AutoSize = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych2.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscEfektowDzwiekowych2.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscEfektowDzwiekowych2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscEfektowDzwiekowych2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscEfektowDzwiekowych2.Location = new System.Drawing.Point(22, 52);
             this.RadioButtonGlosnoscEfektowDzwiekowych2.Name = "RadioButtonGlosnoscEfektowDzwiekowych2";
             this.RadioButtonGlosnoscEfektowDzwiekowych2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscEfektowDzwiekowych2.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscEfektowDzwiekowych2.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscEfektowDzwiekowych2.TabIndex = 14;
             this.RadioButtonGlosnoscEfektowDzwiekowych2.Text = "2";
             this.RadioButtonGlosnoscEfektowDzwiekowych2.UseVisualStyleBackColor = true;
@@ -388,12 +387,12 @@
             // 
             this.RadioButtonGlosnoscEfektowDzwiekowych10.AutoSize = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych10.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscEfektowDzwiekowych10.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscEfektowDzwiekowych10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscEfektowDzwiekowych10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscEfektowDzwiekowych10.Location = new System.Drawing.Point(149, 52);
             this.RadioButtonGlosnoscEfektowDzwiekowych10.Name = "RadioButtonGlosnoscEfektowDzwiekowych10";
             this.RadioButtonGlosnoscEfektowDzwiekowych10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscEfektowDzwiekowych10.Size = new System.Drawing.Size(26, 35);
+            this.RadioButtonGlosnoscEfektowDzwiekowych10.Size = new System.Drawing.Size(31, 37);
             this.RadioButtonGlosnoscEfektowDzwiekowych10.TabIndex = 22;
             this.RadioButtonGlosnoscEfektowDzwiekowych10.Text = "10";
             this.RadioButtonGlosnoscEfektowDzwiekowych10.UseVisualStyleBackColor = true;
@@ -403,12 +402,12 @@
             // 
             this.RadioButtonGlosnoscEfektowDzwiekowych3.AutoSize = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych3.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscEfektowDzwiekowych3.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscEfektowDzwiekowych3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscEfektowDzwiekowych3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscEfektowDzwiekowych3.Location = new System.Drawing.Point(38, 52);
             this.RadioButtonGlosnoscEfektowDzwiekowych3.Name = "RadioButtonGlosnoscEfektowDzwiekowych3";
             this.RadioButtonGlosnoscEfektowDzwiekowych3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscEfektowDzwiekowych3.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscEfektowDzwiekowych3.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscEfektowDzwiekowych3.TabIndex = 15;
             this.RadioButtonGlosnoscEfektowDzwiekowych3.Text = "3";
             this.RadioButtonGlosnoscEfektowDzwiekowych3.UseVisualStyleBackColor = true;
@@ -418,12 +417,12 @@
             // 
             this.RadioButtonGlosnoscEfektowDzwiekowych8.AutoSize = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych8.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscEfektowDzwiekowych8.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscEfektowDzwiekowych8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscEfektowDzwiekowych8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscEfektowDzwiekowych8.Location = new System.Drawing.Point(118, 52);
             this.RadioButtonGlosnoscEfektowDzwiekowych8.Name = "RadioButtonGlosnoscEfektowDzwiekowych8";
             this.RadioButtonGlosnoscEfektowDzwiekowych8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscEfektowDzwiekowych8.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscEfektowDzwiekowych8.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscEfektowDzwiekowych8.TabIndex = 20;
             this.RadioButtonGlosnoscEfektowDzwiekowych8.Text = "8";
             this.RadioButtonGlosnoscEfektowDzwiekowych8.UseVisualStyleBackColor = true;
@@ -433,12 +432,12 @@
             // 
             this.RadioButtonGlosnoscEfektowDzwiekowych4.AutoSize = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych4.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscEfektowDzwiekowych4.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscEfektowDzwiekowych4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscEfektowDzwiekowych4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscEfektowDzwiekowych4.Location = new System.Drawing.Point(54, 52);
             this.RadioButtonGlosnoscEfektowDzwiekowych4.Name = "RadioButtonGlosnoscEfektowDzwiekowych4";
             this.RadioButtonGlosnoscEfektowDzwiekowych4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscEfektowDzwiekowych4.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscEfektowDzwiekowych4.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscEfektowDzwiekowych4.TabIndex = 16;
             this.RadioButtonGlosnoscEfektowDzwiekowych4.Text = "4";
             this.RadioButtonGlosnoscEfektowDzwiekowych4.UseVisualStyleBackColor = true;
@@ -448,12 +447,12 @@
             // 
             this.RadioButtonGlosnoscEfektowDzwiekowych7.AutoSize = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych7.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscEfektowDzwiekowych7.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscEfektowDzwiekowych7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscEfektowDzwiekowych7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscEfektowDzwiekowych7.Location = new System.Drawing.Point(102, 52);
             this.RadioButtonGlosnoscEfektowDzwiekowych7.Name = "RadioButtonGlosnoscEfektowDzwiekowych7";
             this.RadioButtonGlosnoscEfektowDzwiekowych7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscEfektowDzwiekowych7.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscEfektowDzwiekowych7.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscEfektowDzwiekowych7.TabIndex = 19;
             this.RadioButtonGlosnoscEfektowDzwiekowych7.Text = "7";
             this.RadioButtonGlosnoscEfektowDzwiekowych7.UseVisualStyleBackColor = true;
@@ -463,15 +462,13 @@
             // 
             this.RadioButtonGlosnoscEfektowDzwiekowych5.AutoSize = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych5.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscEfektowDzwiekowych5.Checked = true;
-            this.RadioButtonGlosnoscEfektowDzwiekowych5.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscEfektowDzwiekowych5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscEfektowDzwiekowych5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscEfektowDzwiekowych5.Location = new System.Drawing.Point(70, 52);
             this.RadioButtonGlosnoscEfektowDzwiekowych5.Name = "RadioButtonGlosnoscEfektowDzwiekowych5";
             this.RadioButtonGlosnoscEfektowDzwiekowych5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscEfektowDzwiekowych5.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscEfektowDzwiekowych5.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscEfektowDzwiekowych5.TabIndex = 17;
-            this.RadioButtonGlosnoscEfektowDzwiekowych5.TabStop = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych5.Text = "5";
             this.RadioButtonGlosnoscEfektowDzwiekowych5.UseVisualStyleBackColor = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych5.CheckedChanged += new System.EventHandler(this.RadioButtonGlosnoscEfektowDzwiekowych_CheckedChanged);
@@ -480,12 +477,12 @@
             // 
             this.RadioButtonGlosnoscEfektowDzwiekowych6.AutoSize = true;
             this.RadioButtonGlosnoscEfektowDzwiekowych6.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.RadioButtonGlosnoscEfektowDzwiekowych6.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RadioButtonGlosnoscEfektowDzwiekowych6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.RadioButtonGlosnoscEfektowDzwiekowych6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButtonGlosnoscEfektowDzwiekowych6.Location = new System.Drawing.Point(86, 52);
             this.RadioButtonGlosnoscEfektowDzwiekowych6.Name = "RadioButtonGlosnoscEfektowDzwiekowych6";
             this.RadioButtonGlosnoscEfektowDzwiekowych6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RadioButtonGlosnoscEfektowDzwiekowych6.Size = new System.Drawing.Size(19, 35);
+            this.RadioButtonGlosnoscEfektowDzwiekowych6.Size = new System.Drawing.Size(22, 37);
             this.RadioButtonGlosnoscEfektowDzwiekowych6.TabIndex = 18;
             this.RadioButtonGlosnoscEfektowDzwiekowych6.Text = "6";
             this.RadioButtonGlosnoscEfektowDzwiekowych6.UseVisualStyleBackColor = true;
@@ -522,6 +519,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(803, 395);
             this.Controls.Add(this.PictureBoxOdrzuc);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EkranNowaGra));
             this.TextBoxNazwa = new System.Windows.Forms.TextBox();
             this.PictureBoxPotwierdz = new System.Windows.Forms.PictureBox();
             this.LabelInformacje = new System.Windows.Forms.Label();
@@ -65,11 +66,11 @@
             // 
             this.TextBoxNazwa.BackColor = System.Drawing.Color.SteelBlue;
             this.TextBoxNazwa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TextBoxNazwa.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic);
+            this.TextBoxNazwa.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic);
             this.TextBoxNazwa.ForeColor = System.Drawing.Color.Azure;
             this.TextBoxNazwa.Location = new System.Drawing.Point(194, 282);
             this.TextBoxNazwa.Name = "TextBoxNazwa";
-            this.TextBoxNazwa.Size = new System.Drawing.Size(100, 27);
+            this.TextBoxNazwa.Size = new System.Drawing.Size(100, 28);
             this.TextBoxNazwa.TabIndex = 0;
             this.TextBoxNazwa.TextChanged += new System.EventHandler(this.TextBoxNazwa_TextChanged);
             // 
@@ -86,7 +87,7 @@
             // LabelInformacje
             // 
             this.LabelInformacje.BackColor = System.Drawing.Color.Black;
-            this.LabelInformacje.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelInformacje.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelInformacje.ForeColor = System.Drawing.Color.Yellow;
             this.LabelInformacje.Location = new System.Drawing.Point(160, 12);
             this.LabelInformacje.Name = "LabelInformacje";
@@ -134,6 +135,7 @@
             // 
             // PictureBoxInteligencjaPlus
             // 
+            this.PictureBoxInteligencjaPlus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxInteligencjaPlus.Location = new System.Drawing.Point(773, 292);
             this.PictureBoxInteligencjaPlus.Name = "PictureBoxInteligencjaPlus";
             this.PictureBoxInteligencjaPlus.Size = new System.Drawing.Size(29, 31);
@@ -143,6 +145,7 @@
             // 
             // PictureBoxInteligencjaMinus
             // 
+            this.PictureBoxInteligencjaMinus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxInteligencjaMinus.Location = new System.Drawing.Point(728, 292);
             this.PictureBoxInteligencjaMinus.Name = "PictureBoxInteligencjaMinus";
             this.PictureBoxInteligencjaMinus.Size = new System.Drawing.Size(29, 31);
@@ -152,6 +155,7 @@
             // 
             // PictureBoxWitalnoscPlus
             // 
+            this.PictureBoxWitalnoscPlus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxWitalnoscPlus.Location = new System.Drawing.Point(773, 255);
             this.PictureBoxWitalnoscPlus.Name = "PictureBoxWitalnoscPlus";
             this.PictureBoxWitalnoscPlus.Size = new System.Drawing.Size(29, 31);
@@ -161,6 +165,7 @@
             // 
             // PictureBoxWitalnoscMinus
             // 
+            this.PictureBoxWitalnoscMinus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxWitalnoscMinus.Location = new System.Drawing.Point(728, 255);
             this.PictureBoxWitalnoscMinus.Name = "PictureBoxWitalnoscMinus";
             this.PictureBoxWitalnoscMinus.Size = new System.Drawing.Size(29, 31);
@@ -170,6 +175,7 @@
             // 
             // PictureBoxZrecznoscPlus
             // 
+            this.PictureBoxZrecznoscPlus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxZrecznoscPlus.Location = new System.Drawing.Point(773, 218);
             this.PictureBoxZrecznoscPlus.Name = "PictureBoxZrecznoscPlus";
             this.PictureBoxZrecznoscPlus.Size = new System.Drawing.Size(29, 31);
@@ -179,6 +185,7 @@
             // 
             // PictureBoxZrecznoscMinus
             // 
+            this.PictureBoxZrecznoscMinus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxZrecznoscMinus.Location = new System.Drawing.Point(728, 218);
             this.PictureBoxZrecznoscMinus.Name = "PictureBoxZrecznoscMinus";
             this.PictureBoxZrecznoscMinus.Size = new System.Drawing.Size(29, 31);
@@ -188,6 +195,7 @@
             // 
             // PictureBoxSilaPlus
             // 
+            this.PictureBoxSilaPlus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxSilaPlus.Location = new System.Drawing.Point(773, 181);
             this.PictureBoxSilaPlus.Name = "PictureBoxSilaPlus";
             this.PictureBoxSilaPlus.Size = new System.Drawing.Size(29, 31);
@@ -197,6 +205,7 @@
             // 
             // PictureBoxSilaMinus
             // 
+            this.PictureBoxSilaMinus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxSilaMinus.Location = new System.Drawing.Point(728, 181);
             this.PictureBoxSilaMinus.Name = "PictureBoxSilaMinus";
             this.PictureBoxSilaMinus.Size = new System.Drawing.Size(29, 31);
@@ -206,6 +215,7 @@
             // 
             // LabelNazwyStatystyk
             // 
+            this.LabelNazwyStatystyk.BackColor = System.Drawing.Color.Transparent;
             this.LabelNazwyStatystyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelNazwyStatystyk.ForeColor = System.Drawing.Color.Azure;
             this.LabelNazwyStatystyk.Location = new System.Drawing.Point(370, 224);
@@ -216,6 +226,7 @@
             // 
             // LabelStatystyki
             // 
+            this.LabelStatystyki.BackColor = System.Drawing.Color.Transparent;
             this.LabelStatystyki.Font = new System.Drawing.Font("Segoe Print", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelStatystyki.ForeColor = System.Drawing.Color.Azure;
             this.LabelStatystyki.Location = new System.Drawing.Point(367, 167);
@@ -226,6 +237,7 @@
             // 
             // LabelWartosciStatystyk
             // 
+            this.LabelWartosciStatystyk.BackColor = System.Drawing.Color.Transparent;
             this.LabelWartosciStatystyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelWartosciStatystyk.ForeColor = System.Drawing.Color.Azure;
             this.LabelWartosciStatystyk.Location = new System.Drawing.Point(585, 181);
@@ -239,7 +251,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1232, 780);
             this.Controls.Add(this.LabelInformacje);
             this.Controls.Add(this.PictureBoxInteligencjaPlus);
@@ -266,6 +279,7 @@
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranNowaGra_FormClosing);
+            this.Load += new System.EventHandler(this.EkranNowaGra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPotwierdz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWstecz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPoprzedniBohater)).EndInit();

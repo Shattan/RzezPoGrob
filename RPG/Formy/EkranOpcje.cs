@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Media;
 using System.Threading;
 using System.Windows.Media;
+using RPG.Narzedzia;
 #endregion
 
 namespace RPG
@@ -23,7 +24,6 @@ namespace RPG
         //Dostep do Formy EkranGlowny dla zdarzen:
         //ZawszeNaWierzchu, PelnyEkran
         EkranGlowny ekranGlowny;
-        List<double> glosnosciPrzedUstawianiem = new List<double>();
         #endregion  
 
         public EkranOpcje(EkranGlowny ekranGlowny)
@@ -33,7 +33,6 @@ namespace RPG
             RozmiescElementy();
             KolorujElementy();
             UstawRadiobuttony();
-            ZapiszGlosnosci();
         }
 
         #region Metody
@@ -49,26 +48,6 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxOdrzuc,"Resources/Grafiki menu/Odrzuć opcje.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZapisz,"Resources/Grafiki menu/Zapisz opcje.png");
         }
-
-        #region Zapis i wczytywanie wartości przed zmianami
-        void ZapiszGlosnosci()
-        {
-            glosnosciPrzedUstawianiem.Clear();
-            foreach (MediaPlayer player in ekranGlowny.odtwarzaczeDzwieku)
-            {
-                glosnosciPrzedUstawianiem.Add(player.Volume);
-            }
-        }
-        void WczytajGlosnosci()
-        {
-            int i = 0;
-            foreach (MediaPlayer player in ekranGlowny.odtwarzaczeDzwieku)
-            {
-                player.Volume = glosnosciPrzedUstawianiem[i];
-                i++;
-            }
-        }
-        #endregion
 
         #region Sterowanie radiobuttonami
         private void AktywacjaPrzyciskiMuzyki(bool aktywowac)
@@ -102,110 +81,121 @@ namespace RPG
 
         private void UstawRadiobuttony()
         {
-            string glosnosc;
-            RadioButton ustawianyRadiobutton;
-            //Buttony głośności muzyki
-            int calkowita = (int)ekranGlowny.odtwarzaczeDzwieku[0].Volume;
-            int dziesietna = (int)((ekranGlowny.odtwarzaczeDzwieku[0].Volume - calkowita) * 10);
-            glosnosc = dziesietna.ToString();
+            double glosnosc = Ustawienia.GlosnoscMuzyki;
+            if (glosnosc == 0.0)
+            {
+                CheckBoxWylaczMuzyke.Checked = true;
+                AktywacjaPrzyciskiMuzyki(false);
+            }
+            else
+            {
+                string glosnoscstr = ((int)glosnosc).ToString();
+                RadioButton ustawianyRadiobutton;
+                //Buttony głośności muzyki
 
-            ustawianyRadiobutton = GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>().First(x => x.Name.EndsWith(glosnosc));
-            ustawianyRadiobutton.Checked = true;
-
+                ustawianyRadiobutton = GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>().First(x => x.Text.Equals(glosnoscstr));
+                ustawianyRadiobutton.Checked = true;
+            }
             //Buttony głośności efektów dźwiękowych
-            calkowita = (int)ekranGlowny.odtwarzaczeDzwieku[2].Volume;
-            dziesietna = (int)((ekranGlowny.odtwarzaczeDzwieku[2].Volume - calkowita) * 10);
-            glosnosc = dziesietna.ToString();
+            glosnosc = Ustawienia.GlosnoscDzwiekow;
+            if (glosnosc == 0.0)
+            {
+                CheckBoxWylaczEfektyDzwiekowe.Checked = true;
+                AktywacjaPrzyciskiEfektowDzwiekowych(false);
+            }
+            else
+            {
+                string glosnoscstr = ((int)glosnosc).ToString();
+                RadioButton ustawianyRadiobutton;
+                //Buttony głośności muzyki
 
-            ustawianyRadiobutton = GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>().First(x => x.Name.EndsWith(glosnosc));
-            ustawianyRadiobutton.Checked = true;
+                ustawianyRadiobutton = GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>().First(x => x.Text.Equals(glosnoscstr));
+                ustawianyRadiobutton.Checked = true;
+            }
+            //Buttony g
             
         }
         #endregion
 
         #region Kontrola głośności muzyki (odtwarzacze 0-1)
-        private void WyciszMuzyke()
+        private double AktualnaGlosnoscMuzyki()
         {
-            for (int i = 0; i < 2; i++)//Odtwarzacze 0-1 zajmować się będą muzyką
+        
+            double glosnosc = 0;
+            if (CheckBoxWylaczMuzyke.Checked)
             {
-                if (ekranGlowny.odtwarzaczeDzwieku[i].Volume != 0.0)
-                {
-                    ekranGlowny.odtwarzaczeDzwieku[i].Volume = 0.0;
-                }
+                glosnosc = 0;
             }
-        }
+            else
+            {
+                foreach (RadioButton poziom in GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>())
+                {
+                    if (poziom.Checked)
+                    {
+                        glosnosc = int.Parse(poziom.Text);
+                        break;
+                    }
+                }
 
+            }
+            return glosnosc;
+        }
         private void UstawGlosnoscMuzyki()
         {
-            string nazwaAktywnegoPoziomu = "0";
-
-            foreach (RadioButton poziom in GroupBoxGlosnoscMuzyki.Controls.OfType<RadioButton>())
-            {
-                if (poziom.Checked)
-                {
-                    nazwaAktywnegoPoziomu = poziom.Name;
-                }
-            }
-
-            double glosnosc = Convert.ToDouble("0," + nazwaAktywnegoPoziomu.Substring(nazwaAktywnegoPoziomu.Length - 1));
-            if (glosnosc == 0.0)
-            {
-                glosnosc = 1.0;
-            }
+            double glosnosc = AktualnaGlosnoscMuzyki();
             for (int i = 0; i < 2; i++)
             {
-                if (ekranGlowny.odtwarzaczeDzwieku[i].Volume != glosnosc)
-                    ekranGlowny.odtwarzaczeDzwieku[i].Volume = glosnosc;
+                OdtwrzaczManager.UstawGlosnosc(0, glosnosc);
+                OdtwrzaczManager.UstawGlosnosc(1, glosnosc);
             }
         }
         #endregion
 
         #region Kontrola głośności efektów dźwiękowych (odtwarzacze 2-ostatni)
-        private void WyciszEfektyDzwiekowe()
+        private double AktualnaGlosnoscDzwieki()
         {
-            for (int i = 2; i < ekranGlowny.odtwarzaczeDzwieku.Count; i++)//Odtwarzacze od 2 zajmować się będą dialogami i efektami
-            {
-                if (ekranGlowny.odtwarzaczeDzwieku[i].Volume != 0.0)
-                {
-                    ekranGlowny.odtwarzaczeDzwieku[i].Volume = 0.0;
-                }
-            }
-        }
 
+            double glosnosc = 0;
+            if (CheckBoxWylaczEfektyDzwiekowe.Checked)
+            {
+                glosnosc = 0;
+            }
+            else
+            {
+                foreach (RadioButton poziom in GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>())
+                {
+                    if (poziom.Checked)
+                    {
+                        glosnosc = int.Parse(poziom.Text);
+                        break;
+                    }
+                }
+
+            }
+            return glosnosc;
+        }
         private void UstawGlosnoscEfektyDzwiekowe()
         {
-            string nazwaAktywnegoPoziomu = "0";
-            foreach (RadioButton poziom in GroupBoxGlosnoscEfektowDzwiekowych.Controls.OfType<RadioButton>())
+            double glosnosc = AktualnaGlosnoscDzwieki();
+            for (int i = 2; i < OdtwrzaczManager.LiczbaOdtwarzaczy; i++)
             {
-                if (poziom.Checked)
-                {
-                    nazwaAktywnegoPoziomu = poziom.Name;
-                }
-            }
-
-            double glosnosc = Convert.ToDouble("0," + nazwaAktywnegoPoziomu.Substring(nazwaAktywnegoPoziomu.Length - 1));
-            if (glosnosc == 0.0)
-            {
-                glosnosc = 1.0;
-            }
-            for (int i = 2; i < ekranGlowny.odtwarzaczeDzwieku.Count; i++)
-            {
-                if (ekranGlowny.odtwarzaczeDzwieku[i].Volume != glosnosc)
-                    ekranGlowny.odtwarzaczeDzwieku[i].Volume = glosnosc;
+                OdtwrzaczManager.UstawGlosnosc(i, glosnosc);
             }
 
         }
         #endregion
         #endregion
-
         #region Zdarzenia
 
         private void PictureBoxZapisz_Click(object sender, EventArgs e)
         {
+            Ustawienia.GlosnoscDzwiekow = AktualnaGlosnoscDzwieki();
+            Ustawienia.GlosnoscMuzyki = AktualnaGlosnoscMuzyki();
             DialogResult = DialogResult.OK;
         }
         private void PictureBoxZapisz_MouseEnter(object sender, EventArgs e)
         {
+
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZapisz, "Resources/Grafiki menu/Zapisz opcje najechany.png");
         }
         private void PictureBoxZapisz_MouseLeave(object sender, EventArgs e)
@@ -215,10 +205,7 @@ namespace RPG
 
         private void PictureBoxOdrzuc_Click(object sender, EventArgs e)
         {
-            WczytajGlosnosci();
-            UstawRadiobuttony(); 
-            UstawGlosnoscMuzyki();
-            UstawGlosnoscEfektyDzwiekowe();
+            OdtwrzaczManager.UstawDomyslneGlosnosci();
             DialogResult = DialogResult.Ignore;
         }
         private void PictureBoxOdrzuc_MouseEnter(object sender, EventArgs e)
@@ -232,30 +219,14 @@ namespace RPG
 
         private void CheckBoxWylaczMuzyke_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckBoxWylaczMuzyke.Checked)
-            {
-                WyciszMuzyke();
-                AktywacjaPrzyciskiMuzyki(false);
-            }
-            else
-            {
-                UstawGlosnoscMuzyki();
-                AktywacjaPrzyciskiMuzyki(true);
-            }
+            UstawGlosnoscMuzyki();
+            AktywacjaPrzyciskiMuzyki(!CheckBoxWylaczMuzyke.Checked);
         }
 
         private void CheckBoxWylaczEfektyDzwiekowe_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckBoxWylaczEfektyDzwiekowe.Checked)
-            {
-                WyciszEfektyDzwiekowe();
-                AktywacjaPrzyciskiEfektowDzwiekowych(false);
-            }
-            else
-            {
-                UstawGlosnoscEfektyDzwiekowe();
-                AktywacjaPrzyciskiEfektowDzwiekowych(true);
-            }
+            UstawGlosnoscEfektyDzwiekowe();
+            AktywacjaPrzyciskiEfektowDzwiekowych(!CheckBoxWylaczEfektyDzwiekowe.Checked);
         }
 
         private void RadioButtonGlosnoscMuzyki_CheckedChanged(object sender, EventArgs e)

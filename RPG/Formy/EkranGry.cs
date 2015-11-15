@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.Media;
 using System.Threading;
 using System.Windows.Media;
+using RPG.Narzedzia;
 #endregion
 
 namespace RPG
@@ -67,7 +68,7 @@ namespace RPG
             KolorujElementy();
             DodajZdarzeniaDlaPrawegoMenu();
             //Dzwiek zakomentowany na czas debugowania
-            //ekranOpcje.OdtworzDzwiek(odtwarzacz, sciezka);
+            //ekranOpcje.OdtwrzaczManager.Odtworz(odtwarzacz, sciezka);
 
             //Pamietaj! 
             //Zatrzymaj czas przy wchodzeniu do innej formy lub uzywaj ShowDialog()!
@@ -292,7 +293,7 @@ namespace RPG
             }
             else if (ekranWalkaTlo.DialogResult == DialogResult.Abort)//Jeżeli gracz przegrał
             {
-                ekranGlowny.OdtworzDzwiek("Resources/Dźwięki/smierc.wav");
+                OdtwrzaczManager.Odtworz(4,"Resources/Dźwięki/smierc.wav",false);
                 UwidocznijGre();
                 //Co robimy jak gracz przegral?
                 ekranGryObiektyTlo.pBGracz.Visible = false;
