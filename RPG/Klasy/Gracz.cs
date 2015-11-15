@@ -35,16 +35,16 @@ namespace RPG
         public int BonusDoSzansyNaTrafienie { get { return ZrecznoscZPrzedmiotami / 10; } }
         public int BonusDoSzansyNaKrytyczne { get { return ZrecznoscZPrzedmiotami / 10; } }
 
-        public int Sila { get { return SilaZPrzedmiotami + BonusDoSily; } }
-        public int Zrecznosc { get { return ZrecznoscZPrzedmiotami + BonusDoZrecznosci; } }
-        public int Witalnosc { get { return WitalnoscZPrzedmiotami + BonusDoWitalnosci; } }
-        public int Inteligencja { get { return InteligencjaZPrzedmiotami + BonusDoInteligencji; } }
-        public double Obrazenia { get { return ObrazeniaPodstawa + BonusDoObrazen; } }
-        public double Pancerz { get { return PancerzPodstawa + BonusDoPancerza; } }
-        public double HP { get { return HPZPrzedmiotami + BonusDoHP; } }
-        public double Energia { get { return EnergiaPodstawa + BonusDoEnergii; } }
-        public double SzansaNaTrafienie { get { return SzansaNaTrafienieZPrzedmiotami + BonusDoSzansyNaTrafienie; } }
-        public double SzansaNaKrytyczne { get { return SzansaNaKrytyczneZPrzedmiotami + BonusDoSzansyNaKrytyczne; } }
+        public override int Sila { get { return SilaZPrzedmiotami + BonusDoSily; } }
+        public override int Zrecznosc { get { return ZrecznoscZPrzedmiotami + BonusDoZrecznosci; } }
+        public override int Witalnosc { get { return WitalnoscZPrzedmiotami + BonusDoWitalnosci; } }
+        public override int Inteligencja { get { return InteligencjaZPrzedmiotami + BonusDoInteligencji; } }
+        public override double Obrazenia { get { return ObrazeniaPodstawa + BonusDoObrazen; } }
+        public override double Pancerz { get { return PancerzPodstawa + BonusDoPancerza; } }
+        public override double HP { get { return HPZPrzedmiotami + BonusDoHP; } }
+        public override double Energia { get { return EnergiaPodstawa + BonusDoEnergii; } }
+        public override double SzansaNaTrafienie { get { return SzansaNaTrafienieZPrzedmiotami + BonusDoSzansyNaTrafienie; } }
+        public override double SzansaNaKrytyczne { get { return SzansaNaKrytyczneZPrzedmiotami + BonusDoSzansyNaKrytyczne; } }
 
         private int obecnyPoziom=1;
 

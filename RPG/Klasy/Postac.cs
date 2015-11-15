@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    public class Postac
+    public abstract class Postac
     {
         public string Nazwa { get; set; }
         public int Zloto { get; set; }
@@ -32,6 +32,22 @@ namespace RPG
 
         public List<Umiejetnosc> UmiejetnosciFizyczne { get; set; }
         public List<Umiejetnosc> UmiejetnosciMagiczne { get; set; }
+
+        /// <summary>
+        /// Całkowita siła
+        /// </summary>
+
+        public abstract int Sila { get ;} 
+        public abstract int Zrecznosc { get ;} 
+        public abstract int Witalnosc { get ;} 
+        public abstract int Inteligencja { get ;} 
+        public abstract double Obrazenia { get ;} 
+        public abstract double Pancerz { get ;} 
+        public abstract double HP{ get ;} 
+        public abstract double Energia{ get ;} 
+        public abstract double SzansaNaTrafienie{ get ;} 
+        public abstract double SzansaNaKrytyczne { get ;} 
+
 
     }
 }

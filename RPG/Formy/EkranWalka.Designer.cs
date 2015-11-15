@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.buttonWygralem = new System.Windows.Forms.Button();
-            this.buttonPrzegralem = new System.Windows.Forms.Button();
+          
             this.LabelInformacje = new System.Windows.Forms.Label();
             this.PictureBoxUcieczka = new System.Windows.Forms.PictureBox();
             this.PictureBoxAtakMagiczny = new System.Windows.Forms.PictureBox();
@@ -70,31 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiPrzeciwnika)).BeginInit();
             this.PanelDanychGracza.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonWygralem
-            // 
-            this.buttonWygralem.BackColor = System.Drawing.Color.Lime;
-            this.buttonWygralem.Location = new System.Drawing.Point(227, 48);
-            this.buttonWygralem.Name = "buttonWygralem";
-            this.buttonWygralem.Size = new System.Drawing.Size(178, 69);
-            this.buttonWygralem.TabIndex = 0;
-            this.buttonWygralem.Text = "Wygrałem!";
-            this.buttonWygralem.UseVisualStyleBackColor = false;
-            this.buttonWygralem.Click += new System.EventHandler(this.buttonWygralem_Click);
-            // 
-            // buttonPrzegralem
-            // 
-            this.buttonPrzegralem.BackColor = System.Drawing.Color.Red;
-            this.buttonPrzegralem.Location = new System.Drawing.Point(408, 48);
-            this.buttonPrzegralem.Name = "buttonPrzegralem";
-            this.buttonPrzegralem.Size = new System.Drawing.Size(178, 69);
-            this.buttonPrzegralem.TabIndex = 1;
-            this.buttonPrzegralem.Text = "Przegrałem..";
-            this.buttonPrzegralem.UseVisualStyleBackColor = false;
-            this.buttonPrzegralem.Click += new System.EventHandler(this.buttonPrzegralem_Click);
-            // 
-            // LabelInformacje
-            // 
+          
             this.LabelInformacje.BackColor = System.Drawing.Color.Black;
             this.LabelInformacje.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelInformacje.ForeColor = System.Drawing.Color.Red;
@@ -315,8 +290,6 @@
             this.Controls.Add(this.FlowLayoutPanelWyborMikstury);
             this.Controls.Add(this.FlowLayoutPanelWyboru);
             this.Controls.Add(this.LabelInformacje);
-            this.Controls.Add(this.buttonPrzegralem);
-            this.Controls.Add(this.buttonWygralem);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -349,8 +322,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonWygralem;
-        private System.Windows.Forms.Button buttonPrzegralem;
+  
         private System.Windows.Forms.Label LabelInformacje;
         private System.Windows.Forms.PictureBox PictureBoxUcieczka;
         private System.Windows.Forms.PictureBox PictureBoxAtakMagiczny;

@@ -21,16 +21,16 @@ namespace RPG
 
 
         //statystyki po obliczeniu bonusów 
-        public int Sila { get { return SilaPodstawa; } }
-        public int Zrecznosc { get { return ZrecznoscPodstawa; } }
-        public int Witalnosc { get { return WitalnoscPodstawa; } }
-        public int Inteligencja { get { return InteligencjaPodstawa; } }
-        public double Obrazenia { get { return ObrazeniaPodstawa + BonusDoObrazen; } }
-        public double Pancerz { get { return PancerzPodstawa + BonusDoPancerza; } }
-        public double HP { get { return HPPodstawa + BonusDoHP; } }
-        public double Energia { get { return EnergiaPodstawa + BonusDoEnergii; } }
-        public double SzansaNaTrafienie { get { return SzansaNaTrafieniePodstawa + BonusDoSzansyNaTrafienie; } }
-        public double SzansaNaKrytyczne { get { return SzansaNaKrytycznePodstawa + BonusDoSzansyNaKrytyczne; } }
+        public override int Sila { get { return SilaPodstawa; } }
+        public override int Zrecznosc { get { return ZrecznoscPodstawa; } }
+        public override int Witalnosc { get { return WitalnoscPodstawa; } }
+        public override int Inteligencja { get { return InteligencjaPodstawa; } }
+        public override double Obrazenia { get { return ObrazeniaPodstawa + BonusDoObrazen; } }
+        public override double Pancerz { get { return PancerzPodstawa + BonusDoPancerza; } }
+        public override double HP { get { return HPPodstawa + BonusDoHP; } }
+        public override double Energia { get { return EnergiaPodstawa + BonusDoEnergii; } }
+        public override double SzansaNaTrafienie { get { return SzansaNaTrafieniePodstawa + BonusDoSzansyNaTrafienie; } }
+        public override double SzansaNaKrytyczne { get { return SzansaNaKrytycznePodstawa + BonusDoSzansyNaKrytyczne; } }
 
 
         public int SumaStatystyk { get { return SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa; } }
