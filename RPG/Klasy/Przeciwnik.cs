@@ -33,14 +33,13 @@ namespace RPG
         public override double SzansaNaKrytyczne { get { return SzansaNaKrytycznePodstawa + BonusDoSzansyNaKrytyczne; } }
 
 
-        public int SumaStatystyk { get { return SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa; } }
-        public int Poziom { get { return SumaStatystyk / iloscPunktowDoRozdaniaCoPoziom; } }
+        public int Poziom { get { return SumaStatystykPodstawowych / iloscPunktowDoRozdaniaCoPoziom; } }
         public int ZlotoZaZabicie { get
         {
             Random Losowanie = new Random();
-            return Losowanie.Next(50, 150) / 100 * SumaStatystyk;
+            return Losowanie.Next(50, 150) / 100 * SumaStatystykPodstawowych;
         }}
-        public int DoswiadczenieZaZabicie { get { return SumaStatystyk; } }
+        public int DoswiadczenieZaZabicie { get { return SumaStatystykPodstawowych; } }
 
 
         
@@ -52,58 +51,22 @@ namespace RPG
             ObrazekNaMapie = "Resources/Grafiki postaci na mapie/2/";
             ObrazekMowienia = "Resources/Grafiki postaci mówiących/Mówca1.png";
             ObrazekWalki = "Resources/Grafiki postaci walczących/szczur.png";
-
-            SilaPodstawa = 1;
-            ZrecznoscPodstawa = 1;
-            WitalnoscPodstawa = 1;
-            InteligencjaPodstawa = 1;
-            ObrazeniaPodstawa = 1;
-            PancerzPodstawa = 1;
-            HPPodstawa = 1;
-            EnergiaPodstawa = 1;
-            SzansaNaTrafieniePodstawa = 1;
-            SzansaNaKrytycznePodstawa = 1;
-
-            UmiejetnosciFizyczne = new List<Umiejetnosc>();
-            UmiejetnosciMagiczne = new List<Umiejetnosc>();
         }
 
         public Przeciwnik(String nazwa, String obrazekMowienia, String obrazekNaMapie, String obrazekWalki, int sila, int zrecznosc, int witalnosc, int inteligencja, double bazoweObrazenia, double bazowyPancerz, double bazoweHP, double bazowaEnergia, double bazowaSzansaNaTrafienie, double bazowaSzansaNaKrytyczne, List<Umiejetnosc> umiejetnosciFizyczne, List<Umiejetnosc> umiejetnosciMagiczne)
+            : base(nazwa, 0, obrazekNaMapie, obrazekMowienia, "", sila, zrecznosc, witalnosc, inteligencja, bazoweObrazenia, bazowyPancerz, bazoweHP, bazowaEnergia
+      , bazowaSzansaNaTrafienie, bazowaSzansaNaKrytyczne)
         {
-            Nazwa = nazwa;
-            ObrazekMowienia = obrazekMowienia;
-            ObrazekNaMapie = obrazekNaMapie;
-            ObrazekWalki = obrazekWalki;
-
-            SilaPodstawa = sila;
-            ZrecznoscPodstawa = zrecznosc;
-            WitalnoscPodstawa = witalnosc;
-            InteligencjaPodstawa = inteligencja;
-            ObrazeniaPodstawa = bazoweObrazenia;
-            PancerzPodstawa = bazowyPancerz;
-            HPPodstawa = bazoweHP;
-            EnergiaPodstawa = bazowaEnergia;
-            SzansaNaTrafieniePodstawa = bazowaSzansaNaTrafienie;
-            SzansaNaKrytycznePodstawa = bazowaSzansaNaKrytyczne;
-
             if (umiejetnosciFizyczne != null)
             {
-                UmiejetnosciFizyczne = new List<Umiejetnosc>(umiejetnosciFizyczne);
+                UmiejetnosciFizyczne.AddRange(umiejetnosciFizyczne);
             }
-            else
-            {
-                UmiejetnosciFizyczne = new List<Umiejetnosc>();
-            }
+          
 
             if (umiejetnosciMagiczne != null)
             {
-                UmiejetnosciMagiczne = new List<Umiejetnosc>(umiejetnosciMagiczne);
+                UmiejetnosciMagiczne.AddRange(umiejetnosciMagiczne);
             }
-            else
-            {
-                UmiejetnosciMagiczne = new List<Umiejetnosc>();
-            }
-
         }
 
         public Przeciwnik(Przeciwnik kopiowanyNPC)
@@ -123,9 +86,6 @@ namespace RPG
             this.SzansaNaTrafieniePodstawa = kopiowanyNPC.SzansaNaTrafieniePodstawa;
             this.SzansaNaKrytycznePodstawa = kopiowanyNPC.SzansaNaKrytycznePodstawa;
 
-
-
-            this.UmiejetnosciFizyczne = new List<Umiejetnosc>();
             if (kopiowanyNPC.UmiejetnosciFizyczne != null)
             {
                 foreach (Umiejetnosc umiejetnosc in kopiowanyNPC.UmiejetnosciFizyczne)
@@ -134,7 +94,6 @@ namespace RPG
                 }
             }
 
-            this.UmiejetnosciMagiczne = new List<Umiejetnosc>();
             if (kopiowanyNPC.UmiejetnosciMagiczne != null)
             {
                 foreach (Umiejetnosc umiejetnosc in kopiowanyNPC.UmiejetnosciMagiczne)

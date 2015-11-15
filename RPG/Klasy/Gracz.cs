@@ -86,31 +86,11 @@ namespace RPG
         //Konstruktor domyślny
         public Gracz()
         {
-            Nazwa = "Gracz nienazwany";
-            ObrazekNaMapie = "Resources/Grafiki postaci na mapie/0/";
-            ObrazekMowienia = "Resources/Grafiki postaci mówiących/Mówca1.png";
-
             Doswiadczenie = 1;
-            Zloto = 1;
-            SilaPodstawa = 1;
-            ZrecznoscPodstawa = 1;
-            WitalnoscPodstawa = 1;
-            InteligencjaPodstawa = 1;
-            ObrazeniaPodstawa = 1;
-            PancerzPodstawa = 1;
-            HPPodstawa = 1;
-            EnergiaPodstawa = 1;
-            SzansaNaTrafieniePodstawa = 1;
-            SzansaNaKrytycznePodstawa = 1;
-
             sumaPoczatkowychStatystyk = SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa;
-
             ZalozonaBron = new Ekwipunek();
             ZalozonyPancerz = new Ekwipunek();
             ZalozonaTarcza = new Ekwipunek();
-
-            UmiejetnosciFizyczne = new List<Umiejetnosc>();
-            UmiejetnosciMagiczne = new List<Umiejetnosc>();
             Plecak = new List<Ekwipunek>();
             MiksturyIPozywienie = new List<Strawa>();
             Zadania = new List<Zadanie>();
@@ -118,70 +98,35 @@ namespace RPG
 
         //Konstruktor z parametrami
         public Gracz(string nazwa, string obrazekNaMapie, string obrazekMowienia, int doswiadczenie, int zloto, int silaPodstawa, int zrecznoscPodstawa, int witalnoscPodstawa, int inteligencjaPodstawa, double obrazeniaPodstawa, double pancerzPodstawa, double hPPodstawa, double energiaPodstawa, double szansaNaTrafieniePodstawa, double szansaNaKrytycznePodstawa, Ekwipunek zalozonaBron, Ekwipunek zalozonyPancerz, Ekwipunek zalozonaTarcza, List<Umiejetnosc> umiejetnosciFizyczne, List<Umiejetnosc> umiejetnosciMagiczne, List<Ekwipunek> plecak, List<Zadanie> zadania, List<Strawa> miksturyIPozywienie)
+            : base(nazwa, zloto, obrazekNaMapie, obrazekMowienia, "", silaPodstawa, zrecznoscPodstawa, witalnoscPodstawa, inteligencjaPodstawa, obrazeniaPodstawa, pancerzPodstawa, hPPodstawa, energiaPodstawa
+            ,szansaNaTrafieniePodstawa,szansaNaKrytycznePodstawa)
         {
-            Nazwa = nazwa;
-            ObrazekNaMapie = obrazekNaMapie;
-            ObrazekMowienia = obrazekMowienia;
-
-            Doswiadczenie = doswiadczenie;
-            Zloto = zloto;
-            SilaPodstawa = silaPodstawa;
-            ZrecznoscPodstawa = zrecznoscPodstawa;
-            WitalnoscPodstawa = witalnoscPodstawa;
-            InteligencjaPodstawa = inteligencjaPodstawa;
-            ObrazeniaPodstawa = obrazeniaPodstawa;
-            PancerzPodstawa = pancerzPodstawa;
-            HPPodstawa = hPPodstawa;
-            EnergiaPodstawa = energiaPodstawa;
-            SzansaNaTrafieniePodstawa = szansaNaTrafieniePodstawa;
-            SzansaNaKrytycznePodstawa = szansaNaKrytycznePodstawa;
-
-            sumaPoczatkowychStatystyk = SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa;
-
             if (zalozonaBron != null)
             {
                 ZalozonaBron = new Ekwipunek(zalozonaBron);
             }
-            else
-            {
-                ZalozonaBron = null;
-            }
+          
             if (zalozonyPancerz != null)
             {
                 ZalozonyPancerz = new Ekwipunek(zalozonyPancerz);
             }
-            else
-            {
-                ZalozonyPancerz = null;
-            }
-
+           
             if (zalozonaTarcza != null)
             {
                 ZalozonaTarcza = new Ekwipunek(zalozonaTarcza);
             }
-            else
-            {
-                ZalozonaTarcza = null;
-            }
+          
 
             if (umiejetnosciFizyczne != null)
             {
-                UmiejetnosciFizyczne = new List<Umiejetnosc>(umiejetnosciFizyczne);
+                UmiejetnosciFizyczne.AddRange(umiejetnosciFizyczne);
             }
-            else
-            {
-                UmiejetnosciFizyczne = new List<Umiejetnosc>();
-            }
-
+         
             if (umiejetnosciMagiczne != null)
             {
-                UmiejetnosciMagiczne = new List<Umiejetnosc>(umiejetnosciMagiczne);
+                UmiejetnosciMagiczne.AddRange(umiejetnosciMagiczne);
             }
-            else
-            {
-                UmiejetnosciMagiczne = new List<Umiejetnosc>();
-            }
-
+         
             if (plecak != null)
             {
                 Plecak = new List<Ekwipunek>(plecak);
@@ -232,7 +177,7 @@ namespace RPG
             this.ZalozonyPancerz = new Ekwipunek(kopiowanyBohater.ZalozonyPancerz);
             this.ZalozonaTarcza = new Ekwipunek(kopiowanyBohater.ZalozonaTarcza);
 
-            this.UmiejetnosciFizyczne = new List<Umiejetnosc>();
+      
             if (kopiowanyBohater.UmiejetnosciFizyczne != null)
             {
                 foreach (Umiejetnosc umiejetnosc in kopiowanyBohater.UmiejetnosciFizyczne)
@@ -240,8 +185,6 @@ namespace RPG
                     this.UmiejetnosciFizyczne.Add(new Umiejetnosc(umiejetnosc));
                 }
             }
-
-            this.UmiejetnosciMagiczne = new List<Umiejetnosc>();
             if (kopiowanyBohater.UmiejetnosciMagiczne != null)
             {
                 foreach (Umiejetnosc umiejetnosc in kopiowanyBohater.UmiejetnosciMagiczne)
