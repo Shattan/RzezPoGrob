@@ -109,6 +109,7 @@
             // 
             // PictureBoxPoprzedniBohater
             // 
+            this.PictureBoxPoprzedniBohater.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxPoprzedniBohater.Location = new System.Drawing.Point(152, 167);
             this.PictureBoxPoprzedniBohater.Name = "PictureBoxPoprzedniBohater";
             this.PictureBoxPoprzedniBohater.Size = new System.Drawing.Size(35, 109);
@@ -118,6 +119,7 @@
             // 
             // PictureBoxNastepnyBohater
             // 
+            this.PictureBoxNastepnyBohater.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxNastepnyBohater.Location = new System.Drawing.Point(300, 167);
             this.PictureBoxNastepnyBohater.Name = "PictureBoxNastepnyBohater";
             this.PictureBoxNastepnyBohater.Size = new System.Drawing.Size(35, 109);
