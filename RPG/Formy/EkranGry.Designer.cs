@@ -35,9 +35,21 @@
             this.timerPrzeplywCzasu = new System.Windows.Forms.Timer(this.components);
             this.PictureBoxLewyMowiacy = new System.Windows.Forms.PictureBox();
             this.PictureBoxPrawyMowiacy = new System.Windows.Forms.PictureBox();
+            this.FlowLayoutPanelMenuWyboru = new System.Windows.Forms.FlowLayoutPanel();
+            this.PictureBoxZapisz = new System.Windows.Forms.PictureBox();
+            this.PictureBoxKontynuuj = new System.Windows.Forms.PictureBox();
+            this.PictureBoxWczytaj = new System.Windows.Forms.PictureBox();
+            this.PictureBoxWyjdzDoMenu = new System.Windows.Forms.PictureBox();
+            this.PictureBoxWyjdzZGry = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLewyMowiacy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPrawyMowiacy)).BeginInit();
+            this.FlowLayoutPanelMenuWyboru.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZapisz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxKontynuuj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdzDoMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdzZGry)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelInformacje
@@ -94,12 +106,65 @@
             this.PictureBoxPrawyMowiacy.TabIndex = 31;
             this.PictureBoxPrawyMowiacy.TabStop = false;
             // 
+            // FlowLayoutPanelMenuWyboru
+            // 
+            this.FlowLayoutPanelMenuWyboru.Controls.Add(this.PictureBoxKontynuuj);
+            this.FlowLayoutPanelMenuWyboru.Controls.Add(this.PictureBoxZapisz);
+            this.FlowLayoutPanelMenuWyboru.Controls.Add(this.PictureBoxWczytaj);
+            this.FlowLayoutPanelMenuWyboru.Controls.Add(this.PictureBoxWyjdzDoMenu);
+            this.FlowLayoutPanelMenuWyboru.Controls.Add(this.PictureBoxWyjdzZGry);
+            this.FlowLayoutPanelMenuWyboru.Location = new System.Drawing.Point(404, 131);
+            this.FlowLayoutPanelMenuWyboru.Name = "FlowLayoutPanelMenuWyboru";
+            this.FlowLayoutPanelMenuWyboru.Size = new System.Drawing.Size(200, 276);
+            this.FlowLayoutPanelMenuWyboru.TabIndex = 32;
+            // 
+            // PictureBoxZapisz
+            // 
+            this.PictureBoxZapisz.Location = new System.Drawing.Point(3, 41);
+            this.PictureBoxZapisz.Name = "PictureBoxZapisz";
+            this.PictureBoxZapisz.Size = new System.Drawing.Size(100, 32);
+            this.PictureBoxZapisz.TabIndex = 0;
+            this.PictureBoxZapisz.TabStop = false;
+            // 
+            // PictureBoxKontynuuj
+            // 
+            this.PictureBoxKontynuuj.Location = new System.Drawing.Point(3, 3);
+            this.PictureBoxKontynuuj.Name = "PictureBoxKontynuuj";
+            this.PictureBoxKontynuuj.Size = new System.Drawing.Size(100, 32);
+            this.PictureBoxKontynuuj.TabIndex = 1;
+            this.PictureBoxKontynuuj.TabStop = false;
+            // 
+            // PictureBoxWczytaj
+            // 
+            this.PictureBoxWczytaj.Location = new System.Drawing.Point(3, 79);
+            this.PictureBoxWczytaj.Name = "PictureBoxWczytaj";
+            this.PictureBoxWczytaj.Size = new System.Drawing.Size(100, 32);
+            this.PictureBoxWczytaj.TabIndex = 2;
+            this.PictureBoxWczytaj.TabStop = false;
+            // 
+            // PictureBoxWyjdzDoMenu
+            // 
+            this.PictureBoxWyjdzDoMenu.Location = new System.Drawing.Point(3, 117);
+            this.PictureBoxWyjdzDoMenu.Name = "PictureBoxWyjdzDoMenu";
+            this.PictureBoxWyjdzDoMenu.Size = new System.Drawing.Size(100, 32);
+            this.PictureBoxWyjdzDoMenu.TabIndex = 3;
+            this.PictureBoxWyjdzDoMenu.TabStop = false;
+            // 
+            // PictureBoxWyjdzZGry
+            // 
+            this.PictureBoxWyjdzZGry.Location = new System.Drawing.Point(3, 155);
+            this.PictureBoxWyjdzZGry.Name = "PictureBoxWyjdzZGry";
+            this.PictureBoxWyjdzZGry.Size = new System.Drawing.Size(100, 32);
+            this.PictureBoxWyjdzZGry.TabIndex = 4;
+            this.PictureBoxWyjdzZGry.TabStop = false;
+            // 
             // EkranGry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.Controls.Add(this.FlowLayoutPanelMenuWyboru);
             this.Controls.Add(this.PictureBoxPrawyMowiacy);
             this.Controls.Add(this.PictureBoxLewyMowiacy);
             this.Controls.Add(this.panelPraweMenu);
@@ -118,6 +183,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLewyMowiacy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPrawyMowiacy)).EndInit();
+            this.FlowLayoutPanelMenuWyboru.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZapisz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxKontynuuj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdzDoMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdzZGry)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,5 +200,11 @@
         private System.Windows.Forms.Timer timerPrzeplywCzasu;
         private System.Windows.Forms.PictureBox PictureBoxLewyMowiacy;
         private System.Windows.Forms.PictureBox PictureBoxPrawyMowiacy;
+        private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelMenuWyboru;
+        private System.Windows.Forms.PictureBox PictureBoxKontynuuj;
+        private System.Windows.Forms.PictureBox PictureBoxZapisz;
+        private System.Windows.Forms.PictureBox PictureBoxWczytaj;
+        private System.Windows.Forms.PictureBox PictureBoxWyjdzDoMenu;
+        private System.Windows.Forms.PictureBox PictureBoxWyjdzZGry;
     }
 }

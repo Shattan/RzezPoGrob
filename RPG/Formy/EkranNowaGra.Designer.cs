@@ -129,6 +129,7 @@
             // 
             // PictureBoxBohater
             // 
+            this.PictureBoxBohater.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxBohater.Location = new System.Drawing.Point(194, 167);
             this.PictureBoxBohater.Name = "PictureBoxBohater";
             this.PictureBoxBohater.Size = new System.Drawing.Size(100, 109);

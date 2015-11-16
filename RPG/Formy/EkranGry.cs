@@ -119,13 +119,27 @@ namespace RPG
             ekranGryUITlo.UstawPanelPrawy(panelPraweMenu.Size, panelPraweMenu.Location, "Resources/Grafiki menu/Panel pod przyciski.png");
 
 
-          
+            //Rozmiar i lokacja menu wyboru i jego przycisków
+            FlowLayoutPanelMenuWyboru.Size = new Size(Width*10/100,(PictureBoxKontynuuj.Height+5)*FlowLayoutPanelMenuWyboru.Controls.Count);
+            FlowLayoutPanelMenuWyboru.Location = new Point((Width / 2) - (FlowLayoutPanelMenuWyboru.Width / 2), (Height / 2) - (FlowLayoutPanelMenuWyboru.Height / 2));
+
+            foreach (PictureBox przycisk in FlowLayoutPanelMenuWyboru.Controls)
+            {
+                przycisk.Size = new Size(FlowLayoutPanelMenuWyboru.Width, przycisk.Height);
+            }
         }
 
         void KolorujElementy()
         {
             //Ustawienie ikony w trybie okienkowym
             Icon = new Icon("Resources/Grafiki menu/Ikona.ico");
+
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelMenuWyboru, "Resources/Grafiki menu/Menu wyboru tło.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxKontynuuj, "Resources/Grafiki menu/Menu wyboru kontynuuj.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxZapisz, "Resources/Grafiki menu/Menu wyboru zapisz grę.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWczytaj, "Resources/Grafiki menu/Menu wyboru wczytaj grę.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdzDoMenu, "Resources/Grafiki menu/Menu wyboru wyjdź do menu.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdzZGry, "Resources/Grafiki menu/Menu wyboru wyjdź z gry.png");
         }
 
         void DodajZdarzeniaDlaPrawegoMenu()
