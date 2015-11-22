@@ -9,23 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.IO;
+using RPG.Narzedzia;
 
 
 namespace RPG
 {
     public partial class EkranEkwipunek : Form
     {
+
         #region Zmienne
         EkranGry ekranGry;
-        Gracz gracz = new Gracz();
         Ekwipunek przenoszonyPrzedmiot = new Ekwipunek();
         //Ekwipunek przechowanyPrzedmiot = new Ekwipunek();
         #endregion
-
+        Gracz gracz;
         public EkranEkwipunek(EkranGry ekranGry)
         {
             this.ekranGry = ekranGry;
-
+            gracz = ekranGry.gra.gracz;
             InitializeComponent();
 
             RozmiescElementy();
@@ -770,7 +771,7 @@ namespace RPG
         {
             if (PictureBoxBron.ImageLocation != null)
             {
-                gracz.ZalozonaBron = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxBron.ImageLocation));
+                gracz.ZalozonaBron = new Ekwipunek(PrzedmiotyManager.ListaPrzedmiotow.Find(x => x.Obrazek == PictureBoxBron.ImageLocation));
             }
             else
             {
@@ -778,15 +779,15 @@ namespace RPG
             }
             if (PictureBoxPancerz.ImageLocation != null)
             {
-                gracz.ZalozonyPancerz = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxPancerz.ImageLocation));
+                gracz.ZalozonyPancerz = new Ekwipunek(PrzedmiotyManager.ListaPrzedmiotow.Find(x => x.Obrazek == PictureBoxPancerz.ImageLocation));
             }
             else
             {
                 gracz.ZalozonyPancerz = new Ekwipunek();
             }
             if (PictureBoxTarcza.ImageLocation != null)
-            { 
-                gracz.ZalozonaTarcza = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == PictureBoxTarcza.ImageLocation));
+            {
+                gracz.ZalozonaTarcza = new Ekwipunek(PrzedmiotyManager.ListaPrzedmiotow.Find(x => x.Obrazek == PictureBoxTarcza.ImageLocation));
             }
             else
             {
@@ -800,23 +801,20 @@ namespace RPG
             {
                 if (przedmiot.ImageLocation != null)//Jeżeli pole nie jest puste (po wejściu w ekwipunek układa przedmioty bez pustych pól)
                 {
-                    gracz.Plecak.Add(new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek == przedmiot.ImageLocation)));
+                    gracz.Plecak.Add(new Ekwipunek(PrzedmiotyManager.ListaPrzedmiotow.Find(x => x.Obrazek == przedmiot.ImageLocation)));
                 }
             }
         }
 
         void WczytajStatystykiOdGracza()
         {
-            gracz = new Gracz(ekranGry.gra.gracz);
+            gracz =ekranGry.gra.gracz;
             OdswiezStatystyki();
             OdswiezEkwipunek();
             DodanieDragAndDropDlaObrazkow();
         }
 
-        void ZapiszStatystykiDoGracza()
-        {
-            ekranGry.gra.gracz = new Gracz(gracz);
-        }
+  
 
         void DodanieDragAndDropDlaObrazkow()
         {
@@ -883,7 +881,7 @@ namespace RPG
         {
             if (MouseButtons != MouseButtons.Left && (sender as PictureBox).ImageLocation!=null)//Zabezpieczenie przed wyświetlaniem pustych pól i zmienianiem przedmiotów podczas przenoszenia
             {
-                przenoszonyPrzedmiot = new Ekwipunek(ekranGry.gra.listaPrzedmiotow.Find(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation))); //Znalezienie przenoszonego przedmiotu w plecaku gracza
+                przenoszonyPrzedmiot = new Ekwipunek(PrzedmiotyManager.ListaPrzedmiotow.Find(x => x.Obrazek.Equals((sender as PictureBox).ImageLocation))); //Znalezienie przenoszonego przedmiotu w plecaku gracza
                 OdswiezInformacjeONejchanymPrzedmiocie(przenoszonyPrzedmiot); //Zaktualizowanie panelu z informacjami o przedmiocie
 
                 OdswiezLabelZPorownaniemPrzedmiotow(); //Porownuje przedmiot najechany z przedmiotami w plecaku i wyświetla wynik w Labelu porównującym
@@ -1130,7 +1128,7 @@ namespace RPG
         #region Zamykanie forma
         private void PictureBoxPotwierdz_Click(object sender, EventArgs e)
         {
-            ZapiszStatystykiDoGracza();
+     
             DialogResult = DialogResult.OK;
         }
 

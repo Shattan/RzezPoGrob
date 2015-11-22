@@ -18,17 +18,14 @@ namespace RPG
         EkranGry ekranGry;
 
         Przeciwnik przeciwnik;
-
-        double obecnyPoziomHPGracza = 0;
-        double obecnyPoziomHPPrzeciwnika = 0;
-        double obecnyPoziomEnergiiGracza = 0;
-        double obecnyPoziomEnergiiPrzeciwnika = 0;
         #endregion
 
-        public EkranWalka(EkranGry ekranGry)
+        public EkranWalka(EkranGry ekranGry,Przeciwnik przeiwnik)
         {
+            this.przeciwnik = przeiwnik;
             this.ekranGry = ekranGry;
-
+            przeciwnik.WyczyscEfekty();
+            ekranGry.gra.gracz.WyczyscEfekty();
             InitializeComponent();
 
             RozmiescElementy();
@@ -133,25 +130,13 @@ namespace RPG
 
         void WczytajPrzeciwnikaIGracza()
         {
-         
-            przeciwnik = new Przeciwnik(ekranGry.wylosowanyPrzeciwnik);
-
             foreach (Umiejetnosc umiejetnosc in ekranGry.gra.gracz.UmiejetnosciFizyczne)
             {
-                PictureBox nowaUmiejetnosc = new PictureBox();
-                nowaUmiejetnosc.Size = new Size(Width*30/100,Height*5/100);
-                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaUmiejetnosc, umiejetnosc.ObrazekPrzycisku);
-                nowaUmiejetnosc.Name = umiejetnosc.Nazwa;
-                nowaUmiejetnosc.Click += nowaUmiejetnosc_Click;
-                FlowLayoutPanelWyborAtakuFizycznego.Controls.Add(nowaUmiejetnosc);
+                FlowLayoutPanelWyborAtakuFizycznego.Controls.Add(StworzPrzyciskUmiejetnosci(umiejetnosc));
             }
             foreach (Umiejetnosc umiejetnosc in ekranGry.gra.gracz.UmiejetnosciMagiczne)
             {
-                PictureBox nowaUmiejetnosc = new PictureBox();
-                nowaUmiejetnosc.Size = new Size(Width * 30 / 100, Height * 5 / 100);
-                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaUmiejetnosc, umiejetnosc.ObrazekPrzycisku);
-                nowaUmiejetnosc.Name = umiejetnosc.Nazwa;
-                FlowLayoutPanelWyborAtakuMagicznego.Controls.Add(nowaUmiejetnosc);
+                FlowLayoutPanelWyborAtakuMagicznego.Controls.Add(StworzPrzyciskUmiejetnosci(umiejetnosc));
             }
             foreach (Strawa strawa in ekranGry.gra.gracz.MiksturyIPozywienie)
             {
@@ -159,19 +144,30 @@ namespace RPG
                 nowaStrawa.Size = new Size(50, 50);
                 Program.UstawObrazEkwipunku(nowaStrawa, strawa.Obrazek);
                 nowaStrawa.Name = strawa.Nazwa;
+                
                 FlowLayoutPanelWyborMikstury.Controls.Add(nowaStrawa);
             }
-            obecnyPoziomHPGracza = ekranGry.gra.gracz.HP;
-            obecnyPoziomHPPrzeciwnika = przeciwnik.HP;
-            obecnyPoziomEnergiiGracza = ekranGry.gra.gracz.Energia;
-            obecnyPoziomEnergiiPrzeciwnika = przeciwnik.Energia;
         }
-
+        private Label StworzPrzyciskUmiejetnosci(Umiejetnosc umiejetnosc)
+        {
+            Label nowaUmiejetnosc = new Label();
+            nowaUmiejetnosc.Text = umiejetnosc.Nazwa;
+            nowaUmiejetnosc.Font = new System.Drawing.Font("Arial", 20);
+            nowaUmiejetnosc.ForeColor = Color.White;
+            nowaUmiejetnosc.Size = new Size(Width * 30 / 100, Height * 5 / 100);
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaUmiejetnosc, umiejetnosc.ObrazekPrzycisku);
+            nowaUmiejetnosc.Name = umiejetnosc.Nazwa;
+            nowaUmiejetnosc.Click += nowaUmiejetnosc_Click;
+            return nowaUmiejetnosc;
+        }
         void nowaUmiejetnosc_Click(object sender, EventArgs e)
         {
-            PictureBox el=(PictureBox)sender;
-            obecnyPoziomHPPrzeciwnika -= 5;
-            if (obecnyPoziomHPPrzeciwnika <= 0)
+           
+            Control ctrl = (Control)sender;
+           Umiejetnosc umiejetnoscwybrana=ekranGry.gra.gracz.Umiejetnosci().First(x => x.Nazwa == ctrl.Name);//Pobieramy kliekniętą umiejętność
+           umiejetnoscwybrana.Atak(ekranGry.gra.gracz, przeciwnik, LabelInformacje);
+           przeciwnik.PrzetworzEfektyTrwajace();
+            if (przeciwnik.AktualneHp <= 0)
             {
                 DialogResult = System.Windows.Forms.DialogResult.OK;
             }
@@ -181,8 +177,10 @@ namespace RPG
         }
         private void WykonajAkcjePrzeciwnika()
         {
-            obecnyPoziomHPGracza -= 2;
-            if(obecnyPoziomHPGracza<=0)
+            Umiejetnosc wybrana = przeciwnik.PobierzUmiejetnosc();
+            wybrana.Atak(przeciwnik, ekranGry.gra.gracz, LabelInformacje);
+            ekranGry.gra.gracz.PrzetworzEfektyTrwajace();
+            if (ekranGry.gra.gracz.AktualneHp <= 0)
             {
                 DialogResult = System.Windows.Forms.DialogResult.Abort;
             }
@@ -191,21 +189,18 @@ namespace RPG
         void OdswiezDane()
         {
 
-            double procentHPGracza = obecnyPoziomHPGracza / ekranGry.gra.gracz.HP;
-            double procentHPPrzeciwnika = obecnyPoziomHPPrzeciwnika / przeciwnik.HP;
-            double procentEnergiiGracza = obecnyPoziomEnergiiGracza / ekranGry.gra.gracz.Energia;
-            double procentEnergiiPrzeciwnika = obecnyPoziomEnergiiPrzeciwnika / przeciwnik.Energia;
-
+            double procentHPGracza = ekranGry.gra.gracz.AktualneHp / ekranGry.gra.gracz.HP;
+            double procentHPPrzeciwnika = przeciwnik.AktualneHp / przeciwnik.HP;
+            double procentEnergiiGracza = ekranGry.gra.gracz.AktualnaEnerigia / ekranGry.gra.gracz.Energia;
+            double procentEnergiiPrzeciwnika = przeciwnik.AktualnaEnerigia / przeciwnik.Energia;
             LabelDaneGracza.Text = ekranGry.gra.gracz.Nazwa;
             LabelDaneGracza.Text += "\nPoziom:" + ekranGry.gra.gracz.Poziom;
             LabelDaneGracza.Text += "\nPunkty życia: " + ekranGry.gra.gracz.HP * procentHPGracza + "/" + ekranGry.gra.gracz.HP;
             LabelDaneGracza.Text += "\nEnergia: " + ekranGry.gra.gracz.Energia * procentEnergiiGracza + "/" + ekranGry.gra.gracz.Energia;
-
             LabelDanePrzeciwnika.Text = przeciwnik.Nazwa;
             LabelDanePrzeciwnika.Text += "\nPoziom: " + przeciwnik.Poziom;
             LabelDanePrzeciwnika.Text += "\nPunkty życia: " + przeciwnik.HP * procentHPPrzeciwnika + "/" + przeciwnik.HP;
             LabelDanePrzeciwnika.Text += "\nEnergia: " + przeciwnik.Energia * procentEnergiiPrzeciwnika + "/" + przeciwnik.Energia;
-
             UstawPoziomPaska(PictureBoxPasekHPGracza, procentHPGracza);
             UstawPoziomPaska(PictureBoxPasekEnergiiGracza, procentEnergiiGracza);
             UstawPoziomPaska(PictureBoxPasekHPPrzeciwnika, procentHPPrzeciwnika);
@@ -248,10 +243,19 @@ namespace RPG
             }
             else
             {
+                AkcjeNaKoniecWalki();
                 LabelInformacje.Text = "Udało Ci się uciec!";
                 Enabled = false;
                 TimerDoZamkniecia.Start();
             }
+        }
+        /// <summary>
+        /// Metoda wykontywania na koniec walki
+        /// </summary>
+        private void AkcjeNaKoniecWalki()
+        {
+            przeciwnik.WyczyscEfekty();//czyścimy efekty
+            ekranGry.gra.gracz.WyczyscEfekty();//czyścimy efekty
         }
         #endregion
 
@@ -287,32 +291,6 @@ namespace RPG
         {
             this.Dispose();
         }
-
-
-        /*
-        #region sprawiamy, ze okno jest niewidoczne w alt+tab
-        //Obsluga wychodzenia - zakaz alt+f4
-
-
-        //Nie pojawia sie w alt+tab
-        private void EkranOpcje_Load(object sender, EventArgs e)
-        {
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.ShowInTaskbar = false;
-        }
-
-        //Usuwamy ramke (nie pojawia sie w alt+tab)
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x80;
-                return cp;
-            }
-        }
-        #endregion
-        */
         #endregion
     }
 }

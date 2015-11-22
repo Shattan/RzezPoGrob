@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.IO;
+using RPG.Narzedzia;
 
 namespace RPG
 {
@@ -21,20 +22,44 @@ namespace RPG
         //Lista sciezek obrazkow dostepnych do wybory dla tworzonej postaci
         List<String> ListaPostaci = new List<String>();
         static int wybranyBohater = 0;
-        Gracz tymczasowyBohater = new Gracz();
+        Gracz tymczasowyBohater;
         #endregion
 
         public EkranNowaGra(EkranGlowny ekranGlowny)
         {
             this.ekranGlowny = ekranGlowny;
+          
+            ekranGlowny.gra.gracz = new Gracz(
+            "Gracz",                                                                                     //Nazwa
+            "Resources/Grafiki postaci na mapie/0/",                                                     //Obraz na mapie
+            "Resources/Grafiki postaci mówiących/Mówca1.png",                                            //Obraz w trakcie rozmowy
+            0,                                                                                           //Doświadczenie
+            3000,                                                                                        //Złoto
+            5,                                                                                           //Siła
+            5,                                                                                           //Zręczność
+            5,                                                                                           //Witalność
+            5,                                                                                           //Inteligencja
+            5,                                                                                           //Obrażenia
+            5,                                                                                           //Pancerz
+            10,                                                                                          //Punkty życia
+            10,                                                                                          //Energia
+            75,                                                                                          //Szansa na trafienie
+            5,                                                                                           //Szansa na krytyczne
+            PrzedmiotyManager.ListaPrzedmiotow[0],                                                                         //Broń
+            PrzedmiotyManager.ListaPrzedmiotow[1],                                                                         //Pancerz
+            PrzedmiotyManager.ListaPrzedmiotow[2],                                                                         //Tarcza
 
+            new List<Ekwipunek> { PrzedmiotyManager.ListaPrzedmiotow[5], PrzedmiotyManager.ListaPrzedmiotow[10] },                            //Przedmioty w plecaku
+            new List<Zadanie> { ManagerZadan.ListaZadan[0],  ManagerZadan.ListaZadan[1],  ManagerZadan.ListaZadan[2] },                              //Zadania
+            new List<Strawa> { PrzedmiotyManager.ListaPozywieniaIMikstur[0], PrzedmiotyManager.ListaPozywieniaIMikstur[1] }                    //Jedzenie i mikstury
+            );
+            tymczasowyBohater = ekranGlowny.gra.gracz;
             InitializeComponent();
 
             RozstawElementy();
             KolorujElementy();
-
-            WczytajStatystykiOdGracza();
             DodajSkinyPostaci();
+            OdswiezStatystyki();
         }
 
         #region Metody
@@ -167,16 +192,7 @@ namespace RPG
             LabelWartosciStatystyk.Text += tymczasowyBohater.SzansaNaKrytyczne + "%\n";   //Szansa na trafienie krytyczne
         }
 
-        void WczytajStatystykiOdGracza()
-        {
-            tymczasowyBohater = new Gracz(ekranGlowny.gra.gracz);
-            OdswiezStatystyki();
-        }
 
-        void ZapiszStatystykiDoGracza()
-        {
-            ekranGlowny.gra.gracz = new Gracz(tymczasowyBohater);
-        }
         #endregion
 
         #region Zdarzenia
@@ -184,8 +200,8 @@ namespace RPG
         {
             tymczasowyBohater.ObrazekNaMapie = ListaPostaci[wybranyBohater];
             //Zapisz dane do klasy gra
-            ZapiszStatystykiDoGracza();
 
+            tymczasowyBohater.UstawHp();
             //Zamknij Forme
             DialogResult = DialogResult.OK;
             this.Close();

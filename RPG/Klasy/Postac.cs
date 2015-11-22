@@ -8,8 +8,7 @@ namespace RPG
 {
     public abstract class Postac
     {
-        List<Umiejetnosc> umiejetnosciFizyczne = new List<Umiejetnosc>();
-        List<Umiejetnosc> umiejetosciMagiczne = new List<Umiejetnosc>();
+      
         protected Postac()
         {
             Nazwa = "Gracz nienazwany";
@@ -47,7 +46,14 @@ namespace RPG
             SzansaNaTrafieniePodstawa = trafinie;
             SzansaNaKrytycznePodstawa = krytyk;
 
+
         }
+        public void UstawHp()
+        {
+            AktualneHp = HP;
+            AktualnaEnerigia = Energia;
+        }
+        public abstract List<Umiejetnosc> Umiejetnosci();
         public string Nazwa { get; set; }
         public int Zloto { get; set; }
 
@@ -72,9 +78,8 @@ namespace RPG
         public int iloscPunktowDoRozdaniaCoPoziom { get { return 4; } }
 
         public int SumaStatystykPodstawowych { get { return SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa; } }
-
-        public List<Umiejetnosc> UmiejetnosciFizyczne { get { return umiejetnosciFizyczne; } }
-        public List<Umiejetnosc> UmiejetnosciMagiczne { get { return umiejetosciMagiczne; } }
+        public List<Umiejetnosc> UmiejetnosciFizyczne { get { return Umiejetnosci().Where(x=>!x.Magiczna).ToList(); } }
+        public List<Umiejetnosc> UmiejetnosciMagiczne { get { return Umiejetnosci().Where(x => x.Magiczna).ToList(); } }
 
         /// <summary>
         /// Całkowita siła
@@ -89,8 +94,38 @@ namespace RPG
         public abstract double HP{ get ;} 
         public abstract double Energia{ get ;} 
         public abstract double SzansaNaTrafienie{ get ;} 
-        public abstract double SzansaNaKrytyczne { get ;} 
+        public abstract double SzansaNaKrytyczne { get ;}
 
-
+        public double AktualneHp { get; set; }
+        public double AktualnaEnerigia { get; set; }
+        /// <summary>
+        /// Aktywne efekty nałożone na postać
+        /// </summary>
+        private List<Efekt> _efekty = new List<Efekt>();
+        public void DodajEfekt(Efekt efekt)
+        {
+            _efekty.Add(efekt);
+        }
+        public void WyczyscEfekty()
+        {
+            _efekty.Clear();
+        }
+        public List<Efekt> PobierzEfekty()
+        {
+            return _efekty;
+        }
+        public void PrzetworzEfektyTrwajace()
+        {
+            for (int i = 0; i < _efekty.Count; i++)
+            {
+                _efekty[i].Wykonaj(this);
+                _efekty[i].PozostaloTur--;
+                if (_efekty[i].PozostaloTur <= 0)
+                {
+                    _efekty.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
     }
 }

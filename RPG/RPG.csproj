@@ -93,7 +93,14 @@
     <Compile Include="Klasy\Postac.cs" />
     <Compile Include="Klasy\Sprzedawca.cs" />
     <Compile Include="Klasy\Strawa.cs" />
+    <Compile Include="Klasy\Umiejetnosci\KulaOgnia.cs" />
+    <Compile Include="Klasy\Umiejetnosci\SzybkiStrzal.cs" />
+    <Compile Include="Klasy\Umiejetnosci\Trucizna.cs" />
+    <Compile Include="Klasy\Umiejetnosci\Wymachiwanie.cs" />
+    <Compile Include="Narzedzia\ManagerDostepnychPrzeciwnikow.cs" />
+    <Compile Include="Narzedzia\ManagerZadan.cs" />
     <Compile Include="Narzedzia\OdtwrzaczManager.cs" />
+    <Compile Include="Narzedzia\PrzedmiotyManager.cs" />
     <Compile Include="Narzedzia\Ustawienia.cs" />
     <Compile Include="Tla\EkranGryObiektyTlo.cs">
       <SubType>Form</SubType>
@@ -4958,9 +4965,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Klasy\Umiejetnosci\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

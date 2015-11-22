@@ -3,95 +3,64 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace RPG
 {
-    public class Umiejetnosc
+    public abstract class Efekt
     {
-        public String Nazwa { get; set; }
-        public String ObrazekPrzycisku { get; set; }
-        public String ObrazekWWalce { get; set; } 
-        public String WymaganyTypPrzedmiotu{ get; set; } 
-        public String GlownaStatystyka{ get; set; }
-        public int WymaganaSila{ get; set; } 
-        public int WymaganaZrecznosc{ get; set; } 
-        public int WymaganaWitalnosc{ get; set; } 
-        public int WymaganaInteligencja{ get; set; }
-        public int IloscTur { get; set; }
-        public double Obrazenia{ get; set; } 
-        public double ObrazeniaNaTure{ get; set; }
-        public double KosztEnergii { get; set; }
-        public bool RedukowanePrzezPancerz { get; set; }
-        public bool Ogluszanie { get; set; } 
-        public bool Krwawienie { get; set; }
-        public bool Podpalenie { get; set; }
-        public bool Zatrucie { get; set; }
 
-
-        public Umiejetnosc()
+        public Efekt(int czasTrwania)
         {
-            Nazwa = "Umiejętność nieprzypisana";
-            ObrazekPrzycisku = "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png";
-            ObrazekWWalce = "Resources/Grafiki umiejętności/Eksplozja.png";
-            WymaganyTypPrzedmiotu = "Brak";
-            GlownaStatystyka = "Brak";
-            WymaganaSila = 0;
-            WymaganaZrecznosc = 0;
-            WymaganaWitalnosc = 0;
-            WymaganaInteligencja = 0;
-            IloscTur = 0;
-            Obrazenia = 1;
-            ObrazeniaNaTure = 0;
-            KosztEnergii = 1;
-            RedukowanePrzezPancerz = false;
-            Ogluszanie = false;
-            Krwawienie = false;
-            Podpalenie = false;
-            Zatrucie = false;
+            PozostaloTur = czasTrwania;
         }
+        public int PozostaloTur { get; set; }
 
-        public Umiejetnosc(string nazwa, string obrazekPrzycisku, string obrazekWWalce, string wymaganyTypPrzedmiotu, string glownaStatystyka, int wymaganaSila, int wymaganaZrecznosc, int wymaganaWitalnosc, int wymaganaInteligencja, int iloscTur, double obrazenia, double obrazeniaNaTure, double kosztEnergii, bool redukowanePrzezPancerz, bool ogluszanie, bool krwawienie, bool podpalenie, bool zatrucie)
+
+        public abstract void Wykonaj(Postac cel);
+    }
+    public abstract class Umiejetnosc
+    {
+        public abstract String Nazwa { get;}
+        public virtual String ObrazekPrzycisku { get { return "Resources/Grafiki przycisków umiejętności/Przykładowy przycisk.png"; } }
+        public virtual String ObrazekWWalce { get { return "Resources/Grafiki umiejętności/Eksplozja.png"; } }
+        /// <summary>
+        /// Czy to umiejetnosc magiczna
+        /// </summary>
+        public abstract bool Magiczna{get;}
+        protected abstract void Wykonaj(Postac atakujacy, Postac cel);
+        public abstract bool JestDostepna(Postac sprawdzany);
+        /// <summary>
+        /// Ile kosztuje użycie umiejętności
+        /// </summary>
+        protected virtual double KosztEnergi { get { return 0; } }
+        protected virtual void ZaplacZaUzycie(Postac atakujacy)
         {
-            Nazwa = nazwa;
-            ObrazekPrzycisku = obrazekPrzycisku;
-            ObrazekWWalce = ObrazekWWalce;
-            WymaganyTypPrzedmiotu = wymaganyTypPrzedmiotu;
-            GlownaStatystyka = glownaStatystyka;
-            WymaganaSila = wymaganaSila;
-            WymaganaZrecznosc = wymaganaZrecznosc;
-            WymaganaWitalnosc = wymaganaWitalnosc;
-            WymaganaInteligencja = wymaganaInteligencja;
-            IloscTur = iloscTur;
-            Obrazenia = obrazenia;
-            ObrazeniaNaTure = obrazeniaNaTure;
-            KosztEnergii = kosztEnergii;
-            RedukowanePrzezPancerz = redukowanePrzezPancerz;
-            Ogluszanie = ogluszanie;
-            Krwawienie = krwawienie;
-            Podpalenie = podpalenie;
-            Zatrucie = zatrucie;
+            atakujacy.AktualnaEnerigia -= KosztEnergi;
         }
-
-        public Umiejetnosc(Umiejetnosc kopiowanaUmiejetnosc)
+        public void Atak(Postac atakujacy, Postac cel, TextBox komunikaty)
         {
-            Nazwa = kopiowanaUmiejetnosc.Nazwa;
-            ObrazekPrzycisku = kopiowanaUmiejetnosc.ObrazekPrzycisku;
-            ObrazekWWalce = kopiowanaUmiejetnosc.ObrazekWWalce;
-            WymaganyTypPrzedmiotu = kopiowanaUmiejetnosc.WymaganyTypPrzedmiotu;
-            GlownaStatystyka = kopiowanaUmiejetnosc.GlownaStatystyka;
-            WymaganaSila = kopiowanaUmiejetnosc.WymaganaSila;
-            WymaganaZrecznosc = kopiowanaUmiejetnosc.WymaganaZrecznosc;
-            WymaganaWitalnosc = kopiowanaUmiejetnosc.WymaganaWitalnosc;
-            WymaganaInteligencja = kopiowanaUmiejetnosc.WymaganaInteligencja;
-            IloscTur = kopiowanaUmiejetnosc.IloscTur;
-            Obrazenia = kopiowanaUmiejetnosc.Obrazenia;
-            ObrazeniaNaTure = kopiowanaUmiejetnosc.ObrazeniaNaTure;
-            KosztEnergii = kopiowanaUmiejetnosc.KosztEnergii;
-            RedukowanePrzezPancerz = kopiowanaUmiejetnosc.RedukowanePrzezPancerz;
-            Ogluszanie = kopiowanaUmiejetnosc.Ogluszanie;
-            Krwawienie = kopiowanaUmiejetnosc.Krwawienie;
-            Podpalenie = kopiowanaUmiejetnosc.Podpalenie;
-            Zatrucie = kopiowanaUmiejetnosc.Zatrucie;
+            if(CzyTrafiono(atakujacy,cel))
+            {
+                Wykonaj(atakujacy,cel);
+                komunikaty.Text += "Trafienie\r\n";
+            }
+            else
+            {
+                komunikaty.Text += "Pudło\r\n";
+            }
+            ZaplacZaUzycie(atakujacy);
+
+        }
+        protected virtual bool CzyTrafiono(Postac atakujacy, Postac cel)
+        {
+            Random r = new Random();
+            int szansa = r.Next(0, 100);
+            if (szansa >= atakujacy.SzansaNaTrafienie)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

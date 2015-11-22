@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-          
-            this.LabelInformacje = new System.Windows.Forms.Label();
             this.PictureBoxUcieczka = new System.Windows.Forms.PictureBox();
             this.PictureBoxAtakMagiczny = new System.Windows.Forms.PictureBox();
             this.PictureBoxEkwipunek = new System.Windows.Forms.PictureBox();
@@ -51,6 +49,7 @@
             this.PictureBoxPasekEnergiiPrzeciwnika = new System.Windows.Forms.PictureBox();
             this.PanelDanychGracza = new System.Windows.Forms.Panel();
             this.LabelDaneGracza = new System.Windows.Forms.Label();
+            this.LabelInformacje = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUcieczka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAtakMagiczny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkwipunek)).BeginInit();
@@ -69,16 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiPrzeciwnika)).BeginInit();
             this.PanelDanychGracza.SuspendLayout();
             this.SuspendLayout();
-          
-            this.LabelInformacje.BackColor = System.Drawing.Color.Black;
-            this.LabelInformacje.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelInformacje.ForeColor = System.Drawing.Color.Red;
-            this.LabelInformacje.Location = new System.Drawing.Point(14, 103);
-            this.LabelInformacje.Name = "LabelInformacje";
-            this.LabelInformacje.Size = new System.Drawing.Size(393, 128);
-            this.LabelInformacje.TabIndex = 2;
-            this.LabelInformacje.Text = "LabelInformacje";
-            this.LabelInformacje.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // PictureBoxUcieczka
             // 
@@ -277,19 +266,31 @@
             this.LabelDaneGracza.TabIndex = 9;
             this.LabelDaneGracza.Text = "Tutaj powinny wyświetlić się informacje o graczu";
             // 
+            // LabelInformacje
+            // 
+            this.LabelInformacje.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelInformacje.ForeColor = System.Drawing.Color.Red;
+            this.LabelInformacje.Location = new System.Drawing.Point(16, 47);
+            this.LabelInformacje.Multiline = true;
+            this.LabelInformacje.Name = "LabelInformacje";
+            this.LabelInformacje.ReadOnly = true;
+            this.LabelInformacje.Size = new System.Drawing.Size(379, 149);
+            this.LabelInformacje.TabIndex = 11;
+            this.LabelInformacje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // EkranWalka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(970, 780);
+            this.Controls.Add(this.LabelInformacje);
             this.Controls.Add(this.PanelDanychGracza);
             this.Controls.Add(this.PanelDanychPrzeciwnika);
             this.Controls.Add(this.FlowLayoutPanelWyborAtakuFizycznego);
             this.Controls.Add(this.FlowLayoutPanelWyborAtakuMagicznego);
             this.Controls.Add(this.FlowLayoutPanelWyborMikstury);
             this.Controls.Add(this.FlowLayoutPanelWyboru);
-            this.Controls.Add(this.LabelInformacje);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -317,13 +318,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiPrzeciwnika)).EndInit();
             this.PanelDanychGracza.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-  
-        private System.Windows.Forms.Label LabelInformacje;
         private System.Windows.Forms.PictureBox PictureBoxUcieczka;
         private System.Windows.Forms.PictureBox PictureBoxAtakMagiczny;
         private System.Windows.Forms.PictureBox PictureBoxEkwipunek;
@@ -344,5 +344,6 @@
         private System.Windows.Forms.Label LabelDaneGracza;
         private System.Windows.Forms.PictureBox PictureBoxPasekHPPrzeciwnika;
         private System.Windows.Forms.PictureBox PictureBoxPasekEnergiiPrzeciwnika;
+        private System.Windows.Forms.TextBox LabelInformacje;
     }
 }

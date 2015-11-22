@@ -42,6 +42,7 @@ namespace RPG
         public int DoswiadczenieZaZabicie { get { return SumaStatystykPodstawowych; } }
 
 
+
         
         
         //Konstruktor domyślny
@@ -51,22 +52,18 @@ namespace RPG
             ObrazekNaMapie = "Resources/Grafiki postaci na mapie/2/";
             ObrazekMowienia = "Resources/Grafiki postaci mówiących/Mówca1.png";
             ObrazekWalki = "Resources/Grafiki postaci walczących/szczur.png";
+            UstawHp();
         }
 
-        public Przeciwnik(String nazwa, String obrazekMowienia, String obrazekNaMapie, String obrazekWalki, int sila, int zrecznosc, int witalnosc, int inteligencja, double bazoweObrazenia, double bazowyPancerz, double bazoweHP, double bazowaEnergia, double bazowaSzansaNaTrafienie, double bazowaSzansaNaKrytyczne, List<Umiejetnosc> umiejetnosciFizyczne, List<Umiejetnosc> umiejetnosciMagiczne)
-            : base(nazwa, 0, obrazekNaMapie, obrazekMowienia, "", sila, zrecznosc, witalnosc, inteligencja, bazoweObrazenia, bazowyPancerz, bazoweHP, bazowaEnergia
+        public Przeciwnik(String nazwa, String obrazekMowienia, String obrazekNaMapie, String obrazekWalki, int sila, int zrecznosc, int witalnosc, int inteligencja, double bazoweObrazenia, double bazowyPancerz, double bazoweHP, double bazowaEnergia, double bazowaSzansaNaTrafienie, double bazowaSzansaNaKrytyczne,
+            List<Umiejetnosc> umiejetnosci)
+            : base(nazwa, 0, obrazekNaMapie, obrazekMowienia, obrazekWalki, sila, zrecznosc, witalnosc, inteligencja, bazoweObrazenia, bazowyPancerz, bazoweHP, bazowaEnergia
       , bazowaSzansaNaTrafienie, bazowaSzansaNaKrytyczne)
         {
-            if (umiejetnosciFizyczne != null)
-            {
-                UmiejetnosciFizyczne.AddRange(umiejetnosciFizyczne);
-            }
-          
+            _zdolnosci = new List<Umiejetnosc>(umiejetnosci);
 
-            if (umiejetnosciMagiczne != null)
-            {
-                UmiejetnosciMagiczne.AddRange(umiejetnosciMagiczne);
-            }
+            UstawHp();
+         
         }
 
         public Przeciwnik(Przeciwnik kopiowanyNPC)
@@ -86,21 +83,23 @@ namespace RPG
             this.SzansaNaTrafieniePodstawa = kopiowanyNPC.SzansaNaTrafieniePodstawa;
             this.SzansaNaKrytycznePodstawa = kopiowanyNPC.SzansaNaKrytycznePodstawa;
 
-            if (kopiowanyNPC.UmiejetnosciFizyczne != null)
+            if (kopiowanyNPC._zdolnosci != null)
             {
-                foreach (Umiejetnosc umiejetnosc in kopiowanyNPC.UmiejetnosciFizyczne)
-                {
-                    this.UmiejetnosciFizyczne.Add(new Umiejetnosc(umiejetnosc));
-                }
+                _zdolnosci = new List<Umiejetnosc>(kopiowanyNPC._zdolnosci);
             }
+            UstawHp();
 
-            if (kopiowanyNPC.UmiejetnosciMagiczne != null)
-            {
-                foreach (Umiejetnosc umiejetnosc in kopiowanyNPC.UmiejetnosciMagiczne)
-                {
-                    this.UmiejetnosciMagiczne.Add(new Umiejetnosc(umiejetnosc));
-                }
-            }
+        }
+        private List<Umiejetnosc> _zdolnosci;
+        public override List<Umiejetnosc> Umiejetnosci()
+        {
+            return _zdolnosci;
+        }
+
+        internal Umiejetnosc PobierzUmiejetnosc()
+        {
+            Random r = new Random();
+            return _zdolnosci[r.Next(0, _zdolnosci.Count)];
         }
     }
 }

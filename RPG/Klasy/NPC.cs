@@ -8,6 +8,8 @@ namespace RPG.Klasy
 {
     class NPC : Postac
     {
+    
+
 
         public override int Sila
         {
@@ -57,6 +59,11 @@ namespace RPG.Klasy
         public override double SzansaNaKrytyczne
         {
             get { throw new NotImplementedException(); }
+        }
+
+        public override List<Umiejetnosc> Umiejetnosci()
+        {
+            return new List<Umiejetnosc>();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿#region Biblioteki systemowe
+using RPG.Narzedzia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace RPG
     {
         #region Zmienne
         String wylosowanyTeren = "";
-        Przeciwnik wylosowanyPrzeciwnik = new Przeciwnik();
+        Przeciwnik wylosowanyPrzeciwnik;
         EkranGry ekranGry;
         #endregion
 
@@ -24,7 +25,7 @@ namespace RPG
         {
             this.ekranGry = ekranGry;
             this.wylosowanyTeren = ekranGry.wylosowanyTeren;
-            this.wylosowanyPrzeciwnik = ekranGry.wylosowanyPrzeciwnik;
+            this.wylosowanyPrzeciwnik = ManagerDostepnychPrzeciwnikow.LosujPrzeciwnika();
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();
@@ -66,7 +67,7 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranNowaGraTlo_Shown(object sender, EventArgs e)
         {
-            EkranWalka ekranWalka = new EkranWalka(ekranGry);
+            EkranWalka ekranWalka = new EkranWalka(ekranGry, wylosowanyPrzeciwnik);
             ekranWalka.ShowDialog();
             DialogResult = ekranWalka.DialogResult;
         }

@@ -27,7 +27,6 @@ namespace RPG
         EkranGryUITlo ekranGryUITlo;
 
         public string wylosowanyTeren="";
-        public Przeciwnik wylosowanyPrzeciwnik = new Przeciwnik();
         //Tworzenie zmiennej losującej przeciwnika i planszę
         Random losowanie = new Random();
 
@@ -61,7 +60,7 @@ namespace RPG
             this.ekranGryMapaTlo = ekranGryMapaTlo;
             this.ekranGryObiektyTlo = ekranGryObiektyTlo;
             this.ekranGryUITlo = ekranGryUITlo;
-            this.gra = new Gra(ekranGlowny.gra);
+            this.gra = ekranGlowny.gra;
 
             InitializeComponent();
             RozmiescElementy();
@@ -172,17 +171,7 @@ namespace RPG
             Show();
         }
 
-        void LosujPrzeciwnika()
-        {
-            int numerZestawu = losowanie.Next(0, gra.listaZestawowPrzeciwnikow.Count);
-            int numerPotwora = losowanie.Next(0, gra.listaZestawowPrzeciwnikow[numerZestawu].Count);
-            wylosowanyPrzeciwnik = gra.listaZestawowPrzeciwnikow[numerZestawu][numerPotwora];
-        }
-        void LosujPrzeciwnika(int numerZestawu)
-        {
-            int numerPotwora = losowanie.Next(0, gra.listaZestawowPrzeciwnikow[numerZestawu].Count);
-            wylosowanyPrzeciwnik = gra.listaZestawowPrzeciwnikow[numerZestawu][numerPotwora];
-        }
+    
         void LosujTloWalki()
         {
             string plansza = losowanie.Next(0, 10).ToString();
@@ -292,7 +281,6 @@ namespace RPG
         {
             UniewidocznijGre();
             timerPrzeplywCzasu.Stop();
-            LosujPrzeciwnika();
             LosujTloWalki();
             EkranWalkaTlo ekranWalkaTlo = new EkranWalkaTlo(this);
             ekranWalkaTlo.ShowDialog();

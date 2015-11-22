@@ -10,6 +10,11 @@ namespace RPG.Narzedzia
     public class Odtwarzacz
     {
         MediaPlayer player;
+        public Odtwarzacz()
+        {
+            player = new MediaPlayer();
+
+        }
         public bool JestWolny
         {
             get
@@ -21,11 +26,7 @@ namespace RPG.Narzedzia
                 return (player.NaturalDuration == player.Position);
             }
         }
-        public Odtwarzacz()
-        {
-            player = new MediaPlayer();
-          
-        }
+      
         /// <summary>
         /// Odtwarza określony dźwięk, wyrzuca wyjątek jeśli próbujemy odtworzyć dźwięk kiedy inny jest odtwarzany
         /// </summary>

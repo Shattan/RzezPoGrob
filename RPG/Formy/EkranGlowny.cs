@@ -21,9 +21,6 @@ namespace RPG
     {
         #region Zmienne
         EkranGlownyTlo ekranGlownyTlo;
-        public List<double> poprzedniStanGlosnosciOdtwarzaczy = new List<double>();
-        public List<double> aktualnyStanGlosnosciOdtwarzaczy = new List<double>();
-
         public Gra gra = new Gra();
         //Dostep dla tej formy
         //Od najwyżej do najzniszej położonej warstwy Form:

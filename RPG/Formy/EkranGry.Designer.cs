@@ -36,8 +36,8 @@
             this.PictureBoxLewyMowiacy = new System.Windows.Forms.PictureBox();
             this.PictureBoxPrawyMowiacy = new System.Windows.Forms.PictureBox();
             this.FlowLayoutPanelMenuWyboru = new System.Windows.Forms.FlowLayoutPanel();
-            this.PictureBoxZapisz = new System.Windows.Forms.PictureBox();
             this.PictureBoxKontynuuj = new System.Windows.Forms.PictureBox();
+            this.PictureBoxZapisz = new System.Windows.Forms.PictureBox();
             this.PictureBoxWczytaj = new System.Windows.Forms.PictureBox();
             this.PictureBoxWyjdzDoMenu = new System.Windows.Forms.PictureBox();
             this.PictureBoxWyjdzZGry = new System.Windows.Forms.PictureBox();
@@ -45,8 +45,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLewyMowiacy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPrawyMowiacy)).BeginInit();
             this.FlowLayoutPanelMenuWyboru.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZapisz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxKontynuuj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZapisz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdzDoMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdzZGry)).BeginInit();
@@ -117,14 +117,7 @@
             this.FlowLayoutPanelMenuWyboru.Name = "FlowLayoutPanelMenuWyboru";
             this.FlowLayoutPanelMenuWyboru.Size = new System.Drawing.Size(200, 276);
             this.FlowLayoutPanelMenuWyboru.TabIndex = 32;
-            // 
-            // PictureBoxZapisz
-            // 
-            this.PictureBoxZapisz.Location = new System.Drawing.Point(3, 41);
-            this.PictureBoxZapisz.Name = "PictureBoxZapisz";
-            this.PictureBoxZapisz.Size = new System.Drawing.Size(100, 32);
-            this.PictureBoxZapisz.TabIndex = 0;
-            this.PictureBoxZapisz.TabStop = false;
+            this.FlowLayoutPanelMenuWyboru.Visible = false;
             // 
             // PictureBoxKontynuuj
             // 
@@ -133,6 +126,14 @@
             this.PictureBoxKontynuuj.Size = new System.Drawing.Size(100, 32);
             this.PictureBoxKontynuuj.TabIndex = 1;
             this.PictureBoxKontynuuj.TabStop = false;
+            // 
+            // PictureBoxZapisz
+            // 
+            this.PictureBoxZapisz.Location = new System.Drawing.Point(3, 41);
+            this.PictureBoxZapisz.Name = "PictureBoxZapisz";
+            this.PictureBoxZapisz.Size = new System.Drawing.Size(100, 32);
+            this.PictureBoxZapisz.TabIndex = 0;
+            this.PictureBoxZapisz.TabStop = false;
             // 
             // PictureBoxWczytaj
             // 
@@ -184,8 +185,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLewyMowiacy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPrawyMowiacy)).EndInit();
             this.FlowLayoutPanelMenuWyboru.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZapisz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxKontynuuj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZapisz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdzDoMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdzZGry)).EndInit();

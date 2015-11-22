@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG.Klasy.Umiejetnosci;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -81,23 +82,14 @@ namespace RPG
         public List<Ekwipunek> Plecak { get; set; }
         public List<Strawa> MiksturyIPozywienie { get; set; }
         public List<Zadanie> Zadania {get;set;}
-
-
         //Konstruktor domyślny
-        public Gracz()
-        {
-            Doswiadczenie = 1;
-            sumaPoczatkowychStatystyk = SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa;
-            ZalozonaBron = new Ekwipunek();
-            ZalozonyPancerz = new Ekwipunek();
-            ZalozonaTarcza = new Ekwipunek();
-            Plecak = new List<Ekwipunek>();
-            MiksturyIPozywienie = new List<Strawa>();
-            Zadania = new List<Zadanie>();
-        }
 
         //Konstruktor z parametrami
-        public Gracz(string nazwa, string obrazekNaMapie, string obrazekMowienia, int doswiadczenie, int zloto, int silaPodstawa, int zrecznoscPodstawa, int witalnoscPodstawa, int inteligencjaPodstawa, double obrazeniaPodstawa, double pancerzPodstawa, double hPPodstawa, double energiaPodstawa, double szansaNaTrafieniePodstawa, double szansaNaKrytycznePodstawa, Ekwipunek zalozonaBron, Ekwipunek zalozonyPancerz, Ekwipunek zalozonaTarcza, List<Umiejetnosc> umiejetnosciFizyczne, List<Umiejetnosc> umiejetnosciMagiczne, List<Ekwipunek> plecak, List<Zadanie> zadania, List<Strawa> miksturyIPozywienie)
+        public Gracz(string nazwa, string obrazekNaMapie, string obrazekMowienia, int doswiadczenie, int zloto, int silaPodstawa, int zrecznoscPodstawa, int witalnoscPodstawa, int inteligencjaPodstawa,
+            double obrazeniaPodstawa, double pancerzPodstawa, double hPPodstawa, double energiaPodstawa, 
+            double szansaNaTrafieniePodstawa, double szansaNaKrytycznePodstawa,
+            Ekwipunek zalozonaBron, Ekwipunek zalozonyPancerz, Ekwipunek zalozonaTarcza,
+            List<Ekwipunek> plecak, List<Zadanie> zadania, List<Strawa> miksturyIPozywienie)
             : base(nazwa, zloto, obrazekNaMapie, obrazekMowienia, "", silaPodstawa, zrecznoscPodstawa, witalnoscPodstawa, inteligencjaPodstawa, obrazeniaPodstawa, pancerzPodstawa, hPPodstawa, energiaPodstawa
             ,szansaNaTrafieniePodstawa,szansaNaKrytycznePodstawa)
         {
@@ -115,18 +107,6 @@ namespace RPG
             {
                 ZalozonaTarcza = new Ekwipunek(zalozonaTarcza);
             }
-          
-
-            if (umiejetnosciFizyczne != null)
-            {
-                UmiejetnosciFizyczne.AddRange(umiejetnosciFizyczne);
-            }
-         
-            if (umiejetnosciMagiczne != null)
-            {
-                UmiejetnosciMagiczne.AddRange(umiejetnosciMagiczne);
-            }
-         
             if (plecak != null)
             {
                 Plecak = new List<Ekwipunek>(plecak);
@@ -151,71 +131,20 @@ namespace RPG
             {
                 Zadania = new List<Zadanie>();
             }
+
+            sumaPoczatkowychStatystyk = silaPodstawa + zrecznoscPodstawa + inteligencjaPodstawa+witalnoscPodstawa;
         }
 
         //Konstruktor kopiujący
-        public Gracz(Gracz kopiowanyBohater)
+   
+
+
+        public override List<Umiejetnosc> Umiejetnosci()
         {
-            this.Nazwa = kopiowanyBohater.Nazwa;
-            this.ObrazekNaMapie = kopiowanyBohater.ObrazekNaMapie;
-            this.ObrazekMowienia = kopiowanyBohater.ObrazekMowienia;
-            this.Doswiadczenie = kopiowanyBohater.Doswiadczenie;
-            this.Zloto = kopiowanyBohater.Zloto;
-            this.SilaPodstawa = kopiowanyBohater.SilaPodstawa;
-            this.ZrecznoscPodstawa = kopiowanyBohater.ZrecznoscPodstawa;
-            this.WitalnoscPodstawa = kopiowanyBohater.WitalnoscPodstawa;
-            this.InteligencjaPodstawa = kopiowanyBohater.InteligencjaPodstawa;
-            this.ObrazeniaPodstawa = kopiowanyBohater.ObrazeniaPodstawa;
-            this.PancerzPodstawa = kopiowanyBohater.PancerzPodstawa;
-            this.HPPodstawa = kopiowanyBohater.HPPodstawa;
-            this.EnergiaPodstawa = kopiowanyBohater.EnergiaPodstawa;
-            this.SzansaNaTrafieniePodstawa = kopiowanyBohater.SzansaNaTrafieniePodstawa;
-            this.SzansaNaKrytycznePodstawa = kopiowanyBohater.SzansaNaKrytycznePodstawa;
-            this.sumaPoczatkowychStatystyk = kopiowanyBohater.sumaPoczatkowychStatystyk;
-
-            this.ZalozonaBron = new Ekwipunek(kopiowanyBohater.ZalozonaBron);
-            this.ZalozonyPancerz = new Ekwipunek(kopiowanyBohater.ZalozonyPancerz);
-            this.ZalozonaTarcza = new Ekwipunek(kopiowanyBohater.ZalozonaTarcza);
-
-      
-            if (kopiowanyBohater.UmiejetnosciFizyczne != null)
-            {
-                foreach (Umiejetnosc umiejetnosc in kopiowanyBohater.UmiejetnosciFizyczne)
-                {
-                    this.UmiejetnosciFizyczne.Add(new Umiejetnosc(umiejetnosc));
-                }
-            }
-            if (kopiowanyBohater.UmiejetnosciMagiczne != null)
-            {
-                foreach (Umiejetnosc umiejetnosc in kopiowanyBohater.UmiejetnosciMagiczne)
-                {
-                    this.UmiejetnosciMagiczne.Add(new Umiejetnosc(umiejetnosc));
-                }
-            }
-
-            this.Plecak = new List<Ekwipunek>();
-            if (kopiowanyBohater.Plecak != null)
-            {
-                foreach (Ekwipunek przedmiot in kopiowanyBohater.Plecak)
-                {
-                    this.Plecak.Add(new Ekwipunek(przedmiot));
-                }
-            }
-
-            this.MiksturyIPozywienie = new List<Strawa>();
-            if (kopiowanyBohater.MiksturyIPozywienie != null)
-            {
-                foreach (Strawa strawa in kopiowanyBohater.MiksturyIPozywienie)
-                {
-                    this.MiksturyIPozywienie.Add(new Strawa(strawa));
-                }
-            }
-
-            this.Zadania = new List<Zadanie>();
-            foreach (Zadanie zadanie in kopiowanyBohater.Zadania)
-            {
-                this.Zadania.Add(new Zadanie(zadanie));
-            }
+            //tu bedzie wyliczenie jakich umiejętności może używać gracz - na podstawie wszystkich istniejących
+            return new List<Umiejetnosc> { new Wymachiwanie() };
         }
+
+       
     }
 }
