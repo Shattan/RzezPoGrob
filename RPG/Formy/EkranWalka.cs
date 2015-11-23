@@ -127,9 +127,22 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekEnergiiGracza, "Resources/Grafiki menu/Pasek energii.png");
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxPasekEnergiiPrzeciwnika, "Resources/Grafiki menu/Pasek energii.png");
         }
-
+        private void UsunLabele(Control parent)
+        {
+            for (int i = 0; i < parent.Controls.Count; i++)
+            {
+                if(parent.Controls[i] is Label)
+                {
+                    parent.Controls.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
         void WczytajPrzeciwnikaIGracza()
         {
+            UsunLabele(FlowLayoutPanelWyborAtakuFizycznego);
+            UsunLabele(FlowLayoutPanelWyborAtakuMagicznego);
+            UsunLabele(FlowLayoutPanelWyborMikstury);
             foreach (Umiejetnosc umiejetnosc in ekranGry.gra.gracz.UmiejetnosciFizyczne)
             {
                 FlowLayoutPanelWyborAtakuFizycznego.Controls.Add(StworzPrzyciskUmiejetnosci(umiejetnosc));
@@ -140,18 +153,24 @@ namespace RPG
             }
             foreach (Strawa strawa in ekranGry.gra.gracz.MiksturyIPozywienie)
             {
-                PictureBox nowaStrawa = new PictureBox();
+                Label nowaStrawa = new Label();
                 nowaStrawa.Size = new Size(50, 50);
-                Program.UstawObrazEkwipunku(nowaStrawa, strawa.Obrazek);
+                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaStrawa, strawa.Obrazek);
                 nowaStrawa.Name = strawa.Nazwa;
-                
+                nowaStrawa.Text = strawa.Nazwa;
+                nowaStrawa.Font = new System.Drawing.Font("Arial", 20);
+                nowaStrawa.ForeColor = Color.White;
+                nowaStrawa.Size = new Size(Width * 30 / 100, Height * 5 / 100);
+                nowaStrawa.Click += nowaStrawa_Click;
                 FlowLayoutPanelWyborMikstury.Controls.Add(nowaStrawa);
             }
         }
+
+   
         private Label StworzPrzyciskUmiejetnosci(Umiejetnosc umiejetnosc)
         {
             Label nowaUmiejetnosc = new Label();
-            nowaUmiejetnosc.Text = umiejetnosc.Nazwa;
+            nowaUmiejetnosc.Text = string.Format("{0}. Użycie {1} enerii",umiejetnosc.Nazwa,umiejetnosc.KosztEnergi);
             nowaUmiejetnosc.Font = new System.Drawing.Font("Arial", 20);
             nowaUmiejetnosc.ForeColor = Color.White;
             nowaUmiejetnosc.Size = new Size(Width * 30 / 100, Height * 5 / 100);
@@ -160,23 +179,32 @@ namespace RPG
             nowaUmiejetnosc.Click += nowaUmiejetnosc_Click;
             return nowaUmiejetnosc;
         }
+        void nowaStrawa_Click(object sender, EventArgs e)
+        {
+            Control ctrl = (Control)sender;
+            Strawa przedmiot = ekranGry.gra.gracz.MiksturyIPozywienie.First(x => x.Nazwa == ctrl.Name);//Pobieramy kliekniętą umiejętność
+            przedmiot.Uzyj(ekranGry.gra.gracz);
+            ekranGry.gra.gracz.MiksturyIPozywienie.Remove(przedmiot);
+            ///tu dzieje sięto co wykonujemy
+            WykonajAkcjePrzeciwnika();//
+        }
         void nowaUmiejetnosc_Click(object sender, EventArgs e)
         {
            
             Control ctrl = (Control)sender;
            Umiejetnosc umiejetnoscwybrana=ekranGry.gra.gracz.Umiejetnosci().First(x => x.Nazwa == ctrl.Name);//Pobieramy kliekniętą umiejętność
            umiejetnoscwybrana.Atak(ekranGry.gra.gracz, przeciwnik, LabelInformacje);
-           przeciwnik.PrzetworzEfektyTrwajace();
-            if (przeciwnik.AktualneHp <= 0)
-            {
-                DialogResult = System.Windows.Forms.DialogResult.OK;
-            }
             ///tu dzieje sięto co wykonujemy
             WykonajAkcjePrzeciwnika();//
 
         }
         private void WykonajAkcjePrzeciwnika()
         {
+            przeciwnik.PrzetworzEfektyTrwajace();
+            if (przeciwnik.AktualneHp <= 0)
+            {
+                DialogResult = System.Windows.Forms.DialogResult.OK;
+            }
             Umiejetnosc wybrana = przeciwnik.PobierzUmiejetnosc();
             wybrana.Atak(przeciwnik, ekranGry.gra.gracz, LabelInformacje);
             ekranGry.gra.gracz.PrzetworzEfektyTrwajace();
@@ -205,6 +233,7 @@ namespace RPG
             UstawPoziomPaska(PictureBoxPasekEnergiiGracza, procentEnergiiGracza);
             UstawPoziomPaska(PictureBoxPasekHPPrzeciwnika, procentHPPrzeciwnika);
             UstawPoziomPaska(PictureBoxPasekEnergiiPrzeciwnika, procentEnergiiPrzeciwnika);
+            WczytajPrzeciwnikaIGracza();
         }
         void UstawPoziomPaska(PictureBox pasek, double procentPozostalo)
         {

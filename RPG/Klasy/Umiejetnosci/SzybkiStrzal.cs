@@ -24,9 +24,32 @@ namespace RPG.Klasy.Umiejetnosci
 
         }
 
-        public override bool JestDostepna(Postac sprawdzany)
+        public override bool JestDostepna(Gracz sprawdzany)
         {
-            throw new NotImplementedException();
+            if (sprawdzany.AktualnaEnerigia < KosztEnergi)
+            {
+                return false;
+            }
+            if (sprawdzany.Zrecznosc < 6)
+            {
+                return false;
+            }
+            if (sprawdzany.ZalozonaBron==null)
+            {
+                return false;
+            }
+            if (sprawdzany.ZalozonaBron.TypPrzedmiotu != TypPrzedmiotu.BronMiotana)
+            {
+                return false;
+            }
+            return true;
+        }
+        public override double KosztEnergi
+        {
+            get
+            {
+                return 8;
+            }
         }
     }
 }

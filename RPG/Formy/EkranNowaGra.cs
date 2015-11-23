@@ -49,7 +49,7 @@ namespace RPG
             PrzedmiotyManager.ListaPrzedmiotow[1],                                                                         //Pancerz
             PrzedmiotyManager.ListaPrzedmiotow[2],                                                                         //Tarcza
 
-            new List<Ekwipunek> { PrzedmiotyManager.ListaPrzedmiotow[5], PrzedmiotyManager.ListaPrzedmiotow[10] },                            //Przedmioty w plecaku
+            new List<Ekwipunek> { PrzedmiotyManager.ListaPrzedmiotow[5], PrzedmiotyManager.ListaPrzedmiotow[10], PrzedmiotyManager.ListaPrzedmiotow[11] },                            //Przedmioty w plecaku
             new List<Zadanie> { ManagerZadan.ListaZadan[0],  ManagerZadan.ListaZadan[1],  ManagerZadan.ListaZadan[2] },                              //Zadania
             new List<Strawa> { PrzedmiotyManager.ListaPozywieniaIMikstur[0], PrzedmiotyManager.ListaPozywieniaIMikstur[1] }                    //Jedzenie i mikstury
             );

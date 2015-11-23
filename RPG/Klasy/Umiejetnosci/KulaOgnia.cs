@@ -20,18 +20,27 @@ namespace RPG.Klasy.Umiejetnosci
 
         protected override void Wykonaj(Postac atakujacy, Postac cel)
         {
-            cel.AktualneHp -= atakujacy.Inteligencja *atakujacy.Inteligencja / cel.Pancerz;
+            cel.AktualneHp -= atakujacy.Inteligencja * atakujacy.Inteligencja / cel.Pancerz;
         }
-        protected override double KosztEnergi
+        public override double KosztEnergi
         {
             get
             {
                 return 10;
             }
         }
-        public override bool JestDostepna(Postac sprawdzany)
+        public override bool JestDostepna(Gracz sprawdzany)
         {
-            throw new NotImplementedException();
+
+            if (sprawdzany.AktualnaEnerigia < KosztEnergi)
+            {
+                return false;
+            }
+            if (sprawdzany.Inteligencja < 5)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

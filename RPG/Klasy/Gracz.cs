@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -141,8 +142,19 @@ namespace RPG
 
         public override List<Umiejetnosc> Umiejetnosci()
         {
-            //tu bedzie wyliczenie jakich umiejętności może używać gracz - na podstawie wszystkich istniejących
-            return new List<Umiejetnosc> { new Wymachiwanie() };
+            List<Umiejetnosc> wynik = new List<Umiejetnosc>();
+            List<Type> typy = Assembly.GetExecutingAssembly().GetTypes().Where(x => x.IsSubclassOf(typeof(Umiejetnosc))).ToList();//Pobieramy wszystkie klasy dziedziczące po klasie Umiejetnosc
+            foreach(Type t in typy)
+            {
+              Umiejetnosc testowana=(Umiejetnosc)  Activator.CreateInstance(t);//Tworzymy instancje klasy na podstawie typu - używamy konstruktora domyślnego tej klasy
+                if(testowana.JestDostepna(this))
+                {
+                    wynik.Add(testowana);
+                }
+            }
+            return wynik;
+         
+         
         }
 
        

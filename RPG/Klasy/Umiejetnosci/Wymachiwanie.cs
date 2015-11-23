@@ -24,7 +24,7 @@ namespace RPG.Klasy.Umiejetnosci
          
         }
 
-        public override bool JestDostepna(Postac sprawdzany)
+        public override bool JestDostepna(Gracz sprawdzany)
         {
             return true;
         }

@@ -93,6 +93,7 @@
     <Compile Include="Klasy\Postac.cs" />
     <Compile Include="Klasy\Sprzedawca.cs" />
     <Compile Include="Klasy\Strawa.cs" />
+    <Compile Include="Klasy\TypPrzedmiotu.cs" />
     <Compile Include="Klasy\Umiejetnosci\KulaOgnia.cs" />
     <Compile Include="Klasy\Umiejetnosci\SzybkiStrzal.cs" />
     <Compile Include="Klasy\Umiejetnosci\Trucizna.cs" />

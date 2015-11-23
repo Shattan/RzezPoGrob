@@ -29,11 +29,11 @@ namespace RPG
         /// </summary>
         public abstract bool Magiczna{get;}
         protected abstract void Wykonaj(Postac atakujacy, Postac cel);
-        public abstract bool JestDostepna(Postac sprawdzany);
+        public abstract bool JestDostepna(Gracz sprawdzany);
         /// <summary>
         /// Ile kosztuje użycie umiejętności
         /// </summary>
-        protected virtual double KosztEnergi { get { return 0; } }
+        public virtual double KosztEnergi { get { return 0; } }
         protected virtual void ZaplacZaUzycie(Postac atakujacy)
         {
             atakujacy.AktualnaEnerigia -= KosztEnergi;
@@ -43,12 +43,15 @@ namespace RPG
             if(CzyTrafiono(atakujacy,cel))
             {
                 Wykonaj(atakujacy,cel);
-                komunikaty.Text += "Trafienie\r\n";
+                komunikaty.Text += string.Format("Atakujący {0} trafił {1}, użył umiejętności {2}\r\n",atakujacy.Nazwa,cel.Nazwa,Nazwa);
             }
             else
             {
-                komunikaty.Text += "Pudło\r\n";
+                komunikaty.Text += string.Format("Atakujący {0} spudłował\r\n",atakujacy.Nazwa);
             }
+            komunikaty.SelectionStart = komunikaty.Text.Length - 1;
+            komunikaty.SelectionLength = 0;
+            komunikaty.ScrollToCaret();
             ZaplacZaUzycie(atakujacy);
 
         }
@@ -56,7 +59,7 @@ namespace RPG
         {
             Random r = new Random();
             int szansa = r.Next(0, 100);
-            if (szansa >= atakujacy.SzansaNaTrafienie)
+            if (szansa <= atakujacy.SzansaNaTrafienie)
             {
                 return true;
             }

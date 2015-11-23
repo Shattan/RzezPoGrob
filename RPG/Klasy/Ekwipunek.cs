@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG.Klasy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace RPG
 {
     public class Ekwipunek
     {
+        private TypPrzedmiotu _typ;
         public string Nazwa { get; set; }
         public string Obrazek { get; set; }
         public int Sila { get; set; }
@@ -20,7 +22,7 @@ namespace RPG
         public double Energia { get; set; }
         public double SzansaNaTrafienie { get; set; }
         public double SzansaNaKrytyczne { get; set; }
-        
+        public TypPrzedmiotu TypPrzedmiotu { get { return _typ; } } 
         const double przemnoznikStatystyk = 5;
         const double przemnoznikCechEkwipunku = 2;
         const double przemnoznikHPIEnergii = 1;
@@ -61,7 +63,7 @@ namespace RPG
             SzansaNaKrytyczne = 0;
         }
 
-        public Ekwipunek(string _nazwa, string _obrazek, int _sila, int _zrecznosc, int _witalnosc, int _inteligencja, int _obrazenia, int _pancerz, int _hp, int _energia, int _szansaNaTrafienie, int _szansaNaKrytyczne)
+        public Ekwipunek(string _nazwa, string _obrazek, int _sila, int _zrecznosc, int _witalnosc, int _inteligencja, int _obrazenia, int _pancerz, int _hp, int _energia, int _szansaNaTrafienie, int _szansaNaKrytyczne,TypPrzedmiotu typ)
         {
             Nazwa = _nazwa;
             Obrazek = _obrazek;
@@ -75,6 +77,7 @@ namespace RPG
             Energia = _energia;
             SzansaNaTrafienie = _szansaNaTrafienie;
             SzansaNaKrytyczne = _szansaNaKrytyczne;
+            _typ = typ;
         }
 
         public Ekwipunek(Ekwipunek kopiowanyEkwipunek)
@@ -91,6 +94,7 @@ namespace RPG
             this.Energia = kopiowanyEkwipunek.Energia;
             this.SzansaNaTrafienie = kopiowanyEkwipunek.SzansaNaTrafienie;
             this.SzansaNaKrytyczne = kopiowanyEkwipunek.SzansaNaKrytyczne;
+            _typ = kopiowanyEkwipunek._typ;
         }
     }
 }

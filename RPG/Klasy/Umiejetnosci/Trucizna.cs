@@ -23,9 +23,25 @@ namespace RPG.Klasy.Umiejetnosci
             cel.DodajEfekt(new EfektTrucizna(3));
         }
 
-        public override bool JestDostepna(Postac sprawdzany)
+        public override bool JestDostepna(Gracz sprawdzany)
         {
-            throw new NotImplementedException();
+
+            if (sprawdzany.AktualnaEnerigia < KosztEnergi)
+            {
+                return false;
+            }
+            if(sprawdzany.Inteligencja<6)
+            {
+                return false;
+            }
+            return true;
+        }
+        public override double KosztEnergi
+        {
+            get
+            {
+                return 10;
+            }
         }
 
     }

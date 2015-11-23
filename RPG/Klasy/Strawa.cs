@@ -25,7 +25,20 @@ namespace RPG
                     );
             }
         }
+        public void Uzyj(Postac cel)
+        {
+            cel.AktualneHp += HP;
+            if (cel.AktualneHp > cel.HP)
+            {
+                cel.AktualneHp = cel.HP;
 
+            }
+            cel.AktualnaEnerigia += Energia;
+            if (cel.AktualnaEnerigia > cel.Energia)
+            {
+                cel.AktualnaEnerigia = cel.Energia;
+            }
+        }
         public Strawa(string _nazwa, string _obrazek, int _hp, int _energia)
         {
             Nazwa = _nazwa;

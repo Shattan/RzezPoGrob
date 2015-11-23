@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG.Klasy.Umiejetnosci;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -99,7 +100,12 @@ namespace RPG
         internal Umiejetnosc PobierzUmiejetnosc()
         {
             Random r = new Random();
-            return _zdolnosci[r.Next(0, _zdolnosci.Count)];
+            Umiejetnosc u= _zdolnosci[r.Next(0, _zdolnosci.Count)];
+            if(u.KosztEnergi>Energia)//jak nie stać to używamy wymachiwania
+            {
+                return new Wymachiwanie();
+            }
+            return u;
         }
     }
 }
