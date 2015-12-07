@@ -118,6 +118,7 @@
             this.PictureBoxSilaMinus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxSilaMinus.TabIndex = 12;
             this.PictureBoxSilaMinus.TabStop = false;
+            this.PictureBoxSilaMinus.Visible = false;
             this.PictureBoxSilaMinus.Click += new System.EventHandler(this.PictureBoxSilaMinus_Click);
             // 
             // PictureBoxSilaPlus
@@ -145,6 +146,7 @@
             this.PictureBoxZrecznoscMinus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxZrecznoscMinus.TabIndex = 14;
             this.PictureBoxZrecznoscMinus.TabStop = false;
+            this.PictureBoxZrecznoscMinus.Visible = false;
             this.PictureBoxZrecznoscMinus.Click += new System.EventHandler(this.PictureBoxZrecznoscMinus_Click);
             // 
             // PictureBoxWitalnoscPlus
@@ -163,6 +165,7 @@
             this.PictureBoxWitalnoscMinus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxWitalnoscMinus.TabIndex = 16;
             this.PictureBoxWitalnoscMinus.TabStop = false;
+            this.PictureBoxWitalnoscMinus.Visible = false;
             this.PictureBoxWitalnoscMinus.Click += new System.EventHandler(this.PictureBoxWitalnoscMinus_Click);
             // 
             // PictureBoxInteligencjaPlus
@@ -181,6 +184,7 @@
             this.PictureBoxInteligencjaMinus.Size = new System.Drawing.Size(29, 31);
             this.PictureBoxInteligencjaMinus.TabIndex = 18;
             this.PictureBoxInteligencjaMinus.TabStop = false;
+            this.PictureBoxInteligencjaMinus.Visible = false;
             this.PictureBoxInteligencjaMinus.Click += new System.EventHandler(this.PictureBoxInteligencjaMinus_Click);
             // 
             // LabelStatystyki
@@ -240,7 +244,7 @@
             // 
             // LabelOpisStatystykPrzedmiotu
             // 
-            this.LabelOpisStatystykPrzedmiotu.Font = new System.Drawing.Font("Garamond", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelOpisStatystykPrzedmiotu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelOpisStatystykPrzedmiotu.Location = new System.Drawing.Point(51, 58);
             this.LabelOpisStatystykPrzedmiotu.Name = "LabelOpisStatystykPrzedmiotu";
             this.LabelOpisStatystykPrzedmiotu.Size = new System.Drawing.Size(205, 189);
@@ -276,7 +280,7 @@
             // 
             // LabelWartosciStatystykPrzedmiotu
             // 
-            this.LabelWartosciStatystykPrzedmiotu.Font = new System.Drawing.Font("Garamond", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelWartosciStatystykPrzedmiotu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelWartosciStatystykPrzedmiotu.Location = new System.Drawing.Point(19, 58);
             this.LabelWartosciStatystykPrzedmiotu.Name = "LabelWartosciStatystykPrzedmiotu";
             this.LabelWartosciStatystykPrzedmiotu.Size = new System.Drawing.Size(38, 189);

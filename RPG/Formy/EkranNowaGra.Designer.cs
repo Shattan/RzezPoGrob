@@ -280,7 +280,6 @@
             this.Name = "EkranNowaGra";
             this.Text = "EkranNowaGra";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranNowaGra_FormClosing);
             this.Load += new System.EventHandler(this.EkranNowaGra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPotwierdz)).EndInit();

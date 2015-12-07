@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG.Klasy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    public class Przeszkoda
+    public abstract class Przeszkoda : ElementMapy
     {
-        public string nazwa;
 
-        public Przeszkoda(string _nazwa)
+        public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGryObiektyTlo ekranGryObiektyTlo, EkranGry gra)
         {
-            nazwa = _nazwa;
+     
         }
+
     }
 }

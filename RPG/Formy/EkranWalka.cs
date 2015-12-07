@@ -151,7 +151,7 @@ namespace RPG
             {
                 FlowLayoutPanelWyborAtakuMagicznego.Controls.Add(StworzPrzyciskUmiejetnosci(umiejetnosc));
             }
-            foreach (Strawa strawa in ekranGry.gra.gracz.MiksturyIPozywienie)
+            foreach (Strawa strawa in ekranGry.gra.gracz.Plecak.Where(x=>x.TypPrzedmiotu==Klasy.TypPrzedmiotu.Zywnosc))
             {
                 Label nowaStrawa = new Label();
                 nowaStrawa.Size = new Size(50, 50);
@@ -182,9 +182,9 @@ namespace RPG
         void nowaStrawa_Click(object sender, EventArgs e)
         {
             Control ctrl = (Control)sender;
-            Strawa przedmiot = ekranGry.gra.gracz.MiksturyIPozywienie.First(x => x.Nazwa == ctrl.Name);//Pobieramy kliekniętą umiejętność
+            Strawa przedmiot = (Strawa)ekranGry.gra.gracz.Plecak.First(x => x.Nazwa == ctrl.Name);//Pobieramy kliekniętą umiejętność
             przedmiot.Uzyj(ekranGry.gra.gracz);
-            ekranGry.gra.gracz.MiksturyIPozywienie.Remove(przedmiot);
+            ekranGry.gra.gracz.Plecak.Remove(przedmiot);
             ///tu dzieje sięto co wykonujemy
             WykonajAkcjePrzeciwnika();//
         }
@@ -226,7 +226,6 @@ namespace RPG
             LabelDaneGracza.Text += "\nPunkty życia: " + ekranGry.gra.gracz.HP * procentHPGracza + "/" + ekranGry.gra.gracz.HP;
             LabelDaneGracza.Text += "\nEnergia: " + ekranGry.gra.gracz.Energia * procentEnergiiGracza + "/" + ekranGry.gra.gracz.Energia;
             LabelDanePrzeciwnika.Text = przeciwnik.Nazwa;
-            LabelDanePrzeciwnika.Text += "\nPoziom: " + przeciwnik.Poziom;
             LabelDanePrzeciwnika.Text += "\nPunkty życia: " + przeciwnik.HP * procentHPPrzeciwnika + "/" + przeciwnik.HP;
             LabelDanePrzeciwnika.Text += "\nEnergia: " + przeciwnik.Energia * procentEnergiiPrzeciwnika + "/" + przeciwnik.Energia;
             UstawPoziomPaska(PictureBoxPasekHPGracza, procentHPGracza);

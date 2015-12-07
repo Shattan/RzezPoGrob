@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 using System.IO;
 using RPG.Narzedzia;
+using RPG.Klasy.Ekwipunek.BronieJednoreczne;
+using RPG.Klasy.Ekwipunek.Zbroje;
+using RPG.Klasy.Ekwipunek.Tarcze;
+using RPG.Klasy.Ekwipunek.Zywnosc;
+using RPG.Klasy.Ekwipunek.BronieDwureczne;
 
 namespace RPG
 {
@@ -45,13 +50,13 @@ namespace RPG
             10,                                                                                          //Energia
             75,                                                                                          //Szansa na trafienie
             5,                                                                                           //Szansa na krytyczne
-            PrzedmiotyManager.ListaPrzedmiotow[0],                                                                         //Broń
-            PrzedmiotyManager.ListaPrzedmiotow[1],                                                                         //Pancerz
-            PrzedmiotyManager.ListaPrzedmiotow[2],                                                                         //Tarcza
+           new NozDoMasla(),                                                                         //Broń
+            new StaraTunika(),                                                                         //Pancerz
+           new DuzaTarcza(),                                                                         //Tarcza
 
-            new List<Ekwipunek> { PrzedmiotyManager.ListaPrzedmiotow[5], PrzedmiotyManager.ListaPrzedmiotow[10], PrzedmiotyManager.ListaPrzedmiotow[11] },                            //Przedmioty w plecaku
-            new List<Zadanie> { ManagerZadan.ListaZadan[0],  ManagerZadan.ListaZadan[1],  ManagerZadan.ListaZadan[2] },                              //Zadania
-            new List<Strawa> { PrzedmiotyManager.ListaPozywieniaIMikstur[0], PrzedmiotyManager.ListaPozywieniaIMikstur[1] }                    //Jedzenie i mikstury
+            new List<Ekwipunek> { new KrotkiMiecz(),new SwiezyChleb(),new SwiezyChleb(),new DlugiMiecz()},                            //Przedmioty w plecaku
+            new List<Zadanie> { ManagerZadan.ListaZadan[0],  ManagerZadan.ListaZadan[1],  ManagerZadan.ListaZadan[2] }                             //Zadania
+          
             );
             tymczasowyBohater = ekranGlowny.gra.gracz;
             InitializeComponent();
@@ -198,7 +203,7 @@ namespace RPG
         #region Zdarzenia
         private void PictureBoxPotwierdz_Click(object sender, EventArgs e)
         {
-            tymczasowyBohater.ObrazekNaMapie = ListaPostaci[wybranyBohater];
+            tymczasowyBohater.UstawObrazek( ListaPostaci[wybranyBohater]);
             //Zapisz dane do klasy gra
 
             tymczasowyBohater.UstawHp();
@@ -314,7 +319,7 @@ namespace RPG
         }
         private void TextBoxNazwa_TextChanged(object sender, EventArgs e)
         {
-            tymczasowyBohater.Nazwa = TextBoxNazwa.Text;
+            tymczasowyBohater.UstawImie( TextBoxNazwa.Text);
             OdswiezStatystyki();
         }
         #endregion

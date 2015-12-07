@@ -57,26 +57,28 @@ namespace RPG
             }
         }
 
-        public static void UstawObrazEkwipunku(PictureBox Kontrolka, string sciezkaDoObrazu)
+        public static void UstawObrazEkwipunku(PictureBox Kontrolka, Ekwipunek przedmiot)
         {
             try
             {
                 Kontrolka.BackgroundImageLayout = ImageLayout.None;
                 Kontrolka.SizeMode = PictureBoxSizeMode.Zoom;
+                
                 using (Image obrazekTla = new Bitmap("Resources/Grafiki menu/Tło przedmiotu.png"))
                 {
+              
                     Kontrolka.BackgroundImage = new Bitmap(obrazekTla, Kontrolka.Width, Kontrolka.Height);
-                    if (sciezkaDoObrazu != null)
+                    if (przedmiot != null)
                     {
-                        Kontrolka.Image = new Bitmap(sciezkaDoObrazu);
-                        Kontrolka.ImageLocation = sciezkaDoObrazu;
+                        Kontrolka.Image = new Bitmap(przedmiot.Obrazek);
                     }
+ 
                 }
             }
             catch (System.ArgumentException e)
             {
                 Kontrolka.Image = new Bitmap("Resources/Grafiki menu/Błędny obraz.png");
-                MessageBox.Show(e.Message + "\nŚcieżka do obrazu:\n" + sciezkaDoObrazu, "Błąd wczytywania obrazu", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(e.Message + "\nŚcieżka do obrazu:\n" + przedmiot!=null?przedmiot.Obrazek:"brak przedmiotu", "Błąd wczytywania obrazu", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
         }
         
@@ -320,6 +322,7 @@ namespace RPG
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EkranGlownyTlo());

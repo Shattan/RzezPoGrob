@@ -21,11 +21,11 @@ namespace RPG
         EkranGry ekranGry;
         #endregion
 
-        public EkranWalkaTlo(EkranGry ekranGry)
+        public EkranWalkaTlo(EkranGry ekranGry,string teren,Przeciwnik przeciwnik)
         {
             this.ekranGry = ekranGry;
-            this.wylosowanyTeren = ekranGry.wylosowanyTeren;
-            this.wylosowanyPrzeciwnik = ManagerDostepnychPrzeciwnikow.LosujPrzeciwnika();
+            this.wylosowanyTeren = teren;
+            this.wylosowanyPrzeciwnik = przeciwnik;
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy();

@@ -7,94 +7,68 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    public class Ekwipunek
+    public abstract class Ekwipunek
     {
-        private TypPrzedmiotu _typ;
-        public string Nazwa { get; set; }
-        public string Obrazek { get; set; }
-        public int Sila { get; set; }
-        public int Zrecznosc { get; set; }
-        public int Witalnosc { get; set; }
-        public int Inteligencja { get; set; }
-        public double Obrazenia { get; set; }
-        public double Pancerz { get; set; }
-        public double HP { get; set; }
-        public double Energia { get; set; }
-        public double SzansaNaTrafienie { get; set; }
-        public double SzansaNaKrytyczne { get; set; }
-        public TypPrzedmiotu TypPrzedmiotu { get { return _typ; } } 
-        const double przemnoznikStatystyk = 5;
-        const double przemnoznikCechEkwipunku = 2;
-        const double przemnoznikHPIEnergii = 1;
-        const double przemnoznikTrafieniaIKrytycznego = 20;
-
-        public int Cena
+        public abstract string Nazwa { get;  }
+        public abstract string Obrazek { get;  }
+        public virtual int Sila
         {
-            get
-            {
-                return (int)(
-                    Sila * przemnoznikStatystyk
-                    + Zrecznosc * przemnoznikStatystyk
-                    + Witalnosc * przemnoznikStatystyk
-                    + Inteligencja * przemnoznikStatystyk
-                    + Obrazenia * przemnoznikCechEkwipunku
-                    + Pancerz * przemnoznikCechEkwipunku
-                    + HP * przemnoznikHPIEnergii
-                    + Energia * przemnoznikHPIEnergii
-                    + SzansaNaTrafienie * przemnoznikTrafieniaIKrytycznego
-                    + SzansaNaKrytyczne * przemnoznikTrafieniaIKrytycznego
-                    );
-            }
+            get { return 0; }
         }
 
-        public Ekwipunek()
+        public virtual int Zrecznosc
         {
-            Nazwa = "Brak";
-            Obrazek = null;
-            Sila = 0;
-            Zrecznosc = 0;
-            Witalnosc = 0;
-            Inteligencja = 0;
-            Obrazenia = 0;
-            Pancerz = 0;
-            HP = 0;
-            Energia = 0;
-            SzansaNaTrafienie = 0;
-            SzansaNaKrytyczne = 0;
+            get { return 0; }
         }
 
-        public Ekwipunek(string _nazwa, string _obrazek, int _sila, int _zrecznosc, int _witalnosc, int _inteligencja, int _obrazenia, int _pancerz, int _hp, int _energia, int _szansaNaTrafienie, int _szansaNaKrytyczne,TypPrzedmiotu typ)
+        public virtual int Witalnosc
         {
-            Nazwa = _nazwa;
-            Obrazek = _obrazek;
-            Sila = _sila;
-            Zrecznosc = _zrecznosc;
-            Witalnosc = _witalnosc;
-            Inteligencja = _inteligencja;
-            Obrazenia = _obrazenia;
-            Pancerz = _pancerz;
-            HP = _hp;
-            Energia = _energia;
-            SzansaNaTrafienie = _szansaNaTrafienie;
-            SzansaNaKrytyczne = _szansaNaKrytyczne;
-            _typ = typ;
+            get { return 0; }
         }
 
-        public Ekwipunek(Ekwipunek kopiowanyEkwipunek)
+        public virtual int Inteligencja
         {
-            this.Nazwa = kopiowanyEkwipunek.Nazwa;
-            this.Obrazek = kopiowanyEkwipunek.Obrazek;
-            this.Sila = kopiowanyEkwipunek.Sila;
-            this.Zrecznosc = kopiowanyEkwipunek.Zrecznosc;
-            this.Witalnosc = kopiowanyEkwipunek.Witalnosc;
-            this.Inteligencja = kopiowanyEkwipunek.Inteligencja;
-            this.Obrazenia = kopiowanyEkwipunek.Obrazenia;
-            this.Pancerz = kopiowanyEkwipunek.Pancerz;
-            this.HP = kopiowanyEkwipunek.HP;
-            this.Energia = kopiowanyEkwipunek.Energia;
-            this.SzansaNaTrafienie = kopiowanyEkwipunek.SzansaNaTrafienie;
-            this.SzansaNaKrytyczne = kopiowanyEkwipunek.SzansaNaKrytyczne;
-            _typ = kopiowanyEkwipunek._typ;
+            get { return 0; }
+        }
+
+        public virtual double Obrazenia
+        {
+            get { return 0; }
+        }
+
+        public virtual double Pancerz
+        {
+            get { return 0; }
+        }
+
+        public virtual double HP
+        {
+            get { return 0; }
+        }
+
+        public virtual double Energia
+        {
+            get { return 0; }
+        }
+
+        public virtual double SzansaNaTrafienie
+        {
+            get { return 0; }
+        }
+
+        public virtual double SzansaNaKrytyczne
+        {
+            get { return 0; }
+        }
+
+        public abstract TypPrzedmiotu TypPrzedmiotu
+        {
+            get;
+        }
+
+        public virtual int Cena
+        {
+            get { return 10; }
         }
     }
 }

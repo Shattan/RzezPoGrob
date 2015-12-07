@@ -9,22 +9,134 @@ using System.Threading.Tasks;
 namespace RPG
 {
     public class Gracz:Postac
-    {     
+    {
+        private string _nazwa = "",_obrazekMapa="";
+        public int Zloto { get; set; }
+
+        public string ObrazekMowienia { get; set; }
+        public string ObrazekWalki { get; set; }
+        public override string Nazwa
+        {
+            get { return _nazwa; }
+        }
+        public void UstawImie(String imie)
+        {
+            _nazwa = imie;
+        }
+        public void UstawObrazek(String obrazek)
+        {
+            _obrazekMapa = obrazek;
+        }
+        
+        //statystyki bez przedmiotow    
+        public int SilaPodstawa { get; set; }
+        public int ZrecznoscPodstawa { get; set; }
+        public int WitalnoscPodstawa { get; set; }
+        public int InteligencjaPodstawa { get; set; }
+        public double ObrazeniaPodstawa { get; set; }
+        public double PancerzPodstawa { get; set; }
+        public double HPPodstawa { get; set; }
+        public double EnergiaPodstawa { get; set; }
+        public double SzansaNaTrafieniePodstawa { get; set; }
+        public double SzansaNaKrytycznePodstawa { get; set; }
+
+
+        public int iloscPunktowDoRozdaniaCoPoziom { get { return 4; } }
+
+        public int SumaStatystykPodstawowych { get { return SilaPodstawa + ZrecznoscPodstawa + WitalnoscPodstawa + InteligencjaPodstawa; } }
         public int Doswiadczenie { get; set; }
 
         private int sumaPoczatkowychStatystyk;
 
         //statystyki z przedmiotami
-        public int SilaZPrzedmiotami { get { return SilaPodstawa + ZalozonaBron.Sila + ZalozonyPancerz.Sila + ZalozonaTarcza.Sila; } }
-        public int ZrecznoscZPrzedmiotami {  get { return ZrecznoscPodstawa + ZalozonaBron.Zrecznosc + ZalozonyPancerz.Zrecznosc + ZalozonaTarcza.Zrecznosc; } }
-        public int WitalnoscZPrzedmiotami {  get { return WitalnoscPodstawa + ZalozonaBron.Witalnosc + ZalozonyPancerz.Witalnosc + ZalozonaTarcza.Witalnosc; } }
-        public int InteligencjaZPrzedmiotami {  get { return InteligencjaPodstawa + ZalozonaBron.Inteligencja + ZalozonyPancerz.Inteligencja + ZalozonaTarcza.Inteligencja; } }
-        public double ObrazeniaZPrzedmiotami { get { return ObrazeniaPodstawa + ZalozonaBron.Obrazenia + ZalozonyPancerz.Obrazenia + ZalozonaTarcza.Obrazenia; } }
-        public double PancerzZPrzedmiotami { get { return PancerzPodstawa + ZalozonaBron.Pancerz + ZalozonyPancerz.Pancerz + ZalozonaTarcza.Pancerz; } }
-        public double HPZPrzedmiotami { get { return HPPodstawa + ZalozonaBron.HP + ZalozonyPancerz.HP + ZalozonaTarcza.HP; } }
-        public double EnergiaZPrzedmiotami { get { return EnergiaPodstawa + ZalozonaBron.Energia + ZalozonyPancerz.Energia + ZalozonaTarcza.Energia; } }
-        public double SzansaNaTrafienieZPrzedmiotami { get { return SzansaNaTrafieniePodstawa + ZalozonaBron.SzansaNaTrafienie + ZalozonyPancerz.SzansaNaTrafienie + ZalozonaTarcza.SzansaNaTrafienie; } }
-        public double SzansaNaKrytyczneZPrzedmiotami { get { return SzansaNaKrytycznePodstawa + ZalozonaBron.SzansaNaKrytyczne + ZalozonyPancerz.SzansaNaKrytyczne + ZalozonaTarcza.SzansaNaKrytyczne; } }
+        public int SilaZPrzedmiotami
+        {
+            get
+            {
+                return SilaPodstawa
+                    + (ZalozonaBron != null ? ZalozonaBron.Sila : 0)
+                    + (ZalozonaTarcza != null ? ZalozonaTarcza.Sila : 0)
+                    + (ZalozonyPancerz != null ? ZalozonyPancerz.Sila : 0);
+            }
+        }
+        public int ZrecznoscZPrzedmiotami { get { return ZrecznoscPodstawa +  
+                    + (ZalozonaBron != null ? ZalozonaBron.Zrecznosc : 0)
+                    + (ZalozonaTarcza != null ? ZalozonaTarcza.Zrecznosc : 0)
+                    + (ZalozonyPancerz != null ? ZalozonyPancerz.Zrecznosc : 0);
+            } 
+        }
+        public int WitalnoscZPrzedmiotami
+        {
+            get
+            {
+                return WitalnoscPodstawa +(ZalozonaBron != null ? ZalozonaBron.Witalnosc : 0)
+                    + (ZalozonaTarcza != null ? ZalozonaTarcza.Witalnosc : 0)
+                    + (ZalozonyPancerz != null ? ZalozonyPancerz.Witalnosc : 0);
+            }
+        }
+        public int InteligencjaZPrzedmiotami
+        {
+            get
+            {
+                return InteligencjaPodstawa +(ZalozonaBron != null ? ZalozonaBron.Inteligencja : 0)
+                    + (ZalozonaTarcza != null ? ZalozonaTarcza.Inteligencja : 0)
+                    + (ZalozonyPancerz != null ? ZalozonyPancerz.Inteligencja : 0);
+            }
+        }
+        public double ObrazeniaZPrzedmiotami
+        {
+            get
+            {
+                return ObrazeniaPodstawa +(ZalozonaBron != null ? ZalozonaBron.Sila : 0)
+                    + (ZalozonaTarcza != null ? ZalozonaTarcza.Sila : 0)
+                    + (ZalozonyPancerz != null ? ZalozonyPancerz.Sila : 0);
+            }
+        }
+        public double PancerzZPrzedmiotami
+        {
+            get
+            {
+                return PancerzPodstawa +(ZalozonaBron != null ? ZalozonaBron.Obrazenia : 0)
+                    + (ZalozonaTarcza != null ? ZalozonaTarcza.Obrazenia : 0)
+                    + (ZalozonyPancerz != null ? ZalozonyPancerz.Obrazenia : 0);
+            }
+        }
+        public double HPZPrzedmiotami
+        {
+            get
+            {
+                return HPPodstawa +(ZalozonaBron != null ? ZalozonaBron.HP : 0)
+                    + (ZalozonaTarcza != null ? ZalozonaTarcza.HP : 0)
+                    + (ZalozonyPancerz != null ? ZalozonyPancerz.HP : 0);
+            }
+        }
+        public double EnergiaZPrzedmiotami
+        {
+            get
+            {
+                return EnergiaPodstawa +(ZalozonaBron != null ? ZalozonaBron.Energia : 0)
+                    + (ZalozonaTarcza != null ? ZalozonaTarcza.Energia : 0)
+                    + (ZalozonyPancerz != null ? ZalozonyPancerz.Energia : 0);
+            }
+        }
+        public double SzansaNaTrafienieZPrzedmiotami
+        {
+            get
+            {
+                return SzansaNaTrafieniePodstawa +(ZalozonaBron != null ? ZalozonaBron.SzansaNaTrafienie : 0)
+                    + (ZalozonaTarcza != null ? ZalozonaTarcza.SzansaNaTrafienie : 0)
+                    + (ZalozonyPancerz != null ? ZalozonyPancerz.SzansaNaTrafienie : 0);
+            }
+        }
+        public double SzansaNaKrytyczneZPrzedmiotami
+        {
+            get
+            {
+                return SzansaNaKrytycznePodstawa +(ZalozonaBron != null ? ZalozonaBron.SzansaNaKrytyczne : 0)
+                    + (ZalozonaTarcza != null ? ZalozonaTarcza.SzansaNaKrytyczne : 0)
+                    + (ZalozonyPancerz != null ? ZalozonyPancerz.SzansaNaKrytyczne : 0);
+            }
+        }
 
         public int BonusDoSily { get { return 0; } }
         public int BonusDoZrecznosci { get { return 0; } }
@@ -81,33 +193,36 @@ namespace RPG
         public Ekwipunek ZalozonaTarcza { get; set; }
 
         public List<Ekwipunek> Plecak { get; set; }
-        public List<Strawa> MiksturyIPozywienie { get; set; }
         public List<Zadanie> Zadania {get;set;}
         //Konstruktor domyślny
 
         //Konstruktor z parametrami
         public Gracz(string nazwa, string obrazekNaMapie, string obrazekMowienia, int doswiadczenie, int zloto, int silaPodstawa, int zrecznoscPodstawa, int witalnoscPodstawa, int inteligencjaPodstawa,
-            double obrazeniaPodstawa, double pancerzPodstawa, double hPPodstawa, double energiaPodstawa, 
+            double obrazeniaPodstawa, double pancerzPodstawa, double hPPodstawa, double energiaPodstawa,
             double szansaNaTrafieniePodstawa, double szansaNaKrytycznePodstawa,
             Ekwipunek zalozonaBron, Ekwipunek zalozonyPancerz, Ekwipunek zalozonaTarcza,
-            List<Ekwipunek> plecak, List<Zadanie> zadania, List<Strawa> miksturyIPozywienie)
-            : base(nazwa, zloto, obrazekNaMapie, obrazekMowienia, "", silaPodstawa, zrecznoscPodstawa, witalnoscPodstawa, inteligencjaPodstawa, obrazeniaPodstawa, pancerzPodstawa, hPPodstawa, energiaPodstawa
-            ,szansaNaTrafieniePodstawa,szansaNaKrytycznePodstawa)
+            List<Ekwipunek> plecak, List<Zadanie> zadania)
+            : base()
         {
-            if (zalozonaBron != null)
-            {
-                ZalozonaBron = new Ekwipunek(zalozonaBron);
-            }
-          
-            if (zalozonyPancerz != null)
-            {
-                ZalozonyPancerz = new Ekwipunek(zalozonyPancerz);
-            }
-           
-            if (zalozonaTarcza != null)
-            {
-                ZalozonaTarcza = new Ekwipunek(zalozonaTarcza);
-            }
+            _obrazekMapa = obrazekNaMapie;
+            _nazwa = nazwa;
+            Zloto = zloto;
+            ObrazekMowienia = obrazekMowienia;
+            SilaPodstawa = silaPodstawa;
+            ZrecznoscPodstawa = zrecznoscPodstawa;
+            WitalnoscPodstawa = witalnoscPodstawa;
+            InteligencjaPodstawa = inteligencjaPodstawa;
+            ObrazeniaPodstawa = obrazeniaPodstawa;
+            PancerzPodstawa = pancerzPodstawa;
+            HPPodstawa = hPPodstawa;
+            EnergiaPodstawa = energiaPodstawa;
+            SzansaNaTrafieniePodstawa = szansaNaTrafieniePodstawa;
+            SzansaNaKrytycznePodstawa = szansaNaKrytycznePodstawa;
+            ZalozonaBron = zalozonaBron;
+            ZalozonyPancerz = zalozonyPancerz;
+
+            ZalozonaTarcza = zalozonaTarcza;
+
             if (plecak != null)
             {
                 Plecak = new List<Ekwipunek>(plecak);
@@ -115,14 +230,6 @@ namespace RPG
             else
             {
                 Plecak = new List<Ekwipunek>();
-            }
-            if (miksturyIPozywienie != null)
-            {
-                MiksturyIPozywienie = new List<Strawa>(miksturyIPozywienie);
-            }
-            else
-            {
-                MiksturyIPozywienie = new List<Strawa>();
             }
             if (zadania != null)
             {
@@ -133,7 +240,7 @@ namespace RPG
                 Zadania = new List<Zadanie>();
             }
 
-            sumaPoczatkowychStatystyk = silaPodstawa + zrecznoscPodstawa + inteligencjaPodstawa+witalnoscPodstawa;
+            sumaPoczatkowychStatystyk = silaPodstawa + zrecznoscPodstawa + inteligencjaPodstawa + witalnoscPodstawa;
         }
 
         //Konstruktor kopiujący
@@ -157,6 +264,16 @@ namespace RPG
          
         }
 
-       
+
+
+        public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGryObiektyTlo ekranGryObiektyTlo, EkranGry gra)
+        {
+           
+        }
+
+        public override string ObrazekNaMapie
+        {
+            get { return _obrazekMapa; }
+        }
     }
 }

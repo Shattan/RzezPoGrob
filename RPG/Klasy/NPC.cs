@@ -6,64 +6,69 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy
 {
-    class NPC : Postac
+  public abstract class  NPC : Postac
     {
-    
 
 
         public override int Sila
         {
-            get { throw new NotImplementedException(); }
+            get { return 1; }
         }
 
         public override int Zrecznosc
         {
-            get { throw new NotImplementedException(); }
+            get { return 1; }
         }
 
         public override int Witalnosc
         {
-            get { throw new NotImplementedException(); }
+            get { return 1; }
         }
 
         public override int Inteligencja
         {
-            get { throw new NotImplementedException(); }
+            get { return 1; }
         }
 
         public override double Obrazenia
         {
-            get { throw new NotImplementedException(); }
+            get { return 1; }
         }
 
         public override double Pancerz
         {
-            get { throw new NotImplementedException(); }
+            get { return 1; }
         }
 
         public override double HP
         {
-            get { throw new NotImplementedException(); }
+            get { return 1; }
         }
 
         public override double Energia
         {
-            get { throw new NotImplementedException(); }
+            get { return 1; }
         }
 
         public override double SzansaNaTrafienie
         {
-            get { throw new NotImplementedException(); }
+            get { return 1; }
         }
 
         public override double SzansaNaKrytyczne
         {
-            get { throw new NotImplementedException(); }
+            get { return 1; }
         }
 
         public override List<Umiejetnosc> Umiejetnosci()
         {
             return new List<Umiejetnosc>();
         }
+
+        public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGryObiektyTlo ekranGryObiektyTlo, EkranGry gra)
+        {
+            
+        }
+
     }
 }
