@@ -15,6 +15,7 @@ using System.Threading;
 using System.Windows.Media;
 using RPG.Narzedzia;
 using System.Runtime.InteropServices;
+using RPG.Klasy;
 #endregion
 
 namespace RPG
@@ -245,53 +246,54 @@ namespace RPG
                 {
                     if (graczmapa.IntersectsWith(obiekt.Bounds))
                     {
+                        ElementMapy element = (ElementMapy)obiekt.Tag;
                         if (kierunekRuchuGracz == Ruch.Lewo && obiekt.Right >= graczmapa.Left)
                         {
-                            bylaKolizja = true;
+                            bylaKolizja = element.PowodujeKolizje;
                         }
                         else if (kierunekRuchuGracz == Ruch.Prawo && obiekt.Left <= graczmapa.Right)
                         {
-                            bylaKolizja = true;
+                            bylaKolizja = element.PowodujeKolizje;
                         }
                         else if (kierunekRuchuGracz == Ruch.Gora && obiekt.Bottom >= graczmapa.Top)
                         {
-                            bylaKolizja = true;
+                            bylaKolizja = element.PowodujeKolizje;
                         }
                         else if (kierunekRuchuGracz == Ruch.Dol && obiekt.Top <= graczmapa.Bottom)
                         {
-                            bylaKolizja = true;
+                            bylaKolizja = element.PowodujeKolizje;
                         }
                         if (bylaKolizja)
                         {
                             int[] koordynaty = obiekt.Name.Split(';').Select(int.Parse).ToArray();
                             timerPrzeplywCzasu.Stop();
-                            obszarGry.Mapa[koordynaty[0], koordynaty[1]].IntegracjaGracz(ekranGlowny.gra.gracz, koordynaty[0], koordynaty[1], ekranGryObiektyTlo, this);
+                            element.IntegracjaGracz(ekranGlowny.gra.gracz, koordynaty[0], koordynaty[1], ekranGryObiektyTlo, this);
                             timerPrzeplywCzasu.Start();
                             break;
                         }
                     }
                 }
             }
-            if(index % czasOdnawiania == 0)
-            {
-            ////Animacje Gifa
-                if (kierunekRuchuGracz==Ruch.Prawo)
-                {
-                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "prawo.gif");
-                }
-                if (kierunekRuchuGracz == Ruch.Lewo)
-                {
-                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "lewo.gif");
-                }
-                if (kierunekRuchuGracz == Ruch.Dol)
-                {
-                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "dół.gif");
-                }
-                if (kierunekRuchuGracz == Ruch.Gora)
-                {
-                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "góra.gif");
-                }
-            }
+            //if(index % czasOdnawiania == 0)
+            //{
+            //////Animacje Gifa
+            //    if (kierunekRuchuGracz==Ruch.Prawo)
+            //    {
+            //        ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "prawo.gif");
+            //    }
+            //    if (kierunekRuchuGracz == Ruch.Lewo)
+            //    {
+            //        ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "lewo.gif");
+            //    }
+            //    if (kierunekRuchuGracz == Ruch.Dol)
+            //    {
+            //        ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "dół.gif");
+            //    }
+            //    if (kierunekRuchuGracz == Ruch.Gora)
+            //    {
+            //        ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "góra.gif");
+            //    }
+            //}
             if (!bylaKolizja)
             {
                 ekranGryObiektyTlo.pBGracz.Left += px;
@@ -327,7 +329,7 @@ namespace RPG
                     element.BackgroundImage = MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].Tlo);
                     element.Image = MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].ObrazekNaMapie);
                     element.BorderStyle = BorderStyle.FixedSingle;
-
+                    element.Tag = obszarGry.Mapa[i, j];
                     element.Size = new System.Drawing.Size(obszarGry.Rozmiar, obszarGry.Rozmiar);
                     element.Location = new Point(i * obszarGry.Rozmiar, j * obszarGry.Rozmiar);
                     ekranGryObiektyTlo.panelMapa.Controls.Add(element);

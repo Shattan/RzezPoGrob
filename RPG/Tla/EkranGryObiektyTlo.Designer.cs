@@ -45,7 +45,7 @@
             // 
             // pBGracz
             // 
-            this.pBGracz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pBGracz.BackColor = System.Drawing.Color.Transparent;
             this.pBGracz.Location = new System.Drawing.Point(610, 199);
             this.pBGracz.Name = "pBGracz";
             this.pBGracz.Size = new System.Drawing.Size(100, 100);
