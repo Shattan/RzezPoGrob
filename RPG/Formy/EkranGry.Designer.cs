@@ -29,25 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.LabelInformacje = new System.Windows.Forms.Label();
             this.PictureBoxZamknij = new System.Windows.Forms.PictureBox();
             this.panelPraweMenu = new System.Windows.Forms.Panel();
             this.timerPrzeplywCzasu = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LabelInformacje
-            // 
-            this.LabelInformacje.BackColor = System.Drawing.Color.Black;
-            this.LabelInformacje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LabelInformacje.ForeColor = System.Drawing.Color.Red;
-            this.LabelInformacje.Location = new System.Drawing.Point(231, 16);
-            this.LabelInformacje.Name = "LabelInformacje";
-            this.LabelInformacje.Size = new System.Drawing.Size(514, 94);
-            this.LabelInformacje.TabIndex = 1;
-            this.LabelInformacje.Text = "Tutaj powinny pojawiać się informacje na temat aktualnie wykonywanej czynności or" +
-    "az dialogi.";
-            this.LabelInformacje.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // PictureBoxZamknij
             // 
@@ -80,7 +66,6 @@
             this.ClientSize = new System.Drawing.Size(1378, 780);
             this.Controls.Add(this.panelPraweMenu);
             this.Controls.Add(this.PictureBoxZamknij);
-            this.Controls.Add(this.LabelInformacje);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranGry";
@@ -95,7 +80,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label LabelInformacje;
+
         private System.Windows.Forms.PictureBox PictureBoxZamknij;
         private System.Windows.Forms.Panel panelPraweMenu;
         private System.Windows.Forms.Timer timerPrzeplywCzasu;

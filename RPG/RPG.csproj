@@ -99,7 +99,7 @@
     <Compile Include="Klasy\Ekwipunek\BronieJednoreczne\KrotkiMiecz.cs" />
     <Compile Include="Klasy\Ekwipunek\BronieJednoreczne\NozDoMasla.cs" />
     <Compile Include="Klasy\Ekwipunek\Tarcze\DuzaTarcza.cs" />
-    <Compile Include="Klasy\Ekwipunek\Zbroje\StaraTunkia.cs" />
+    <Compile Include="Klasy\Ekwipunek\Zbroje\StaraTunika.cs" />
     <Compile Include="Klasy\Ekwipunek\Zywnosc\SwiezyChleb.cs" />
     <Compile Include="Klasy\ElementMapy.cs" />
     <Compile Include="Klasy\NPC.cs" />
@@ -159,12 +159,6 @@
     </Compile>
     <Compile Include="Tla\EkranGlownyTlo.Designer.cs">
       <DependentUpon>EkranGlownyTlo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tla\EkranGryMapaTlo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tla\EkranGryMapaTlo.Designer.cs">
-      <DependentUpon>EkranGryMapaTlo.cs</DependentUpon>
     </Compile>
     <Compile Include="Tla\EkranGryObiektyTlo.cs">
       <SubType>Form</SubType>
@@ -240,9 +234,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tla\EkranGlownyTlo.resx">
       <DependentUpon>EkranGlownyTlo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tla\EkranGryMapaTlo.resx">
-      <DependentUpon>EkranGryMapaTlo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranWalka.resx">
       <DependentUpon>EkranWalka.cs</DependentUpon>

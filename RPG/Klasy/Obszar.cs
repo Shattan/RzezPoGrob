@@ -43,7 +43,7 @@ namespace RPG
              string[]wymiary= wiersze[0].Split(new[]{" "},StringSplitOptions.RemoveEmptyEntries);
              int szerokosc = int.Parse(wymiary[0]);
              int wysokosc = int.Parse(wymiary[1]);
-             int[] gracz=null;
+             int[] gracz=new[]{int.Parse(wymiary[2]),int.Parse(wymiary[3])};
              ElementMapy[,] mapa = new ElementMapy[szerokosc, wysokosc];
             for(int i=1;i<wiersze.Length;i++)//pierwszy wiersz to zawiera wymary
             {
@@ -52,33 +52,45 @@ namespace RPG
                 int j = 0;
                  while(poczatek>-1 && koniec>-1)
                  {
-                     string zawartosc = wiersze[i].Substring(poczatek+1, koniec - poczatek-1).Trim();
+                     string[] wpisPola= wiersze[i].Substring(poczatek+1, koniec - poczatek-1).Trim().Split(';');
+                     string tlo = null;
                      ElementMapy el = null;
-                     if (!string.IsNullOrEmpty(zawartosc))
+                     foreach(string zawartosc in wpisPola)
                      {
+
+              
+                         if (!string.IsNullOrEmpty(zawartosc))
+                         {
                        
-                         string[] element = zawartosc.Split(':');
-                         if(element[0]=="przeciwnik")
-                         {
-                             el = StworzPrzeciwnika(element[1]);
+                             string[] element = zawartosc.Split(':');
+                             if(element[0]=="przeciwnik")
+                             {
+                                 el = StworzPrzeciwnika(element[1]);
+                             }
+                             else if(element[0]=="obiekt")
+                             {
+                                 el = StworzObiekt(element[1]);
+                             }
+                             else if (element[0] == "npc")
+                             {
+                                 el = StworzNpc(element[1]);
+                             }
+                             else if (element[0] == "tlo")
+                             {
+                                 tlo = element[1];
+                             }
                          }
-                         else if(element[0]=="obiekt")
-                         {
-                             el = StworzObiekt(element[1]);
-                         }
-                         else if (element[0] == "npc")
-                         {
-                             el = StworzNpc(element[1]);
-                         }
-                         else if (element[0] == "gracz")
-                         {
-                             gracz = new[] { j, i };
-                         }
+
+                        
                      }
-                
                      poczatek = wiersze[i].IndexOf('(',koniec+1);
                      koniec = wiersze[i].IndexOf(')', poczatek + 1);
-                     mapa[j,i-1]=el;
+                     if(el==null)
+                     {
+                         el = new ElementMapyPusty();
+                     }
+                     el.Tlo = tlo;
+                     mapa[j, i - 1] = el;
                      j++;
                  };
             }

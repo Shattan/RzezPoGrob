@@ -23,7 +23,7 @@ namespace RPG
     {
         #region Zmienne
         EkranGlowny ekranGlowny;
-        EkranGryMapaTlo ekranGryMapaTlo;
+       
         EkranGryObiektyTlo ekranGryObiektyTlo;
         EkranGryUITlo ekranGryUITlo;
 
@@ -50,10 +50,9 @@ namespace RPG
         }
         #endregion
         Obszar obszarGry;
-        public EkranGry(EkranGlowny ekranGlowny, EkranGryMapaTlo ekranGryMapaTlo, EkranGryObiektyTlo ekranGryObiektyTlo, EkranGryUITlo ekranGryUITlo)
+        public EkranGry(EkranGlowny ekranGlowny,  EkranGryObiektyTlo ekranGryObiektyTlo, EkranGryUITlo ekranGryUITlo)
         {
             this.ekranGlowny = ekranGlowny;
-            this.ekranGryMapaTlo = ekranGryMapaTlo;
             this.ekranGryObiektyTlo = ekranGryObiektyTlo;
             this.ekranGryUITlo = ekranGryUITlo;
             this.gra = ekranGlowny.gra;
@@ -75,9 +74,6 @@ namespace RPG
         {
             Program.DopasujRozmiarFormyDoEkranu(this);
 
-            LabelInformacje.Size = new Size(Width, Height / 8);
-            LabelInformacje.Location = new Point(0, Height - LabelInformacje.Size.Height);
-            LabelInformacje.Text = "Witaj w grze!";
             //Wczytanie Right Menu Panel
             List<string> ListaObrazkow = new List<string>();
             ListaObrazkow.Add("Resources/Grafiki menu/Adark.png");
@@ -135,11 +131,9 @@ namespace RPG
             Hide();
             ekranGryUITlo.Hide();
             ekranGryObiektyTlo.Hide();
-            ekranGryMapaTlo.Hide();
         }
        public void UwidocznijGre()
         {
-            ekranGryMapaTlo.Show();
             ekranGryObiektyTlo.Show();
             ekranGryUITlo.Show();
             Show();
@@ -300,7 +294,6 @@ namespace RPG
             }
             if (!bylaKolizja)
             {
-                ekranGryMapaTlo.RuchPowierzchniMapy((int)kierunekRuchuGracz.Value, SzybkoscRuchow);
                 ekranGryObiektyTlo.pBGracz.Left += px;
                 ekranGryObiektyTlo.panelMapa.Left -= px;
                 ekranGryObiektyTlo.pBGracz.Top += py;
@@ -309,6 +302,7 @@ namespace RPG
         }
         private void WczytajMape()
         {
+            ekranGryObiektyTlo.Visible = false;
             ekranGryObiektyTlo.panelMapa.Width = obszarGry.Rozmiar * obszarGry.Mapa.GetLength(0);
             ekranGryObiektyTlo.panelMapa.Height = obszarGry.Rozmiar * obszarGry.Mapa.GetLength(1);
             //Chodzacy ludek
@@ -329,8 +323,9 @@ namespace RPG
                     PictureBox element = new PictureBox();
                     element.Name = i + ";" + j;
                     element.BackColor = System.Drawing.Color.Transparent;
-                    element.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                    element.BackgroundImage = MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].ObrazekNaMapie);
+                    //element.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                    element.BackgroundImage = MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].Tlo);
+                    element.Image = MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].ObrazekNaMapie);
                     element.BorderStyle = BorderStyle.FixedSingle;
 
                     element.Size = new System.Drawing.Size(obszarGry.Rozmiar, obszarGry.Rozmiar);
@@ -338,10 +333,11 @@ namespace RPG
                     ekranGryObiektyTlo.panelMapa.Controls.Add(element);
                 }
             }
-            int lewa = (Width/2) - (ekranGryObiektyTlo.panelMapa.Width / 2);
-            int gora = (Height/2) - (ekranGryObiektyTlo.panelMapa.Height / 2);
-            ekranGryObiektyTlo.panelMapa.Left = lewa;
-            ekranGryObiektyTlo.panelMapa.Height = gora;
+            ekranGryObiektyTlo.Visible = true;
+     //       int lewa = (Width/2) - (ekranGryObiektyTlo.panelMapa.Width / 2);
+    //        int gora = (Height/2) - (ekranGryObiektyTlo.panelMapa.Height / 2);
+        //    ekranGryObiektyTlo.panelMapa.Left = lewa;
+        //    ekranGryObiektyTlo.panelMapa.Height = gora;
             
         }
         private void EkranGry_Load(object sender, EventArgs e)

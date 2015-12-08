@@ -36,6 +36,7 @@
             // 
             // panelMapa
             // 
+            this.panelMapa.BackColor = System.Drawing.Color.Black;
             this.panelMapa.Controls.Add(this.pBGracz);
             this.panelMapa.Location = new System.Drawing.Point(0, 0);
             this.panelMapa.Name = "panelMapa";

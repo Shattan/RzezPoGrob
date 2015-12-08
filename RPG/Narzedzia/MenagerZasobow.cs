@@ -14,6 +14,10 @@ namespace RPG.Narzedzia
 
         public static Bitmap PobierzBitmape(string sciezka)
         {
+            if(string.IsNullOrEmpty(sciezka))
+            {
+                return null;
+            }
             if(!_zasoby.ContainsKey(sciezka))
             {
                 _zasoby.Add(sciezka, new Bitmap(sciezka));
