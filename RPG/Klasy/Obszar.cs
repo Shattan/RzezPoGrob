@@ -78,7 +78,7 @@ namespace RPG
                 
                      poczatek = wiersze[i].IndexOf('(',koniec+1);
                      koniec = wiersze[i].IndexOf(')', poczatek + 1);
-                     mapa[j,i]=el;
+                     mapa[j,i-1]=el;
                      j++;
                  };
             }
