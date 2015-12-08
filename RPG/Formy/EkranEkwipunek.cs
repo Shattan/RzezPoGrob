@@ -457,7 +457,7 @@ namespace RPG
          
         }
 
-        void ZamienPrzedmiotyMiejscami(PictureBox przedmiotUpuszczany, PictureBox przedmiotNaKtoryUpuszczamy)
+       public  void ZamienPrzedmiotyMiejscami(PictureBox przedmiotUpuszczany, PictureBox przedmiotNaKtoryUpuszczamy)
         {
             Ekwipunek eupu = (Ekwipunek)przedmiotUpuszczany.Tag;
             Ekwipunek enaup = (Ekwipunek)przedmiotNaKtoryUpuszczamy.Tag;

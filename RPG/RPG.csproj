@@ -4916,6 +4916,9 @@
     <Content Include="Resources\Grafiki przeszkód\l3_window8.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki przycisków umiejętności\zdenerwowac tomka.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki tła walki\0.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

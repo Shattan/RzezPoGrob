@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.PictureBoxUcieczka = new System.Windows.Forms.PictureBox();
-            this.PictureBoxAtakMagiczny = new System.Windows.Forms.PictureBox();
-            this.PictureBoxEkwipunek = new System.Windows.Forms.PictureBox();
-            this.PictureBoxAtakFizyczny = new System.Windows.Forms.PictureBox();
+            this.PictureBoxUcieczka = new System.Windows.Forms.Label();
+            this.PictureBoxAtakMagiczny = new System.Windows.Forms.Label();
+            this.PictureBoxEkwipunek = new System.Windows.Forms.Label();
+            this.PictureBoxAtakFizyczny = new System.Windows.Forms.Label();
             this.FlowLayoutPanelWyborAtakuFizycznego = new System.Windows.Forms.FlowLayoutPanel();
-            this.PictureBoxWyjdzZAtakowFizycznych = new System.Windows.Forms.PictureBox();
+            this.PictureBoxWyjdzZAtakowFizycznych = new System.Windows.Forms.Label();
             this.FlowLayoutPanelWyborAtakuMagicznego = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBoxWyjdzZAtakowMagicznych = new System.Windows.Forms.PictureBox();
+            this.pictureBoxWyjdzZAtakowMagicznych = new System.Windows.Forms.Label();
             this.FlowLayoutPanelWyborMikstury = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBoxWyjdzZEkwipunku = new System.Windows.Forms.PictureBox();
+            this.pictureBoxWyjdzZEkwipunku = new System.Windows.Forms.Label();
             this.FlowLayoutPanelWyboru = new System.Windows.Forms.FlowLayoutPanel();
             this.TimerDoZamkniecia = new System.Windows.Forms.Timer(this.components);
             this.PictureBoxPasekHPGracza = new System.Windows.Forms.PictureBox();
@@ -50,16 +50,9 @@
             this.PanelDanychGracza = new System.Windows.Forms.Panel();
             this.LabelDaneGracza = new System.Windows.Forms.Label();
             this.LabelInformacje = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUcieczka)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAtakMagiczny)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkwipunek)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAtakFizyczny)).BeginInit();
             this.FlowLayoutPanelWyborAtakuFizycznego.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdzZAtakowFizycznych)).BeginInit();
             this.FlowLayoutPanelWyborAtakuMagicznego.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWyjdzZAtakowMagicznych)).BeginInit();
             this.FlowLayoutPanelWyborMikstury.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWyjdzZEkwipunku)).BeginInit();
             this.FlowLayoutPanelWyboru.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekHPGracza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiGracza)).BeginInit();
@@ -72,41 +65,41 @@
             // PictureBoxUcieczka
             // 
             this.PictureBoxUcieczka.BackColor = System.Drawing.Color.White;
-            this.PictureBoxUcieczka.Location = new System.Drawing.Point(3, 114);
+            this.PictureBoxUcieczka.Location = new System.Drawing.Point(3, 93);
             this.PictureBoxUcieczka.Name = "PictureBoxUcieczka";
             this.PictureBoxUcieczka.Size = new System.Drawing.Size(379, 31);
             this.PictureBoxUcieczka.TabIndex = 3;
-            this.PictureBoxUcieczka.TabStop = false;
+            this.PictureBoxUcieczka.Text = "Ucieczka";
             this.PictureBoxUcieczka.Click += new System.EventHandler(this.PictureBoxUcieczka_Click);
             // 
             // PictureBoxAtakMagiczny
             // 
             this.PictureBoxAtakMagiczny.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.PictureBoxAtakMagiczny.Location = new System.Drawing.Point(3, 40);
+            this.PictureBoxAtakMagiczny.Location = new System.Drawing.Point(3, 31);
             this.PictureBoxAtakMagiczny.Name = "PictureBoxAtakMagiczny";
             this.PictureBoxAtakMagiczny.Size = new System.Drawing.Size(379, 31);
             this.PictureBoxAtakMagiczny.TabIndex = 2;
-            this.PictureBoxAtakMagiczny.TabStop = false;
+            this.PictureBoxAtakMagiczny.Text = "Ataki magiczne";
             this.PictureBoxAtakMagiczny.Click += new System.EventHandler(this.PictureBoxAtakMagiczny_Click);
             // 
             // PictureBoxEkwipunek
             // 
             this.PictureBoxEkwipunek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.PictureBoxEkwipunek.Location = new System.Drawing.Point(3, 77);
+            this.PictureBoxEkwipunek.Location = new System.Drawing.Point(3, 62);
             this.PictureBoxEkwipunek.Name = "PictureBoxEkwipunek";
             this.PictureBoxEkwipunek.Size = new System.Drawing.Size(379, 31);
             this.PictureBoxEkwipunek.TabIndex = 1;
-            this.PictureBoxEkwipunek.TabStop = false;
+            this.PictureBoxEkwipunek.Text = "Ekwipunek";
             this.PictureBoxEkwipunek.Click += new System.EventHandler(this.PictureBoxEkwipunek_Click);
             // 
             // PictureBoxAtakFizyczny
             // 
-            this.PictureBoxAtakFizyczny.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PictureBoxAtakFizyczny.Location = new System.Drawing.Point(3, 3);
+            this.PictureBoxAtakFizyczny.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxAtakFizyczny.Location = new System.Drawing.Point(3, 0);
             this.PictureBoxAtakFizyczny.Name = "PictureBoxAtakFizyczny";
             this.PictureBoxAtakFizyczny.Size = new System.Drawing.Size(379, 31);
             this.PictureBoxAtakFizyczny.TabIndex = 0;
-            this.PictureBoxAtakFizyczny.TabStop = false;
+            this.PictureBoxAtakFizyczny.Text = "Ataki fizyczne";
             this.PictureBoxAtakFizyczny.Click += new System.EventHandler(this.PictureBoxAtakFizyczny_Click);
             // 
             // FlowLayoutPanelWyborAtakuFizycznego
@@ -123,12 +116,13 @@
             // 
             // PictureBoxWyjdzZAtakowFizycznych
             // 
-            this.PictureBoxWyjdzZAtakowFizycznych.BackColor = System.Drawing.Color.Red;
-            this.PictureBoxWyjdzZAtakowFizycznych.Location = new System.Drawing.Point(3, 3);
+            this.PictureBoxWyjdzZAtakowFizycznych.BackColor = System.Drawing.Color.LightGray;
+            this.PictureBoxWyjdzZAtakowFizycznych.Location = new System.Drawing.Point(3, 0);
             this.PictureBoxWyjdzZAtakowFizycznych.Name = "PictureBoxWyjdzZAtakowFizycznych";
             this.PictureBoxWyjdzZAtakowFizycznych.Size = new System.Drawing.Size(379, 31);
             this.PictureBoxWyjdzZAtakowFizycznych.TabIndex = 0;
-            this.PictureBoxWyjdzZAtakowFizycznych.TabStop = false;
+            this.PictureBoxWyjdzZAtakowFizycznych.Tag = "Wstecz";
+            this.PictureBoxWyjdzZAtakowFizycznych.Text = "Wstecz";
             this.PictureBoxWyjdzZAtakowFizycznych.Click += new System.EventHandler(this.PictureBoxWyjdzZAtakowFizycznych_Click);
             // 
             // FlowLayoutPanelWyborAtakuMagicznego
@@ -145,17 +139,17 @@
             // 
             // pictureBoxWyjdzZAtakowMagicznych
             // 
-            this.pictureBoxWyjdzZAtakowMagicznych.BackColor = System.Drawing.Color.Red;
-            this.pictureBoxWyjdzZAtakowMagicznych.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxWyjdzZAtakowMagicznych.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBoxWyjdzZAtakowMagicznych.Location = new System.Drawing.Point(3, 0);
             this.pictureBoxWyjdzZAtakowMagicznych.Name = "pictureBoxWyjdzZAtakowMagicznych";
             this.pictureBoxWyjdzZAtakowMagicznych.Size = new System.Drawing.Size(379, 31);
             this.pictureBoxWyjdzZAtakowMagicznych.TabIndex = 0;
-            this.pictureBoxWyjdzZAtakowMagicznych.TabStop = false;
+            this.pictureBoxWyjdzZAtakowMagicznych.Tag = "Wstecz";
+            this.pictureBoxWyjdzZAtakowMagicznych.Text = "Wstecz";
             this.pictureBoxWyjdzZAtakowMagicznych.Click += new System.EventHandler(this.pictureBoxWyjdzZAtakowMagicznych_Click);
             // 
             // FlowLayoutPanelWyborMikstury
             // 
-            this.FlowLayoutPanelWyborMikstury.AutoScroll = true;
             this.FlowLayoutPanelWyborMikstury.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.FlowLayoutPanelWyborMikstury.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FlowLayoutPanelWyborMikstury.Controls.Add(this.pictureBoxWyjdzZEkwipunku);
@@ -167,12 +161,13 @@
             // 
             // pictureBoxWyjdzZEkwipunku
             // 
-            this.pictureBoxWyjdzZEkwipunku.BackColor = System.Drawing.Color.Red;
-            this.pictureBoxWyjdzZEkwipunku.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxWyjdzZEkwipunku.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBoxWyjdzZEkwipunku.Location = new System.Drawing.Point(3, 0);
             this.pictureBoxWyjdzZEkwipunku.Name = "pictureBoxWyjdzZEkwipunku";
             this.pictureBoxWyjdzZEkwipunku.Size = new System.Drawing.Size(379, 31);
             this.pictureBoxWyjdzZEkwipunku.TabIndex = 0;
-            this.pictureBoxWyjdzZEkwipunku.TabStop = false;
+            this.pictureBoxWyjdzZEkwipunku.Tag = "Wstecz";
+            this.pictureBoxWyjdzZEkwipunku.Text = "Wstecz";
             this.pictureBoxWyjdzZEkwipunku.Click += new System.EventHandler(this.pictureBoxWyjdzZEkwipunku_Click);
             // 
             // FlowLayoutPanelWyboru
@@ -268,7 +263,7 @@
             // 
             // LabelInformacje
             // 
-            this.LabelInformacje.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelInformacje.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelInformacje.ForeColor = System.Drawing.Color.Red;
             this.LabelInformacje.Location = new System.Drawing.Point(16, 47);
             this.LabelInformacje.Multiline = true;
@@ -300,16 +295,9 @@
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranWalka_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxUcieczka)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAtakMagiczny)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEkwipunek)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAtakFizyczny)).EndInit();
             this.FlowLayoutPanelWyborAtakuFizycznego.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdzZAtakowFizycznych)).EndInit();
             this.FlowLayoutPanelWyborAtakuMagicznego.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWyjdzZAtakowMagicznych)).EndInit();
             this.FlowLayoutPanelWyborMikstury.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWyjdzZEkwipunku)).EndInit();
             this.FlowLayoutPanelWyboru.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekHPGracza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPasekEnergiiGracza)).EndInit();
@@ -324,16 +312,16 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PictureBoxUcieczka;
-        private System.Windows.Forms.PictureBox PictureBoxAtakMagiczny;
-        private System.Windows.Forms.PictureBox PictureBoxEkwipunek;
-        private System.Windows.Forms.PictureBox PictureBoxAtakFizyczny;
+        private System.Windows.Forms.Label PictureBoxUcieczka;
+        private System.Windows.Forms.Label PictureBoxAtakMagiczny;
+        private System.Windows.Forms.Label PictureBoxEkwipunek;
+        private System.Windows.Forms.Label PictureBoxAtakFizyczny;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelWyborAtakuFizycznego;
-        private System.Windows.Forms.PictureBox PictureBoxWyjdzZAtakowFizycznych;
+        private System.Windows.Forms.Label PictureBoxWyjdzZAtakowFizycznych;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelWyborAtakuMagicznego;
-        private System.Windows.Forms.PictureBox pictureBoxWyjdzZAtakowMagicznych;
+        private System.Windows.Forms.Label pictureBoxWyjdzZAtakowMagicznych;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelWyborMikstury;
-        private System.Windows.Forms.PictureBox pictureBoxWyjdzZEkwipunku;
+        private System.Windows.Forms.Label pictureBoxWyjdzZEkwipunku;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanelWyboru;
         private System.Windows.Forms.Timer TimerDoZamkniecia;
         private System.Windows.Forms.PictureBox PictureBoxPasekHPGracza;

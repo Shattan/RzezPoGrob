@@ -204,21 +204,6 @@ namespace RPG
             timerPrzeplywCzasu.Start();
             UwidocznijGre();
         }
-
-
-        private void PokazKupca()
-        {
-            UniewidocznijGre();
-            timerPrzeplywCzasu.Stop();
-            UwidocznijGre();
-        }
-
-        private void PokazRozmowe()
-        {
-            UniewidocznijGre();
-            timerPrzeplywCzasu.Stop();
-            UwidocznijGre();
-        }
         #endregion
 
         #region Zdarzenia
@@ -353,6 +338,11 @@ namespace RPG
                     ekranGryObiektyTlo.panelMapa.Controls.Add(element);
                 }
             }
+            int lewa = (Width/2) - (ekranGryObiektyTlo.panelMapa.Width / 2);
+            int gora = (Height/2) - (ekranGryObiektyTlo.panelMapa.Height / 2);
+            ekranGryObiektyTlo.panelMapa.Left = lewa;
+            ekranGryObiektyTlo.panelMapa.Height = gora;
+            
         }
         private void EkranGry_Load(object sender, EventArgs e)
         {

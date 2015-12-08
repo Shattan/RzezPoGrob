@@ -30,58 +30,85 @@
         {
             this.przedmiotyGracza = new System.Windows.Forms.FlowLayoutPanel();
             this.przedmiotySprzedawca = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelGracz = new System.Windows.Forms.Label();
-            this.labelSprzedawca = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbLogi = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // przedmiotyGracza
             // 
-            this.przedmiotyGracza.Location = new System.Drawing.Point(129, 106);
+            this.przedmiotyGracza.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.przedmiotyGracza.Location = new System.Drawing.Point(3, 3);
             this.przedmiotyGracza.Name = "przedmiotyGracza";
-            this.przedmiotyGracza.Size = new System.Drawing.Size(200, 355);
+            this.przedmiotyGracza.Size = new System.Drawing.Size(372, 400);
             this.przedmiotyGracza.TabIndex = 0;
             // 
             // przedmiotySprzedawca
             // 
-            this.przedmiotySprzedawca.Location = new System.Drawing.Point(574, 106);
+            this.przedmiotySprzedawca.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.przedmiotySprzedawca.Location = new System.Drawing.Point(570, 3);
             this.przedmiotySprzedawca.Name = "przedmiotySprzedawca";
-            this.przedmiotySprzedawca.Size = new System.Drawing.Size(200, 355);
+            this.przedmiotySprzedawca.Size = new System.Drawing.Size(374, 400);
             this.przedmiotySprzedawca.TabIndex = 1;
             // 
-            // labelGracz
+            // tableLayoutPanel1
             // 
-            this.labelGracz.AutoSize = true;
-            this.labelGracz.Location = new System.Drawing.Point(140, 61);
-            this.labelGracz.Name = "labelGracz";
-            this.labelGracz.Size = new System.Drawing.Size(35, 13);
-            this.labelGracz.TabIndex = 2;
-            this.labelGracz.Text = "label1";
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tbLogi, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(953, 516);
+            this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // labelSprzedawca
+            // tableLayoutPanel2
             // 
-            this.labelSprzedawca.AutoSize = true;
-            this.labelSprzedawca.Location = new System.Drawing.Point(591, 61);
-            this.labelSprzedawca.Name = "labelSprzedawca";
-            this.labelSprzedawca.Size = new System.Drawing.Size(35, 13);
-            this.labelSprzedawca.TabIndex = 3;
-            this.labelSprzedawca.Text = "label2";
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.Controls.Add(this.przedmiotyGracza, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.przedmiotySprzedawca, 2, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(947, 406);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tbLogi
+            // 
+            this.tbLogi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbLogi.Location = new System.Drawing.Point(3, 415);
+            this.tbLogi.Multiline = true;
+            this.tbLogi.Name = "tbLogi";
+            this.tbLogi.ReadOnly = true;
+            this.tbLogi.Size = new System.Drawing.Size(947, 98);
+            this.tbLogi.TabIndex = 1;
             // 
             // EkranHandel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 516);
-            this.Controls.Add(this.labelSprzedawca);
-            this.Controls.Add(this.labelGracz);
-            this.Controls.Add(this.przedmiotySprzedawca);
-            this.Controls.Add(this.przedmiotyGracza);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EkranHandel";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EkranHandel";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -89,7 +116,8 @@
 
         private System.Windows.Forms.FlowLayoutPanel przedmiotyGracza;
         private System.Windows.Forms.FlowLayoutPanel przedmiotySprzedawca;
-        private System.Windows.Forms.Label labelGracz;
-        private System.Windows.Forms.Label labelSprzedawca;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TextBox tbLogi;
     }
 }

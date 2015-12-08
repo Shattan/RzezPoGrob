@@ -43,20 +43,28 @@ namespace RPG
 
             //Ustawienie przycisków
             PictureBoxUcieczka.Size = new Size(Width*30/100,Height*5/100);
-
-            foreach (PictureBox przycisk in FlowLayoutPanelWyboru.Controls)
+            StworzKonfiguracjeTekstu(PictureBoxAtakFizyczny);
+            StworzKonfiguracjeTekstu(PictureBoxAtakMagiczny);
+            StworzKonfiguracjeTekstu(PictureBoxEkwipunek);
+      
+            StworzKonfiguracjeTekstu(PictureBoxUcieczka);
+            StworzKonfiguracjeTekstu(PictureBoxAtakFizyczny);
+            StworzKonfiguracjeTekstu(PictureBoxWyjdzZAtakowFizycznych);
+            StworzKonfiguracjeTekstu(pictureBoxWyjdzZAtakowMagicznych);
+            StworzKonfiguracjeTekstu(pictureBoxWyjdzZEkwipunku);
+            foreach (Control przycisk in FlowLayoutPanelWyboru.Controls)
             {
                 przycisk.Size = PictureBoxUcieczka.Size;
             }
-            foreach (PictureBox przycisk in FlowLayoutPanelWyborAtakuFizycznego.Controls)
+            foreach (Control przycisk in FlowLayoutPanelWyborAtakuFizycznego.Controls)
             {
                 przycisk.Size = PictureBoxUcieczka.Size;
             }
-            foreach (PictureBox przycisk in FlowLayoutPanelWyborAtakuMagicznego.Controls)
+            foreach( Control przycisk in FlowLayoutPanelWyborAtakuMagicznego.Controls)
             {
                 przycisk.Size = PictureBoxUcieczka.Size;
             }
-            foreach (PictureBox przycisk in FlowLayoutPanelWyborMikstury.Controls)
+            foreach (Control przycisk in FlowLayoutPanelWyborMikstury.Controls)
             {
                 przycisk.Size = PictureBoxUcieczka.Size;
             }
@@ -96,6 +104,13 @@ namespace RPG
             LabelDaneGracza.Location = new Point(PictureBoxPasekEnergiiGracza.Location.X, PictureBoxPasekEnergiiGracza.Location.Y + PictureBoxPasekEnergiiGracza.Height);
             LabelDanePrzeciwnika.Location = new Point(PictureBoxPasekEnergiiPrzeciwnika.Location.X, PictureBoxPasekEnergiiPrzeciwnika.Location.Y + PictureBoxPasekEnergiiPrzeciwnika.Height);
         }
+        private void StworzKonfiguracjeTekstu(Label c)
+        {
+            c.TextAlign = ContentAlignment.MiddleLeft;
+            c.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            c.Font = new System.Drawing.Font("Segoe Script", 20);
+            c.ForeColor = Color.Black;
+        }
         void KolorujElementy()
         {
             //Ustawienie ikony w trybie okienkowym
@@ -109,16 +124,16 @@ namespace RPG
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyborMikstury, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
 
             //Przyciski sterujące
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakFizyczny, "Resources/Grafiki przycisków umiejętności/AtakFizyczny.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakMagiczny, "Resources/Grafiki przycisków umiejętności/AtakMagiczny.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxEkwipunek, "Resources/Grafiki przycisków umiejętności/Ekwipunek.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka, "Resources/Grafiki przycisków umiejętności/Ucieczka.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakFizyczny, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakMagiczny, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxEkwipunek, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdzZAtakowFizycznych, "Resources/Grafiki przycisków umiejętności/Wstecz.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdzZAtakowFizycznych, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZAtakowMagicznych, "Resources/Grafiki przycisków umiejętności/Wstecz.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZAtakowMagicznych, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZEkwipunku, "Resources/Grafiki przycisków umiejętności/Wstecz.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZEkwipunku, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
 
 
             //Okienka informacyjne
@@ -131,7 +146,7 @@ namespace RPG
         {
             for (int i = 0; i < parent.Controls.Count; i++)
             {
-                if(parent.Controls[i] is Label)
+                if(parent.Controls[i] is Label && parent.Controls[i].Tag==null)
                 {
                     parent.Controls.RemoveAt(i);
                     i--;
@@ -154,13 +169,12 @@ namespace RPG
             foreach (Strawa strawa in ekranGry.gra.gracz.Plecak.Where(x=>x.TypPrzedmiotu==Klasy.TypPrzedmiotu.Zywnosc))
             {
                 Label nowaStrawa = new Label();
-                nowaStrawa.Size = new Size(50, 50);
-                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaStrawa, strawa.Obrazek);
+              
                 nowaStrawa.Name = strawa.Nazwa;
                 nowaStrawa.Text = strawa.Nazwa;
-                nowaStrawa.Font = new System.Drawing.Font("Arial", 20);
-                nowaStrawa.ForeColor = Color.White;
+                StworzKonfiguracjeTekstu(nowaStrawa);
                 nowaStrawa.Size = new Size(Width * 30 / 100, Height * 5 / 100);
+                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaStrawa, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
                 nowaStrawa.Click += nowaStrawa_Click;
                 FlowLayoutPanelWyborMikstury.Controls.Add(nowaStrawa);
             }
@@ -171,8 +185,7 @@ namespace RPG
         {
             Label nowaUmiejetnosc = new Label();
             nowaUmiejetnosc.Text = string.Format("{0}. Użycie {1} enerii",umiejetnosc.Nazwa,umiejetnosc.KosztEnergi);
-            nowaUmiejetnosc.Font = new System.Drawing.Font("Arial", 20);
-            nowaUmiejetnosc.ForeColor = Color.White;
+            StworzKonfiguracjeTekstu(nowaUmiejetnosc);
             nowaUmiejetnosc.Size = new Size(Width * 30 / 100, Height * 5 / 100);
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaUmiejetnosc, umiejetnosc.ObrazekPrzycisku);
             nowaUmiejetnosc.Name = umiejetnosc.Nazwa;
