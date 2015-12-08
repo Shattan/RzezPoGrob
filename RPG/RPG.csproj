@@ -103,8 +103,16 @@
     <Compile Include="Klasy\Ekwipunek\Zywnosc\SwiezyChleb.cs" />
     <Compile Include="Klasy\ElementMapy.cs" />
     <Compile Include="Klasy\NPC.cs" />
+    <Compile Include="Klasy\Obiekty\book.cs" />
+    <Compile Include="Klasy\Obiekty\brick.cs" />
+    <Compile Include="Klasy\Obiekty\brickstone.cs" />
+    <Compile Include="Klasy\Obiekty\dirt.cs" />
+    <Compile Include="Klasy\Obiekty\grass.cs" />
+    <Compile Include="Klasy\Obiekty\gravel.cs" />
     <Compile Include="Klasy\Obiekty\Kamien.cs" />
     <Compile Include="Klasy\Obiekty\ScianaPozioma.cs" />
+    <Compile Include="Klasy\Obiekty\water.cs" />
+    <Compile Include="Klasy\Obiekty\wood.cs" />
     <Compile Include="Klasy\Postac.cs" />
     <Compile Include="Klasy\PostacieNiezalezne\Handlarz.cs" />
     <Compile Include="Klasy\Postacie\Sprzedawcy\SprzdawcaZenon.cs" />
@@ -4952,6 +4960,24 @@
     <Content Include="Resources\Grafiki umiejętności\Eksplozja.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\book.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\brick.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\brickstone.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dirt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\grass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\gravel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Mapy\Trawa.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -4985,11 +5011,16 @@
     <Content Include="Resources\Grafiki menu\Menu wyboru zapisz grę.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\water.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\wood.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Obszary\mapa.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
