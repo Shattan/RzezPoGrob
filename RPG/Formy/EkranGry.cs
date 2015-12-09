@@ -25,8 +25,6 @@ namespace RPG
     {
         #region Zmienne
         EkranGlowny ekranGlowny;
-     
-        EkranGryUITlo ekranGryUITlo;
 
         //Tworzenie zmiennej losującej przeciwnika i planszę
      
@@ -49,10 +47,9 @@ namespace RPG
         #endregion
       public  Obszar obszarGry;
       int[] pozycjaGracza;
-        public EkranGry(EkranGlowny ekranGlowny,  EkranGryUITlo ekranGryUITlo)
+        public EkranGry(EkranGlowny ekranGlowny)
         {
             this.ekranGlowny = ekranGlowny;
-            this.ekranGryUITlo = ekranGryUITlo;
             this.gra = ekranGlowny.gra;
             obszarGry = ManagerObszarow.WczytajObszar("mapa");
             InitializeComponent();
@@ -101,7 +98,7 @@ namespace RPG
                 //praweMenu[index].MouseLeave += new System.EventHandler(this.PictureBoxPraweMenu_MouseLeave);
             }
 
-            ekranGryUITlo.UstawPanelPrawy(panelPraweMenu.Size, panelPraweMenu.Location, "Resources/Grafiki menu/Panel pod przyciski.png");
+         
         }
 
         void KolorujElementy()
@@ -129,11 +126,9 @@ namespace RPG
        public void UniewidocznijGre()
         {
             Hide();
-            ekranGryUITlo.Hide();
         }
        public void UwidocznijGre()
         {
-            ekranGryUITlo.Show();
             Show();
         }
        [DllImport("user32.dll")]
@@ -321,10 +316,10 @@ namespace RPG
                     if (obszarGry.Mapa[i, j].ObrazekNaMapie != null)
                     {
                         g.DrawImage(MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].ObrazekNaMapie), r);
-                        if (obszarGry.Mapa[i, j].PowodujeKolizje)
-                        {
-                            g.DrawRectangle(objpen, r);
-                        }
+                        //if (obszarGry.Mapa[i, j].PowodujeKolizje)
+                        //{
+                        //    g.DrawRectangle(objpen, r);
+                        //}
                     }
                 }
             }
@@ -343,15 +338,15 @@ namespace RPG
             Rectangle pozycjagracz = new Rectangle(xgracz, ygracz, gra.gracz.Szerokosc, gra.gracz.Wysokosc);
             g.DrawImage(graczimg, pozycjagracz);
             // Create a new pen.
-            System.Drawing.Pen skyBluePen = new System.Drawing.Pen(System.Drawing.Brushes.DeepSkyBlue);
+            //System.Drawing.Pen skyBluePen = new System.Drawing.Pen(System.Drawing.Brushes.DeepSkyBlue);
 
-            // Set the pen's width.
-            skyBluePen.Width = 1.0F;
+            //// Set the pen's width.
+            //skyBluePen.Width = 1.0F;
 
-            // Set the LineJoin property.
-            skyBluePen.LineJoin = System.Drawing.Drawing2D.LineJoin.Bevel;
+            //// Set the LineJoin property.
+            //skyBluePen.LineJoin = System.Drawing.Drawing2D.LineJoin.Bevel;
 
-            g.DrawRectangle(skyBluePen, pozycjagracz);
+            //g.DrawRectangle(skyBluePen, pozycjagracz);
         }
 
         private void PictureBoxPraweMenuEkwipunek_MouseClick(object sender, EventArgs e)

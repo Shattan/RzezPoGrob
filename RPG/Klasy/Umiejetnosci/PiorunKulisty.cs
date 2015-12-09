@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy.Umiejetnosci
 {
-    class PiorunKulisty
+    class PiorunKulisty : Umiejetnosc
     {
         public override string Nazwa
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy.Umiejetnosci
 {
-    class SzybkiAtak
+    class SzybkiAtak : Umiejetnosc
     {
         public override string Nazwa
         {

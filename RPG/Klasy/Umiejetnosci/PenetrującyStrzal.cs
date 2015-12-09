@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy.Umiejetnosci
 {
-    class PenetrującyStrzal
+    class PenetrującyStrzal : Umiejetnosc
     {
         public override string Nazwa
         {

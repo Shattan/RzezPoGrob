@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy.Umiejetnosci
 {
-    class Grom
+    class Grom : Umiejetnosc
     {
         public override string Nazwa
         {

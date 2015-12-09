@@ -175,12 +175,6 @@
     <Compile Include="Tla\EkranGlownyTlo.Designer.cs">
       <DependentUpon>EkranGlownyTlo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tla\EkranGryUITlo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tla\EkranGryUITlo.Designer.cs">
-      <DependentUpon>EkranGryUITlo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tla\EkranWalkaTlo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,9 +263,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Tla\EkranGryUITlo.resx">
-      <DependentUpon>EkranGryUITlo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Tla\EkranWalkaTlo.resx">
       <DependentUpon>EkranWalkaTlo.cs</DependentUpon>
     </EmbeddedResource>

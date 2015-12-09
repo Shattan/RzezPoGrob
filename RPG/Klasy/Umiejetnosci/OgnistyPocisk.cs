@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy.Umiejetnosci
 {
-    class OgnistyPocisk
+    public class OgnistyPocisk : Umiejetnosc
     {
         public override string Nazwa
         {

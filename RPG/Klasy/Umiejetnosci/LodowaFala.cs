@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy.Umiejetnosci
 {
-    class LodowaFala
+    class LodowaFala : Umiejetnosc
     {
         public override string Nazwa
         {

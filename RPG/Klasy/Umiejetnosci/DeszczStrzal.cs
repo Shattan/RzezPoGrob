@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy.Umiejetnosci
 {
-    class DeszczStrzal
+    class DeszczStrzal : Umiejetnosc
     {
         
             public override string Nazwa

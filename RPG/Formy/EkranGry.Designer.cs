@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EkranGry));
             this.PictureBoxZamknij = new System.Windows.Forms.PictureBox();
             this.panelPraweMenu = new System.Windows.Forms.Panel();
             this.timerPrzeplywCzasu = new System.Windows.Forms.Timer(this.components);
@@ -47,10 +48,12 @@
             // 
             // panelPraweMenu
             // 
-            this.panelPraweMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelPraweMenu.Location = new System.Drawing.Point(1453, -6);
+            this.panelPraweMenu.BackColor = System.Drawing.Color.Transparent;
+            this.panelPraweMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelPraweMenu.BackgroundImage")));
+            this.panelPraweMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPraweMenu.Location = new System.Drawing.Point(1114, 46);
             this.panelPraweMenu.Name = "panelPraweMenu";
-            this.panelPraweMenu.Size = new System.Drawing.Size(88, 73);
+            this.panelPraweMenu.Size = new System.Drawing.Size(229, 589);
             this.panelPraweMenu.TabIndex = 29;
             // 
             // timerPrzeplywCzasu
@@ -73,7 +76,6 @@
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranOpcje_FormClosing);
-         
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).EndInit();
             this.ResumeLayout(false);

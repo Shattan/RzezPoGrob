@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy.Umiejetnosci
 {
-    class BrylaLodu
+    class BrylaLodu : Umiejetnosc
     {
         public override string Nazwa
         {
