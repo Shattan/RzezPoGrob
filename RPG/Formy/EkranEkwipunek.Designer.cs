@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EkranEkwipunek));
             this.PictureBoxBron = new System.Windows.Forms.PictureBox();
             this.PictureBoxTarcza = new System.Windows.Forms.PictureBox();
             this.PictureBoxPancerz = new System.Windows.Forms.PictureBox();
@@ -105,6 +106,7 @@
             // 
             this.FlowLayoutPanelPlecak.AllowDrop = true;
             this.FlowLayoutPanelPlecak.AutoScroll = true;
+            this.FlowLayoutPanelPlecak.BackColor = System.Drawing.Color.Transparent;
             this.FlowLayoutPanelPlecak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FlowLayoutPanelPlecak.Location = new System.Drawing.Point(595, 112);
             this.FlowLayoutPanelPlecak.Name = "FlowLayoutPanelPlecak";
@@ -113,6 +115,7 @@
             // 
             // PictureBoxSilaMinus
             // 
+            this.PictureBoxSilaMinus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxSilaMinus.Location = new System.Drawing.Point(306, 144);
             this.PictureBoxSilaMinus.Name = "PictureBoxSilaMinus";
             this.PictureBoxSilaMinus.Size = new System.Drawing.Size(29, 31);
@@ -123,6 +126,7 @@
             // 
             // PictureBoxSilaPlus
             // 
+            this.PictureBoxSilaPlus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxSilaPlus.Location = new System.Drawing.Point(351, 144);
             this.PictureBoxSilaPlus.Name = "PictureBoxSilaPlus";
             this.PictureBoxSilaPlus.Size = new System.Drawing.Size(29, 31);
@@ -132,6 +136,7 @@
             // 
             // PictureBoxZrecznoscPlus
             // 
+            this.PictureBoxZrecznoscPlus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxZrecznoscPlus.Location = new System.Drawing.Point(351, 181);
             this.PictureBoxZrecznoscPlus.Name = "PictureBoxZrecznoscPlus";
             this.PictureBoxZrecznoscPlus.Size = new System.Drawing.Size(29, 31);
@@ -141,6 +146,7 @@
             // 
             // PictureBoxZrecznoscMinus
             // 
+            this.PictureBoxZrecznoscMinus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxZrecznoscMinus.Location = new System.Drawing.Point(306, 181);
             this.PictureBoxZrecznoscMinus.Name = "PictureBoxZrecznoscMinus";
             this.PictureBoxZrecznoscMinus.Size = new System.Drawing.Size(29, 31);
@@ -151,6 +157,7 @@
             // 
             // PictureBoxWitalnoscPlus
             // 
+            this.PictureBoxWitalnoscPlus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxWitalnoscPlus.Location = new System.Drawing.Point(351, 218);
             this.PictureBoxWitalnoscPlus.Name = "PictureBoxWitalnoscPlus";
             this.PictureBoxWitalnoscPlus.Size = new System.Drawing.Size(29, 31);
@@ -160,6 +167,7 @@
             // 
             // PictureBoxWitalnoscMinus
             // 
+            this.PictureBoxWitalnoscMinus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxWitalnoscMinus.Location = new System.Drawing.Point(306, 218);
             this.PictureBoxWitalnoscMinus.Name = "PictureBoxWitalnoscMinus";
             this.PictureBoxWitalnoscMinus.Size = new System.Drawing.Size(29, 31);
@@ -170,6 +178,7 @@
             // 
             // PictureBoxInteligencjaPlus
             // 
+            this.PictureBoxInteligencjaPlus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxInteligencjaPlus.Location = new System.Drawing.Point(351, 255);
             this.PictureBoxInteligencjaPlus.Name = "PictureBoxInteligencjaPlus";
             this.PictureBoxInteligencjaPlus.Size = new System.Drawing.Size(29, 31);
@@ -179,6 +188,7 @@
             // 
             // PictureBoxInteligencjaMinus
             // 
+            this.PictureBoxInteligencjaMinus.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxInteligencjaMinus.Location = new System.Drawing.Point(306, 255);
             this.PictureBoxInteligencjaMinus.Name = "PictureBoxInteligencjaMinus";
             this.PictureBoxInteligencjaMinus.Size = new System.Drawing.Size(29, 31);
@@ -189,6 +199,7 @@
             // 
             // LabelStatystyki
             // 
+            this.LabelStatystyki.BackColor = System.Drawing.Color.Transparent;
             this.LabelStatystyki.Font = new System.Drawing.Font("Segoe Print", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelStatystyki.Location = new System.Drawing.Point(4, 87);
             this.LabelStatystyki.Name = "LabelStatystyki";
@@ -198,6 +209,7 @@
             // 
             // LabelNazwyStatystyk
             // 
+            this.LabelNazwyStatystyk.BackColor = System.Drawing.Color.Transparent;
             this.LabelNazwyStatystyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelNazwyStatystyk.Location = new System.Drawing.Point(7, 144);
             this.LabelNazwyStatystyk.Name = "LabelNazwyStatystyk";
@@ -219,6 +231,7 @@
             // 
             // LabelWartosciStatystyk
             // 
+            this.LabelWartosciStatystyk.BackColor = System.Drawing.Color.Transparent;
             this.LabelWartosciStatystyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelWartosciStatystyk.Location = new System.Drawing.Point(127, 144);
             this.LabelWartosciStatystyk.Name = "LabelWartosciStatystyk";
@@ -290,6 +303,7 @@
             // 
             // LabelPorownanieStatystyk
             // 
+            this.LabelPorownanieStatystyk.BackColor = System.Drawing.Color.Transparent;
             this.LabelPorownanieStatystyk.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelPorownanieStatystyk.Location = new System.Drawing.Point(208, 144);
             this.LabelPorownanieStatystyk.Name = "LabelPorownanieStatystyk";
@@ -303,6 +317,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(5)))), ((int)(((byte)(0)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.PanelOpisPrzedmiotu);
             this.Controls.Add(this.LabelPorownanieStatystyk);
@@ -327,7 +342,6 @@
             this.Name = "EkranEkwipunek";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EkranEkwipunek";
-            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(5)))), ((int)(((byte)(0)))));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranEkwipunek_FormClosing);
             this.Shown += new System.EventHandler(this.EkranEkwipunek_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBron)).EndInit();

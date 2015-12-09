@@ -151,37 +151,24 @@ namespace RPG
         {
             UniewidocznijGre();
             timerPrzeplywCzasu.Stop();
-            EkranEkwipunekTlo ekranEkwipunekTlo = new EkranEkwipunekTlo(this);
+            EkranEkwipunek ekranEkwipunekTlo = new EkranEkwipunek(this);
             ekranEkwipunekTlo.ShowDialog();
 
-            if (ekranEkwipunekTlo.DialogResult == DialogResult.OK)//Jeżeli gracz zamknął ekwipunek
-            {
                 UwidocznijGre();
                 timerPrzeplywCzasu.Start();
-            }
-            else
-            {
-                UwidocznijGre();
-                //Ktos zamknal na sile forme, zamykamy wiec gre, chociaz powinniosmy po prostu ukarac gracza
-                DialogResult = DialogResult.Cancel;
-            }
+         
         }
 
         private void PokazDziennikZadan()
         {
             UniewidocznijGre();
             timerPrzeplywCzasu.Stop();
-            EkranDziennikZadanTlo ekranEkranDziennikZadanTlo = new EkranDziennikZadanTlo(this);
+            EkranDziennikZadan ekranEkranDziennikZadanTlo = new EkranDziennikZadan(this);
             ekranEkranDziennikZadanTlo.ShowDialog();
-            if (ekranEkranDziennikZadanTlo.DialogResult == DialogResult.OK)
-            {
+
                 UwidocznijGre();
                 timerPrzeplywCzasu.Start();
-            }
-            else
-            {
-                UwidocznijGre();
-            }
+          
         }
 
         private void PokazMenuWyboru()

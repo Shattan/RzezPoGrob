@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EkranDziennikZadan));
             this.ListBoxZadania = new System.Windows.Forms.ListBox();
             this.LabelZadania = new System.Windows.Forms.Label();
             this.LabelOpis = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             // LabelZadania
             // 
             this.LabelZadania.AutoSize = true;
+            this.LabelZadania.BackColor = System.Drawing.Color.Transparent;
             this.LabelZadania.Font = new System.Drawing.Font("Segoe Print", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelZadania.ForeColor = System.Drawing.Color.MidnightBlue;
             this.LabelZadania.Location = new System.Drawing.Point(95, 9);
@@ -65,6 +67,7 @@
             // LabelOpis
             // 
             this.LabelOpis.AutoSize = true;
+            this.LabelOpis.BackColor = System.Drawing.Color.Transparent;
             this.LabelOpis.Font = new System.Drawing.Font("Segoe Print", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelOpis.ForeColor = System.Drawing.Color.MidnightBlue;
             this.LabelOpis.Location = new System.Drawing.Point(493, 9);
@@ -75,6 +78,7 @@
             // 
             // LabelOpisZadania
             // 
+            this.LabelOpisZadania.BackColor = System.Drawing.Color.Transparent;
             this.LabelOpisZadania.Font = new System.Drawing.Font("Segoe Print", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelOpisZadania.ForeColor = System.Drawing.Color.MidnightBlue;
             this.LabelOpisZadania.Location = new System.Drawing.Point(502, 76);
@@ -99,6 +103,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(883, 451);
             this.Controls.Add(this.PictureBoxZamknij);
             this.Controls.Add(this.LabelOpisZadania);

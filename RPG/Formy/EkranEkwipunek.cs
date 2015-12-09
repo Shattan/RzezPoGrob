@@ -257,7 +257,7 @@ namespace RPG
 
             int szerokoscIkon = (Width * 5 / 100) - 5;
             int wysokoscIkon = Height * 8 / 100;
-
+            FlowLayoutPanelPlecak.Visible = false;
             //Dodawanie pól ekwipunku
             int miejscWEkwipunku = gracz.Plecak.Count+10 -(gracz.Plecak.Count+10)%4;//Plecak zawsze dodaje puste pola na końcu, wyrównujące poziom pól(nieograniczona ilość miejsc w plecaku)
             for (int i = 0; i < miejscWEkwipunku; i++)
@@ -277,6 +277,7 @@ namespace RPG
                 pb.Tag = przedmiot;
                 Program.UstawObrazEkwipunku(pb, przedmiot);
             }
+            FlowLayoutPanelPlecak.Visible = true;
         }
         #endregion
 

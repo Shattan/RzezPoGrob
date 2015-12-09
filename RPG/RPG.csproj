@@ -151,23 +151,11 @@
     </Compile>
     <Compile Include="Klasy\Gracz.cs" />
     <Compile Include="Klasy\Zadanie.cs" />
-    <Compile Include="Tla\EkranDziennikZadanTlo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tla\EkranDziennikZadanTlo.Designer.cs">
-      <DependentUpon>EkranDziennikZadanTlo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formy\EkranEkwipunek.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formy\EkranEkwipunek.Designer.cs">
       <DependentUpon>EkranEkwipunek.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tla\EkranEkwipunekTlo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tla\EkranEkwipunekTlo.Designer.cs">
-      <DependentUpon>EkranEkwipunekTlo.cs</DependentUpon>
     </Compile>
     <Compile Include="Tla\EkranGlownyTlo.cs">
       <SubType>Form</SubType>
@@ -228,12 +216,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranHandel.resx">
       <DependentUpon>EkranHandel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tla\EkranDziennikZadanTlo.resx">
-      <DependentUpon>EkranDziennikZadanTlo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tla\EkranEkwipunekTlo.resx">
-      <DependentUpon>EkranEkwipunekTlo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tla\EkranGlownyTlo.resx">
       <DependentUpon>EkranGlownyTlo.cs</DependentUpon>
