@@ -118,6 +118,7 @@
     <Compile Include="Klasy\Postacie\Sprzedawcy\SprzdawcaZenon.cs" />
     <Compile Include="Klasy\Przeciwnicy\Goblin.cs" />
     <Compile Include="Klasy\Przeciwnicy\Szczur.cs" />
+    <Compile Include="Klasy\Przeciwnicy\Waz.cs" />
     <Compile Include="Klasy\Strawa.cs" />
     <Compile Include="Klasy\TypPrzedmiotu.cs" />
     <Compile Include="Klasy\Umiejetnosci\KulaOgnia.cs" />
