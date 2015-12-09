@@ -25,18 +25,5 @@ namespace RPG
             
      
         }
-
-
-
-
-    
-      
-
-  
-        public void UtworzListePrzeszkod()
-        {
-            //index 0
-            listaPrzeszkod.Add(new Przeszkoda("Drzewo"));
-        }
     }
 }

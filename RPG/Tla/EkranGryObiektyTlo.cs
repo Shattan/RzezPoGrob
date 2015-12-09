@@ -14,13 +14,11 @@ namespace RPG
     {
         #region Zmienne
         EkranGlowny ekranGlowny;
-        EkranGryMapaTlo ekranGryMapaTlo;
         #endregion
 
-        public EkranGryObiektyTlo(EkranGlowny ekranGlowny, EkranGryMapaTlo ekranGryMapaTlo)
+        public EkranGryObiektyTlo(EkranGlowny ekranGlowny)
         {
             this.ekranGlowny = ekranGlowny;
-            this.ekranGryMapaTlo = ekranGryMapaTlo;
 
             InitializeComponent();
             RozmiescElementy();
@@ -42,7 +40,7 @@ namespace RPG
         #region Obsluga zdarzeń
         private void EkranGryTloObiekty_Shown(object sender, EventArgs e)
         {
-            EkranGryUITlo ekranGryUITlo = new EkranGryUITlo(ekranGlowny, ekranGryMapaTlo, this);
+            EkranGryUITlo ekranGryUITlo = new EkranGryUITlo(ekranGlowny, this);
             DialogResult = ekranGryUITlo.ShowDialog();
             DialogResult = ekranGryUITlo.DialogResult;
         }

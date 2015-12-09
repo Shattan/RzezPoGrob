@@ -21,6 +21,7 @@ namespace RPG
 
         public EkranGlownyTlo()
         {
+         
             InitializeComponent();
             RozmiescElementy();
             KolorujElementy(); 

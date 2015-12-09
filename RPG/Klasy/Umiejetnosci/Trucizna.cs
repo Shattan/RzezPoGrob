@@ -45,6 +45,7 @@ namespace RPG.Klasy.Umiejetnosci
         }
 
     }
+   
     public class EfektTrucizna:Efekt
     {
 
