@@ -274,26 +274,26 @@ namespace RPG
                     }
                 }
             }
-            //if(index % czasOdnawiania == 0)
-            //{
+            if(index % czasOdnawiania == 0)
+            {
             //////Animacje Gifa
-            //    if (kierunekRuchuGracz==Ruch.Prawo)
-            //    {
-            //        ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "prawo.gif");
-            //    }
-            //    if (kierunekRuchuGracz == Ruch.Lewo)
-            //    {
-            //        ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "lewo.gif");
-            //    }
-            //    if (kierunekRuchuGracz == Ruch.Dol)
-            //    {
-            //        ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "dół.gif");
-            //    }
-            //    if (kierunekRuchuGracz == Ruch.Gora)
-            //    {
-            //        ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "góra.gif");
-            //    }
-            //}
+                if (kierunekRuchuGracz==Ruch.Prawo)
+                {
+                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "prawo.gif");
+                }
+                if (kierunekRuchuGracz == Ruch.Lewo)
+                {
+                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "lewo.gif");
+                }
+                if (kierunekRuchuGracz == Ruch.Dol)
+                {
+                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "dół.gif");
+                }
+                if (kierunekRuchuGracz == Ruch.Gora)
+                {
+                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "góra.gif");
+                }
+            }
             if (!bylaKolizja)
             {
                 ekranGryObiektyTlo.pBGracz.Left += px;
