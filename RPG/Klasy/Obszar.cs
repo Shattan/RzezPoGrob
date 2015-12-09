@@ -90,7 +90,7 @@ namespace RPG
                          el = new ElementMapyPusty();
                      }
                      el.Tlo = tlo;
-                     mapa[j, i - 1] = el;
+                     mapa[i-1,j] = el;
                      j++;
                  };
             }

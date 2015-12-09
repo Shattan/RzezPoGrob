@@ -16,6 +16,7 @@ using System.Windows.Media;
 using RPG.Narzedzia;
 using System.Runtime.InteropServices;
 using RPG.Klasy;
+using System.Drawing.Imaging;
 #endregion
 
 namespace RPG
@@ -24,8 +25,7 @@ namespace RPG
     {
         #region Zmienne
         EkranGlowny ekranGlowny;
-       
-        EkranGryObiektyTlo ekranGryObiektyTlo;
+     
         EkranGryUITlo ekranGryUITlo;
 
         //Tworzenie zmiennej losującej przeciwnika i planszę
@@ -38,23 +38,20 @@ namespace RPG
         
         //Zmienne dla przyciskow
         PictureBox[] praweMenu;
-
-        //Poruszanie sie bohaterem
-        int index = 0;
         const int SzybkoscRuchow = 5;
         public enum Ruch
         {
             Lewo = 0,
-            Prawo = SzybkoscRuchow,
+            Prawo = 1,
             Gora = 2,
             Dol = 3,
         }
         #endregion
-        Obszar obszarGry;
-        public EkranGry(EkranGlowny ekranGlowny,  EkranGryObiektyTlo ekranGryObiektyTlo, EkranGryUITlo ekranGryUITlo)
+      public  Obszar obszarGry;
+      int[] pozycjaGracza;
+        public EkranGry(EkranGlowny ekranGlowny,  EkranGryUITlo ekranGryUITlo)
         {
             this.ekranGlowny = ekranGlowny;
-            this.ekranGryObiektyTlo = ekranGryObiektyTlo;
             this.ekranGryUITlo = ekranGryUITlo;
             this.gra = ekranGlowny.gra;
             obszarGry = ManagerObszarow.WczytajObszar("mapa");
@@ -67,7 +64,9 @@ namespace RPG
 
             //Pamietaj! 
             //Zatrzymaj czas przy wchodzeniu do innej formy lub uzywaj ShowDialog()!
+            timerPrzeplywCzasu.Interval = 10;
             timerPrzeplywCzasu.Start();
+            pozycjaGracza = new int[] { obszarGry.PozycjaStartowaGracza[0] * 32, obszarGry.PozycjaStartowaGracza[1] * 48 };
         }
 
         #region Metody
@@ -131,11 +130,9 @@ namespace RPG
         {
             Hide();
             ekranGryUITlo.Hide();
-            ekranGryObiektyTlo.Hide();
         }
        public void UwidocznijGre()
         {
-            ekranGryObiektyTlo.Show();
             ekranGryUITlo.Show();
             Show();
         }
@@ -205,9 +202,7 @@ namespace RPG
         private void timerPrzeplywCzasu_Tick(object sender, EventArgs e)
         {
 
-            index++;
-            const int czasOdnawiania = 4; //Gifa
-
+           
             bool bylaKolizja = false;
             Ruch? kierunekRuchuGracz=null;
       
@@ -217,135 +212,146 @@ namespace RPG
             {
                 kierunekRuchuGracz = Ruch.Gora;
                 py-=SzybkoscRuchow;
+                gra.gracz.AktualnyObrazek = "góra.gif";
             }
             else if(CzyWczysnieto(Keys.Down))
             {
                 kierunekRuchuGracz = Ruch.Dol;
                   py+=SzybkoscRuchow;
+                  gra.gracz.AktualnyObrazek = "dół.gif";
             }
             else if(CzyWczysnieto(Keys.Left))
             {
                 kierunekRuchuGracz = Ruch.Lewo;
                   px-=SzybkoscRuchow;
+                  gra.gracz.AktualnyObrazek = "lewo.gif";
             }
             else if (CzyWczysnieto(Keys.Right))
             {
                 kierunekRuchuGracz = Ruch.Prawo;
                   px+=SzybkoscRuchow;
+                  gra.gracz.AktualnyObrazek = "prawo.gif";
             }
             if(!kierunekRuchuGracz.HasValue)
             {
-                ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "dół.png");
+
+                gra.gracz.AktualnyObrazek = null;
                 return;
             }
-            Rectangle graczmapa=new Rectangle(ekranGryObiektyTlo.pBGracz.Left+px,ekranGryObiektyTlo.pBGracz.Top+py,ekranGryObiektyTlo.pBGracz.Width,ekranGryObiektyTlo.pBGracz.Height);//gdzie były gracz gdyby się przesunął
-         
-            foreach (PictureBox obiekt in ekranGryObiektyTlo.panelMapa.Controls.OfType<PictureBox>().ToList())
-            {
-                if (obiekt.Name != ekranGryObiektyTlo.pBGracz.Name)
-                {
-                    if (graczmapa.IntersectsWith(obiekt.Bounds))
-                    {
-                        ElementMapy element = (ElementMapy)obiekt.Tag;
-                        if (kierunekRuchuGracz == Ruch.Lewo && obiekt.Right >= graczmapa.Left)
-                        {
-                            bylaKolizja = element.PowodujeKolizje;
-                        }
-                        else if (kierunekRuchuGracz == Ruch.Prawo && obiekt.Left <= graczmapa.Right)
-                        {
-                            bylaKolizja = element.PowodujeKolizje;
-                        }
-                        else if (kierunekRuchuGracz == Ruch.Gora && obiekt.Bottom >= graczmapa.Top)
-                        {
-                            bylaKolizja = element.PowodujeKolizje;
-                        }
-                        else if (kierunekRuchuGracz == Ruch.Dol && obiekt.Top <= graczmapa.Bottom)
-                        {
-                            bylaKolizja = element.PowodujeKolizje;
-                        }
-                        if (bylaKolizja)
-                        {
-                            int[] koordynaty = obiekt.Name.Split(';').Select(int.Parse).ToArray();
-                            timerPrzeplywCzasu.Stop();
-                            element.IntegracjaGracz(ekranGlowny.gra.gracz, koordynaty[0], koordynaty[1], ekranGryObiektyTlo, this);
-                            timerPrzeplywCzasu.Start();
-                            break;
-                        }
-                    }
-                }
-            }
-            if(index % czasOdnawiania == 0)
-            {
-            //////Animacje Gifa
-                if (kierunekRuchuGracz==Ruch.Prawo)
-                {
-                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "prawo.gif");
-                }
-                if (kierunekRuchuGracz == Ruch.Lewo)
-                {
-                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "lewo.gif");
-                }
-                if (kierunekRuchuGracz == Ruch.Dol)
-                {
-                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "dół.gif");
-                }
-                if (kierunekRuchuGracz == Ruch.Gora)
-                {
-                    ekranGryObiektyTlo.pBGracz.Image = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + "góra.gif");
-                }
-            }
-            if (!bylaKolizja)
-            {
-                ekranGryObiektyTlo.pBGracz.Left += px;
-                ekranGryObiektyTlo.panelMapa.Left -= px;
-                ekranGryObiektyTlo.pBGracz.Top += py;
-                ekranGryObiektyTlo.panelMapa.Top -= py;
-            } 
-        }
-        private void WczytajMape()
-        {
-            ekranGryObiektyTlo.Visible = false;
-            ekranGryObiektyTlo.panelMapa.Width = obszarGry.Rozmiar * obszarGry.Mapa.GetLength(0);
-            ekranGryObiektyTlo.panelMapa.Height = obszarGry.Rozmiar * obszarGry.Mapa.GetLength(1);
-            //Chodzacy ludek
-            ekranGryObiektyTlo.pBGracz.SizeMode = PictureBoxSizeMode.Zoom;
-            ekranGryObiektyTlo.pBGracz.Image = new Bitmap(gra.gracz.ObrazekNaMapie + "dół.png");
-            ekranGryObiektyTlo.pBGracz.Size = new Size(ekranGryObiektyTlo.pBGracz.Image.Width, ekranGryObiektyTlo.pBGracz.Image.Height);
-            ekranGryObiektyTlo.pBGracz.Location= new Point(obszarGry.PozycjaStartowaGracza[0] * obszarGry.Rozmiar, obszarGry.PozycjaStartowaGracza[1] * obszarGry.Rozmiar);
-
-            ekranGryObiektyTlo.pBGracz.BorderStyle = BorderStyle.FixedSingle;
+            Rectangle graczmapa=new Rectangle(pozycjaGracza[0]+px,pozycjaGracza[1]+py,gra.gracz.Szerokosc,gra.gracz.Wysokosc);//gdzie były gracz gdyby się przesunął
             for (int i = 0; i < obszarGry.Mapa.GetLength(0); i++)
             {
                 for (int j = 0; j < obszarGry.Mapa.GetLength(1); j++)
                 {
-                    if (obszarGry.Mapa[i, j] == null)
+                    ElementMapy element = obszarGry.Mapa[i, j];
+                    if(!element.PowodujeKolizje)
                     {
                         continue;
                     }
-                    PictureBox element = new PictureBox();
-                    element.Name = i + ";" + j;
-                    element.BackColor = System.Drawing.Color.Transparent;
-                    //element.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-                    element.BackgroundImage = MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].Tlo);
-                    element.Image = MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].ObrazekNaMapie);
-                    element.BorderStyle = BorderStyle.FixedSingle;
-                    element.Tag = obszarGry.Mapa[i, j];
-                    element.Size = new System.Drawing.Size(obszarGry.Rozmiar, obszarGry.Rozmiar);
-                    element.Location = new Point(i * obszarGry.Rozmiar, j * obszarGry.Rozmiar);
-                    ekranGryObiektyTlo.panelMapa.Controls.Add(element);
+                    Rectangle pozycjaelemnt = new Rectangle(i * obszarGry.Rozmiar, j * obszarGry.Rozmiar, obszarGry.Rozmiar, obszarGry.Rozmiar);
+                    if (graczmapa.IntersectsWith(pozycjaelemnt))
+                    {
+                        if (kierunekRuchuGracz == Ruch.Lewo && pozycjaelemnt.Right >= graczmapa.Left)
+                        {
+                            bylaKolizja = true;
+                        }
+                        else if (kierunekRuchuGracz == Ruch.Prawo && pozycjaelemnt.Left <= graczmapa.Right)
+                        {
+                            bylaKolizja = true;
+                        }
+                        else if (kierunekRuchuGracz == Ruch.Gora && pozycjaelemnt.Bottom >= graczmapa.Top)
+                        {
+                            bylaKolizja = true;
+                        }
+                        else if (kierunekRuchuGracz == Ruch.Dol && pozycjaelemnt.Top <= graczmapa.Bottom)
+                        {
+                            bylaKolizja = true;
+                        }
+                        if (bylaKolizja)
+                        {
+                            timerPrzeplywCzasu.Stop();
+                            element.IntegracjaGracz(ekranGlowny.gra.gracz, i, j, this);
+                            timerPrzeplywCzasu.Start();
+                            break;
+                        }
+                    }
+
+                }
+                if (bylaKolizja)
+                {
+                    break;
                 }
             }
-            ekranGryObiektyTlo.Visible = true;
-     //       int lewa = (Width/2) - (ekranGryObiektyTlo.panelMapa.Width / 2);
-    //        int gora = (Height/2) - (ekranGryObiektyTlo.panelMapa.Height / 2);
-        //    ekranGryObiektyTlo.panelMapa.Left = lewa;
-        //    ekranGryObiektyTlo.panelMapa.Height = gora;
-            
+            if (!bylaKolizja)
+            {
+               pozycjaGracza[0] += px;
+               pozycjaGracza[1] += py;
+            }
+            this.Refresh();
         }
-        private void EkranGry_Load(object sender, EventArgs e)
+        int idxklatki = 0;
+        private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            WczytajMape();
           
+            float wsp=(float)Width/(float)Height;
+            int xgracz = Width / 2 - gra.gracz.Szerokosc/2;
+            int ygracz = Height / 2 - gra.gracz.Wysokosc / 2;
+            Graphics g = e.Graphics;
+            System.Drawing.Pen objpen = new System.Drawing.Pen(System.Drawing.Brushes.Red);
+
+            // Set the pen's width.
+            objpen.Width = 1.0F;
+
+            // Set the LineJoin property.
+            objpen.LineJoin = System.Drawing.Drawing2D.LineJoin.Bevel;
+            for (int i = 0; i < obszarGry.Mapa.GetLength(0); i++)
+            {
+                for (int j = 0; j < obszarGry.Mapa.GetLength(1); j++)
+                {
+
+                  //  int x = xgracz - (i * obszarGry.Rozmiar)-pozycjaGracza[0];
+                    var x = i * obszarGry.Rozmiar +xgracz -pozycjaGracza[0];
+                    int y = j * obszarGry.Rozmiar + ygracz - pozycjaGracza[1];
+
+                    Rectangle r = new Rectangle(x,y, obszarGry.Rozmiar, obszarGry.Rozmiar);
+                    if (obszarGry.Mapa[i, j].Tlo != null)
+                    {
+                        g.DrawImage(MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].Tlo), r);
+                    }
+                    if (obszarGry.Mapa[i, j].ObrazekNaMapie != null)
+                    {
+                        g.DrawImage(MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].ObrazekNaMapie), r);
+                        if (obszarGry.Mapa[i, j].PowodujeKolizje)
+                        {
+                            g.DrawRectangle(objpen, r);
+                        }
+                    }
+                }
+            }
+            Image graczimg = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + (gra.gracz.AktualnyObrazek??"dół.png"));
+            FrameDimension dimension = new FrameDimension(graczimg.FrameDimensionsList[0]);
+            // Number of frames
+            int frameCount = graczimg.GetFrameCount(dimension);
+            // Return an Image at a certain index
+            if(idxklatki>=frameCount)
+            {
+                idxklatki = 0;
+            }
+
+            graczimg.SelectActiveFrame(dimension, idxklatki);
+            idxklatki++;
+            Rectangle pozycjagracz = new Rectangle(xgracz, ygracz, gra.gracz.Szerokosc, gra.gracz.Wysokosc);
+            g.DrawImage(graczimg, pozycjagracz);
+            // Create a new pen.
+            System.Drawing.Pen skyBluePen = new System.Drawing.Pen(System.Drawing.Brushes.DeepSkyBlue);
+
+            // Set the pen's width.
+            skyBluePen.Width = 1.0F;
+
+            // Set the LineJoin property.
+            skyBluePen.LineJoin = System.Drawing.Drawing2D.LineJoin.Bevel;
+
+            g.DrawRectangle(skyBluePen, pozycjagracz);
         }
 
         private void PictureBoxPraweMenuEkwipunek_MouseClick(object sender, EventArgs e)

@@ -115,7 +115,7 @@ namespace RPG
         {
             OdtwrzaczManager.ZatrzymajWszystkie();
             PictureBoxObrazWczytywania.Visible = true;
-            EkranGryObiektyTlo ekranGryMapaTlo = new EkranGryObiektyTlo(this);
+            EkranGryUITlo ekranGryMapaTlo = new EkranGryUITlo(this);
             ekranGryMapaTlo.ShowDialog();
 
             PictureBoxObrazWczytywania.Visible = false;

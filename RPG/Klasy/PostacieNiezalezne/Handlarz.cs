@@ -17,7 +17,7 @@ namespace RPG.Klasy.PostacieNiezalezne
            _przedmioty = new List<RPG.Ekwipunek>(InicjacjaPosiadanychPrzedmiow());
        }
    
-        public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGryObiektyTlo ekranGryObiektyTlo, EkranGry gra)
+        public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGry gra)
         {
             EkranHandel ekran = new EkranHandel(gracz, this);
             ekran.ShowDialog();

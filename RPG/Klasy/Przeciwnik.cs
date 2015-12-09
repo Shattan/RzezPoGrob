@@ -1,4 +1,5 @@
-﻿using RPG.Klasy.Umiejetnosci;
+﻿using RPG.Klasy;
+using RPG.Klasy.Umiejetnosci;
 using RPG.Narzedzia;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace RPG
             string plansza = losowanie.Next(0, 10).ToString();
            return "Resources/Grafiki tła walki/" + plansza + ".png";
         }
-        public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGryObiektyTlo ekranGryObiektyTlo, EkranGry gra)
+        public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGry gra)
         {
             gra.UniewidocznijGre();
          
@@ -61,9 +62,9 @@ namespace RPG
             {
                 gracz.Zloto += this.ZlotoZaZabicie;
                 gracz.Doswiadczenie += DoswiadczenieZaZabicie;
+                gra.obszarGry.Mapa[x, y] = new ElementMapyPusty() { Tlo = gra.obszarGry.Mapa[x, y].Tlo };
                 gra.UwidocznijGre();
-                ekranGryObiektyTlo.panelMapa.Controls.RemoveByKey(x+";"+y);
-                ekranGryObiektyTlo.pBGracz.Image = new Bitmap(gracz.ObrazekNaMapie + "dół.png");
+               
               
               
             }
@@ -73,7 +74,7 @@ namespace RPG
                 OdtwrzaczManager.Odtworz(4, "Resources/Dźwięki/smierc.wav", false);
                 gra.DialogResult = ekranWalkaTlo.DialogResult;
                 //Co robimy jak gracz przegral?
-                ekranGryObiektyTlo.pBGracz.Visible = false;
+           
                 //Co robimy jak gracz przegral? 
                 //Wylaczamy sterowanie gracza, 
                 //na dole pojawia się napis "Porażka", 

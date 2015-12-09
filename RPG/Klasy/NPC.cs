@@ -65,7 +65,7 @@ namespace RPG.Klasy
             return new List<Umiejetnosc>();
         }
 
-        public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGryObiektyTlo ekranGryObiektyTlo, EkranGry gra)
+        public override void IntegracjaGracz(Gracz gracz, int x, int y,  EkranGry gra)
         {
             
         }

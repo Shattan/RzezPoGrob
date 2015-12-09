@@ -1,6 +1,7 @@
 ﻿using RPG.Klasy.Umiejetnosci;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -263,14 +264,15 @@ namespace RPG
          
          
         }
+        public string AktualnyObrazek { get; set; }
+        public int Szerokosc = 32;
+        public int Wysokosc = 48;
 
-
-
-        public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGryObiektyTlo ekranGryObiektyTlo, EkranGry gra)
+        public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGry gra)
         {
            
         }
-
+       
         public override string ObrazekNaMapie
         {
             get { return _obrazekMapa; }
