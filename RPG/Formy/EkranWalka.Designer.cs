@@ -105,7 +105,7 @@
             // FlowLayoutPanelWyborAtakuFizycznego
             // 
             this.FlowLayoutPanelWyborAtakuFizycznego.AutoScroll = true;
-            this.FlowLayoutPanelWyborAtakuFizycznego.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FlowLayoutPanelWyborAtakuFizycznego.BackColor = System.Drawing.Color.Transparent;
             this.FlowLayoutPanelWyborAtakuFizycznego.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FlowLayoutPanelWyborAtakuFizycznego.Controls.Add(this.PictureBoxWyjdzZAtakowFizycznych);
             this.FlowLayoutPanelWyborAtakuFizycznego.Location = new System.Drawing.Point(16, 234);
@@ -128,7 +128,7 @@
             // FlowLayoutPanelWyborAtakuMagicznego
             // 
             this.FlowLayoutPanelWyborAtakuMagicznego.AutoScroll = true;
-            this.FlowLayoutPanelWyborAtakuMagicznego.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.FlowLayoutPanelWyborAtakuMagicznego.BackColor = System.Drawing.Color.Transparent;
             this.FlowLayoutPanelWyborAtakuMagicznego.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FlowLayoutPanelWyborAtakuMagicznego.Controls.Add(this.pictureBoxWyjdzZAtakowMagicznych);
             this.FlowLayoutPanelWyborAtakuMagicznego.Location = new System.Drawing.Point(408, 234);
@@ -150,7 +150,7 @@
             // 
             // FlowLayoutPanelWyborMikstury
             // 
-            this.FlowLayoutPanelWyborMikstury.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FlowLayoutPanelWyborMikstury.BackColor = System.Drawing.Color.Transparent;
             this.FlowLayoutPanelWyborMikstury.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FlowLayoutPanelWyborMikstury.Controls.Add(this.pictureBoxWyjdzZEkwipunku);
             this.FlowLayoutPanelWyborMikstury.Location = new System.Drawing.Point(408, 417);
@@ -173,7 +173,7 @@
             // FlowLayoutPanelWyboru
             // 
             this.FlowLayoutPanelWyboru.AutoScroll = true;
-            this.FlowLayoutPanelWyboru.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.FlowLayoutPanelWyboru.BackColor = System.Drawing.Color.Transparent;
             this.FlowLayoutPanelWyboru.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.FlowLayoutPanelWyboru.Controls.Add(this.PictureBoxAtakFizyczny);
             this.FlowLayoutPanelWyboru.Controls.Add(this.PictureBoxAtakMagiczny);

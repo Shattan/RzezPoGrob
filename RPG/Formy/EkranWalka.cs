@@ -107,7 +107,7 @@ namespace RPG
         private void StworzKonfiguracjeTekstu(Label c)
         {
             c.TextAlign = ContentAlignment.MiddleLeft;
-            c.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            c.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             c.Font = new System.Drawing.Font("Segoe Script", 20);
             c.ForeColor = Color.Black;
         }
@@ -118,22 +118,22 @@ namespace RPG
 
             Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(LabelInformacje, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
             //Panele sterujące
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyboru, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyborAtakuFizycznego, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyborAtakuMagicznego, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyborMikstury, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
+            //Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyboru, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
+            //Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyborAtakuFizycznego, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
+            //Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyborAtakuMagicznego, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
+            //Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(FlowLayoutPanelWyborMikstury, "Resources/Grafiki menu/Tło informacji o przedmiocie.png");
 
             //Przyciski sterujące
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakFizyczny, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakMagiczny, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxEkwipunek, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakFizyczny, "Resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxAtakMagiczny, "Resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxEkwipunek, "Resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxUcieczka, "Resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdzZAtakowFizycznych, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(PictureBoxWyjdzZAtakowFizycznych, "Resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZAtakowMagicznych, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZAtakowMagicznych, "Resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
 
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZEkwipunku, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(pictureBoxWyjdzZEkwipunku, "Resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
 
 
             //Okienka informacyjne
@@ -174,7 +174,7 @@ namespace RPG
                 nowaStrawa.Text = strawa.Nazwa;
                 StworzKonfiguracjeTekstu(nowaStrawa);
                 nowaStrawa.Size = new Size(Width * 30 / 100, Height * 5 / 100);
-                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaStrawa, "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png");
+                Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaStrawa, "Resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
                 nowaStrawa.Click += nowaStrawa_Click;
                 FlowLayoutPanelWyborMikstury.Controls.Add(nowaStrawa);
             }
@@ -187,7 +187,7 @@ namespace RPG
             nowaUmiejetnosc.Text = string.Format("{0}. Użycie {1} enerii",umiejetnosc.Nazwa,umiejetnosc.KosztEnergi);
             StworzKonfiguracjeTekstu(nowaUmiejetnosc);
             nowaUmiejetnosc.Size = new Size(Width * 30 / 100, Height * 5 / 100);
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaUmiejetnosc, umiejetnosc.ObrazekPrzycisku);
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(nowaUmiejetnosc, "Resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
             nowaUmiejetnosc.Name = umiejetnosc.Nazwa;
             nowaUmiejetnosc.Click += nowaUmiejetnosc_Click;
             return nowaUmiejetnosc;

@@ -300,14 +300,19 @@ namespace RPG
                     {
                         using (Image obrazekPrzeciwnika = new Bitmap(sciezkaDoObrazuPrzeciwnika))
                         {
-                            int szerokoscPrzeciwnika = Kontrolka.Bounds.Width * 30 / 100;
-                            int wysokoscPrzeciwnika = Kontrolka.Bounds.Height * 50 / 100;
+                            int szerokoscPrzeciwnika =(int) (Kontrolka.Bounds.Width * 0.3);
+                            int wysokoscPrzeciwnika =(int) ( Kontrolka.Bounds.Height *0.5);
                             int pozycjaPrzeciwnikaX = Kontrolka.Bounds.Width / 2 - szerokoscPrzeciwnika / 2;
                             int pozycjaPrzeciwnikaY = Kontrolka.Bounds.Height / 4;
                             grafikaWalki.DrawImage(obrazekPrzeciwnika, pozycjaPrzeciwnikaX, pozycjaPrzeciwnikaY, szerokoscPrzeciwnika, wysokoscPrzeciwnika);
-                            Kontrolka.BackgroundImage = obrazekDoWstawienia;
+                         
                         }
-
+                        using (Image tlo = new Bitmap("Resources/Grafiki menu/kamientlo.png"))
+                        {
+                            var rec=new Rectangle(0,(int)( Kontrolka.Height * 0.75),Kontrolka.Width,(int)(Kontrolka.Height * 0.25));
+                            grafikaWalki.DrawImage(tlo, rec);
+                        }
+                           Kontrolka.BackgroundImage = obrazekDoWstawienia;
                     }
                 }
             }

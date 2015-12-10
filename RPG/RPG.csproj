@@ -454,6 +454,9 @@
     <Content Include="Resources\Grafiki ekwipunku\tarczaTarczaUmarłegoRycerza.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\kamientlo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki menu\Menu wyboru tło.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -493,7 +496,9 @@
     <Content Include="Resources\Grafiki menu\Przycisk poprzedni standard.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki menu\przyciskNOWY.png" />
+    <Content Include="Resources\Grafiki przycisków umiejętności\przyciskNOWY.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki przycisków umiejętności\AtakFizyczny.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
