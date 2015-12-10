@@ -107,12 +107,21 @@
     <Compile Include="Klasy\Obiekty\brick.cs" />
     <Compile Include="Klasy\Obiekty\brickstone.cs" />
     <Compile Include="Klasy\Obiekty\dirt.cs" />
+    <Compile Include="Klasy\Obiekty\domdol.cs" />
+    <Compile Include="Klasy\Obiekty\domek.cs" />
     <Compile Include="Klasy\Obiekty\domek2.cs" />
+    <Compile Include="Klasy\Obiekty\domgora.cs" />
     <Compile Include="Klasy\Obiekty\elementmuru.cs" />
     <Compile Include="Klasy\Obiekty\grass.cs" />
     <Compile Include="Klasy\Obiekty\gravel.cs" />
     <Compile Include="Klasy\Obiekty\Kamien.cs" />
     <Compile Include="Klasy\Obiekty\mur.cs" />
+    <Compile Include="Klasy\Obiekty\rzeka.cs" />
+    <Compile Include="Klasy\Obiekty\rzekalewa.cs" />
+    <Compile Include="Klasy\Obiekty\rzekalewadol.cs" />
+    <Compile Include="Klasy\Obiekty\rzekapozioma.cs" />
+    <Compile Include="Klasy\Obiekty\rzekapoziomaprawa.cs" />
+    <Compile Include="Klasy\Obiekty\rzekapoziomaprawadol.cs" />
     <Compile Include="Klasy\Obiekty\ScianaPozioma.cs" />
     <Compile Include="Klasy\Obiekty\water.cs" />
     <Compile Include="Klasy\Obiekty\wood.cs" />
@@ -4966,7 +4975,16 @@
     <Content Include="Resources\Mapy\dirt.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\domdol.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\domek.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Mapy\domek2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\domgora.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\elementmuru.png">
@@ -4978,7 +4996,40 @@
     <Content Include="Resources\Mapy\gravel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\mostpion.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\mostpoziom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Mapy\mur.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\rzeka.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\rzekalewa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\rzekalewadol.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\rzekapozioma.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\rzekapoziomaprawa.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\rzekapoziomaprawadol.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\sciezka.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\sciezka2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\sciezka3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\Trawa.png">
