@@ -460,6 +460,9 @@
     <Content Include="Resources\Grafiki menu\Pasek tło.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\projekt przycisku 2.jpg" />
+    <Content Include="Resources\Grafiki menu\projekt przycisku.jpg" />
+    <Content Include="Resources\Grafiki menu\projekt przycisku3.jpg" />
     <Content Include="Resources\Grafiki menu\Przycisk następny kliknięty.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
