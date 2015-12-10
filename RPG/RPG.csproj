@@ -107,9 +107,12 @@
     <Compile Include="Klasy\Obiekty\brick.cs" />
     <Compile Include="Klasy\Obiekty\brickstone.cs" />
     <Compile Include="Klasy\Obiekty\dirt.cs" />
+    <Compile Include="Klasy\Obiekty\domek2.cs" />
+    <Compile Include="Klasy\Obiekty\elementmuru.cs" />
     <Compile Include="Klasy\Obiekty\grass.cs" />
     <Compile Include="Klasy\Obiekty\gravel.cs" />
     <Compile Include="Klasy\Obiekty\Kamien.cs" />
+    <Compile Include="Klasy\Obiekty\mur.cs" />
     <Compile Include="Klasy\Obiekty\ScianaPozioma.cs" />
     <Compile Include="Klasy\Obiekty\water.cs" />
     <Compile Include="Klasy\Obiekty\wood.cs" />
@@ -4960,10 +4963,19 @@
     <Content Include="Resources\Mapy\dirt.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\domek2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\elementmuru.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Mapy\grass.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\gravel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\mur.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\Trawa.png">

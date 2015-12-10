@@ -22,7 +22,7 @@ namespace RPG.Klasy.Przeciwnicy
 
         public override string Nazwa
         {
-            get { return "szkielet"; }
+            get { return "Szkielet"; }
         }
 
         public override string ObrazekWalki

@@ -22,7 +22,7 @@ namespace RPG.Klasy.Przeciwnicy
 
         public override string Nazwa
         {
-            get { return "Szczur"; }
+            get { return "Goblin"; }
         }
 
         public override string ObrazekWalki
