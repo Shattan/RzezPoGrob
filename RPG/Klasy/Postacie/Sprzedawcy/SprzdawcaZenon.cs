@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Klasy.Postacie.Sprzedawcy
 {
-    public class SprzdawcaZenon : Handlarz
+    public class SprzedawcaZenon : Handlarz
     {
         protected override List<RPG.Ekwipunek> InicjacjaPosiadanychPrzedmiow()
         {

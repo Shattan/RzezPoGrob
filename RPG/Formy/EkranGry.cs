@@ -230,7 +230,7 @@ namespace RPG
                     {
                         continue;
                     }
-                    Rectangle pozycjaelemnt = new Rectangle(i * obszarGry.Rozmiar, j * obszarGry.Rozmiar, obszarGry.Rozmiar, obszarGry.Rozmiar);
+                    Rectangle pozycjaelemnt = new Rectangle(j* obszarGry.Rozmiar,i * obszarGry.Rozmiar, obszarGry.Rozmiar, obszarGry.Rozmiar);
                     if (graczmapa.IntersectsWith(pozycjaelemnt))
                     {
                         if (kierunekRuchuGracz == Ruch.Lewo && pozycjaelemnt.Right >= graczmapa.Left)
@@ -292,8 +292,8 @@ namespace RPG
                 {
 
                   //  int x = xgracz - (i * obszarGry.Rozmiar)-pozycjaGracza[0];
-                    var x = i * obszarGry.Rozmiar +xgracz -pozycjaGracza[0];
-                    int y = j * obszarGry.Rozmiar + ygracz - pozycjaGracza[1];
+                    var x = j * obszarGry.Rozmiar +xgracz -pozycjaGracza[0];
+                    int y = i * obszarGry.Rozmiar + ygracz - pozycjaGracza[1];
 
                     Rectangle r = new Rectangle(x,y, obszarGry.Rozmiar, obszarGry.Rozmiar);
                     if (obszarGry.Mapa[i, j].Tlo != null)
