@@ -484,6 +484,7 @@
     <Content Include="Resources\Grafiki menu\Przycisk poprzedni standard.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\przyciskNOWY.png" />
     <Content Include="Resources\Grafiki przycisków umiejętności\AtakFizyczny.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

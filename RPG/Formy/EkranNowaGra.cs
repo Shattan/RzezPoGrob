@@ -39,7 +39,7 @@ namespace RPG
             "Resources/Grafiki postaci na mapie/0/",                                                     //Obraz na mapie
             "Resources/Grafiki postaci mówiących/Mówca1.png",                                            //Obraz w trakcie rozmowy
             0,                                                                                           //Doświadczenie
-            3000,                                                                                        //Złoto
+            5,                                                                                        //Złoto
             5,                                                                                           //Siła
             5,                                                                                           //Zręczność
             5,                                                                                           //Witalność

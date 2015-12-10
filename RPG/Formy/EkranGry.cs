@@ -17,6 +17,7 @@ using RPG.Narzedzia;
 using System.Runtime.InteropServices;
 using RPG.Klasy;
 using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
 #endregion
 
 namespace RPG
@@ -61,7 +62,7 @@ namespace RPG
 
             //Pamietaj! 
             //Zatrzymaj czas przy wchodzeniu do innej formy lub uzywaj ShowDialog()!
-            timerPrzeplywCzasu.Interval = 10;
+            timerPrzeplywCzasu.Interval = 15;
             timerPrzeplywCzasu.Start();
             pozycjaGracza = new int[] { obszarGry.PozycjaStartowaGracza[0] * 32, obszarGry.PozycjaStartowaGracza[1] * 48 };
         }
@@ -279,13 +280,12 @@ namespace RPG
             int xgracz = Width / 2 - gra.gracz.Szerokosc/2;
             int ygracz = Height / 2 - gra.gracz.Wysokosc / 2;
             Graphics g = e.Graphics;
-            System.Drawing.Pen objpen = new System.Drawing.Pen(System.Drawing.Brushes.Red);
-
+        //    System.Drawing.Pen objpen = new System.Drawing.Pen(System.Drawing.Brushes.Red);
             // Set the pen's width.
-            objpen.Width = 1.0F;
+        //    objpen.Width = 1.0F;
 
             // Set the LineJoin property.
-            objpen.LineJoin = System.Drawing.Drawing2D.LineJoin.Bevel;
+        //    objpen.LineJoin = System.Drawing.Drawing2D.LineJoin.Bevel;
             for (int i = 0; i < obszarGry.Mapa.GetLength(0); i++)
             {
                 for (int j = 0; j < obszarGry.Mapa.GetLength(1); j++)
@@ -296,9 +296,19 @@ namespace RPG
                     int y = i * obszarGry.Rozmiar + ygracz - pozycjaGracza[1];
 
                     Rectangle r = new Rectangle(x,y, obszarGry.Rozmiar, obszarGry.Rozmiar);
+                    if(!r.IntersectsWith(e.ClipRectangle))
+                    {
+                        continue;// nie rysujemy elelementów które nie są widoczne
+                    }
                     if (obszarGry.Mapa[i, j].Tlo != null)
                     {
-                        g.DrawImage(MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].Tlo), r);
+                        using (var ia = new ImageAttributes())
+                        {
+                            //Fixes the 50% gray border issue on bright white or dark images
+                            ia.SetWrapMode(WrapMode.TileFlipXY);
+
+                            g.DrawImage(MenagerZasobow.PobierzBitmape(obszarGry.Mapa[i, j].Tlo), r, 0, 0, obszarGry.Rozmiar, obszarGry.Rozmiar, GraphicsUnit.Pixel, ia);
+                        }
                     }
                     if (obszarGry.Mapa[i, j].ObrazekNaMapie != null)
                     {
