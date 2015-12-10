@@ -34,10 +34,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.graczZloto = new System.Windows.Forms.Label();
-            this.tbLogi = new System.Windows.Forms.TextBox();
             this.btnWyjdz = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbImfo = new System.Windows.Forms.Label();
+            this.tbLogi = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -108,17 +108,6 @@
             this.graczZloto.TabIndex = 2;
             this.graczZloto.Text = "label1";
             // 
-            // tbLogi
-            // 
-            this.tbLogi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbLogi.Font = new System.Drawing.Font("Segoe Script", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbLogi.Location = new System.Drawing.Point(3, 523);
-            this.tbLogi.Multiline = true;
-            this.tbLogi.Name = "tbLogi";
-            this.tbLogi.ReadOnly = true;
-            this.tbLogi.Size = new System.Drawing.Size(1169, 125);
-            this.tbLogi.TabIndex = 1;
-            // 
             // btnWyjdz
             // 
             this.btnWyjdz.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -162,6 +151,17 @@
             this.lbImfo.Size = new System.Drawing.Size(0, 25);
             this.lbImfo.TabIndex = 4;
             // 
+            // tbLogi
+            // 
+            this.tbLogi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbLogi.Font = new System.Drawing.Font("Segoe Script", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbLogi.Location = new System.Drawing.Point(3, 523);
+            this.tbLogi.Multiline = true;
+            this.tbLogi.Name = "tbLogi";
+            this.tbLogi.ReadOnly = true;
+            this.tbLogi.Size = new System.Drawing.Size(1169, 125);
+            this.tbLogi.TabIndex = 1;
+            // 
             // EkranHandel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,10 +191,10 @@
         private System.Windows.Forms.FlowLayoutPanel przedmiotySprzedawca;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox tbLogi;
         private System.Windows.Forms.Label graczZloto;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button btnWyjdz;
         private System.Windows.Forms.Label lbImfo;
+        private System.Windows.Forms.TextBox tbLogi;
     }
 }

@@ -30,7 +30,7 @@ namespace RPG.Formy
             btnWyjdz.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //transparent
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             WczytajLabele();
-     
+
         }
 
 
