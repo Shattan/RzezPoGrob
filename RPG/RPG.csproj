@@ -107,6 +107,12 @@
     <Compile Include="Klasy\Obiekty\brick.cs" />
     <Compile Include="Klasy\Obiekty\brickstone.cs" />
     <Compile Include="Klasy\Obiekty\dirt.cs" />
+    <Compile Include="Klasy\Obiekty\dom1_1.cs" />
+    <Compile Include="Klasy\Obiekty\dom1_2.cs" />
+    <Compile Include="Klasy\Obiekty\dom1_3.cs" />
+    <Compile Include="Klasy\Obiekty\dom1_4.cs" />
+    <Compile Include="Klasy\Obiekty\dom1_5.cs" />
+    <Compile Include="Klasy\Obiekty\dom1_6.cs" />
     <Compile Include="Klasy\Obiekty\domdol.cs" />
     <Compile Include="Klasy\Obiekty\domek.cs" />
     <Compile Include="Klasy\Obiekty\domek2.cs" />
@@ -4979,6 +4985,24 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\dirt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom1_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom1_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom1_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom1_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom1_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom1_6.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\domdol.png">
