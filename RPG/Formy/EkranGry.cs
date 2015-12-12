@@ -99,7 +99,7 @@ namespace RPG
                 //praweMenu[index].MouseLeave += new System.EventHandler(this.PictureBoxPraweMenu_MouseLeave);
             }
 
-         
+            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(Wstecz, "Resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
         }
 
         void KolorujElementy()
