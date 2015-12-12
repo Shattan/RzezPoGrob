@@ -114,6 +114,7 @@
     <Compile Include="Klasy\Obiekty\dom1_5.cs" />
     <Compile Include="Klasy\Obiekty\dom1_6.cs" />
     <Compile Include="Klasy\Obiekty\domdol.cs" />
+    <Compile Include="Klasy\Obiekty\domdolprawy.cs" />
     <Compile Include="Klasy\Obiekty\domek.cs" />
     <Compile Include="Klasy\Obiekty\domek2.cs" />
     <Compile Include="Klasy\Obiekty\domgora.cs" />
@@ -121,7 +122,10 @@
     <Compile Include="Klasy\Obiekty\grass.cs" />
     <Compile Include="Klasy\Obiekty\gravel.cs" />
     <Compile Include="Klasy\Obiekty\Kamien.cs" />
+    <Compile Include="Klasy\Obiekty\Mkwiat1.cs" />
+    <Compile Include="Klasy\Obiekty\Mkwiat2.cs" />
     <Compile Include="Klasy\Obiekty\mur.cs" />
+    <Compile Include="Klasy\Obiekty\obejscie1.cs" />
     <Compile Include="Klasy\Obiekty\rzeka.cs" />
     <Compile Include="Klasy\Obiekty\rzekalewa.cs" />
     <Compile Include="Klasy\Obiekty\rzekalewadol.cs" />
@@ -129,6 +133,11 @@
     <Compile Include="Klasy\Obiekty\rzekapoziomaprawa.cs" />
     <Compile Include="Klasy\Obiekty\rzekapoziomaprawadol.cs" />
     <Compile Include="Klasy\Obiekty\ScianaPozioma.cs" />
+    <Compile Include="Klasy\Obiekty\Tkwiat1.cs" />
+    <Compile Include="Klasy\Obiekty\Tkwiat2.cs" />
+    <Compile Include="Klasy\Obiekty\Tree1_1_2.cs" />
+    <Compile Include="Klasy\Obiekty\Tree1_1.cs" />
+    <Compile Include="Klasy\Obiekty\Tree1_2.cs" />
     <Compile Include="Klasy\Obiekty\water.cs" />
     <Compile Include="Klasy\Obiekty\wood.cs" />
     <Compile Include="Klasy\Postac.cs" />
@@ -5008,6 +5017,9 @@
     <Content Include="Resources\Mapy\domdol.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\domdolprawy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Mapy\domek.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5026,6 +5038,15 @@
     <Content Include="Resources\Mapy\gravel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\Lampa1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\Mkwiat1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\Mkwiat2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Mapy\mostpion.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5033,6 +5054,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\mur.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\obejscie1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\rzeka.png">
@@ -5060,6 +5084,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\sciezka3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\Tkwiat_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\Tkwiat_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\Trawa.png">
@@ -5093,6 +5123,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Menu wyboru zapisz grę.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\Tree1_1-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\Tree1_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\Tree1_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\water.png">
