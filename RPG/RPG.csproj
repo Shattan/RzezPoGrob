@@ -5052,6 +5052,9 @@
     <Content Include="Resources\Mapy\gravel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\Kszak1_1.png" />
+    <Content Include="Resources\Mapy\Kszak1_2.png" />
+    <Content Include="Resources\Mapy\Kszak1_3.png" />
     <Content Include="Resources\Mapy\Lampa1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5073,6 +5076,14 @@
     <Content Include="Resources\Mapy\obejscie1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\Roslina1_1.png" />
+    <Content Include="Resources\Mapy\Roslina1_2.png" />
+    <Content Include="Resources\Mapy\Roslina1_3.png" />
+    <Content Include="Resources\Mapy\Roslina1_4.png" />
+    <Content Include="Resources\Mapy\Roslina1_5.png" />
+    <Content Include="Resources\Mapy\Roslina1_6.png" />
+    <Content Include="Resources\Mapy\Roslina2.png" />
+    <Content Include="Resources\Mapy\Roslina3.png" />
     <Content Include="Resources\Mapy\rzeka.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5103,6 +5114,14 @@
     <Content Include="Resources\Mapy\sciezka3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\Tkwiat1.png" />
+    <Content Include="Resources\Mapy\Tkwiat2.png" />
+    <Content Include="Resources\Mapy\Tkwiat3.png" />
+    <Content Include="Resources\Mapy\Tkwiat4.png" />
+    <Content Include="Resources\Mapy\Tkwiat5.png" />
+    <Content Include="Resources\Mapy\Tkwiat6.png" />
+    <Content Include="Resources\Mapy\Tkwiat7.png" />
+    <Content Include="Resources\Mapy\Tkwiat8.png" />
     <Content Include="Resources\Mapy\Trawa.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
