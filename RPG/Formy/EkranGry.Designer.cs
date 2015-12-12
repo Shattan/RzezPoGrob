@@ -30,21 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EkranGry));
-            this.PictureBoxZamknij = new System.Windows.Forms.PictureBox();
             this.panelPraweMenu = new System.Windows.Forms.Panel();
             this.timerPrzeplywCzasu = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).BeginInit();
+            this.Wstecz = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // PictureBoxZamknij
-            // 
-            this.PictureBoxZamknij.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.PictureBoxZamknij.Location = new System.Drawing.Point(81, 46);
-            this.PictureBoxZamknij.Name = "PictureBoxZamknij";
-            this.PictureBoxZamknij.Size = new System.Drawing.Size(144, 64);
-            this.PictureBoxZamknij.TabIndex = 2;
-            this.PictureBoxZamknij.TabStop = false;
-            this.PictureBoxZamknij.Click += new System.EventHandler(this.PictureBox_Click);
             // 
             // panelPraweMenu
             // 
@@ -61,14 +50,25 @@
             this.timerPrzeplywCzasu.Interval = 1;
             this.timerPrzeplywCzasu.Tick += new System.EventHandler(this.timerPrzeplywCzasu_Tick);
             // 
+            // Wstecz
+            // 
+            this.Wstecz.AutoSize = true;
+            this.Wstecz.Font = new System.Drawing.Font("Segoe Script", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Wstecz.Location = new System.Drawing.Point(65, 46);
+            this.Wstecz.Name = "Wstecz";
+            this.Wstecz.Size = new System.Drawing.Size(91, 32);
+            this.Wstecz.TabIndex = 30;
+            this.Wstecz.Text = "Powrót";
+            this.Wstecz.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
             // EkranGry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.Controls.Add(this.Wstecz);
             this.Controls.Add(this.panelPraweMenu);
-            this.Controls.Add(this.PictureBoxZamknij);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EkranGry";
@@ -77,15 +77,15 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EkranOpcje_FormClosing);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxZamknij)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PictureBoxZamknij;
         private System.Windows.Forms.Panel panelPraweMenu;
         private System.Windows.Forms.Timer timerPrzeplywCzasu;
+        private System.Windows.Forms.Label Wstecz;
     }
 }
