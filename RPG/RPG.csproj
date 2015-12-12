@@ -89,12 +89,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formy\EkranDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formy\EkranDialog.Designer.cs">
+      <DependentUpon>EkranDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formy\EkranHandel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formy\EkranHandel.Designer.cs">
       <DependentUpon>EkranHandel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klasy\DialogiBaza.cs" />
     <Compile Include="Klasy\Ekwipunek\BronieDwureczne\DlugiMiecz.cs" />
     <Compile Include="Klasy\Ekwipunek\BronieJednoreczne\KrotkiMiecz.cs" />
     <Compile Include="Klasy\Ekwipunek\BronieJednoreczne\NozDoMasla.cs" />
@@ -142,6 +149,7 @@
     <Compile Include="Klasy\Obiekty\wood.cs" />
     <Compile Include="Klasy\Postac.cs" />
     <Compile Include="Klasy\PostacieNiezalezne\Handlarz.cs" />
+    <Compile Include="Klasy\Postacie\PasterkaKrysia.cs" />
     <Compile Include="Klasy\Postacie\Sprzedawcy\SprzdawcaZenon.cs" />
     <Compile Include="Klasy\Przeciwnicy\argul.cs" />
     <Compile Include="Klasy\Przeciwnicy\cyklop.cs" />
@@ -250,6 +258,9 @@
     <Compile Include="Formy\EkranWalka.Designer.cs">
       <DependentUpon>EkranWalka.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formy\EkranDialog.resx">
+      <DependentUpon>EkranDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranDziennikZadan.resx">
       <DependentUpon>EkranDziennikZadan.cs</DependentUpon>
     </EmbeddedResource>
@@ -5144,6 +5155,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

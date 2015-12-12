@@ -16,7 +16,7 @@ namespace RPG
     {
         public string nazwa;
         ElementMapy[,] _mapa;
-        public int Rozmiar = 54;
+        public int Rozmiar = 64;
         private int[] _gracz;
         public ElementMapy[,] Mapa { get { return _mapa; } }
         public int[] PozycjaStartowaGracza { get { return _gracz; } }
