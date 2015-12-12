@@ -26,7 +26,7 @@ namespace RPG.Klasy
             _npc = postac;
             _gracz = gracz;
         }
-        public  LiniaDialogowa NAstepnaLinia(int? wybranaopcjala);
+        public abstract  LiniaDialogowa NastepnaLinia(int? wybranaopcjala);
     }
     public class LiniaDialogowa 
     {

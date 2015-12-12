@@ -20,7 +20,7 @@ namespace RPG.Klasy.Postacie
         }
         public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGry gra)
         {
-            EkranDialog dialog = new EkranDialog();
+            EkranDialog dialog = new EkranDialog(null);
             dialog.ShowDialog();
         }
     }

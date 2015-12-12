@@ -5103,12 +5103,6 @@
     <Content Include="Resources\Mapy\sciezka3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\Tkwiat_1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Mapy\Tkwiat_2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\Mapy\Trawa.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
