@@ -130,8 +130,11 @@
     <Compile Include="Klasy\Obiekty\rzekalewa.cs" />
     <Compile Include="Klasy\Obiekty\rzekalewadol.cs" />
     <Compile Include="Klasy\Obiekty\rzekapozioma.cs" />
-    <Compile Include="Klasy\Obiekty\rzekapoziomaprawa.cs" />
+    <Compile Include="Klasy\Obiekty\rzekapoziomaprawa.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Klasy\Obiekty\rzekapoziomaprawadol.cs" />
+    <Compile Include="Klasy\Obiekty\rzekawyjscie.cs" />
     <Compile Include="Klasy\Obiekty\ScianaPozioma.cs" />
     <Compile Include="Klasy\Obiekty\Tkwiat1.cs" />
     <Compile Include="Klasy\Obiekty\Tkwiat2.cs" />
@@ -5075,6 +5078,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\rzekapoziomaprawadol.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\rzekawyjscie.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\sciezka.png">
