@@ -25,7 +25,7 @@ namespace RPG
             this.przeciwnik = przeiwnik;
             this.ekranGry = ekranGry;
             przeciwnik.WyczyscEfekty();
-            ekranGry.gra.gracz.WyczyscEfekty();
+            Gra.gracz.WyczyscEfekty();
             InitializeComponent();
 
             RozmiescElementy();
@@ -158,15 +158,15 @@ namespace RPG
             UsunLabele(FlowLayoutPanelWyborAtakuFizycznego);
             UsunLabele(FlowLayoutPanelWyborAtakuMagicznego);
             UsunLabele(FlowLayoutPanelWyborMikstury);
-            foreach (Umiejetnosc umiejetnosc in ekranGry.gra.gracz.UmiejetnosciFizyczne)
+            foreach (Umiejetnosc umiejetnosc in Gra.gracz.UmiejetnosciFizyczne)
             {
                 FlowLayoutPanelWyborAtakuFizycznego.Controls.Add(StworzPrzyciskUmiejetnosci(umiejetnosc));
             }
-            foreach (Umiejetnosc umiejetnosc in ekranGry.gra.gracz.UmiejetnosciMagiczne)
+            foreach (Umiejetnosc umiejetnosc in Gra.gracz.UmiejetnosciMagiczne)
             {
                 FlowLayoutPanelWyborAtakuMagicznego.Controls.Add(StworzPrzyciskUmiejetnosci(umiejetnosc));
             }
-            foreach (Strawa strawa in ekranGry.gra.gracz.Plecak.Where(x=>x.TypPrzedmiotu==Klasy.TypPrzedmiotu.Zywnosc))
+            foreach (Strawa strawa in Gra.gracz.Plecak.Where(x=>x.TypPrzedmiotu==Klasy.TypPrzedmiotu.Zywnosc))
             {
                 Label nowaStrawa = new Label();
               
@@ -195,9 +195,9 @@ namespace RPG
         void nowaStrawa_Click(object sender, EventArgs e)
         {
             Control ctrl = (Control)sender;
-            Strawa przedmiot = (Strawa)ekranGry.gra.gracz.Plecak.First(x => x.Nazwa == ctrl.Name);//Pobieramy kliekniętą umiejętność
-            przedmiot.Uzyj(ekranGry.gra.gracz);
-            ekranGry.gra.gracz.Plecak.Remove(przedmiot);
+            Strawa przedmiot = (Strawa)Gra.gracz.Plecak.First(x => x.Nazwa == ctrl.Name);//Pobieramy kliekniętą umiejętność
+            przedmiot.Uzyj(Gra.gracz);
+            Gra.gracz.Plecak.Remove(przedmiot);
             ///tu dzieje sięto co wykonujemy
             WykonajAkcjePrzeciwnika();//
         }
@@ -205,8 +205,8 @@ namespace RPG
         {
            
             Control ctrl = (Control)sender;
-           Umiejetnosc umiejetnoscwybrana=ekranGry.gra.gracz.Umiejetnosci().First(x => x.Nazwa == ctrl.Name);//Pobieramy kliekniętą umiejętność
-           umiejetnoscwybrana.Atak(ekranGry.gra.gracz, przeciwnik, LabelInformacje);
+           Umiejetnosc umiejetnoscwybrana=Gra.gracz.Umiejetnosci().First(x => x.Nazwa == ctrl.Name);//Pobieramy kliekniętą umiejętność
+           umiejetnoscwybrana.Atak(Gra.gracz, przeciwnik, LabelInformacje);
             ///tu dzieje sięto co wykonujemy
             WykonajAkcjePrzeciwnika();//
 
@@ -219,9 +219,9 @@ namespace RPG
                 DialogResult = System.Windows.Forms.DialogResult.OK;
             }
             Umiejetnosc wybrana = przeciwnik.PobierzUmiejetnosc();
-            wybrana.Atak(przeciwnik, ekranGry.gra.gracz, LabelInformacje);
-            ekranGry.gra.gracz.PrzetworzEfektyTrwajace();
-            if (ekranGry.gra.gracz.AktualneHp <= 0)
+            wybrana.Atak(przeciwnik, Gra.gracz, LabelInformacje);
+            Gra.gracz.PrzetworzEfektyTrwajace();
+            if (Gra.gracz.AktualneHp <= 0)
             {
                 DialogResult = System.Windows.Forms.DialogResult.Abort;
             }
@@ -230,14 +230,14 @@ namespace RPG
         void OdswiezDane()
         {
 
-            double procentHPGracza = ekranGry.gra.gracz.AktualneHp / ekranGry.gra.gracz.HP;
+            double procentHPGracza = Gra.gracz.AktualneHp / Gra.gracz.HP;
             double procentHPPrzeciwnika = przeciwnik.AktualneHp / przeciwnik.HP;
-            double procentEnergiiGracza = ekranGry.gra.gracz.AktualnaEnerigia / ekranGry.gra.gracz.Energia;
+            double procentEnergiiGracza = Gra.gracz.AktualnaEnerigia / Gra.gracz.Energia;
             double procentEnergiiPrzeciwnika = przeciwnik.AktualnaEnerigia / przeciwnik.Energia;
-            LabelDaneGracza.Text = ekranGry.gra.gracz.Nazwa;
-            LabelDaneGracza.Text += "\nPoziom:" + ekranGry.gra.gracz.Poziom;
-            LabelDaneGracza.Text += "\nPunkty życia: " + ekranGry.gra.gracz.HP * procentHPGracza + "/" + ekranGry.gra.gracz.HP;
-            LabelDaneGracza.Text += "\nEnergia: " + ekranGry.gra.gracz.Energia * procentEnergiiGracza + "/" + ekranGry.gra.gracz.Energia;
+            LabelDaneGracza.Text = Gra.gracz.Nazwa;
+            LabelDaneGracza.Text += "\nPoziom:" + Gra.gracz.Poziom;
+            LabelDaneGracza.Text += "\nPunkty życia: " + Gra.gracz.HP * procentHPGracza + "/" + Gra.gracz.HP;
+            LabelDaneGracza.Text += "\nEnergia: " + Gra.gracz.Energia * procentEnergiiGracza + "/" + Gra.gracz.Energia;
             LabelDanePrzeciwnika.Text = przeciwnik.Nazwa;
             LabelDanePrzeciwnika.Text += "\nPunkty życia: " + przeciwnik.HP * procentHPPrzeciwnika + "/" + przeciwnik.HP;
             LabelDanePrzeciwnika.Text += "\nEnergia: " + przeciwnik.Energia * procentEnergiiPrzeciwnika + "/" + przeciwnik.Energia;
@@ -296,7 +296,7 @@ namespace RPG
         private void AkcjeNaKoniecWalki()
         {
             przeciwnik.WyczyscEfekty();//czyścimy efekty
-            ekranGry.gra.gracz.WyczyscEfekty();//czyścimy efekty
+            Gra.gracz.WyczyscEfekty();//czyścimy efekty
         }
         #endregion
 

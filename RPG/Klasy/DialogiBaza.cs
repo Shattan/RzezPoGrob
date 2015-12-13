@@ -18,10 +18,11 @@ namespace RPG.Klasy
         {
             _npc = postac;
         }
-        public abstract  LiniaDialogowa NastepnaLinia(Gracz gracz,int? wybranaopcjala);
+        public abstract  LiniaDialogowa NastepnaLinia(Postac ktoWymowilOstatniaKwestie,int? wybranaopcjala);
     }
     public class LiniaDialogowa 
     {
-        
+        public Postac Wypowiadajacy { get; set; }
+        public string Tresc { get; set; }
     }
 }

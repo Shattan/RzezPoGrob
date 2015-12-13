@@ -6,24 +6,12 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    public class Gra
+    public static class Gra
     {
         //Wdrożone pola
-        public Gracz gracz;
-      
-      
-       
-
-        //Jeszcze nie używane
-        public List<Przeszkoda> listaPrzeszkod = new List<Przeszkoda>();
-        
-        //Konstruktor domyślny
-        public Gra()
-        {
-            //Tworzenie infrastruktury
-            
-            
+        public static Gracz gracz;
      
-        }
+    
+    
     }
 }

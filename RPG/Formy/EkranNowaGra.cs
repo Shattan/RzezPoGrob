@@ -34,7 +34,7 @@ namespace RPG
         {
             this.ekranGlowny = ekranGlowny;
           
-            ekranGlowny.gra.gracz = new Gracz(
+            Gra.gracz = new Gracz(
             "Gracz",                                                                                     //Nazwa
             "Resources/Grafiki postaci na mapie/0/",                                                     //Obraz na mapie
             "Resources/Grafiki postaci mówiących/Mówca1.png",                                            //Obraz w trakcie rozmowy
@@ -58,7 +58,7 @@ namespace RPG
             new List<Zadanie> { ManagerZadan.ListaZadan[0],  ManagerZadan.ListaZadan[1],  ManagerZadan.ListaZadan[2] }                             //Zadania
           
             );
-            tymczasowyBohater = ekranGlowny.gra.gracz;
+            tymczasowyBohater = Gra.gracz;
             InitializeComponent();
 
             RozstawElementy();
@@ -221,7 +221,7 @@ namespace RPG
         #region Przyciski do modyfikowania statystyk
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.SilaPodstawa > ekranGlowny.gra.gracz.SilaPodstawa)
+            if (tymczasowyBohater.SilaPodstawa > Gra.gracz.SilaPodstawa)
             {
                 tymczasowyBohater.SilaPodstawa--;
             }
@@ -239,7 +239,7 @@ namespace RPG
 
         private void PictureBoxZrecznoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.ZrecznoscPodstawa > ekranGlowny.gra.gracz.ZrecznoscPodstawa)
+            if (tymczasowyBohater.ZrecznoscPodstawa > Gra.gracz.ZrecznoscPodstawa)
             {
                 tymczasowyBohater.ZrecznoscPodstawa--;
             }
@@ -257,7 +257,7 @@ namespace RPG
 
         private void PictureBoxWitalnoscMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.WitalnoscPodstawa > ekranGlowny.gra.gracz.WitalnoscPodstawa)
+            if (tymczasowyBohater.WitalnoscPodstawa > Gra.gracz.WitalnoscPodstawa)
             {
                 tymczasowyBohater.WitalnoscPodstawa--;
             }
@@ -275,7 +275,7 @@ namespace RPG
 
         private void PictureBoxInteligencjaMinus_Click(object sender, EventArgs e)
         {
-            if (tymczasowyBohater.InteligencjaPodstawa > ekranGlowny.gra.gracz.InteligencjaPodstawa)
+            if (tymczasowyBohater.InteligencjaPodstawa > Gra.gracz.InteligencjaPodstawa)
             {
                 tymczasowyBohater.InteligencjaPodstawa--;
             }

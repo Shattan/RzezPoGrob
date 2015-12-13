@@ -30,11 +30,6 @@ namespace RPG
         //Tworzenie zmiennej losującej przeciwnika i planszę
      
 
-
-
-        //Nasz rdzen gry, dostepny dla wszystkich form zwiazanych z gra
-        public Gra gra = new Gra();
-        
         //Zmienne dla przyciskow
         PictureBox[] praweMenu;
         const int SzybkoscRuchow = 5;
@@ -51,7 +46,7 @@ namespace RPG
         public EkranGry(EkranGlowny ekranGlowny)
         {
             this.ekranGlowny = ekranGlowny;
-            this.gra = ekranGlowny.gra;
+         
             obszarGry = ManagerObszarow.WczytajObszar("mapa");
             InitializeComponent();
             RozmiescElementy();
@@ -195,33 +190,33 @@ namespace RPG
             {
                 kierunekRuchuGracz = Ruch.Gora;
                 py-=SzybkoscRuchow;
-                gra.gracz.AktualnyObrazek = "góra.gif";
+                Gra.gracz.AktualnyObrazek = "góra.gif";
             }
             else if(CzyWczysnieto(Keys.Down))
             {
                 kierunekRuchuGracz = Ruch.Dol;
                   py+=SzybkoscRuchow;
-                  gra.gracz.AktualnyObrazek = "dół.gif";
+                  Gra.gracz.AktualnyObrazek = "dół.gif";
             }
             else if(CzyWczysnieto(Keys.Left))
             {
                 kierunekRuchuGracz = Ruch.Lewo;
                   px-=SzybkoscRuchow;
-                  gra.gracz.AktualnyObrazek = "lewo.gif";
+                  Gra.gracz.AktualnyObrazek = "lewo.gif";
             }
             else if (CzyWczysnieto(Keys.Right))
             {
                 kierunekRuchuGracz = Ruch.Prawo;
                   px+=SzybkoscRuchow;
-                  gra.gracz.AktualnyObrazek = "prawo.gif";
+                  Gra.gracz.AktualnyObrazek = "prawo.gif";
             }
             if(!kierunekRuchuGracz.HasValue)
             {
 
-                gra.gracz.AktualnyObrazek = null;
+                Gra.gracz.AktualnyObrazek = null;
                 return;
             }
-            Rectangle graczmapa=new Rectangle(pozycjaGracza[0]+px,pozycjaGracza[1]+py,gra.gracz.Szerokosc,gra.gracz.Wysokosc);//gdzie były gracz gdyby się przesunął
+            Rectangle graczmapa = new Rectangle(pozycjaGracza[0] + px, pozycjaGracza[1] + py, Gra.gracz.Szerokosc, Gra.gracz.Wysokosc);//gdzie były gracz gdyby się przesunął
             for (int i = 0; i < obszarGry.Mapa.GetLength(0); i++)
             {
                 for (int j = 0; j < obszarGry.Mapa.GetLength(1); j++)
@@ -253,7 +248,7 @@ namespace RPG
                         if (bylaKolizja)
                         {
                             timerPrzeplywCzasu.Stop();
-                            element.IntegracjaGracz(ekranGlowny.gra.gracz, i, j, this);
+                            element.IntegracjaGracz(Gra.gracz, i, j, this);
                             timerPrzeplywCzasu.Start();
                             break;
                         }
@@ -277,8 +272,8 @@ namespace RPG
         {
           
             float wsp=(float)Width/(float)Height;
-            int xgracz = Width / 2 - gra.gracz.Szerokosc/2;
-            int ygracz = Height / 2 - gra.gracz.Wysokosc / 2;
+            int xgracz = Width / 2 - Gra.gracz.Szerokosc / 2;
+            int ygracz = Height / 2 - Gra.gracz.Wysokosc / 2;
             Graphics g = e.Graphics;
         //    System.Drawing.Pen objpen = new System.Drawing.Pen(System.Drawing.Brushes.Red);
             // Set the pen's width.
@@ -324,7 +319,7 @@ namespace RPG
                     }
                 }
             }
-            Image graczimg = MenagerZasobow.PobierzBitmape(gra.gracz.ObrazekNaMapie + (gra.gracz.AktualnyObrazek??"dół.png"));
+            Image graczimg = MenagerZasobow.PobierzBitmape(Gra.gracz.ObrazekNaMapie + (Gra.gracz.AktualnyObrazek ?? "dół.png"));
             FrameDimension dimension = new FrameDimension(graczimg.FrameDimensionsList[0]);
             // Number of frames
             int frameCount = graczimg.GetFrameCount(dimension);
@@ -336,7 +331,7 @@ namespace RPG
 
             graczimg.SelectActiveFrame(dimension, idxklatki);
             idxklatki++;
-            Rectangle pozycjagracz = new Rectangle(xgracz, ygracz, gra.gracz.Szerokosc, gra.gracz.Wysokosc);
+            Rectangle pozycjagracz = new Rectangle(xgracz, ygracz, Gra.gracz.Szerokosc, Gra.gracz.Wysokosc);
             g.DrawImage(graczimg, pozycjagracz);
             // Create a new pen.
             //System.Drawing.Pen skyBluePen = new System.Drawing.Pen(System.Drawing.Brushes.DeepSkyBlue);

@@ -31,12 +31,15 @@ namespace RPG.Klasy.Postacie
     }
     class DialogiPasterkiKrysi:DialogiBaza
     {
+
+        List<LiniaDialogowa> dialogi = new List<LiniaDialogowa>();
         public DialogiPasterkiKrysi(PasterkaKrysia postac):base(postac)
-        { 
-        }
-        public override LiniaDialogowa NastepnaLinia(Gracz gracz,int? wybranaopcjala)
         {
-            throw new NotImplementedException();
+            dialogi.Add(new LiniaDialogowa() { Wypowiadajacy = postac, Tresc = "Witaj" });
+        }
+        public override LiniaDialogowa NastepnaLinia(Postac ktoWymowilOstatniaKwestie, int? wybranaopcjala)
+        {
+            return dialogi[0];
         }
     }
 }

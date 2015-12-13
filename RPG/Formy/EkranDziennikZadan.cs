@@ -14,7 +14,7 @@ namespace RPG
     {
         #region Zmienne
         EkranGry ekranGry;      //Dostep do:-ekranGry.opcje
-                                //          -ekranGry.gra;
+                                //          -Gra;
 
         #endregion
 
@@ -65,7 +65,7 @@ namespace RPG
         {
             ListBoxZadania.Items.Clear();
 
-            foreach (Zadanie zadanie in ekranGry.gra.gracz.Zadania)
+            foreach (Zadanie zadanie in Gra.gracz.Zadania)
             {          
                 ListBoxZadania.Items.Add(zadanie.Nazwa);
             }
@@ -75,7 +75,7 @@ namespace RPG
         #region Zdarzenia 
         private void ListBoxZadania_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UstawOpisZadania(ekranGry.gra.gracz.Zadania[ListBoxZadania.SelectedIndex]);  
+            UstawOpisZadania(Gra.gracz.Zadania[ListBoxZadania.SelectedIndex]);  
         }
 
         private void EkranDziennikZadan_Load(object sender, EventArgs e)

@@ -21,7 +21,7 @@ namespace RPG
     {
         #region Zmienne
         EkranGlownyTlo ekranGlownyTlo;
-        public Gra gra = new Gra();
+      
         //Dostep dla tej formy
         //Od najwyżej do najzniszej położonej warstwy Form:
         //EkranGry

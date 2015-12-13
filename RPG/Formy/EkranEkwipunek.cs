@@ -25,7 +25,7 @@ namespace RPG
         public EkranEkwipunek(EkranGry ekranGry)
         {
             this.ekranGry = ekranGry;
-            gracz = ekranGry.gra.gracz;
+            gracz = Gra.gracz;
             InitializeComponent();
 
             RozmiescElementy();
@@ -508,7 +508,7 @@ namespace RPG
 
         void WczytajStatystykiOdGracza()
         {
-            gracz =ekranGry.gra.gracz;
+            gracz =Gra.gracz;
             OdswiezStatystyki();
             OdswiezEkwipunek();
             DodanieDragAndDropDlaObrazkow();
@@ -715,7 +715,7 @@ namespace RPG
         #region Przyciski do modyfikowania statystyk
         private void PictureBoxSilaMinus_Click(object sender, EventArgs e)
         {
-            if (gracz.SilaPodstawa > ekranGry.gra.gracz.SilaPodstawa)
+            if (gracz.SilaPodstawa > Gra.gracz.SilaPodstawa)
             {
                 gracz.SilaPodstawa--;
                 OdswiezStatystyki();
@@ -733,7 +733,7 @@ namespace RPG
 
         private void PictureBoxZrecznoscMinus_Click(object sender, EventArgs e)
         {
-            if (gracz.ZrecznoscPodstawa > ekranGry.gra.gracz.ZrecznoscPodstawa)
+            if (gracz.ZrecznoscPodstawa > Gra.gracz.ZrecznoscPodstawa)
             {
                 gracz.ZrecznoscPodstawa--;
                 OdswiezStatystyki();
@@ -751,7 +751,7 @@ namespace RPG
 
         private void PictureBoxWitalnoscMinus_Click(object sender, EventArgs e)
         {
-            if (gracz.WitalnoscPodstawa > ekranGry.gra.gracz.WitalnoscPodstawa)
+            if (gracz.WitalnoscPodstawa > Gra.gracz.WitalnoscPodstawa)
             {
                 gracz.WitalnoscPodstawa--;
                 OdswiezStatystyki();
@@ -769,7 +769,7 @@ namespace RPG
 
         private void PictureBoxInteligencjaMinus_Click(object sender, EventArgs e)
         {
-            if (gracz.InteligencjaPodstawa > ekranGry.gra.gracz.InteligencjaPodstawa)
+            if (gracz.InteligencjaPodstawa > Gra.gracz.InteligencjaPodstawa)
             {
                 gracz.InteligencjaPodstawa--;
                 OdswiezStatystyki();
