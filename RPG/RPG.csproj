@@ -115,12 +115,52 @@
     <Compile Include="Klasy\Obiekty\brick.cs" />
     <Compile Include="Klasy\Obiekty\brickstone.cs" />
     <Compile Include="Klasy\Obiekty\dirt.cs" />
+    <Compile Include="Klasy\Obiekty\dom10_1.cs" />
+    <Compile Include="Klasy\Obiekty\dom10_2.cs" />
+    <Compile Include="Klasy\Obiekty\dom10_3.cs" />
+    <Compile Include="Klasy\Obiekty\dom10_4.cs" />
     <Compile Include="Klasy\Obiekty\dom1_1.cs" />
     <Compile Include="Klasy\Obiekty\dom1_2.cs" />
     <Compile Include="Klasy\Obiekty\dom1_3.cs" />
     <Compile Include="Klasy\Obiekty\dom1_4.cs" />
     <Compile Include="Klasy\Obiekty\dom1_5.cs" />
     <Compile Include="Klasy\Obiekty\dom1_6.cs" />
+    <Compile Include="Klasy\Obiekty\dom2_1.cs" />
+    <Compile Include="Klasy\Obiekty\dom2_2.cs" />
+    <Compile Include="Klasy\Obiekty\dom2_3.cs" />
+    <Compile Include="Klasy\Obiekty\dom2_4.cs" />
+    <Compile Include="Klasy\Obiekty\dom2_5.cs" />
+    <Compile Include="Klasy\Obiekty\dom2_6.cs" />
+    <Compile Include="Klasy\Obiekty\dom3_1.cs" />
+    <Compile Include="Klasy\Obiekty\dom3_2.cs" />
+    <Compile Include="Klasy\Obiekty\dom3_3.cs" />
+    <Compile Include="Klasy\Obiekty\dom3_4.cs" />
+    <Compile Include="Klasy\Obiekty\dom4_1.cs" />
+    <Compile Include="Klasy\Obiekty\dom4_2.cs" />
+    <Compile Include="Klasy\Obiekty\dom4_3.cs" />
+    <Compile Include="Klasy\Obiekty\dom4_4.cs" />
+    <Compile Include="Klasy\Obiekty\dom4_5.cs" />
+    <Compile Include="Klasy\Obiekty\dom4_6.cs" />
+    <Compile Include="Klasy\Obiekty\dom5_1.cs" />
+    <Compile Include="Klasy\Obiekty\dom5_2.cs" />
+    <Compile Include="Klasy\Obiekty\dom5_3.cs" />
+    <Compile Include="Klasy\Obiekty\dom5_4.cs" />
+    <Compile Include="Klasy\Obiekty\dom6_1.cs" />
+    <Compile Include="Klasy\Obiekty\dom6_2.cs" />
+    <Compile Include="Klasy\Obiekty\dom6_3.cs" />
+    <Compile Include="Klasy\Obiekty\dom6_4.cs" />
+    <Compile Include="Klasy\Obiekty\dom7_1.cs" />
+    <Compile Include="Klasy\Obiekty\dom7_2.cs" />
+    <Compile Include="Klasy\Obiekty\dom7_3.cs" />
+    <Compile Include="Klasy\Obiekty\dom7_4.cs" />
+    <Compile Include="Klasy\Obiekty\dom8_1.cs" />
+    <Compile Include="Klasy\Obiekty\dom8_2.cs" />
+    <Compile Include="Klasy\Obiekty\dom8_3.cs" />
+    <Compile Include="Klasy\Obiekty\dom8_4.cs" />
+    <Compile Include="Klasy\Obiekty\dom9_1.cs" />
+    <Compile Include="Klasy\Obiekty\dom9_2.cs" />
+    <Compile Include="Klasy\Obiekty\dom9_3.cs" />
+    <Compile Include="Klasy\Obiekty\dom9_4.cs" />
     <Compile Include="Klasy\Obiekty\domdol.cs" />
     <Compile Include="Klasy\Obiekty\domdolprawy.cs" />
     <Compile Include="Klasy\Obiekty\domek.cs" />
@@ -139,6 +179,8 @@
     <Compile Include="Klasy\Obiekty\krzak2.cs" />
     <Compile Include="Klasy\Obiekty\Mkwiat1.cs" />
     <Compile Include="Klasy\Obiekty\Mkwiat2.cs" />
+    <Compile Include="Klasy\Obiekty\Mkwiat3.cs" />
+    <Compile Include="Klasy\Obiekty\Mkwiat4.cs" />
     <Compile Include="Klasy\Obiekty\mur.cs" />
     <Compile Include="Klasy\Obiekty\obejscie1.cs" />
     <Compile Include="Klasy\Obiekty\oltarz1.cs" />
@@ -5046,6 +5088,7 @@
     <Content Include="Resources\Grafiki menu\Menu wyboru zapisz grę.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\10nthnb.png" />
     <Content Include="Resources\Mapy\beczka1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5059,6 +5102,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\dirt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom10_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom10_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom10_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom10_4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\dom1_1.png">
@@ -5077,6 +5132,114 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\dom1_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom2_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom2_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom2_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom2_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom2_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom2_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom3_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom3_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom3_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom3_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom4_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom4_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom4_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom4_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom4_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom4_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom5_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom5_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom5_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom5_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom6_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom6_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom6_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom6_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom7_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom7_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom7_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom7_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom8_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom8_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom8_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom8_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom9_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom9_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom9_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\dom9_4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\domdol.png">
@@ -5145,10 +5308,17 @@
     <Content Include="Resources\Mapy\Lampa1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\Market-Preset-byLunarea.png" />
     <Content Include="Resources\Mapy\Mkwiat1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\Mkwiat2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\Mkwiat3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\Mkwiat4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\most1_1.png">
@@ -5196,6 +5366,7 @@
     <Content Include="Resources\Mapy\Roslina3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\rpg_maker_vx___tower_by_ayene_chan-d6bgjoa.png" />
     <Content Include="Resources\Mapy\rzeka.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5259,6 +5430,7 @@
     <Content Include="Resources\Mapy\Skala2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\tileset_vx_ace_street_market_by_ombrouge-d7jx3kf.png" />
     <Content Include="Resources\Mapy\Tkwiat1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
