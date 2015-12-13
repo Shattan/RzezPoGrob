@@ -14,19 +14,11 @@ namespace RPG.Klasy
         {
             get { return _npc; }
         }
-        Gracz _gracz;
-
-        public Gracz Gracz
-        {
-            get { return _gracz; }
-          
-        }
-        public DialogiBaza(NPC postac,Gracz gracz)
+        public DialogiBaza(NPC postac)
         {
             _npc = postac;
-            _gracz = gracz;
         }
-        public abstract  LiniaDialogowa NastepnaLinia(int? wybranaopcjala);
+        public abstract  LiniaDialogowa NastepnaLinia(Gracz gracz,int? wybranaopcjala);
     }
     public class LiniaDialogowa 
     {

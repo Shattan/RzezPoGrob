@@ -9,6 +9,11 @@ namespace RPG.Klasy.Postacie
 {
     class PasterkaKrysia : NPC
     {
+        private DialogiPasterkiKrysi dialogi;
+        public PasterkaKrysia()
+        {
+            dialogi = new DialogiPasterkiKrysi(this);
+        }
         public override string Nazwa
         {
             get { return "Pasterka Krysia"; }
@@ -20,8 +25,18 @@ namespace RPG.Klasy.Postacie
         }
         public override void IntegracjaGracz(Gracz gracz, int x, int y, EkranGry gra)
         {
-            EkranDialog dialog = new EkranDialog(null);
+            EkranDialog dialog = new EkranDialog(dialogi);
             dialog.ShowDialog();
+        }
+    }
+    class DialogiPasterkiKrysi:DialogiBaza
+    {
+        public DialogiPasterkiKrysi(PasterkaKrysia postac):base(postac)
+        { 
+        }
+        public override LiniaDialogowa NastepnaLinia(Gracz gracz,int? wybranaopcjala)
+        {
+            throw new NotImplementedException();
         }
     }
 }
