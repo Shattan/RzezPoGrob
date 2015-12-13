@@ -110,6 +110,7 @@
     <Compile Include="Klasy\Ekwipunek\Zywnosc\SwiezyChleb.cs" />
     <Compile Include="Klasy\ElementMapy.cs" />
     <Compile Include="Klasy\NPC.cs" />
+    <Compile Include="Klasy\Obiekty\beczka1.cs" />
     <Compile Include="Klasy\Obiekty\book.cs" />
     <Compile Include="Klasy\Obiekty\brick.cs" />
     <Compile Include="Klasy\Obiekty\brickstone.cs" />
@@ -125,14 +126,22 @@
     <Compile Include="Klasy\Obiekty\domek.cs" />
     <Compile Include="Klasy\Obiekty\domek2.cs" />
     <Compile Include="Klasy\Obiekty\domgora.cs" />
+    <Compile Include="Klasy\Obiekty\drewno1.cs" />
     <Compile Include="Klasy\Obiekty\elementmuru.cs" />
     <Compile Include="Klasy\Obiekty\grass.cs" />
     <Compile Include="Klasy\Obiekty\gravel.cs" />
     <Compile Include="Klasy\Obiekty\Kamien.cs" />
+    <Compile Include="Klasy\Obiekty\kloda1_1.cs" />
+    <Compile Include="Klasy\Obiekty\kloda1_2.cs" />
+    <Compile Include="Klasy\Obiekty\krzak1_1.cs" />
+    <Compile Include="Klasy\Obiekty\krzak1_2.cs" />
+    <Compile Include="Klasy\Obiekty\krzak1_3.cs" />
+    <Compile Include="Klasy\Obiekty\krzak2.cs" />
     <Compile Include="Klasy\Obiekty\Mkwiat1.cs" />
     <Compile Include="Klasy\Obiekty\Mkwiat2.cs" />
     <Compile Include="Klasy\Obiekty\mur.cs" />
     <Compile Include="Klasy\Obiekty\obejscie1.cs" />
+    <Compile Include="Klasy\Obiekty\oltarz1.cs" />
     <Compile Include="Klasy\Obiekty\rzeka.cs" />
     <Compile Include="Klasy\Obiekty\rzekalewa.cs" />
     <Compile Include="Klasy\Obiekty\rzekalewadol.cs" />
@@ -143,6 +152,9 @@
     <Compile Include="Klasy\Obiekty\rzekapoziomaprawadol.cs" />
     <Compile Include="Klasy\Obiekty\rzekawyjscie.cs" />
     <Compile Include="Klasy\Obiekty\ScianaPozioma.cs" />
+    <Compile Include="Klasy\Obiekty\skala1.cs" />
+    <Compile Include="Klasy\Obiekty\skala2.cs" />
+    <Compile Include="Klasy\Obiekty\studnia1.cs" />
     <Compile Include="Klasy\Obiekty\Tkwiat1.cs" />
     <Compile Include="Klasy\Obiekty\Tkwiat2.cs" />
     <Compile Include="Klasy\Obiekty\Tree1_1_2.cs" />
@@ -4998,58 +5010,76 @@
     <Content Include="Resources\Grafiki umiejętności\Eksplozja.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\book.png">
+    <Content Include="Resources\Grafiki menu\Potwierdź postać.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\brick.png">
+    <Content Include="Resources\Grafiki ekwipunku\bron1hNóż do masła.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\brickstone.png">
+    <Content Include="Resources\Grafiki ekwipunku\tarczaPochodnia.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\dirt.png">
+    <Content Include="Resources\Grafiki ekwipunku\pancerzStara tunika.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\dom1_1.png">
+    <Content Include="Resources\Grafiki menu\Obraz wczytywania.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\dom1_2.png">
+    <Content Include="Resources\Grafiki menu\Menu wyboru kontynuuj.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\dom1_3.png">
+    <Content Include="Resources\Grafiki menu\Menu wyboru wczytaj grę.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\dom1_4.png">
+    <Content Include="Resources\Grafiki menu\Menu wyboru wyjdź do menu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\dom1_5.png">
+    <Content Include="Resources\Grafiki menu\Menu wyboru wyjdź z gry.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\dom1_6.png">
+    <Content Include="Resources\Grafiki menu\Menu wyboru zapisz grę.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\domdol.png">
+    <Content Include="Resources\Mapy\beczka1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\domdolprawy.png">
+    <Content Include="Resources\Mapy\book.png" />
+    <Content Include="Resources\Mapy\brick.png" />
+    <Content Include="Resources\Mapy\brickstone.png" />
+    <Content Include="Resources\Mapy\dirt.png" />
+    <Content Include="Resources\Mapy\dom1_1.png" />
+    <Content Include="Resources\Mapy\dom1_2.png" />
+    <Content Include="Resources\Mapy\dom1_3.png" />
+    <Content Include="Resources\Mapy\dom1_4.png" />
+    <Content Include="Resources\Mapy\dom1_5.png" />
+    <Content Include="Resources\Mapy\dom1_6.png" />
+    <Content Include="Resources\Mapy\domdol.png" />
+    <Content Include="Resources\Mapy\domdolprawy.png" />
+    <Content Include="Resources\Mapy\domek.png" />
+    <Content Include="Resources\Mapy\domek2.png" />
+    <Content Include="Resources\Mapy\domgora.png" />
+    <Content Include="Resources\Mapy\drewno1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\domek.png">
+    <Content Include="Resources\Mapy\droga1_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\domek2.png">
+    <Content Include="Resources\Mapy\droga1_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\domgora.png">
+    <Content Include="Resources\Mapy\droga1_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\elementmuru.png">
+    <Content Include="Resources\Mapy\droga1_4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\grass.png">
+    <Content Include="Resources\Mapy\elementmuru.png" />
+    <Content Include="Resources\Mapy\grass.png" />
+    <Content Include="Resources\Mapy\gravel.png" />
+    <Content Include="Resources\Mapy\kloda1_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\gravel.png">
+    <Content Include="Resources\Mapy\kloda1_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\Krzak1_1.png">
@@ -5062,24 +5092,32 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\Lampa1.png">
+    <Content Include="Resources\Mapy\Krzak2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\Mkwiat1.png">
+    <Content Include="Resources\Mapy\Kszak1_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\Mkwiat2.png">
+    <Content Include="Resources\Mapy\Kszak1_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\mostpion.png">
+    <Content Include="Resources\Mapy\Kszak1_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\mostpoziom.png">
+    <Content Include="Resources\Mapy\Lampa1.png" />
+    <Content Include="Resources\Mapy\Mkwiat1.png" />
+    <Content Include="Resources\Mapy\Mkwiat2.png" />
+    <Content Include="Resources\Mapy\most1_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\mur.png">
+    <Content Include="Resources\Mapy\most1_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\obejscie1.png">
+    <Content Include="Resources\Mapy\mostpion.png" />
+    <Content Include="Resources\Mapy\mostpoziom.png" />
+    <Content Include="Resources\Mapy\mur.png" />
+    <Content Include="Resources\Mapy\obejscie1.png" />
+    <Content Include="Resources\Mapy\oltarz1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\Roslina1_1.png">
@@ -5107,33 +5145,44 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\rzeka.png">
+    <Content Include="Resources\Mapy\Roslina1_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\rzekalewa.png">
+    <Content Include="Resources\Mapy\Roslina1_2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\rzekalewadol.png">
+    <Content Include="Resources\Mapy\Roslina1_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\rzekapozioma.png">
+    <Content Include="Resources\Mapy\Roslina1_4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\rzekapoziomaprawa.png">
+    <Content Include="Resources\Mapy\Roslina1_5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\rzekapoziomaprawadol.png">
+    <Content Include="Resources\Mapy\Roslina1_6.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\rzekawyjscie.png">
+    <Content Include="Resources\Mapy\Roslina2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\sciezka.png">
+    <Content Include="Resources\Mapy\Roslina3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\sciezka2.png">
+    <Content Include="Resources\Mapy\rzeka.png" />
+    <Content Include="Resources\Mapy\rzekalewa.png" />
+    <Content Include="Resources\Mapy\rzekalewadol.png" />
+    <Content Include="Resources\Mapy\rzekapozioma.png" />
+    <Content Include="Resources\Mapy\rzekapoziomaprawa.png" />
+    <Content Include="Resources\Mapy\rzekapoziomaprawadol.png" />
+    <Content Include="Resources\Mapy\rzekawyjscie.png" />
+    <Content Include="Resources\Mapy\sciezka.png" />
+    <Content Include="Resources\Mapy\sciezka2.png" />
+    <Content Include="Resources\Mapy\sciezka3.png" />
+    <Content Include="Resources\Mapy\Skala1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\sciezka3.png">
+    <Content Include="Resources\Mapy\Skala2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\Tkwiat1.png">
@@ -5179,35 +5228,42 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Menu wyboru kontynuuj.png">
+    <Content Include="Resources\Mapy\studnia.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki menu\Menu wyboru wczytaj grę.png">
+    <Content Include="Resources\Mapy\Tkwiat1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki menu\Menu wyboru wyjdź do menu.png">
+    <Content Include="Resources\Mapy\Tkwiat2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki menu\Menu wyboru wyjdź z gry.png">
+    <Content Include="Resources\Mapy\Tkwiat3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Grafiki menu\Menu wyboru zapisz grę.png">
+    <Content Include="Resources\Mapy\Tkwiat4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\Tree1_1-2.png">
+    <Content Include="Resources\Mapy\Tkwiat5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\Tree1_1.png">
+    <Content Include="Resources\Mapy\Tkwiat6.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\Tree1_2.png">
+    <Content Include="Resources\Mapy\Tkwiat7.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\water.png">
+    <Content Include="Resources\Mapy\Tkwiat8.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\wood.png">
+    <Content Include="Resources\Mapy\Tkwiat9.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\Trawa.png" />
+    <Content Include="Resources\Mapy\Tree1_1-2.png" />
+    <Content Include="Resources\Mapy\Tree1_1.png" />
+    <Content Include="Resources\Mapy\Tree1_2.png" />
+    <Content Include="Resources\Mapy\water.png" />
+    <Content Include="Resources\Mapy\wood.png" />
     <Content Include="Resources\Obszary\mapa.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
