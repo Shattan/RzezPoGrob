@@ -60,10 +60,7 @@ namespace RPG
            
             if (ekranWalkaTlo.DialogResult == DialogResult.OK)//Jeżeli gracz wygrał
             {
-                gracz.Zloto += this.ZlotoZaZabicie;
-                gracz.Doswiadczenie += DoswiadczenieZaZabicie;
-                gra.obszarGry.Mapa[x, y] = new ElementMapyPusty() { Tlo = gra.obszarGry.Mapa[x, y].Tlo };
-                gra.UwidocznijGre();
+             PoWygranejGracza(gracz,x,y,gra);
                
               
               
@@ -91,6 +88,13 @@ namespace RPG
                 //Może 3-dniowy ban dla gracza za alt+F4? :D
                 gra.DialogResult = ekranWalkaTlo.DialogResult;
             }
+        }
+        protected virtual void PoWygranejGracza(Gracz gracz, int x, int y, EkranGry gra)
+        {
+            gracz.Zloto += this.ZlotoZaZabicie;
+            gracz.Doswiadczenie += DoswiadczenieZaZabicie;
+            gra.obszarGry.Mapa[x, y] = new ElementMapyPusty() { Tlo = gra.obszarGry.Mapa[x, y].Tlo };
+            gra.UwidocznijGre();
         }
     }
 }
