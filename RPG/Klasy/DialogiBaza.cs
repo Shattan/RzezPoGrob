@@ -18,7 +18,8 @@ namespace RPG.Klasy
         {
             _npc = postac;
         }
-        public abstract  LiniaDialogowa NastepnaLinia(Postac ktoWymowilOstatniaKwestie,int? wybranaopcjala);
+        public abstract void Konfiguracja();
+        public abstract  LiniaDialogowa NastepnaAkcja();
     }
     public class LiniaDialogowa 
     {

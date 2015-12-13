@@ -55,7 +55,7 @@ namespace RPG
            new DuzaTarcza(),                                                                         //Tarcza
 
             new List<Ekwipunek> { new KrotkiMiecz(),new SwiezyChleb(),new SwiezyChleb(),new DlugiMiecz()},                            //Przedmioty w plecaku
-            new List<Zadanie> { ManagerZadan.ListaZadan[0],  ManagerZadan.ListaZadan[1],  ManagerZadan.ListaZadan[2] }                             //Zadania
+            new List<Zadanie> ()                            //Zadania
           
             );
             tymczasowyBohater = Gra.gracz;
