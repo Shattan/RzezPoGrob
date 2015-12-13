@@ -227,7 +227,7 @@ namespace RPG
                 for (int j = 0; j < obszarGry.Mapa.GetLength(1); j++)
                 {
                     ElementMapy element = obszarGry.Mapa[i, j];
-                    if(!element.PowodujeKolizje)
+                    if(element==null||!element.PowodujeKolizje)
                     {
                         continue;
                     }
@@ -299,6 +299,10 @@ namespace RPG
                     if(!r.IntersectsWith(e.ClipRectangle))
                     {
                         continue;// nie rysujemy elelementów które nie są widoczne
+                    }
+                    if (obszarGry.Mapa[i, j]==null)
+                    {
+                        continue;
                     }
                     if (obszarGry.Mapa[i, j].Tlo != null)
                     {
