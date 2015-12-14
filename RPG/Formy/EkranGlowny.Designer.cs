@@ -32,19 +32,17 @@
             this.PictureBoxRuszaj = new System.Windows.Forms.PictureBox();
             this.PictureBoxOpcje = new System.Windows.Forms.PictureBox();
             this.PictureBoxWyjdz = new System.Windows.Forms.PictureBox();
-            this.PictureBoxWczytaj = new System.Windows.Forms.PictureBox();
             this.PictureBoxObrazWczytywania = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxObrazWczytywania)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelInformacje
             // 
             this.LabelInformacje.BackColor = System.Drawing.Color.Black;
-            this.LabelInformacje.Font = new System.Drawing.Font("Monotype Corsiva", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LabelInformacje.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LabelInformacje.ForeColor = System.Drawing.Color.Red;
             this.LabelInformacje.Location = new System.Drawing.Point(7, 163);
             this.LabelInformacje.Name = "LabelInformacje";
@@ -92,19 +90,6 @@
             this.PictureBoxWyjdz.MouseEnter += new System.EventHandler(this.PictureBoxWyjscie_MouseEnter);
             this.PictureBoxWyjdz.MouseLeave += new System.EventHandler(this.PictureBoxWyjscie_MouseLeave);
             // 
-            // PictureBoxWczytaj
-            // 
-            this.PictureBoxWczytaj.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxWczytaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PictureBoxWczytaj.Location = new System.Drawing.Point(429, 12);
-            this.PictureBoxWczytaj.Name = "PictureBoxWczytaj";
-            this.PictureBoxWczytaj.Size = new System.Drawing.Size(133, 101);
-            this.PictureBoxWczytaj.TabIndex = 8;
-            this.PictureBoxWczytaj.TabStop = false;
-            this.PictureBoxWczytaj.Click += new System.EventHandler(this.PictureBoxWczytaj_Click);
-            this.PictureBoxWczytaj.MouseEnter += new System.EventHandler(this.PictureBoxWczytaj_MouseEnter);
-            this.PictureBoxWczytaj.MouseLeave += new System.EventHandler(this.PictureBoxWczytaj_MouseLeave);
-            // 
             // PictureBoxObrazWczytywania
             // 
             this.PictureBoxObrazWczytywania.BackColor = System.Drawing.Color.Black;
@@ -123,7 +108,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(869, 409);
             this.Controls.Add(this.PictureBoxObrazWczytywania);
-            this.Controls.Add(this.PictureBoxWczytaj);
             this.Controls.Add(this.LabelInformacje);
             this.Controls.Add(this.PictureBoxRuszaj);
             this.Controls.Add(this.PictureBoxOpcje);
@@ -142,7 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxRuszaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxOpcje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWyjdz)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxWczytaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxObrazWczytywania)).EndInit();
             this.ResumeLayout(false);
 
@@ -154,7 +137,6 @@
         private System.Windows.Forms.PictureBox PictureBoxRuszaj;
         private System.Windows.Forms.PictureBox PictureBoxOpcje;
         private System.Windows.Forms.PictureBox PictureBoxWyjdz;
-        private System.Windows.Forms.PictureBox PictureBoxWczytaj;
         private System.Windows.Forms.PictureBox PictureBoxObrazWczytywania;
     }
 }

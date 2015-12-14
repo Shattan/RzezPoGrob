@@ -71,7 +71,7 @@ namespace RPG
             List<string> ListaObrazkow = new List<string>();
             ListaObrazkow.Add("Resources/Grafiki menu/Adark.png");
             ListaObrazkow.Add("Resources/Grafiki menu/Bdark.png");
-            ListaObrazkow.Add("Resources/Grafiki menu/Cdark.png");
+           // ListaObrazkow.Add("Resources/Grafiki menu/Cdark.png");
             //ListaObrazkow.Add("Resources/Grafiki menu/D.png");
             //ListaObrazkow.Add("Resources/Grafiki menu/E.png");
 
@@ -112,9 +112,9 @@ namespace RPG
             praweMenu[1].Click += new System.EventHandler(this.PictureBoxPraweMenuEkranDziennikZadan_MouseClick);
             praweMenu[1].MouseEnter += new System.EventHandler(this.PictureBoxPraweMenuDziennikZadan_MouseEnter);
             praweMenu[1].MouseLeave += new System.EventHandler(this.PictureBoxPraweMenuDziennikZadan_MouseLeave);
-            praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuOpcji_MouseClick);
-            praweMenu[2].MouseEnter += new System.EventHandler(this.PictureBoxPraweMenuOpcji_MouseEnter);
-            praweMenu[2].MouseLeave += new System.EventHandler(this.PictureBoxPraweMenuOpcji_MouseLeave);
+            //praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuOpcji_MouseClick);
+            //praweMenu[2].MouseEnter += new System.EventHandler(this.PictureBoxPraweMenuOpcji_MouseEnter);
+            //praweMenu[2].MouseLeave += new System.EventHandler(this.PictureBoxPraweMenuOpcji_MouseLeave);
             //praweMenu[2].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             //praweMenu[3].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
             //praweMenu[4].Click += new System.EventHandler(this.PictureBoxPraweMenuEkwipunek_MouseClick);
@@ -378,14 +378,14 @@ namespace RPG
             timerPrzeplywCzasu.Stop();
             PokazDziennikZadan();
         }
-        private void PictureBoxPraweMenuOpcji_MouseEnter(object sender, EventArgs e)
-        {
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(praweMenu[2], "Resources/Grafiki menu/Clight.png");
-        }
-        private void PictureBoxPraweMenuOpcji_MouseLeave(object sender, EventArgs e)
-        {
-            Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(praweMenu[2], "Resources/Grafiki menu/Cdark.png");
-        }
+        //private void PictureBoxPraweMenuOpcji_MouseEnter(object sender, EventArgs e)
+        //{
+        //    Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(praweMenu[2], "Resources/Grafiki menu/Clight.png");
+        //}
+        //private void PictureBoxPraweMenuOpcji_MouseLeave(object sender, EventArgs e)
+        //{
+        //    Program.UstawObrazZDopasowaniemWielkosciObrazuDoKontrolki(praweMenu[2], "Resources/Grafiki menu/Cdark.png");
+        //}
 
         private void PictureBox_Click(object sender, EventArgs e)
         {
