@@ -5529,6 +5529,9 @@
     <Content Include="Resources\Mapy\wood.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Mapy\ziemia.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Obszary\mapa.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
