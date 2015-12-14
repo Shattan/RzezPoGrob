@@ -258,7 +258,6 @@ namespace RPG
                                 break;
                             }
                         }
-
                     }
                     if (bylaKolizja)
                     {
@@ -315,9 +314,7 @@ namespace RPG
             }
             Image graczimg = MenagerZasobow.PobierzBitmape(Gra.gracz.ObrazekNaMapie + (Gra.gracz.AktualnyObrazek ?? "dół.png"));
             FrameDimension dimension = new FrameDimension(graczimg.FrameDimensionsList[0]);
-            // Number of frames
             int frameCount = graczimg.GetFrameCount(dimension);
-            // Return an Image at a certain index
             if(idxklatki>=frameCount)
             {
                 idxklatki = 0;

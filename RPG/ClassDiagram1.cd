@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RPG.Klasy.ElementMapy" Collapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAEBAAAAAAAAAA=</HashCode>
+      <FileName>Klasy\ElementMapy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG.Klasy.ElementMapyPusty" Collapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgIAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Klasy\ElementMapy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG.Klasy.PojemnikBaza" Collapsed="true">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACgIAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Klasy\PojemnikBaza.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG.Przeciwnik" Collapsed="true">
+    <Position X="12" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIAAAAAAAAAYAAABAAAAAAIAAAAAAAAAAIgAAAAA=</HashCode>
+      <FileName>Klasy\Przeciwnik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG.Postac" Collapsed="true">
+    <Position X="9.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAiAAAAIAKoAKgAEAEIASAABAAAAAQigIAAAIAA=</HashCode>
+      <FileName>Klasy\Postac.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG.Klasy.NPC" Collapsed="true">
+    <Position X="9.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAiAAAAAAIoAIAAAAAAASIAAAAAAAQCAAAAAIAA=</HashCode>
+      <FileName>Klasy\NPC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG.Przeszkoda" Collapsed="true">
+    <Position X="7" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Klasy\Przeszkoda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG.Klasy.PostacieNiezalezne.Handlarz" Collapsed="true">
+    <Position X="9.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAIAAADA=</HashCode>
+      <FileName>Klasy\PostacieNiezalezne\Handlarz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
