@@ -360,6 +360,7 @@
     <EmbeddedResource Include="Tla\EkranWalkaTlo.resx">
       <DependentUpon>EkranWalkaTlo.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="konfiguracja.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -22,8 +22,6 @@ namespace RPG
     public abstract class Umiejetnosc
     {
         public abstract String Nazwa { get;}
-        public virtual String ObrazekPrzycisku { get { return "Resources/Grafiki przycisków umiejętności/zdenerwowac tomka.png"; } }
-        public virtual String ObrazekWWalce { get { return "Resources/Grafiki umiejętności/Eksplozja.png"; } }
         /// <summary>
         /// Czy to umiejetnosc magiczna
         /// </summary>
