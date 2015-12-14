@@ -5368,7 +5368,6 @@
     <Content Include="Resources\Mapy\Roslina3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Mapy\rpg_maker_vx___tower_by_ayene_chan-d6bgjoa.png" />
     <Content Include="Resources\Mapy\rzeka.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5530,9 +5529,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\ziemia.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Mapy\ziemia2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Obszary\mapa.txt">
