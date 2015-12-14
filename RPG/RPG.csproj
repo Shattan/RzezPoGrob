@@ -205,6 +205,9 @@
     <Compile Include="Klasy\Obiekty\water.cs" />
     <Compile Include="Klasy\Obiekty\wood.cs" />
     <Compile Include="Klasy\PojemnikBaza.cs" />
+    <Compile Include="Klasy\Pojemniki\Skrzynia8.cs" />
+    <Compile Include="Klasy\Pojemniki\Skrzynia7.cs" />
+    <Compile Include="Klasy\Pojemniki\Skrzynia6.cs" />
     <Compile Include="Klasy\Pojemniki\Skrzynia5.cs" />
     <Compile Include="Klasy\Pojemniki\Skrzynia4.cs" />
     <Compile Include="Klasy\Pojemniki\Skrzynia3.cs" />
