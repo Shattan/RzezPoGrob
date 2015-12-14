@@ -204,6 +204,8 @@
     <Compile Include="Klasy\Obiekty\Tree1_2.cs" />
     <Compile Include="Klasy\Obiekty\water.cs" />
     <Compile Include="Klasy\Obiekty\wood.cs" />
+    <Compile Include="Klasy\PojemnikBaza.cs" />
+    <Compile Include="Klasy\Pojemniki\Skrzynia1.cs" />
     <Compile Include="Klasy\Postac.cs" />
     <Compile Include="Klasy\PostacieNiezalezne\Handlarz.cs" />
     <Compile Include="Klasy\Postacie\PasterkaKrysia.cs" />
@@ -5428,6 +5430,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\Skala2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Mapy\Skrzynka.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Mapy\tileset_vx_ace_street_market_by_ombrouge-d7jx3kf.png" />
