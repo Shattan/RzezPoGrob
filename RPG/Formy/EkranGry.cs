@@ -326,8 +326,8 @@ namespace RPG
             g.DrawImage(graczimg, pozycjagracz);
             if(!string.IsNullOrEmpty(Komunikat))
             {
-                Rectangle pozycjatekstu=new Rectangle(0,(int)(Height*0.9),Width,(int)(Height*0.1f));
-                g.DrawString(Komunikat, new Font("Segoe Script", 20), new SolidBrush(System.Drawing.Color.Gold), pozycjatekstu);
+                Rectangle pozycjatekstu=new Rectangle(150,(int)(Height*0.9),Width,(int)(Height*0.1f));
+                g.DrawString(Komunikat, new Font("Segoe Script", 25,FontStyle.Bold), new SolidBrush(System.Drawing.Color.Red), pozycjatekstu);
             }
         }
 
