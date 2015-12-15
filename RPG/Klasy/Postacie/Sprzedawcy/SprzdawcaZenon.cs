@@ -1,4 +1,5 @@
 using RPG.Klasy.Ekwipunek.BronieJednoreczne;
+using RPG.Klasy.Ekwipunek.BronieDwureczne;
 using RPG.Klasy.Ekwipunek.Zywnosc;
 using RPG.Klasy.PostacieNiezalezne;
 using System;
@@ -20,6 +21,7 @@ namespace RPG.Klasy.Postacie.Sprzedawcy
             wynik.Add(new SwiezyChleb());
             wynik.Add(new SwiezyChleb());
             wynik.Add(new KrotkiMiecz());
+            wynik.Add(new Katana());
             return wynik;
 
         }

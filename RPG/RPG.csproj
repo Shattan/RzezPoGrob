@@ -109,6 +109,7 @@
     </Compile>
     <Compile Include="Klasy\DialogiBaza.cs" />
     <Compile Include="Klasy\Ekwipunek\BronieDwureczne\DlugiMiecz.cs" />
+    <Compile Include="Klasy\Ekwipunek\BronieDwureczne\Katana.cs" />
     <Compile Include="Klasy\Ekwipunek\BronieJednoreczne\KrotkiMiecz.cs" />
     <Compile Include="Klasy\Ekwipunek\BronieJednoreczne\NozDoMasla.cs" />
     <Compile Include="Klasy\Ekwipunek\Tarcze\DuzaTarcza.cs" />
