@@ -14,15 +14,26 @@ namespace RPG.Formy
     {
         public FormZwyciestwo()
         {
-            Timer t = new Timer();
-            t.Interval = 10000;
-            t.Tick += t_Tick;
+         
             InitializeComponent();
+            Timer t = new Timer();
+            t.Interval = 5000;
+            t.Tick += t_Tick;
+            t.Start();
         }
 
         void t_Tick(object sender, EventArgs e)
         {
+            try
+            {
+
+       
             Application.Exit();
+                     }
+            catch(Exception)
+            {
+
+            }
         }
 
 
