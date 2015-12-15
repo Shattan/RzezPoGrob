@@ -235,7 +235,10 @@
     <Compile Include="Klasy\Przeciwnicy\szkielet.cs" />
     <Compile Include="Klasy\Przeciwnicy\topielec.cs" />
     <Compile Include="Klasy\Przeciwnicy\Waz.cs" />
+    <Compile Include="Klasy\Przeciwnicy\wilkolak.cs" />
     <Compile Include="Klasy\Przeciwnicy\Zadania\WilkKrysia.cs" />
+    <Compile Include="Klasy\Przeciwnicy\zywiolakOgnia.cs" />
+    <Compile Include="Klasy\Przeciwnicy\zywiolakWody.cs" />
     <Compile Include="Klasy\Strawa.cs" />
     <Compile Include="Klasy\TypPrzedmiotu.cs" />
     <Compile Include="Klasy\Umiejetnosci\BrylaLodu.cs" />
