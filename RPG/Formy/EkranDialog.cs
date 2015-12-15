@@ -38,9 +38,9 @@ namespace RPG.Formy
             g.PixelOffsetMode = PixelOffsetMode.HighQuality;
             g.CompositingQuality = CompositingQuality.HighQuality;
             Brush b=new SolidBrush(Color.Black);
-            Image tlo = Narzedzia.MenagerZasobow.PobierzBitmape("resources/Grafiki przycisków umiejętności/przyciskNOWY.png");
+            Image tlo = Narzedzia.MenagerZasobow.PobierzBitmape("resources/Grafiki menu/plotno.png");
             Rectangle tlopozycja=new Rectangle(0,(int)(Height/2),Width,Height);
-            RectangleF zrodlotla=new RectangleF(0,0,tlo.Width,tlo.Height);
+            RectangleF zrodlotla=new RectangleF(0,0,tlo.Width,tlo.Height/2);
 
     
             int znakowwlini=50;
@@ -52,7 +52,7 @@ namespace RPG.Formy
                 return;
             }
             Font f = new Font("Segoe Script", 20);
-                   Rectangle pozycjatekstu = new Rectangle(80, (int)(Height / 2) + 80, Width,Height/2);
+            Rectangle pozycjatekstu = new Rectangle(300, (int)(Height / 2) + 80, Width - 300, Height / 2);
              
             StringBuilder sb = new StringBuilder();
             for(int j=dialogipokazane.Count-1;j>=0;j--)

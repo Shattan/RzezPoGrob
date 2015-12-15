@@ -101,6 +101,12 @@
     <Compile Include="Formy\EkranHandel.Designer.cs">
       <DependentUpon>EkranHandel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formy\FormZwyciestwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formy\FormZwyciestwo.Designer.cs">
+      <DependentUpon>FormZwyciestwo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Klasy\DialogiBaza.cs" />
     <Compile Include="Klasy\Ekwipunek\BronieDwureczne\DlugiMiecz.cs" />
     <Compile Include="Klasy\Ekwipunek\BronieJednoreczne\KrotkiMiecz.cs" />
@@ -215,6 +221,7 @@
     <Compile Include="Klasy\Pojemniki\Skrzynia1.cs" />
     <Compile Include="Klasy\Postac.cs" />
     <Compile Include="Klasy\PostacieNiezalezne\Handlarz.cs" />
+    <Compile Include="Klasy\Postacie\Chlop.cs" />
     <Compile Include="Klasy\Postacie\PasterkaKrysia.cs" />
     <Compile Include="Klasy\Postacie\Sprzedawcy\SprzdawcaZenon.cs" />
     <Compile Include="Klasy\Przeciwnicy\argul.cs" />
@@ -346,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formy\EkranHandel.resx">
       <DependentUpon>EkranHandel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formy\FormZwyciestwo.resx">
+      <DependentUpon>FormZwyciestwo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tla\EkranGlownyTlo.resx">
       <DependentUpon>EkranGlownyTlo.cs</DependentUpon>
@@ -579,6 +589,9 @@
     <Content Include="Resources\Grafiki menu\Pasek tło.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Grafiki menu\plotno.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Grafiki menu\projekt przycisku 2.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -619,6 +632,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki postaci walczących\wampir.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki postaci walczących\wiesniak.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki postaci walczących\wywerna.png">
