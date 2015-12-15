@@ -39,34 +39,33 @@ namespace RPG.Formy
             g.CompositingQuality = CompositingQuality.HighQuality;
             Brush b=new SolidBrush(Color.Black);
             Image tlo = Narzedzia.MenagerZasobow.PobierzBitmape("resources/Grafiki menu/plotno.png");
-            Rectangle tlopozycja=new Rectangle(0,(int)(Height/2),Width,Height);
-            RectangleF zrodlotla=new RectangleF(0,0,tlo.Width,tlo.Height/2);
-
+            Rectangle tlopozycja=new Rectangle(0,(int)(Height/2),Width,Height/2);
     
-            int znakowwlini=50;
+            int znakowwlini=30;
 
-            g.DrawImage(tlo, tlopozycja, zrodlotla, GraphicsUnit.Pixel);
+            g.DrawImage(tlo, tlopozycja);
 
             if (!dialogipokazane.Any())
             {
                 return;
             }
             Font f = new Font("Segoe Script", 20);
-            Rectangle pozycjatekstu = new Rectangle(300, (int)(Height / 2) + 80, Width - 300, Height / 2);
+            Rectangle pozycjatekstu = new Rectangle(300, (int)(Height / 2) + 20, Width - 500, Height / 2);
              
             StringBuilder sb = new StringBuilder();
             for(int j=dialogipokazane.Count-1;j>=0;j--)
             {
                 sb.Insert(0, string.Format("{0} - {1}\n", dialogipokazane[j].Wypowiadajacy.Nazwa, dialogipokazane[j].Tresc));
-                float lini = (float)sb.Length / (float)znakowwlini;
-                if(lini*f.Height>pozycjatekstu.Height-100)
-                {
-                    break;
-                }
+                //double lini=Math.Ceiling( (float)sb.Length / (float)znakowwlini);
+                //if(lini*f.Height>pozycjatekstu.Height-100)
+                //{
+                //    break;
+                //}
             }
-             sb.Append("\nNaciśnij spację aby kontynuować");
-
-             g.DrawString(sb.ToString(), f, b, pozycjatekstu);
+             sb.Append("Naciśnij spację aby kontynuować");
+            StringFormat format1 = new StringFormat();
+            format1.LineAlignment = StringAlignment.Near;
+            g.DrawString(sb.ToString(), f, b, pozycjatekstu, format1);
 
           
         }
