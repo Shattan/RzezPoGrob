@@ -27,7 +27,7 @@ namespace RPG.Klasy.Przeciwnicy
 
         public override string ObrazekWalki
         {
-            get { return "Resources/Grafiki postaci walczących/zywiolakOgnia.png"; }
+            get { return "Resources/Grafiki postaci walczących/zywiolak ognia.png"; }
         }
 
         public override string ObrazekNaMapie

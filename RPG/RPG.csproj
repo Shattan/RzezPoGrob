@@ -228,17 +228,25 @@
     <Compile Include="Klasy\Przeciwnicy\gwojownik.cs" />
     <Compile Include="Klasy\Przeciwnicy\gzwiadowca.cs" />
     <Compile Include="Klasy\Przeciwnicy\hydra.cs" />
+    <Compile Include="Klasy\Przeciwnicy\mis.cs" />
     <Compile Include="Klasy\Przeciwnicy\poludnica.cs" />
+    <Compile Include="Klasy\Przeciwnicy\potepionyWojownik.cs" />
     <Compile Include="Klasy\Przeciwnicy\scierwojad.cs" />
     <Compile Include="Klasy\Przeciwnicy\szaman.cs" />
     <Compile Include="Klasy\Przeciwnicy\Szczur.cs" />
     <Compile Include="Klasy\Przeciwnicy\szkielet.cs" />
+    <Compile Include="Klasy\Przeciwnicy\szkieletLucznik.cs" />
     <Compile Include="Klasy\Przeciwnicy\topielec.cs" />
+    <Compile Include="Klasy\Przeciwnicy\trol.cs" />
+    <Compile Include="Klasy\Przeciwnicy\wampir.cs" />
     <Compile Include="Klasy\Przeciwnicy\Waz.cs" />
     <Compile Include="Klasy\Przeciwnicy\wilkolak.cs" />
+    <Compile Include="Klasy\Przeciwnicy\wywerna.cs" />
     <Compile Include="Klasy\Przeciwnicy\Zadania\WilkKrysia.cs" />
+    <Compile Include="Klasy\Przeciwnicy\zywiolakPowietrza.cs" />
     <Compile Include="Klasy\Przeciwnicy\zywiolakOgnia.cs" />
     <Compile Include="Klasy\Przeciwnicy\zywiolakWody.cs" />
+    <Compile Include="Klasy\Przeciwnicy\zywiolakZiemi.cs" />
     <Compile Include="Klasy\Strawa.cs" />
     <Compile Include="Klasy\TypPrzedmiotu.cs" />
     <Compile Include="Klasy\Umiejetnosci\BrylaLodu.cs" />
@@ -596,6 +604,30 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki menu\Przycisk poprzedni standard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki postaci walczących\mis.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki postaci walczących\potepiony wojownik.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki postaci walczących\szkielet lucznik.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki postaci walczących\trol.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki postaci walczących\wampir.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki postaci walczących\wywerna.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki postaci walczących\zywiolak powietrza.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Grafiki postaci walczących\zywiolak ziemi.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Grafiki przycisków umiejętności\przyciskNOWY.png">
