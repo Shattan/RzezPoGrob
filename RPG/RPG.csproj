@@ -336,7 +336,7 @@
     <Compile Include="Klasy\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Klasy\Przeszkoda.cs" />
-    <Compile Include="Klasy\Umiejetnosc.cs" />
+    <Compile Include="Resources\Umiejetnosc.cs" />
     <Compile Include="Formy\EkranWalka.cs">
       <SubType>Form</SubType>
     </Compile>
